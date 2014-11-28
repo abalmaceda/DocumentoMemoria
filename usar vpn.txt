@@ -1,0 +1,27 @@
+%%%%%%	INSTALAR VPNC	%%%%%%%
+Abrir un terminal y ejecutar:
+
+sudo apt-get install vpnc
+
+%%%%%%%%  COPIAR ARCHIVO CONFIGURACIÓN VPNC	%%%%%%%%
+Copiar el archivo uchile.conf al home (Carpeta Principal en Ubuntu)
+
+En un terminal (puede ser el mismo anterior) ejecutar:
+
+sudo cp uchile.conf /etc/vpnc
+
+%%%%%%%%%%	EJECUTAR	%%%%%%%%%%%%%%%%
+Para ejecutar vpnc en un terminal se debe ejecutar:
+
+sudo vpnc-connect uchile
+
+Y luego ingresar el usuario del cec y luego la clave.
+
+Luego en el explorador web se debe ir a la configuración de proxy (Preferencias -> Avanzadas -> Cambiar configuración Proxy, en Google Chrome)
+
+Y poner proxy: proxy.cec.uchile.cl
+Puerto: 8000
+
+Para desconectar se ejecuta:
+
+sudo vpnc-disconnect

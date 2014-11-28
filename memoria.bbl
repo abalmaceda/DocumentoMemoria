@@ -1,0 +1,164 @@
+\begin{thebibliography}{10}
+  \providebibliographyfont{name}{}%
+  \providebibliographyfont{lastname}{}%
+  \providebibliographyfont{title}{\emph}%
+  \providebibliographyfont{jtitle}{\btxtitlefont}%
+  \providebibliographyfont{etal}{\emph}%
+  \providebibliographyfont{journal}{}%
+  \providebibliographyfont{volume}{}%
+  \providebibliographyfont{ISBN}{\MakeUppercase}%
+  \providebibliographyfont{ISSN}{\MakeUppercase}%
+  \providebibliographyfont{url}{\url}%
+  \providebibliographyfont{numeral}{}%
+  \expandafter\btxselectlanguage\expandafter {\btxfallbacklanguage}
+
+\btxselectlanguage {english}
+\bibitem {technology_bootstrap}
+\btxtitlefont {\btxifchangecase {Bootstrap}{Bootstrap}},
+  \btxprintmonthyear{.}{Noviembre}{2014}{long}.
+\newblock {\latintext \btxurlfont{http://getbootstrap.com/}}.
+
+\bibitem {online_Chipotle}
+\btxtitlefont {\btxifchangecase {Chipotle website}{Chipotle Website}},
+  \btxprintmonthyear{.}{Noviembre}{2014}{long}.
+\newblock {\latintext \btxurlfont{http://www.chipotle.com/}}.
+
+\bibitem {online_CodeCanyon}
+\btxtitlefont {\btxifchangecase {Codecanyon website}{CodeCanyon Website}},
+  \btxprintmonthyear{.}{Noviembre}{2014}{long}.
+\newblock {\latintext \btxurlfont{http://codecanyon.net/}}.
+
+\bibitem {technology_coffeescript}
+\btxtitlefont {\btxifchangecase {Coffeescript}{CoffeeScript}},
+  \btxprintmonthyear{.}{Noviembre}{2014}{long}.
+\newblock {\latintext \btxurlfont{http://coffeescript.org/}}.
+
+\bibitem {online_DrupalCommerce}
+\btxtitlefont {\btxifchangecase {Drupal commerce website}{Drupal Commerce
+  Website}}, \btxprintmonthyear{.}{Noviembre}{2014}{long}.
+\newblock {\latintext \btxurlfont{https://drupalcommerce.org/}}.
+
+\bibitem {online_Forward}
+\btxtitlefont {\btxifchangecase {Forward}{Forward}},
+  \btxprintmonthyear{.}{Noviembre}{2014}{long}.
+\newblock {\latintext \btxurlfont{http://getfwd.com/}}.
+
+\bibitem {technology_gruntjs}
+\btxtitlefont {\btxifchangecase {Grunt}{Grunt}},
+  \btxprintmonthyear{.}{Noviembre}{2014}{long}.
+\newblock {\latintext \btxurlfont{http://gruntjs.com/}}.
+
+\bibitem {online_Jigoshop}
+\btxtitlefont {\btxifchangecase {Jigoshop website}{Jigoshop Website}},
+  \btxprintmonthyear{.}{Noviembre}{2014}{long}.
+\newblock {\latintext \btxurlfont{https://www.jigoshop.com/}}.
+
+\bibitem {online_Magento}
+\btxtitlefont {\btxifchangecase {Magento community edition website}{Magento
+  Community Edition Website}}, \btxprintmonthyear{.}{Noviembre}{2014}{long}.
+\newblock {\latintext \btxurlfont{http://www.magentocommerce.com/download}}.
+
+\bibitem {technology_mongodb}
+\btxtitlefont {\btxifchangecase {Mongodb}{MongoDB}},
+  \btxprintmonthyear{.}{Noviembre}{2014}{long}.
+\newblock {\latintext \btxurlfont{http://www.mongodb.org/}}.
+
+\bibitem {technology_nodejs}
+\btxtitlefont {\btxifchangecase {Nodejs}{Nodejs}},
+  \btxprintmonthyear{.}{Noviembre}{2014}{long}.
+\newblock {\latintext \btxurlfont{http://nodejs.org/}}.
+
+\bibitem {online_OpenCartWebsite}
+\btxtitlefont {\btxifchangecase {Opencart website}{OpenCart Website}},
+  \btxprintmonthyear{.}{Noviembre}{2014}{long}.
+\newblock {\latintext \btxurlfont{http://www.opencart.com/}}.
+
+\bibitem {online_osCommerce}
+\btxtitlefont {\btxifchangecase {oscommerce website}{osCommerce Website}},
+  \btxprintmonthyear{.}{Noviembre}{2014}{long}.
+\newblock {\latintext \btxurlfont{http://www.oscommerce.com/}}.
+
+\bibitem {online_PrestaShop}
+\btxtitlefont {\btxifchangecase {Prestashop website}{PrestaShop Website}},
+  \btxprintmonthyear{.}{Noviembre}{2014}{long}.
+\newblock {\latintext \btxurlfont{http://www.prestashop.com/}}.
+
+\bibitem {online_simpleCart}
+\btxtitlefont {\btxifchangecase {simplecart website}{simpleCart Website}},
+  \btxprintmonthyear{.}{Noviembre}{2014}{long}.
+\newblock {\latintext \btxurlfont{http://simplecartjs.org/}}.
+
+\bibitem {online_SpreeCommerce}
+\btxtitlefont {\btxifchangecase {Spree commerce website}{Spree Commerce
+  Website}}, \btxprintmonthyear{.}{Noviembre}{2014}{long}.
+\newblock {\latintext \btxurlfont{http://spreecommerce.com/}}.
+
+\bibitem {online_ThemeForest}
+\btxtitlefont {\btxifchangecase {Themeforest website}{ThemeForest Website}},
+  \btxprintmonthyear{.}{Noviembre}{2014}{long}.
+\newblock {\latintext \btxurlfont{http://themeforest.net/}}.
+
+\bibitem {online_WooCommerce}
+\btxtitlefont {\btxifchangecase {Woocommerce website}{WooCommerce Website}},
+  \btxprintmonthyear{.}{Noviembre}{2014}{long}.
+\newblock {\latintext \btxurlfont{http://www.woothemes.com/woocommerce/}}.
+
+\bibitem {online_WordPress}
+\btxtitlefont {\btxifchangecase {Wordpress.org website}{WordPress.org
+  Website}}, \btxprintmonthyear{.}{Noviembre}{2014}{long}.
+\newblock {\latintext \btxurlfont{https://wordpress.org/}}.
+
+\bibitem {online_WPECommerce}
+\btxtitlefont {\btxifchangecase {Wp e-commerce website}{WP e-Commerce
+  Website}}, \btxprintmonthyear{.}{Noviembre}{2014}{long}.
+\newblock {\latintext \btxurlfont{http://getshopped.org/}}.
+
+\bibitem {online_ZenCart}
+\btxtitlefont {\btxifchangecase {Zen cart website}{Zen Cart Website}},
+  \btxprintmonthyear{.}{Noviembre}{2014}{long}.
+\newblock {\latintext \btxurlfont{http://www.zen-cart.com/}}.
+
+\expandafter\btxselectlanguage\expandafter {\btxfallbacklanguage}
+\bibitem {online_reactionCommerce}
+\btxnamefont {\btxlastnamefont {Dobbertin}, Eric}\btxauthorcolon\ \btxtitlefont
+  {\btxifchangecase {Reaction commerce}{Reaction Commerce}}, 2014.
+\newblock {\latintext \btxurlfont{https://reactioncommerce.com/}}.
+
+\btxselectlanguage {english}
+\bibitem {technology_docker}
+\btxnamefont {\btxlastnamefont {Docker}, Inc}\btxauthorcolon\ \btxtitlefont
+  {\btxifchangecase {Docker}{Docker}},
+  \btxprintmonthyear{.}{Noviembre}{2014}{long}.
+\newblock {\latintext \btxurlfont{https://www.docker.com/}}.
+
+\bibitem {technology_angularjs}
+\btxnamefont {\btxlastnamefont {Google}}\btxauthorcolon\ \btxtitlefont
+  {\btxifchangecase {Angularjs}{AngularJs}},
+  \btxprintmonthyear{.}{Noviembre}{2014}{long}.
+\newblock {\latintext \btxurlfont{https://angularjs.org/}}.
+
+\bibitem {online_mongodb_ecommerce}
+\btxnamefont {\btxlastnamefont {Kyle}}\btxauthorcolon\ \btxtitlefont
+  {\btxifchangecase {Mongodb and e-commerce}{MongoDB and E-commerce}},
+  \btxprintmonthyear{.}{Abril}{2010}{long}.
+\newblock {\latintext
+  \btxurlfont{http://web.archive.org/web/20110713174947/http://kylebanker.com/blog/2010/04/30/mongodb-and-ecommerce/}}.
+
+\bibitem {online_Traider}
+\btxnamefont {\btxlastnamefont {Software}, Eastpoint}\btxauthorcolon\
+  \btxtitlefont {\btxifchangecase {traider}{traider}},
+  \btxprintmonthyear{.}{Noviembre}{2014}{long}.
+\newblock {\latintext \btxurlfont{http://traider.io/}}.
+
+\bibitem {online_NodeShop}
+\btxnamefont {\btxlastnamefont {Topley}, Billy}\btxauthorcolon\ \btxtitlefont
+  {\btxifchangecase {Nodeshop}{NodeShop}},
+  \btxprintmonthyear{.}{Noviembre}{2014}{long}.
+\newblock {\latintext \btxurlfont{http://nodeshop.org/}}.
+
+\bibitem {book_introduction_graph_theory}
+\btxnamefont {\btxlastnamefont {Trudeau}, Richard\btxfnamespacelong
+  J.}\btxauthorcolon\ \btxpublisherfont {\btxtitlefont {Introduction to Graph
+  Theory}}.
+
+\end{thebibliography}

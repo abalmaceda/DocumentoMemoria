@@ -1,0 +1,26 @@
+\begin{thegloss}
+
+\glossheading{D}
+
+\begin{glossitem}{DBMS}{DBMS}{DBMS}{}
+Database management system\end{glossitem}
+
+\glossheading{N}
+
+\begin{glossitem}{NoSQL}{NoSQL}{NoSQL}{}
+Not Only \gloss{SQL}\end{glossitem}
+
+\glossheading{R}
+
+\begin{glossitem}{RDBMS}{RDBMS}{RDBMS}{}
+Relational database management system\end{glossitem}
+
+\glossheading{S}
+
+\begin{glossitem}{SKU}{SKU}{SKU}{}
+Stock-keeping unit\end{glossitem}
+
+\begin{glossitem}{SQL}{SQL}{SQL}{}
+Structured Query Language\end{glossitem}
+
+\end{thegloss}

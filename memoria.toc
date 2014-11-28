@@ -1,0 +1,57 @@
+\select@language {spanish}
+\contentsline {chapter}{\numberline {1}Introducci\IeC {\'o}n}{6}{chapter.1}
+\contentsline {subsection}{\numberline {1.0.1}\textit {E-Commerce} en la actualidad}{9}{subsection.1.0.1}
+\contentsline {subsection}{\numberline {1.0.2}\textit {E-Commerce} en el futuro}{9}{subsection.1.0.2}
+\contentsline {section}{\numberline {1.1}Motivaci\IeC {\'o}n}{10}{section.1.1}
+\contentsline {section}{\numberline {1.2}Alcances y Objetivo General}{11}{section.1.2}
+\contentsline {section}{\numberline {1.3}Objetivos Espec\IeC {\'\i }ficos}{11}{section.1.3}
+\contentsline {section}{\numberline {1.4}Caracteristicas deseables}{11}{section.1.4}
+\contentsline {section}{\numberline {1.5}Estructura de la memoria}{14}{section.1.5}
+\contentsline {chapter}{\numberline {2}Estado del Arte}{15}{chapter.2}
+\contentsline {subsection}{\numberline {2.0.1}OpenCart }{15}{subsection.2.0.1}
+\contentsline {subsection}{\numberline {2.0.2}PrestaShop }{16}{subsection.2.0.2}
+\contentsline {subsection}{\numberline {2.0.3}Magento Community Edition}{16}{subsection.2.0.3}
+\contentsline {subsection}{\numberline {2.0.4}Zen Cart }{17}{subsection.2.0.4}
+\contentsline {subsection}{\numberline {2.0.5}Spree Commerce }{17}{subsection.2.0.5}
+\contentsline {subsection}{\numberline {2.0.6}Drupal Commerce }{18}{subsection.2.0.6}
+\contentsline {subsection}{\numberline {2.0.7}osCommerce }{18}{subsection.2.0.7}
+\contentsline {subsection}{\numberline {2.0.8}simpleCart }{19}{subsection.2.0.8}
+\contentsline {subsection}{\numberline {2.0.9}WooCommerce }{20}{subsection.2.0.9}
+\contentsline {subsection}{\numberline {2.0.10}WP e-Commerce }{20}{subsection.2.0.10}
+\contentsline {subsection}{\numberline {2.0.11}Jigoshop }{21}{subsection.2.0.11}
+\contentsline {section}{\numberline {2.1}Justificaci\IeC {\'o}n para el desarrollo del proyecto}{21}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Base de datos}{21}{subsection.2.1.1}
+\contentsline {section}{\numberline {2.2}Tecnolog\IeC {\'\i }as }{22}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Base de datos}{22}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}\gls@gloss@i {sql} and the Relational Model}{23}{subsection.2.2.2}
+\contentsline {subsubsection}{NoSQL}{24}{section*.18}
+\contentsline {subsection}{\numberline {2.2.3}MongoDB}{26}{subsection.2.2.3}
+\contentsline {subsection}{\numberline {2.2.4}Angularjs}{26}{subsection.2.2.4}
+\contentsline {subsection}{\numberline {2.2.5}Bootstrap}{27}{subsection.2.2.5}
+\contentsline {subsection}{\numberline {2.2.6}Nodejs}{27}{subsection.2.2.6}
+\contentsline {subsection}{\numberline {2.2.7}CoffeeScript}{27}{subsection.2.2.7}
+\contentsline {subsection}{\numberline {2.2.8}Grunt}{27}{subsection.2.2.8}
+\contentsline {subsection}{\numberline {2.2.9}Docker}{27}{subsection.2.2.9}
+\contentsline {section}{\numberline {2.3}MongoDB y E-Commerce \cite {online_mongodb_ecommerce}}{28}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}\textit {Catalog Management}}{28}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}Shopping Carts and Orders}{30}{subsection.2.3.2}
+\contentsline {subsection}{\numberline {2.3.3}\textit {Querying Orders}}{31}{subsection.2.3.3}
+\contentsline {subsection}{\numberline {2.3.4}\textit {Aggregation}}{31}{subsection.2.3.4}
+\contentsline {subsection}{\numberline {2.3.5}Updating Orders}{32}{subsection.2.3.5}
+\contentsline {subsubsection}{Incrementing Quality}{32}{section*.26}
+\contentsline {subsubsection}{Adding and Removing Items}{32}{section*.27}
+\contentsline {subsection}{\numberline {2.3.6}Inventory}{33}{subsection.2.3.6}
+\contentsline {subsection}{\numberline {2.3.7}\textit {Transactions}, \textit {Consistency} y \textit {Durability}}{34}{subsection.2.3.7}
+\contentsline {subsection}{\numberline {2.3.8}\textit {Scalability}}{34}{subsection.2.3.8}
+\contentsline {subsection}{\numberline {2.3.9}Conclusion}{35}{subsection.2.3.9}
+\contentsline {chapter}{\numberline {3}Conclusiones}{37}{chapter.3}
+\contentsline {section}{\numberline {3.1}Trabajos Futuros}{37}{section.3.1}
+\contentsline {chapter}{Glosario}{38}{chapter*.30}
+\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{39}{section*.34}
+\select@language {spanish}
+\select@language {spanish}
+\select@language {spanish}
+\select@language {spanish}
+\contentsline {chapter}{\numberline {A}Apendice A}{I}{appendix.Alph1}
+\contentsline {chapter}{\numberline {B}Teoria de Grafos}{II}{appendix.Alph2}
+\contentsline {chapter}{\numberline {C}Catalog management handled with relational databases}{III}{appendix.Alph3}

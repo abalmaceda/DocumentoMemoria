@@ -1,0 +1,36 @@
+Antes de usar este template sigue los siguientes pasos:
+
+
+%%%%%%%%%%%%  1. Instalar los paquetes necesarios    %%%%%%%%%%%%%%%%%
+
+En Linux ejecutar los siguientes comandos, en windows buscar los paquetes por su nombre...
+
+sudo apt-get install texmaker && texlive-fonts-recommended && texlive-fonts-extra && texlive-science && texlive-publishers && ibus-qt4
+sudo getnonfreefonts-sys -a
+
+
+%%%%%%%%%%%%    2. Modificar el archivo babelbib.sty     %%%%%%%%%%%%
+
+sudo gedit /usr/share/texmf-texlive/tex/latex/babelbib/babelbib.sty
+
+comentando la línea 171 (con % al inicio), de forma que en vez de:
+
+    \csname extras#1\endcsname
+
+diga
+
+    %\csname extras#1\endcsname
+
+
+
+%%%%%%%%%%%%    3. Configurar compilaciones rápidas en Texmaker     %%%%%%%%%%%%
+
+Ir a: Usuario -> Editar Comandos de Usuario y agregar el comando:
+
+Elemento de Menú: "Compilar Bibliografía"
+
+Comando: "pdflatex -interaction=nonstopmode %.tex|bibtex %.aux|bibtex %.gls.aux" (sin comillas)
+
+Luego en la parte superior donde dice compilación rápida pueden seleccionar este comando y al hacer clic en al flecha del lado se ejecuta (con esto se compila una vez el documento y luego se compila la biliografía, pero para que ésta apartezca en el documento se debe volver a compilar otra vez), luego se apreta F1 para ejecutar la compilación rápida que compila el documento. 
+
+No es necesario recompilar la bibliografía cada vez que se hagan cambios en el documento, si los cambios no tienen nada que ver con citas bibliográficas no es necesario ejecutar esto, es decir, basta con apretar F1

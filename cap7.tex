@@ -1,0 +1,46 @@
+%%%%%%%%%%%%%%%%%%%%%
+%								%
+%	ANTECEDENTES GENERALES					%
+%								%
+%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Antecedentes}\label{cap:antecedentes}
+
+%%%%%%%%%%%%%%%%	MICRORREDES		%%%%%%%%%%%%%%%%%%%%
+\section{Datos de la Memoria}\label{cap:antecedentes:datos}
+Se puede CaMbIaR los datos personales y de la memoria en memoria.tex, en la sección de DATOS MEMORIA, la idea es solo cambiarlos ahí y luego referirse a ellos con los comandos asociados.
+
+\section{Bibtex}\label{cap:antecedentes:bibtex}
+Bibtex permite usar un archivo bilbio.bib con referencias bibliográficas, de las cuales solo se incluirán el documento las que sean citadas por los comandos:
+
+\cite{Bdo}
+\nocite{reactionCommerce}
+
+Donde la primera deja la referencia entre corchetes en el texto, y la segunda no deja referencia en el texto, se utiliza solo para que dicha referencia (online) aparezca en el lista de Biliografía.
+
+En el archivo biblio.bib aparecen algunos ejemplos de tipos de referencias, donde el primer campo es el nombre de la referencia.
+
+Las citas están en español y se ordenan alfabéticamente por autor. Acá otro ejemplo de cita: \cite{Palma}
+
+Ah y ojo que existen subsecciones...
+
+\subsection{Subsección de bibtex}\label{cap:antecedentes:bibtex:subseccion}
+
+\subsubsection{Subsubsección de bibtex}\label{cap:antecedentes:bibtex:subseccion:subsubsection}
+
+Es útil ser ordenado con las etiquetas (label), ya que permiten referenciar de la siguiente manera:
+
+En el capítulo \ref{cap:intro} vimos que...
+
+O si queremos que salga el nombre del capítulo también ponemos: 
+
+En el capítulo \nameref{cap:intro} vimos que...
+
+Y si queremos ambos, obviamente ponemos:
+
+En el Capítulo \ref{cap:intro}. \nameref{cap:intro} vimos que...
+
+\section{IEEE}\label{cap:antecedentes:ieee}
+Para los eléctricos que usamos papers de la IEEE es posible obtener el código de la referencia biliográfica desde el sitio de la IEEE en Download citation, seleccionando la opción Bibtex, luego esto se copia al archivo bilbio.bib :)
+
+Para hacer esto hay que conectarse al VPN de la facultad, para hacer esto desde Linux sigan las instrucciones en el archivo usar vpn.txt

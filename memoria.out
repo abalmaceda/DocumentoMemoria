@@ -1,0 +1,49 @@
+\BOOKMARK [0][-]{chapter.1}{Introducci\363n}{}% 1
+\BOOKMARK [1][-]{subsection.1.0.1}{E-Commerce en la actualidad}{chapter.1}% 2
+\BOOKMARK [2][-]{subsection.1.0.2}{E-Commerce en el futuro}{subsection.1.0.1}% 3
+\BOOKMARK [1][-]{section.1.1}{Motivaci\363n}{chapter.1}% 4
+\BOOKMARK [1][-]{section.1.2}{Alcances y Objetivo General}{chapter.1}% 5
+\BOOKMARK [1][-]{section.1.3}{Objetivos Espec\355ficos}{chapter.1}% 6
+\BOOKMARK [1][-]{section.1.4}{Caracteristicas deseables}{chapter.1}% 7
+\BOOKMARK [1][-]{section.1.5}{Estructura de la memoria}{chapter.1}% 8
+\BOOKMARK [0][-]{chapter.2}{Estado del Arte}{}% 9
+\BOOKMARK [1][-]{subsection.2.0.1}{OpenCart }{chapter.2}% 10
+\BOOKMARK [2][-]{subsection.2.0.2}{PrestaShop }{subsection.2.0.1}% 11
+\BOOKMARK [2][-]{subsection.2.0.3}{Magento Community Edition}{subsection.2.0.1}% 12
+\BOOKMARK [2][-]{subsection.2.0.4}{Zen Cart }{subsection.2.0.1}% 13
+\BOOKMARK [2][-]{subsection.2.0.5}{Spree Commerce }{subsection.2.0.1}% 14
+\BOOKMARK [2][-]{subsection.2.0.6}{Drupal Commerce }{subsection.2.0.1}% 15
+\BOOKMARK [2][-]{subsection.2.0.7}{osCommerce }{subsection.2.0.1}% 16
+\BOOKMARK [2][-]{subsection.2.0.8}{simpleCart }{subsection.2.0.1}% 17
+\BOOKMARK [2][-]{subsection.2.0.9}{WooCommerce }{subsection.2.0.1}% 18
+\BOOKMARK [2][-]{subsection.2.0.10}{WP e-Commerce }{subsection.2.0.1}% 19
+\BOOKMARK [2][-]{subsection.2.0.11}{Jigoshop }{subsection.2.0.1}% 20
+\BOOKMARK [1][-]{section.2.1}{Justificaci\363n para el desarrollo del proyecto}{chapter.2}% 21
+\BOOKMARK [2][-]{subsection.2.1.1}{Base de datos}{section.2.1}% 22
+\BOOKMARK [1][-]{section.2.2}{Tecnolog\355as }{chapter.2}% 23
+\BOOKMARK [2][-]{subsection.2.2.1}{Base de datos}{section.2.2}% 24
+\BOOKMARK [2][-]{subsection.2.2.2}{` =9 sql and the Relational Model}{section.2.2}% 25
+\BOOKMARK [2][-]{subsection.2.2.3}{MongoDB}{section.2.2}% 26
+\BOOKMARK [2][-]{subsection.2.2.4}{Angularjs}{section.2.2}% 27
+\BOOKMARK [2][-]{subsection.2.2.5}{Bootstrap}{section.2.2}% 28
+\BOOKMARK [2][-]{subsection.2.2.6}{Nodejs}{section.2.2}% 29
+\BOOKMARK [2][-]{subsection.2.2.7}{CoffeeScript}{section.2.2}% 30
+\BOOKMARK [2][-]{subsection.2.2.8}{Grunt}{section.2.2}% 31
+\BOOKMARK [2][-]{subsection.2.2.9}{Docker}{section.2.2}% 32
+\BOOKMARK [1][-]{section.2.3}{MongoDB y E-Commerce onlinemongodbecommerce}{chapter.2}% 33
+\BOOKMARK [2][-]{subsection.2.3.1}{Catalog Management}{section.2.3}% 34
+\BOOKMARK [2][-]{subsection.2.3.2}{Shopping Carts and Orders}{section.2.3}% 35
+\BOOKMARK [2][-]{subsection.2.3.3}{Querying Orders}{section.2.3}% 36
+\BOOKMARK [2][-]{subsection.2.3.4}{Aggregation}{section.2.3}% 37
+\BOOKMARK [2][-]{subsection.2.3.5}{Updating Orders}{section.2.3}% 38
+\BOOKMARK [2][-]{subsection.2.3.6}{Inventory}{section.2.3}% 39
+\BOOKMARK [2][-]{subsection.2.3.7}{Transactions, Consistency y Durability}{section.2.3}% 40
+\BOOKMARK [2][-]{subsection.2.3.8}{Scalability}{section.2.3}% 41
+\BOOKMARK [2][-]{subsection.2.3.9}{Conclusion}{section.2.3}% 42
+\BOOKMARK [0][-]{chapter.3}{Conclusiones}{}% 43
+\BOOKMARK [1][-]{section.3.1}{Trabajos Futuros}{chapter.3}% 44
+\BOOKMARK [0][-]{chapter*.30}{Glosario}{}% 45
+\BOOKMARK [0][-]{section*.34}{Bibliograf\355a}{}% 46
+\BOOKMARK [0][-]{appendix.Alph1}{Apendice A}{}% 47
+\BOOKMARK [0][-]{appendix.Alph2}{Teoria de Grafos}{}% 48
+\BOOKMARK [0][-]{appendix.Alph3}{Catalog management handled with relational databases}{}% 49
