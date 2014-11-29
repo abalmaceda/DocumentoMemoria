@@ -50,9 +50,12 @@ Temporary Items
 *.gls
 *.lof
 *.out
-*.out0
+*.outO
 *.toc
 *.mtc
+*.mtc0
 *.blg
 *.log
 *.conf
+*.lot
+*.gz
