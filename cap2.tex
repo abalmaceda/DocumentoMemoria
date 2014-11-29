@@ -147,6 +147,7 @@ Considerando esto, ¿ habrá alguna razón que justifique el desarrollo de un pr
 
 \section{Justificación para el desarrollo del proyecto}\label{cap:estadoArte:justificacion_proyecto}
 
+
 \subsection{Base de datos}
 
 base de datos escablaves horizontalmente, SQL escalables verticalmente.
@@ -242,40 +243,43 @@ Estas opciones se aplican tanto para aplicaciones analíticas como transaccional
 En una primera aproximación, \gloss{sql} permite consultar sobre aquellas preguntas sin pensar sobre como la información es expuesta en el disco, cuales indices utilizar para acceder a la información o que algoritmo utilizar para procesar la información. Un componente arquitectural significativo para la mayoría de los \textit{relational databases is a query optimizer}, el cual decide cual de las muchos equivalentes logicos planea ejecutar las respuesta mas rapida a una \textit{query}. Estos optimizadores son usualmente mejores que los promedios de los usuarios de la \textit{database}, pero en algunas ocasiones ellos no tienen la suficiente información o tienen un modelo muy simple del sistema en \textit{order} para generar ejecuciones mas eficientes.
 %To a first approximation, SQL allows you to ask these questions without thinking about how the data is laid out on disk, which indices to use to access the data, or what algorithms to use to process the data. A significant architectural component of most relational databases is a query optimizer, which decides which of the many logically equivalent query plans to execute to most quickly answer a query. These optimizers are often better than the average database user, but sometimes they do not have enough information or have too simple a model of the system in order to generate the most efficient execution.
 
-\textit{Relational databases}, las \textit{databases} mas utilizadas en la practica, siguen el modelo de datos relacional. En este modelo, diferentes entidades del \textit{real-world} son guardadas en diferentes tablas. Por ejemplo, todos los \textit{employees} podrian ser guardados en una tabla \textit{Employees}, y todos los \textit{departments} podrían ser almacenados en la tabla \textit{Departments}.Cada fila de una tabla tiene varias propiedades guardadas en columnas. Por ejemplo, \textit{employees} podrian tener un \textit{employee id}, \textit{salary}, \textit{birth date}, y \textit{first/last names}. Cada una de estas propiedades sera uardada en una columna de la tabla \textit{Employees}
+\textit{Relational databases}, las \textit{databases} mas utilizadas en la practica, siguen el modelo de datos relacional. En este modelo, diferentes entidades del \textit{real-world} son guardadas en diferentes tablas. Por ejemplo, todos los \textit{employees} podrían ser guardados en una tabla \textit{Employees}, y todos los \textit{departments} podrían ser almacenados en la tabla \textit{Departments}.Cada fila de una tabla tiene varias propiedades guardadas en columnas. Por ejemplo, \textit{employees} podrían tener un \textit{employee id}, \textit{salary}, \textit{birth date}, y \textit{first/last names}. Cada una de estas propiedades sera guardada en una columna de la tabla \textit{Employees}
 %Relational databases, which are the most common databases used in practice, follow the relational data model. In this model, different real-world entities are stored in different tables. For example, all employees might be stored in an Employees table, and all departments might be stored in a Departments table. Each row of a table has various properties stored in columns. For example, employees might have an employee id, salary, birth date, and first/last names. Each of these properties will be stored in a column of the Employees table.
 
 
-El modelo relacional, va mano a mano con \gloss{sql}. \textit{Queries} simples de \gloss{sql}, tales como filtrar, recuperar todos los registros el cual sus campos hagan \textit{match} en algunos test( ejemplo, \textit{employeeid} = 3, o salary \> \$ 20000). Constructres mas complejos causan que \textit{database} haga trabajo extra, tal como \textit{joining} información sobre multiples tablas (ejemplo., ¿Cuál es el nombre del departamento en donde \textit{employee} 3 trabaja?). Otras estructuras complejas tal como \textit{aggregates} (ejemplo, ¿ cúal es el salario promedio de mis empleados?) puede manejar para \textit{full-table scans}.
+El modelo relacional, va mano a mano con \gloss{sql}. \textit{Queries} simples de \gloss{sql}, tales como filtrar, recuperar todos los registros el cual sus campos hagan \textit{match} en algunos test( ejemplo, \textit{employeeid} = 3, o salary \> \$ 20000). Constructres mas complejos causan que \textit{database} haga trabajo extra, tal como \textit{joining} información sobre multiples tablas (ejemplo., ¿ Cuál es el nombre del departamento en donde \textit{employee} 3 trabaja?). Otras estructuras complejas tal como \textit{aggregates} (ejemplo, ¿ cuál es el salario promedio de mis empleados?) puede manejar para \textit{full-table scans}.
 %The relational model goes hand-in-hand with SQL. Simple SQL queries, such as filters, retrieve all records whose field matches some test (e.g., employeeid
 % = 3, or salary \> \$ 20000). More complex constructs cause the database to do some extra work, such as joining data from multiple tables (e.g., what is the name of the department in which employee 3 works?). Other complex constructs such as aggregates (e.g., what is the average salary of my employees?) can lead to full-table scans.
 
 
-\textit{Relational data model} define entidades altamente estructuradas con relaciones estrictas entre ellos. \textit{Quetying} este modelo con \gloss{sql} permite \textit{complex data transversa} sin desarollar mucho. La complejidad del modelo y \textit{quering}, tienen sus limites, aunque:
+\textit{Relational data model} define entidades altamente estructuradas con relaciones estrictas entre ellos. \textit{Quetying} este modelo con \gloss{sql} permite \textit{complex data transversa} sin desarrollar mucho. La complejidad del modelo y \textit{quering}, tienen sus limites, aunque:
 %The relational data model defines highly structured entities with strict relationships between them. Querying this model with SQL allows complex data traversals without too much custom development. The complexity of such modeling and querying has its limits, though:
 
-\textit{Complexity} guia a \textit{unpredictability}. La expresivilidad en \gloss{sql} implica un desafio en relación al costo de cada \textit{query}, y así el costo de \textit{workload}. Mientras, lenguages de \textit{query} simples pueden complicar la lógica, al mismo tiempo hacen que sea sencillo proveer de almacenamiento de datos., cuando solo responde a \textit{requests} simples.
+\textit{Complexity} guia a \textit{unpredictability}. La expresivilidad en \gloss{sql} implica un desafío en relación al costo de cada \textit{query}, y así el costo de \textit{workload}. Mientras, lenguajes de \textit{query} simples pueden complicar la lógica, al mismo tiempo hacen que sea sencillo proveer de almacenamiento de datos., cuando solo responde a \textit{requests} simples.
 %Complexity leads to unpredictability. SQL's expressiveness makes it challenging to reason about the cost of each query, and thus the cost of a workload. While simpler query languages might complicate application logic, they make it easier to provision data storage systems, which only respond to simple requests.
 
 Hay muchas maneras modelar un problema. \textit{Relational data model} es estricto: El \textit{schema} asignado para cada tabla especificada la \textit{data} en cada fila. Si se esta almacenando menos \textit{data} estructurada, o filas con mas diferencia en las columnas que se guardan, \textit{relational model} puede ser innecesariamente restrictiva. Similarmente, aplicaciones desarrolladas podrian no encontrar el \textit{relational model} idoneo para modelar cada tipo de \textit{data}. Por ejemplo, una gran cantidad den aplicaciones logicas son escritas en lenguaje \textit{object-oriented} e incluye conceptos \textit{high-level} tales como \textit{lists}, \textit{queues}, y \textit{sets}, y algunos programadores desearan \textit{persistence layer} para modelar esto.
 %There are many ways to model a problem. The relational data model is strict: the schema assigned to each table specifies the data in each row. If we are storing less structured data, or rows with more variance in the columns they store, the relational model may be needlessly restrictive. Similarly, application developers might not find the relational model perfect for modeling every kind of data. For example, a lot of application logic is written in object-oriented languages and includes high-level concepts such as lists, queues, and sets, and some programmers would like their persistence layer to model this.
 
+Si la \textit{data} crece mas allá de la capacidad de un servidor, entonces las tablas en la \textit{database} tendrá que ser particionado a través de varios computadores. Para evitar \textit{JOINs} a traves de la red para obtener todas las tablas requeridas, será necesario desnormalizarla. Desnormalizar guarda toda la \textit{data} de diferentes tablas que se desea observar en el mismo lugar. Esto hace que la \textit{database} simule una \textit{key-lookup store system}, dejando preguntas sobre la posibilidad de adaptarse mejor a la \textit{data}.
 %If the data grows past the capacity of one server, then the tables in the database will have to be partitioned across computers. To avoid JOINs having to cross the network in order to get data in different tables, we will have to denormalize it. Denormalization stores all of the data from different tables that one might want to look up at once in a single place. This makes our database look like a key-lookup storage system, leaving us wondering what other data models might better suit the data.
 
+Generalmente no es inteligente descartar años de consideraciones de diseño arbitrariamente.Cuando se considera el almacenamiento de la \textit{data} en una \textit{database}, considera \gloss{sql} y \textit{relational model}, los cuales son respaldados por décadas  de investigación y desarrollo, ofreciendo enriquecidas capacidades de modelamiento, y proveer garantías \textit{facil-de-entender} sobre operaciones complejas. \gloss{nosql} es una buena opción cuando se tiene un problema especifico, tal como gran cantidad de \textit{data}, un masivo \textit{workload}, o una difícil desicion de modelamiento para la cual \gloss{sql} y \textit{relational databases} podrían no haber sido optimizadas.
 %It's generally not wise to discard many years of design considerations arbitrarily. When you consider storing your data in a database, consider SQL and the relational model, which are backed by decades of research and development, offer rich modeling capabilities, and provide easy-to-understand guarantees about complex operations. NoSQL is a good option when you have a specific problem, such as large amounts of data, a massive workload, or a difficult data modeling decision for which SQL and relational databases might not have been optimized.
 
 \subsubsection{NoSQL}
 
-NoSQL encompasses a wide variety of different database technologies and were developed in response to a rise in the volume of data stored about users, objects and products, the frequency in which this data is accessed, and performance and processing needs. Relational databases, on the other hand, were not designed to cope with the scale and agility challenges that face modern applications, nor were they built to take advantage of the cheap storage and processing power available today.
+\gloss{nosql} engloba una gran variedad de diferentes \textit{database technologies} y fueron desarrolladas en respuesta al creciente volumen de \textit{data} guardada de los usuarios, objetos y productos, la frecuencia en que la \textit{data} es accesada, y la \textit{performance} en las necesidades de los procesos. \textit{Relational database}, por otra parte, no fueron diseñadas para hacer frente a los desafíos de escalabilidad y agilidad que enfrentan las aplicaciones modernas, no fueron construidas para tomar ventaja del almacenamiento barato y poder de procesamiento disponible en la actualidad.
+%NoSQL encompasses a wide variety of different database technologies and were developed in response to a rise in the volume of data stored about users, objects and products, the frequency in which this data is accessed, and performance and processing needs. Relational databases, on the other hand, were not designed to cope with the scale and agility challenges that face modern applications, nor were they built to take advantage of the cheap storage and processing power available today.
 
-\subsubsection*{Document Model}
+\subsubsection*{Document Model}\label{cap:estadoArte:tecnologias:nosql:document_model}
  Mientras \textit{relational databases store data} en filas y columnas, \textit{document databases store data} en documentos.  
 
 Estos documentos tipicamente usas una estructura equivalente a \gloss{json}, un formato muy popular entre desarrolladores. Documentos proveen una manera intuitiva y natural para modelar \textit{data} que esta cercanamente alineada con  programación \textit{object-oriented}, en el cual cada documento es efectivamente un objeto. Los documentos contienen uno o mas campos, donde cada campo contiene un tipo de valor, tales como \textit{string}, \textit{date}, \textit{binary}, o \textit{array}. En lugar de extenderse un registro entre múltiples tablas y columnas, cada registro y su \textit{data} asociada son tipicamente almacenadas juntas en un solo documento. Esto simplifica el acceso a la \textit{data} y reduce e incluso elimina la necesidad de \textit{joins} y\textit{complex transactions}.
 
-En un \textit{document database}, la nocion de esquema es dinamica: cada documento puede contiener diferentes campos. Esta flaxibilidad puede ser particulamente util para modelar \textit{data} sin estructura y \textit{polymorphic}. Esto tambien hace posible la evoluvión de una aplicación durante su derasollo, simplemente agregando nuevos campos. Adicionalmente, \textit{document databases} generalmente proveen consultas robustas que los desarrolladores esperan en \textit{relational databases}.
+En un \textit{document database}, la nocion de esquema es dinámica: cada documento puede contener diferentes campos. Esta flexibilidad puede ser particulamente util para modelar \textit{data} sin estructura y \textit{polymorphic}. Esto también hace posible la evolución de una aplicación durante su desarrollo, simplemente agregando nuevos campos. Adicionalmente, \textit{document databases} generalmente proveen consultas robustas que los desarrolladores esperan en \textit{relational databases}.
 
-Aplicaciones:\textit{Document databases} son de proposito general y utiles para una amplia variedad de aplicaciones, debido a su flexibilidad del \textit{data model}, la habilidad para consultar sobre cualquier campo y el \textit{natural mapping} del \textit{document data model} a objetos en programación de lenguajes modernos.
+Aplicaciones:\textit{Document databases} son de propósito general y útiles para una amplia variedad de aplicaciones, debido a su flexibilidad del \textit{data model}, la habilidad para consultar sobre cualquier campo y el \textit{natural mapping} del \textit{document data model} a objetos en programación de lenguajes modernos.
 
 Ejemplos: MongoDB y CouchDB.
 
@@ -288,34 +292,19 @@ Ejemplos: Neo4j y HyperGraphDB.
 
 \subsubsection*{Key-Value}
 
-From a data model perspective, key-value stores are the
-most basic type of NoSQL database. Every item in the
-database is stored as an attribute name, or key, together
-with its value. The value, however, is entirely opaque to the
-system; data can only be queried by the key. This model
-can be useful for representing polymorphic and
-unstructured data, as the database does not enforce a set
-schema across key-value pairs.
+Desde una perspectiva de\textit{data model}, \textit{key-value stores} son el tipo mas básico de las \textit{\gloss{nosql} databases}. Cada \textit{item} en la \textit{database} es guardado como un atributo \textit{name}, ó \textit{key}, junto con su \textit{value}. El \textit{value}, sin embargo, es totalmente \textit{opaque} al sistema;la \textit{data} solo puede ser requerida desde la \textit{key}. Este modelo puede ser útil para \textit{representig polymorphic} y \textit{unstructured data}, dado que la \textit{database} no define un \textit{scheme} al conjuto \textit{key-value}.
+%From a data model perspective, key-value stores are the most basic type of NoSQL database. Every item in the database is stored as an attribute name, or key, together with its value. The value, however, is entirely opaque to the system; data can only be queried by the key. This model can be useful for representing polymorphic and unstructured data, as the database does not enforce a set schema across key-value pairs.
 
 \subsubsection*{Wide Column Models}
 
 Wide column stores, or column family stores, use a sparse,
-distributed multi-dimensional sorted map to store data.
-Each record can vary in the number of columns that are
-stored, and columns can be nested inside other columns
-called super columns. Columns can be grouped together
-for access in column families, or columns can be spread
-across multiple column families. Data is retrieved by
-primary key per column family.
+distributed multi-dimensional sorted map to store data. Each record can vary in the number of columns that are stored, and columns can be nested inside other columns called super columns. Columns can be grouped together for access in column families, or columns can be spread across multiple column families. Data is retrieved by primary key per column family.
 
-Applications: Key value stores and wide column stores
-are useful for a narrow set of applications that only query
-data by a single key value. The appeal of these systems is
-their performance and scalability, which can be highly
-optimized due to the simplicity of the data access patterns.
+Applications: Key value stores and wide column stores are useful for a narrow set of applications that only query data by a single key value. The appeal of these systems is their performance and scalability, which can be highly optimized due to the simplicity of the data access patterns.
 
-2Examples: Riak and Redis (Key-Value); HBase and
-Cassandra (Wide Column).
+2Examples: Riak and Redis (Key-Value); HBase and Cassandra (Wide Column).
+
+
 
 
 
@@ -395,7 +384,8 @@ Cassandra (Wide Column).
 	\subsection{Bootstrap}
 	Bootstrap is the most popular HTML, CSS, and JS framework for developing responsive, mobile first projects on the web \cite{technology_bootstrap}.
 	
-	\subsection{Nodejs} Node.js® is a platform built on Chrome's JavaScript runtime for easily building fast, scalable network applications. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient, perfect for data-intensive real-time applications that run across distributed devices \cite{technology_nodejs}.
+	\subsection{Nodejs}
+	Node.js® is a platform built on Chrome's JavaScript runtime for easily building fast, scalable network applications. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient, perfect for data-intensive real-time applications that run across distributed devices \cite{technology_nodejs}.
 	
 	\subsection{CoffeeScript}
 	CoffeeScript is a little language that compiles into JavaScript. Underneath that awkward Java-esque patina, JavaScript has always had a gorgeous heart. CoffeeScript is an attempt to expose the good parts of JavaScript in a simple way.
@@ -669,4 +659,4 @@ MongoDB es un \textit{database management system} diseñado para hacer \textit{h
 
 Es cierto que la mayoría de \textit{NoSQL databases} no fueron construidas considerando \textit{e-Commmerce}. \textit{Databases} que carecen \textit{data models} enriquecidos, \textit{dynamic queries}, y la noción de \textit{transactionality} no puede esperarse que compitan en el espacio de \textit{e-Commerce}, entonces no es comprensible que no se considere MongoDB tampoco.
 
-Pero para las partes en donde el sitio \textit{\gloss{eCommerce}} comprende el manejo de contenido, MongoDB es claro vencedor. E incluso para mas \textit{transactional components} del sistema, MongoDB tiene características que hacen de la posibilidad de correr un sistema completo de \textit{e-Commerce} una realidad.
+Pero para las partes en donde el sitio \textit{\gloss{ecommerce}} comprende el manejo de contenido, MongoDB es claro vencedor. E incluso para mas \textit{transactional components} del sistema, MongoDB tiene características que hacen de la posibilidad de correr un sistema completo de \textit{e-Commerce} una realidad.
