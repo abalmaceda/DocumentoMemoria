@@ -53,3 +53,5 @@ Temporary Items
 *.out0
 *.toc
 *.mtc
+*.blg
+*.log
