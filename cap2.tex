@@ -139,31 +139,6 @@ Aquí hay una lista de 11 \textit{open-source e-Commerce solutions}. El \textit{
 
 \nameJigoshop es una solucion \textit{e-Commerce} \textit{free} y \textit{open-source} basado en WordPress. Liberado en 2011, \nameJigoshop es el predecesor para WooCommerce. \nameJigoshop tiene mas de 30   \textit{themes}, 100 extensiones, y tres \textit{theme frameworks}. \nameJigoshop es  \textit{free}, asi como el soporte a \textit{WordPress.org}. Sin embago, el acceso a la comunidad de \textit{Jigoshop.com} comienza desde \$40 por mes.
 
-
-
-Como se observa, existe una gran cantidad de aplicaciones \textit{open-souce} las cuales están disponibles para ingresar al mundo del comercio electrónico. Todas estas opciones tienen grandes comunidades que las respaldan, asi como muchos usuarios satisfechos. 
-
-Considerando esto, ¿ habrá alguna razón que justifique el desarrollo de un proyecto de estas características?
-
-\section{Justificación para el desarrollo del proyecto}\label{cap:estadoArte:justificacion_proyecto}
-
-
-\subsection{Base de datos}
-
-base de datos escablaves horizontalmente, SQL escalables verticalmente.
-
-
-
-
-What about transactions?
-
-
-Many people bring up MongoDB’s lack of atomic transactions across collections as evidence that it’s not suitable for e-commerce applications. This has not been a significant barrier in our experience so far.
-
-There are other ways to approach data integrity. In systems with low-moderate data contention, optimistic locking is sufficient. We’ll share more details about these strategies as things progress.
-
-
-
 \begin{table}[h!]
     \tiny
    
@@ -197,11 +172,297 @@ There are other ways to approach data integrity. In systems with low-moderate da
 
 \\ \hline
 \end{tabular}
+    \caption{ Resumen tecnologías entre diferentes opciones \textit{e-Commerce}}
+    \label{tab:resume_technology_ecommerce}
+\end{table}
+
+Como se observa, existe una gran cantidad de aplicaciones \textit{open-souce} las cuales están disponibles para ingresar al mundo del comercio electrónico. Todas estas opciones tienen grandes comunidades que las respaldan, así como muchos usuarios satisfechos. 
+
+Considerando esto, ¿ habrá alguna razón que justifique el desarrollo de un proyecto de estas características?
+
+\section{Justificación para el desarrollo del proyecto}\label{cap:estadoArte:justificacion_proyecto}
+
+\subsection{Nueva tecnología no es sinónimo de mejores soluciones}
+%TODO
+\subsubsection{El contexto como variable para la mejor solución}
+%TODO
+
+
+Node no es la panacea para todo, tiene muchos issues con los cuales hay que lidiar, pero es probable una de las mejores soluciones que se pueden tomar(LinkedIn).
+
+***************************************************************************
+Kiran Prasad, Sr. Director, Mobile Engineering, LinkedIn
+
+Una pregunta interesante saber cuales son los problemas que te hicieron mirar hacia nodeJ(pregunta a KIRAN Prased)
+
+Cuando llegue a LinkedIN estabamos corriendo cosas en Ruby and Rails stack, una de las cosas que encontramos es que el FRONT-END 
+
+eficiencia en memoria
+
+
+
+***************************************************************************
+Sri Viswanath, SVP Engineering and Operations, Groupon
+
+low latency
+
+
+***************************************************************************
+Jigar Desai, Sr. Director, Platforms, eBay
+
+***************************************************************************
+Billy Scott, PayPal
+
+\subsubsection{Node.js vs Java \cite{online_nodejs_paypal}}
+
+
+La primera adopción que hizo Paypal con Node.js no fue una aplicación menor; esto fue su \textit{account overview page} y una de las mas \textit{trafficked} \textit{apps} en el \textit{website}. Ellos tomaron un gran riesgo, pero lo hicieron con la finalidad de determinar si realmente la nueva plataforma representaba una mejora con respecto al sistema actual.
+%Our first adopter of node.js in production wasn’t a minor application; it was our account overview page and one of the most trafficked apps on the website. We decided to go big, but we also mitigated that risk by building the equivalent Java application in parallel. We knew how to deploy and scale Java applications, so if anything went wrong with the node.js app, we could fall back to the Java one. This provided the setting for some interesting data.
+
+Una vez que la aplicación con Node.js logro las mismas funcionalidades que la aplicación actual, persivieron el siguiente resultado:
+
+\begin{itemize}
+\item Fue construida casi \textbf{el doble de rapido con menos personal}.
+\item Escrito con un \textbf{33\% menos de lineas de código}.
+\item Construida con \textbf{40\% menos de archivos}.
+\end{itemize}
+
+Por si solo, esto mostro evidencia que mostraba a los equipos desarrollar más rápido utilizando \textit{JavaScript}
+
+Performance fue un tópico interesante. Se pudo analizar 2 aplicaciones con exactamente las mismas funcionalidades: una con \textit{framework} Java interno basado en Spring y la otra construida en \textit{kraken.js} usando \textit{express}, \textit{dust.js} y otros códigos \textit{open source}.
+%Performance is a fun and debatable topic. In our case, we had two applications with the exact same functionality and built by roughly the same teams: one on our internal Java framework based on Spring and the other built on kraken.js using express, dust.js and other open source code.
+
+Se ejecutaron los test adecuados utilizando \textit{hardware} de producción que probaran las rutas y recolectaran \textit{data} rendimiento y tiempo de respuesta.
+%We ran our test suite using production hardware that tested the routes and collected data on throughput and response time.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.6\textwidth]{figuras/cap2/java_nodejs_benchmark_paypal.png}
+	\caption{\textit{Performance} de la aplicación en Java y Node.js}
+	\label{cap2:figure:java_benchmark_paypal}
+\end{figure}
+
+Se observa que la aplicación que utiliza Node.js tiene:
+%You can see that the node.js application had:
+
+
+
+\begin{itemize}
+\item El doble de solicitudes por segundo vs. la aplicación Java. Esto es incluso mas interesante porque los resultados iniciales de rendimiento estaban utilizando un solo nucleo para la aplicación Node.js, en comptaración con cinco nñucleos en Java. Se espere aumentar aun más esta brecha en el futuro.
+%Double the requests per second vs. the Java application. This is even more interesting because our initial performance results were using a single core for the node.js application compared to five cores in Java. We expect to increase this divide further.
+\item \textbf{Disminución en un 35\% en el tiempo promedio de respuesta} para la misma página. Esto se resulto ser \textbf{200ms mas rápido} en el servidor. Algo que los usuarios definitivamente notan.
+%35% decrease in the average response time for the same page. This resulted in the pages being served 200ms faster— something users will definitely notice.
+\end{itemize}
+
+
+%There’s a disclaimer attached to this data: this is with our frameworks and two of our applications. It’s just about as apples-to-apples a performance test as we could get between technologies, but your milage may vary. That said, we’re excited by what we’ve seen from node.js’ raw performance.
+
+Mas ejemplos de benchmark \cite{online_nodejs_java_dzone}
+
+
+\subsubsection{Node.js vs PHP\cite{online_nodejs_php_loadimpact}}
+
+No es justo comprar Node.js con PHP. Lo que realmente se compara es Node.js y PHP+Apacha2 ( u otro servidor http ). Es este caso particular, las pruebas fueron realizadas usando Apache2 y \textit{mod_php}, dado que es por lejos la configuración mas común. 
+%So no, it’s not fair to say that we compare Node.js and PHP. What we really compare is Node.js and PHP+Apache2 (or any other http server). For this article, I’ve used Apache2 and mod_php since it’s by far the most common configuration. Some might say that I’d get much better results if I had used Nginx or Lighthttpd as the http server for PHP. That’s most likely very true, but at the end of the day, server side PHP depends on running in multiple separate processes. Regardless if we create those processes with mod_php or fastcgi or any other mechanism. So, I’m sticking with the standard server setup for PHP and I think that makes good sense.
+
+
+
+
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.6\textwidth]{figuras/cap2/node_benchmak_loadimpact.png}
+	\caption{\textit{Performance} de la aplicación Node.js}
+	\label{cap2:figure:java_benchmark_paypal}
+\end{figure}
+
+El primer grafico muetra lo que sucede cuando se carga el test en el servidor utilizando Node.js. La respuesta de tiempo (azul) es mucho mas constante durante todo el test. 
+
+%The first graph here shows what happens when we load test the Node.js server. The response time (blue) is pretty much constant all through the test. My back of a napkin analysis of the initial outliers is that they have to do with a cold MySQL cache. Now, have a look at the results from the PHP test:
+
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.6\textwidth]{figuras/cap2/phpapache_benchmak_loadimpact.png}
+	\caption{\textit{Performance} de la aplicación en PHP/Apache}
+	\label{cap2:figure:java_benchmark_paypal}
+\end{figure}
+
+Muy diferente los resultados para el caso de PHP. No es sencillo observar que sucede, pero las lineas azules están inicialmente estables a 320ms hasta cerca de 340 usuarios activos simultáneos. Después de eso, se observa un pequeño incremento en el tiempo de respuesta pero después de agregar mas usuarios activos simultáneos, el tiempo de respuesta se dispara por completo. 
+%Quite different results. It’s not easy to see on this screen shot, but the blue lines is initially stable at 320 ms response time up to about 340 active concurrent users. After that, we first see a small increase in response time but after additional active concurrent users are added, the response time eventually goes through the roof completely.
+
+¿ Qué problema tiene PHP/Apache?
+%So what’s wrong with PHP/Apache?
+
+La diferencia no es de sorprender. Esto es producto de la diferencia de arquitectura entre ambas soluciones.
+%Ok, so what we’re looking at is not very surprising, it’s the difference in architecture between the two solutions. Let’s think about what goes on in each case.
+
+Cuando Apache2 sirve a una pagina PHP, este deja la ejecución PHP a un \textit{child process} específico. Ese \textit{child process} puede solo manejar una solicitud PHP al mismo tiempo, así que si hay mas solicitudes, las otras deben esperar. En el servidor hay un máximo de 256 clientes (MaxClients) configurados vs 150 que vienen por defecto. Incluso si es posible aumentar el MaxClients hasta mas allá de 256, habrá problemas con la memoria interna(RAM), Al final, se necesita encontrar el balance correcto entre el máximo numero de solicitudes simultaneas y los recursos disponibles del servidor.
+%When Apache2 serves up the PHP page it leaves the PHP execution to a specific child process. That child process can only handle one PHP request at a time so if there are more requests than than, the others have to wait. On this server, there’s a maximum of 256 clients (MaxClients) configured vs 150 that comes standard. Even if it’s possible to increase MaxClients to well beyond 256, that will in turn give you a problem with internal memory (RAM). At the end, you need to find the correct balance between max nr of concurrent requests and available server resources.
+
+Pero para Node.js, es sencillo. Después de todo, cada solicitud es cerca de 30\% mas rápido que PHP, así que en \textit{performance}, el cual es una configuración extremadamente básica, Node.js es mas rápido. Ademas, en Node.js Todo esta en un solo proceso en el servidor. Un proceso manejando una solicitud activa. Así que no existe una comunicación interna de procesos entre diferentes instancias y el proceso madre. Incluso, pos solicitud, Node es mucho mas eficiente. PHP/Apache necesita muchísimo PHP y sobrecarga de procesos por cada simultaneo  \textit{worker/client}mientras Node compartirá la mayoría de su memoria entre las solicitudes.
+%But for Node, it’s easier. First of all, in the calm territory, each request is about 30% faster than for PHP, so in pure performance in this extremely basic setup, Node is quicker. Also going for Node is the fact that everything is in one single process on the server. One process with one active request handling thread. So thre’s no inter process communication between different instances and the ‘mother’ process. Also, per request, Node is much more memory efficient. PHP/Apache needs to have a lot of php and process overhead per concurrent worker/client while Node will share most of it’s memory between the requests.
+
+%Also note that in both these tests, CPU load was never a problem. Even if CPU loads varies with concurrent users in both tests it stays below 5% (and yes, I did not just rely on the graph, I checked it on the server as well). (I’ll write a follow up on this article at some point when I can include server memory usage as well). So we haven’t loaded this server into oblivion in any way, we’ve just loaded it hard enough for the PHP/Aapache architecture to start showing some of it’s problems.
+
+Mas ejemplos de \textit{benchmark} \cite{online_nodejs_java_appdynamics}
+
+
+\subsubsection{¿ Qué hace a Node.js mejor?}
+
+Node.js introduce al menos 2 nuevas características ( para una amplia audiencia ). Primero, la habilidad  de escribir código JavaScript en el lado del servidor. En teoría esto puede ser una ventaja dado que JavaScipt es mas importante que nunca en el lado del cliente y usando el mismo lenguaje en el servidor y en el navegador deberían haber muchísimos beneficios. 
+%Node.js introduces at least two new things (for a broader audience). First, the ability to write server side JavaScript code. In theory this could be an advantage since JavaScript is more important than ever on the client side and using the same language on server and browser would have many benefits. That’s at least quite cool.
+
+La otra cosa que introduce Node.js es que es completamente asíncrono y orientado al evento. Node.js esta basado en el supuesto que muchísimo código de computador realmente espera por I/O la mayoría del tiempo, como esperando por un archivo para ser escrito en el disco o por una solicitud MySQL para retornar \textit{data}. Para lograr eso, mas o menos cada función en Node.js es \textit{non-blocking}.
+%The other thing that makes Node.js different is that it’s completely asynchronous and event driven. Node is based on the realization that a lot of computer code actually just sits idle and wait for I/O most of the time, like waiting for a file to be written to disk or for a MySQL query to return data. To accomplish that, more or less every single function in Node.js is non-blocking.
+
+Cuando se solicita a nodo abrir un archivo, no se espera a que retorne. En lugar de eso, se le comunica a Node.js a que función se le entrega el resultado y continuar con otra ejecución. Esto conduce a una dramática diferencia  para estructurar el código con \textit{callback} anidados y funciones anónimas de clausura.  Terminaras con algo como esto:
+%When you ask for node to open a file, you don’t wait for it to return. Instead, you tell node what function to pass the results to and get on with executing other statements. This leads to a dramatically different way to structure your code with deeply nested callbacks and anonymous function and closures. You end up with something  like this:
+
+
+\medskip
+\begin{lstlisting}[caption= Ejemplo de anidación de funciones.]
+	doSomething(val, function(err,result){
+		doSomethingElse(result,function(err,res){
+			doAbra();
+			doKadabra(err, res, function() {
+				...
+				...
+			});
+		});
+	});
+\end{lstlisting}
+
+
+La cualidad que hace diferente a Node.js, es que no es necesario utilizar un servidor http(s) separado. Es completamente común poner Node.js detrás de un Nginx, pero eso no es estrictamente necesario. Así que el corazón de las aplicaciones \textit{web} típicas de Node.js  es la implementación de su servidor real.
+%It’s quite easy to end up with very deep nesting that in my opinion sometimes affects code readability in a negative way. But compared to what gets said about PHP, that’s very mild critique. And.. oh! The third thing that is quite different is that in Node.js, you don’t have to use a separate http(s) server. It’s quite common to put Node.js behind a Nginx, but that’s not strictly needed. So the heart of a typical Node.js web application is the implementation of the actual web server.
+
+
+*****************************************************************************
+
+
+Hopefully, this shows the inherit differences in two different server technologies. One old trusted and one young and trending. Hopefully it’s apparent that your core technical choices will affect your server performance and in the end, how much load you can take. Designing for high load and high scalability begins early in the process, before the first line of code is ever written.
+
+And sure, in real life, there are numerous of tricks available to reduce the effects seen here. In real life, lots of Facebook still runs on PHP.
+
+
+\subsection{Base de datos}
+
+%TODO inicio de antiguo base de datos
+
+base de datos escablaves horizontalmente, SQL escalables verticalmente.
+
+
+
+
+What about transactions?
+
+
+Many people bring up MongoDB’s lack of atomic transactions across collections as evidence that it’s not suitable for e-commerce applications. This has not been a significant barrier in our experience so far.
+
+There are other ways to approach data integrity. In systems with low-moderate data contention, optimistic locking is sufficient. We’ll share more details about these strategies as things progress.
+
+
+
+\begin{table}[h!]
+    \tiny
+   
+%\begin{tabular}{ |C{0.3\paperwidth}|C{0.3\paperwidth}| }
+\begin{tabular}{ |l|c|c|c|c|c| }
+
+
+\hline
+	&
+	\textit{Free database backend support}&
+	Language&
+	\textit{\gloss{waf}}&
+	License&
+
+\\ \hline
+	\nameOpenCart &
+	MySQL&
+	PHP&
+	&
+	GPLv3&
+	
+\\ \hline
+	\namePrestaShop &
+	MySQL&
+	PHP&
+	&
+	Open Software License&
+	
+\\ \hline
+	\nameMagento &
+	MySQL&
+	PHP&
+	Zend Framework\cite{online_zend_framework}&
+	Open Software License&
+	
+\\ \hline
+	\nameZenCart &
+	&
+	&
+	&
+	&
+ 
+\\ \hline
+	\nameSpreeCommerce &
+	MySQL, PostgreSQL, SQLite3&
+	Ruby\cite{online_ruby_language}&
+	Ruby on Rails\cite{online_ruby_rails}&
+	New BSD License&
+
+\\ \hline
+	\nameDrupalCommerce &
+	MySQL, PostgreSQL, SQLite3&
+	PHP&
+	Drupal\cite{online_drupal}&
+	GNU GPL&
+	
+\\ \hline
+	\nameOsCommerce &
+	&
+	&
+	&
+	&
+
+\\ \hline
+	\nameSimpleCart &
+	&
+	&
+	&
+	&
+	
+\\ \hline
+	\nameWooCommerce &
+	MySQL&
+	PHP&
+	WordPress\cite{online_wordpress}&
+	GNU GPL&
+	
+\\ \hline
+	\nameWPECommerce &
+	&
+	&
+	&
+	&
+	
+\\ \hline
+	\nameJigoshop &
+	MySQL&
+	PHP&
+	WordPress\cite{online_wordpress}&
+	GNU GPL&
+	
+\\ \hline
+\end{tabular}
     \caption{ Comparación entre diferentes opciones \textit{e-Commerce}}
     \label{tab:wide_table}
 \end{table}
 
-\section{Tecnologías }\label{cap:estadoArte:tecnologias}
+
+%TODO fin de antiguo base de datos
 
 
 \subsection{Base de datos}
@@ -234,20 +495,20 @@ Estas opciones se aplican tanto para aplicaciones analíticas como transaccional
 %management technologies called "NoSQL", or "Not Only
 %SQL", such as MongoDB
 
-\subsection{\gloss{sql} and the Relational Model}
+\subsubsection{\gloss{sql} and the Relational Model}
 
-\gloss{sql} es un lenguaje declarativo de consulta de datos . Un lenguaje declarativo es uno en el cual un programador specifica lo que desea y el sistema lo ejecuta, en lugar de definir proceduralmente como el sistema deberia hacerlo. Unos pocos ejemplos incluyen: encontrar el registro del empleado 39, mostrar solo el nombre y el numero de telefono del empleado de la totalidad de su registro, filtrar los registros de los empleados a aquellos que trabajan en contabilidad, contar la cantidad de empleados en cada departamento, unir la información de la tabla de los empleados \textit{employees} con la tabla de \textit{managers}.
+\gloss{sql} es un lenguaje declarativo de consulta de datos . Un lenguaje declarativo es uno en el cual un programador especifica lo que desea y el sistema lo ejecuta, en lugar de definir proceduralmente como el sistema debería hacerlo. Unos pocos ejemplos incluyen: encontrar el registro del empleado 39, mostrar solo el nombre y el numero de teléfono del empleado de la totalidad de su registro, filtrar los registros de los empleados a aquellos que trabajan en contabilidad, contar la cantidad de empleados en cada departamento, unir la información de la tabla de los empleados \textit{employees} con la tabla de \textit{managers}.
 %SQL is a declarative language for querying data. A declarative language is one in which a programmer specifies what they want the system to do, rather than procedurally defining how the system should do it. A few examples include: find the record for employee 39, project out only the employee name and phone number from their entire record, filter employee records to those that work in accounting, count the employees in each department, or join the data from the employees table with the managers table.
 
 
-En una primera aproximación, \gloss{sql} permite consultar sobre aquellas preguntas sin pensar sobre como la información es expuesta en el disco, cuales indices utilizar para acceder a la información o que algoritmo utilizar para procesar la información. Un componente arquitectural significativo para la mayoría de los \textit{relational databases is a query optimizer}, el cual decide cual de las muchos equivalentes logicos planea ejecutar las respuesta mas rapida a una \textit{query}. Estos optimizadores son usualmente mejores que los promedios de los usuarios de la \textit{database}, pero en algunas ocasiones ellos no tienen la suficiente información o tienen un modelo muy simple del sistema en \textit{order} para generar ejecuciones mas eficientes.
+En una primera aproximación, \gloss{sql} permite consultar sobre aquellas preguntas sin pensar sobre como la información es expuesta en el disco, cuales indices utilizar para acceder a la información o que algoritmo utilizar para procesar la información. Un componente arquitectural significativo para la mayoría de los \textit{relational databases is a query optimizer}, el cual decide cual de las muchos equivalentes lógicos planea ejecutar las respuesta mas rápida a una \textit{query}. Estos optimizadores son usualmente mejores que los promedios de los usuarios de la \textit{database}, pero en algunas ocasiones ellos no tienen la suficiente información o tienen un modelo muy simple del sistema en \textit{order} para generar ejecuciones mas eficientes.
 %To a first approximation, SQL allows you to ask these questions without thinking about how the data is laid out on disk, which indices to use to access the data, or what algorithms to use to process the data. A significant architectural component of most relational databases is a query optimizer, which decides which of the many logically equivalent query plans to execute to most quickly answer a query. These optimizers are often better than the average database user, but sometimes they do not have enough information or have too simple a model of the system in order to generate the most efficient execution.
 
 \textit{Relational databases}, las \textit{databases} mas utilizadas en la practica, siguen el modelo de datos relacional. En este modelo, diferentes entidades del \textit{real-world} son guardadas en diferentes tablas. Por ejemplo, todos los \textit{employees} podrían ser guardados en una tabla \textit{Employees}, y todos los \textit{departments} podrían ser almacenados en la tabla \textit{Departments}.Cada fila de una tabla tiene varias propiedades guardadas en columnas. Por ejemplo, \textit{employees} podrían tener un \textit{employee id}, \textit{salary}, \textit{birth date}, y \textit{first/last names}. Cada una de estas propiedades sera guardada en una columna de la tabla \textit{Employees}
 %Relational databases, which are the most common databases used in practice, follow the relational data model. In this model, different real-world entities are stored in different tables. For example, all employees might be stored in an Employees table, and all departments might be stored in a Departments table. Each row of a table has various properties stored in columns. For example, employees might have an employee id, salary, birth date, and first/last names. Each of these properties will be stored in a column of the Employees table.
 
 
-El modelo relacional, va mano a mano con \gloss{sql}. \textit{Queries} simples de \gloss{sql}, tales como filtrar, recuperar todos los registros el cual sus campos hagan \textit{match} en algunos test( ejemplo, \textit{employeeid} = 3, o salary \> \$ 20000). Constructres mas complejos causan que \textit{database} haga trabajo extra, tal como \textit{joining} información sobre multiples tablas (ejemplo., ¿ Cuál es el nombre del departamento en donde \textit{employee} 3 trabaja?). Otras estructuras complejas tal como \textit{aggregates} (ejemplo, ¿ cuál es el salario promedio de mis empleados?) puede manejar para \textit{full-table scans}.
+El modelo relacional, va mano a mano con \gloss{sql}. \textit{Queries} simples de \gloss{sql}, tales como filtrar, recuperar todos los registros el cual sus campos hagan \textit{match} en algunos test( ejemplo, \textit{employeeid} = 3, o salary \> \$ 20000). Constructres mas complejos causan que \textit{database} haga trabajo extra, tal como \textit{joining} información sobre múltiples tablas (ejemplo., ¿ Cuál es el nombre del departamento en donde \textit{employee} 3 trabaja?). Otras estructuras complejas tal como \textit{aggregates} (ejemplo, ¿ cuál es el salario promedio de mis empleados?) puede manejar para \textit{full-table scans}.
 %The relational model goes hand-in-hand with SQL. Simple SQL queries, such as filters, retrieve all records whose field matches some test (e.g., employeeid
 % = 3, or salary \> \$ 20000). More complex constructs cause the database to do some extra work, such as joining data from multiple tables (e.g., what is the name of the department in which employee 3 works?). Other complex constructs such as aggregates (e.g., what is the average salary of my employees?) can lead to full-table scans.
 
@@ -258,13 +519,13 @@ El modelo relacional, va mano a mano con \gloss{sql}. \textit{Queries} simples d
 \textit{Complexity} guia a \textit{unpredictability}. La expresivilidad en \gloss{sql} implica un desafío en relación al costo de cada \textit{query}, y así el costo de \textit{workload}. Mientras, lenguajes de \textit{query} simples pueden complicar la lógica, al mismo tiempo hacen que sea sencillo proveer de almacenamiento de datos., cuando solo responde a \textit{requests} simples.
 %Complexity leads to unpredictability. SQL's expressiveness makes it challenging to reason about the cost of each query, and thus the cost of a workload. While simpler query languages might complicate application logic, they make it easier to provision data storage systems, which only respond to simple requests.
 
-Hay muchas maneras modelar un problema. \textit{Relational data model} es estricto: El \textit{schema} asignado para cada tabla especificada la \textit{data} en cada fila. Si se esta almacenando menos \textit{data} estructurada, o filas con mas diferencia en las columnas que se guardan, \textit{relational model} puede ser innecesariamente restrictiva. Similarmente, aplicaciones desarrolladas podrian no encontrar el \textit{relational model} idoneo para modelar cada tipo de \textit{data}. Por ejemplo, una gran cantidad den aplicaciones logicas son escritas en lenguaje \textit{object-oriented} e incluye conceptos \textit{high-level} tales como \textit{lists}, \textit{queues}, y \textit{sets}, y algunos programadores desearan \textit{persistence layer} para modelar esto.
+Hay muchas maneras modelar un problema. \textit{Relational data model} es estricto: El \textit{schema} asignado para cada tabla especificada la \textit{data} en cada fila. Si se esta almacenando menos \textit{data} estructurada, o filas con mas diferencia en las columnas que se guardan, \textit{relational model} puede ser innecesariamente restrictiva. Similarmente, aplicaciones desarrolladas podrían no encontrar el \textit{relational model} idóneo para modelar cada tipo de \textit{data}. Por ejemplo, una gran cantidad den aplicaciones lógicas son escritas en lenguaje \textit{object-oriented} e incluye conceptos \textit{high-level} tales como \textit{lists}, \textit{queues}, y \textit{sets}, y algunos programadores desearan \textit{persistence layer} para modelar esto.
 %There are many ways to model a problem. The relational data model is strict: the schema assigned to each table specifies the data in each row. If we are storing less structured data, or rows with more variance in the columns they store, the relational model may be needlessly restrictive. Similarly, application developers might not find the relational model perfect for modeling every kind of data. For example, a lot of application logic is written in object-oriented languages and includes high-level concepts such as lists, queues, and sets, and some programmers would like their persistence layer to model this.
 
-Si la \textit{data} crece mas allá de la capacidad de un servidor, entonces las tablas en la \textit{database} tendrá que ser particionado a través de varios computadores. Para evitar \textit{JOINs} a traves de la red para obtener todas las tablas requeridas, será necesario desnormalizarla. Desnormalizar guarda toda la \textit{data} de diferentes tablas que se desea observar en el mismo lugar. Esto hace que la \textit{database} simule una \textit{key-lookup store system}, dejando preguntas sobre la posibilidad de adaptarse mejor a la \textit{data}.
+Si la \textit{data} crece mas allá de la capacidad de un servidor, entonces las tablas en la \textit{database} tendrá que ser particionado a través de varios computadores. Para evitar \textit{JOINs} a través de la red para obtener todas las tablas requeridas, será necesario desnormalizarla. Desnormalizar guarda toda la \textit{data} de diferentes tablas que se desea observar en el mismo lugar. Esto hace que la \textit{database} simule una \textit{key-lookup store system}, dejando preguntas sobre la posibilidad de adaptarse mejor a la \textit{data}.
 %If the data grows past the capacity of one server, then the tables in the database will have to be partitioned across computers. To avoid JOINs having to cross the network in order to get data in different tables, we will have to denormalize it. Denormalization stores all of the data from different tables that one might want to look up at once in a single place. This makes our database look like a key-lookup storage system, leaving us wondering what other data models might better suit the data.
 
-Generalmente no es inteligente descartar años de consideraciones de diseño arbitrariamente.Cuando se considera el almacenamiento de la \textit{data} en una \textit{database}, considera \gloss{sql} y \textit{relational model}, los cuales son respaldados por décadas  de investigación y desarrollo, ofreciendo enriquecidas capacidades de modelamiento, y proveer garantías \textit{facil-de-entender} sobre operaciones complejas. \gloss{nosql} es una buena opción cuando se tiene un problema especifico, tal como gran cantidad de \textit{data}, un masivo \textit{workload}, o una difícil desicion de modelamiento para la cual \gloss{sql} y \textit{relational databases} podrían no haber sido optimizadas.
+Generalmente no es inteligente descartar años de consideraciones de diseño arbitrariamente.Cuando se considera el almacenamiento de la \textit{data} en una \textit{database}, considera \gloss{sql} y \textit{relational model}, los cuales son respaldados por décadas  de investigación y desarrollo, ofreciendo enriquecidas capacidades de modelamiento, y proveer garantías \textit{fácil-de-entender} sobre operaciones complejas. \gloss{nosql} es una buena opción cuando se tiene un problema especifico, tal como gran cantidad de \textit{data}, un masivo \textit{workload}, o una difícil decisión de modelamiento para la cual \gloss{sql} y \textit{relational databases} podrían no haber sido optimizadas.
 %It's generally not wise to discard many years of design considerations arbitrarily. When you consider storing your data in a database, consider SQL and the relational model, which are backed by decades of research and development, offer rich modeling capabilities, and provide easy-to-understand guarantees about complex operations. NoSQL is a good option when you have a specific problem, such as large amounts of data, a massive workload, or a difficult data modeling decision for which SQL and relational databases might not have been optimized.
 
 \subsubsection{NoSQL}
@@ -277,7 +538,7 @@ Generalmente no es inteligente descartar años de consideraciones de diseño arb
 
 Estos documentos tipicamente usas una estructura equivalente a \gloss{json}, un formato muy popular entre desarrolladores. Documentos proveen una manera intuitiva y natural para modelar \textit{data} que esta cercanamente alineada con  programación \textit{object-oriented}, en el cual cada documento es efectivamente un objeto. Los documentos contienen uno o mas campos, donde cada campo contiene un tipo de valor, tales como \textit{string}, \textit{date}, \textit{binary}, o \textit{array}. En lugar de extenderse un registro entre múltiples tablas y columnas, cada registro y su \textit{data} asociada son tipicamente almacenadas juntas en un solo documento. Esto simplifica el acceso a la \textit{data} y reduce e incluso elimina la necesidad de \textit{joins} y\textit{complex transactions}.
 
-En un \textit{document database}, la nocion de esquema es dinámica: cada documento puede contener diferentes campos. Esta flexibilidad puede ser particulamente util para modelar \textit{data} sin estructura y \textit{polymorphic}. Esto también hace posible la evolución de una aplicación durante su desarrollo, simplemente agregando nuevos campos. Adicionalmente, \textit{document databases} generalmente proveen consultas robustas que los desarrolladores esperan en \textit{relational databases}.
+En un \textit{document database}, la noción de esquema es dinámica: cada documento puede contener diferentes campos. Esta flexibilidad puede ser particularmente útil para modelar \textit{data} sin estructura y \textit{polymorphic}. Esto también hace posible la evolución de una aplicación durante su desarrollo, simplemente agregando nuevos campos. Adicionalmente, \textit{document databases} generalmente proveen consultas robustas que los desarrolladores esperan en \textit{relational databases}.
 
 Aplicaciones:\textit{Document databases} son de propósito general y útiles para una amplia variedad de aplicaciones, debido a su flexibilidad del \textit{data model}, la habilidad para consultar sobre cualquier campo y el \textit{natural mapping} del \textit{document data model} a objetos en programación de lenguajes modernos.
 
@@ -292,7 +553,7 @@ Ejemplos: Neo4j y HyperGraphDB.
 
 \subsubsection*{Key-Value}
 
-Desde una perspectiva de\textit{data model}, \textit{key-value stores} son el tipo mas básico de las \textit{\gloss{nosql} databases}. Cada \textit{item} en la \textit{database} es guardado como un atributo \textit{name}, ó \textit{key}, junto con su \textit{value}. El \textit{value}, sin embargo, es totalmente \textit{opaque} al sistema;la \textit{data} solo puede ser requerida desde la \textit{key}. Este modelo puede ser útil para \textit{representig polymorphic} y \textit{unstructured data}, dado que la \textit{database} no define un \textit{scheme} al conjuto \textit{key-value}.
+Desde una perspectiva de\textit{data model}, \textit{key-value stores} son el tipo mas básico de las \textit{\gloss{nosql} databases}. Cada \textit{item} en la \textit{database} es guardado como un atributo \textit{name}, ó \textit{key}, junto con su \textit{value}. El \textit{value}, sin embargo, es totalmente \textit{opaque} al sistema;la \textit{data} solo puede ser requerida desde la \textit{key}. Este modelo puede ser útil para \textit{representig polymorphic} y \textit{unstructured data}, dado que la \textit{database} no define un \textit{scheme} al conjunto \textit{key-value}.
 %From a data model perspective, key-value stores are the most basic type of NoSQL database. Every item in the database is stored as an attribute name, or key, together with its value. The value, however, is entirely opaque to the system; data can only be queried by the key. This model can be useful for representing polymorphic and unstructured data, as the database does not enforce a set schema across key-value pairs.
 
 \subsubsection*{Wide Column Models}
@@ -374,6 +635,7 @@ Applications: Key value stores and wide column stores are useful for a narrow se
     \label{tab:SQL_vs_noSQL_summary}
 \end{table}
 
+\section{Tecnologías }\label{cap:estadoArte:tecnologias}
 
 	\subsection{MongoDB}
 	MongoDB (from "humongous") is an open-source document database, and the leading NoSQL database. Written in C++ \cite{technology_mongodb}.
@@ -660,3 +922,13 @@ MongoDB es un \textit{database management system} diseñado para hacer \textit{h
 Es cierto que la mayoría de \textit{NoSQL databases} no fueron construidas considerando \textit{e-Commmerce}. \textit{Databases} que carecen \textit{data models} enriquecidos, \textit{dynamic queries}, y la noción de \textit{transactionality} no puede esperarse que compitan en el espacio de \textit{e-Commerce}, entonces no es comprensible que no se considere MongoDB tampoco.
 
 Pero para las partes en donde el sitio \textit{\gloss{ecommerce}} comprende el manejo de contenido, MongoDB es claro vencedor. E incluso para mas \textit{transactional components} del sistema, MongoDB tiene características que hacen de la posibilidad de correr un sistema completo de \textit{e-Commerce} una realidad.
+
+\section{Resumen}
+
+Recapitulando, he demostrado que las soluciónes actuales de ecommerce pueden ser considerablemente mejoradas utilizando la tecnología actualmente presente. 
+Importante notar que solo estoy ofreciendo una mejor solucuón a lo que ya existe, en ningun caso indico la solución que presento es la mejor posible. No se ha realizado un estudio sobre todas las opciones disponibles del mercado. Sin embargo esta solución ofrece
+
+speed
+scalability
+flexibility
+performance
