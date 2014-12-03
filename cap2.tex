@@ -184,8 +184,148 @@ Considerando esto, ¿ habrá alguna razón que justifique el desarrollo de un pr
 
 \subsection{Nueva tecnología no es sinónimo de mejores soluciones}
 %TODO
-\subsubsection{El contexto como variable para la mejor solución}
-%TODO
+
+\subsubsection{Node.js}
+
+%La craciente popularidad de JavaScript a traiado consigo una gran cantidad de cambios, y la manera en la cual los desarrolladores afrontan el desarrollo \textit{web} es dramaticamente distinto. Las cosas que se pueden hacer en la \textit{web} estos dias con JavaScript Corriendo en el servidor, de la misma manera como en el browser, era dificilmente imaginable hasta hace unos años atras, o fuimos encaptulados dentro de ambientes de \textit{sandbox} como Flash o Java Applets.
+%JavaScript’s rising popularity has brought with it a lot of changes, and the face of web development today is dramatically different. The things that we can do on the web nowadays with JavaScript running on the server, as well as in the browser, were hard to imagine just several years ago, or were encapsulated within sandboxed environments like Flash or Java Applets.
+
+%Before digging into Node.js, you might want to read up on the benefits of using JavaScript across the stack which unifies the language and data format (JSON), allowing you to optimally reuse developer resources. As this is more a benefit of JavaScript than Node.js specifically, we won’t discuss it much here. But it’s a key advantage to incorporating Node in your stack.
+
+%As Wikipedia states: “Node.js is a packaged compilation of Google’s V8 JavaScript engine, the libuv platform abstraction layer, and a core library, which is itself primarily written in JavaScript.” Beyond that, it’s worth noting that Ryan Dahl, the creator of Node.js, was aiming to create real-time websites with push capability, “inspired by applications like Gmail”. In Node.js, he gave developers a tool for working in the non-blocking, event-driven I/O paradigm.
+
+%After over 20 years of stateless-web based on the stateless request-response paradigm, we finally have web applications with real-time, two-way connections.
+
+En una frase: Node.js brilla en aplicaciones \textit{web} \textit{real-time} utilizando tecnología \textit{push} sobre \textit{websockets}. Que es tan revolucionario en relación a esto? Después de 20 años de \textit{stateless-web} en el paradigma \textit{request-response} finalmente existen aplicaciones \textit{web} en \textit{real-time}, conexiones \textit{two-way}, donde cliente y servidor pueden iniciar la comunicación, permitiendo intercambiar \textit{data} libremente. Esto es un contraste enorme al paradigma tipico de \textit{web response}, donde el cliente siempre iniciaba la comunicación. Adicionalmente, esta todo basado en \textit{open web stack} (HTML, CSS y JS )corriendo sobre el \textit{standar port} 80.
+%In one sentence: Node.js shines in real-time web applications employing push technology over websockets. What is so revolutionary about that? Well, after over 20 years of stateless-web based on the stateless request-response paradigm, we finally have web applications with real-time, two-way connections, where both the client and server can initiate communication, allowing them to exchange data freely. This is in stark contrast to the typical web response paradigm, where the client always initiates communication. Additionally, it’s all based on the open web stack (HTML, CSS and JS) running over the standard port 80.
+
+Se puede discutir sobre que estas características existían hace años a través de Flash y Java Applets, pero en realidad, esos fueron \textit{sandboxes environment} utilizando la \textit{web} como un protocolo de transporte para entregar al cliente. Ademas, ellos corrían aislados y generalmente sobre \textit{non-standard ports}, los cuales podrían requerir permisos extras.
+%One might argue that we’ve had this for years in the form of Flash and Java Applets—but in reality, those were just sandboxed environments using the web as a transport protocol to be delivered to the client. Plus, they were run in isolation and often operated over non-standard ports, which may have required extra permissions and such.
+
+Con todas esta ventajas, Node.js ahora juega un role crítico en el \textit{stack} de tecnología de las principales compañías \textit{high-profile}\cite{online_nodejs_highprofilecompanies} \textbf{las cuales dependen de sus beneficios únicos}.
+%With all of its advantages, Node.js now plays a critical role in the technology stack of many high-profile companies who depend on its unique benefits.
+
+%In this post, I’ll discuss not only how these advantages are accomplished, but also why you might want to use Node.js—and why not—using some of the classic web application models as examples.
+
+%How Does It Work?
+
+La principal idea de Node.js : usar \textit{non-blocking}, \textit{event-driven I/O} para permanecer liviano y eficiente para enfrentar aplicaciones \textit{data-intensive} \textit{real-time} que corren a traves de dispositivos distribuidos.
+%The main idea of Node.js: use non-blocking, event-driven I/O to remain lightweight and efficient in the face of data-intensive real-time applications that run across distributed devices.
+
+%That’s a mouthful.
+
+Lo que esto realmente significa es que Node.js una plataforma \textit{silver-bullet} que dominara \textit{web development world}. \textbf{En lugar de eso, es una plataforma que llena una necesidad particular}. Esto es absolutamente esencial. Definitivamente no se deseara utilizar Node.js para operaciones \textit{CPU-intensive}; de hecho, utilizando esto para \textit{heavy computation} anulará practicamente todas sus ventajas. Donde Node.js realmente brilla es \textit{building fast}, \textit{scalable network applications}, ya que es capaz de manejar un gran número de conexiones simultaneas con un alto rendimiento, lo que equivale a una \textit{high scalability}.
+%What it really means is that Node.js is not a silver-bullet new platform that will dominate the web development world. Instead, it’s a platform that fills a particular need. And understanding this is absolutely essential. You definitely don’t want to use Node.js for CPU-intensive operations; in fact, using it for heavy computation will annul nearly all of its advantages. Where Node really shines is in building fast, scalable network applications, as it’s capable of handling a huge number of simultaneous connections with high throughput, which equates to high scalability.
+
+Como trabaja \textit{under-the-hood} es muy interesante. Comparado con la técnica tradicional \textit{web-serving} donde cada conexión (\textit{request}) engendra un nuevo tema, ocupando memoria RAM del sistema y, eventualmente \textit{maxing-out} la cantidad de RAM disponible, Node.js operan en un \textit{single-thread}, usando llamadas \textit{non-blocking I/O}, permitiendo el apoyo de decenas de miles de conexiones concurrentes (retenidas en el \textit{event loop}).
+%How it works under-the-hood is pretty interesting. Compared to traditional web-serving techniques where each connection (request) spawns a new thread, taking up system RAM and eventually maxing-out at the amount of RAM available, Node.js operates on a single-thread, using non-blocking I/O calls, allowing it to support tens of thousands of concurrent connections (held in the event loop).
+
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.5\textwidth]{figuras/cap2/diagram_traditional_vs_node_serverthread.png}
+	\caption{Diagrama de \textit{Traditional} vs. Node.js \textit{server thread}}
+\end{figure}
+
+
+
+Un cálculo rápido: asumiendo que cada \textit{thread} potencialmente tiene asignado 2 MB de memoria con ella, corriendo en un sistema con 8 GB de RAM nos coloca en un teorico máximo de 4000 conexiones concurrentes, ademas del costo por cambio de contexto entre \textit{threads}. Ese es el escenario al con el cual tipicamente se encuentra en tecnicas tradicionales de \textit{web-serving}. Evitando todo eso, Node.js logra niveles de \textit{scalability} sobre 1M de conexciones concurrentes (como \textit{proof-of-concept}).
+%A quick calculation: assuming that each thread potentially has an accompanying 2 MB of memory with it, running on a system with 8 GB of RAM puts us at a theoretical maximum of 4000 concurrent connections, plus the cost of context-switching between threads. That’s the scenario you typically deal with in traditional web-serving techniques. By avoiding all that, Node.js achieves scalability levels of over 1M concurrent connections (as a proof-of-concept).
+
+Hay, porsupuesto, la cuestión de compartir un solo \textit{thread} entre todos los \textit{request} de clientes, y es una potencial trampa de escribir aplicaciones Node.js. Primeramente, \textit{heavy computation} puede asfixiar el unico \textit{thread} de Node.js y causan problemas en todos los clientes como \textit{incoming request} podrían ser bloqueados hasta que dicho \textit{computation} sea completado. En segundo lugar, desabolladores necesitan ser realmente cuidados en no permitir que una excepción \textit{bubbling up} al \textit{core} del \textit{event loop} de Node.js, el cual puede causar que la instancia Node.js termine (efectivamente \textit{crashing} el programa).
+%There is, of course, the question of sharing a single thread between all clients requests, and it is a potential pitfall of writing Node.js applications. Firstly, heavy computation could choke up Node’s single thread and cause problems for all clients (more on this later) as incoming requests would be blocked until said computation was completed. Secondly, developers need to be really careful not to allow an exception bubbling up to the core (topmost) Node.js event loop, which will cause the Node.js instance to terminate (effectively crashing the program).
+
+La técnica utilizada para evitar exepcines \textit{bubbling up to the surface} es pasando el error de regreso al \textit{caller} como parametro de \textit{callback} (en lugar de lanzarlos, como en otros ambientes). Incluso si alguna excepción no controlada conduzca a \textit{bubble up}, hay múltiples paradigmas y herramientas disponibles para monitorear el proceso Node y realizar lo necesario para recuperarse de un \textit{crashed instance} (aunque no este disponible para recuperar sesiones de usuarios), siendo el mas común el módulo Forever\cite{online_github_nodejitsu_forever}.
+%The technique used to avoid exceptions bubbling up to the surface is passing errors back to the caller as callback parameters (instead of throwing them, like in other environments). Even if some unhandled exception manages to bubble up, there are mutiple paradigms and tools available to monitor the Node process and perform the necessary recovery of a crashed instance (although you won’t be able to recover users’ sessions), the most common being the Forever module, or a different approach with external system tools upstart and monit.
+
+%NPM: The Node Package Manager
+
+%When discussing Node.js, one thing that definitely should not be omitted is built-in support for package management using the NPM tool that comes by default with every Node.js installation. The idea of NPM modules is quite similar to that of Ruby Gems: a set of publicly available, reusable components, available through easy installation via an online repository, with version and dependency management.
+
+%A full list of packaged modules can be found on the NPM website https://npmjs.org/ , or accessed using the NPM CLI tool that automatically gets installed with Node.js. The module ecosystem is open to all, and anyone can publish their own module that will be listed in the NPM repository. A brief introduction to NPM (a bit old, but still valid) can be found at http://howtonode.org/introduction-to-npm.
+
+%Some of the most popular NPM modules today are:
+
+%express - Express.js, a Sinatra-inspired web development framework for Node.js, and the de-facto standard for the majority of Node.js applications out there today.
+%connect - Connect is an extensible HTTP server framework for Node.js, providing a collection of high performance “plugins” known as middleware; serves as a base foundation for Express.
+
+%socket.io and sockjs - Server-side component of the two most common websockets components out there today.
+
+%Jade - One of the popular templating engines, inspired by HAML, a default in Express.js.
+
+%mongo and mongojs - MongoDB wrappers to provide the API for MongoDB object databases in Node.js.
+
+%redis - Redis client library.
+%coffee-script - CoffeeScript compiler that allows developers to write their Node.js programs using Coffee.
+%underscore (lodash, lazy) - The most popular utility library in JavaScript, packaged to be used with Node.js, as well as its two counterparts, which promise better performance by taking a slightly different implementation approach.
+%forever - Probably the most common utility for ensuring that a given node script runs continuously. Keeps your Node.js process up in production in the face of any unexpected failures.
+%The list goes on. There are tons of really useful packages out there, available to all (no offense to those that I’ve omitted here).
+
+%Examples of Where Node.js Should Be Used
+
+
+%Where Node.js Can Be Used
+
+%SERVER-SIDE WEB APPLICATIONS
+
+%Node.js with Express.js can also be used to create classic web applications on the server-side. However, while possible, this request-response paradigm in which Node.js would be carrying around rendered HTML is not the most typical use-case. There are arguments to be made for and against this approach. Here are some facts to consider:
+
+%Pros:
+
+%If your application doesn’t have any CPU intensive computation, you can build it in Javascript top-to-bottom, even down to the database level if you use JSON storage Object DB like MongoDB. This eases development (including hiring) significantly.
+%Crawlers receive a fully-rendered HTML response, which is far more SEO-friendly than, say, a Single Page Application or a websockets app run on top of Node.js.
+%Cons:
+
+%Any CPU intensive computation will block Node.js responsiveness, so a threaded platform is a better approach. Alternatively, you could try scaling out the computation [*].
+%Using Node.js with a relational database is still quite a pain (see below for more detail). Do yourself a favour and pick up any other environment like Rails, Django, or ASP.Net MVC if you’re trying to perform relational operations.
+%[*] An alternative to these CPU intensive computations is to create a highly scalable MQ-backed environment with back-end processing to keep Node as a front-facing ‘clerk’ to handle client requests asynchronously.
+%Where Node.js Shouldn’t Be Used
+%
+%SERVER-SIDE WEB APPLICATION W/ A RELATIONAL DB BEHIND
+%
+%Comparing Node.js with Express.js against Ruby on Rails, for example, there is a clean decision in favour of the latter when it comes to relational data access.
+%
+%Relational DB tools for Node.js are still in their early stages; they’re rather immature and not as pleasant to work with. On the other hand, Rails automagically provides data access setup right out of the box together with DB schema migrations support tools and other Gems (pun intended). Rails and its peer frameworks have mature and proven Active Record or Data Mapper data access layer implementations, which you’ll sorely miss if you try to replicate them in pure JavaScript.[*]
+%
+%Still, if you’re really inclined to remain JS all-the-way (and ready to pull out some of your hair), keep an eye on Sequelize and Node ORM2—both are still immature, but they may eventually catch up.
+%
+%[*] It’s possible and not uncommon to use Node solely as a front-end, while keeping your Rails back-end and its easy-access to a relational DB.
+%HEAVY SERVER-SIDE COMPUTATION/PROCESSING
+%
+%When it comes to heavy computation, Node.js is not the best platform around. No, you definitely don’t want to build a Fibonacci computation server in Node.js. In general, any CPU intensive operation annuls all the throughput benefits Node offers with its event-driven, non-blocking I/O model because any incoming requests will be blocked while the thread is occupied with your number-crunching.
+%
+%As stated previously, Node.js is single-threaded and uses only a single CPU core. When it comes to adding concurrency on a multi-core server, there is some work being done by the Node core team in the form of a cluster module [ref: http://nodejs.org/api/cluster.html]. You can also run several Node.js server instances pretty easily behind a reverse proxy via nginx.
+%
+%With clustering, you should still offload all heavy computation to background processes written in a more appropriate environment for that, and having them communicate via a message queue server like RabbitMQ.
+%
+%Even though your background processing might be run on the same server initially, such an approach has the potential for very high scalability. Those background processing services could be easily distributed out to separate worker servers without the need to configure the loads of front-facing web servers.
+%
+%Of course, you’d use the same approach on other platforms too, but with Node.js you get that high reqs/sec throughput we’ve talked about, as each request is a small task handled very quickly and efficiently.
+%
+%Conclusion
+%
+%We’ve discussed Node.js from theory to practice, beginning with its goals and ambitions, and ending with its sweet spots and pitfalls. When people run into problems with Node, it almost always boils down to the fact that blocking operations are the root of all evil—99% of Node misuses come as a direct consequence.
+%
+%In Node, blocking operations are the root of all evil—99% of Node misuses come as a direct consequence.
+%
+%Remember: Node.js was never created to solve the compute scaling problem. It was created to solve the I/O scaling problem, which it does really well.
+
+%Why use Node.js? If your use case does not contain CPU intensive operations nor access any blocking resources, you can exploit the benefits of Node.js and enjoy fast and scalable network applications. Welcome to the real-time web.
+
+\subsubsection*{Node.js y \gloss{ecommerce}}
+
+\gloss{ecommerce} es un excelente ejemplo de sistema que se puede ver totalmente beneficiado con el uso de Node.js en el \textit{server side}. 
+
+\begin{itemize}
+	\item \textbf{FRONT-END se movió desde el server-side al client-side( al menos en mobile )}. Una de las grandes consecuencias es que el server-side ya no es mas CPU Bound ahora es Memory Bound e I/O Bound. Node.js es \textit{event-driven}, lo cual implica eficiencia en I/O Bound y es extremadamente eficiente en el uso de memoria.
+	\item Permite velocidad de desarrollo y ejecución. En otras palabras iteraciones rapidas.
+	\item \textbf{Comunidad}: Existe una activa comunidad la cual esta constantemente solucionando dudas, ademas de proporcionar módulos para resolver problemas conocidos.
+	\item \textbf{Reutilizar código}: \textit{Server-side} y \textit{client-side} usan el mismo lenguaje, permitiendo reutilización de componentes.
+	\item \textbf{Optimiza el uso de recursos}: Los desarolladores de \textit{client-side} pueden desarrollar en \textit{server-side}, ya que son el mismo lenguaje.
+	\item \textbf{Scalability}: Los sitions \textit{web} se encuentran en constante crecimiento. \textit{Scalability} es una consecuencia de la eficiencia que tiene Node.js para Memory Bound e I/O Bound
+\end{itemize}
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
 Node no es la panacea para todo, tiene muchos issues con los cuales hay que lidiar, pero es probable una de las mejores soluciones que se pueden tomar(LinkedIn).
@@ -195,7 +335,17 @@ Kiran Prasad, Sr. Director, Mobile Engineering, LinkedIn
 
 Una pregunta interesante saber cuales son los problemas que te hicieron mirar hacia nodeJ(pregunta a KIRAN Prased)
 
-Cuando llegue a LinkedIN estabamos corriendo cosas en Ruby and Rails stack, una de las cosas que encontramos es que el FRONT-END 
+Cuando llegue a LinkedIN estabamos corriendo cosas en Ruby and Rails stack, una de las cosas que encontramos es que el FRONT-END se movio desde el server-side al client-side( al menos en mobile ). Ese gran shift cambio  las necesidades del front-end y el server-side.
+
+El server-side ya no es mas CPU Bound ahora es Memory Bound e I/O Bound
+
+Nodejs run de forma muy eficiente en I/O 
+
+Dio velocidad de desarrollo, de ejecución, iteraciónes mas rápidas 
+
+Este tipo de razones nos mostrarón la necesidad de I/O Bound necesitan ser I/O event
+Necesitaban eficiencia de memoria, y Node es super eficiente en ese sentido.
+La convinación de estos elementos  
 
 eficiencia en memoria
 
@@ -204,16 +354,28 @@ eficiencia en memoria
 ***************************************************************************
 Sri Viswanath, SVP Engineering and Operations, Groupon
 
-low latency
+
+
+Need low latency
+
 
 
 ***************************************************************************
 Jigar Desai, Sr. Director, Platforms, eBay
 
+
+
+
+
+
 ***************************************************************************
 Billy Scott, PayPal
 
-\subsubsection{Node.js vs Java \cite{online_nodejs_paypal}}
+
+
+
+\subsubsection*{Node.js vs Java \cite{online_nodejs_paypal}}
+
 
 
 La primera adopción que hizo Paypal con Node.js no fue una aplicación menor; esto fue su \textit{account overview page} y una de las mas \textit{trafficked} \textit{apps} en el \textit{website}. Ellos tomaron un gran riesgo, pero lo hicieron con la finalidad de determinar si realmente la nueva plataforma representaba una mejora con respecto al sistema actual.
@@ -248,7 +410,7 @@ Se observa que la aplicación que utiliza Node.js tiene:
 
 
 \begin{itemize}
-\item El doble de solicitudes por segundo vs. la aplicación Java. Esto es incluso mas interesante porque los resultados iniciales de rendimiento estaban utilizando un solo nucleo para la aplicación Node.js, en comptaración con cinco nñucleos en Java. Se espere aumentar aun más esta brecha en el futuro.
+\item El doble de solicitudes por segundo vs. la aplicación Java. Esto es incluso mas interesante porque los resultados iniciales de rendimiento estaban utilizando un solo núcleo para la aplicación Node.js, en comparación con cinco núcleos en Java. Se espere aumentar aun más esta brecha en el futuro.
 %Double the requests per second vs. the Java application. This is even more interesting because our initial performance results were using a single core for the node.js application compared to five cores in Java. We expect to increase this divide further.
 \item \textbf{Disminución en un 35\% en el tiempo promedio de respuesta} para la misma página. Esto se resulto ser \textbf{200ms mas rápido} en el servidor. Algo que los usuarios definitivamente notan.
 %35% decrease in the average response time for the same page. This resulted in the pages being served 200ms faster— something users will definitely notice.
@@ -260,9 +422,9 @@ Se observa que la aplicación que utiliza Node.js tiene:
 Mas ejemplos de benchmark \cite{online_nodejs_java_dzone}
 
 
-\subsubsection{Node.js vs PHP\cite{online_nodejs_php_loadimpact}}
+\subsubsection*{Node.js vs PHP\cite{online_nodejs_php_loadimpact}}
 
-No es justo comprar Node.js con PHP. Lo que realmente se compara es Node.js y PHP+Apacha2 ( u otro servidor http ). Es este caso particular, las pruebas fueron realizadas usando Apache2 y \textit{mod_php}, dado que es por lejos la configuración mas común. 
+No es justo comprar Node.js con PHP. Lo que realmente se compara es Node.js y PHP+Apacha2 ( u otro servidor http ). Es este caso particular, las pruebas fueron realizadas usando Apache2 y \textit{mod\_php}, dado que es por lejos la configuración mas común. 
 %So no, it’s not fair to say that we compare Node.js and PHP. What we really compare is Node.js and PHP+Apache2 (or any other http server). For this article, I’ve used Apache2 and mod_php since it’s by far the most common configuration. Some might say that I’d get much better results if I had used Nginx or Lighthttpd as the http server for PHP. That’s most likely very true, but at the end of the day, server side PHP depends on running in multiple separate processes. Regardless if we create those processes with mod_php or fastcgi or any other mechanism. So, I’m sticking with the standard server setup for PHP and I think that makes good sense.
 
 
@@ -276,7 +438,7 @@ No es justo comprar Node.js con PHP. Lo que realmente se compara es Node.js y PH
 	\label{cap2:figure:java_benchmark_paypal}
 \end{figure}
 
-El primer grafico muetra lo que sucede cuando se carga el test en el servidor utilizando Node.js. La respuesta de tiempo (azul) es mucho mas constante durante todo el test. 
+El primer gráfico muestra lo que sucede cuando se carga el test en el servidor utilizando Node.js. La respuesta de tiempo (azul) es mucho mas constante durante todo el test. 
 
 %The first graph here shows what happens when we load test the Node.js server. The response time (blue) is pretty much constant all through the test. My back of a napkin analysis of the initial outliers is that they have to do with a cold MySQL cache. Now, have a look at the results from the PHP test:
 
@@ -308,7 +470,7 @@ Pero para Node.js, es sencillo. Después de todo, cada solicitud es cerca de 30\
 Mas ejemplos de \textit{benchmark} \cite{online_nodejs_java_appdynamics}
 
 
-\subsubsection{¿ Qué hace a Node.js mejor?}
+\subsubsection*{¿ Qué hace a Node.js mejor?}
 
 Node.js introduce al menos 2 nuevas características ( para una amplia audiencia ). Primero, la habilidad  de escribir código JavaScript en el lado del servidor. En teoría esto puede ser una ventaja dado que JavaScipt es mas importante que nunca en el lado del cliente y usando el mismo lenguaje en el servidor y en el navegador deberían haber muchísimos beneficios. 
 %Node.js introduces at least two new things (for a broader audience). First, the ability to write server side JavaScript code. In theory this could be an advantage since JavaScript is more important than ever on the client side and using the same language on server and browser would have many benefits. That’s at least quite cool.
@@ -693,6 +855,9 @@ Applications: Key value stores and wide column stores are useful for a narrow se
     \label{tab:SQL_vs_noSQL_summary}
 \end{table}
 
+	\subsection{ \textit{Full-Stack} JavaScript }
+	
+	%Before digging into Node.js, you might want to read up on the benefits of using JavaScript across the stack which unifies the language and data format (JSON), allowing you to optimally reuse developer resources. As this is more a benefit of JavaScript than Node.js specifically, we won’t discuss it much here. But it’s a key advantage to incorporating Node in your stack.
 
 \section{MongoDB y E-Commerce \cite{online_mongodb_ecommerce}}\label{cap:estadoArte:MongoDB_ECommerce}
 
