@@ -4,130 +4,11 @@
 %\subsection{Nueva tecnología no es sinónimo de mejores soluciones}
 %TODO
 
-A continuación se discutirán las razones para considerar el desarrollo de una plataforma \gloss{ecommerce}, utilizando solo tecnología \textit{open source} un aporte en relación a las opciones \textit{open source} actualmente vigentes. Para esto se explicara por que los cambios de tecnología propuestos son un beneficio para el actual estado del arte del tema, asi como un aporte para potenciales funcionalidades que seran agregadas en el futuro.
+A continuación se discutirán las razones para considerar el desarrollo de una plataforma \gloss{ecommerce}, un aporte en relación a las opciones \textit{open source} actualmente vigentes. Para esto se explicara por que los cambios de tecnología propuestos son un beneficio para el actual estado del arte del tema, asi como un aporte para potenciales funcionalidades que seran agregadas en el futuro.
 
 \section{Base de datos}
 
-%TODO inicio de antiguo base de datos
-
-base de datos escablaves horizontalmente, SQL escalables verticalmente.
-
-
-
-
-What about transactions?
-
-
-Many people bring up MongoDB’s lack of atomic transactions across collections as evidence that it’s not suitable for e-commerce applications. This has not been a significant barrier in our experience so far.
-
-There are other ways to approach data integrity. In systems with low-moderate data contention, optimistic locking is sufficient. We’ll share more details about these strategies as things progress.
-
-
-
-\begin{table}[h!]
-    \tiny
-   
-%\begin{tabular}{ |C{0.3\paperwidth}|C{0.3\paperwidth}| }
-\begin{tabular}{ |l|c|c|c|c|c| }
-
-
-\hline
-	&
-	\textit{Free database backend support}&
-	Language&
-	\textit{\gloss{waf}}&
-	License&
-
-\\ \hline
-	\nameOpenCart &
-	MySQL&
-	PHP&
-	&
-	GPLv3&
-	
-\\ \hline
-	\namePrestaShop &
-	MySQL&
-	PHP&
-	&
-	Open Software License&
-	
-\\ \hline
-	\nameMagento &
-	MySQL&
-	PHP&
-	Zend Framework\cite{online_zend_framework}&
-	Open Software License&
-	
-\\ \hline
-	\nameZenCart &
-	&
-	&
-	&
-	&
- 
-\\ \hline
-	\nameSpreeCommerce &
-	MySQL, PostgreSQL, SQLite3&
-	Ruby\cite{online_ruby_language}&
-	Ruby on Rails\cite{online_ruby_rails}&
-	New BSD License&
-
-\\ \hline
-	\nameDrupalCommerce &
-	MySQL, PostgreSQL, SQLite3&
-	PHP&
-	Drupal\cite{online_drupal}&
-	GNU GPL&
-	
-\\ \hline
-	\nameOsCommerce &
-	&
-	&
-	&
-	&
-
-\\ \hline
-	\nameSimpleCart &
-	&
-	&
-	&
-	&
-	
-\\ \hline
-	\nameWooCommerce &
-	MySQL&
-	PHP&
-	WordPress\cite{online_wordpress}&
-	GNU GPL&
-	
-\\ \hline
-	\nameWPECommerce &
-	&
-	&
-	&
-	&
-	
-\\ \hline
-	\nameJigoshop &
-	MySQL&
-	PHP&
-	WordPress\cite{online_wordpress}&
-	GNU GPL&
-	
-\\ \hline
-\end{tabular}
-    \caption{ Comparación entre diferentes opciones \textit{e-Commerce}}
-    \label{tab:wide_table}
-\end{table}
-
-
-%TODO fin de antiguo base de datos
-
-
-\section{Base de datos}
-
-\textit{Relational databases} se encuentran en la mayoria de las organización desde hace muchísimo tiempo, y por buenas razones. \textit{Relational databases} apoya las aplicaciones del pasado que cumplen con las necesidades de negocio actuales; Estas son apoyadas por un extenso ecosistema herramientas; y hay una gran cantidad de mano de obra calificada para implementar y mantener estos sistemas.
+\textit{Relational databases} se encuentran en la mayoría de las organización desde hace muchísimo tiempo, y por buenas razones. \textit{Relational databases} apoya las aplicaciones del pasado que cumplen con las necesidades de negocio actuales; Estas son apoyadas por un extenso ecosistema de herramientas; y hay una gran cantidad de mano de obra calificada para implementar y mantener estos sistemas.
 %Relational databases have a long-standing position in most
 %organizations, and for good reason. Relational databases
 %underpin legacy applications that meet current business
@@ -135,7 +16,7 @@ There are other ways to approach data integrity. In systems with low-moderate da
 %tools; and there is a large pool of labor qualified to
 %implement and maintain these systems.
 
-Pero las compañías están cada vez mas considerando la opción de alternativas para la infraestructura relacional heredada. En algunos casos la motivación es técnica, tal como la necesidad de escalar o actuar mas allá de las capacidades de sus sistemas actuales. Mientras que en otros casos, las compañías están motivadas por el deseo de identificar alternativas viables a \textit{softwares} propietario de alto costo. una tercera motivación es la agilidad y velocidad del desarrollo, dado que las compañías ansían adaptarse al mercado mas rápido y adoptar metodologías de desarrollo ágil.
+Pero las compañías están cada vez mas considerando la opción de alternativas para la infraestructura relacional heredada. En algunos casos la motivación es técnica, tal como la necesidad de escalar o actuar mas allá de las capacidades de sus sistemas actuales. Mientras que en otros casos, las compañías están motivadas por el deseo de identificar alternativas viables a \textit{softwares} propietario de alto costo. Una tercera motivación es la agilidad y velocidad del desarrollo, dado que las compañías ansían adaptarse al mercado mas rápido y adoptar metodologías de desarrollo ágil.
 %But companies are increasingly considering alternatives to
 %legacy relational infrastructure. In some cases the
 %motivation is technical — such as a need to scale or
@@ -164,39 +45,39 @@ Estas opciones se aplican tanto para aplicaciones analíticas como transaccional
 En una primera aproximación, \gloss{sql} permite consultar sobre aquellas preguntas sin pensar sobre como la información es expuesta en el disco, cuales indices utilizar para acceder a la información o que algoritmo utilizar para procesar la información. Un componente arquitectural significativo para la mayoría de los \textit{relational databases is a query optimizer}, el cual decide cual de las muchos equivalentes lógicos planea ejecutar las respuesta mas rápida a una \textit{query}. Estos optimizadores son usualmente mejores que los promedios de los usuarios de la \textit{database}, pero en algunas ocasiones ellos no tienen la suficiente información o tienen un modelo muy simple del sistema en \textit{order} para generar ejecuciones mas eficientes.
 %To a first approximation, SQL allows you to ask these questions without thinking about how the data is laid out on disk, which indices to use to access the data, or what algorithms to use to process the data. A significant architectural component of most relational databases is a query optimizer, which decides which of the many logically equivalent query plans to execute to most quickly answer a query. These optimizers are often better than the average database user, but sometimes they do not have enough information or have too simple a model of the system in order to generate the most efficient execution.
 
-\textit{Relational databases}, las \textit{databases} mas utilizadas en la practica, siguen el modelo de datos relacional. En este modelo, diferentes entidades del \textit{real-world} son guardadas en diferentes tablas. Por ejemplo, todos los \textit{employees} podrían ser guardados en una tabla \textit{Employees}, y todos los \textit{departments} podrían ser almacenados en la tabla \textit{Departments}.Cada fila de una tabla tiene varias propiedades guardadas en columnas. Por ejemplo, \textit{employees} podrían tener un \textit{employee id}, \textit{salary}, \textit{birth date}, y \textit{first/last names}. Cada una de estas propiedades sera guardada en una columna de la tabla \textit{Employees}
+\textit{Relational databases}, las \textit{databases} mas utilizadas en la practica, siguen el modelo de datos relacional. En este modelo, diferentes entidades del \textit{real-world} son guardadas en diferentes tablas. Por ejemplo, todos los \textit{employees} podrían ser guardados en una tabla \textit{Employees}, y todos los \textit{departments} podrían ser almacenados en la tabla \textit{Departments}. Cada fila de una tabla tiene varias propiedades guardadas en columnas. Por ejemplo, \textit{employees} podrían tener un \textit{employee id}, \textit{salary}, \textit{birth date}, y \textit{first/last names}. Cada una de estas propiedades sera guardada en una columna de la tabla \textit{Employees}
 %Relational databases, which are the most common databases used in practice, follow the relational data model. In this model, different real-world entities are stored in different tables. For example, all employees might be stored in an Employees table, and all departments might be stored in a Departments table. Each row of a table has various properties stored in columns. For example, employees might have an employee id, salary, birth date, and first/last names. Each of these properties will be stored in a column of the Employees table.
 
 
-El modelo relacional, va mano a mano con \gloss{sql}. \textit{Queries} simples de \gloss{sql}, tales como filtrar, recuperar todos los registros el cual sus campos hagan \textit{match} en algunos test( ejemplo, \textit{employeeid} = 3, o salary \> \$ 20000). Constructres mas complejos causan que \textit{database} haga trabajo extra, tal como \textit{joining} información sobre múltiples tablas (ejemplo., ¿ Cuál es el nombre del departamento en donde \textit{employee} 3 trabaja?). Otras estructuras complejas tal como \textit{aggregates} (ejemplo, ¿ cuál es el salario promedio de mis empleados?) puede manejar para \textit{full-table scans}.
+El modelo relacional, va mano a mano con \gloss{sql}. \textit{Queries} simples de \gloss{sql}, tales como filtrar, recuperar todos los registros el cual sus campos hagan \textit{match} en algunos test (ejemplo, \textit{employeeid} = 3, o salary > \$ 20000). Constructores mas complejos causan que \textit{database} haga trabajo extra, tal como \textit{joining} información sobre múltiples tablas (ejemplo., ¿ Cuál es el nombre del departamento en donde \textit{employee} 3 trabaja?). Otras estructuras complejas tal como \textit{aggregates} (ejemplo, ¿ cuál es el salario promedio de mis empleados?) puede manejar para \textit{full-table scans}.
 %The relational model goes hand-in-hand with SQL. Simple SQL queries, such as filters, retrieve all records whose field matches some test (e.g., employeeid
 % = 3, or salary \> \$ 20000). More complex constructs cause the database to do some extra work, such as joining data from multiple tables (e.g., what is the name of the department in which employee 3 works?). Other complex constructs such as aggregates (e.g., what is the average salary of my employees?) can lead to full-table scans.
 
 
-\textit{Relational data model} define entidades altamente estructuradas con relaciones estrictas entre ellos. \textit{Quetying} este modelo con \gloss{sql} permite \textit{complex data transversa} sin desarrollar mucho. La complejidad del modelo y \textit{quering}, tienen sus limites, aunque:
+\textit{Relational data model} define entidades altamente estructuradas con relaciones estrictas entre ellos. \textit{Querying} este modelo con \gloss{sql} permite \textit{complex data transversa} sin desarrollar mucho. La complejidad del modelo y \textit{quering}, tienen sus limites, aunque:
 %The relational data model defines highly structured entities with strict relationships between them. Querying this model with SQL allows complex data traversals without too much custom development. The complexity of such modeling and querying has its limits, though:
 
 \textit{Complexity} guia a \textit{unpredictability}. La expresivilidad en \gloss{sql} implica un desafío en relación al costo de cada \textit{query}, y así el costo de \textit{workload}. Mientras, lenguajes de \textit{query} simples pueden complicar la lógica, al mismo tiempo hacen que sea sencillo proveer de almacenamiento de datos., cuando solo responde a \textit{requests} simples.
 %Complexity leads to unpredictability. SQL's expressiveness makes it challenging to reason about the cost of each query, and thus the cost of a workload. While simpler query languages might complicate application logic, they make it easier to provision data storage systems, which only respond to simple requests.
 
-Hay muchas maneras modelar un problema. \textit{Relational data model} es estricto: El \textit{schema} asignado para cada tabla especificada la \textit{data} en cada fila. Si se esta almacenando menos \textit{data} estructurada, o filas con mas diferencia en las columnas que se guardan, \textit{relational model} puede ser innecesariamente restrictiva. Similarmente, aplicaciones desarrolladas podrían no encontrar el \textit{relational model} idóneo para modelar cada tipo de \textit{data}. Por ejemplo, una gran cantidad den aplicaciones lógicas son escritas en lenguaje \textit{object-oriented} e incluye conceptos \textit{high-level} tales como \textit{lists}, \textit{queues}, y \textit{sets}, y algunos programadores desearan \textit{persistence layer} para modelar esto.
+Hay muchas maneras de modelar un problema. \textit{Relational data model} es estricto: El \textit{schema} asignado para cada tabla especificada la \textit{data} en cada fila. Si se esta almacenando menos \textit{data} estructurada, o filas con mas diferencia en las columnas que se guardan, \textit{relational model} puede ser innecesariamente restrictiva. Similarmente, aplicaciones desarrolladas podrían no encontrar el \textit{relational model} idóneo para modelar cada tipo de \textit{data}. Por ejemplo, una gran cantidad den aplicaciones lógicas son escritas en lenguaje \textit{object-oriented} e incluye conceptos \textit{high-level} tales como \textit{lists}, \textit{queues}, y \textit{sets}, y algunos programadores desearan \textit{persistence layer} para modelar esto.
 %There are many ways to model a problem. The relational data model is strict: the schema assigned to each table specifies the data in each row. If we are storing less structured data, or rows with more variance in the columns they store, the relational model may be needlessly restrictive. Similarly, application developers might not find the relational model perfect for modeling every kind of data. For example, a lot of application logic is written in object-oriented languages and includes high-level concepts such as lists, queues, and sets, and some programmers would like their persistence layer to model this.
 
-Si la \textit{data} crece mas allá de la capacidad de un servidor, entonces las tablas en la \textit{database} tendrá que ser particionado a través de varios computadores. Para evitar \textit{JOINs} a través de la red para obtener todas las tablas requeridas, será necesario desnormalizarla. Desnormalizar guarda toda la \textit{data} de diferentes tablas que se desea observar en el mismo lugar. Esto hace que la \textit{database} simule una \textit{key-lookup store system}, dejando preguntas sobre la posibilidad de adaptarse mejor a la \textit{data}.
+Si la \textit{data} crece mas allá de la capacidad de un servidor, entonces las tablas en la \textit{database} tendrá que ser particionado a través de varios computadores. Para evitar \textit{JOINs} a través de la red para obtener todas las tablas requeridas, será necesario desnormalizarla. Desnormalizar consiste en guardar toda la \textit{data} de diferentes tablas que se desean consultar en el mismo lugar. Esto hace que la \textit{database} simule una \textit{key-lookup store system}, dejando preguntas sobre la posibilidad de adaptarse mejor a la \textit{data}.
 %If the data grows past the capacity of one server, then the tables in the database will have to be partitioned across computers. To avoid JOINs having to cross the network in order to get data in different tables, we will have to denormalize it. Denormalization stores all of the data from different tables that one might want to look up at once in a single place. This makes our database look like a key-lookup storage system, leaving us wondering what other data models might better suit the data.
 
-Generalmente no es inteligente descartar años de consideraciones de diseño arbitrariamente.Cuando se considera el almacenamiento de la \textit{data} en una \textit{database}, considera \gloss{sql} y \textit{relational model}, los cuales son respaldados por décadas  de investigación y desarrollo, ofreciendo enriquecidas capacidades de modelamiento, y proveer garantías \textit{fácil-de-entender} sobre operaciones complejas. \gloss{nosql} es una buena opción cuando se tiene un problema especifico, tal como gran cantidad de \textit{data}, un masivo \textit{workload}, o una difícil decisión de modelamiento para la cual \gloss{sql} y \textit{relational databases} podrían no haber sido optimizadas.
+Generalmente no es inteligente descartar años de consideraciones de diseño arbitrariamente. Cuando se considera el almacenamiento de la \textit{data} en una \textit{database}, considera \gloss{sql} y \textit{relational model}, los cuales son respaldados por décadas  de investigación y desarrollo, ofreciendo enriquecidas capacidades de modelamiento, y proveer garantías \textit{fácil-de-entender} sobre operaciones complejas. \gloss{nosql} es una buena opción cuando se tiene un problema específico, tal como gran cantidad de \textit{data}, un masivo \textit{workload}, o una difícil decisión de modelamiento para la cual \gloss{sql} y \textit{relational databases} podrían no haber sido optimizadas.
 %It's generally not wise to discard many years of design considerations arbitrarily. When you consider storing your data in a database, consider SQL and the relational model, which are backed by decades of research and development, offer rich modeling capabilities, and provide easy-to-understand guarantees about complex operations. NoSQL is a good option when you have a specific problem, such as large amounts of data, a massive workload, or a difficult data modeling decision for which SQL and relational databases might not have been optimized.
 
 \subsection{NoSQL}
 
-\gloss{nosql} engloba una gran variedad de diferentes \textit{database technologies} y fueron desarrolladas en respuesta al creciente volumen de \textit{data} guardada de los usuarios, objetos y productos, la frecuencia en que la \textit{data} es accesada, y la \textit{performance} en las necesidades de los procesos. \textit{Relational database}, por otra parte, no fueron diseñadas para hacer frente a los desafíos de escalabilidad y agilidad que enfrentan las aplicaciones modernas, no fueron construidas para tomar ventaja del almacenamiento barato y poder de procesamiento disponible en la actualidad.
+\gloss{nosql} engloba una gran variedad de diferentes \textit{database technologies} y fueron desarrolladas en respuesta al creciente volumen de \textit{data} guardada de los usuarios, objetos y productos, la frecuencia en que la \textit{data} es accesada, y la \textit{performance} en las necesidades de los procesos. \textit{Relational database}, por otra parte, no fueron diseñadas para hacer frente a los desafíos de escalabilidad y agilidad que enfrentan las aplicaciones modernas, no fueron construidas para tomar ventaja del almacenamiento barato y el poder de procesamiento disponible en la actualidad.
 %NoSQL encompasses a wide variety of different database technologies and were developed in response to a rise in the volume of data stored about users, objects and products, the frequency in which this data is accessed, and performance and processing needs. Relational databases, on the other hand, were not designed to cope with the scale and agility challenges that face modern applications, nor were they built to take advantage of the cheap storage and processing power available today.
 
 \subsubsection{Document Model}\label{cap:justificacion_proyecto:tecnologias:nosql:document_model}
  Mientras \textit{relational databases store data} en filas y columnas, \textit{document databases store data} en documentos.  
 
-Estos documentos tipicamente usas una estructura equivalente a \gloss{json}, un formato muy popular entre desarrolladores. Documentos proveen una manera intuitiva y natural para modelar \textit{data} que esta cercanamente alineada con  programación \textit{object-oriented}, en el cual cada documento es efectivamente un objeto. Los documentos contienen uno o mas campos, donde cada campo contiene un tipo de valor, tales como \textit{string}, \textit{date}, \textit{binary}, o \textit{array}. En lugar de extenderse un registro entre múltiples tablas y columnas, cada registro y su \textit{data} asociada son tipicamente almacenadas juntas en un solo documento. Esto simplifica el acceso a la \textit{data} y reduce e incluso elimina la necesidad de \textit{joins} y\textit{complex transactions}.
+Estos documentos tipicamente usan una estructura equivalente a \gloss{json}, un formato muy popular entre desarrolladores. \textit{Documents} proveen una manera intuitiva y natural para modelar \textit{data} que esta cercanamente alineada con  programación \textit{object-oriented}, en el cual cada documento es efectivamente un objeto. Los documentos contienen uno o mas campos, donde cada campo contiene un tipo de valor, tales como \textit{string}, \textit{date}, \textit{binary}, o \textit{array}. En lugar de extenderse un registro entre múltiples tablas y columnas, cada registro y su \textit{data} asociada son tipicamente almacenadas juntas en un solo documento. Esto simplifica el acceso a la \textit{data} y reduce e incluso elimina la necesidad de \textit{joins} y\textit{complex transactions}.
 
 En un \textit{document database}, la noción de esquema es dinámica: cada documento puede contener diferentes campos. Esta flexibilidad puede ser particularmente útil para modelar \textit{data} sin estructura y \textit{polymorphic}. Esto también hace posible la evolución de una aplicación durante su desarrollo, simplemente agregando nuevos campos. Adicionalmente, \textit{document databases} generalmente proveen consultas robustas que los desarrolladores esperan en \textit{relational databases}.
 
@@ -206,9 +87,10 @@ Ejemplos: MongoDB y CouchDB.
 
 \subsubsection{Graph Model}
 
-Basado en \nameref{ap:apendice_B}, usa estructuras de grafos con nodos, bordes y propiedades para representar la \textit{data}. -en esencia, la \textit{data} es modelada como una red de relaciones entre elementos específicos. Si bien es cierto, \textit{Model Graph}, puede ser contra intuitivo y tomar tiempo para entenderlo, puede ser utilizado extensamente para numerosas aplicaciones. Su principal característica es que modela fácilmente las relaciones entre entidades en una aplicación.
+Basado en \nameref{ap:apendice_B}, usa estructuras de grafos con nodos, bordes y propiedades para representar la \textit{data}. En esencia, la \textit{data} es modelada como una red de relaciones entre elementos específicos. Si bien es cierto, \textit{Model Graph}, puede ser contra intuitivo y tomar tiempo para entenderlo, puede ser utilizado extensamente para numerosas aplicaciones. Su principal característica es que modela fácilmente las relaciones entre entidades en una aplicación.
 
 Aplicaciones:\textit{Graph databases} son útiles en escenarios donde las relaciones son el \textit{core} de la aplicación, como redes sociales.
+
 Ejemplos: Neo4j y HyperGraphDB.
 
 \subsubsection{Key-Value}
@@ -873,9 +755,67 @@ Elegir el \textit{framework} correcto para un proyecto puede ternet un impacto t
 
 \subsection{Comunidad}
 
+Una comunidad es uno de los factores mas importantes para considerar cuando se elije un \textit{framework}. Una extensa comunidad significa mas preguntas contestadas, mas modulos \textit{third-party}, mas tutoriales en youtube, etc. Angular es sin dudas la plataforma con mas apoyo  como se puede observar en \namref{tab:framework_community} \ref{tab:framework_community}.
 %Community is one of the most important factors to consider when choosing a framework. A large community means more questions answered, more third-party modules, more YouTube tutorials…you get the point. I have put together a table with the numbers, as of August 16, 2014. Angular is definitely the winner here, being the 6th most-starred project on GitHub and having more questions on StackOverflow than Ember and Backbone combined, as you can see below:
 %
 %
+\begin{table}[h!]
+    \tiny
+   
+%\begin{tabular}{ |C{0.3\paperwidth}|C{0.3\paperwidth}| }
+\begin{tabular}{ |L{0.1\paperwidth}|L{0.2\paperwidth}|L{0.2\paperwidth}|L{0.2\paperwidth}|}
+\hline
+	Metric&
+	AngularJS &
+	Backbone.js &
+	Ember.js
+	
+\\ \hline
+	Stars on Github&
+	27.2k&
+	18.8k&
+	11k
+\\ \hline
+	Backbone.js&
+	1.1.2&
+	6.5kb&
+	43.5kb (jQuery + Underscore) 20.6kb (Zepto + Underscore)
+	
+\\ \hline
+	Third-Party Modules&
+	800 ngmodules&
+	236 backplugs&
+	21 emberaddons
+	
+\\ \hline
+	StackOverflow Questions&
+	49.5k&
+	15.9k&
+	11.2k
+	
+\\ \hline
+	YouTube Results&
+	~75k&
+	~16k&
+	~6k
+	
+\\ \hline
+	GitHub Contributors&
+	928&
+	230&
+	393
+	
+\\ \hline
+	Chrome Extension Users&
+	150k&
+	7k&
+	38.3k
+				
+\\ \hline
+\end{tabular}
+    \caption{ Tamaño de la comunidad}
+    \label{tab:framework_community}
+\end{table}
 %Metric	AngularJS	Backbone.js	Ember.js
 %Stars on Github	27.2k	18.8k	11k
 %Third-Party Modules	800 ngmodules	236 backplugs	21 emberaddons
@@ -883,21 +823,50 @@ Elegir el \textit{framework} correcto para un proyecto puede ternet un impacto t
 %YouTube Results	~75k	~16k	~6k
 %GitHub Contributors	928	230	393
 %Chrome Extension Users	150k	7k	38.3k
+
+%Todas las medidas, sin embargo, muestran simplemente el estado actual de cada \textit{framework}. También es interesante de observar cual \textit{framework} tienen el mayor crecimiento de popularidad. 
 %All those metrics, however, merely show the current state of each framework. It is also interesting to see which framework has a faster-growing popularity. Fortunately, using Google Trends we can get an answer for that too:
 
 
 \subsection{Framework Size}
-Page load times are crucial for the success of your web site. Users do not exhibit much patience when it comes to the speed of browsing — so in many cases it is desired to do everything possible to make your application load as fast as possible. There are two factors to look at when considering the impact of the framework on the loading time of your application: framework size and the time it takes the framework to bootstrap.
 
-Javascript assets are usually served minified and gzipped, so we are going to compare the size of the minified-gzipped versions. However, merely looking at the framework is not enough. Backbone.js, despite being the smallest (only 6.5kb), requires both Underscore.js (5kb) and jQuery (32kb) or Zepto (9.1kb), and you will probably need to add some third party plug-ins to the mix.
+El tiempo de carga para las paginas es crucial para el exito de un sitio \textit{web}. Los usuarios no muestran mucha paciencia cuando se trata de la velocidad de explorar; así que en muchos casos es deseado hacer todo lo posible para carga la aplicación tan rapido como sea posible. Hay 2 factores para observar que deben considerarse para el impacto del \textit{framework} en el tiempo de carga de la aplicación: el tamaño del \textit{framework} y el tiempo que le toma al \textit{framework} \textit{bootstrap}.
+%Page load times are crucial for the success of your web site. Users do not exhibit much patience when it comes to the speed of browsing — so in many cases it is desired to do everything possible to make your application load as fast as possible. There are two factors to look at when considering the impact of the framework on the loading time of your application: framework size and the time it takes the framework to bootstrap.
 
-Framework	Net Size	Size with required dependencies
-AngularJS 1.2.22	39.5kb	39.5kb
-Backbone.js 1.1.2	6.5kb	43.5kb (jQuery + Underscore)
-20.6kb (Zepto + Underscore)
-Ember.js 1.6.1	90kb	136.2kb (jQuery + Handlebars)
+Los \textit{assets} de JavaScript son usualmente 
+%Javascript assets are usually served minified and gzipped, so we are going to compare the size of the minified-gzipped versions. However, merely looking at the framework is not enough. Backbone.js, despite being the smallest (only 6.5kb), requires both Underscore.js (5kb) and jQuery (32kb) or Zepto (9.1kb), and you will probably need to add some third party plug-ins to the mix.
 
-
+\begin{table}[h!]
+    \tiny
+\begin{tabular}{ |L{0.1\paperwidth}|L{0.2\paperwidth}|L{0.2\paperwidth}|L{0.2\paperwidth}|}
+\hline
+	\textit{Framework}&
+	Versión &
+	Net Size &
+	Size with required dependencies
+	
+\\ \hline
+	AngularJS&
+	1.2.22&
+	39.5kb&
+	39.5kb
+\\ \hline
+	Backbone.js&
+	1.1.2&
+	6.5kb&
+	43.5kb (jQuery + Underscore) 20.6kb (Zepto + Underscore)
+	
+\\ \hline
+	Ember.js&
+	1.6.1&
+	90kb&
+	136.2kb (jQuery + Handlebars)
+	
+\\ \hline
+\end{tabular}
+    \caption{ Tamaño del \textit{framework}}
+    \label{tab:framework_size}
+\end{table}
 
 
 \section{Full-Stack JavaScript}
