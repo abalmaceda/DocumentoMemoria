@@ -74,7 +74,7 @@ Generalmente no es inteligente descartar años de consideraciones de diseño arb
 \gloss{nosql} engloba una gran variedad de diferentes \textit{database technologies} y fueron desarrolladas en respuesta al creciente volumen de \textit{data} guardada de los usuarios, objetos y productos, la frecuencia en que la \textit{data} es accesada, y la \textit{performance} en las necesidades de los procesos. \textit{Relational database}, por otra parte, no fueron diseñadas para hacer frente a los desafíos de escalabilidad y agilidad que enfrentan las aplicaciones modernas, no fueron construidas para tomar ventaja del almacenamiento barato y el poder de procesamiento disponible en la actualidad.
 %NoSQL encompasses a wide variety of different database technologies and were developed in response to a rise in the volume of data stored about users, objects and products, the frequency in which this data is accessed, and performance and processing needs. Relational databases, on the other hand, were not designed to cope with the scale and agility challenges that face modern applications, nor were they built to take advantage of the cheap storage and processing power available today.
 
-\subsubsection{Document Model}\label{cap:justificacion_proyecto:tecnologias:nosql:document_model}
+\subsubsection{Document Model}\label{cap:justificacion_proyecto:base_datos:nosql:document_model}
  Mientras \textit{relational databases store data} en filas y columnas, \textit{document databases store data} en documentos.  
 
 Estos documentos tipicamente usan una estructura equivalente a \gloss{json}, un formato muy popular entre desarrolladores. \textit{Documents} proveen una manera intuitiva y natural para modelar \textit{data} que esta cercanamente alineada con  programación \textit{object-oriented}, en el cual cada documento es efectivamente un objeto. Los documentos contienen uno o mas campos, donde cada campo contiene un tipo de valor, tales como \textit{string}, \textit{date}, \textit{binary}, o \textit{array}. En lugar de extenderse un registro entre múltiples tablas y columnas, cada registro y su \textit{data} asociada son tipicamente almacenadas juntas en un solo documento. Esto simplifica el acceso a la \textit{data} y reduce e incluso elimina la necesidad de \textit{joins} y\textit{complex transactions}.
@@ -86,7 +86,7 @@ Aplicaciones:\textit{Document databases} son de propósito general y útiles par
 Ejemplos: MongoDB y CouchDB.
 
 \subsubsection{Graph Model}
-
+\label{cap:justificacion_proyecto:base_datos:nosql:graph_model}
 Basado en \nameref{ap:apendice_B}, usa estructuras de grafos con nodos, bordes y propiedades para representar la \textit{data}. En esencia, la \textit{data} es modelada como una red de relaciones entre elementos específicos. Si bien es cierto, \textit{Model Graph}, puede ser contra intuitivo y tomar tiempo para entenderlo, puede ser utilizado extensamente para numerosas aplicaciones. Su principal característica es que modela fácilmente las relaciones entre entidades en una aplicación.
 
 Aplicaciones:\textit{Graph databases} son útiles en escenarios donde las relaciones son el \textit{core} de la aplicación, como redes sociales.
@@ -94,21 +94,21 @@ Aplicaciones:\textit{Graph databases} son útiles en escenarios donde las relaci
 Ejemplos: Neo4j y HyperGraphDB.
 
 \subsubsection{Key-Value}
-
+\label{cap:justificacion_proyecto:base_datos:nosql:key_value}
 Desde una perspectiva de\textit{data model}, \textit{key-value stores} son el tipo mas básico de las \textit{\gloss{nosql} databases}. Cada \textit{item} en la \textit{database} es guardado como un atributo \textit{name}, ó \textit{key}, junto con su \textit{value}. El \textit{value}, sin embargo, es totalmente \textit{opaque} al sistema;la \textit{data} solo puede ser requerida desde la \textit{key}. Este modelo puede ser útil para \textit{representig polymorphic} y \textit{unstructured data}, dado que la \textit{database} no define un \textit{scheme} al conjunto \textit{key-value}.
 %From a data model perspective, key-value stores are the most basic type of NoSQL database. Every item in the database is stored as an attribute name, or key, together with its value. The value, however, is entirely opaque to the system; data can only be queried by the key. This model can be useful for representing polymorphic and unstructured data, as the database does not enforce a set schema across key-value pairs.
 
 \subsubsection{Wide Column Models}
+\label{cap:justificacion_proyecto:base_datos:nosql:wide_column_model}
 
-%Wide column stores, or column family stores, use a sparse,
-%distributed multi-dimensional sorted map to store data. Each record can vary in the number of columns that are stored, and columns can be nested inside other columns called super columns. Columns can be grouped together for access in column families, or columns can be spread across multiple column families. Data is retrieved by primary key per column family.
-%
+%TODO falta mejorar esta definición
+\textit{Wide Column stores}, o \textit{colum family stores}, \textit{use a sparse}, mapa ordenado \textit{multi-dimensional} distribuido para guardar \textit{data}. Cada registro puede variar en el numero de \textit{columns} que son guardadas, y \textit{columns} pueden ser anidadas dentro de otras \textit{columns} llamadas \textit{super columns}. \textit{Columns} pueden ser agrupadas juntas por acceso en \textit{column families}, o \textit{columns} pueden ser propagadas a través de multiples \textit{column families}. \textit{Data} es recuperada por \textit{primary key} por \textit{column family}.
+%Wide column stores, or column family stores, use a sparse, distributed multi-dimensional sorted map to store data. Each record can vary in the number of columns that are stored, and columns can be nested inside other columns called super columns. Columns can be grouped together for access in column families, or columns can be spread across multiple column families. Data is retrieved by primary key per column family.
+
+Aplicación: \textit{Key value stores} y \textit{wide column stores} son útiles para un reducido conjunto de aplicaciones que solo consultan \textit{data} por un unico \textit{key value}. Lo llamativo de estos sistemas es su \textit{performance} y \textit{scalability}, los cuales pueden ser \textit{highly optimized} debido a su simplicidad de los patrones de acceso de \textit{data}.
 %Applications: Key value stores and wide column stores are useful for a narrow set of applications that only query data by a single key value. The appeal of these systems is their performance and scalability, which can be highly optimized due to the simplicity of the data access patterns.
-%
-%2Examples: Riak and Redis (Key-Value); HBase and Cassandra (Wide Column).
 
-
-
+%Examples: Riak and Redis (Key-Value); HBase and Cassandra (Wide Column).
 
 
 \begin{table}[h!]
@@ -118,58 +118,90 @@ Desde una perspectiva de\textit{data model}, \textit{key-value stores} son el ti
 \begin{tabular}{ |L{0.1\paperwidth}|L{0.3\paperwidth}|L{0.3\paperwidth}|}
 \hline
 	&
-	SQL Databases &
-	NoSQL Databases
+	\gloss{sql} Databases &
+	\gloss{nosql} Databases
  
 \\ \hline
-	Types&
-	One type (SQL database) with minor variations&
-	Many different types including key-value stores, document databases, wide-column stores, and graph databases
+	Tipos&%Types
+	Un tipo (\gloss{sql} Database) con variacions menores/}& %One type (SQL database) with minor variations&
+	Muchos tipos distintos incluyendo \nameref{cap:justificacion_proyecto:base_datos:nosql:key_value}, \nameref{cap:justificacion_proyecto:base_datos:nosql:document_model}, \nameref{cap:justificacion_proyecto:base_datos:nosql:wide_column_model}, y \nameref{cap:justificacion_proyecto:base_datos:nosql:graph_model}. %Many different types including key-value stores, document databases, wide-column stores, and graph databases
 	
 \\ \hline
-	Development History&
-	Developed in 1970s to deal with first wave of data storage applications&
-	Developed in 2000s to deal with limitations of SQL databases, particularly concerning scale, replication and unstructured data storage
+	Historia de desarrollo&%Development History&
+	Desarrollado en 1970s para tratar con la primera ola de aplicaciones de almacenamiento de \textit{data}.&%Developed in 1970s to deal with first wave of data storage applications&
+	Desarrollado en 2000s para tratar con las limitaciones de \gloss{sql} \textit{databases}, en particular en relacion a \textit{scale}, \textit{replication} y guardar \textit{data} sin estructura.%Developed in 2000s to deal with limitations of SQL databases, particularly concerning scale, replication and unstructured data storage
 	
 \\ \hline
-	Examples&
-	MySQL, Postgres, Oracle Database&
+	Ejemplos%Examples&
+	MySQL, Postgres, Oracle \textit{Database}&
 	MongoDB, Cassandra, HBase, Neo4j
 \\ \hline
-	Data Storage Model&
-	Individual records (e.g., "employees") are stored as rows in tables, with each column storing a specific piece of data about that record (e.g., "manager," "date hired," etc.), much like a spreadsheet. Separate data types are stored in separate tables, and then joined together when more complex queries are executed. For example, "offices" might be stored in one table, and "employees" in another. When a user wants to find the work address of an employee, the database engine joins the "employee" and "office" tables together to get all the information necessary.&
-	Varies based on database type. For example, key-value stores function similarly to SQL databases, but have only two columns ("key" and "value"), with more complex information sometimes stored within the "value" columns. Document databases do away with the table-and-row model altogether, storing all relevant data together in single "document" in JSON, XML, or another format, which can nest values hierarchically.
+	\textit{Data Storage Model}&
+	Registros individuales ( ej., \"employees\") son guardados como filas en la tabla, con cada columna guardando un \textit{data} especifico sobre el registro (ej., \"manager\", \"data hired\", etc), similar a un \textit{spreedsheet}. Tipos de \textit{data} separados son guardados en tablas separadas, y entonces uniendose juntos cuando \textit{queries} mas complejas son ejecutadas. Por ejemplo, "offices" podrian estar guardadas en una tabla, y \"employees\" en otra. Cuando un usuaio quiere buscar la dirección de trabajo de un \textit{employee}, el \textit{database engine} \textit{joins} las tablas \"employee\" y \"office\" juntas para obtener toda la información necesaria.&
+	%Individual records (e.g., "employees") are stored as rows in tables, with each column storing a specific piece of data about that record (e.g., "manager," "date hired," etc.), much like a spreadsheet. Separate data types are stored in separate tables, and then joined together when more complex queries are executed. For example, "offices" might be stored in one table, and "employees" in another. When a user wants to find the work address of an employee, the database engine joins the "employee" and "office" tables together to get all the information necessary.&
+	
+	Varia de acuerdo al tipo de \textit{database}. Por ejemplo, \textit{key-value store}funciona de manera similar a \textit{database} \gloss{sql}, pero tiene solo dos \textit{columns} (\"key\" y \"value\"), con información mas compleja en algunas ocaciones guardada dentro de \textit{columns} \"value\". \textit{Document databases} acabó con el \textit{table-and-row model} completamente, guardando todo la \textit{data} relevante junto en un solo \textit{\"document\"} en gloss{json}, gloss{XML}, o otro formato, el cual puede anidar valores jerarquicamente.
+	%Varies based on database type. For example, key-value stores function similarly to SQL databases, but have only two columns ("key" and "value"), with more complex information sometimes stored within the "value" columns. Document databases do away with the table-and-row model altogether, storing all relevant data together in single "document" in JSON, XML, or another format, which can nest values hierarchically.
 	
 
 \\ \hline
-	Schemas&
-	Structure and data types are fixed in advance. To store information about a new data item, the entire database must be altered, during which time the database must be taken offline.&
-	Typically dynamic. Records can add new information on the fly, and unlike SQL table rows, dissimilar data can be stored together as necessary. For some databases (e.g., wide-column stores), it is somewhat more challenging to add new fields dynamically.
+	\textit{Schemas}
+	%Schemas&
+	
+	Estructura y tipo de \textit{data} son fijo por adelantado. Para guardar información sobre un nuevo \textit{data item}, la \textit{database} entera debe ser alterada, tiempo durante el cual la \textit{database} debe ser tomadas \textit{offline}.&
+%	Structure and data types are fixed in advance. To store information about a new data item, the entire database must be altered, during which time the database must be taken offline.&
+
+	Tipicamente dinámica. Registros pueden agregar nueva información \textit{on the fly}, y diferente a \textit{\gloss{sql} table rows}, \textit{data} distinta puede estar guardada junta como necesaria. Para algunas \textit{databases} (ej., \textit{wide-column stores}), es algo mas desafiante para agregar nuevos \textit{fields dinamically}.
+	%Typically dynamic. Records can add new information on the fly, and unlike SQL table rows, dissimilar data can be stored together as necessary. For some databases (e.g., wide-column stores), it is somewhat more challenging to add new fields dynamically.
 
 \\ \hline
-	Scaling&
-	Vertically, meaning a single server must be made increasingly powerful in order to deal with increased demand. It is possible to spread SQL databases over many servers, but significant additional engineering is generally required.&
-	Horizontally, meaning that to add capacity, a database administrator can simply add more commodity servers or cloud instances. The database automatically spreads data across servers as necessary.
+	\textit{Scaling}&%Scaling&
+	
+	\textit{Vertivally}, significa que un solo servidor debe incrementar \textit{powerful} con el fin de hacer frente al incremento de demanda. Es posible propagar \gloss{sql} \textit{databases} sobre muchos servidores, pero ingeniería significativa adicional ses generalmente requerida.&
+	%Vertically, meaning a single server must be made increasingly powerful in order to deal with increased demand. It is possible to spread SQL databases over many servers, but significant additional engineering is generally required.&
+	
+	\textit{Horizontally}, significa que para agregar capacidad, un administrador \textit{database} puede simplemente agregar mas servidores o \textit{cloud instances}.
+	%Horizontally, meaning that to add capacity, a database administrator can simply add more commodity servers or cloud instances. The database automatically spreads data across servers as necessary.
 	
 \\ \hline
-	Development Model&
-	Mix of open-source (e.g., Postgres, MySQL) and closed source (e.g., Oracle Database)&
-	Open-source
+	\textit{Development Model}&
+	%Development Model&
+	
+	\textit{Mix} de \textit{open source} (ej., Postgres, MySQL) y \textit{closed source} (ej., Oracle \textit{Database})&
+	%Mix of open-source (e.g., Postgres, MySQL) and closed source (e.g., Oracle Database)&
+	\textit{Open source}
+	%Open-source
 	
 \\ \hline
-	Supports Transactions&
-	Yes, updates can be configured to complete entirely or not at all&
-	In certain circumstances and at certain levels (e.g., document level vs. database level)
+	\textit{Supports Transactions}&
+	%Supports Transactions&
+	
+	Si, actualizaciones pueden ser configuradas para completar enteramente o no del todo&	
+	%Yes, updates can be configured to complete entirely or not at all&
+	
+	En ciertas circunstancias y en ciertos niveles (ej., \textit{document level} vs. \textit{database level})
+	%In certain circumstances and at certain levels (e.g., document level vs. database level)
 	
 \\ \hline
-	Data Manipulation&
-	Specific language using Select, Insert, and Update statements, e.g. SELECT fields FROM table WHERE…&
-	Through object-oriented APIs
+	\textit{Data Manipulation}&
+	%Data Manipulation&
+	
+	Lenguaje especial usando \textit{Select}, \textit{Insert}, y \textit{Update statements}, ej., SELECT fields FROM table WHERE...&	
+	%Specific language using Select, Insert, and Update statements, e.g. SELECT fields FROM table WHERE…&
+	
+	A través de APIs \textit{object-oriented}
+	%Through object-oriented APIs
 
 \\ \hline
-	Consistency&
-	Can be configured for strong consistency&
-	Depends on product. Some provide strong consistency (e.g., MongoDB) whereas others offer eventual consistency (e.g., Cassandra)
+
+	\textit{Consistency}&
+	%Consistency&
+	
+	Puede ser configurada para \textit{strong consistency}&
+	%Can be configured for strong consistency&
+	
+	Depende del producto. Algunos proveen \textit{strong consistency} (ej., MongoDB) mientras otros ofrecen \textit{eventual consistency} (ej., Cassandra)
+	%Depends on product. Some provide strong consistency (e.g., MongoDB) whereas others offer eventual consistency (e.g., Cassandra)
 
 \\ \hline
 \end{tabular}
