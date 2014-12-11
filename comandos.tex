@@ -1,0 +1,100 @@
+%%%%%%%%%%%%%%%%%%% region Figura %%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% Figura  %%%%%%%%%%
+%   1: ruta imagen
+%   2: medida
+%   3: caption
+%   4: label
+%Ej: \figura{portada.png}{width=10cm}{este es el texto q va abajo de la figura}{fig:portada}
+\newcommand{\figura}[4]
+{
+   \begin{figure}[H]
+     \centering
+     \caption{#3}\label{#4}
+     \includegraphics[#2]{#1}
+   \end{figure}
+}
+%%%%%%%%%%%%%%%%%%% endregion Figura %%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%% 		region References per caption		%%%%%%%%%%%%%%%%%%% 
+% 
+\newcommand{\reftabla}[1]{\tablename \ref{#1}}
+
+%Modificar el caption
+\renewcommand{\lstlistingname}{Código}
+\newcommand{\refsource}[1]{\lstlistingname \ref{#1}}
+
+\newcommand{\refFigura}[1]{\figurename \ref{#1}}
+%%%%%%%%%%%%%%%%%%% 		endregion References per caption 	%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%% region constants %%%%%%%%%%%%%%%%%%%
+
+\newcommand{\mongodb}{\gloss{mongodb}}
+\newcommand{\nodejs}{Node.js}
+\newcommand{\javascript}{\gloss{javascript}}
+\newcommand{\ecommerce}{\gloss{ecommerce}}
+\newcommand{\json}{\gloss{json}}
+\newcommand{\sql}{\gloss{sql}}
+\newcommand{\nosql}{\gloss{nosql}}
+\newcommand{\workload}{\gloss{workload}}
+\newcommand{\rdbms}{\gloss{rdbms}}
+\newcommand{\framework}{Framework}
+\newcommand{\join}{join}
+\newcommand{\joins}{joins}
+\newcommand{\xml}{XML}
+\newcommand{\php}{PHP}
+\newcommand{\opensource}{open source}
+\newcommand{\performance}{performance}
+\newcommand{\hardware}{hardware}
+\newcommand{\software}{software}
+\newcommand{\benchmark}{benchmark}
+
+%internet
+\newcommand{\web}{web}
+\newcommand{\internet}{Internet}
+\newcommand{\www}{World Wide Web}
+\newcommand{\http}{HTTP}
+\newcommand{\https}{HTTPS}
+\newcommand{\dotcom}{dot-com}
+\newcommand{\online}{online}
+\newcommand{\offline}{offline}
+
+\newcommand{\serverside}{server-side}
+\newcommand{\clientside}{client-side}
+\newcommand{\frontend}{Front-End}
+\newcommand{\backend}{Back-End}
+
+\newcommand{\mobile}{mobile}
+\newcommand{\task}{Task}
+
+%e-commerce 
+\newcommand{\wishlist}{wish list}
+
+%Social Networks
+\newcommand{\twitter}{Twitter}
+\newcommand{\facebook}{Facebook}
+\newcommand{\foursquare}{Foursquare}
+
+%%%%%%%%%%%%%%%%%%% endregion constants %%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%  DATOS MEMORIA   %%%%%%%%%%%%%%%%%%%%
+\newcommand{\memtitle}{TITLE UNKNOW}
+\newcommand{\autor}{Álvaro Balmaceda Celedón}
+\newcommand{\profesor}{Nelson Baloian}
+\newcommand{\coguia}{UNKNOW COGUIA}
+\newcommand{\integrante}{UNKNOW INTEGRANTE}
+\newcommand{\fecha}{Diciembre 2014}
+\newcommand{\tipomemoria}{INGENIERO CIVIL COMPUTACIÓN}
+\newcommand{\dpto}{DEPARTAMENTO DE CIENCIAS DE LA COMPUTACIÓN}
+
+%%%%%%%%%%%%%%%%%%%%%	COMANDOS PERSONALIZADOS		%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\Memtitle}{\MakeUppercase{\memtitle}}
+\newcommand{\Author}{\MakeUppercase{\autor}}
+\newcommand{\Profesor}{\MakeUppercase{\profesor}}
+\newcommand{\Coguia}{\MakeUppercase{\coguia}}
+\newcommand{\Integrante}{\MakeUppercase{\integrante}}
+\newcommand{\Fecha}{\MakeUppercase{\fecha}}
+\newcommand{\Tipomemoria}{\MakeUppercase{\tipomemoria}}
+\newcommand{\Dpto}{\MakeUppercase{\dpto}}
