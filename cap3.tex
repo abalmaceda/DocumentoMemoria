@@ -4,7 +4,7 @@
 %\subsection{Nueva tecnología no es sinónimo de mejores soluciones}
 %TODO
 
-A continuación se discutirán las razones para considerar el desarrollo de una plataforma \ecommerce un aporte en relación a las opciones \textit{open source} actualmente vigentes. Para esto se explicara por que los cambios de tecnología propuestos son un beneficio para el actual estado del arte del tema, así como un aporte para potenciales funcionalidades que serán agregadas en el futuro.
+A continuación se discutirán las razones para considerar el desarrollo de una plataforma \ecommerce un aporte en relación a las opciones \opensource actualmente vigentes. Para esto se explicara por que los cambios de tecnología propuestos son un beneficio para el actual estado del arte del tema, así como un aporte para potenciales funcionalidades que serán agregadas en el futuro.
 
 %TODO Hablar de arquitectura de proyecto para luego diferenciar las diferentes tecnologias y explicar cual es la mas adecuada en cada caso.
 
@@ -171,9 +171,9 @@ Aplicación: \textit{Key value stores} y \textit{wide column stores} son útiles
 	\textit{Development Model}&
 	%Development Model&
 	
-	\textit{Mix} de \textit{open source} (ej., Postgres, MySQL) y \textit{closed source} (ej., Oracle \textit{Database})&
+	\textit{Mix} de \opensource (ej., Postgres, MySQL) y \textit{closed source} (ej., Oracle \textit{Database})&
 	%Mix of open-source (e.g., Postgres, MySQL) and closed source (e.g., Oracle Database)&
-	\textit{Open source}
+	\opensource
 	%Open-source
 	
 \\ \hline
@@ -623,7 +623,7 @@ La técnica utilizada para evitar excepciones \textit{bubbling up to the surface
 La primera adopción que hizo Paypal con Node.js no fue una aplicación menor; esto fue su \textit{account overview page} y una de las mas \textit{trafficked} \textit{apps} en el \textit{website}. Ellos tomaron un gran riesgo, pero lo hicieron con la finalidad de determinar si realmente la nueva plataforma representaba una mejora con respecto al sistema actual.
 %Our first adopter of node.js in production wasn’t a minor application; it was our account overview page and one of the most trafficked apps on the website. We decided to go big, but we also mitigated that risk by building the equivalent Java application in parallel. We knew how to deploy and scale Java applications, so if anything went wrong with the node.js app, we could fall back to the Java one. This provided the setting for some interesting data.
 
-Una vez que la aplicación con Node.js logro las mismas funcionalidades que la aplicación actual, persivieron el siguiente resultado:
+Una vez que la aplicación con \nodejs logro las mismas funcionalidades que la aplicación actual, persivieron el siguiente resultado:
 
 \begin{itemize}
 \item Fue construida casi \textbf{el doble de rápido con menos personal}.
@@ -631,12 +631,12 @@ Una vez que la aplicación con Node.js logro las mismas funcionalidades que la a
 \item Construida con \textbf{40\% menos de archivos}.
 \end{itemize}
 
-Por si solo, esta evidencia mostraba a los equipos desarrollar más rápido utilizando \textit{JavaScript}.
+Por si solo, esta evidencia mostraba a los equipos desarrollar más rápido utilizando \javascript.
 
-\textit{Performance} fue un tópico interesante. Se pudo analizar 2 aplicaciones con exactamente las mismas funcionalidades: una con \textit{framework} Java interno basado en Spring y la otra construida en \textit{kraken.js} usando Express, dust.js y otros códigos \textit{open source}.
+\performance fue un tópico interesante. Se pudo analizar 2 aplicaciones con exactamente las mismas funcionalidades: una con \framework Java interno basado en Spring y la otra construida en \textit{kraken.js} usando Express, dust.js y otros códigos \opensource.
 %Performance is a fun and debatable topic. In our case, we had two applications with the exact same functionality and built by roughly the same teams: one on our internal Java framework based on Spring and the other built on kraken.js using express, dust.js and other open source code.
 
-Se ejecutaron los test adecuados utilizando \textit{hardware} de producción que probaran las rutas y recolectaran datos de rendimiento y tiempo de respuesta. Los resultados se aprecian en \refFigura{figure:java_benchmark_paypal}.
+Se ejecutaron los test adecuados utilizando \hardware de producción que probaran las rutas y recolectaran datos de rendimiento y tiempo de respuesta. Los resultados se aprecian en \refFigura{figure:java_benchmark_paypal}.
 %We ran our test suite using production hardware that tested the routes and collected data on throughput and response time.
 
 \begin{figure}[h!]
@@ -650,7 +650,7 @@ Se observa que la aplicación utilizando Node.js tiene:
 %You can see that the node.js application had:
 
 \begin{itemize}
-\item El doble de solicitudes por segundo vs. la aplicación Java. Esto es incluso mas interesante porque los resultados iniciales de rendimiento estaban utilizando un solo núcleo para la aplicación Node.js, en comparación con cinco núcleos en Java. Esperan aumentar aun más esta brecha en el futuro.
+\item El doble de solicitudes por segundo vs. la aplicación Java. Esto es incluso mas interesante porque los resultados iniciales de rendimiento estaban utilizando un solo núcleo para la aplicación \nodejs, en comparación con cinco núcleos en Java. Esperan aumentar aun más esta brecha en el futuro.
 %Double the requests per second vs. the Java application. This is even more interesting because our initial performance results were using a single core for the node.js application compared to five cores in Java. We expect to increase this divide further.
 \item \textbf{Disminución en un 35\% en el tiempo promedio de respuesta} para la misma página. Esto resulto ser \textbf{200ms mas rápido} en el servidor. Algo que los usuarios definitivamente notan.
 %35% decrease in the average response time for the same page. This resulted in the pages being served 200ms faster— something users will definitely notice.
@@ -658,12 +658,12 @@ Se observa que la aplicación utilizando Node.js tiene:
 
 %There’s a disclaimer attached to this data: this is with our frameworks and two of our applications. It’s just about as apples-to-apples a performance test as we could get between technologies, but your milage may vary. That said, we’re excited by what we’ve seen from node.js’ raw performance.
 
-Mas ejemplos de benchmark pueden ser encontrados en\cite{online_nodejs_java_dzone}.
+Mas ejemplos de \benchmark pueden ser encontrados en\cite{online_nodejs_java_dzone}.
 
 
 \subsubsection{Node.js vs PHP\cite{online_nodejs_php_loadimpact}}
 
-No es justo comparar Node.js con PHP. Lo que realmente se compara es Node.js y PHP+Apacha2 ( u otro servidor http ). Es este caso particular, las pruebas fueron realizadas usando Apache2 y \textit{mod\_php}, dado que es por lejos la configuración mas común. 
+No es justo comparar Node.js con PHP. Lo que realmente se compara es \nodejs y PHP+Apacha2 ( u otro servidor http ). Es este caso particular, las pruebas fueron realizadas usando Apache2 y \textit{mod\_php}, dado que es por lejos la configuración mas común. 
 %So no, it’s not fair to say that we compare Node.js and PHP. What we really compare is Node.js and PHP+Apache2 (or any other http server). For this article, I’ve used Apache2 and mod_php since it’s by far the most common configuration. Some might say that I’d get much better results if I had used Nginx or Lighthttpd as the http server for PHP. That’s most likely very true, but at the end of the day, server side PHP depends on running in multiple separate processes. Regardless if we create those processes with mod_php or fastcgi or any other mechanism. So, I’m sticking with the standard server setup for PHP and I think that makes good sense.
 
 \begin{figure}[h!]
@@ -673,7 +673,7 @@ No es justo comparar Node.js con PHP. Lo que realmente se compara es Node.js y P
 	\label{figure:node_benchmark_nodephp}
 \end{figure}
 
-El gráfico de \refFigura{figure:node_benchmark_nodephp} muestra lo que sucede cuando se carga el test en el servidor utilizando Node.js. La respuesta de tiempo (azul) es mucho mas constante durante todo el test. 
+El gráfico de \refFigura{figure:node_benchmark_nodephp} muestra lo que sucede cuando se carga el test en el servidor utilizando \nodejs. La respuesta de tiempo (azul) es mucho mas constante durante todo el test. 
 
 %The first graph here shows what happens when we load test the Node.js server. The response time (blue) is pretty much constant all through the test. My back of a napkin analysis of the initial outliers is that they have to do with a cold MySQL cache. Now, have a look at the results from the PHP test:
 
@@ -685,19 +685,19 @@ El gráfico de \refFigura{figure:node_benchmark_nodephp} muestra lo que sucede c
 	\label{figure:php_benchmark_nodephp}
 \end{figure}
 
-Muy diferente los resultados para el caso de PHP(\refFigura{figure:php_benchmark_nodephp}). No es sencillo observar que sucede, pero las lineas azules están inicialmente estables a 320ms hasta cerca de 340 usuarios activos simultáneos. Después de eso, se observa un pequeño incremento en el tiempo de respuesta pero después de agregar mas usuarios activos simultáneos, el tiempo de respuesta se dispara por completo. 
+Muy diferente los resultados para el caso de \php(\refFigura{figure:php_benchmark_nodephp}). No es sencillo observar que sucede, pero las lineas azules están inicialmente estables a 320ms hasta cerca de 340 usuarios activos simultáneos. Después de eso, se observa un pequeño incremento en el tiempo de respuesta pero después de agregar mas usuarios activos simultáneos, el tiempo de respuesta se dispara por completo. 
 %Quite different results. It’s not easy to see on this screen shot, but the blue lines is initially stable at 320 ms response time up to about 340 active concurrent users. After that, we first see a small increase in response time but after additional active concurrent users are added, the response time eventually goes through the roof completely.
 
-¿ Qué problema tiene PHP/Apache?
+¿ Qué problema tiene \php/Apache?
 %So what’s wrong with PHP/Apache?
 
 La diferencia no es de sorprender. Esto es producto de la diferencia de arquitectura entre ambas soluciones.
 %Ok, so what we’re looking at is not very surprising, it’s the difference in architecture between the two solutions. Let’s think about what goes on in each case.
 
-Cuando Apache2 sirve a una pagina PHP, este deja la ejecución PHP a un \textit{child process} específico. Ese \textit{child process} puede solo manejar una solicitud PHP al mismo tiempo, así que si hay mas solicitudes, las otras deben esperar. En el servidor hay un máximo de 256 clientes (\textit{MaxClients}) configurados vs 150 que vienen por defecto. Incluso si es posible aumentar el \textit{MaxClients} hasta mas allá de 256, habrá problemas con la memoria interna(\gloss{memory_ram}), Al final, se necesita encontrar el balance correcto entre el máximo numero de solicitudes simultaneas y los recursos disponibles del servidor.
+Cuando Apache2 sirve a una pagina PHP, este deja la ejecución \php a un \textit{child process} específico. Ese \textit{child process} puede solo manejar una solicitud \php al mismo tiempo, así que si hay mas solicitudes, las otras deben esperar. En el servidor hay un máximo de 256 clientes (\textit{MaxClients}) configurados vs 150 que vienen por defecto. Incluso si es posible aumentar el \textit{MaxClients} hasta mas allá de 256, habrá problemas con la memoria interna(\gloss{memory_ram}), Al final, se necesita encontrar el balance correcto entre el máximo numero de solicitudes simultaneas y los recursos disponibles del servidor.
 %When Apache2 serves up the PHP page it leaves the PHP execution to a specific child process. That child process can only handle one PHP request at a time so if there are more requests than than, the others have to wait. On this server, there’s a maximum of 256 clients (MaxClients) configured vs 150 that comes standard. Even if it’s possible to increase MaxClients to well beyond 256, that will in turn give you a problem with internal memory (RAM). At the end, you need to find the correct balance between max nr of concurrent requests and available server resources.
 
-Pero para Node.js, es sencillo. Después de todo, cada solicitud es cerca de 30\% mas rápido que PHP, así que en \textit{performance}, el cual es una configuración extremadamente básica, Node.js es mas rápido. Ademas, en Node.js Todo esta en un solo proceso en el servidor. Un proceso manejando una solicitud activa. Así que no existe una comunicación interna de procesos entre diferentes instancias y el proceso madre. Incluso, pos solicitud, Node es mucho mas eficiente. PHP/Apache necesita muchísimo PHP y sobrecarga de procesos por cada concurrente \textit{worker/client} mientras Node compartirá la mayoría de su memoria entre las solicitudes.
+Pero para Node.js, es sencillo. Después de todo, cada solicitud es cerca de 30\% mas rápido que \php, así que en \performance, el cual es una configuración extremadamente básica, \nodejs es mas rápido. Ademas, en Node.js Todo esta en un solo proceso en el servidor. Un proceso manejando una solicitud activa. Así que no existe una comunicación interna de procesos entre diferentes instancias y el proceso madre. Incluso, pos solicitud, \nodejs es mucho mas eficiente. \php/Apache necesita muchísimo \php y sobrecarga de procesos por cada concurrente \textit{worker/client} mientras \nodejs compartirá la mayoría de su memoria entre las solicitudes.
 %But for Node, it’s easier. First of all, in the calm territory, each request is about 30% faster than for PHP, so in pure performance in this extremely basic setup, Node is quicker. Also going for Node is the fact that everything is in one single process on the server. One process with one active request handling thread. So thre’s no inter process communication between different instances and the ‘mother’ process. Also, per request, Node is much more memory efficient. PHP/Apache needs to have a lot of php and process overhead per concurrent worker/client while Node will share most of it’s memory between the requests.
 
 %Also note that in both these tests, CPU load was never a problem. Even if CPU loads varies with concurrent users in both tests it stays below 5% (and yes, I did not just rely on the graph, I checked it on the server as well). (I’ll write a follow up on this article at some point when I can include server memory usage as well). So we haven’t loaded this server into oblivion in any way, we’ve just loaded it hard enough for the PHP/Aapache architecture to start showing some of it’s problems.
@@ -748,13 +748,13 @@ And sure, in real life, there are numerous of tricks available to reduce the eff
 \ecommerce es un excelente ejemplo de sistema que se puede ver totalmente beneficiado con el uso de Node en el lado del servidor. 
 
 \begin{itemize}
-	\item \textbf{FRONT-END se movió desde el server-side al client-side( al menos en mobile )}. Una de las grandes consecuencias es que el server-side ya no es mas CPU Bound ahora es Memory Bound e I/O Bound. Node.js es \textit{event-driven}, lo cual implica eficiencia en I/O Bound y es extremadamente eficiente en el uso de memoria.
+	\item \textbf{\frontend se movió desde el \serverside al \clientside( al menos en \mobile )}. Una de las grandes consecuencias es que el server-side ya no es mas CPU Bound ahora es Memory Bound e I/O Bound. \nodejs es \textit{event-driven}, lo cual implica eficiencia en I/O Bound y es extremadamente eficiente en el uso de memoria.
 	\item Permite velocidad de desarrollo y ejecución. En otras palabras iteraciones rápidas.
 	%Ease of Development-Some problem, somewhere has a solution best written in Brainf*ck. But implementing that solution (in Brainfuck) will be nearly impossible to write, let alone read. It will cost you time and a tremendous amount of effort. In general, you should use languages and platform that make development easier, not harder for you (or anyone that might work on it later).
 	\item \textbf{Comunidad}: Existe una activa comunidad la cual esta constantemente solucionando dudas, ademas de proporcionar módulos para resolver problemas conocidos.
-	\item \textbf{Reutilizar código}: \textit{Server-side} y \textit{client-side} usan el mismo lenguaje, permitiendo reutilización de componentes.
-	\item \textbf{Optimiza el uso de recursos}: Los desarolladores de \textit{client-side} pueden desarrollar en \textit{server-side}, ya que son el mismo lenguaje.
-	\item \textbf{Scalability}: Los sitios \textit{web} se encuentran en constante crecimiento. \textit{Scalability} es una consecuencia de la eficiencia que tiene Node.js para Memory Bound e I/O Bound
+	\item \textbf{Reutilizar código}: \serverside y \clientside usan el mismo lenguaje, permitiendo reutilización de componentes.
+	\item \textbf{Optimiza el uso de recursos}: Los desarolladores de \clientside pueden desarrollar en \serverside, ya que son el mismo lenguaje.
+	\item \textbf{Scalability}: Los sitios \textit{web} se encuentran en constante crecimiento. \textit{Scalability} es una consecuencia de la eficiencia que tiene \nodejs para Memory Bound e I/O Bound
 \end{itemize}
 
 %+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -805,10 +805,10 @@ Billy Scott, PayPal
 
 \section{\textit{Client side}}
 
-Elegir el \textit{framework} correcto para un proyecto puede ternet un impacto tremendo en la habilida de entregar a tiempo y la habilidad para mantener el código en el futuro. ES ciertamente deseable un \textit{framework }solido, estable y provado, pero sin estar limitado por la opción. La \textit{web} estra evolucionando rapidamente; nuevas tecnologias surgen, y metodologias antiguas rapidamente se vuelven irrelebantes. Bajo este escenarió, se compararan 3 \textit{frameworks}
+Elegir el \framework correcto para un proyecto puede tener un impacto tremendo en la habilidad de entregar a tiempo y la habilidad para mantener el código en el futuro. ES ciertamente deseable un \framework solido, estable y probado, pero sin estar limitado por la opción. La \web entra evolucionando rápidamente; nuevas tecnologías surgen, y metodologías antiguas rápidamente se vuelven irrelevantes. Bajo este escenario, se compararan 3 \frameworks.
 %In this article we are going to compare three popular MV* frameworks for the web: AngularJS vs. Backbone vs. Ember. Choosing the right framework for your project can have a huge impact on your ability to deliver on time, and your ability to maintain your code in the future. You probably want a solid, stable and proven framework to build upon, but don't want to be limited by your choice. The web is evolving fast — new technologies arise, and old methodologies quickly become irrelevant. Under this light, we are going to go through an in-depth comparison of the three frameworks.
 
-\subsection{Meet The Frameworks}
+\subsection{Meet The \frameworks}
 
 %All the frameworks we are going to meet today have a lot in common: they are open-sourced, released under the permissive MIT license, and try to solve the problem of creating Single Page Web Applications using the MV* design pattern. They all have the concept of views, events, data models and routing. We are going to start with some quick background and history, and then dive in to compare the three frameworks.
 %
