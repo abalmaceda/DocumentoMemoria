@@ -26,6 +26,9 @@
 \newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 \newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 \newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+ 
+\newcommand{\reftabla}[1]{\tablename \ref{#1}}
 %%%%%%%%%%%%%%%%%%% endregion Tablas style %%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%% region JavaScript style %%%%%%%%%%%%%%%%%%%
@@ -65,6 +68,10 @@
 	showtabs=false,
 	captionpos=b
 }
+
+%Modificar el caption
+\renewcommand{\lstlistingname}{Código}
+\newcommand{\refsource}[1]{\lstlistingname \ref{#1}}
 %%%%%%%%%%%%%%%%%%% endregion JavaScript style %%%%%%%%%%%%%%%%%%%
 
 % Glosario
@@ -156,6 +163,8 @@
 \newcommand{\Fecha}{\MakeUppercase{\fecha}}
 \newcommand{\Tipomemoria}{\MakeUppercase{\tipomemoria}}
 \newcommand{\Dpto}{\MakeUppercase{\dpto}}
+
+%%%%%%%%%%%%%%%%%%% region Figura %%%%%%%%%%%%%%%%%%%
 %%%%%%%%%% Figura  %%%%%%%%%%
 %   1: ruta imagen
 %   2: medida
@@ -170,7 +179,9 @@
      \includegraphics[#2]{#1}
    \end{figure}
 }
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\refFigura}[1]{\figurename \ref{#1}}
+%%%%%%%%%%%%%%%%%%% endregion Figura %%%%%%%%%%%%%%%%%%%
 
 \begin{document}
 \makeatletter
@@ -385,10 +396,10 @@ Quiero agradecer...
 %	CAPÍTULOS					%
 %								%
 %%%%%%%%%%%%%%%%%%%%%
-\input{cap1.tex}
-\input{cap2.tex}
+%\input{cap1.tex}
+%\input{cap2.tex}
 \input{cap3.tex}
-\input{cap6.tex}
+%\input{cap6.tex}
 %\input{cap7.tex}
 
 %%%%%%%%%%%%%%%%%%%%%
