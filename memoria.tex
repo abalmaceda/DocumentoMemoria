@@ -1,442 +1,15 @@
-%\documentclass[11pt,oneside,letterpaper,leqno]{report}
-%\usepackage[utf8x]{inputenc}
-%\usepackage[spanish,es-tabla]{babel}
-%
-%% Fuente Arial
-%\usepackage[scaled]{uarial}
-%\renewcommand*\familydefault{\sfdefault}
-%\usepackage[T1]{fontenc}
-%
-%% Interlineado 1.5
-%\usepackage{setspace}
-%\onehalfspacing
-%
-%% Márgenes de Página
-%\usepackage[left=4cm,top=4cm,right=2.5cm,bottom=2.5cm]{geometry}
-%
-%% Bibliografía en Español
-%%\usepackage{babelbib}
-%\usepackage[fixlanguage]{babelbib}
-%\selectbiblanguage{spanish}
-%
-%%%%%%%%%%%%%%%%%%%% region Tablas style %%%%%%%%%%%%%%%%%%%
-%\usepackage{multirow}
-%\usepackage{tabularx}
-%\usepackage{array}
-%\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
-%\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
-%\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
-%
-% 
-%\newcommand{\reftabla}[1]{\tablename \ref{#1}}
-%%%%%%%%%%%%%%%%%%%% endregion Tablas style %%%%%%%%%%%%%%%%%%%
-%
-%%%%%%%%%%%%%%%%%%%% region JavaScript style %%%%%%%%%%%%%%%%%%%
-%\usepackage{listings}
-%\usepackage{color}
-%\definecolor{lightgray}{rgb}{.9,.9,.9}
-%\definecolor{darkgray}{rgb}{.4,.4,.4}
-%\definecolor{purple}{rgb}{0.65, 0.12, 0.82}
-%
-%\lstdefinelanguage{JavaScript}{
-%	keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break},
-%	keywordstyle=\color{blue}\bfseries,
-%	ndkeywords={class, export, boolean, throw, implements, import, this},
-%	ndkeywordstyle=\color{darkgray}\bfseries,
-%	identifierstyle=\color{black},
-%	sensitive=false,
-%	comment=[l]{//},
-%	morecomment=[s]{/*}{*/},
-%	commentstyle=\color{purple}\ttfamily,
-%	stringstyle=\color{red}\ttfamily,
-%	morestring=[b]',
-%	morestring=[b]"
-%}
-%
-%\lstset{
-%	language=JavaScript,
-%	backgroundcolor=\color{lightgray},
-%	extendedchars=true,
-%	basicstyle=\footnotesize\ttfamily,
-%	showstringspaces=false,
-%	showspaces=false,
-%	numbers=left,
-%	numberstyle=\footnotesize,
-%	numbersep=9pt,
-%	tabsize=2,
-%	breaklines=true,
-%	showtabs=false,
-%	captionpos=b
-%}
-%
-%%Modificar el caption
-%\renewcommand{\lstlistingname}{Código}
-%\newcommand{\refsource}[1]{\lstlistingname \ref{#1}}
-%%%%%%%%%%%%%%%%%%%% endregion JavaScript style %%%%%%%%%%%%%%%%%%%
-%
-%%%%%%%%%%%%%%%%%%%% region constants %%%%%%%%%%%%%%%%%%%
-%
-%%Names
-%\newcommand{\mongodb}{\gloss{mongodb}}
-%\newcommand{\nodejs}{Node.js}
-%\newcommand{\javascript}{\gloss{javascript}}
-%\newcommand{\ecommerce}{\gloss{ecommerce}}
-%\newcommand{\express}{express}
-%
-%\newcommand{\json}{\gloss{json}}
-%\newcommand{\sql}{\gloss{sql}}
-%\newcommand{\nosql}{\gloss{nosql}}
-%\newcommand{\workload}{\gloss{workload}}
-%\newcommand{\rdbms}{\gloss{rdbms}}
-%\newcommand{\framework}{Framework}
-%\newcommand{\join}{join}
-%\newcommand{\joins}{joins}
-%\newcommand{\xml}{XML}
-%\newcommand{\php}{PHP}
-%\newcommand{\opensource}{open source}
-%\newcommand{\performance}{performance}
-%\newcommand{\hardware}{hardware}
-%\newcommand{\software}{software}
-%\newcommand{\benchmark}{benchmark}
-%
-%%internet
-%\newcommand{\web}{web}
-%\newcommand{\internet}{Internet}
-%\newcommand{\www}{World Wide Web}
-%\newcommand{\http}{HTTP}
-%\newcommand{\https}{HTTPS}
-%\newcommand{\dotcom}{dot-com}
-%\newcommand{\online}{online}
-%\newcommand{\offline}{offline}
-%
-%\newcommand{\serverside}{server-side}
-%\newcommand{\clientside}{client-side}
-%\newcommand{\frontend}{Front-End}
-%\newcommand{\backend}{Back-End}
-%
-%\newcommand{\mobile}{mobile}
-%\newcommand{\task}{Task}
-%
-%%e-commerce 
-%\newcommand{\wishlist}{wish list}
-%
-%%Social Networks
-%\newcommand{\twitter}{Twitter}
-%\newcommand{\facebook}{Facebook}
-%\newcommand{\foursquare}{Foursquare}
-%
-%%%%%%%%%%%%%%%%%%%% endregion constants %%%%%%%%%%%%%%%%%%%
-%
-%% Glosario
-%\usepackage{gloss}
-%\makegloss
-%\renewcommand\glossname{Glosario}
-%
-%% Para PS:
-%%\usepackage{pslatex}
-%%\usepackage[dvips]{graphicx}
-%
-%% Para solo PDF:
-%\usepackage[pdftex]{graphicx}
-%
-%\DeclareGraphicsRule{.emf}{bmp}{}{}
-%\DeclareGraphicsExtensions{.pdf,.png,.jpg,.bmp,.gif} %solo para PDFLaTeX
-%
-%\spanishdecimal{.}
-%
-%\usepackage{calc}
-%\usepackage{subfig}
-%\usepackage{enumerate}
-%\usepackage{paralist}
-%\usepackage{url}
-%
-%%Enumerar secciones de manera particular
-%\usepackage{sectsty}
-%
-%%Paquete de dibujo
-%\usepackage{pgf}
-%\usepackage{tikz}
-%\usetikzlibrary{calc,shapes,arrows,decorations.pathmorphing,automata}
-%\usepackage[all]{xy}
-%
-%%Paquete de dibujo plots 3D
-%\usepackage{tikz-3dplot}
-%\newcommand{\dotrule}[1]{\parbox[t]{#1}{\dotfill}}
-%\usepackage{amsmath}
-%\usepackage{amssymb}
-%\usepackage{cite}
-%\usepackage{multirow}
-%\usepackage{nameref}
-%\usepackage[colorlinks=true,linkcolor=black,urlcolor=black,citecolor=black]{hyperref}
-%
-%\DeclareMathOperator*{\argmax}{arg\,max}
-%
-%%Paquete para mini-Table-Of-Contents
-%\usepackage{minitoc}
-%
-%\usepackage{algorithm}
-%\usepackage{algorithmic}
-%\floatname{algorithm}{Algoritmo}
-%
-%%para código fuente
-%\newenvironment{codigoenv}
-%{\fontsize{10pt}{12pt} \linespread{1}} { \normalsize}
-%
-%%INDENTACIÓN
-%\parindent=8mm
-%
-%%ESPACIADO PARRAFOS
-%\setlength{\parskip}{3mm}
-%\setlength{\footskip}{10mm}
-%\setlength{\headsep}{10mm}
-%
-%%Titulo para tabla de contenido pequeñas
-%\def\mtctitle{Contenido}
-%
-%% Evitar separación de palabras
-%\pretolerance=10000
-%\tolerance=10000
-%
-%%%%%%%%%%%%%%%%%%%%%%%  DATOS MEMORIA   %%%%%%%%%%%%%%%%%%%%
-%\newcommand{\memtitle}{TITLE UNKNOW}
-%\newcommand{\autor}{Álvaro Balmaceda Celedón}
-%\newcommand{\profesor}{Nelson Baloian}
-%\newcommand{\coguia}{UNKNOW COGUIA}
-%\newcommand{\integrante}{UNKNOW INTEGRANTE}
-%\newcommand{\fecha}{Diciembre 2014}
-%\newcommand{\tipomemoria}{INGENIERO CIVIL COMPUTACIÓN}
-%\newcommand{\dpto}{DEPARTAMENTO DE CIENCIAS DE LA COMPUTACIÓN}
-%
-%%%%%%%%%%%%%%%%%%%%%%	COMANDOS PERSONALIZADOS		%%%%%%%%%%%%%%%%%%%%%
-%\newcommand{\Memtitle}{\MakeUppercase{\memtitle}}
-%\newcommand{\Author}{\MakeUppercase{\autor}}
-%\newcommand{\Profesor}{\MakeUppercase{\profesor}}
-%\newcommand{\Coguia}{\MakeUppercase{\coguia}}
-%\newcommand{\Integrante}{\MakeUppercase{\integrante}}
-%\newcommand{\Fecha}{\MakeUppercase{\fecha}}
-%\newcommand{\Tipomemoria}{\MakeUppercase{\tipomemoria}}
-%\newcommand{\Dpto}{\MakeUppercase{\dpto}}
-%
-%%%%%%%%%%%%%%%%%%%% region Figura %%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%% Figura  %%%%%%%%%%
-%%   1: ruta imagen
-%%   2: medida
-%%   3: caption
-%%   4: label
-%%Ej: \figura{portada.png}{width=10cm}{este es el texto q va abajo de la figura}{fig:portada}
-%\newcommand{\figura}[4]
-%{
-%   \begin{figure}[H]
-%     \centering
-%     \caption{#3}\label{#4}
-%     \includegraphics[#2]{#1}
-%   \end{figure}
-%}
-%
-%\newcommand{\refFigura}[1]{\figurename \ref{#1}}
-%%%%%%%%%%%%%%%%%%%% endregion Figura %%%%%%%%%%%%%%%%%%%
 \input{dependencias.tex}
 \input{comandos.tex}
 
 \begin{document}
-%\makeatletter
-%\def\@roman#1{\romannumeral #1}
-%\makeatother
-%
-%\setcounter{page}{1}
-%\pagenumbering{roman}
-%%%%%%%%%%
-%%				%
-%%	PORTADA		%
-%%		        %
-%%%%%%%%%%
-%\thispagestyle{empty}
-%\begin{center}
-%
-%\begin{tabular}{rl}
-%\multirow{5}{*}{\includegraphics[scale=0.1]{Figuras/escudoU.png}} &\\
-%& \\
-%& UNIVERSIDAD DE CHILE\\
-%& FACULTAD DE CIENCIAS FÍSICAS Y MATEMÁTICAS\\
-%& \Dpto\\
-%& \\
-%\end{tabular}
-%
-%\vspace{4cm}
-%
-%\Memtitle
-%
-%\vspace{2cm}
-%
-%MEMORIA PARA OPTAR AL TÍTULO DE\\
-%\tipomemoria
-%
-%\vspace{2cm}
-%
-%\Author
-%
-%\vspace{1cm}
-%PROFESOR GUÍA:\\
-%\Profesor \\
-%\vspace{1cm}
-%
-%\vfill
-%SANTIAGO DE CHILE\\
-%\Fecha
-%\end{center}
-%
-%%%%%%%%%%
-%%			%
-%%	TITULO	%
-%%			%
-%%%%%%%%%%
-%\newpage
-%\thispagestyle{empty}
-%\begin{center}
-%
-%\begin{tabular}{rl}
-%\multirow{5}{*}{\includegraphics[scale=0.1]{Figuras/escudoU.png}} &\\
-%& \\
-%& UNIVERSIDAD DE CHILE\\
-%& FACULTAD DE CIENCIAS FÍSICAS Y MATEMÁTICAS\\
-%& \Dpto\\
-%& \\
-%\end{tabular}
-%
-%\vspace{4cm}
-%
-%\Memtitle
-%
-%\vspace{2cm}
-%
-%MEMORIA PARA OPTAR AL TÍTULO DE\\
-%\Tipomemoria
-%
-%\vspace{2cm}
-%
-%\Author
-%
-%\vspace{1cm}
-%PROFESOR GUÍA:\\
-%\Profesor \\
-%\vspace{1cm}
-%MIEMBROS DE LA COMISIÓN:\\
-%\Coguia \\
-%\Integrante \\
-%\vfill
-%SANTIAGO DE CHILE\\
-%\Fecha
-%\end{center}
-%%%%%%%%%%%%%%%%%%%%
-%%							%
-%%	CALIFICACIONES			%
-%%							%
-%%%%%%%%%%%%%%%%%%%%
-%\begin{center}
-%\begin{tabular}{rl}
-%\multirow{5}{*}{\includegraphics[scale=0.1]{Figuras/escudoU.png}} &\\
-%& \\
-%& UNIVERSIDAD DE CHILE\\
-%& FACULTAD DE CIENCIAS FÍSICAS Y MATEMÁTICAS\\
-%& \Dpto\\
-%& \\
-%\end{tabular}
-%
-%\vspace{1cm}
-%
-%\Memtitle
-%
-%\vspace{0.5cm}
-%\Author
-%\vspace{0.5cm}
-%\end{center}
-%
-%\begin{table}[H]
-%\begin{tabular}{p{8cm}c} 
-%COMISIÓN EXAMINADORA & CALIFICACIONES  \\ 
-%\end{tabular}
-%\end{table}
-%\begin{table}[H]
-%\begin{tabular}{p{6cm}lll} 
-%Labor y Nombre & Nota (número) & Nota (texto)& Firma \\ 
-%&&&\\
-%\multirow{3}{6cm}{Profesor Guía\\ \profesor : \\}  &&&\\ &..................&..................&..................\\ &&&\\ 
-%\multirow{3}{6cm}{Profesor Co-Guía\\ \coguia : \\}  &&&\\ &..................&..................&..................\\  &&&\\
-%\multirow{3}{6cm}{Profesor Integrante\\ \integrante :\\} &&&\\&..................&..................&..................\\ &&&\\ 
-%\multirow{3}{6cm}{Nota Final \\Exámen de Título\\}  &&&\\&..................&..................&\\   &&&\\
-%\end{tabular}
-%\end{table}
-%
-%\begin{center}
-%%\vspace*{1cm}
-%MEMORIA PARA OPTAR AL TÍTULO DE\\
-%\Tipomemoria \\
-%\vspace{.5cm}
-%SANTIAGO DE CHILE\\
-%\Fecha
-%\end{center}
-%
-%%%%%%%%%%%%%%%%%%%%
-%%							%
-%%	RESUMEN MEMORIA			%
-%%							%
-%%%%%%%%%%%%%%%%%%%%
-%\newpage
-%%\thispagestyle{empty}
-%
-%\begin{flushright}
-%\small
-%\begin{tabular}{l}
-%RESUMEN DE LA MEMORIA\\
-%PARA OPTAR AL TÍTULO DE\\
-%\Tipomemoria \\
-%POR: \Author \\
-%FECHA: \Fecha\\
-%PROF. GUÍA: \Profesor \\
-%\end{tabular}
-%\end{flushright}
-%
-%\vskip .5cm
-%
-%\begin{center}
-%\Memtitle
-%\end{center}
-%
-%\vskip 0.5cm
-%
-%Resumen
-%
-%
-%%%%%%%%%%%%%%%%%%%%
-%%							%
-%%	AGRADECIMIENTOS			%
-%%							%
-%%%%%%%%%%%%%%%%%%%%
-%\newpage
-%%\thispagestyle{empty}
-%
-%\begin{flushright}
-%Dedicado a...
-%\end{flushright}
-%
-%\newpage
-%%\thispagestyle{empty}
-%
-%\vspace{13cm}
-%
-%\huge
-%\textbf{Agradecimientos}
-%
-%\normalsize
-%Quiero agradecer...
 
 \input{firstpages.tex}
 
-%%%%%%%%%%%%%%%%%%%
-%							%
-%	CONTENIDOS MEMORIA		%
-%							%
-%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%										%
+%			CONTENIDOS MEMORIA			%
+%										%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \setcounter{page}{1}
 \pagenumbering{arabic}
@@ -448,43 +21,42 @@
 \newpage
 \listoftables
 
-%%%%%%%%%%%%%%%%%%%%%
-%								%
-%	CAPÍTULOS					%
-%								%
-%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%										%
+%				CAPÍTULOS				%
+%										%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \input{cap1.tex}
 %\input{cap2.tex}
 %\input{cap3.tex}
 %\input{cap6.tex}
 %\input{cap7.tex}
 
-%%%%%%%%%%%%%%%%%%%%%
-%							%
-%	GLOSARIO				%
-%							%
-%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%										%
+%				GLOSARIO				%
+%										%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newpage
 \gloss[nocite]{*}
 \printgloss{glossary}
 
-%%%%%%%%%%%%%%%%%%%%%
-%							%
-%	BIBLIOGRAFIA			%
-%							%
-%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%										%
+%				BIBLIOGRAFÍA			%
+%										%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \addcontentsline{toc}{chapter}{Bibliografía}
 \bibliographystyle{babplain}
 \bibliography{biblio}
 
-
-%%%%%%%%%%%%%%%%%%%%%
-%								%
-%	APENDICES					%
-%								%
-%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%										%
+%				APENDICES				%
+%										%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \setcounter{page}{1}
 \pagenumbering{Roman}
