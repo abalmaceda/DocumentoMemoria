@@ -17,14 +17,14 @@
 
 %%%%%%%%%%%%%%%%%%% 		region References per caption		%%%%%%%%%%%%%%%%%%% 
 % 
-\newcommand{\reftabla}[1]{\tablename \ref{#1}}
+\newcommand{\reftabla}[1]		{\tablename \ref{#1}}
 
 %Modificar el caption
-\renewcommand{\lstlistingname}{Código}
-\newcommand{\refsource}[1]{\lstlistingname \ref{#1}}
+\renewcommand{\lstlistingname}	{Código}
+\newcommand{\refsource}[1]		{\lstlistingname \ref{#1}}
 
-\newcommand{\refFigura}[1]{\figurename \ref{#1}}
-%%%%%%%%%%%%%%%%%%% 		endregion References per caption 	%%%%%%%%%%%%%%%%%%%
+\newcommand{\refFigura}[1]		{\figurename \ref{#1}}
+%%%%%%%%%%%%%%%%%%% 		endregion References per caption 	%%%%%%%%%%%%%%%%
 
 
 %%%%%%%%%%%%%%%%%%% region constants %%%%%%%%%%%%%%%%%%%
@@ -34,57 +34,116 @@
 %			Nombres Software			%
 %										%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newcommand{\twitter}{Twitter}
-\newcommand{\facebook}{Facebook}
-\newcommand{\foursquare}{Foursquare}
-\newcommand{\mongodb}{\gloss{mongodb} }
-\newcommand{\nodejs}{Node.js }
-\newcommand{\javascript}{\gloss{javascript} }
-\newcommand{\xml}{XML }
-\newcommand{\php}{PHP }
+\newcommand{\twitter}			{Twitter }
+\newcommand{\facebook}			{Facebook }
+\newcommand{\foursquare}		{Foursquare }
+\newcommand{\mongodb}			{\gloss{mongodb} }
+\newcommand{\nodejs}			{Node.js }
+\newcommand{\javascript}		{\gloss{javascript} }
+\newcommand{\googleanalytics}	{Google Analytics }
+\newcommand{\paypal}			{PayPal }
+\newcommand{\xml}				{XML }
+\newcommand{\php}				{PHP }
+\newcommand{\tracking}			{\textit{tracking} }
 
 
-\newcommand{\ecommerce}{\textit{\gloss{ecommerce}} }
-\newcommand{\json}{\gloss{json}}
-\newcommand{\sql}{\gloss{sql}}
-\newcommand{\nosql}{\gloss{nosql}}
-\newcommand{\workload}{\textit{\gloss{workload}} }
-\newcommand{\rdbms}{\gloss{rdbms}}
-\newcommand{\framework}{\textit{Framework} }
-\newcommand{\join}{\textit{join} }
-\newcommand{\joins}{\textit{joins} }
 
-\newcommand{\opensource}{open source }
-\newcommand{\performance}{performance }
-\newcommand{\hardware}{\textit{hardware} }
-\newcommand{\software}{\textit{software} }
-\newcommand{\benchmark}{\textit{benchmark} }
+\newcommand{\json}				{\gloss{json}}
+\newcommand{\sql}				{\gloss{sql}}
+\newcommand{\nosql}				{\gloss{nosql}}
+\newcommand{\workload}			{\textit{\gloss{workload}} }
+\newcommand{\rdbms}				{\gloss{rdbms}}
+\newcommand{\framework}			{\textit{Framework} }
+\newcommand{\join}				{\textit{join} }
+\newcommand{\joins}				{\textit{joins} }
+
+\newcommand{\opensource}		{open source }
+\newcommand{\performance}		{performance }
+\newcommand{\hardware}			{\textit{hardware} }
+\newcommand{\software}			{\textit{software} }
+
+\newcommand{\click}				{\textit{click} }
+\newcommand{\mouse}				{\textit{mouse} }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %										%
 %				Internet				%
 %										%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newcommand{\web}{\textit{web} }
-\newcommand{\internet}{\textit{Internet} }
-\newcommand{\www}{\textit{World Wide Web} }
-\newcommand{\http}{HTTP }
-\newcommand{\https}{HTTPS }
-\newcommand{\dotcom}{\textit{dot-com} }
-\newcommand{\online}{\textit{online} }
-\newcommand{\offline}{\textit{offline} }
+\newcommand{\web}				{\textit{web} }
+\newcommand{\internet}			{\textit{Internet} }
+\newcommand{\www}				{\textit{World Wide }\web }
+\newcommand{\http}				{HTTP }
+\newcommand{\https}				{HTTPS }
+\newcommand{\dotcom}			{\textit{dot-com} }
+\newcommand{\online}			{\textit{online} }
+\newcommand{\offline}			{\textit{offline} }
+\newcommand{\realtime}			{\textit{real time} }
 
-\newcommand{\serverside}{\textit{server-side} }
-\newcommand{\clientside}{\textit{client-side} }
-\newcommand{\frontend}{\textit{Front-End} }
-\newcommand{\backend}{\textit{Back-End} }
 
-\newcommand{\mobile}{\textit{mobile} }
-\newcommand{\task}{\textit{task} }
+\newcommand{\serverside}		{\textit{server-side} }
+\newcommand{\clientside}		{\textit{client-side} }
+\newcommand{\frontend}			{\textit{Front-End} }
+\newcommand{\backend}			{\textit{Back-End} }
 
-%e-commerce 
-\newcommand{\wishlist}{wish list}
+\newcommand{\mobile}			{\textit{mobile} }
+\newcommand{\tablet}			{\textit{tablet} }
+\newcommand{\desktop}			{\textit{desktop} }
+\newcommand{\device}			{\textit{device} }
+\newcommand{\devices}			{\textit{devices} }
 
+\newcommand{\task}				{\textit{task} }
+
+
+\newcommand{\dragdrop}			{\textit{drag \& drop} }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%										%
+%			  E-COMMERCE				%
+%										%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\ecommerce}			{\textit{\gloss{ecommerce}} }
+\newcommand{\eshopping}			{\textit{e-shopping} }
+\newcommand{\wishlist}			{\textit{wish list} }
+\newcommand{\shoppingcart}		{\textit{shopping cart} }
+\newcommand{\checkout}			{\textit{checkout} }
+\newcommand{\merchandising}		{\textit{Merchandising} }
+\newcommand{\itemcommerce}		{\textit{item} }
+\newcommand{\itemupdates}		{\textit{item-updates} }
+\newcommand{\emarketing}		{\textit{e-marketing} }
+\newcommand{\advertising}		{\textit{advertising} }
+\newcommand{\brickandmortar}	{\textit{\gloss{brick_and_mortar}} }
+\newcommand{\retail}			{\textit{retail} }
+\newcommand{\retailer}			{\textit{retailer} }
+\newcommand{\retailers}			{\textit{retailers} }
+\newcommand{\btob}				{\textit{\gloss{businnes_to_bussines}} }
+\newcommand{\edimeaning}		{\textit{Electronic Data Interchange} }
+\newcommand{\eftmeaning}		{\textit{Electronic Funds Transfer} }
+
+%%%%%%%%%%%%%%%%%%% CONEPTOS DE ARQUITECTURA
+\newcommand{\layer}				{\textit{layer} }
+\newcommand{\persistencelayer}	{\textit{persistence} \layer }
+
+%%%%%%%%%%%%%%%%%%% ESTILOS DE PROGRAMACIÓN
+\newcommand{\objectoriented}	{\textit{object-oriented} }
+
+%%%%%%%%%%%%%%%%%%% CONEPTOS DE ALTO NIVEL
+\newcommand{\highlevel}			{\textit{high-level} }
+\newcommand{\listhighlevel}		{\textit{list} }
+\newcommand{\lists}				{\textit{lists} }
+\newcommand{\queue}				{\textit{queue} }
+\newcommand{\queues}			{\textit{queues} }
+\newcommand{\set}				{\textit{set} }
+\newcommand{\sets}				{\textit{sets} }
+\newcommand{\keyvalue}			{\textit{key/value } }
+
+%%%%%%%%%%%%%%%%%%% ATRIBUTOS DE CALIDAD
+\newcommand{\complexity}		{\textit{complexity} }
+\newcommand{\unpredictability}	{\textit{unpredictability} }
+\newcommand{\userfriendliness}	{\textit{user friendliness} }
+\newcommand{\design}			{\textit{design} }
+
+\newcommand{\benchmark}			{\textit{benchmark} }
 
 %%%%%%%%%%%%%%%%%%% endregion constants %%%%%%%%%%%%%%%%%%%
 
@@ -94,14 +153,14 @@
 %										%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newcommand{\memtitle}{TITLE UNKNOW}
-\newcommand{\autor}{Álvaro Balmaceda Celedón}
-\newcommand{\profesor}{Nelson Baloian}
-\newcommand{\coguia}{UNKNOW COGUIA}
-\newcommand{\integrante}{UNKNOW INTEGRANTE}
-\newcommand{\fecha}{Diciembre 2014}
-\newcommand{\tipomemoria}{INGENIERO CIVIL COMPUTACIÓN}
-\newcommand{\dpto}{DEPARTAMENTO DE CIENCIAS DE LA COMPUTACIÓN}
+\newcommand{\memtitle}			{TITLE UNKNOW}
+\newcommand{\autor}				{Álvaro Balmaceda Celedón}
+\newcommand{\profesor}			{Nelson Baloian}
+\newcommand{\coguia}			{UNKNOW COGUIA}
+\newcommand{\integrante}		{UNKNOW INTEGRANTE}
+\newcommand{\fecha}				{Diciembre 2014}
+\newcommand{\tipomemoria}		{INGENIERO CIVIL COMPUTACIÓN}
+\newcommand{\dpto}				{DEPARTAMENTO DE CIENCIAS DE LA COMPUTACIÓN}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -110,11 +169,11 @@
 %										%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newcommand{\Memtitle}{\MakeUppercase{\memtitle}}
-\newcommand{\Author}{\MakeUppercase{\autor}}
-\newcommand{\Profesor}{\MakeUppercase{\profesor}}
-\newcommand{\Coguia}{\MakeUppercase{\coguia}}
-\newcommand{\Integrante}{\MakeUppercase{\integrante}}
-\newcommand{\Fecha}{\MakeUppercase{\fecha}}
-\newcommand{\Tipomemoria}{\MakeUppercase{\tipomemoria}}
-\newcommand{\Dpto}{\MakeUppercase{\dpto}}
+\newcommand{\Memtitle}			{\MakeUppercase{\memtitle}}
+\newcommand{\Author}			{\MakeUppercase{\autor}}
+\newcommand{\Profesor}			{\MakeUppercase{\profesor}}
+\newcommand{\Coguia}			{\MakeUppercase{\coguia}}
+\newcommand{\Integrante}		{\MakeUppercase{\integrante}}
+\newcommand{\Fecha}				{\MakeUppercase{\fecha}}
+\newcommand{\Tipomemoria}		{\MakeUppercase{\tipomemoria}}
+\newcommand{\Dpto}				{\MakeUppercase{\dpto}}
