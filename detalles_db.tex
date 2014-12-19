@@ -4,19 +4,34 @@
 
 \section{\collectionsname}\label{cap:example_chapter_name:example_section_name}
 
+\subsection{\itemcollection}
+
 \medskip
-\begin{lstlisting}[caption= Estructura de un \itemcommerce, label=source:javascript:estructura_itemcommerce]
+\begin{lstlisting}[caption= Estructura de un \itemcollection, label=source:javascript:estructura_itemcommerce]
 {
     "_id" : "BCTMZ6HTxFSppJESk",
     "createdAt" : ISODate("2014-04-03T20:46:52.411Z"),
     "description" : "Una descripcion del producto.",
-    "handle" : "example-product",
+    "handle" : "ejemplo-producto",
     "hashtags" : [ 
         "rpjCvTBGjhBi2xdro", 
         "cseCBSSrJ3t8HQSNP"
     ],
     "isVisible" : true,
-    "metafields" : [ 
+    "metafields" : [...],
+    "pageTitle" : "Ejemplo basico de producto",
+    "productType" : "Simple",
+    "shopId" : "WvrKDomkYth3THbDD",
+    "title" : "Example Product",
+    "updatedAt" : ISODate("2014-06-01T19:17:13.949Z"),
+    "variants" : [...],
+    "vendor" : "Example Manufacturer"
+}
+\end{lstlisting}
+
+\medskip
+\begin{lstlisting}[caption= Información extra \itemcommerce, label=source:javascript:info_extra_itemcommerce]
+"metafields" : [ 
         {
             "key" : "Material",
             "value" : "Cotton"
@@ -25,16 +40,15 @@
             "key" : "Quality",
             "value" : "Excellent"
         }
-    ],
-    "pageTitle" : "Basic Example Product",
-    "productType" : "Simple",
-    "shopId" : "WvrKDomkYth3THbDD",
-    "title" : "Example Product",
-    "updatedAt" : ISODate("2014-06-01T19:17:13.949Z"),
-    "variants" : [ 
+    ]
+\end{lstlisting}
+
+\medskip
+\begin{lstlisting}[caption= \updates en un \itemcommerce, label=source:javascript:updates_itemcommerce]
+"variants" : [ 
         {
             "_id" : "6qiqPwBkeJdtdQc4G",
-            "title" : "Basic Example Variant",
+            "title" : "Ejemplo basico de ",
             "price" : 19.99,
             "inventoryManagement" : true,
             "inventoryPolicy" : true,
@@ -69,28 +83,102 @@
             "taxable" : false,
             "parentId" : "6qiqPwBkeJdtdQc4G",
             "optionTitle" : "Option 1"
-        }, 
+        }
+    ]
+
+\end{lstlisting}
+
+\subsection{\rolcollction}
+
+\begin{lstlisting}[caption= Estructura de \rolcollction, label=source:javascript:estructura_rols]
+{
+    "name" : "manage-users",
+    "_id" : "GvcHKPKMpp7FmrCdY"
+}
+\end{lstlisting}
+
+\subsection{\userscollection}
+
+\begin{lstlisting}[caption= Estructura de \userscollection, label=source:javascript:estructura_users]
+
+{
+    "_id" : "8xcXL6xYrahjSNoMr",
+    "createdAt" : ISODate("2014-12-17T08:42:16.331Z"),
+    "emails" : [ 
         {
-            "_id" : "CJoRBm9vRrorc9mxZ",
-            "title" : "Basic - Option 2",
-            "price" : 12.99,
-            "inventoryManagement" : true,
-            "inventoryPolicy" : true,
-            "updatedAt" : ISODate("2014-04-03T20:46:52.411Z"),
-            "createdAt" : ISODate("2014-04-03T20:46:52.411Z"),
-            "weight" : 35,
-            "inventoryQuantity" : 42,
-            "metafields" : [ 
-                {
-                    "key" : null,
-                    "value" : null
-                }
-            ],
-            "taxable" : false,
-            "parentId" : "6qiqPwBkeJdtdQc4G",
-            "optionTitle" : "Option 2"
+            "address" : "ek2opna4@localhost",
+            "verified" : false
         }
     ],
-    "vendor" : "Example Manufacturer"
+    "profile" : {},
+    "roles" : [ 
+        "manage-users", 
+        "owner", 
+        "admin"
+    ],
+    "services" : {
+        "password" : {
+            "bcrypt" : "$2a$10$GiizHrW65QavMUrwTmR/2eCbdxBgwJiY2eTy5VLB0194/TiaOxzSW"
+        }
+    },
+    "username" : "Administrator"
 }
+\end{lstlisting}
+
+
+\subsection{\transcollection}
+
+\begin{lstlisting}[caption= Estructura de \transcollection, label=source:javascript:estructura_translations]
+{
+    "language" : "Spanish",
+    "i18n" : "es",
+    "translation" : {
+        "core" : {
+            "languages" : {
+                "select" : "Elegir idioma",
+                "spanish" : "Español"
+            },
+            "productDetail" : {...},
+            "variantList" : {...},
+            "cartSubTotals" : {...},
+            "cartCheckout" : {},
+            "checkoutLogin" : {},
+            "checkoutPayment" : {},
+            "checkoutReview" : {},
+            "checkoutShipping" : {},
+            "addressBookGrid" : {},
+            "shop" : {}
+        }
+    },
+    "_id" : ObjectId("549141e8941f7aec644b822e")
+}
+\end{lstlisting}
+
+\subsection{\tagscollection}
+
+\begin{lstlisting}[caption= Estructura de \tagscollection, label=source:javascript:estructura_tags]
+{
+    "name" : "Tags",
+    "updatedAt" : ISODate("2014-04-09T20:23:57.412Z"),
+    "createdAt" : ISODate("2014-04-09T20:23:57.412Z"),
+    "_id" : "rpjCvTBGjhBi2xdro"
+}
+\end{lstlisting}
+
+\subsection{\cartcollection}
+
+\begin{lstlisting}[caption= Estructura de \cartcollection, label=source:javascript:estructura_cart]
+
+\end{lstlisting}
+
+\subsection{\shopscollection}
+
+\begin{lstlisting}[caption= Estructura de \shopscollection, label=source:javascript:estructura_shop]
+
+\end{lstlisting}
+
+\subsection{\ordescollection}
+
+\begin{lstlisting}[caption= Estructura de \ordescollection, label=source:javascript:estructura_order]
+
 \end{lstlisting}
