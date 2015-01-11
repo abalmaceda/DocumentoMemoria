@@ -72,11 +72,157 @@ La tendencia \textit{cantidad a calidad} del \ecommerce se está convirtiendo ca
 
 Claramente, aquellos que adquieren \estores antes, tienen mejores oportunidades  para el éxito y prosperidad, aunque un sitio \ecommerce por si mismo no garantiza nada. Solo una apropiada solución \ecommerce en combinación con \emarketing y \advertising pueden asegurar éxito.
 
+%TODO INICIO [TEXTO INTRO]: texto inicialmente agregado solo por mi. Mejoras continuas son necesarias
+
+En el mundo de empresarial, el tamaño importa, pero ni siquiera eso garantiza un futuro en un mercado de constante cambio y con una competencia feroz. Innumerables son las empresas que murieron en el intento, entre las cuales podemos destacar : \sega, \kodak, \daewoo, \nokia, \blockbuster, entre otros.
+
+En otras palabras se demanda tener un \ecommerce con la flexibilidad necesaria para posibles cambios en el futuro, así como para soportar una serie de cualidades actualmente disponibles para diferentes tipos de sitios \ecommerce. Se desea entonces un \software con un abstracción tal que provea funcionalidad genéricas que puedan ser cambiadas selectivamente agregando código escrito por un desarrollador, con el fin de obtener un \software \ecommerce con características específicas. En conclusión, lo que se necesita es desarrollar un \ecommerce \framework.
+
+Una aplicación \web es aquella que corre sobre un \web \browser, el cual obtiene los datos que procesa a través de un protocolo estándar de comunicación llamado \http que opera en la \applayer, la cual es parte de \osimodel.
+
+\osimodel es un modelo estándar de arquitectura que constituye el \framework para el desarrollo de protocolos estándar para la interconexión de sistemas. Dicho \framework esta compuesto por 7 \layers que separan las diferentes funcionalidades necesarias(\refFigura{figure:framework_layers_definition})\cite{inbook_osi_reference_model}, de esta forma se divide el problema en partes mas pequeñas.
+
+\begin{figure}[h!]
+	\begin{tikzpicture}[node distance=3pt,
+		blueb/.style={
+	  		draw=white,
+	  		fill=mybluei,
+	  		rounded corners,
+	  		text width=2.5cm,
+	  		font={\sffamily\bfseries\color{white}},
+	  		align=center,
+	  		text height=12pt,
+	  		text depth=9pt},
+		greenb/.style={blueb,fill=mygreen},
+	]
+
+	\node[blueb,text width=13cm+26pt] (APP) {\applayer};
+	\node[blueb,below=of APP,text width=13cm+26pt] (PRES) {\preslayer};
+	\node[blueb,below=of PRES,text width=13cm+26pt] (SESSION) {\sessionlayer};
+	\node[blueb,below=of SESSION,text width=13cm+26pt] (TRANS) {\translayer};
+	\node[blueb,below=of TRANS,text width=13cm+26pt] (NETWORK) {\networklayer};
+	\node[blueb,below=of NETWORK,text width=13cm+26pt] (LINK) {\datalinklayer};
+	\node[blueb,below=of LINK,,text width=13cm+26pt] (PHYSI) {\physilayer};
+	
+	\begin{pgfonlayer}{background}
+	\draw[blueb,draw=black,fill=mybluei!30] 
+	  ([xshift=-8pt,yshift=8pt]current bounding box.north west) rectangle 
+	  ([xshift=8pt,yshift=-8pt]current bounding box.south east);
+	\end{pgfonlayer}
+\end{tikzpicture}
+
+\caption{Arquitectura \osimodel }
+	\label{figure:framework_layers_definition}
+\end{figure}
+
+La idea básica de separar en \layers, es que cada una de estas agrega valor a los servicios provistos por el conjunto inferior de \layers de tal manera que las \layer que esta en la cúspide del \stack ofrece el conjunto de servicios necesarios para ejecutar aplicaciones distribuidas. Cada una de estas 7 \layers representa a su vez un \framework que define sus funcionalidades propias.
+
+\begin{figure}[h!]
+	\begin{tikzpicture}[node distance=10pt,
+		blueb/.style={
+	  		draw=white,
+	  		fill=mybluei,
+	  		rounded corners,
+	  		text width=2.5cm,
+	  		font={\sffamily\bfseries\color{white}},
+	  		align=center,
+	  		text height=8pt,
+	  		text depth=5pt},
+		greenb/.style={blueb,fill=mygreen},
+	]
+
+	\node[blueb,text width=5cm+10pt] (APP) {\applayer};
+	\node[below=of APP] (dummy1) {};
+	\node[right=of dummy1] (dummy2) {};
+	
+	\node[above=of PRES] (dummy3) {};
+	\node[right=of dummy3] (dummy4) {};
+	\node[blueb,below=of APP,text width=5cm+10pt] (PRES) {\preslayer};
+	\path[->] (dummy1) edge node {} (dummy3);
+	\path[->] (dummy2) edge node {} (dummy4);
+	
+	\node[blueb,below=of PRES,text width=5cm+10pt] (SESSION) {\sessionlayer};
+	\path[->] (PRES.20) edge node {} (SESSION);
+	\path[->] (SESSION.-20) edge node {} (PRES);
+	
+	\node[blueb,below=of SESSION,text width=5cm+10pt] (TRANS) {\translayer};
+	\path[->] (SESSION.20) edge node {} (TRANS);
+	\path[->] (TRANS.-20) edge node {} (SESSION);
+	
+	\node[blueb,below=of TRANS,text width=5cm+10pt] (NETWORK) {\networklayer};
+	\path[->] (NETWORK.20) edge node {} (TRANS);
+	\path[->] (TRANS.-20) edge node {} (NETWORK);
+	
+	\node[blueb,below=of NETWORK,text width=5cm+10pt] (LINK) {\datalinklayer};
+	\path[->] (LINK.20) edge node {} (NETWORK);
+	\path[->] (NETWORK.-20) edge node {} (LINK);
+	
+	\node[blueb,below=of LINK,,text width=5cm+10pt] (PHYSI) {\physilayer};
+	\path[->] (PHYSI.20) edge node {} (LINK);
+	\path[->] (LINK.-20) edge node {} (PHYSI);
+	
+%	\begin{pgfonlayer}{background}
+%	\draw[blueb,draw=black,fill=mybluei!30] 
+%	  ([xshift=-8pt,yshift=8pt]current bounding box.north west) rectangle 
+%	  ([xshift=8pt,yshift=-8pt]current bounding box.south east);
+%	\end{pgfonlayer}
+\end{tikzpicture}
+
+\caption{Arquitectura \osimodel }
+	\label{figure:framework_layers_interaction}
+\end{figure}
+
+Lo que se plantea es desarrollar un \framework que se encontrará inmediatamente por sobre el \osimodel (\refFigura{figure:framework_above_osimodel}) para facilitar el desarrollo de aplicaciones, productos y soluciones específicas \ecommerce utilizando un ambiente de \software reusable y universal a través de funcionalidades particulares que son parte de una gran plataforma.
+
+\begin{figure}[h!]
+	\begin{tikzpicture}[node distance=3pt,
+		blueb/.style={
+	  		draw=white,
+	  		fill=mybluei,
+	  		rounded corners,
+	  		text width=2.5cm,
+	  		font={\sffamily\bfseries\color{white}},
+	  		align=center,
+	  		text height=12pt,
+	  		text depth=9pt},
+		greenb/.style={blueb,fill=mygreen},
+	]
+
+		\node[blueb, draw=black, fill=myblueii] (SLCN1) {Solución 1};
+		\node[blueb, draw=black, fill=myblueii,right=of SLCN1] (SLCN2) {Solución 2};
+		\node[right=of SLCN2] (dummy) {};
+		\node[blueb, draw=black, fill=myblueii,right=of SLCN2] (SLCN3){Solución 3};
+		\node[blueb, draw=black, fill=myblueii,right=of SLCN3] (SLCN4) {Solución 4};
+		\begin{pgfonlayer}{background}
+			\draw[blueb,draw=black,fill=mybluei!30] 
+  				([xshift=-8pt,yshift=8pt]current bounding box.north west) rectangle 
+  				([xshift=8pt,yshift=-8pt]current bounding box.south east);
+		\end{pgfonlayer}
+\node[blueb, draw=black, fill=myblueii, below=22pt of dummy,text width=13cm+26pt] (ECOMM) {\frameworkname};
+
+		\node[blueb, draw=black, fill=myblueii, below=of ECOMM, text width=13cm+26pt] (OSI) {\osimodel};
+
+\end{tikzpicture}
+
+\caption{Arquitectura general de la plataforma \ecommerce }
+	\label{figure:framework_above_osimodel}
+\end{figure}
+
+that actual software is an application running on your PC. It doesn't really “reside” at the application layer. Rather, it makes use of the services offered by a protocol that operates at the application layer, which is called the Hypertext Transfer Protocol (HTTP). The distinction between the browser and HTTP is subtle, but important.
+
+In computer programming, a software framework is an abstraction in which software providing generic functionality can be selectively changed by additional user-written code, thus providing application-specific software. A software framework is a universal, reusable software environment that provides particular functionality as part of a larger software platform to facilitate development of software applications, products and solutions. Software frameworks may include support programs, compilers, code libraries, tool sets, and application programming interfaces (APIs) that bring together all the different components to enable development of a project or solution.
+
+
+
+%TODO END [TEXTO INTRO]
 
 \section{Motivación}\label{cap:intro:motivacion}
-\section{casa}
 
-Acá va la motivación...
+\online \retailers están en la cúspide de una forma totalmente nueva de hacer negocios. Ellos tienen una oportunidad única para obtener ventajas significativas en sus respectivos mercados, siempre que entreguen consistentemente una experiencia grata para el consumidor y permite un comportamiento comercio multicanal único antes que los competidores. El éxito dependerá en perfeccionar los esfuerzos para abordar las experiencias de clientes centrados en el usuario, reducir el enfoque de los programas más valiosos, y la elección de una estrategia de tecnología adecuada que permita a los equipos internos para ofrecer experiencias escalables optimizadas. Las áreas emergentes a observar son \realtime \retail \analytics, incorporar \socialnetwork en \ecommerce, el continuo éxito de aplicaciones móviles, y herramientas que permitan a \retailers \scale experiencias que dirijan de manera mas efectiva el \merchandising.
+
+%Online retailers are on the cusp of a totally new way of doing business. They have a unique opportunity to gain a significant competitive advantage in their respective markets, provided they consistently deliver a consumer-friendly experience and enable unique multichannel commerce behaviors before their competitors. Success will depend on honing efforts to address user-centric customer experiences, narrowing the focus to the most-valuable programs, and electing the right technology strategy that will enable internal teams to deliver optimized scalable experiences. Areas to watch are the emergence of real-time retail analytics, social-network enabled commerce, the continued success of mobile applications, and tools that will enable retailers to scale “always-targeted” experiences that target merchandising more effectively.
+
+Existen una amplia variedad de escenarios en donde existen soluciones \ecommerce o similares con la potencialidad de ser mejorados permitiendo entrar al mercado con ventajas competitivas. A continuación se describen variados situaciones que tienen gran potencial latente.
 
 \begin{itemize}
 	\item \textbf{\shoppingcart}:
@@ -92,7 +238,9 @@ Acá va la motivación...
 	
 	\item \textbf{Reserva de horas en Registro Civil}: Al menos en Chile, realizar un tramite en el registro civil es sinónimo de una perdida de tiempo absurda solo para ser atendido. Si la reserva de hora puede ser realizada desde cualquier sitio, el sistema se volvería drásticamente mas eficiente.
 	
-	\item \textbf{Catalogo de Fiestas}: Un catalogo con las fiestas disponibles tanto a la brevedad posible, como en el futuro. Que muestre información relevante 
+	\item \textbf{Catalogo de Fiestas}: Un catalogo con las fiestas disponibles tanto a la brevedad posible, como en el futuro. Que muestre información relevante.
+	
+	\item \textbf{Gestor de detalle de cuenta en restaurante}: 
 	
 \end{itemize}
 
@@ -101,7 +249,8 @@ Todas estas situaciones tienen algo en común, y es que los usuarios desean cons
 Como se puede concluir, el modelo de negocio de estas situaciones es en su mayoría el mismo, solo cambiado la presentación para hacerlo \adhoc a la situación.
 
 \section{Alcances y Objetivo General}\label{cap:intro:alcances}
-Desarrollar un código base que permita desarrollar una familia aplicaciones. Dicha aplicación se utilizara para desarrollar 3 ejemplos a fin de demostrar su utilidad.
+
+Desarrollar un \framwork \ecommerce que permita mayor flexibilidad y disminución de la complejidad, en comparación a las \frameworks actuales, en el desarrollo de soluciones específicas. Lo que implica mayor diversidad de aplicaciones, menor cantidad de recursos humanos y menor tiempo de desarrollo.
 
 \section{Objetivos Específicos}\label{cap:intro:objetivos}
 %Dentro de los objetivos específicos se encuentran:
@@ -109,8 +258,10 @@ Desarrollar un código base que permita desarrollar una familia aplicaciones. Di
 	\item Determinar viabilidad del proyecto.
 	\item Determinar la tecnología mas adecuada para el desarrollo del proyecto
 	\item Determinar la arquitectura adecuada para el desarrollo de software genérico
-	\item Desarrollar un \ecommerce
-	\item Objetivo 4
+	\item Desarrollar un \ecommerce \framework que permita mayor flexibilidad en soluciones específicas, y disminuir la complejidad de código a fin de obtener soluciones mas rápidas y con menor cantidad de recursos humanos.
+	\item Desarrollar al menos una solución utilizando \frameworkname, que permite contrastar las potencialidades con respecto a \frameworks existentes.
+	\item Utilizando el \framework, desarrollar 3 soluciones específicas.
+	\item Determinar, en base a las 3 soluciones desarrolladas, si es efectivo que el \framework disminuye la complejidad de desarrollo. 
 \end{itemize}
 
 \section{Caracteristicas deseables}\label{cap:intro:alcance}

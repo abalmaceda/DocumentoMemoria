@@ -5,11 +5,43 @@
 %%%%%%%%%%%%%%%%%%%%%
 \chapter{Estado del Arte}\label{cap:estadoArte}
 
+
+
 %Por definición \textit{e-Commerce}: Transacción comercial electrónica, así como sobre Internet.
 %
 %Vender y realizar transacciones como estas se pueden hacer gracias a \textit{World Wide Web}, el cual es una convinación global de \textit{links}, información, paginas \textit{web} y \textit{e-Commerce websites}.
 %
 %Con el fin de considerar 
+
+\section{Categorias de \ecommerce}
+
+Tecnología digital avanzada, combinada con las empresas y los clientes de estas tecnologías, impulsan \ecommerce. De igual forma que las tecnologías digitales, \ecommerce no pudo alcanzar su meta en un movimiento. En cuanto a las empresas y clientes, \ecommerce de diferentes tipos y niveles implica diferentes oportunidades.
+
+En relación a categorias de transacciones, \ecommerce se divide en 5 tipos:
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.5\textwidth]{figuras/ecommerce_types.png}
+	\caption{Categorias de \ecommerce.}
+\end{figure}
+
+\section{\keyelements de un sitio \ecommerce}
+
+Domain y Hosting
+
+Diseño
+
+El diseño del sitio es el principal elemento en determinar si el visitante se queda o se va. 
+
+
+\usability
+
+conversion
+
+\checkout
+
+Taking Payments
+
+Aunque no es relevante para el \framework, es importante destacar la importancia que tiene este tópico en el éxito que pueda tener una solución \ecommerce. 
 
 %TODO
 
@@ -341,9 +373,92 @@ Considerando esto, ¿ habrá alguna razón que justifique el desarrollo de un pr
 
 
 Recapitulando, he demostrado que las soluciones actuales de \ecommerce pueden ser considerablemente mejoradas utilizando la tecnología actualmente presente. 
-Importante notar que solo estoy ofreciendo una mejor solucuón a lo que ya existe, en ningun caso indico la solución que presento es la mejor posible. No se ha realizado un estudio sobre todas las opciones disponibles del mercado. Sin embargo esta solución ofrece
+Importante notar que solo estoy ofreciendo una mejor solución a lo que ya existe, en ningún caso indico la solución que presento es la mejor posible. No se ha realizado un estudio sobre todas las opciones disponibles del mercado. Sin embargo esta solución ofrece
 
 speed
 scalability
 flexibility
 performance
+
+\section{Testing layers diagram }\label{cap:estadoArte:testing_something}
+
+
+\begin{figure}[h!]
+\begin{tikzpicture}[node distance=3pt,
+blueb/.style={
+  draw=white,
+  fill=mybluei,
+  rounded corners,
+  text width=2.5cm,
+  font={\sffamily\bfseries\color{white}},
+  align=center,
+  text height=12pt,
+  text depth=9pt},
+greenb/.style={blueb,fill=mygreen},
+]
+\node[blueb] (RCP) {RCP main};
+\node[blueb,right=of RCP] (Aut) {Authoring};
+\node[blueb,right=of Aut] (Bro) {Browsing};
+\node[blueb,right=of Bro] (Pub) {Publishing};
+\node[blueb,right=of Pub] (Sea) {Search};
+\node[blueb,below=of RCP] (RTe) {Rich Text};
+\node[blueb,right=of RTe,text width=5cm+10pt] (LMa) {Library Management};
+\node[blueb,right=of LMa] (XML) {XML Export /\\[-0.7ex] Import};
+\node[blueb,right=of XML] (MSP) {MSP Export};
+\node[blueb,below=of RTe] (Com) {Common};
+\node[blueb,right=of Com,text width=5cm+10pt] (UMA) {UMA};
+\node[blueb,right=of UMA,text width=5cm+10pt] (EI) {Export/Import};
+\node[blueb,below=of Com] (Jti) {Jtidy};
+\node[greenb,right=of Jti,text width=5cm+10pt] (EMF) {EMF};
+\node[greenb,right=of EMF] (GEF) {GEF};
+\node[greenb,right=of GEF] (ICU) {ICUJ4};
+\node[greenb,below=3.4cm of Bro,text width=13cm+26pt] (RCP) {RCP Runtime};
+\begin{pgfonlayer}{background}
+\draw[blueb,draw=black,fill=mybluei!30] 
+  ([xshift=-8pt,yshift=8pt]current bounding box.north west) rectangle 
+  ([xshift=8pt,yshift=-8pt]current bounding box.south east);
+\end{pgfonlayer}
+\node[blueb,draw=black,fill=myblueii,below=4.8cm of Bro,text width=13cm+44pt] (RCP) {RCP Runtime};
+\end{tikzpicture}
+
+\caption{ Layers Diagram }
+	\label{figure:framework_layers}
+\end{figure}
+
+
+
+
+
+
+\begin{figure}[h!]
+	\begin{tikzpicture}[node distance=3pt,
+		blueb/.style={
+	  		draw=white,
+	  		fill=mybluei,
+	  		rounded corners,
+	  		text width=2.5cm,
+	  		font={\sffamily\bfseries\color{white}},
+	  		align=center,
+	  		text height=12pt,
+	  		text depth=9pt},
+		greenb/.style={blueb,fill=mygreen},
+	]
+
+	\node[blueb,text width=13cm+26pt] (APP) {\layerapp};
+	\node[blueb,below=of APP,text width=13cm+26pt] (PRES) {\layerpres};
+	\node[blueb,below=of PRES,text width=13cm+26pt] (SESSION) {\layersession};
+	\node[blueb,below=of SESSION,text width=13cm+26pt] (TRANS) {\layertrans};
+	\node[blueb,below=of TRANS,text width=13cm+26pt] (NETWORK) {\layernetwork};
+	\node[blueb,below=of NETWORK,text width=13cm+26pt] (LINK) {\layerdatalink};
+	\node[blueb,below=of LINK,text width=13cm+26pt] (PHYSI) {\layerphysi};
+	
+	\begin{pgfonlayer}{background}
+	\draw[blueb,draw=black,fill=mybluei!30] 
+	  ([xshift=-8pt,yshift=8pt]current bounding box.north west) rectangle 
+	  ([xshift=8pt,yshift=-8pt]current bounding box.south east);
+	\end{pgfonlayer}
+\end{tikzpicture}
+
+\caption{ Layers Diagram }
+	\label{figure:framework_layers}
+\end{figure}

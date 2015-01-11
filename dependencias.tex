@@ -70,7 +70,6 @@
 
 %%%%%%%%%%%%%%%%%%% endregion JavaScript style %%%%%%%%%%%%%%%%%%%
 
-
 % Glosario
 \usepackage{gloss}
 \makegloss
@@ -100,7 +99,7 @@
 %Paquete de dibujo
 \usepackage{pgf}
 \usepackage{tikz}
-\usetikzlibrary{calc,shapes,arrows,decorations.pathmorphing,automata}
+\usetikzlibrary{positioning,calc,shapes,arrows,decorations.pathmorphing,automata}
 \usepackage[all]{xy}
 
 %Paquete de dibujo plots 3D
@@ -140,3 +139,16 @@
 % Evitar separación de palabras
 \pretolerance=10000
 \tolerance=10000
+
+%%%%%%%%%%%%%%%%%%% region LayersDiagram style %%%%%%%%%%%%%%%%%%%
+
+\definecolor{mybluei}{rgb}{.48,.6,.8}
+\definecolor{myblueii}{rgb}{.28,.47,.75}
+\definecolor{mygreen}{rgb}{.78,.85,.5}
+\definecolor{mywhite}{rgb}{1,1,1}
+
+
+\pgfdeclarelayer{background}
+\pgfsetlayers{background,main}
+            
+%%%%%%%%%%%%%%%%%%% endregion LayersDiagram style %%%%%%%%%%%%%%%%%%%
