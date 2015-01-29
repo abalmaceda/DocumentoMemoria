@@ -5,7 +5,7 @@
 \meteor es un \environment ultra-simple para construir \websites modernos. Lo que antes demoraba semanas, incluso con las mejoras herramientas, ahora toma horas con \meteor.
 %Meteor is an ultra-simple environment for building modern websites. What once took weeks, even with the best tools, now takes hours with Meteor.
 
-La \web fue diseñada originalmente para trabajar de la misma manera que los \mainframes funcionaban en los 70s. La aplicacion del \server \rendered una \screen y la envia a traves de la \network a un \dumbterminal (\refFigura{figure:mainframeServer_dumbterminal}). Si el usuario realizó alguna accion, el \server \rendered una \screen completamente nueva. Este modelo funciono bien para la \web por una decada. Esto permitio la existencia de \lamp, \rails, \django, \php.
+La \web fue diseñada originalmente para trabajar de la misma manera que los \mainframes funcionaban en los 70s. La aplicación del \server \rendered una \screen y la envía a través de la \network a un \dumbterminal (\refFigura{figure:mainframeServer_dumbterminal}). Si el usuario realizó alguna acción, el \server \rendered una \screen completamente nueva. Este modelo funciono bien para la \web por una década. Esto permitió la existencia de \lamp, \rails, \django, \php.
 %The web was originally designed to work in the same way that mainframes worked in the 70s. The application server rendered a screen and sent it over the network to a dumb terminal. Whenever the user did anything, that server rerendered a whole new screen. This model served the Web well for over a decade. It gave rise to LAMP, Rails, Django, PHP.
 
 \begin{figure}[h!]
@@ -19,27 +19,27 @@ La \web fue diseñada originalmente para trabajar de la misma manera que los \ma
 Pero los mejores equipos, con los mas grandes presupuestos y mas largos \schedules, ahora construyen aplicaciones en \javascript que correr en el \client. Estas apilcaciones tienen interfaces estelares. estas aplicaciones no \reload \pages, son \reactive: cambios de cualquier \client aparecen inmediatamente en las \screen de todos.
 %But the best teams, with the biggest budgets and the longest schedules, now build applications in JavaScript that run on the client. These apps have stellar interfaces. They don't reload pages. They are reactive: changes from any client immediately appear on everyone's screen.
 
-La aplicación fue construida de la manera dificil. \meteor hace esto con la inteción de ofrecer simplesa, y muchisima mas entretención. Es posible construir una aplicación completa en un fin de semana, o en una \hackathon con la suficiente cafeina. Ya no es necesario los \resources del \server, o \deploy \api \apiendpoints en la \cloud, o manejar una \database, o desgastarse con una \orm \layer, o intercambiar \backandforth entre \javascript y \ruby, o \broadcast datos de invalidación a los \clients.
+La aplicación fue construida de la manera difícil. \meteor hace esto con la intención de ofrecer simpleza, y muchísima mas entretención. Es posible construir una aplicación completa en un fin de semana, o en una \hackathon con la suficiente cafeína. Ya no es necesario los \resources del \server, o \deploy \api \apiendpoints en la \cloud, o manejar una \database, o desgastarse con una \orm \layer, o intercambiar \backandforth entre \javascript y \ruby, o \broadcast datos de invalidación a los \clients.
 %They've built them the hard way. Meteor makes it an order of magnitude simpler, and a lot more fun. You can build a complete application in a weekend, or a sufficiently caffeinated hackathon. No longer do you need to provision server resources, or deploy API endpoints in the cloud, or manage a database, or wrangle an ORM layer, or swap back and forth between JavaScript and Ruby, or broadcast data invalidations to clients.
 
-\meteor es un trabajo en desarrollo, pero se espera que muestra la direción del equipo desarrollador. Ellos estan deseosos de recivir \feedback. 
+\meteor es un trabajo en desarrollo, pero se espera que muestra la dirección del equipo desarrollador. Ellos están deseosos de recibir \feedback. 
 %Meteor is a work in progress, but we hope it shows the direction of our thinking. We'd love to hear your feedback.
 
 \section{Principios de \meteor}
 %Principles of Meteor
 \begin{itemize}
-	\item \textbf{Datos \onthewire}. \meteor no envia \html a través de la \network. El \server envia datos y permite al \client \render la información.
+	\item \textbf{Datos \onthewire}. \meteor no envía \html a través de la \network. El \server envía datos y permite al \client \render la información.
 %Data on the Wire. Meteor doesn't send HTML over the network. The server sends data and lets the client render it.
 
 	\item \textbf{Un lenguaje}. \meteor permite escribir el código correspondiente al \client y a el \server de la aplicación en \javascript.
 %One Language. Meteor lets you write both the client and the server parts of your application in JavaScript.
-	\item \textbf{\database en todas partes}. Se pueden utilizar los mismos metodos para aceder a la \database desde el \client o el \server.
+	\item \textbf{\database en todas partes}. Se pueden utilizar los mismos métodos para acceder a la \database desde el \client o el \server.
 %Database Everywhere. You can use the same methods to access your database from the client or the server.
 
 	\item \textbf{Compensación de \latency}. En el \client, \meteor \prefetches datos y simula modelos para aparentar que los métodos del \server retornan instantáneamente.
 %Latency Compensation. On the client, Meteor prefetches data and simulates models to make it look like server method calls return instantly.
 
-	\item \textbf{\fullstack \reactivity}. En \meteor, \realtime es el \default. Todas las \layers, desde la \database hasta el \template, \update por si mismo automaticamente cuando es necesario.
+	\item \textbf{\fullstack \reactivity}. En \meteor, \realtime es el \default. Todas las \layers, desde la \database hasta el \template, \update por si mismo automáticamente cuando es necesario.
 %Full Stack Reactivity. In Meteor, realtime is the default. All layers, from database to template, update themselves automatically when necessary.
 
 	\item \textbf{\embraceecosystem}. \meteor es un \opensource e integra \tools y \frameworks \opensource.
@@ -59,7 +59,7 @@ La aplicación fue construida de la manera dificil. \meteor hace esto con la int
 	\item  Una librería de \packages: \modules \prewritten y \selfcontained que probablemente serán necesarios en las aplicaciones.
 %A library of packages: pre-written, self-contained modules that you might need in your app.
 
-Hay cerca de una docena de \packages \core \meteor que prácticamente cualquier aplicación usará.  Dos ejemplos: \webapp, la cual \handle \incomming conexiones \http, y \templating, lo que permite hacer \templates \html que automáticamente \update en vivo cuando los datos cambien. Entonces hay \packages opcionales como \email, que permite a una aplicación enviar \emails, o la serie de cuentas de \meteor (accounts-password, accounts-facebook, accounts-ui, and others) las cuales proporcionan un sistema de cuentas de usuarios \fullfeatured que puede ser \droprightinto la aplicación. Adicionalmente a estos \packages "\core", hay miles de \packages escritos por la comunidad, los cuales pueden ser necesarios para alguna aplicación propia.
+Hay cerca de una docena de \packages \core \meteor que prácticamente cualquier aplicación usará.  Dos ejemplos: \webapp, la cual \handle \incomming conexiones \http, y \templating, lo que permite hacer \templates \html que automáticamente \update en vivo cuando los datos cambien. Entonces hay \packages opcionales como \email, que permite a una aplicación enviar \emails, o la serie de cuentas de \meteor (accounts-password, accounts-facebook, accounts-ui, and others) las cuales proporcionan un sistema de cuentas de usuarios \fullFeatured que puede ser \droprightinto la aplicación. Adicionalmente a estos \packages "\core", hay miles de \packages escritos por la comunidad, los cuales pueden ser necesarios para alguna aplicación propia.
 %There are about a dozen core Meteor packages that most any app will use. Two examples: webapp, which handles incoming HTTP connections, and templating, which lets you make HTML templates that automatically update live as data changes. Then there are optional packages like email, which lets your app send emails, or the Meteor Accounts series (accounts-password, accounts-facebook, accounts-ui, and others) which provide a full-featured user account system that you can drop right into your app. In addition to these "core" packages, there are thousands of community-written packages in Atmosphere, one of which might do just what you need.
 
 \item Una herramienta \commandline llamada \commandlinemeteor.
@@ -102,7 +102,7 @@ Todas las partes del \stack se integran sin problemas, todos los \packages \core
 \section{\framework Isomorfo – \fullstack \javascript}
 %Isomorphic Frameworks – Fullstack JavaScript
 
-\meteor corre sobre \nodejs y mueve la lógica de la aplicación hacia el \browser, lo que es usualmente referido a \singlepageapp. El mismo lenguaje es usado sobre todo el \stack, lo que transforma a \meteor en una plataforma Isomorfa. Como resultado el mismo código \javascript puede ser usado en el \server, en el \client\, e incluso en la \database.
+\meteor corre sobre \nodejs y mueve la lógica de la aplicación hacia el \browser, lo que es usualmente referido a \singlePageApp. El mismo lenguaje es usado sobre todo el \stack, lo que transforma a \meteor en una plataforma Isomorfa. Como resultado el mismo código \javascript puede ser usado en el \server, en el \client\, e incluso en la \database.
 %Meteor runs on top of Node.js and moves the application logic to the browser, which is often referred to as Single Page Applications. The same language is used across the entire stack, which makes Meteor an isomorphic platform. As a result the same JavaScript code can be used on the server, the client, and even in the database. 
 
 Mientras muchos \frameworks usan el mismo lenguaje en tanto en \client como en \server, la mayoría del tiempo estos no pueden compartir código porque los \frameworks no son íntimamente integrados, por ejemplo el uso de \angularjs en el \frontend y \expressjs en el \backend. \meteor es un \fullstack verdadero porque usa una simple y unificada \api expuesta para todas las funcionalidades \core y pueden ser utilizadas en el \server, en el \browser, e incluso para acceder a la \database. Para comenzar, no es necesario aprender múltiples \frameworks y da como resultado una mejor \reusability del código solo utilizando el mismo lenguaje.
