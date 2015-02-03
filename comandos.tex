@@ -32,7 +32,7 @@
 %%%%%%%%%%%%%%%%%%% region constants %%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%    	NOMBRES		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   NOMBRES	(NAME)	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newcommand{\frameworkname}			{\gloss{e_ecommerce} }
@@ -59,6 +59,7 @@
 \newcommand{\linux}					{Linux }
 \newcommand{\angularjs}				{Angular.js }
 \newcommand{\apache}				{Apache }
+\newcommand{\ofBiz}					{OfBiz }
 \newcommand{\mysql}					{MySql }
 \newcommand{\postgresql}			{PostgreSQL }
 \newcommand{\oracle}				{Oracle }
@@ -76,6 +77,7 @@
 \newcommand{\paypalCheckout}		{PayPal Express }
 \newcommand{\amazonCheckout}		{Amazon Checkout }
 \newcommand{\amazonPayments}		{Amazon Payments }
+\newcommand{\amazonEcdosNAME}		{Amazon's EC2 }
 \newcommand{\xml}					{XML }
 \newcommand{\css}					{CSS }
 \newcommand{\html}					{HTML }
@@ -147,7 +149,7 @@
 \newcommand{\hbase}					{Hbase }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%     COMPUTACION	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  COMPUTACION (PC)	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newcommand{\workload}					{\textit{\gloss{workload}} }
@@ -162,7 +164,8 @@
 
 \newcommand{\openSource}				{\textit{Open Source} }
 \newcommand{\closedSource}				{\textit{Closed Source} }
-\newcommand{\hardware}					{\textit{hardware} }
+\newcommand{\hardwarePC}					{\textit{hardware} }
+\newcommand{\physHardwarePC}			{\textit{physical Hardware} }
 \newcommand{\software}					{\textit{software} }
 \newcommand{\softwares}					{\textit{softwares} }
 \newcommand{\feature}					{\textit{feature} }
@@ -186,11 +189,19 @@
 \newcommand{\Multimedia}				{\textit{Multimedia} }
 
 \newcommand{\development}				{\textit{Development} }
-\newcommand{\qaSIGLA}						{\textit{QA} }
+\newcommand{\qaSIGLA}					{\textit{QA} }
 \newcommand{\production}				{\textit{Production} }
 
 \newcommand{\data}						{\textit{Data} }
 \newcommand{\centerCustom}				{\textit{Center} }
+
+\newcommand{\memoryPC}					{\textit{memory} }
+\newcommand{\cpuPC}						{CPU }
+\newcommand{\diskPC}					{\textit{disk} }
+\newcommand{\upgradingPC}				{\textit{upgrading} }
+\newcommand{\iopsPC}					{\textit{\gloss{iops}} }
+\newcommand{\commodityHardwarePC}		{\textit{\gloss{commodity_hardware}} }
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%      LICENCIAS	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -252,9 +263,12 @@
 \newcommand{\spa}						{\gloss{spa} }
 \newcommand{\ajax}						{Ajax }
 \newcommand{\storage}					{\textit{storage} }
+\newcommand{\cookieINT}					{\textit{cookie} }
+\newcommand{\senderINT}					{\textit{sender} }
+\newcommand{\receiverINT}				{\textit{receiver} }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%     E-COMMERCE	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  E-COMMERCE(COM)	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newcommand{\ecommerce}					{\textit{\gloss{ecommerce}} }
@@ -267,11 +281,12 @@
 \newcommand{\wishlist}					{\textit{wish list} }
 \newcommand{\shop}						{\textit{shop} }
 \newcommand{\shopping}					{\textit{shopping} }
-\newcommand{\shoppingCart}				{\textit{shopping cart} }
-\newcommand{\shoppingCarts}				{\textit{shopping carts} }
-\newcommand{\checkout}					{\textit{checkout} }
+\newcommand{\cartCOM}				{\textit{Cart} }
+\newcommand{\shoppingCart}				{\textit{Shopping Cart} }
+\newcommand{\shoppingCarts}				{\textit{Shopping Carts} }
+\newcommand{\checkoutCOM}					{\textit{checkout} }
 \newcommand{\merchandising}				{\textit{Merchandising} }
-\newcommand{\itemCommerce}				{\textit{item} }
+\newcommand{\itemCOM}				{\textit{item} }
 \newcommand{\itemsCommerce}				{\textit{items} }
 \newcommand{\itemupdates}				{\textit{item-updates} }
 \newcommand{\advertising}				{\textit{advertising} }
@@ -327,18 +342,30 @@
 \newcommand{\gift}						{\textit{gift} }
 \newcommand{\gifts}						{\textit{gifts} }
 \newcommand{\markets}					{\textit{markets} }
-\newcommand{\categories}				{\textit{categories} }
-\newcommand{\itemReviews}				{\textit{itemReviews} }
-\newcommand{\orders}					{\textit{orders} }
+\newcommand{\categoriesCommerce}		{\textit{categories} }
+\newcommand{\itemReviewsCommerce}		{\textit{itemReviews} }
+\newcommand{\orderCommerce}				{\textit{order} }
+\newcommand{\ordersCommerce}			{\textit{orders} }
+\newcommand{\catalogCommerce}			{\textit{Catalog} }
+\newcommand{\management}				{\textit{Management} }
+\newcommand{\catalogManagement}			{\catalogCommerce \management }
+\newcommand{\contentManagement}			{\textit{Content} \management }
+\newcommand{\sku}						{\textit{\gloss{sku}} }
+\newcommand{\inventoryCommerce}			{\textit{Inventory} }
+\newcommand{\physItem}					{\textit{physical item} }
+\newcommand{\inCart}					{\textit{in-Cart} }
+\newcommand{\debitOneAccount}			{\textit{debit one account} }
+\newcommand{\creditAnother}				{\textit{credit another} }
+\newcommand{\purchasedCOM}				{\textit{purchased} }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%  CONEPTOS DE ARQUITECTURA	 %%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%  CONCEPTOS DE ARQUITECTURA (AS) %%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newcommand{\layer}					{\textit{layer} }
 \newcommand{\layers}				{\textit{layers} }
 \newcommand{\persistenceLayer}		{\textit{persistence} \layer }
-\newcommand{\server}				{\textit{server} }
+\newcommand{\serverAS}				{\textit{server} }
 \newcommand{\servers}				{\textit{servers} }
 \newcommand{\serverSide}			{\textit{server-side} }
 \newcommand{\clientSide}			{\textit{client-side} }
@@ -367,20 +394,20 @@
 \newcommand{\assets}				{\textit{assets} }
 \newcommand{\javabackend}			{\textit{Java Backend} }
 
-\newcommand{\applayer}					{\textit{Application Layer} }
-\newcommand{\preslayer}					{\textit{Presentation Layer} }
-\newcommand{\sessionlayer}				{\textit{Session Layer} }
-\newcommand{\translayer}				{\textit{Transport Layer} }
-\newcommand{\networklayer}				{\textit{Network Layer} }
-\newcommand{\datalinklayer}				{\textit{Data Link Layer} }
-\newcommand{\physilayer}				{\textit{Physical Layer} }
-\newcommand{\osimodel}					{\gloss{osi_model} \textit{Model} }
-\newcommand{\restful}					{\gloss{restful} }
-\newcommand{\modelsCustom}				{\textit{Models} }
+\newcommand{\applayer}				{\textit{Application Layer} }
+\newcommand{\preslayer}				{\textit{Presentation Layer} }
+\newcommand{\sessionlayer}			{\textit{Session Layer} }
+\newcommand{\translayer}			{\textit{Transport Layer} }
+\newcommand{\networklayer}			{\textit{Network Layer} }
+\newcommand{\datalinklayer}			{\textit{Data Link Layer} }
+\newcommand{\physilayer}			{\textit{Physical Layer} }
+\newcommand{\osimodel}				{\gloss{osi_model} \textit{Model} }
+\newcommand{\restful}				{\gloss{restful} }
+\newcommand{\modelsCustom}			{\textit{Models} }
 \newcommand{\views}					{\textit{Views} }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%  LENGUAJES DE PROGRAMACIÓN	 %%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%   LENGUAJES DE PROGRAMACIÓN(PL) %%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newcommand{\objectOriented}		{\textit{object-oriented} }
@@ -400,6 +427,8 @@
 \newcommand{\eventdriven}			{\textit{event-driven} }
 \newcommand{\nonbloking}			{\textit{non-blocking} }
 \newcommand{\scripting}				{\textit{scripting} }
+\newcommand{\scriptPL}				{\textit{script} }
+\newcommand{\backgroundPL}			{\textit{background} }
 \newcommand{\cprogramming}			{\textit{C programming} }
 \newcommand{\handling}				{\textit{handling} }
 \newcommand{\stringCustom}			{\textit{string} }
@@ -408,7 +437,7 @@
 \newcommand{\polymorphic}			{\textit{Polymorphic} }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%  	    BASE DE DATOS		%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%  	    BASE DE DATOS (DB)	%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newcommand{\sparseFeature}				{\textit{sparse} }
@@ -430,12 +459,18 @@
 \newcommand{\wideColumn}				{\textit{Wide-Column} }
 \newcommand{\fields}					{\textit{fields} }
 \newcommand{\verticallyScale}			{\textit{Vertically} }
+\newcommand{\verticalScalingDB}			{\textit{Vertical Scaling} }
+\newcommand{\scalingUpDB}				{\textit{Scaling Up} }
 \newcommand{\horizontallyScale}			{\textit{Horizontally} }
+\newcommand{\horizontallyScaledDB}		{\textit{Horizontally Scaled} }
+\newcommand{\horizontalScalingDB}		{\textit{Horizontal Scaling} }
+\newcommand{\scalingOutDB}				{\textit{Scaling Out} }
 \newcommand{\cloudInstances}			{\textit{cloud instances} }
 \newcommand{\documentLevel}				{\textit{Document Level} }
 \newcommand{\documentModel}				{\textit{Document Model} }
 \newcommand{\dataBaseLevel}				{\textit{Data Base Level} }
 \newcommand{\tableDB}					{\textit{table} }
+\newcommand{\tablesDB}					{\textit{tables} }
 \newcommand{\selectDB}					{\textit{Select} }
 \newcommand{\insertDB}					{\textit{Insert} }
 \newcommand{\updateDB}					{\textit{Update} }
@@ -445,14 +480,40 @@
 \newcommand{\strongConsistency}			{\textit{Strong Consistency} }
 \newcommand{\eventualConsistency}		{\textit{Eventual Consistency} }
 \newcommand{\collectionsDB}				{\textit{Collections} }
+\newcommand{\collectionDB}				{\textit{Collection} }
 \newcommand{\aggregatesDB}				{\textit{Aggregates} }
+\newcommand{\aggregationDB}				{\textit{Aggregation} }
 \newcommand{\keyLookup}					{\textit{Key Lookup} }
 \newcommand{\transactionsDB}			{\textit{Transactions} }
 \newcommand{\nameDB}					{\textit{name} }
 \newcommand{\keyDB}						{\textit{key} }
 \newcommand{\valueDB}					{\textit{value} }
 \newcommand{\schemasDB}					{\textit{Schemas} }
+\newcommand{\schemaDB}					{\textit{Schema} }
 \newcommand{\rowsDB}					{\textit{rows} }
+\newcommand{\masterSchema}				{\textit{Master} \schemaDB}
+\newcommand{\indexDB}					{\textit{index} }
+\newcommand{\indexingDB}				{\textit{indexing} }
+\newcommand{\indexesDB}					{\textit{indexes} }
+\newcommand{\secIndexingDB}				{\textit{Secundary} \indexingDB}
+\newcommand{\secIndexesDB}				{\textit{Secundary }\indexesDB }
+\newcommand{\positionOperatorDB}			{\textit{position operator} }
+\newcommand{\atomicOperationsDB}			{\textit{atomic operations} }
+\newcommand{\atomicOperatorDB}			{\textit{atomic operator} }
+\newcommand{\pushOperatorDB}				{\textit{\$push} }
+\newcommand{\incOperatorDB}				{\textit{\$inc} }
+\newcommand{\itemBackDB}				{\textit{item back} }
+\newcommand{\lockDB}					{\textit{lock} }
+\newcommand{\rollbackDB}				{\textit{rollback} }
+\newcommand{\transactionalityDB}		{\textit{transactionality} }
+\newcommand{\fullFledgedTransDB}		{\textit{full-fledged} \transactionsDB }
+\newcommand{\multiObjectDB}				{\textit{multi-object} }
+\newcommand{\findAndModifyOperatorDB}	{\textit{findAndModify} }
+\newcommand{\nearRealTimeReplicationDB}	{\textit{near-real-time replications} }
+\newcommand{\replicatedDB}				{\textit{replicated} }
+\newcommand{\hostingDB}					{\textit{Hosting} }
+\newcommand{\replicatedSlaveDB}			{\textit{replicated slave} }
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%    ATRIBUTOS DE CALIDAD	%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -494,6 +555,7 @@
 \newcommand{\highLevel}				{\textit{high-level} }
 \newcommand{\dragdrop}				{\textit{drag \& drop} }
 \newcommand{\tracking}				{\textit{tracking} }
+\newcommand{\trackCPT}				{\textit{track} }
 \newcommand{\default}				{\textit{default} }
 \newcommand{\template}				{\textit{template} }
 \newcommand{\templates}				{\textit{templates} }
@@ -503,6 +565,7 @@
 \newcommand{\embraceecosystem}		{\textit{Embrace the Ecosystem} }
 \newcommand{\latency}				{\textit{latency} }
 \newcommand{\update}				{\textit{update} }
+\newcommand{\updating}				{\textit{Updating} }
 \newcommand{\updated}				{\textit{updated} }
 \newcommand{\updates}				{\textit{updates} }
 \newcommand{\download}				{\textit{download} }
@@ -532,7 +595,7 @@
 \newcommand{\callback}				{\textit{callback} }
 \newcommand{\callbacks}				{\textit{callbacks} }
 \newcommand{\system}				{\textit{system} }
-\newcommand{\documents}				{\textit{documents} }
+\newcommand{\documentsDB}			{\textit{documents} }
 \newcommand{\documentDB}			{\textit{document} }
 \newcommand{\documentOriented}		{\textit{Document Oriented} }
 \newcommand{\objects}				{\textit{objects} }
@@ -572,8 +635,8 @@
 \newcommand{\graphTheory}			{\textit{\nameref{ap:apendice_graph_theory}} }
 \newcommand{\graphCustom}			{\textit{graph} }
 \newcommand{\connectCustom}			{\textit{Connect} }
-\newcommand{\Stateful}				{\textit{Stateful} }
-\newcommand{\Stateless}				{\textit{Stateless} }
+\newcommand{\stateful}				{\textit{Stateful} }
+\newcommand{\stateless}				{\textit{Stateless} }
 \newcommand{\spas}					{\textit{SPAs} }
 \newcommand{\minifier}				{\textit{minifier} }
 \newcommand{\minified}				{\textit{minified} }
@@ -621,6 +684,12 @@
 \newcommand{\service}					{\textit{Service} }
 \newcommand{\spreedsheet}				{\textit{spreedsheet} }
 \newcommand{\mix}					{\textit{mix} }
+\newcommand{\shellBased}				{\textit{Shell-Based} }
+\newcommand{\shell}						{\textit{shell} }
+\newcommand{\mapReduce}					{\textit{map-reduce} }
+\newcommand{\zipCode}					{\textit{zip code} }
+\newcommand{\adding}					{\textit{adding} }
+\newcommand{\removing}					{\textit{removing} }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%	 	OTROS		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

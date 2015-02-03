@@ -5,7 +5,7 @@ A continuación se discutirán las razones para considerar el desarrollo de una 
 
 %TODO Hablar de arquitectura de proyecto para luego diferenciar las diferentes tecnologias y explicar cual es la mas adecuada en cada caso.
 
-\section{Base de datos}
+\section{\dataBase}
 
 Bases de datos relacionales se encuentran en la mayoría de las organización desde hace muchísimo tiempo, y por buenas razones. Las bases de datos relacionales soportan las aplicaciones del pasado que cumplen con las necesidades de negocio actuales; Estas son apoyadas por un extenso ecosistema de herramientas; y hay una gran cantidad de mano de obra calificada para implementar y mantener estos sistemas.
 %Relational databases have a long-standing position in most
@@ -96,7 +96,7 @@ Ejemplos: \neofourj y \hyperGraphDB.
 \subsubsection{\keyValue}
 \label{cap:justificacion_proyecto:base_datos:nosql:key_value}
 
-Desde una perspectiva de modelo de datos, \keyValue \stores son el tipo mas básico de las \nosql \dataBases. Cada \itemCommerce en la base de datos es guardado como un atributo \nameDB, ó \keyDB, junto con su \valueDB. El \valueDB, sin embargo, es totalmente opaco al sistema; los datos solo pueden ser requeridos desde la \keyDB. Este modelo puede ser útil para representar datos \polymorphic y sin estructura, dado que la \dataBase no define un esquema al conjunto \keyValue.
+Desde una perspectiva de modelo de datos, \keyValue \stores son el tipo mas básico de las \nosql \dataBases. Cada \itemCOM en la base de datos es guardado como un atributo \nameDB, ó \keyDB, junto con su \valueDB. El \valueDB, sin embargo, es totalmente opaco al sistema; los datos solo pueden ser requeridos desde la \keyDB. Este modelo puede ser útil para representar datos \polymorphic y sin estructura, dado que la \dataBase no define un esquema al conjunto \keyValue.
 %From a data model perspective, key-value stores are the most basic type of NoSQL database. Every item in the database is stored as an attribute name, or key, together with its value. The value, however, is entirely opaque to the system; data can only be queried by the key. This model can be useful for representing polymorphic and unstructured data, as the database does not enforce a set schema across key-value pairs.
 
 \subsubsection{Modelos \wideColumn}
@@ -213,15 +213,15 @@ Aplicación: \keyDB \valueDB \stores y \wideColumn \stores son útiles para un r
 \subsection{\mongodb y \ecommerce \cite{online_mongodb_ecommerce}}
 \label{cap:justificacion_proyecto:MongoDB_ECommerce}
 
-Demostraciones de almacenamientos de datos de la siguiente generación giran típicamente en torno a las redes sociales: \twitter, \facebook, \foursquare, etc. Desafortunadamente, tales aplicaciones generalmente tienen modelos de datos complejos. \ecommerce por ejemplo, tiene la ventaja de incluir un largo número de patrones familiares para modelar datos. Ademas no es complicado imaginar como \itemCommerce, \categories, \itemReviews y \orders son típicamente modeladas en \rdbms.
+Demostraciones de almacenamientos de datos de la siguiente generación giran típicamente en torno a las redes sociales: \twitter, \facebook, \foursquare, etc. Desafortunadamente, tales aplicaciones generalmente tienen modelos de datos complejos. \ecommerce por ejemplo, tiene la ventaja de incluir un largo número de patrones familiares para modelar datos. Ademas no es complicado imaginar como \itemCOM, \categoriesCommerce, \itemReviewsCommerce y \ordersCommerce son típicamente modeladas en \rdbms.
 
 \ecommerce ha sido usualmente un dominio exclusivo de \rdbms, y esto es así por un par de razones. La primera, es que los sitios \ecommerce generalmente requieren \transactionsDB, y \transactionsDB son una operación básica en \rdbms. Lo segundo es que, hasta hace poco, dominios que requieren de un modelo de dato enriquecido y consultas sofisticadas han sido presupuestos que se ajustan mejor en \rdbms. En las siguientes secciones se cuestionara la segunda afirmación. 
 
-\subsubsection{\textit{Catalog Management}}
+\subsubsection{\catalogManagement}
 
-Si es necesaria información sobre como el \textit{catalog management} se maneja con bases de datos relacionales, es necesario dar una mirada rápida a los esquemas del popular Magento \ecommerce \framework \ref{ap:figure:catalog_magento} ó OfBiz de Apache \ref{ap:figure:catalog_ofbiz}. En la \refFigura{cap:figure:catalog_magento}  se observa es un conjunto de tablas trabajando a la par para proveer un esquema flexible sobre un fundamentalmente inflexible estilo de sistema de base de datos.
+Si es necesaria información sobre como el \catalogManagement se maneja con \dataBases relacionales, es necesario dar una mirada rápida a los esquemas del popular \nameMagento \ecommerce \framework \ref{ap:figure:catalog_magento} ó \ofBiz de \apache \ref{ap:figure:catalog_ofbiz}. En la \refFigura{cap:figure:catalog_magento}  se observa es un conjunto de \tablesDB trabajando a la par para proveer un esquema flexible sobre un fundamentalmente inflexible estilo de sistema de \dataBase.
 
-Esto significa que los datos de cualquier producto se extienden a través de una docena de tablas. Esto incremente la complejidad del código requerido para la persistencia de consultas de productos individuales y hacer una consulta \textit{shell-based} es casi imposible. Simplemente considere escribir un \sql \join para para reunir el modelo de un producto como el de la \refFigura{cap:figure:catalog_magento}.
+Esto significa que los datos de cualquier producto se extienden a través de una docena de \tablesDB. Esto incremente la complejidad del código requerido para la persistencia de consultas de \itemsCommerce individuales y hacer una consulta \shellBased es casi imposible. Simplemente considere escribir un \sql \join para para reunir el modelo de un producto como el de la \refFigura{cap:figure:catalog_magento}.
 
 \begin{figure}[h!]
 	\centering
@@ -230,7 +230,7 @@ Esto significa que los datos de cualquier producto se extienden a través de una
 	\label{cap:figure:catalog_magento}
 \end{figure}
 
-O realizar una sencilla búsqueda desde la \textit{shell} \mongodb \javaScript  para obtener un objecto \json como el \refsource{source:javascript:example_search_mongodb}.
+O realizar una sencilla búsqueda desde la \shell \mongodb \javaScript  para obtener un objecto \json como el \refsource{source:javascript:example_search_mongodb}.
 
 \medskip
 \begin{lstlisting}[caption= Busqueda en MongoDB, label=source:javascript:example_search_mongodb]
@@ -263,18 +263,18 @@ db.products.find({'_id': ObjectID("4bd87bd8277d094c458d2fa5")});
 }
 \end{lstlisting}
 
-Claramente en \refsource{source:javascript:example_search_mongodb} no hay  representación completa de un producto, pero esto demuestra cuantas de estas tablas triviales que existen en una representación relacional pueden prescindir en un \documentDB \textit{representation}.
+Claramente en \refsource{source:javascript:example_search_mongodb} no hay  representación completa de un \itemCOM, pero esto demuestra cuantas de estas \tablesDB triviales que existen en una representación relacional pueden prescindir en una representación \documentDB.
 
-Para datos \textit{object-oriented}, los documentos tienen mayor sentido, tanto en concepto como rendimiento. Una representación \textit{document-oriented} de un dato de un producto se traduce a unas pocas entidades (un puñado de \textit{collections} vs. una docena de tablas), mejor \textit{performance} en consultas (sin \textit{sever-side} \joins), y estructuras que corresponden precisamente al producto. Ya no existe la necesidad de diseñar un \textit{master schema} que pueda considerar a cada tipo de producto concebible.
+Para datos \objectOriented, los \documentsDB tienen mayor sentido, tanto en concepto como rendimiento. Una representación \documentOriented de un dato de un \itemCOM se traduce a unas pocas entidades (un puñado de \collectionsDB vs. una docena de \tablesDB), mejor \performance en consultas (sin \serverSide \joins), y estructuras que corresponden precisamente al \itemCOM. Ya no existe la necesidad de diseñar un \masterSchema que pueda considerar a cada tipo de \itemCOM concebible.
 
-\textit{Catalog management} es esencialmente \textit{content management}, un campo en donde MongoDB sobresale.
+\catalogManagement es esencialmente \contentManagement, un campo en donde \mongodb sobresale.
 
-\subsubsection{Shopping Carts and Orders}
+\subsubsection{\shoppingCarts y \ordersCommerce}
 
-Permitir que un \textit{shopping cart} sea simplemente una orden en un estado  \textit{"cart"}, el modelo de \textit{shopping carts} y las ordenes en MongoDB se tornan muy sencillas. Un ejemplo de esto se puede observar en  \refsource{source:javascript:example_schema_order}.
+Permitir que un \shoppingCarts sea simplemente una orden en un estado  \cartCOM, el modelo de \shoppingCarts y las ordenes en \mongodb se tornan muy sencillas. Un ejemplo de esto se puede observar en  \refsource{source:javascript:example_schema_order}.
 
 \medskip
-\begin{lstlisting}[caption= Estructura de una orden., label=source:javascript:example_schema_order]
+\begin{lstlisting}[caption= Estructura de una \orderCommerce., label=source:javascript:example_schema_order]
 
 {
 	'_id': objectid('4b980a6dea2c3f4579da141e'),
@@ -302,27 +302,27 @@ Permitir que un \textit{shopping cart} sea simplemente una orden en un estado  \
 }
 \end{lstlisting}
 
-Notar que es posible presentar los pedidos como un \textit{array} de productos. Como es usual con documentos, esto hace el despliegue del \textit{shopping cart} mas sencillo, dado que no hay \joins envueltos. Pero esto también resuelve el problema del versionamiento de productos. Usualmente es necesario tener el estado de un producto cuando este es comprado. Esto puede ser logrado en una \rdbms estableciendo un vinculo a versiones particulares de un producto. Aquí, sin embargo, simplemente se almaceno el estado de un producto dentro de la misma orden.
+Notar que es posible presentar los pedidos como un \arrayCustom de \itemsCommerce. Como es usual con \documentsDB, esto hace el despliegue del \shoppingCart mas sencillo, dado que no hay \joins envueltos. Pero esto también resuelve el problema del versionamiento de \itemsCommerce. Usualmente es necesario tener el estado de un \itemCOM cuando este es comprado. Esto puede ser logrado en una \rdbms estableciendo un vínculo a versiones particulares de un \itemCOM. Aquí, sin embargo, simplemente se almacenó el estado de un \itemCOM dentro de la misma \orderCommerce.
 
-\subsubsection{\textit{Querying Orders}}
+\subsubsection{Consultando \ordersCommerce}
 
-Dado que MongoDB soporta consultas dinámicas y \textit{secondary indexes}, las consultas para las ordenes son automáticas. Es posible, por ejemplo, definir un \textit{index} en un \textit{product \gloss{sku}}, lo que permite consultas eficientes en todas las ordenes para un producto dado. En  \refsource{source:javascript:example_querying_orders_mongodb} se observa un ejemplo.
+Dado que \mongodb soporta consultas dinámicas y \secIndexingDB , las consultas para las \ordersCommerce son automáticas. Es posible, por ejemplo, definir un \indexDB en un \itemCOM \sku, lo que permite consultas eficientes en todas las ordenes para un \itemCOM dado. En  \refsource{source:javascript:example_querying_orders_mongodb} se observa un ejemplo.
 
 \medskip
-\begin{lstlisting}[caption= Consulta eficiente con \textit{secondary indexes}., label=source:javascript:example_querying_orders_mongodb]
+\begin{lstlisting}[caption= Consulta eficiente con \secIndexesDB., label=source:javascript:example_querying_orders_mongodb]
 
 	db.orders.ensureIndex({'line_items.sku': 1});
 	db.orders.find({'line_items.sku' => 'jc-431'});
 	
 \end{lstlisting}
 
-Con MongoDB, es posible realizar consultas en atributos arbitrarios, de esa manera, cualquier consulta en \textit{orders collection} es posible. Y para consultas comunes, es posible definir \textit{indexes} para una mejor eficiencia.
+Con \mongodb, es posible realizar consultas en atributos arbitrarios, de esa manera, cualquier consulta en la \collectionDB \ordersCommerce es posible. Y para consultas comunes, es posible definir \indexesDB para una mejor eficiencia.
 
-\subsubsection{\textit{Aggregation}}
+\subsubsection{\aggregationDB}
 
-Claramente, \textit{aggregation} también es necesario. Se desea reportar ordenes de diferentes maneras, y para ese propósito, \textit{map-reduce} esta disponible. A modo de ejemplo,  \refsource{source:javascript:example_aggregation_mongodb} tiene comando \textit{map-reduce} que \textit{aggregtes} el total de ordenes por \textit{zip code}.
+Claramente, \aggregationDB también es necesario. Se desea reportar \ordersCommerce de diferentes maneras, y para ese propósito, \mapReduce esta disponible. A modo de ejemplo, \refsource{source:javascript:example_aggregation_mongodb} tiene comando \mapReduce que \aggregatesDB el total de \ordersCommerce por \zipCode.
 
-\begin{lstlisting}[caption= Ejemplo de commando \textit{map-reduce}., label=source:javascript:example_aggregation_mongodb]
+\begin{lstlisting}[caption= Ejemplo de commando \mapReduce., label=source:javascript:example_aggregation_mongodb]
 
 map = "
 	function(){
@@ -345,13 +345,13 @@ db.orders.mapReduce(map, reduce, {out: 'order_totals_by_zip'});
 
 \end{lstlisting}
 
-\subsubsection{Updating Orders}
+\subsubsection{\updating \ordersCommerce}
 
-\subsubsection*{Incrementing Quality}
+\subsubsection*{Incrementando Calidad}
 
-Una manera de ajustar la cantidad es usando un \textit{position operator}, el cual permite aplicar \textit{atomic operations}, a un único objeto dentro de un \textit{array}. \refsource{source:javascript:example_incrementing_quality_mongodb} muestra como cambiar el número de álbumes que se están ordenando.
+Una manera de ajustar la cantidad es usando un \positionOperatorDB, el cual permite aplicar \atomicOperationsDB, a un único objeto dentro de un \arrayCustom. \refsource{source:javascript:example_incrementing_quality_mongodb} muestra como cambiar el número de álbumes que se están ordenando.
 
-\begin{lstlisting}[caption= Ejemplo de uso de \textit{position operator}., label=source:javascript:example_incrementing_quality_mongodb]
+\begin{lstlisting}[caption= Ejemplo de uso de \positionOperatorDB., label=source:javascript:example_incrementing_quality_mongodb]
 
 	db.orders.update(
 		{
@@ -366,11 +366,11 @@ Una manera de ajustar la cantidad es usando un \textit{position operator}, el cu
 \end{lstlisting}
 
  
-\subsubsection*{Adding and Removing Items}
+\subsubsection*{\adding y \removing \itemsCommerce}
 
-Igualmente, \textit{atomic operators} resuelven el problema de agregar y remover productos desde el carro. \refsource{source:javascript:example_push_operator_mongodb} ejemplifica el uso de \$push \textit{atomic operator} para agregar un item al \textit{cart}.
+Igualmente, \atomicOperationsDB resuelven el problema de agregar y remover \itemCOM desde el \cartCOM. \refsource{source:javascript:example_push_operator_mongodb} ejemplifica el uso de \pushOperatorDB \atomicOperatorDB para agregar un \itemCOM al \cartCOM.
 
-\begin{lstlisting}[caption= Ejemplo del operador \$push., label=source:javascript:example_push_operator_mongodb]
+\begin{lstlisting}[caption= Ejemplo del operador \pushOperatorDB., label=source:javascript:example_push_operator_mongodb]
 db.orders.update(
 	{'_id': order_id},
     {
@@ -386,15 +386,15 @@ db.orders.update(
 );
 \end{lstlisting}
 
-Al ajustar la cantidad y el cambio de los mismos \textit{items} en el \textit{cart}, es necesario actualizar el total de la orden. Notar el uso de \$inc \textit{operator} para manejar esto.
+Al ajustar la cantidad y el cambio de los mismos \itemsCommerce en el \cartCOM, es necesario actualizar el total de la orden. Notar el uso del operador \incOperatorDB para manejar esto.
 
-\subsubsection{Inventory}
+\subsubsection{\inventoryCommerce}
 
-No todos los sitios \ecommerce necesitan manejar el inventario. Pero para aquellos que si lo hacen, \gloss{mongodb} funciona a la altura de las circunstancias.
+No todos los sitios \ecommerce necesitan manejar el inventario. Pero para aquellos que si lo hacen, \mongodb funciona a la altura de las circunstancias.
 
-Una manera para manejar el inventario, es guardar un documento separado por cada \textit{physical item} en la bodega. Así, por ejemplo, si la bodega tiene veinte copias del álbum Coltrane, se traduce en veinte documentos distintos en \textit{inventory collection}. Cada documento tiene una estructura como lo muestra \refsource{source:javascript:example_document_inventory_mongodb}.
+Una manera para manejar el inventario, es guardar un \documentDB separado por cada \physItem en la bodega. Así, por ejemplo, si la bodega tiene veinte copias del álbum Coltrane, se traduce en veinte \documentsDB distintos en \inventoryCommerce \collectionDB. Cada \documentDB tiene una estructura como lo muestra \refsource{source:javascript:example_document_inventory_mongodb}.
 
-\begin{lstlisting}[caption= Ejemplo de documento para un \textit{item}., label=source:javascript:example_document_inventory_mongodb]
+\begin{lstlisting}[caption= Ejemplo de \documentDB para un \itemCOM., label=source:javascript:example_document_inventory_mongodb]
 {
 	'_id': objectid('4b980a6dea2c3f4579da432a'),
 	'sku': 'jc-431',
@@ -405,9 +405,9 @@ Una manera para manejar el inventario, es guardar un documento separado por cada
 \end{lstlisting}
 
 
-Cuando un usuario intenta agregar un \textit{item} al \textit{cart}, un \textit{findAndModify command} puede ser facilitado para automáticamente marcar el \textit{item} en \textit{in-cart}, asociando el \textit{item} con una orden dada, y estableciendo un tiempo de espiración. \refsource{source:javascript:example_add_inventory_expiartion_mongodb}.
+Cuando un usuario intenta agregar un\itemCOM al \cartCOM, un comando \findAndModifyOperatorDB puede ser facilitado para automáticamente marcar el \itemCOM en \inCart, asociando el \itemCOM con una \orderCommerce dada, y estableciendo un tiempo de espiración. \refsource{source:javascript:example_add_inventory_expiartion_mongodb}.
 
-\begin{lstlisting}[caption= Marcando un \textit{item} con tiempo de espiración., label=source:javascript:example_add_inventory_expiartion_mongodb]
+\begin{lstlisting}[caption= Marcando un \itemCOM con tiempo de espiración., label=source:javascript:example_add_inventory_expiartion_mongodb]
 query = {'sku': 'jc-431', 'state': 'available'};
 
 update = {
@@ -421,12 +421,12 @@ update = {
 item = db.inventory.findAndModify(query: query, update: update);
 \end{lstlisting}
 
-Si se obtiene un \textit{item back} desde el \textit{findAndModify operation}, se sabe que tenemos un único \textit{lock} en el \textit{item}, y es posible guardarlo en el \textit{cart}. Cuando el usuario desea realizar el \textit{check out}, el estado del \textit{item} puede cambiar a \textit{"purchased"}, o cualquiera sea el caso de la llamada.
+Si se obtiene un \itemBackDB desde la operación \findAndModifyOperatorDB, se sabe que tenemos un único \lockDB en el \itemCOM, y es posible guardarlo en el \cartCOM. Cuando el usuario desea realizar el \checkoutCOM, el estado del \itemCOM puede cambiar a \purchasedCOM, o cualquiera sea el caso de la llamada.
 
-Mientras, se pueda ejecutar un \textit{script} en \textit{background} que libere el inventario del \textit{cart} que no ha sido \textit{purchased} en la ventana de quince minutos. La actualización es trivial y se observa en \refsource{source:javascript:example_add_script_background_mongodb}.
+Mientras, se pueda ejecutar un \scriptPL en \backgroundPL que libere el inventario del \cartCOM que no ha sido \purchasedCOM en la ventana de quince minutos. La actualización es trivial y se observa en \refsource{source:javascript:example_add_script_background_mongodb}.
 
 
-\begin{lstlisting}[caption= Ejemplo de \textit{script} corriendo \textit{background}., label=source:javascript:example_add_script_background_mongodb]
+\begin{lstlisting}[caption= Ejemplo de \scriptPL corriendo \backgroundPL., label=source:javascript:example_add_script_background_mongodb]
 db.inventory.update(
 	{
 		'state': 'cart',
@@ -446,26 +446,26 @@ db.inventory.update(
 
 Muchos argumentos impuestos contra \nosql en \ecommerce se centran en \transactionsDB, \consistencyDB, y \durabilityDB. En relación a esto se mencionan algunos puntos.
 
-En relación a \transactionsDB, ciertamente \mongodb no soporta el tipo \textit{multi-object}; sin embargo, soporta \textit{atomic operations} sobre documentos individuales. y esto combinado con \textit{documento-oriented modeling} recién descrito y creatividad, es suficiente para muchos problemas \ecommerce. Ciertamente, si se necesita \textit{debit one account} y \textit{credit another} en la misma operación, o si se desea \textit{rollback}, sera necesario \textit{full-fledged transactions}. No obstante, \textit{transactionality} provista por \gloss{mongodb} debería ser suficiente en la mayoría de los casos, si no en todos, para \ecommerce \textit{operations}.
+En relación a \transactionsDB, ciertamente \mongodb no soporta el tipo \multiObjectDB; sin embargo, soporta \atomicOperationsDB sobre \documentsDB individuales. y esto combinado con el modelo \documentOriented recién descrito, y creatividad, es suficiente para muchos problemas \ecommerce. Ciertamente, si se necesita \debitOneAccount y \creditAnother en la misma operación, ó si se desea \rollbackDB, sera necesario \fullFledgedTransDB. No obstante, \transactionalityDB provista por \mongodb debería ser suficiente en la mayoría de los casos, si no en todos, para operaciones \ecommerce.
 
-Si la preocupación esta sobre \textit{consistency} y \textit{durability}, operaciones escritas en \gloss{mongodb} pueden ser realizadas \textit{consistency} sobre conexiones. Ademas, \gloss{mongodb} 1.5 soporta \textit{near-real-time replications}, así que es posible asegurarse que una operación ha sido \textit{replicated} antes de retornar.
+Si la preocupación esta sobre \consistencyDB y \durabilityDB, operaciones escritas en \mongodb pueden ser realizadas \consistencyDB sobre conexiones. Además, \mongodb 1.5 soporta \nearRealTimeReplicationDB, así que es posible asegurarse que una operación ha sido \replicatedDB antes de retornar.
 
-\subsubsection{\textit{Scalability}}
-La manera mas sencilla para \textit{scale} la mayoría de las bases de datos, es \textit{upgrading} el \textit{hardware}. Si la aplicación esta corriendo en un único nodo, es usualmente posible agregar una combinación de \textit{disk} \gloss{iops}, \textit{memory}, y CPU para eliminar los cuello de botella de la base de datos. La técnica de mejorar el \textit{hardware} de un solo node para escalar se conoce como \textit{vertical scaling} o \textit{scaling up}(\refFigura{figure:figure_scale_up}). \textit{Vertical scaling} tiene la ventaja de ser simple, seguro, y \textit{cost-effective} hasta un cierto punto. Si se esta ejecutando sobre un \textit{virtualized hardware}( tal como \textit{Amazon's EC2}), entonces puedes encontrar que una instancia lo suficientemente larga no esta disponible. Si estas ejecutando sobre \textit{physical hardware}, habrá un punto donde el costo de un servidor mas poderoso se vuelve prohibitivo.
+\subsubsection{\scalability}
+La manera mas sencilla para \scale la mayoría de las \dataBases, es \upgradingPC el \hardwarePC. Si la aplicación esta corriendo en un único nodo, es usualmente posible agregar una combinación de \diskPC \iopsPC, \memoryPC, y \cpuPC para eliminar los cuello de botella de la \dataBase. La técnica de mejorar el \hardwarePC de un solo node para escalar se conoce como \verticalScalingDB o \scalingUpDB(\refFigura{figure:figure_scale_up}). \verticalScalingDB tiene la ventaja de ser simple, seguro, y \textit{costo-efectividad} hasta un cierto punto. Si se esta ejecutando sobre un \hardwarePC virtualizado( tal como \amazonEcdosNAME), entonces puedes encontrar que una instancia lo suficientemente larga no esta disponible. Si estas ejecutando sobre \physHardwarePC, habrá un punto donde el costo de un \serverAS mas poderoso se vuelve prohibitivo.
 
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.5\textwidth]{figuras/cap2/scale_up.png}
-	\caption{\textit{Vertical scaling} o \textit{Scaling up} }
+	\caption{\verticalScalingDB ó \scalingUpDB }
 	\label{figure:figure_scale_up}
 \end{figure}
 
-Entonces tiene sentido  considerar \textit{scaling horizontally} o \textit{scaling out}(\refFigura{figure:figure_scale_out}). En lugar de reforzar un único nodo, \textit{scalling horizontally} significa distribuir la base de datos sobre múltiples maquinas. Dado que \textit{horizontally scaled architecture} puede utilizar \textit{comodity hardware}, el costo de \textit{hosting} el total de los datos puede ser reducido significativamente. Incluso, la distribución  de los datos sobre maquinas mitiga las consecuencias de fallo. Las maquinas inevitablemente fallaran de algún momento a otro. Si se \textit{scaled vertically} , y la maquina falla, entonces es necesario tratar con una falla en un maquina de la cual la mayoría del sistema depende. Podría no considerarse un tema si una copia de los datos existe en un \textit{replicated slave}, pero aun esta el caso en que solo un único \textit{sever} es necesario para bajar el sistema completo. En contraste con el fallo dentro de un \textit{horizontally scaled architecture}. Esto podría ser menos catastrófico dado que una sola máquina representa un porcentaje menor del sistema completo.
+Entonces tiene sentido  considerar \horizontalScalingDB o \scalingOutDB(\refFigura{figure:figure_scale_out}). En lugar de reforzar un único nodo, \horizontalScalingDB significa distribuir la base de datos sobre múltiples máquinas. Dado que la arquitectura \horizontallyScaledDB puede utilizar \commodityHardwarePC, el costo de \hostingDB el total de los datos puede ser reducido significativamente. Incluso, la distribución  de los datos sobre máquinas mitiga las consecuencias de fallo. Las maquinas inevitablemente fallaran de algún momento a otro. En el caso de \verticalScalingDB , si la máquina falla, entonces es necesario tratar con una falla en un máquina de la cual la mayoría del sistema depende. Podría no considerarse un tema si una copia de los datos existe en un \replicatedSlaveDB, pero aun esta el caso en que solo un único \serverAS es necesario para bajar el sistema completo. En contraste con el fallo dentro de una arquitectura \horizontallyScaledDB. Esto podría ser menos catastrófico dado que una sola máquina representa un porcentaje menor del sistema completo.
 
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.5\textwidth]{figuras/cap2/scale_out.png}
-	\caption{\textit{Horizontally scaling} o \textit{Scaling out} }
+	\caption{\horizontalScalingDB ó \scalingOutDB }
 	\label{figure:figure_scale_out}
 \end{figure}
 
@@ -633,7 +633,7 @@ Por si solo, esta evidencia mostraba a los equipos desarrollar más rápido util
 \performance fue un tópico interesante. Se pudo analizar 2 aplicaciones con exactamente las mismas funcionalidades: una con \framework Java interno basado en Spring y la otra construida en \textit{kraken.js} usando Express, dust.js y otros códigos \openSource.
 %Performance is a fun and debatable topic. In our case, we had two applications with the exact same functionality and built by roughly the same teams: one on our internal Java framework based on Spring and the other built on kraken.js using express, dust.js and other open source code.
 
-Se ejecutaron los test adecuados utilizando \hardware de producción que probaran las rutas y recolectaran datos de rendimiento y tiempo de respuesta. Los resultados se aprecian en \refFigura{figure:java_benchmark_paypal}.
+Se ejecutaron los test adecuados utilizando \hardwarePC de producción que probaran las rutas y recolectaran datos de rendimiento y tiempo de respuesta. Los resultados se aprecian en \refFigura{figure:java_benchmark_paypal}.
 %We ran our test suite using production hardware that tested the routes and collected data on throughput and response time.
 
 \begin{figure}[h!]
