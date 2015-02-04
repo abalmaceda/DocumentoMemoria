@@ -29,7 +29,7 @@ Pero las compañías están cada vez más considerando la opción de alternativa
 
 
 %TODO revizar este parrafo
-Estas opciones se aplican tanto para aplicaciones \analyticProcessing como \tarnsactionalProcessing. Las compañías están cambiando \workloads a \hadoop para sus \offline, \analytical \workloads, y están construyendo \online, aplicaciones operacionales con una nueva clase de tecnología de manejo de datos llamada \nosql, como por ejemplo \mongodb.
+Estas opciones se aplican tanto para aplicaciones \analyticProcessing como \tarnsactionalProcessing. Las compañías están cambiando \workloads a \hadoop para sus \offline, \analytical \workloads, y están construyendo \online, aplicaciones operacionales con una nueva clase de tecnología de manejo de datos llamada \nosql, como por ejemplo \mongodbNAME.
 %These drivers apply both to analytical and transactional applications. Companies are shifting workloads to Hadoop for their offline, analytical workloads, and they are building online, operational applications with a new class of data management technologies called "NoSQL", or "Not Only SQL", such as MongoDB
 
 \subsection{\sql y el Modelo Relacional}
@@ -69,7 +69,7 @@ Generalmente no es inteligente descartar años de consideraciones de diseño arb
 
 \subsection{\nosql}
 
-\nosql engloba una gran variedad de diferentes tecnologías de bases de datos que fueron desarrolladas en respuesta al creciente volumen de datos guardados de los usuarios, objetos y productos, la frecuencia en que los datos son accesados, y la \performance en las necesidades de los procesos. Bases de datos relacionales, por otra parte, no fueron diseñadas para hacer frente a los desafíos de escalabilidad y de agilidad que enfrentan las aplicaciones modernas, no fueron construidas para tomar ventaja del almacenamiento barato y al poder de procesamiento disponible en la actualidad.
+\nosql engloba una gran variedad de diferentes tecnologías de bases de datos que fueron desarrolladas en respuesta al creciente volumen de datos guardados de los usuarios, objetos y productos, la frecuencia en que los datos son accesados, y la \performanceQA en las necesidades de los procesos. Bases de datos relacionales, por otra parte, no fueron diseñadas para hacer frente a los desafíos de escalabilidad y de agilidad que enfrentan las aplicaciones modernas, no fueron construidas para tomar ventaja del almacenamiento barato y al poder de procesamiento disponible en la actualidad.
 %NoSQL encompasses a wide variety of different database technologies and were developed in response to a rise in the volume of data stored about users, objects and products, the frequency in which this data is accessed, and performance and processing needs. Relational databases, on the other hand, were not designed to cope with the scale and agility challenges that face modern applications, nor were they built to take advantage of the cheap storage and processing power available today.
 
 \subsubsection{\documentModel}\label{cap:justificacion_proyecto:base_datos:nosql:document_model}
@@ -89,7 +89,7 @@ Ejemplos: MongoDB y CouchDB.
 
 Basado en \graphTheory, usa estructuras de grafos con nodos, bordes y propiedades para representar los datos. En esencia, los datos son modelados como una red de relaciones entre elementos específicos. Si bien es cierto, Modelo \graphCustom puede ser contra intuitivo y tomar tiempo para entenderlo, puede ser utilizado extensamente para numerosas aplicaciones. Su principal característica es que modela fácilmente las relaciones entre entidades en una aplicación.
 
-Aplicaciones:\dataBases \graphCustom son útiles en escenarios donde las relaciones son el \core de la aplicación, como redes sociales.
+Aplicaciones:\dataBases \graphCustom son útiles en escenarios donde las relaciones son el \coreAS de la aplicación, como redes sociales.
 
 Ejemplos: \neofourj y \hyperGraphDB.
 
@@ -106,7 +106,7 @@ Desde una perspectiva de modelo de datos, \keyValue \stores son el tipo mas bás
 \wideColumn \stores, ó \columnFamily \stores, usa un mapa ordenado \textit{multi-dimensional} distribuido y \sparseFeature para guardar datos. Cada registro puede variar en el número de \columns que son guardadas, y las \columns pueden ser anidadas dentro de otras \columns llamadas \superColumns. \columns pueden ser agrupadas juntas por acceso en \columnFamilies, o \columns pueden ser propagadas a través de múltiples \columnFamilies. Los datos son recuperados utilizando una \primaryKey por cada \columnFamily.
 %Wide column stores, or column family stores, use a sparse, distributed multi-dimensional sorted map to store data. Each record can vary in the number of columns that are stored, and columns can be nested inside other columns called super columns. Columns can be grouped together for access in column families, or columns can be spread across multiple column families. Data is retrieved by primary key per column family.
 
-Aplicación: \keyDB \valueDB \stores y \wideColumn \stores son útiles para un reducido conjunto de aplicaciones que solo consultan datos para un único \keyValue. Lo llamativo de estos sistemas es su \performance y \scalability, los cuales pueden ser \highly \optimized debido a su simplicidad de los patrones de acceso de datos.
+Aplicación: \keyDB \valueDB \stores y \wideColumn \stores son útiles para un reducido conjunto de aplicaciones que solo consultan datos para un único \keyValue. Lo llamativo de estos sistemas es su \performanceQA y \scalabilityQA, los cuales pueden ser \highly \optimized debido a su simplicidad de los patrones de acceso de datos.
 %Applications: Key value stores and wide column stores are useful for a narrow set of applications that only query data by a single key value. The appeal of these systems is their performance and scalability, which can be highly optimized due to the simplicity of the data access patterns.
 
 %Examples: Riak and Redis (Key-Value); HBase and Cassandra (Wide Column).
@@ -135,7 +135,7 @@ Aplicación: \keyDB \valueDB \stores y \wideColumn \stores son útiles para un r
 \\ \hline
 	Ejemplos&%Examples&
 	\mysql, \postgresql, \oracle \dataBase&
-	\mongodb, \cassandra, \hbase, \neofourj
+	\mongodbNAME, \cassandra, \hbase, \neofourj
 \\ \hline
 	Modelo \data \storage&
 	Registros individuales ( ej., \textit{empleados}) son guardados como filas en la tabla, con cada columna guardando un dato específico sobre el registro (ej., \textit{jefe}, \textit{perfil}, etc), similar a un \spreedsheet. Tipos de datos separados son guardados en tablas separadas, y entonces uniéndose cuando consultas mas complejas son ejecutadas. Por ejemplo,\textit{oficinas} podrían estar guardadas en una tabla, y \textit{empleados} en otra. Cuando un usuario quiere buscar la dirección de trabajo de un \textit{empleado}, el \engine de la \dataBase \joins las tablas \textit{EMPLEADOS} Y \textit{OFICINAS} juntas para obtener toda la información necesaria.&
@@ -201,7 +201,7 @@ Aplicación: \keyDB \valueDB \stores y \wideColumn \stores son útiles para un r
 	Puede ser configurada para \strongConsistency&
 	%Can be configured for strong consistency&
 	
-	Depende del producto. Algunos proveen \strongConsistency (ej., \mongodb) mientras otros ofrecen \eventualConsistency (ej., \cassandra)
+	Depende del producto. Algunos proveen \strongConsistency (ej., \mongodbNAME) mientras otros ofrecen \eventualConsistency (ej., \cassandra)
 	%Depends on product. Some provide strong consistency (e.g., MongoDB) whereas others offer eventual consistency (e.g., Cassandra)
 
 \\ \hline
@@ -210,7 +210,7 @@ Aplicación: \keyDB \valueDB \stores y \wideColumn \stores son útiles para un r
     \label{tab:SQL_vs_noSQL_summary}
 \end{table}
 
-\subsection{\mongodb y \ecommerce \cite{online_mongodb_ecommerce}}
+\subsection{\mongodbNAME y \ecommerce \cite{online_mongodb_ecommerce}}
 \label{cap:justificacion_proyecto:MongoDB_ECommerce}
 
 Demostraciones de almacenamientos de datos de la siguiente generación giran típicamente en torno a las redes sociales: \twitter, \facebook, \foursquare, etc. Desafortunadamente, tales aplicaciones generalmente tienen modelos de datos complejos. \ecommerce por ejemplo, tiene la ventaja de incluir un largo número de patrones familiares para modelar datos. Ademas no es complicado imaginar como \itemCOM, \categoriesCommerce, \itemReviewsCommerce y \ordersCommerce son típicamente modeladas en \rdbms.
@@ -219,7 +219,7 @@ Demostraciones de almacenamientos de datos de la siguiente generación giran tí
 
 \subsubsection{\catalogManagement}
 
-Si es necesaria información sobre como el \catalogManagement se maneja con \dataBases relacionales, es necesario dar una mirada rápida a los esquemas del popular \nameMagento \ecommerce \framework \ref{ap:figure:catalog_magento} ó \ofBiz de \apache \ref{ap:figure:catalog_ofbiz}. En la \refFigura{cap:figure:catalog_magento}  se observa es un conjunto de \tablesDB trabajando a la par para proveer un esquema flexible sobre un fundamentalmente inflexible estilo de sistema de \dataBase.
+Si es necesaria información sobre como el \catalogManagement se maneja con \dataBases relacionales, es necesario dar una mirada rápida a los esquemas del popular \nameMagento \ecommerce \framework \ref{ap:figure:catalog_magento} ó \ofBiz de \apacheNAME \ref{ap:figure:catalog_ofbiz}. En la \refFigura{cap:figure:catalog_magento}  se observa es un conjunto de \tablesDB trabajando a la par para proveer un esquema flexible sobre un fundamentalmente inflexible estilo de sistema de \dataBase.
 
 Esto significa que los datos de cualquier producto se extienden a través de una docena de \tablesDB. Esto incremente la complejidad del código requerido para la persistencia de consultas de \itemsCommerce individuales y hacer una consulta \shellBased es casi imposible. Simplemente considere escribir un \sql \join para para reunir el modelo de un producto como el de la \refFigura{cap:figure:catalog_magento}.
 
@@ -230,7 +230,7 @@ Esto significa que los datos de cualquier producto se extienden a través de una
 	\label{cap:figure:catalog_magento}
 \end{figure}
 
-O realizar una sencilla búsqueda desde la \shell \mongodb \javaScript  para obtener un objecto \json como el \refsource{source:javascript:example_search_mongodb}.
+O realizar una sencilla búsqueda desde la \shell \mongodbNAME \javaScriptNAME  para obtener un objecto \json como el \refsource{source:javascript:example_search_mongodb}.
 
 \medskip
 \begin{lstlisting}[caption= Busqueda en MongoDB, label=source:javascript:example_search_mongodb]
@@ -265,13 +265,13 @@ db.products.find({'_id': ObjectID("4bd87bd8277d094c458d2fa5")});
 
 Claramente en \refsource{source:javascript:example_search_mongodb} no hay  representación completa de un \itemCOM, pero esto demuestra cuantas de estas \tablesDB triviales que existen en una representación relacional pueden prescindir en una representación \documentDB.
 
-Para datos \objectOriented, los \documentsDB tienen mayor sentido, tanto en concepto como rendimiento. Una representación \documentOriented de un dato de un \itemCOM se traduce a unas pocas entidades (un puñado de \collectionsDB vs. una docena de \tablesDB), mejor \performance en consultas (sin \serverSide \joins), y estructuras que corresponden precisamente al \itemCOM. Ya no existe la necesidad de diseñar un \masterSchema que pueda considerar a cada tipo de \itemCOM concebible.
+Para datos \objectOriented, los \documentsDB tienen mayor sentido, tanto en concepto como rendimiento. Una representación \documentOriented de un dato de un \itemCOM se traduce a unas pocas entidades (un puñado de \collectionsDB vs. una docena de \tablesDB), mejor \performanceQA en consultas (sin \serverSide \joins), y estructuras que corresponden precisamente al \itemCOM. Ya no existe la necesidad de diseñar un \masterSchema que pueda considerar a cada tipo de \itemCOM concebible.
 
-\catalogManagement es esencialmente \contentManagement, un campo en donde \mongodb sobresale.
+\catalogManagement es esencialmente \contentManagement, un campo en donde \mongodbNAME sobresale.
 
 \subsubsection{\shoppingCarts y \ordersCommerce}
 
-Permitir que un \shoppingCarts sea simplemente una orden en un estado  \cartCOM, el modelo de \shoppingCarts y las ordenes en \mongodb se tornan muy sencillas. Un ejemplo de esto se puede observar en  \refsource{source:javascript:example_schema_order}.
+Permitir que un \shoppingCarts sea simplemente una orden en un estado  \cartCOM, el modelo de \shoppingCarts y las ordenes en \mongodbNAME se tornan muy sencillas. Un ejemplo de esto se puede observar en  \refsource{source:javascript:example_schema_order}.
 
 \medskip
 \begin{lstlisting}[caption= Estructura de una \orderCommerce., label=source:javascript:example_schema_order]
@@ -306,7 +306,7 @@ Notar que es posible presentar los pedidos como un \arrayCustom de \itemsCommerc
 
 \subsubsection{Consultando \ordersCommerce}
 
-Dado que \mongodb soporta consultas dinámicas y \secIndexingDB , las consultas para las \ordersCommerce son automáticas. Es posible, por ejemplo, definir un \indexDB en un \itemCOM \sku, lo que permite consultas eficientes en todas las ordenes para un \itemCOM dado. En  \refsource{source:javascript:example_querying_orders_mongodb} se observa un ejemplo.
+Dado que \mongodbNAME soporta consultas dinámicas y \secIndexingDB , las consultas para las \ordersCommerce son automáticas. Es posible, por ejemplo, definir un \indexDB en un \itemCOM \sku, lo que permite consultas eficientes en todas las ordenes para un \itemCOM dado. En  \refsource{source:javascript:example_querying_orders_mongodb} se observa un ejemplo.
 
 \medskip
 \begin{lstlisting}[caption= Consulta eficiente con \secIndexesDB., label=source:javascript:example_querying_orders_mongodb]
@@ -316,7 +316,7 @@ Dado que \mongodb soporta consultas dinámicas y \secIndexingDB , las consultas 
 	
 \end{lstlisting}
 
-Con \mongodb, es posible realizar consultas en atributos arbitrarios, de esa manera, cualquier consulta en la \collectionDB \ordersCommerce es posible. Y para consultas comunes, es posible definir \indexesDB para una mejor eficiencia.
+Con \mongodbNAME, es posible realizar consultas en atributos arbitrarios, de esa manera, cualquier consulta en la \collectionDB \ordersCommerce es posible. Y para consultas comunes, es posible definir \indexesDB para una mejor eficiencia.
 
 \subsubsection{\aggregationDB}
 
@@ -390,7 +390,7 @@ Al ajustar la cantidad y el cambio de los mismos \itemsCommerce en el \cartCOM, 
 
 \subsubsection{\inventoryCommerce}
 
-No todos los sitios \ecommerce necesitan manejar el inventario. Pero para aquellos que si lo hacen, \mongodb funciona a la altura de las circunstancias.
+No todos los sitios \ecommerce necesitan manejar el inventario. Pero para aquellos que si lo hacen, \mongodbNAME funciona a la altura de las circunstancias.
 
 Una manera para manejar el inventario, es guardar un \documentDB separado por cada \physItem en la bodega. Así, por ejemplo, si la bodega tiene veinte copias del álbum Coltrane, se traduce en veinte \documentsDB distintos en \inventoryCommerce \collectionDB. Cada \documentDB tiene una estructura como lo muestra \refsource{source:javascript:example_document_inventory_mongodb}.
 
@@ -446,11 +446,11 @@ db.inventory.update(
 
 Muchos argumentos impuestos contra \nosql en \ecommerce se centran en \transactionsDB, \consistencyDB, y \durabilityDB. En relación a esto se mencionan algunos puntos.
 
-En relación a \transactionsDB, ciertamente \mongodb no soporta el tipo \multiObjectDB; sin embargo, soporta \atomicOperationsDB sobre \documentsDB individuales. y esto combinado con el modelo \documentOriented recién descrito, y creatividad, es suficiente para muchos problemas \ecommerce. Ciertamente, si se necesita \debitOneAccount y \creditAnother en la misma operación, ó si se desea \rollbackDB, sera necesario \fullFledgedTransDB. No obstante, \transactionalityDB provista por \mongodb debería ser suficiente en la mayoría de los casos, si no en todos, para operaciones \ecommerce.
+En relación a \transactionsDB, ciertamente \mongodbNAME no soporta el tipo \multiObjectDB; sin embargo, soporta \atomicOperationsDB sobre \documentsDB individuales. y esto combinado con el modelo \documentOriented recién descrito, y creatividad, es suficiente para muchos problemas \ecommerce. Ciertamente, si se necesita \debitOneAccount y \creditAnother en la misma operación, ó si se desea \rollbackDB, sera necesario \fullFledgedTransDB. No obstante, \transactionalityDB provista por \mongodbNAME debería ser suficiente en la mayoría de los casos, si no en todos, para operaciones \ecommerce.
 
-Si la preocupación esta sobre \consistencyDB y \durabilityDB, operaciones escritas en \mongodb pueden ser realizadas \consistencyDB sobre conexiones. Además, \mongodb 1.5 soporta \nearRealTimeReplicationDB, así que es posible asegurarse que una operación ha sido \replicatedDB antes de retornar.
+Si la preocupación esta sobre \consistencyDB y \durabilityDB, operaciones escritas en \mongodbNAME pueden ser realizadas \consistencyDB sobre conexiones. Además, \mongodbNAME 1.5 soporta \nearRealTimeReplicationDB, así que es posible asegurarse que una operación ha sido \replicatedDB antes de retornar.
 
-\subsubsection{\scalability}
+\subsubsection{\scalabilityQA}
 La manera mas sencilla para \scale la mayoría de las \dataBases, es \upgradingPC el \hardwarePC. Si la aplicación esta corriendo en un único nodo, es usualmente posible agregar una combinación de \diskPC \iopsPC, \memoryPC, y \cpuPC para eliminar los cuello de botella de la \dataBase. La técnica de mejorar el \hardwarePC de un solo node para escalar se conoce como \verticalScalingDB o \scalingUpDB(\refFigura{figure:figure_scale_up}). \verticalScalingDB tiene la ventaja de ser simple, seguro, y \textit{costo-efectividad} hasta un cierto punto. Si se esta ejecutando sobre un \hardwarePC virtualizado( tal como \amazonEcdosNAME), entonces puedes encontrar que una instancia lo suficientemente larga no esta disponible. Si estas ejecutando sobre \physHardwarePC, habrá un punto donde el costo de un \serverAS mas poderoso se vuelve prohibitivo.
 
 \begin{figure}[h!]
@@ -469,14 +469,14 @@ Entonces tiene sentido  considerar \horizontalScalingDB o \scalingOutDB(\refFigu
 	\label{figure:figure_scale_out}
 \end{figure}
 
-\subsubsection{Conclusion}
+\subsubsection{Conclusión}
 
-Es cierto que la mayoría de las bases de datos \gloss{nosql} no fueron construidas considerando \ecommerce. Las bases de datos que carecen modelos de datos enriquecidos, consultas dinámicas, y la noción de \textit{transactionality} no puede esperarse que compitan en el espacio de \ecommerce, entonces no es comprensible que no se considere \mongodb tampoco.
+Es cierto que la mayoría de las bases de datos \nosql no fueron construidas considerando \ecommerce. Las bases de datos que carecen modelos de datos enriquecidos, consultas dinámicas, y la noción de \transactionalityDB no puede esperarse que compitan en el espacio de \ecommerce, entonces no es comprensible que no se considere \mongodbNAME tampoco.
 
-Pero para las partes en donde el sitio \ecommerce comprende el manejo de contenido, \mongodb es claro vencedor. E incluso para mas \textit{transactional components} del sistema, \mongodb tiene características que hacen de la posibilidad de correr un sistema completo de \ecommerce una realidad.
+Pero para las partes en donde el sitio \ecommerce comprende el manejo de contenido, \mongodbNAME es claro vencedor. E incluso para más componentes \transactionalDB del sistema, \mongodbNAME tiene características que hacen de la posibilidad de correr un sistema completo de \ecommerce una realidad.
 
 
-\section{\nodejs}\label{cap:section:nodejs}
+\section{\nodejsNAME}\label{cap:section:nodejs}
 
 %La craciente popularidad de JavaScript a traiado consigo una gran cantidad de cambios, y la manera en la cual los desarrolladores afrontan el desarrollo \textit{web} es dramaticamente distinto. Las cosas que se pueden hacer en la \textit{web} estos dias con JavaScript Corriendo en el servidor, de la misma manera como en el browser, era dificilmente imaginable hasta hace unos años atras, o fuimos encaptulados dentro de ambientes de \textit{sandbox} como Flash o Java Applets.
 %JavaScript’s rising popularity has brought with it a lot of changes, and the face of web development today is dramatically different. The things that we can do on the web nowadays with JavaScript running on the server, as well as in the browser, were hard to imagine just several years ago, or were encapsulated within sandboxed environments like Flash or Java Applets.
@@ -487,47 +487,47 @@ Pero para las partes en donde el sitio \ecommerce comprende el manejo de conteni
 
 %After over 20 years of stateless-web based on the stateless request-response paradigm, we finally have web applications with real-time, two-way connections.
 
-En una frase: Node.js brilla en aplicaciones \textit{web} \textit{real-time} utilizando tecnología \textit{push} sobre \textit{websockets}. Que es tan revolucionario en relación a esto? Después de 20 años de \textit{stateless-web} en el paradigma \textit{request-response} finalmente existen aplicaciones \textit{web} en \textit{real-time}, conexiones \textit{two-way}, donde cliente y servidor pueden iniciar la comunicación, permitiendo intercambiar datos libremente. Esto es un contraste enorme al paradigma típico de \textit{web response}, donde el cliente siempre iniciaba la comunicación. Adicionalmente, esta todo basado en \textit{open web stack} (HTML, CSS y JS )corriendo sobre el \textit{standar port} 80.
+En una frase: \nodejsNAME brilla en aplicaciones \web \realTimeINT utilizando tecnología \pushINT sobre \websocketsINT. ¿Qué es tan revolucionario en relación a esto? Después de 20 años de \statelessWebINT en el paradigma \requestResponseINT finalmente existen aplicaciones \web \realTimeINT, conexiones \twoWayINT, donde \clientAS y \serverAS pueden iniciar la comunicación, permitiendo intercambiar datos libremente. Esto es un contraste enorme al paradigma típico de \webResponseINT, donde el \clientAS siempre iniciaba la comunicación. Adicionalmente, está todo basado en \openWebStackINT (\htmlNAME, \cssNAME y \javaScriptNAME )corriendo sobre el \standarPortINT 80.
 %In one sentence: Node.js shines in real-time web applications employing push technology over websockets. What is so revolutionary about that? Well, after over 20 years of stateless-web based on the stateless request-response paradigm, we finally have web applications with real-time, two-way connections, where both the client and server can initiate communication, allowing them to exchange data freely. This is in stark contrast to the typical web response paradigm, where the client always initiates communication. Additionally, it’s all based on the open web stack (HTML, CSS and JS) running over the standard port 80.
 
-Se puede discutir sobre que estas características existían hace años a través de Flash y Java Applets, pero en realidad, esos fueron \textit{sandboxes environment} utilizando la \textit{web} como un protocolo de transporte para entregar al cliente. Ademas, ellos corrían aislados y generalmente sobre \textit{non-standard ports}, los cuales podrían requerir permisos extras.
+Se puede discutir sobre que estas características existían hace años a través de \flashNAME y \javaAppletsINT, pero en realidad, esos fueron \sandboxedEnvPL utilizando la \web como un protocolo de transporte para entregar al \clientAS. Además, ellos corrían aislados y generalmente sobre \nonStandardPortsINT, los cuales podrían requerir permisos extras.
 %One might argue that we’ve had this for years in the form of Flash and Java Applets—but in reality, those were just sandboxed environments using the web as a transport protocol to be delivered to the client. Plus, they were run in isolation and often operated over non-standard ports, which may have required extra permissions and such.
 
-Con todas esta ventajas, Node.js ahora juega un role crítico en el \textit{stack} de tecnología de las principales compañías \textit{high-profile}\cite{online_nodejs_highprofilecompanies} \textbf{las cuales dependen de sus beneficios únicos}.
+Con todas esta ventajas, \nodejsNAME ahora juega un role crítico en el \stack de tecnología de las principales compañías \highProfileCPT \cite{online_nodejs_highprofilecompanies} \textbf{las cuales dependen de sus beneficios únicos}.
 %With all of its advantages, Node.js now plays a critical role in the technology stack of many high-profile companies who depend on its unique benefits.
 
 %In this post, I’ll discuss not only how these advantages are accomplished, but also why you might want to use Node.js—and why not—using some of the classic web application models as examples.
 
 %How Does It Work?
 
-La principal idea de Node.js : usar \textit{non-blocking}, \textit{event-driven I/O} para permanecer liviano y eficiente para enfrentar aplicaciones \textit{data-intensive} \textit{real-time} que corren a través de dispositivos distribuidos.
+La principal idea de\nodejsNAME : usar \nonbloking, \eventdrivenPL \inputOutput para permanecer liviano y eficiente para enfrentar aplicaciones \dataintensive \realTimeINT que corren a través de dispositivos distribuidos.
 %The main idea of Node.js: use non-blocking, event-driven I/O to remain lightweight and efficient in the face of data-intensive real-time applications that run across distributed devices.
 
 %That’s a mouthful.
 
-Lo que esto realmente significa es que Node.js no es una plataforma \textit{panacea} que dominara \textit{web development world}. \textbf{En lugar de eso, es una plataforma que llena una necesidad particular}. Esto es absolutamente esencial. Definitivamente no se deseara utilizar Node.js para operaciones \textit{CPU-intensive}; de hecho, utilizando esto para \textit{heavy computation} anulará practicamente todas sus ventajas. Donde Node.js realmente brilla es \textit{building fast}, aplicaciones \textit{scalable network}, ya que es capaz de manejar un gran número de conexiones simultaneas con un alto rendimiento, lo que equivale a una \textit{high scalability}.
+Lo que esto realmente significa es que \nodejsNAME no es una plataforma \panaceaCPT que dominara el mundo \web \development. \textbf{En lugar de eso, es una plataforma que llena una necesidad particular}. Esto es absolutamente esencial. Definitivamente no se deseara utilizar \nodejsNAME para operaciones \cpuIntensivePC; de hecho, utilizando esto para \heavyComputationPC anulará prácticamente todas sus ventajas. Donde \nodejsNAME realmente brilla es construyendo aplicaciones \scalableQA  \network rápidamente, ya que es capaz de manejar un gran número de conexiones simultaneas con un alto rendimiento, lo que equivale a una \highScalabilityDB.
 %What it really means is that Node.js is not a silver-bullet new platform that will dominate the web development world. Instead, it’s a platform that fills a particular need. And understanding this is absolutely essential. You definitely don’t want to use Node.js for CPU-intensive operations; in fact, using it for heavy computation will annul nearly all of its advantages. Where Node really shines is in building fast, scalable network applications, as it’s capable of handling a huge number of simultaneous connections with high throughput, which equates to high scalability.
 
-Como trabaja \textit{under-the-hood} es muy interesante. Comparado con la técnica tradicional \textit{web-serving} donde cada conexión (\textit{request}) engendra un nuevo \textit{thread}, ocupando memoria \gloss{memory_ram} del sistema y, eventualmente \textit{maxing-out} la cantidad de \gloss{memory_ram} disponible, Node.js opera en un \textit{single-thread}, usando llamadas \textit{non-blocking I/O}, permitiendo el apoyo de decenas de miles de conexiones concurrentes (retenidas en el \textit{event loop}). \refFigura{figure:diagram_traditional_vs_nodejs_server_thread}.
+Como trabaja \underTheHoodCPT es muy interesante. Comparado con la técnica tradicional \webServingINT donde cada conexión (\requestINT) engendra un nuevo \threadPL, ocupando memoria \memoryRamPC del sistema y, eventualmente \maxingOutCPT la cantidad de \memoryRamPC disponible, \nodejsNAME opera en un \singleThreadPL, usando llamadas \nonbloking \inputOutput, permitiendo el apoyo de decenas de miles de conexiones concurrentes (retenidas en el \eventloopCPT). \refFigura{figure:diagram_traditional_vs_nodejs_server_thread}.
 %How it works under-the-hood is pretty interesting. Compared to traditional web-serving techniques where each connection (request) spawns a new thread, taking up system RAM and eventually maxing-out at the amount of RAM available, Node.js operates on a single-thread, using non-blocking I/O calls, allowing it to support tens of thousands of concurrent connections (held in the event loop).
 
 
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.5\textwidth]{figuras/cap2/diagram_traditional_vs_node_serverthread.png}
-	\caption{Diagrama de \textit{Traditional} vs. Node.js \textit{server thread}}
+	\caption{Diagrama de Técnica tradicional vs. \nodejsNAME \serverAS \threadPL}
 	\label{figure:diagram_traditional_vs_nodejs_server_thread}
 \end{figure}
 
 
 
-Un cálculo rápido: asumiendo que cada \textit{thread} potencialmente tiene asignado 2 MB de memoria con ella, corriendo en un sistema con 8 GB de \gloss{memory_ram} nos coloca en un teórico máximo de 4000 conexiones concurrentes, ademas del costo por cambio de contexto entre \textit{threads}. Ese es el escenario el cual tipicamente se encuentran técnicas tradicionales de \textit{web-serving}. Evitando todo eso, Node.js logra niveles de \textit{scalability} sobre 1M de conexiones concurrentes (como \textit{proof-of-concept}).
+Un cálculo rápido: asumiendo que cada \threadPL potencialmente tiene asignado 2 MB de memoria con ella, corriendo en un sistema con 8 GB de \memoryRamPC nos coloca en un teórico máximo de 4000 conexiones concurrentes, además del costo por cambio de contexto entre \threadsPL. Ese es el escenario el cual típicamente se encuentran técnicas tradicionales de \webServingINT. Evitando todo eso, \nodejsNAME logra niveles de \scalabilityQA sobre 1M de conexiones concurrentes (como \proofConceptCPT).
 %A quick calculation: assuming that each thread potentially has an accompanying 2 MB of memory with it, running on a system with 8 GB of RAM puts us at a theoretical maximum of 4000 concurrent connections, plus the cost of context-switching between threads. That’s the scenario you typically deal with in traditional web-serving techniques. By avoiding all that, Node.js achieves scalability levels of over 1M concurrent connections (as a proof-of-concept).
 
-Hay, por supuesto, la cuestión de compartir un solo \textit{thread} entre todos los \textit{request} de clientes, y es una potencial trampa de escribir aplicaciones Node.js. Primeramente, \textit{heavy computation} puede asfixiar el único \textit{thread} de Node.js y causar problemas en todos los clientes como \textit{incoming request} podrían ser bloqueados hasta que dicho \textit{computation} sea completado. En segundo lugar, desarrolladores necesitan ser realmente cuidadosos en no permitir que una excepción \textit{bubbling up} al \textit{core} del \textit{event loop} de Node.js, el cual puede causar que la instancia Node.js termine (efectivamente \textit{crashing} el programa).
+Hay, por supuesto, la cuestión de compartir un solo \threadPL entre todos los \requestINT de \clientsAS, y es una potencial trampa de escribir aplicaciones \nodejsNAME. Primeramente, \heavyComputationPC puede asfixiar el único \threadPL de \nodejsNAME y causar problemas en todos los clientes como \incommingRequestINT podrían ser bloqueados hasta que dicho \computationPC sea completado. En segundo lugar, desarrolladores necesitan ser realmente cuidadosos en no permitir que una excepción \bubblingUpPL al \coreAS del \eventloopCPT de \nodejsNAME, el cual puede causar que la instancia \nodejsNAME termine (efectivamente \crashingPC el programa).
 %There is, of course, the question of sharing a single thread between all clients requests, and it is a potential pitfall of writing Node.js applications. Firstly, heavy computation could choke up Node’s single thread and cause problems for all clients (more on this later) as incoming requests would be blocked until said computation was completed. Secondly, developers need to be really careful not to allow an exception bubbling up to the core (topmost) Node.js event loop, which will cause the Node.js instance to terminate (effectively crashing the program).
 
-La técnica utilizada para evitar excepciones \textit{bubbling up to the surface} es pasando el error de regreso al \textit{caller} como parámetro de \textit{callback} (en lugar de lanzarlos, como en otros ambientes). Incluso si alguna excepción no controlada conduce a \textit{bubble up}, hay múltiples paradigmas y herramientas disponibles para monitorear el proceso Node y realizar lo necesario para recuperarse de un \textit{crashed instance} (aunque no este disponible para recuperar sesiones de usuarios), siendo el mas común el módulo Forever\cite{online_github_nodejitsu_forever}.
+La técnica utilizada para evitar excepciones \bubblingUpSurfacePL es pasando el error de regreso al \callerAS como parámetro de \callbackPL (en lugar de lanzarlos, como en otros ambientes). Incluso si alguna excepción no controlada conduce a \bubblingUpPL, hay múltiples paradigmas y herramientas disponibles para monitorear el proceso \nodejsNAME y realizar lo necesario para recuperarse de una \crashedInstancePL (aunque no este disponible para recuperar sesiones de usuarios), siendo el más común el módulo \moduleForeverNAME \cite{online_github_nodejitsu_forever}.
 %The technique used to avoid exceptions bubbling up to the surface is passing errors back to the caller as callback parameters (instead of throwing them, like in other environments). Even if some unhandled exception manages to bubble up, there are mutiple paradigms and tools available to monitor the Node process and perform the necessary recovery of a crashed instance (although you won’t be able to recover users’ sessions), the most common being the Forever module, or a different approach with external system tools upstart and monit.
 
 %NPM: The Node Package Manager
@@ -613,14 +613,14 @@ La técnica utilizada para evitar excepciones \textit{bubbling up to the surface
 		\item PHP
 	\end{itemize}
 
-\subsubsection{Node.js vs Java \cite{online_nodejs_paypal}}
+\subsubsection{\nodejsNAME vs \javaNAME \cite{online_nodejs_paypal}}
 
 
 
-La primera adopción que hizo Paypal con Node.js no fue una aplicación menor; esto fue su \textit{account overview page} y una de las mas \textit{trafficked} \textit{apps} en el \textit{website}. Ellos tomaron un gran riesgo, pero lo hicieron con la finalidad de determinar si realmente la nueva plataforma representaba una mejora con respecto al sistema actual.
+La primera adopción que hizo \paypalNAME con \nodejsNAME no fue una aplicación menor; esto fue su \accountOverviewPageINT y una de las mas \traffickedINT \appsINT en el \websiteINT. Ellos tomaron un gran riesgo, pero lo hicieron con la finalidad de determinar si realmente la nueva plataforma representaba una mejora con respecto al sistema actual.
 %Our first adopter of node.js in production wasn’t a minor application; it was our account overview page and one of the most trafficked apps on the website. We decided to go big, but we also mitigated that risk by building the equivalent Java application in parallel. We knew how to deploy and scale Java applications, so if anything went wrong with the node.js app, we could fall back to the Java one. This provided the setting for some interesting data.
 
-Una vez que la aplicación con \nodejs logro las mismas funcionalidades que la aplicación actual, persivieron el siguiente resultado:
+Una vez que la aplicación con \nodejsNAME logro las mismas funcionalidades que la aplicación actual, persivieron el siguiente resultado:
 
 \begin{itemize}
 \item Fue construida casi \textbf{el doble de rápido con menos personal}.
@@ -628,9 +628,9 @@ Una vez que la aplicación con \nodejs logro las mismas funcionalidades que la a
 \item Construida con \textbf{40\% menos de archivos}.
 \end{itemize}
 
-Por si solo, esta evidencia mostraba a los equipos desarrollar más rápido utilizando \javaScript.
+Por si solo, esta evidencia mostraba a los equipos desarrollar más rápido utilizando \javaScriptNAME.
 
-\performance fue un tópico interesante. Se pudo analizar 2 aplicaciones con exactamente las mismas funcionalidades: una con \framework Java interno basado en Spring y la otra construida en \textit{kraken.js} usando Express, dust.js y otros códigos \openSource.
+\performanceQA fue un tópico interesante. Se pudo analizar 2 aplicaciones con exactamente las mismas funcionalidades: una con \framework \javaNAME interno basado en \javaSpringNAME y la otra construida en \krakenjsNAME usando \expressjsNAME, \dustjsNAME y otros códigos \openSource.
 %Performance is a fun and debatable topic. In our case, we had two applications with the exact same functionality and built by roughly the same teams: one on our internal Java framework based on Spring and the other built on kraken.js using express, dust.js and other open source code.
 
 Se ejecutaron los test adecuados utilizando \hardwarePC de producción que probaran las rutas y recolectaran datos de rendimiento y tiempo de respuesta. Los resultados se aprecian en \refFigura{figure:java_benchmark_paypal}.
@@ -639,38 +639,38 @@ Se ejecutaron los test adecuados utilizando \hardwarePC de producción que proba
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.6\textwidth]{figuras/cap2/java_nodejs_benchmark_paypal.png}
-	\caption{\textit{Performance} de la aplicación en Java y Node.js}
+	\caption{\performanceQA de la aplicación en \javaNAME y \nodejsNAME}
 	\label{figure:java_benchmark_paypal}
 \end{figure}
 
-Se observa que la aplicación utilizando Node.js tiene:
+Se observa que la aplicación utilizando \nodejsNAME tiene:
 %You can see that the node.js application had:
 
 \begin{itemize}
-\item El doble de solicitudes por segundo vs. la aplicación Java. Esto es incluso mas interesante porque los resultados iniciales de rendimiento estaban utilizando un solo núcleo para la aplicación \nodejs, en comparación con cinco núcleos en Java. Esperan aumentar aun más esta brecha en el futuro.
+\item El doble de solicitudes por segundo vs. la aplicación \javaNAME. Esto es incluso más interesante porque los resultados iniciales de rendimiento estaban utilizando un solo núcleo para la aplicación \nodejsNAME, en comparación con cinco núcleos en \javaNAME. Esperan aumentar aun más esta brecha en el futuro.
 %Double the requests per second vs. the Java application. This is even more interesting because our initial performance results were using a single core for the node.js application compared to five cores in Java. We expect to increase this divide further.
-\item \textbf{Disminución en un 35\% en el tiempo promedio de respuesta} para la misma página. Esto resulto ser \textbf{200ms mas rápido} en el servidor. Algo que los usuarios definitivamente notan.
+\item \textbf{Disminución en un 35\% en el tiempo promedio de respuesta} para la misma página. Esto resulto ser \textbf{200ms mas rápido} en el \serverAS. Algo que los usuarios definitivamente notan.
 %35% decrease in the average response time for the same page. This resulted in the pages being served 200ms faster— something users will definitely notice.
 \end{itemize}
 
 %There’s a disclaimer attached to this data: this is with our frameworks and two of our applications. It’s just about as apples-to-apples a performance test as we could get between technologies, but your milage may vary. That said, we’re excited by what we’ve seen from node.js’ raw performance.
 
-Mas ejemplos de \benchmark pueden ser encontrados en\cite{online_nodejs_java_dzone}.
+Mas ejemplos de \benchmarkQA pueden ser encontrados en\cite{online_nodejs_java_dzone}.
 
 
-\subsubsection{Node.js vs PHP\cite{online_nodejs_php_loadimpact}}
+\subsubsection{\nodejsNAME vs \phpNAME \cite{online_nodejs_php_loadimpact}}
 
-No es justo comparar Node.js con PHP. Lo que realmente se compara es \nodejs y PHP+Apacha2 ( u otro servidor http ). Es este caso particular, las pruebas fueron realizadas usando Apache2 y \textit{mod\_php}, dado que es por lejos la configuración mas común. 
+No es justo comparar \nodejsNAME con \phpNAME. Lo que realmente se compara es \nodejsNAME y \phpNAME + \apacheDosNAME ( u otro servidor \httpNAME ). Es este caso particular, las pruebas fueron realizadas usando \apacheDosNAME y \modPhpNAME, dado que es por lejos la configuración mas común. 
 %So no, it’s not fair to say that we compare Node.js and PHP. What we really compare is Node.js and PHP+Apache2 (or any other http server). For this article, I’ve used Apache2 and mod_php since it’s by far the most common configuration. Some might say that I’d get much better results if I had used Nginx or Lighthttpd as the http server for PHP. That’s most likely very true, but at the end of the day, server side PHP depends on running in multiple separate processes. Regardless if we create those processes with mod_php or fastcgi or any other mechanism. So, I’m sticking with the standard server setup for PHP and I think that makes good sense.
 
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.6\textwidth]{figuras/cap2/node_benchmak_loadimpact.png}
-	\caption{\textit{Performance} de la aplicación Node.js}
+	\caption{\performanceQA de la aplicación \nodejsNAME}
 	\label{figure:node_benchmark_nodephp}
 \end{figure}
 
-El gráfico de \refFigura{figure:node_benchmark_nodephp} muestra lo que sucede cuando se carga el test en el servidor utilizando \nodejs. La respuesta de tiempo (azul) es mucho mas constante durante todo el test. 
+El gráfico de \refFigura{figure:node_benchmark_nodephp} muestra lo que sucede cuando se carga el test en el \serverAS utilizando \nodejsNAME. La respuesta de tiempo (azul) es mucho mas constante durante todo el test. 
 
 %The first graph here shows what happens when we load test the Node.js server. The response time (blue) is pretty much constant all through the test. My back of a napkin analysis of the initial outliers is that they have to do with a cold MySQL cache. Now, have a look at the results from the PHP test:
 
@@ -678,28 +678,28 @@ El gráfico de \refFigura{figure:node_benchmark_nodephp} muestra lo que sucede c
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.6\textwidth]{figuras/cap2/phpapache_benchmak_loadimpact.png}
-	\caption{\textit{Performance} de la aplicación en PHP/Apache}
+	\caption{\performanceQA de la aplicación en \phpApacheNAME}
 	\label{figure:php_benchmark_nodephp}
 \end{figure}
 
-Muy diferente los resultados para el caso de \php(\refFigura{figure:php_benchmark_nodephp}). No es sencillo observar que sucede, pero las lineas azules están inicialmente estables a 320ms hasta cerca de 340 usuarios activos simultáneos. Después de eso, se observa un pequeño incremento en el tiempo de respuesta pero después de agregar mas usuarios activos simultáneos, el tiempo de respuesta se dispara por completo. 
+Muy diferente los resultados para el caso de \phpNAME(\refFigura{figure:php_benchmark_nodephp}). No es sencillo observar que sucede, pero las lineas azules están inicialmente estables a 320ms hasta cerca de 340 usuarios activos simultáneos. Después de eso, se observa un pequeño incremento en el tiempo de respuesta pero después de agregar mas usuarios activos simultáneos, el tiempo de respuesta se dispara por completo. 
 %Quite different results. It’s not easy to see on this screen shot, but the blue lines is initially stable at 320 ms response time up to about 340 active concurrent users. After that, we first see a small increase in response time but after additional active concurrent users are added, the response time eventually goes through the roof completely.
 
-¿ Qué problema tiene \php/Apache?
+¿ Qué problema tiene \phpApacheNAME?
 %So what’s wrong with PHP/Apache?
 
 La diferencia no es de sorprender. Esto es producto de la diferencia de arquitectura entre ambas soluciones.
 %Ok, so what we’re looking at is not very surprising, it’s the difference in architecture between the two solutions. Let’s think about what goes on in each case.
 
-Cuando Apache2 sirve a una pagina PHP, este deja la ejecución \php a un \textit{child process} específico. Ese \textit{child process} puede solo manejar una solicitud \php al mismo tiempo, así que si hay mas solicitudes, las otras deben esperar. En el servidor hay un máximo de 256 clientes (\textit{MaxClients}) configurados vs 150 que vienen por defecto. Incluso si es posible aumentar el \textit{MaxClients} hasta mas allá de 256, habrá problemas con la memoria interna(\gloss{memory_ram}), Al final, se necesita encontrar el balance correcto entre el máximo numero de solicitudes simultaneas y los recursos disponibles del servidor.
+Cuando \apacheDosNAME sirve a una pagina \phpNAME, este deja la ejecución \phpNAME a un \childProcessPC específico. Ese \childProcessPC puede solo manejar una solicitud \phpNAME al mismo tiempo, así que si hay más solicitudes, las otras deben esperar. En el \serverAS hay un máximo de 256 \clientsAS (\maxClientsDB) configurados vs 150 que vienen por defecto. Incluso si es posible aumentar el \maxClientsDB hasta mas allá de 256, habrá problemas con la memoria interna(\memoryRamPC), Al final, se necesita encontrar el balance correcto entre el máximo número de solicitudes simultaneas y los recursos disponibles del \serverAS.
 %When Apache2 serves up the PHP page it leaves the PHP execution to a specific child process. That child process can only handle one PHP request at a time so if there are more requests than than, the others have to wait. On this server, there’s a maximum of 256 clients (MaxClients) configured vs 150 that comes standard. Even if it’s possible to increase MaxClients to well beyond 256, that will in turn give you a problem with internal memory (RAM). At the end, you need to find the correct balance between max nr of concurrent requests and available server resources.
 
-Pero para Node.js, es sencillo. Después de todo, cada solicitud es cerca de 30\% mas rápido que \php, así que en \performance, el cual es una configuración extremadamente básica, \nodejs es mas rápido. Ademas, en Node.js Todo esta en un solo proceso en el servidor. Un proceso manejando una solicitud activa. Así que no existe una comunicación interna de procesos entre diferentes instancias y el proceso madre. Incluso, pos solicitud, \nodejs es mucho mas eficiente. \php/Apache necesita muchísimo \php y sobrecarga de procesos por cada concurrente \textit{worker/client} mientras \nodejs compartirá la mayoría de su memoria entre las solicitudes.
+Pero para \nodejsNAME, es sencillo. Después de todo, cada solicitud es cerca de 30\% más rápido que \phpNAME, así que en \performanceQA, el cual es una configuración extremadamente básica, \nodejsNAME es mas rápido. Además, en\nodejsNAME Todo esta en un solo proceso en el \serverAS. Un proceso manejando una solicitud activa. Así que no existe una comunicación interna de procesos entre diferentes instancias y el proceso madre. Incluso, pos solicitud, \nodejsNAME es mucho mas eficiente. \phpApacheNAME necesita muchísimo \phpNAME y sobrecarga de procesos por cada \workerClientINT concurrente mientras \nodejsNAME compartirá la mayoría de su memoria entre las solicitudes.
 %But for Node, it’s easier. First of all, in the calm territory, each request is about 30% faster than for PHP, so in pure performance in this extremely basic setup, Node is quicker. Also going for Node is the fact that everything is in one single process on the server. One process with one active request handling thread. So thre’s no inter process communication between different instances and the ‘mother’ process. Also, per request, Node is much more memory efficient. PHP/Apache needs to have a lot of php and process overhead per concurrent worker/client while Node will share most of it’s memory between the requests.
 
 %Also note that in both these tests, CPU load was never a problem. Even if CPU loads varies with concurrent users in both tests it stays below 5% (and yes, I did not just rely on the graph, I checked it on the server as well). (I’ll write a follow up on this article at some point when I can include server memory usage as well). So we haven’t loaded this server into oblivion in any way, we’ve just loaded it hard enough for the PHP/Aapache architecture to start showing some of it’s problems.
 
-Mas ejemplos de \textit{benchmark} pueden ser encontrados en\cite{online_nodejs_java_appdynamics}.
+Más ejemplos de \benchmarkQA pueden ser encontrados en\cite{online_nodejs_java_appdynamics}.
 
 
 %\subsubsection*{¿ Qué hace a Node.js mejor?}
@@ -740,18 +740,18 @@ Hopefully, this shows the inherit differences in two different server technologi
 And sure, in real life, there are numerous of tricks available to reduce the effects seen here. In real life, lots of Facebook still runs on PHP.
 
 
-\subsubsection{Node.js y \ecommerce}
+\subsubsection{\nodejsNAME y \ecommerce}
 
-\ecommerce es un excelente ejemplo de sistema que se puede ver totalmente beneficiado con el uso de Node en el lado del servidor. 
+\ecommerce es un excelente ejemplo de sistema que se puede ver totalmente beneficiado con el uso de \nodejsNAME en el lado del \serverAS. 
 
 \begin{itemize}
-	\item \textbf{\frontend se movió desde el \serverSide al \clientSide( al menos en \mobile )}. Una de las grandes consecuencias es que el server-side ya no es mas CPU Bound ahora es Memory Bound e I/O Bound. \nodejs es \textit{event-driven}, lo cual implica eficiencia en I/O Bound y es extremadamente eficiente en el uso de memoria.
+	\item \textbf{\frontEndAS se movió desde el \serverSide al \clientSide( al menos en \mobile )}. Una de las grandes consecuencias es que el \serverSide ya no es más \cpuBoundPC ahora es \memoryBoundPC e \ioBoundPC. \nodejsNAME es \eventdrivenPL, lo cual implica eficiencia en \ioBoundPC y es extremadamente eficiente en el uso de memoria.
 	\item Permite velocidad de desarrollo y ejecución. En otras palabras iteraciones rápidas.
 	%Ease of Development-Some problem, somewhere has a solution best written in Brainf*ck. But implementing that solution (in Brainfuck) will be nearly impossible to write, let alone read. It will cost you time and a tremendous amount of effort. In general, you should use languages and platform that make development easier, not harder for you (or anyone that might work on it later).
-	\item \textbf{Comunidad}: Existe una activa comunidad la cual esta constantemente solucionando dudas, ademas de proporcionar módulos para resolver problemas conocidos.
+	\item \textbf{Comunidad}: Existe una activa comunidad la cual esta constantemente solucionando dudas, además de proporcionar módulos para resolver problemas conocidos.
 	\item \textbf{Reutilizar código}: \serverSide y \clientSide usan el mismo lenguaje, permitiendo reutilización de componentes.
 	\item \textbf{Optimiza el uso de recursos}: Los desarolladores de \clientSide pueden desarrollar en \serverSide, ya que son el mismo lenguaje.
-	\item \textbf{Scalability}: Los sitios \textit{web} se encuentran en constante crecimiento. \textit{Scalability} es una consecuencia de la eficiencia que tiene \nodejs para Memory Bound e I/O Bound
+	\item \textbf{\scalabilityQA}: Los sitios \web se encuentran en constante crecimiento. \scalabilityQA es una consecuencia de la eficiencia que tiene \nodejsNAME para \memoryBoundPC e \ioBoundPC
 \end{itemize}
 
 %+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -800,9 +800,9 @@ And sure, in real life, there are numerous of tricks available to reduce the eff
 %***************************************************************************
 Billy Scott, PayPal
 
-\section{\textit{Client side}}
+\section{\clientSide}
 
-Elegir el \framework correcto para un proyecto puede tener un impacto tremendo en la habilidad de entregar a tiempo y la habilidad para mantener el código en el futuro. ES ciertamente deseable un \framework solido, estable y probado, pero sin estar limitado por la opción. La \web entra evolucionando rápidamente; nuevas tecnologías surgen, y metodologías antiguas rápidamente se vuelven irrelevantes. Bajo este escenario, se compararan 3 \frameworks.
+Elegir el \framework correcto para un proyecto puede tener un impacto tremendo en la habilidad de entregar a tiempo y la habilidad para mantener el código en el futuro. ES ciertamente deseable un \framework sólido, estable y probado, pero sin estar limitado por la opción. La \web está evolucionando rápidamente; nuevas tecnologías surgen, y metodologías antiguas rápidamente se vuelven irrelevantes. Bajo este escenario, se compararan 3 \frameworks.
 %In this article we are going to compare three popular MV* frameworks for the web: AngularJS vs. Backbone vs. Ember. Choosing the right framework for your project can have a huge impact on your ability to deliver on time, and your ability to maintain your code in the future. You probably want a solid, stable and proven framework to build upon, but don't want to be limited by your choice. The web is evolving fast — new technologies arise, and old methodologies quickly become irrelevant. Under this light, we are going to go through an in-depth comparison of the three frameworks.
 
 \subsection{Meet The \frameworks}
@@ -817,7 +817,7 @@ Elegir el \framework correcto para un proyecto puede tener un impacto tremendo e
 
 \subsection{Comunidad}
 
-Una comunidad es uno de los factores mas importantes para considerar cuando se elije un \textit{framework}. Una extensa comunidad significa mas preguntas contestadas, mas módulos \textit{third-party}, mas tutoriales en youtube, etc. Angular es sin dudas la plataforma con mas apoyo como se puede observar en \reftabla{tab:framework_community}.
+Una comunidad es uno de los factores mas importantes para considerar cuando se elije un \framework. Una extensa comunidad significa mas preguntas contestadas, mas módulos \thirdParty, más tutoriales en \youtubeNAME, etc. \angularjs es sin dudas la plataforma con mas apoyo como se puede observar en \reftabla{tab:framework_community}.
 %Community is one of the most important factors to consider when choosing a framework. A large community means more questions answered, more third-party modules, more YouTube tutorials…you get the point. I have put together a table with the numbers, as of August 16, 2014. Angular is definitely the winner here, being the 6th most-starred project on GitHub and having more questions on StackOverflow than Ember and Backbone combined, as you can see below:
 %
 %
@@ -828,7 +828,7 @@ Una comunidad es uno de los factores mas importantes para considerar cuando se e
 \begin{tabular}{ |L{0.1\paperwidth}|L{0.2\paperwidth}|L{0.2\paperwidth}|L{0.2\paperwidth}|}
 \hline
 	Metric&
-	AngularJS &
+	\angularjs &
 	Backbone.js &
 	Ember.js
 	
@@ -934,7 +934,7 @@ Los \textit{assets} de JavaScript son usualmente served \textit{minified} y \tex
 Programando 
 %Before digging into Node.js, you might want to read up on the benefits of using JavaScript across the stack which unifies the language and data format (JSON), allowing you to optimally reuse developer resources. As this is more a benefit of JavaScript than Node.js specifically, we won’t discuss it much here. But it’s a key advantage to incorporating Node in your stack.
 
-Hay una gran cantidad de ventajas al utilizar un único lenguaje a lo largo del \textit{stack}. Al programas con \gloss{javascript} existe la posibildiad de realizar mejoras de rendimiento tanto en el propio \textit{software} y en la productividad de los desarrolladores. Con \gloss{mongodb}, se puede guardar los documentos en un formato \textit{\gloss{json}-like}, escribir consultas \gloss{json} en los servidores basados en ExpressJS y NodeJS, y similarmente pasar documentos \gloss{json} al \textit{front-end} AngularJS. \textit{Debugging} y la administración de la base de datos se vuelve una tarea muchísimo mas sencilla cuando los objetos guardados en la base de datos son esencialmente idénticos a los objetos que el cliente \gloss{javascript} ve. Incluso mejor, alguien trabajando en el lado del cliente puede fácilmente entender el código del lado del servidor y las consultas a la base de datos; usando la misma sintaxis y objetos todo el proceso libera a los desarrolladores la consideración de varios conjuntos de buenas prácticas de lenguajes y reduce la barrera de entrada para la comprensión de su código base. Esto es especialmente importante en una \textit{hackathon}: el equipo puede no tener mucha experiencia trabajando juntos, y con tan poco tiempo para integrar todas las piezas de su proyecto, cualquier detalle que haga el proceso de desarrollo mas sencillo es oro.
+Hay una gran cantidad de ventajas al utilizar un único lenguaje a lo largo del \stack. Al programas con \javaScriptNAME existe la posibilidad de realizar mejoras de rendimiento tanto en el propio \software y en la productividad de los desarrolladores. Con \mongodbNAME, se puede guardar los \documentsDB en un formato \jsonLikeCPT, escribir consultas \json en los servidores basados en \expressjsNAME y \nodejsNAME, y similarmente pasar documentos \json al \frontEndAS \angularjs. \debuggingPL y la administración de la base de datos se vuelve una tarea muchísimo mas sencilla cuando los objetos guardados en la base de datos son esencialmente idénticos a los objetos que el cliente \javaScriptNAME ve. Incluso mejor, alguien trabajando en \clientSide puede fácilmente entender el código del \serverSide y las consultas a la \dataBase; usando la misma sintaxis y objetos todo el proceso libera a los desarrolladores la consideración de varios conjuntos de buenas prácticas de lenguajes y reduce la barrera de entrada para la comprensión de su código base. Esto es especialmente importante en una \hackathonCPT: el equipo puede no tener mucha experiencia trabajando juntos, y con tan poco tiempo para integrar todas las piezas de su proyecto, cualquier detalle que haga el proceso de desarrollo mas sencillo es oro.
 %First of all, there are huge advantages to using a uniform language throughout your stack. My team uses a set of tools that we affectionately call the MEAN stack:­ MongoDB, ExpressJS, AngularJS, and Node.js. By coding with Javascript throughout, we are able to realize performance gains in both the software itself and in the productivity of our developers. With MongoDB, we can store our documents in a JSON-­like format, write JSON queries on our ExpressJS and NodeJS based server, and seamlessly pass JSON documents to our AngularJS frontend. Debugging and database administration become a lot easier when the objects stored in your database are essentially identical to the objects your client Javascript sees. Even better, somebody working on the client side can easily understand the server side code and database queries; using the same syntax and objects the whole way through frees you from having to consider multiple sets of language best practices and reduces the barrier to entry for understanding your codebase. This is especially important in a hackathon setting: the team may not have much experience working together, and with such little time to integrate all the pieces of your project, anything that makes the development process easier is gold.
 
 

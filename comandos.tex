@@ -28,6 +28,10 @@
 
 \newcommand{\rootfolder}		{../../}
 
+\newcommand{\bWrapper}[1]			{\textit{#1} }
+\newcommand{\gWrapper}[1]			{\gloss{#1} }
+\newcommand{\bothWrapper}[1]		{\textit{\gloss{#1}} }
+\newcommand{\nWrapper}[1]			{\textit{#1} }
 
 %%%%%%%%%%%%%%%%%%% region constants %%%%%%%%%%%%%%%%%%%
 
@@ -35,7 +39,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%   NOMBRES	(NAME)	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newcommand{\frameworkname}			{\gloss{e_ecommerce} }
+\newcommand{\frameworkname}			{\gWrapper{e_ecommerce}}
 \newcommand{\chrome}				{Chrome }
 \newcommand{\twitter}				{Twitter }
 \newcommand{\facebook}				{Facebook }
@@ -43,22 +47,37 @@
 \newcommand{\amazon}				{Amazon }
 \newcommand{\AuthorizeNet}			{Authorize.Net }
 \newcommand{\foursquare}			{Foursquare }
-\newcommand{\mongodb}				{\gloss{mongodb} }
+\newcommand{\mongodbNAME}				{\gWrapper{mongodb}}
 \newcommand{\cassandra}				{Cassandra }
-\newcommand{\nodejs}				{Node.js }
-\newcommand{\uri}					{\gloss{uri} }
+\newcommand{\dslNAME}				{DSL }
+\newcommand{\youtubeNAME}			{\nWrapper{Youtube}}
+
+
+%%%%%%%%%%%%%%%%	JavaScript	%%%%%%%%%%%%%%%%
+\newcommand{\javaScriptNAME}		{\gWrapper{javascript}}
+\newcommand{\nodejsNAME}			{Node.js }
+\newcommand{\krakenjsNAME}			{Kraken.js }
+\newcommand{\grunttool}				{Grunt }
+\newcommand{\expressjsNAME}			{Express.js }
+\newcommand{\dockerio}				{Docker.io }
+\newcommand{\docker}				{Docker }
+\newcommand{\coffeescript}			{CoffeeScript }
+\newcommand{\dustjsNAME}			{Dust.js }
+
+\newcommand{\uri}					{\gWrapper{uri}}
 \newcommand{\npm}					{NPM }
 \newcommand{\apttool}				{APT }
 \newcommand{\clitool}				{CLI }
 \newcommand{\maketool}				{make }
-\newcommand{\grunttool}				{Grunt }
-\newcommand{\expressjs}				{Express.js }
-\newcommand{\dockerio}				{Docker.io }
-\newcommand{\docker}				{Docker }
-\newcommand{\coffeescript}			{CoffeeScript }
+
+
 \newcommand{\linux}					{Linux }
 \newcommand{\angularjs}				{Angular.js }
-\newcommand{\apache}				{Apache }
+\newcommand{\apacheNAME}			{Apache }
+\newcommand{\apacheDosNAME}			{Apache2 }
+\newcommand{\modPhpNAME}			{\bWrapper{mod\_php}}
+\newcommand{\phpApacheNAME}			{\phpNAME / \apacheNAME }
+
 \newcommand{\ofBiz}					{OfBiz }
 \newcommand{\mysql}					{MySql }
 \newcommand{\postgresql}			{PostgreSQL }
@@ -67,45 +86,47 @@
 \newcommand{\sqlitethree}			{SQLite3 }
 \newcommand{\emberjs}				{Ember.js }
 \newcommand{\backbonejs}			{Backbone.js }
-\newcommand{\javaScript}			{\gloss{javascript} }
-\newcommand{\java}					{Java }
+
+\newcommand{\javaNAME}				{Java }
+\newcommand{\javaSpringNAME}		{Spring }
 \newcommand{\cPlusPlus}				{C++ }
 \newcommand{\google}				{Google }
 \newcommand{\googleanalytics}		{Google Analytics }
 \newcommand{\googleCheckout}		{Google Checkout }
-\newcommand{\paypal}				{PayPal }
+\newcommand{\paypalNAME}			{PayPal }
 \newcommand{\paypalCheckout}		{PayPal Express }
 \newcommand{\amazonCheckout}		{Amazon Checkout }
 \newcommand{\amazonPayments}		{Amazon Payments }
 \newcommand{\amazonEcdosNAME}		{Amazon's EC2 }
 \newcommand{\xml}					{XML }
-\newcommand{\css}					{CSS }
-\newcommand{\html}					{HTML }
+\newcommand{\cssNAME}				{CSS }
+\newcommand{\htmlNAME}				{HTML }
 \newcommand{\htmlfive}				{HTML5 }
 \newcommand{\htmldom}				{DOM }
-\newcommand{\php}					{PHP }
-\newcommand{\http}					{HTTP }
+\newcommand{\phpNAME}				{PHP }
+\newcommand{\httpNAME}				{HTTP }
 \newcommand{\https}					{HTTPS }
 
-\newcommand{\lamp}					{\gloss{lamp_stack} }
+\newcommand{\flashNAME}				{Flash }
+\newcommand{\lamp}					{\gWrapper{lamp_stack}}
 \newcommand{\rails}					{Rails }
 \newcommand{\django}				{Django }
 \newcommand{\meteor}				{Meteor }
-\newcommand{\commandlinemeteor}		{\textit{meteor} }
+\newcommand{\commandLinemeteor}		{\bWrapper{meteor}}
 \newcommand{\ruby}					{Ruby }
 \newcommand{\rubyonrails}			{Ruby on Rails }
-\newcommand{\json}					{\gloss{json} }
-\newcommand{\sql}					{\gloss{sql} }
-\newcommand{\nosql}					{\gloss{nosql} }
+\newcommand{\json}					{\gWrapper{json}}
+\newcommand{\sql}					{\gWrapper{sql}}
+\newcommand{\nosql}					{\gWrapper{nosql}}
 \newcommand{\visualstudio}			{Visual Studio }
-\newcommand{\meanstack}				{\gloss{mean_stack} }
-\newcommand{\meenstack}				{\gloss{meen_stack} }
+\newcommand{\meanstack}				{\gWrapper{mean_stack}}
+\newcommand{\meenstack}				{\gWrapper{meen_stack}}
 \newcommand{\blazemeteor}			{Blaze }
-\newcommand{\accountsmeteor}		{\textit{accounts} }
+\newcommand{\accountsmeteor}		{\bWrapper{accounts}}
 \newcommand{\trackermeteor}			{Tracker }
-\newcommand{\minimongo}				{\gloss{minimongo} }
+\newcommand{\minimongo}				{\gWrapper{minimongo}}
 \newcommand{\fibers}				{Fibers }
-\newcommand{\collectionsname}		{\textit{Collections} }
+\newcommand{\collectionsname}		{\bWrapper{Collections}}
 
 \newcommand{\sega}					{Sega }
 \newcommand{\kodak}					{Kodak }
@@ -115,7 +136,7 @@
 
 \newcommand{\nameOpenCart}			{OpenCart }
 \newcommand{\namePrestaShop}		{PrestaShop}
-\newcommand{\smartyTemplateEngine}	{\textit{Smarty Template Engine}}
+\newcommand{\smartyTemplateEngine}	{\bWrapper{Smarty Template Engine}}
 \newcommand{\nameMagento}			{Magento }
 \newcommand{\nameZenCart}			{Zen Cart }
 \newcommand{\chipotle}				{Chipotle}
@@ -143,583 +164,622 @@
 \newcommand{\upsName}				{UPS }
 
 \newcommand{\commerceGuys}				{Commerce Guys }
-\newcommand{\hadoop}				{Hadoop \ref{ap:apendice_hadoop_description} }
+\newcommand{\hadoop}				{Hadoop \ref{ap:apendice_hadoop_description}}
 \newcommand{\neofourj}				{Neo4j }
 \newcommand{\hyperGraphDB}			{HyperGraph }
 \newcommand{\hbase}					{Hbase }
+\newcommand{\moduleForeverNAME}		{Forever }
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%  COMPUTACION (PC)	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newcommand{\workload}					{\textit{\gloss{workload}} }
-\newcommand{\workloads}					{\textit{workloads} }
-\newcommand{\rdbms}						{\gloss{rdbms}}
-\newcommand{\ordbms}					{\gloss{ordbms}}
-\newcommand{\framework}					{\textit{Framework} }
-\newcommand{\frameworks}				{\textit{Frameworks} }
-
-
-\newcommand{\match}						{\textit{match} }
-
-\newcommand{\openSource}				{\textit{Open Source} }
-\newcommand{\closedSource}				{\textit{Closed Source} }
-\newcommand{\hardwarePC}					{\textit{hardware} }
-\newcommand{\physHardwarePC}			{\textit{physical Hardware} }
-\newcommand{\software}					{\textit{software} }
-\newcommand{\softwares}					{\textit{softwares} }
-\newcommand{\feature}					{\textit{feature} }
-\newcommand{\functionality}				{\textit{functionality} }
-
-\newcommand{\clicking}					{\textit{clicking} }
-\newcommand{\click}						{\textit{click} }
-\newcommand{\mouse}						{\textit{mouse} }
-\newcommand{\laptop}					{\textit{laptop} }
-\newcommand{\laptops}					{\textit{laptops} }
-\newcommand{\event}						{\textit{event} }
-\newcommand{\events}					{\textit{events} }
-\newcommand{\textfield}					{\textit{textfield} }
-\newcommand{\screen}					{\textit{screen} }
-\newcommand{\terminal}					{\textit{terminal} }
-\newcommand{\dumbterminal}				{\textit{dumb terminal} }
-\newcommand{\microprocessors}			{\textit{microprocessors} }
-\newcommand{\modem}						{\textit{modem} }
-\newcommand{\modems}					{\textit{modems} }
-
-\newcommand{\Multimedia}				{\textit{Multimedia} }
-
-\newcommand{\development}				{\textit{Development} }
-\newcommand{\qaSIGLA}					{\textit{QA} }
-\newcommand{\production}				{\textit{Production} }
-
-\newcommand{\data}						{\textit{Data} }
-\newcommand{\centerCustom}				{\textit{Center} }
-
-\newcommand{\memoryPC}					{\textit{memory} }
+\newcommand{\workload}					{\bothWrapper{workload}}
+\newcommand{\workloads}					{\bWrapper{workloads}}
+\newcommand{\rdbms}						{\gWrapper{rdbms}}
+\newcommand{\ordbms}					{\gWrapper{ordbms}}
+\newcommand{\framework}					{\bWrapper{Framework}}
+\newcommand{\frameworks}				{\bWrapper{Frameworks}}
+\newcommand{\match}						{\bWrapper{match}}
+\newcommand{\openSource}				{\bWrapper{Open Source}}
+\newcommand{\closedSource}				{\bWrapper{Closed Source}}
+\newcommand{\hardwarePC}				{\bWrapper{hardware}}
+\newcommand{\physHardwarePC}			{\bWrapper{physical Hardware}}
+\newcommand{\software}					{\bWrapper{software}}
+\newcommand{\softwares}					{\bWrapper{softwares}}
+\newcommand{\feature}					{\bWrapper{feature}}
+\newcommand{\functionality}				{\bWrapper{functionality}}
+\newcommand{\clicking}					{\bWrapper{clicking}}
+\newcommand{\click}						{\bWrapper{click}}
+\newcommand{\mouse}						{\bWrapper{mouse}}
+\newcommand{\laptop}					{\bWrapper{laptop}}
+\newcommand{\laptops}					{\bWrapper{laptops}}
+\newcommand{\event}						{\bWrapper{event}}
+\newcommand{\events}					{\bWrapper{events}}
+\newcommand{\textfield}					{\bWrapper{textfield}}
+\newcommand{\screen}					{\bWrapper{screen}}
+\newcommand{\terminal}					{\bWrapper{terminal}}
+\newcommand{\dumbterminal}				{\bWrapper{dumb terminal}}
+\newcommand{\microprocessors}			{\bWrapper{microprocessors}}
+\newcommand{\modem}						{\bWrapper{modem}}
+\newcommand{\modems}					{\bWrapper{modems}}
+\newcommand{\Multimedia}				{\bWrapper{Multimedia}}
+\newcommand{\development}				{\bWrapper{Development}}
+\newcommand{\qaSIGLA}					{\bWrapper{QA}}
+\newcommand{\production}				{\bWrapper{Production}}
+\newcommand{\data}						{\bWrapper{Data}}
+\newcommand{\centerCustom}				{\bWrapper{Center}}
+\newcommand{\memoryPC}					{\bWrapper{memory}}
 \newcommand{\cpuPC}						{CPU }
-\newcommand{\diskPC}					{\textit{disk} }
-\newcommand{\upgradingPC}				{\textit{upgrading} }
-\newcommand{\iopsPC}					{\textit{\gloss{iops}} }
-\newcommand{\commodityHardwarePC}		{\textit{\gloss{commodity_hardware}} }
-
-
+\newcommand{\cpuBoundPC}				{\bWrapper{CPU Bound}}
+\newcommand{\memoryBoundPC}				{\bWrapper{Memory Bound}}
+\newcommand{\ioBoundPC}					{\bWrapper{I/O Bound}}
+\newcommand{\cpuIntensivePC}			{\bWrapper{CPU-Intensive}}
+\newcommand{\diskPC}					{\bWrapper{disk}}
+\newcommand{\upgradingPC}				{\bWrapper{upgrading}}
+\newcommand{\iopsPC}					{\bothWrapper{iops}}
+\newcommand{\commodityHardwarePC}		{\bothWrapper{commodity_hardware}}
+\newcommand{\computationPC}				{\bWrapper{computation}}
+\newcommand{\heavyComputationPC}		{\bWrapper{heavy computation}}
+\newcommand{\memoryRamPC}				{\bothWrapper{memory_ram}}
+\newcommand{\crashingPC}				{\bWrapper{crashing}}
+\newcommand{\processPC}					{\bWrapper{process}}
+\newcommand{\childProcessPC}			{\bWrapper{child} \processPC}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%      LICENCIAS	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newcommand{\gpllicense}				{\gloss{gnu_gpl_license} }
-\newcommand{\gplthreelicense}			{\gloss{gnu_gpl_three_license} }
-\newcommand{\bsdthreelicense}			{\gloss{bsd_three_license} }
-\newcommand{\opslicense}				{\gloss{ops_license} }
-\newcommand{\permissive}				{\textit{permissive} }
-\newcommand{\copyleft}					{\textit{copyleft} }
-\newcommand{\license}					{\textit{license} }
-\newcommand{\License}					{\textit{License} }
+\newcommand{\gpllicense}				{\gWrapper{gnu_gpl_license}}
+\newcommand{\gplthreelicense}			{\gWrapper{gnu_gpl_three_license}}
+\newcommand{\bsdthreelicense}			{\gWrapper{bsd_three_license}}
+\newcommand{\opslicense}				{\gWrapper{ops_license}}
+\newcommand{\permissive}				{\bWrapper{permissive}}
+\newcommand{\copyleft}					{\bWrapper{copyleft}}
+\newcommand{\license}					{\bWrapper{license}}
+\newcommand{\License}					{\bWrapper{License}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%      INTERNET		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newcommand{\web}						{\textit{web} }
-\newcommand{\site}						{\textit{site} }
-\newcommand{\sites}						{\textit{sites} }
-\newcommand{\websites}					{\textit{websites} }
-\newcommand{\website}					{\textit{website} }
-\newcommand{\webapp}					{\textit{webapp} }
-\newcommand{\webserver}					{\textit{webserver} }
-\newcommand{\internet}					{\textit{Internet} }
-\newcommand{\www}						{\textit{World Wide Web} }
-\newcommand{\dotcom}					{\textit{dot-com} }
-\newcommand{\online}					{\textit{online} }
-\newcommand{\offline}					{\textit{offline} }
-\newcommand{\realtime}					{\textit{real time} }
-\newcommand{\broadcast}					{\textit{broadcast} }
-\newcommand{\browser}					{\textit{browser} }
-\newcommand{\browsers}					{\textit{browsers} }
-\newcommand{\network}					{\textit{network} }
-\newcommand{\reload}					{\textit{reload} }
-\newcommand{\page}						{\textit{page} }
-\newcommand{\pages}						{\textit{pages} }
-\newcommand{\email}						{\textit{email} }
-\newcommand{\emails}					{\textit{emails} }
+\newcommand{\web}						{\bWrapper{web}}
+\newcommand{\site}						{\bWrapper{site}}
+\newcommand{\sites}						{\bWrapper{sites}}
+\newcommand{\websites}					{\bWrapper{websites}}
+\newcommand{\websiteINT}				{\bWrapper{website}}
+\newcommand{\webapp}					{\bWrapper{webapp}}
+\newcommand{\webserver}					{\bWrapper{webserver}}
+\newcommand{\websocketsINT}				{\bWrapper{websockets}}
+\newcommand{\internet}					{\bWrapper{Internet}}
+\newcommand{\www}						{\bWrapper{World Wide Web}}
+\newcommand{\dotcom}					{\bWrapper{dot-com}}
+\newcommand{\online}					{\bWrapper{online}}
+\newcommand{\offline}					{\bWrapper{offline}}
+\newcommand{\realTimeINT}					{\bWrapper{real-time}}
+\newcommand{\broadcast}					{\bWrapper{broadcast}}
+\newcommand{\browser}					{\bWrapper{browser}}
+\newcommand{\browsers}					{\bWrapper{browsers}}
+\newcommand{\network}					{\bWrapper{network}}
+\newcommand{\reload}					{\bWrapper{reload}}
+\newcommand{\page}						{\bWrapper{page}}
+\newcommand{\pages}						{\bWrapper{pages}}
+\newcommand{\email}						{\bWrapper{email}}
+\newcommand{\emails}					{\bWrapper{emails}}
 
-\newcommand{\mobile}					{\textit{mobile} }
-\newcommand{\tablet}					{\textit{tablet} }
-\newcommand{\desktop}					{\textit{desktop} }
-\newcommand{\device}					{\textit{device} }
-\newcommand{\devices}					{\textit{devices} }
+\newcommand{\mobile}					{\bWrapper{mobile}}
+\newcommand{\tablet}					{\bWrapper{tablet}}
+\newcommand{\desktop}					{\bWrapper{desktop}}
+\newcommand{\device}					{\bWrapper{device}}
+\newcommand{\devices}					{\bWrapper{devices}}
 
-\newcommand{\socialnetwork}				{\textit{social network} }
+\newcommand{\socialnetwork}				{\bWrapper{social network}}
 
-\newcommand{\ria}						{\gloss{ria} }
+\newcommand{\ria}						{\gWrapper{ria}}
 \newcommand{\rias}						{{\ria}s }
 
-\newcommand{\request}					{\textit{request} }
-\newcommand{\requests}					{\textit{requests} }
-\newcommand{\response}					{\textit{response} }
-\newcommand{\responses}					{\textit{responses} }
+\newcommand{\requestINT}					{\bWrapper{request}}
+\newcommand{\requests}					{\bWrapper{requests}}
+\newcommand{\response}					{\bWrapper{response}}
+\newcommand{\responses}					{\bWrapper{responses}}
 
-\newcommand{\singlePageApp}				{\gloss{single_page_app} }
-\newcommand{\spa}						{\gloss{spa} }
+\newcommand{\singlePageApp}				{\gWrapper{single_page_app}}
+\newcommand{\spa}						{\gWrapper{spa}}
 \newcommand{\ajax}						{Ajax }
-\newcommand{\storage}					{\textit{storage} }
-\newcommand{\cookieINT}					{\textit{cookie} }
-\newcommand{\senderINT}					{\textit{sender} }
-\newcommand{\receiverINT}				{\textit{receiver} }
+\newcommand{\storage}					{\bWrapper{storage}}
+\newcommand{\cookieINT}					{\bWrapper{cookie}}
+\newcommand{\senderINT}					{\bWrapper{sender}}
+\newcommand{\receiverINT}				{\bWrapper{receiver}}
+\newcommand{\pushINT}					{\bWrapper{push}}
+\newcommand{\statelessWebINT}			{\bWrapper{stateless-web}}
+\newcommand{\requestResponseINT}		{\bWrapper{request-response}}
+\newcommand{\twoWayINT}					{\bWrapper{two-way}}
+\newcommand{\webResponseINT}			{\bWrapper{web response}}
+\newcommand{\openWebStackINT}			{\bWrapper{open web stack}}
+\newcommand{\standarPortINT}			{\bWrapper{standar port}}
+\newcommand{\javaAppletsINT}			{\bWrapper{Java Applets}}
+\newcommand{\nonStandardPortsINT}		{\bWrapper{non-standard ports}}
+\newcommand{\webServingINT}				{\bWrapper{web-serving}}
+\newcommand{\incommingRequestINT}		{\bWrapper{incomming request}}
+\newcommand{\traffickedINT}				{\bWrapper{trafficked}}
+\newcommand{\appsINT}					{\bWrapper{apps}}
+\newcommand{\appINT}					{\bWrapper{app}}
+\newcommand{\accountOverviewPageINT}	{\bWrapper{account overview page}}
+\newcommand{\workerClientINT}			{\bWrapper{worker/client}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%  E-COMMERCE(COM)	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newcommand{\ecommerce}					{\textit{\gloss{ecommerce}} }
-\newcommand{\commerce}					{\textit{Commerce} }
-\newcommand{\emarket}					{\textit{e-Market} }
-\newcommand{\emarketing}				{\textit{e-Marketing} }
-\newcommand{\eshopping}					{\textit{e-Shopping} }
-\newcommand{\egoverment}				{\textit{e-Goverment} }
-\newcommand{\mcommerce}					{\textit{m-Commerce} }
-\newcommand{\wishlist}					{\textit{wish list} }
-\newcommand{\shop}						{\textit{shop} }
-\newcommand{\shopping}					{\textit{shopping} }
-\newcommand{\cartCOM}				{\textit{Cart} }
-\newcommand{\shoppingCart}				{\textit{Shopping Cart} }
-\newcommand{\shoppingCarts}				{\textit{Shopping Carts} }
-\newcommand{\checkoutCOM}					{\textit{checkout} }
-\newcommand{\merchandising}				{\textit{Merchandising} }
-\newcommand{\itemCOM}				{\textit{item} }
-\newcommand{\itemsCommerce}				{\textit{items} }
-\newcommand{\itemupdates}				{\textit{item-updates} }
-\newcommand{\advertising}				{\textit{advertising} }
-\newcommand{\brickandmortar}			{\textit{\gloss{brick_and_mortar}} }
-\newcommand{\retail}					{\textit{retail} }
-\newcommand{\retailer}					{\textit{retailer} }
-\newcommand{\retailers}					{\textit{retailers} }
-\newcommand{\retailing}					{\textit{retailing} }
+\newcommand{\ecommerce}					{\bothWrapper{ecommerce}}
+\newcommand{\commerce}					{\bWrapper{Commerce}}
+\newcommand{\emarket}					{\bWrapper{e-Market}}
+\newcommand{\emarketing}				{\bWrapper{e-Marketing}}
+\newcommand{\eshopping}					{\bWrapper{e-Shopping}}
+\newcommand{\egoverment}				{\bWrapper{e-Goverment}}
+\newcommand{\mcommerce}					{\bWrapper{m-Commerce}}
+\newcommand{\wishlist}					{\bWrapper{wish list}}
+\newcommand{\shop}						{\bWrapper{shop}}
+\newcommand{\shopping}					{\bWrapper{shopping}}
+\newcommand{\cartCOM}				{\bWrapper{Cart}}
+\newcommand{\shoppingCart}				{\bWrapper{Shopping Cart}}
+\newcommand{\shoppingCarts}				{\bWrapper{Shopping Carts}}
+\newcommand{\checkoutCOM}					{\bWrapper{checkout}}
+\newcommand{\merchandising}				{\bWrapper{Merchandising}}
+\newcommand{\itemCOM}				{\bWrapper{item}}
+\newcommand{\itemsCommerce}				{\bWrapper{items}}
+\newcommand{\itemupdates}				{\bWrapper{item-updates}}
+\newcommand{\advertising}				{\bWrapper{advertising}}
+\newcommand{\brickandmortar}			{\bothWrapper{brick_and_mortar}}
+\newcommand{\retail}					{\bWrapper{retail}}
+\newcommand{\retailer}					{\bWrapper{retailer}}
+\newcommand{\retailers}					{\bWrapper{retailers}}
+\newcommand{\retailing}					{\bWrapper{retailing}}
 
-\newcommand{\btob}						{\textit{\gloss{b2b}} }
-\newcommand{\businesstob}				{\textit{\gloss{business_to_business}} }
-\newcommand{\btoc}						{\textit{\gloss{b2c}} }
-\newcommand{\btog}						{\textit{\gloss{b2g}} }
-\newcommand{\gtog}						{\textit{\gloss{g2g}} }
-\newcommand{\ctoc}						{\textit{\gloss{c2c}} }
+\newcommand{\btob}						{\bothWrapper{b2b}}
+\newcommand{\businesstob}				{\bothWrapper{business_to_business}}
+\newcommand{\btoc}						{\bothWrapper{b2c}}
+\newcommand{\btog}						{\bothWrapper{b2g}}
+\newcommand{\gtog}						{\bothWrapper{g2g}}
+\newcommand{\ctoc}						{\bothWrapper{c2c}}
 
-\newcommand{\business}					{\textit{Business} }
-\newcommand{\government}				{\textit{Government} }
-\newcommand{\consumer}					{\textit{consumer} }
-\newcommand{\consumers}					{\textit{consumers} }
-\newcommand{\seller}					{\textit{seller} }
-\newcommand{\sellers}					{\textit{sellers} }
+\newcommand{\business}					{\bWrapper{Business}}
+\newcommand{\government}				{\bWrapper{Government}}
+\newcommand{\consumer}					{\bWrapper{consumer}}
+\newcommand{\consumers}					{\bWrapper{consumers}}
+\newcommand{\seller}					{\bWrapper{seller}}
+\newcommand{\sellers}					{\bWrapper{sellers}}
 
-\newcommand{\rating}					{\textit{rating} }
-\newcommand{\ratings}					{\textit{ratings} }
+\newcommand{\rating}					{\bWrapper{rating}}
+\newcommand{\ratings}					{\bWrapper{ratings}}
 
-\newcommand{\edimeaning}				{\textit{Electronic Data Interchange} }
-\newcommand{\eftmeaning}				{\textit{Electronic Funds Transfer} }
-\newcommand{\estore}					{\textit{e-store} }
-\newcommand{\estores}					{\textit{e-stores} }
-\newcommand{\purchase}					{\textit{purchase} }
-\newcommand{\inquiry}					{\textit{inquiry} }
-\newcommand{\customer}					{\textit{customer} }
-\newcommand{\customers}					{\textit{customers} }
-\newcommand{\multichannel}				{\textit{\gloss{multi_channel}} }
-\newcommand{\channel}					{\textit{channel} }
-\newcommand{\channels}					{\textit{channels} }
-\newcommand{\Multi}						{\textit{Multi} }
+\newcommand{\edimeaning}				{\bWrapper{Electronic Data Interchange}}
+\newcommand{\eftmeaning}				{\bWrapper{Electronic Funds Transfer}}
+\newcommand{\estore}					{\bWrapper{e-store}}
+\newcommand{\estores}					{\bWrapper{e-stores}}
+\newcommand{\purchase}					{\bWrapper{purchase}}
+\newcommand{\inquiry}					{\bWrapper{inquiry}}
+\newcommand{\customer}					{\bWrapper{customer}}
+\newcommand{\customers}					{\bWrapper{customers}}
+\newcommand{\multichannel}				{\bothWrapper{multi_channel}}
+\newcommand{\channel}					{\bWrapper{channel}}
+\newcommand{\channels}					{\bWrapper{channels}}
+\newcommand{\Multi}						{\bWrapper{Multi}}
 
-\newcommand{\Marketing}					{\textit{Marketing} }
-\newcommand{\marketing}					{\textit{marketing} }
-\newcommand{\marketplace}				{\textit{Marketplace} }
+\newcommand{\Marketing}					{\bWrapper{Marketing}}
+\newcommand{\marketing}					{\bWrapper{marketing}}
+\newcommand{\marketplace}				{\bWrapper{Marketplace}}
 
-\newcommand{\shipping}					{\textit{shipping} }
-\newcommand{\stock}						{\textit{stock} }
-\newcommand{\membership}				{\textit{membership} }
-\newcommand{\memberships}				{\textit{memberships} }
-\newcommand{\membershipOnly}			{\textit{membership only} }
+\newcommand{\shipping}					{\bWrapper{shipping}}
+\newcommand{\stock}						{\bWrapper{stock}}
+\newcommand{\membership}				{\bWrapper{membership}}
+\newcommand{\memberships}				{\bWrapper{memberships}}
+\newcommand{\membershipOnly}			{\bWrapper{membership only}}
 
-\newcommand{\reward}					{\textit{reward} }
-\newcommand{\rewards}					{\textit{rewards} }
+\newcommand{\reward}					{\bWrapper{reward}}
+\newcommand{\rewards}					{\bWrapper{rewards}}
 
-\newcommand{\gift}						{\textit{gift} }
-\newcommand{\gifts}						{\textit{gifts} }
-\newcommand{\markets}					{\textit{markets} }
-\newcommand{\categoriesCommerce}		{\textit{categories} }
-\newcommand{\itemReviewsCommerce}		{\textit{itemReviews} }
-\newcommand{\orderCommerce}				{\textit{order} }
-\newcommand{\ordersCommerce}			{\textit{orders} }
-\newcommand{\catalogCommerce}			{\textit{Catalog} }
-\newcommand{\management}				{\textit{Management} }
+\newcommand{\gift}						{\bWrapper{gift}}
+\newcommand{\gifts}						{\bWrapper{gifts}}
+\newcommand{\markets}					{\bWrapper{markets}}
+\newcommand{\categoriesCommerce}		{\bWrapper{categories}}
+\newcommand{\itemReviewsCommerce}		{\bWrapper{itemReviews}}
+\newcommand{\orderCommerce}				{\bWrapper{order}}
+\newcommand{\ordersCommerce}			{\bWrapper{orders}}
+\newcommand{\catalogCommerce}			{\bWrapper{Catalog}}
+\newcommand{\management}				{\bWrapper{Management}}
 \newcommand{\catalogManagement}			{\catalogCommerce \management }
-\newcommand{\contentManagement}			{\textit{Content} \management }
-\newcommand{\sku}						{\textit{\gloss{sku}} }
-\newcommand{\inventoryCommerce}			{\textit{Inventory} }
-\newcommand{\physItem}					{\textit{physical item} }
-\newcommand{\inCart}					{\textit{in-Cart} }
-\newcommand{\debitOneAccount}			{\textit{debit one account} }
-\newcommand{\creditAnother}				{\textit{credit another} }
-\newcommand{\purchasedCOM}				{\textit{purchased} }
+\newcommand{\contentManagement}			{\bWrapper{Content} \management }
+\newcommand{\sku}						{\bothWrapper{sku}}
+\newcommand{\inventoryCommerce}			{\bWrapper{Inventory}}
+\newcommand{\physItem}					{\bWrapper{physical item}}
+\newcommand{\inCart}					{\bWrapper{in-Cart}}
+\newcommand{\debitOneAccount}			{\bWrapper{debit one account}}
+\newcommand{\creditAnother}				{\bWrapper{credit another}}
+\newcommand{\purchasedCOM}				{\bWrapper{purchased}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%  CONCEPTOS DE ARQUITECTURA (AS) %%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newcommand{\layer}					{\textit{layer} }
-\newcommand{\layers}				{\textit{layers} }
-\newcommand{\persistenceLayer}		{\textit{persistence} \layer }
-\newcommand{\serverAS}				{\textit{server} }
-\newcommand{\servers}				{\textit{servers} }
-\newcommand{\serverSide}			{\textit{server-side} }
-\newcommand{\clientSide}			{\textit{client-side} }
-\newcommand{\client}				{\textit{client} }
-\newcommand{\clients}				{\textit{clients} }
+\newcommand{\layer}					{\bWrapper{layer}}
+\newcommand{\layers}				{\bWrapper{layers}}
+\newcommand{\persistenceLayer}		{\bWrapper{persistence} \layer }
+\newcommand{\serverAS}				{\bWrapper{server}}
+\newcommand{\serversAS}				{\bWrapper{servers}}
+\newcommand{\serverSide}			{\bWrapper{server-side}}
+\newcommand{\clientSide}			{\bWrapper{client-side}}
+\newcommand{\clientAS}				{\bWrapper{client}}
+\newcommand{\clientsAS}				{\bWrapper{clients}}
 
-\newcommand{\frontend}				{\textit{Front-End} }
-\newcommand{\frontends}				{\textit{Front-Ends} }
-\newcommand{\backend}				{\textit{Back-End} }
-\newcommand{\mainframe}				{\textit{Mainframe} }
-\newcommand{\mainframes}			{\textit{Mainframes} }
-\newcommand{\api}					{\textit{API} }
-\newcommand{\apis}					{\textit{APIs} }
-\newcommand{\fullstack}				{\textit{full stack} }
-\newcommand{\stack}					{\textit{stack} }
-\newcommand{\prefetches}			{\textit{\gloss{instruction_prefetch}es} }
-\newcommand{\prefetch}				{\textit{\gloss{instruction_prefetch}} }
-\newcommand{\modules}				{\textit{modules} }
-\newcommand{\packages}				{\textit{packages} }
-\newcommand{\package}				{\textit{package} }
-\newcommand{\plugin}				{\textit{plugin} }
-\newcommand{\plugins}				{\textit{plugins} }
-\newcommand{\core}					{\textit{core} }
-\newcommand{\handle}				{\textit{handle} }
-\newcommand{\asset}					{\textit{asset} }
-\newcommand{\assets}				{\textit{assets} }
-\newcommand{\javabackend}			{\textit{Java Backend} }
+\newcommand{\frontEndAS}			{\bWrapper{Front-End}}
+\newcommand{\frontEndsAS}			{\bWrapper{Front-Ends}}
+\newcommand{\backend}				{\bWrapper{Back-End}}
+\newcommand{\mainframe}				{\bWrapper{Mainframe}}
+\newcommand{\mainframes}			{\bWrapper{Mainframes}}
+\newcommand{\api}					{\bWrapper{API}}
+\newcommand{\apis}					{\bWrapper{APIs}}
+\newcommand{\fullstack}				{\bWrapper{full stack}}
+\newcommand{\stack}					{\bWrapper{stack}}
+\newcommand{\prefetches}			{\bWrapper{\gWrapper{instruction_prefetch}es}}
+\newcommand{\prefetch}				{\bothWrapper{instruction_prefetch}}
+\newcommand{\modules}				{\bWrapper{modules}}
+\newcommand{\packages}				{\bWrapper{packages}}
+\newcommand{\package}				{\bWrapper{package}}
+\newcommand{\plugin}				{\bWrapper{plugin}}
+\newcommand{\plugins}				{\bWrapper{plugins}}
+\newcommand{\coreAS}				{\bWrapper{core}}
+\newcommand{\handle}				{\bWrapper{handle}}
+\newcommand{\asset}					{\bWrapper{asset}}
+\newcommand{\assets}				{\bWrapper{assets}}
+\newcommand{\javabackend}			{\bWrapper{Java Backend}}
 
-\newcommand{\applayer}				{\textit{Application Layer} }
-\newcommand{\preslayer}				{\textit{Presentation Layer} }
-\newcommand{\sessionlayer}			{\textit{Session Layer} }
-\newcommand{\translayer}			{\textit{Transport Layer} }
-\newcommand{\networklayer}			{\textit{Network Layer} }
-\newcommand{\datalinklayer}			{\textit{Data Link Layer} }
-\newcommand{\physilayer}			{\textit{Physical Layer} }
-\newcommand{\osimodel}				{\gloss{osi_model} \textit{Model} }
-\newcommand{\restful}				{\gloss{restful} }
-\newcommand{\modelsCustom}			{\textit{Models} }
-\newcommand{\views}					{\textit{Views} }
+\newcommand{\applayer}				{\bWrapper{Application Layer}}
+\newcommand{\preslayer}				{\bWrapper{Presentation Layer}}
+\newcommand{\sessionlayer}			{\bWrapper{Session Layer}}
+\newcommand{\translayer}			{\bWrapper{Transport Layer}}
+\newcommand{\networklayer}			{\bWrapper{Network Layer}}
+\newcommand{\datalinklayer}			{\bWrapper{Data Link Layer}}
+\newcommand{\physilayer}			{\bWrapper{Physical Layer}}
+\newcommand{\osimodel}				{\gWrapper{osi_model} \bWrapper{Model}}
+\newcommand{\restful}				{\gWrapper{restful}}
+\newcommand{\modelsCustom}			{\bWrapper{Models}}
+\newcommand{\views}					{\bWrapper{Views}}
+\newcommand{\callerAS}				{\bWrapper{caller}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%   LENGUAJES DE PROGRAMACIÓN(PL) %%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newcommand{\objectOriented}		{\textit{object-oriented} }
-\newcommand{\environment}			{\textit{environment} }
-\newcommand{\environments}			{\textit{environments} }
-\newcommand{\building}				{\textit{building} }
-\newcommand{\build}					{\textit{build} }
-\newcommand{\orm}					{\textit{ORM} }
-\newcommand{\typesystem}			{\textit{type system } }
-\newcommand{\listhighlevel}			{\textit{list} }
-\newcommand{\lists}					{\textit{lists} }
-\newcommand{\queue}					{\textit{queue} }
-\newcommand{\queues}				{\textit{queues} }
-\newcommand{\set}					{\textit{set} }
-\newcommand{\sets}					{\textit{sets} }
-\newcommand{\keyValue}				{\textit{key/value} }
-\newcommand{\eventdriven}			{\textit{event-driven} }
-\newcommand{\nonbloking}			{\textit{non-blocking} }
-\newcommand{\scripting}				{\textit{scripting} }
-\newcommand{\scriptPL}				{\textit{script} }
-\newcommand{\backgroundPL}			{\textit{background} }
-\newcommand{\cprogramming}			{\textit{C programming} }
-\newcommand{\handling}				{\textit{handling} }
-\newcommand{\stringCustom}			{\textit{string} }
-\newcommand{\binaryCustom}			{\textit{binary} }
-\newcommand{\arrayCustom}			{\textit{array} }
-\newcommand{\polymorphic}			{\textit{Polymorphic} }
+\newcommand{\objectOriented}		{\bWrapper{object-oriented}}
+\newcommand{\environment}			{\bWrapper{environment}}
+\newcommand{\environments}			{\bWrapper{environments}}
+\newcommand{\sandboxedEnvPL}		{\bWrapper{Sandboxed Environment}}
+\newcommand{\building}				{\bWrapper{building}}
+\newcommand{\build}					{\bWrapper{build}}
+\newcommand{\orm}					{\bWrapper{ORM}}
+\newcommand{\typesystem}			{\bWrapper{type system }}
+\newcommand{\listhighlevel}			{\bWrapper{list}}
+\newcommand{\lists}					{\bWrapper{lists}}
+\newcommand{\queue}					{\bWrapper{queue}}
+\newcommand{\queues}				{\bWrapper{queues}}
+\newcommand{\set}					{\bWrapper{set}}
+\newcommand{\sets}					{\bWrapper{sets}}
+\newcommand{\keyValue}				{\bWrapper{key/value}}
+\newcommand{\eventdrivenPL}			{\bWrapper{event-driven}}
+\newcommand{\nonbloking}			{\bWrapper{non-blocking}}
+\newcommand{\scripting}				{\bWrapper{scripting}}
+\newcommand{\scriptPL}				{\bWrapper{script}}
+\newcommand{\backgroundPL}			{\bWrapper{background}}
+\newcommand{\cprogramming}			{\bWrapper{C programming}}
+\newcommand{\handling}				{\bWrapper{handling}}
+\newcommand{\stringCustom}			{\bWrapper{string}}
+\newcommand{\binaryCustom}			{\bWrapper{binary}}
+\newcommand{\arrayCustom}			{\bWrapper{array}}
+\newcommand{\polymorphic}			{\bWrapper{Polymorphic}}
+\newcommand{\threadsPL}				{\bWrapper{threads}}
+\newcommand{\threadPL}				{\bWrapper{thread}}
+\newcommand{\singleThreadPL}		{\bWrapper{single-thread}}
+\newcommand{\bubblingUpPL}			{\bWrapper{bubbling up}}
+\newcommand{\bubblingUpSurfacePL}	{\bubblingUpPL \bWrapper{to the surface}}
+\newcommand{\callbackPL}			{\bWrapper{callback}}
+\newcommand{\callbacksPL}			{\bWrapper{callbacks}}
+\newcommand{\crashedInstancePL}		{\bWrapper{crashed instance}}
+\newcommand{\debuggingPL}			{\bWrapper{Debugging}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%  	    BASE DE DATOS (DB)	%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newcommand{\sparseFeature}				{\textit{sparse} }
-\newcommand{\join}						{\textit{join} }
-\newcommand{\joins}						{\textit{joins} }
+\newcommand{\sparseFeature}				{\bWrapper{sparse}}
+\newcommand{\join}						{\bWrapper{join}}
+\newcommand{\joins}						{\bWrapper{joins}}
 
-\newcommand{\joining}					{\textit{joining} }
-\newcommand{\column}					{\textit{column} }
-\newcommand{\columns}					{\textit{columns} }
-\newcommand{\superColumns}				{\textit{super columns} }
-\newcommand{\columnFamilies}			{\textit{column families} }
-\newcommand{\columnFamily}				{\textit{column family} }
-\newcommand{\primaryKey}				{\textit{primary key} }
-\newcommand{\dataModel}					{\textit{Data Model} }
-\newcommand{\docDataBase}				{\textit{Document Data Base} }
-\newcommand{\docDataBases}				{\textit{Document Data Bases} }
-\newcommand{\tableArow}					{\textit{table-and-row} }
-\newcommand{\dataItem}					{\textit{data item} }
-\newcommand{\wideColumn}				{\textit{Wide-Column} }
-\newcommand{\fields}					{\textit{fields} }
-\newcommand{\verticallyScale}			{\textit{Vertically} }
-\newcommand{\verticalScalingDB}			{\textit{Vertical Scaling} }
-\newcommand{\scalingUpDB}				{\textit{Scaling Up} }
-\newcommand{\horizontallyScale}			{\textit{Horizontally} }
-\newcommand{\horizontallyScaledDB}		{\textit{Horizontally Scaled} }
-\newcommand{\horizontalScalingDB}		{\textit{Horizontal Scaling} }
-\newcommand{\scalingOutDB}				{\textit{Scaling Out} }
-\newcommand{\cloudInstances}			{\textit{cloud instances} }
-\newcommand{\documentLevel}				{\textit{Document Level} }
-\newcommand{\documentModel}				{\textit{Document Model} }
-\newcommand{\dataBaseLevel}				{\textit{Data Base Level} }
-\newcommand{\tableDB}					{\textit{table} }
-\newcommand{\tablesDB}					{\textit{tables} }
-\newcommand{\selectDB}					{\textit{Select} }
-\newcommand{\insertDB}					{\textit{Insert} }
-\newcommand{\updateDB}					{\textit{Update} }
+\newcommand{\joining}					{\bWrapper{joining}}
+\newcommand{\column}					{\bWrapper{column}}
+\newcommand{\columns}					{\bWrapper{columns}}
+\newcommand{\superColumns}				{\bWrapper{super columns}}
+\newcommand{\columnFamilies}			{\bWrapper{column families}}
+\newcommand{\columnFamily}				{\bWrapper{column family}}
+\newcommand{\primaryKey}				{\bWrapper{primary key}}
+\newcommand{\dataModel}					{\bWrapper{Data Model}}
+\newcommand{\docDataBase}				{\bWrapper{Document Data Base}}
+\newcommand{\docDataBases}				{\bWrapper{Document Data Bases}}
+\newcommand{\tableArow}					{\bWrapper{table-and-row}}
+\newcommand{\dataItem}					{\bWrapper{data item}}
+\newcommand{\wideColumn}				{\bWrapper{Wide-Column}}
+\newcommand{\fields}					{\bWrapper{fields}}
+\newcommand{\verticallyScale}			{\bWrapper{Vertically}}
+\newcommand{\verticalScalingDB}			{\bWrapper{Vertical Scaling}}
+\newcommand{\scalingUpDB}				{\bWrapper{Scaling Up}}
+\newcommand{\horizontallyScale}			{\bWrapper{Horizontally}}
+\newcommand{\horizontallyScaledDB}		{\bWrapper{Horizontally Scaled}}
+\newcommand{\horizontalScalingDB}		{\bWrapper{Horizontal Scaling}}
+\newcommand{\scalingOutDB}				{\bWrapper{Scaling Out}}
+\newcommand{\cloudInstances}			{\bWrapper{cloud instances}}
+\newcommand{\documentLevel}				{\bWrapper{Document Level}}
+\newcommand{\documentModel}				{\bWrapper{Document Model}}
+\newcommand{\dataBaseLevel}				{\bWrapper{Data Base Level}}
+\newcommand{\tableDB}					{\bWrapper{table}}
+\newcommand{\tablesDB}					{\bWrapper{tables}}
+\newcommand{\selectDB}					{\bWrapper{Select}}
+\newcommand{\insertDB}					{\bWrapper{Insert}}
+\newcommand{\updateDB}					{\bWrapper{Update}}
 \newcommand{\selectDBUpper}				{\MakeUppercase{\selectDB}}
-\newcommand{\fromDBUpper}				{\MakeUppercase{\textit{from}} }
-\newcommand{\whereDBUpper}				{\MakeUppercase{\textit{where}} }
-\newcommand{\strongConsistency}			{\textit{Strong Consistency} }
-\newcommand{\eventualConsistency}		{\textit{Eventual Consistency} }
-\newcommand{\collectionsDB}				{\textit{Collections} }
-\newcommand{\collectionDB}				{\textit{Collection} }
-\newcommand{\aggregatesDB}				{\textit{Aggregates} }
-\newcommand{\aggregationDB}				{\textit{Aggregation} }
-\newcommand{\keyLookup}					{\textit{Key Lookup} }
-\newcommand{\transactionsDB}			{\textit{Transactions} }
-\newcommand{\nameDB}					{\textit{name} }
-\newcommand{\keyDB}						{\textit{key} }
-\newcommand{\valueDB}					{\textit{value} }
-\newcommand{\schemasDB}					{\textit{Schemas} }
-\newcommand{\schemaDB}					{\textit{Schema} }
-\newcommand{\rowsDB}					{\textit{rows} }
-\newcommand{\masterSchema}				{\textit{Master} \schemaDB}
-\newcommand{\indexDB}					{\textit{index} }
-\newcommand{\indexingDB}				{\textit{indexing} }
-\newcommand{\indexesDB}					{\textit{indexes} }
-\newcommand{\secIndexingDB}				{\textit{Secundary} \indexingDB}
-\newcommand{\secIndexesDB}				{\textit{Secundary }\indexesDB }
-\newcommand{\positionOperatorDB}			{\textit{position operator} }
-\newcommand{\atomicOperationsDB}			{\textit{atomic operations} }
-\newcommand{\atomicOperatorDB}			{\textit{atomic operator} }
-\newcommand{\pushOperatorDB}				{\textit{\$push} }
-\newcommand{\incOperatorDB}				{\textit{\$inc} }
-\newcommand{\itemBackDB}				{\textit{item back} }
-\newcommand{\lockDB}					{\textit{lock} }
-\newcommand{\rollbackDB}				{\textit{rollback} }
-\newcommand{\transactionalityDB}		{\textit{transactionality} }
-\newcommand{\fullFledgedTransDB}		{\textit{full-fledged} \transactionsDB }
-\newcommand{\multiObjectDB}				{\textit{multi-object} }
-\newcommand{\findAndModifyOperatorDB}	{\textit{findAndModify} }
-\newcommand{\nearRealTimeReplicationDB}	{\textit{near-real-time replications} }
-\newcommand{\replicatedDB}				{\textit{replicated} }
-\newcommand{\hostingDB}					{\textit{Hosting} }
-\newcommand{\replicatedSlaveDB}			{\textit{replicated slave} }
+\newcommand{\fromDBUpper}				{\MakeUppercase{\bWrapper{from}}}
+\newcommand{\whereDBUpper}				{\MakeUppercase{\bWrapper{where}}}
+\newcommand{\strongConsistency}			{\bWrapper{Strong Consistency}}
+\newcommand{\eventualConsistency}		{\bWrapper{Eventual Consistency}}
+\newcommand{\collectionsDB}				{\bWrapper{Collections}}
+\newcommand{\collectionDB}				{\bWrapper{Collection}}
+\newcommand{\aggregatesDB}				{\bWrapper{Aggregates}}
+\newcommand{\aggregationDB}				{\bWrapper{Aggregation}}
+\newcommand{\keyLookup}					{\bWrapper{Key Lookup}}
+\newcommand{\transactionsDB}			{\bWrapper{Transactions}}
+\newcommand{\nameDB}					{\bWrapper{name}}
+\newcommand{\keyDB}						{\bWrapper{key}}
+\newcommand{\valueDB}					{\bWrapper{value}}
+\newcommand{\schemasDB}					{\bWrapper{Schemas}}
+\newcommand{\schemaDB}					{\bWrapper{Schema}}
+\newcommand{\rowsDB}					{\bWrapper{rows}}
+\newcommand{\masterSchema}				{\bWrapper{Master} \schemaDB}
+\newcommand{\indexDB}					{\bWrapper{index}}
+\newcommand{\indexingDB}				{\bWrapper{indexing}}
+\newcommand{\indexesDB}					{\bWrapper{indexes}}
+\newcommand{\secIndexingDB}				{\bWrapper{Secundary} \indexingDB}
+\newcommand{\secIndexesDB}				{\bWrapper{Secundary }\indexesDB }
+\newcommand{\positionOperatorDB}		{\bWrapper{position operator}}
+\newcommand{\atomicOperationsDB}		{\bWrapper{atomic operations}}
+\newcommand{\atomicOperatorDB}			{\bWrapper{atomic operator}}
+\newcommand{\pushOperatorDB}			{\bWrapper{\$push}}
+\newcommand{\incOperatorDB}				{\bWrapper{\$inc}}
+\newcommand{\itemBackDB}				{\bWrapper{item back}}
+\newcommand{\lockDB}					{\bWrapper{lock}}
+\newcommand{\rollbackDB}				{\bWrapper{rollback}}
+\newcommand{\transactionalityDB}		{\bWrapper{transactionality}}
+\newcommand{\transactionalDB}			{\bWrapper{transactional}}
+\newcommand{\fullFledgedTransDB}		{\bWrapper{full-fledged} \transactionsDB }
+\newcommand{\multiObjectDB}				{\bWrapper{multi-object}}
+\newcommand{\findAndModifyOperatorDB}	{\bWrapper{findAndModify}}
+\newcommand{\nearRealTimeReplicationDB}	{\bWrapper{near-real-time replications}}
+\newcommand{\replicatedDB}				{\bWrapper{replicated}}
+\newcommand{\hostingDB}					{\bWrapper{Hosting}}
+\newcommand{\replicatedSlaveDB}			{\bWrapper{replicated slave}}
+\newcommand{\documentsDB}			{\bWrapper{documents}}
+\newcommand{\documentDB}			{\bWrapper{document}}
+\newcommand{\documentOriented}		{\bWrapper{Document Oriented}}
+\newcommand{\maxClientsDB}				{\bWrapper{MaxClients}}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%    ATRIBUTOS DE CALIDAD	%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%  ATRIBUTOS DE CALIDAD (QA)%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newcommand{\complexity}			{\textit{complexity} }
-\newcommand{\unpredictability}		{\textit{unpredictability} }
-\newcommand{\userfriendliness}		{\textit{user friendliness} }
-\newcommand{\design}				{\textit{design} }
-\newcommand{\performance}			{\textit{performance} }
-\newcommand{\benchmark}				{\textit{benchmark} }
-\newcommand{\simplicity}			{\textit{simplicity} }
-\newcommand{\productivity}			{\textit{productivity} }
-\newcommand{\reusability}			{\textit{re-usability} }
-\newcommand{\usability}				{\textit{usability} }
-\newcommand{\scale}					{\textit{scale} }
-\newcommand{\scalability}			{\textit{scalability} }
-\newcommand{\scaling}				{\textit{scaling} }
-\newcommand{\security}				{\textit{security} }
-\newcommand{\highly}				{\textit{highly} }
-\newcommand{\optimized}				{\textit{optimized} }
-\newcommand{\replication}			{\textit{replication} }
-\newcommand{\consistencyDB}			{\textit{consistency} }
-\newcommand{\durabilityDB}			{\textit{Durability} }
+\newcommand{\complexity}			{\bWrapper{complexity}}
+\newcommand{\unpredictability}		{\bWrapper{unpredictability}}
+\newcommand{\userfriendliness}		{\bWrapper{user friendliness}}
+\newcommand{\design}				{\bWrapper{design}}
+\newcommand{\performanceQA}			{\bWrapper{performance}}
+\newcommand{\benchmarkQA}			{\bWrapper{benchmark}}
+\newcommand{\simplicity}			{\bWrapper{simplicity}}
+\newcommand{\productivity}			{\bWrapper{productivity}}
+\newcommand{\reusability}			{\bWrapper{re-usability}}
+\newcommand{\usability}				{\bWrapper{usability}}
+\newcommand{\scale}					{\bWrapper{scale}}
+\newcommand{\scalableQA}			{\bWrapper{scalable}}
+\newcommand{\scalabilityQA}			{\bWrapper{scalability}}
+\newcommand{\scaling}				{\bWrapper{scaling}}
+\newcommand{\security}				{\bWrapper{security}}
+\newcommand{\highly}				{\bWrapper{highly}}
+\newcommand{\optimized}				{\bWrapper{optimized}}
+\newcommand{\replication}			{\bWrapper{replication}}
+\newcommand{\consistencyDB}			{\bWrapper{consistency}}
+\newcommand{\durabilityDB}			{\bWrapper{Durability}}
+\newcommand{\highScalabilityDB}		{\bWrapper{High Scalability}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	  CONCEPTOS		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	CONCEPTOS (CPT)	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newcommand{\powerful}				{\textit{powerful} }
-\newcommand{\rendered}				{\textit{rendered} }
-\newcommand{\render}				{\textit{render} }
-\newcommand{\schedules}				{\textit{schedules} }
-\newcommand{\reactive}				{\textit{reactive} }
-\newcommand{\reactivity}			{\textit{reactivity} }
-\newcommand{\reactively}			{\textit{reactively} }
-\newcommand{\onthewire}				{\textit{on the wire} }
-\newcommand{\speedup}				{\textit{speed up} }
-\newcommand{\highLevel}				{\textit{high-level} }
-\newcommand{\dragdrop}				{\textit{drag \& drop} }
-\newcommand{\tracking}				{\textit{tracking} }
-\newcommand{\trackCPT}				{\textit{track} }
-\newcommand{\default}				{\textit{default} }
-\newcommand{\template}				{\textit{template} }
-\newcommand{\templates}				{\textit{templates} }
-\newcommand{\templating}			{\textit{templating} }
-\newcommand{\tool}					{\textit{tool} }
-\newcommand{\tools}					{\textit{tools} }
-\newcommand{\embraceecosystem}		{\textit{Embrace the Ecosystem} }
-\newcommand{\latency}				{\textit{latency} }
-\newcommand{\update}				{\textit{update} }
-\newcommand{\updating}				{\textit{Updating} }
-\newcommand{\updated}				{\textit{updated} }
-\newcommand{\updates}				{\textit{updates} }
-\newcommand{\download}				{\textit{download} }
-\newcommand{\droprightinto}			{\textit{drop right into} }
-\newcommand{\fullFeatured}			{\textit{full-featured} }
-\newcommand{\commandLine}			{\textit{command-line} }
-\newcommand{\minifying}				{\textit{\gloss{minifying}} }
-\newcommand{\sourcecode}			{\textit{source code} }
-\newcommand{\sourcemaps}			{\textit{\gloss{source_maps}} }
-\newcommand{\readytorun}			{\textit{ready-to-run} }
-\newcommand{\runtime}				{\textit{runtime} }
-\newcommand{\runtimes}				{\textit{runtimes} }
-\newcommand{\running}				{\textit{running} }
-\newcommand{\outofthebox}			{\textit{out of the box} }
-\newcommand{\incomming}				{\textit{incomming} }
-\newcommand{\accouts}				{\textit{accouts} }
-\newcommand{\setup}					{\textit{set up} }
-\newcommand{\single}				{\textit{single} }
-\newcommand{\multipage}				{\textit{multi-page} }
-\newcommand{\eventloop}				{\textit{event loop} }
-\newcommand{\synchronously}			{\textit{synchronously} }
-\newcommand{\synchronous}			{\textit{synchronous} }
-\newcommand{\asynchronously}		{\textit{asynchronously} }
-\newcommand{\asynchronous}			{\textit{asynchronous} }
-\newcommand{\behindthescene}		{\textit{behind the scene} }
-\newcommand{\behindthescenes}		{\textit{behind the scenes} }
-\newcommand{\callback}				{\textit{callback} }
-\newcommand{\callbacks}				{\textit{callbacks} }
-\newcommand{\system}				{\textit{system} }
-\newcommand{\documentsDB}			{\textit{documents} }
-\newcommand{\documentDB}			{\textit{document} }
-\newcommand{\documentOriented}		{\textit{Document Oriented} }
-\newcommand{\objects}				{\textit{objects} }
-\newcommand{\mapping}				{\textit{mapping} }
-\newcommand{\luhmanntheory}			{\textit{\gloss{luhmann_theory}} }
-\newcommand{\secureintcom}			{\textit{Secure Internet Comunnication} }
-\newcommand{\keyelements}			{\textit{Key Elements} }
-\newcommand{\trust}					{\textit{Trust} }
-\newcommand{\familiarity}			{\textit{Familiarity} }
-\newcommand{\testimonials}			{\textit{Testimonials} }
-\newcommand{\thirdParty}			{\textit{third party} }
-\newcommand{\free}					{\textit{free} }
-\newcommand{\premium}				{\textit{premium} }
-\newcommand{\store}					{\textit{store} }
-\newcommand{\stores}				{\textit{stores} }
-\newcommand{\theme}					{\textit{theme} }
-\newcommand{\themes}				{\textit{themes} }
-\newcommand{\post}					{\textit{post} }
-\newcommand{\posts}					{\textit{posts} }
-\newcommand{\fork}					{\textit{fork} }
-\newcommand{\forks}					{\textit{forks} }
-\newcommand{\bootstrap}				{\textit{bootstrap} }
-\newcommand{\bootstraps}			{\textit{bootstraps} }
-\newcommand{\sysadmin}				{\textit{sysadmin} }
-\newcommand{\sysadmins}				{\textit{sysadmins} }
-\newcommand{\dataintensive}			{\textit{data-intensive} }
-\newcommand{\standard}				{\textit{standard} }
-\newcommand{\fullyfeatured}			{\textit{fully-featured} }
-\newcommand{\caching}				{\textit{caching} }
-\newcommand{\facebookwall}			{\textit{Wall} }
-\newcommand{\stress}				{\textit{stress} }
-\newcommand{\idle}					{\textit{idle} }
-\newcommand{\smartphone}			{\textit{smartphone} }
-\newcommand{\clientcentric}			{\textit{clientcentric} }
-\newcommand{\clientserver}			{\textit{client-server} }
-\newcommand{\statelessconnections}	{\textit{stateless-connections} }
-\newcommand{\graphTheory}			{\textit{\nameref{ap:apendice_graph_theory}} }
-\newcommand{\graphCustom}			{\textit{graph} }
-\newcommand{\connectCustom}			{\textit{Connect} }
-\newcommand{\stateful}				{\textit{Stateful} }
-\newcommand{\stateless}				{\textit{Stateless} }
-\newcommand{\spas}					{\textit{SPAs} }
-\newcommand{\minifier}				{\textit{minifier} }
-\newcommand{\minified}				{\textit{minified} }
+\newcommand{\powerful}				{\bWrapper{powerful}}
+\newcommand{\rendered}				{\bWrapper{rendered}}
+\newcommand{\render}				{\bWrapper{render}}
+\newcommand{\schedules}				{\bWrapper{schedules}}
+\newcommand{\reactive}				{\bWrapper{reactive}}
+\newcommand{\reactivity}			{\bWrapper{reactivity}}
+\newcommand{\reactively}			{\bWrapper{reactively}}
+\newcommand{\onthewire}				{\bWrapper{on the wire}}
+\newcommand{\speedup}				{\bWrapper{speed up}}
+\newcommand{\highLevel}				{\bWrapper{high-level}}
+\newcommand{\dragdrop}				{\bWrapper{drag \& drop}}
+\newcommand{\tracking}				{\bWrapper{tracking}}
+\newcommand{\trackCPT}				{\bWrapper{track}}
+\newcommand{\default}				{\bWrapper{default}}
+\newcommand{\template}				{\bWrapper{template}}
+\newcommand{\templates}				{\bWrapper{templates}}
+\newcommand{\templating}			{\bWrapper{templating}}
+\newcommand{\tool}					{\bWrapper{tool}}
+\newcommand{\tools}					{\bWrapper{tools}}
+\newcommand{\embraceecosystem}		{\bWrapper{Embrace the Ecosystem}}
+\newcommand{\latency}				{\bWrapper{latency}}
+\newcommand{\update}				{\bWrapper{update}}
+\newcommand{\updating}				{\bWrapper{Updating}}
+\newcommand{\updated}				{\bWrapper{updated}}
+\newcommand{\updates}				{\bWrapper{updates}}
+\newcommand{\download}				{\bWrapper{download}}
+\newcommand{\droprightinto}			{\bWrapper{drop right into}}
+\newcommand{\fullFeatured}			{\bWrapper{full-featured}}
+\newcommand{\commandLine}			{\bWrapper{command-line}}
+\newcommand{\minifying}				{\bothWrapper{minifying}}
+\newcommand{\sourcecode}			{\bWrapper{source code}}
+\newcommand{\sourcemaps}			{\bothWrapper{source_maps}}
+\newcommand{\readytorun}			{\bWrapper{ready-to-run}}
+\newcommand{\runtime}				{\bWrapper{runtime}}
+\newcommand{\runtimes}				{\bWrapper{runtimes}}
+\newcommand{\running}				{\bWrapper{running}}
+\newcommand{\outofthebox}			{\bWrapper{out of the box}}
+\newcommand{\incomming}				{\bWrapper{incomming}}
+\newcommand{\accouts}				{\bWrapper{accouts}}
+\newcommand{\setup}					{\bWrapper{set up}}
+\newcommand{\single}				{\bWrapper{single}}
+\newcommand{\multipage}				{\bWrapper{multi-page}}
+\newcommand{\eventloopCPT}			{\bWrapper{event loop}}
+\newcommand{\synchronously}			{\bWrapper{synchronously}}
+\newcommand{\synchronous}			{\bWrapper{synchronous}}
+\newcommand{\asynchronously}		{\bWrapper{asynchronously}}
+\newcommand{\asynchronous}			{\bWrapper{asynchronous}}
+\newcommand{\behindthescene}		{\bWrapper{behind the scene}}
+\newcommand{\behindthescenes}		{\bWrapper{behind the scenes}}
 
-\newcommand{\anwerYes}				{\textit{Yes} }
-\newcommand{\anwerNo}				{\textit{No} }
-\newcommand{\answerunknown}			{\textit{??} }
-\newcommand{\thirdPartyModule}		{\textit{Third Party Module} }
+\newcommand{\system}				{\bWrapper{system}}
 
-\newcommand{\raiting}				{\textit{raiting} }
-\newcommand{\review}				{\textit{review} }
-\newcommand{\wysiwyg}				{\textit{WYSIWYG} }
-\newcommand{\prototyping}			{\textit{prototyping} }
-\newcommand{\crossPlatform}			{\textit{cross-platform} }
-\newcommand{\Community}				{\textit{Community} }
-\newcommand{\Edition}				{\textit{Edition} }
-\newcommand{\hosted}				{\textit{hosted} }
-\newcommand{\solution}				{\textit{solution} }
-\newcommand{\go}					{\textit{Go} }
-\newcommand{\branched}				{\textit{branched} }
-\newcommand{\templateBased}			{\textit{template-based} }
-\newcommand{\addOns}				{\textit{add-ons} }
-\newcommand{\addOn}					{\textit{add-on} }
-\newcommand{\threads}				{\textit{threads} }
-\newcommand{\chat}					{\textit{Chat} }
-\newcommand{\room}					{\textit{Room} }
-\newcommand{\multiTierPricing}		{\textit{Multi-Tier Pricing} }
-\newcommand{\inputOutput}			{\textit{I/O} }
-\newcommand{\vmsSIGLA}				{\textit{VMs} }
-\newcommand{\packaging}				{\textit{Packaging} }
-\newcommand{\lightweight}			{\textit{lightweight} }
-\newcommand{\engine}				{\textit{engine} }
-\newcommand{\hub}					{\textit{hub} }
-\newcommand{\workflow}				{\textit{workflow} }
-\newcommand{\workflows}				{\textit{workflows} }
-\newcommand{\taskBased}				{\textit{task-based} }
-\newcommand{\analyticProcessing}	{\textit{\gloss{analytic_processing}} }
-\newcommand{\tarnsactionalProcessing}{\textit{\gloss{tarnsactional_processing}} }
-\newcommand{\analytical}			{\textit{analytical} }
-\newcommand{\onTheFly}				{\textit{on the fly} }
-\newcommand{\custom}				{\textit{custom} }
-\newcommand{\dateCustom}					{\textit{date} }
-\newcommand{\realWorld}				{\textit{Real World} }
-\newcommand{\scan}					{\textit{scan} }
-\newcommand{\service}					{\textit{Service} }
-\newcommand{\spreedsheet}				{\textit{spreedsheet} }
-\newcommand{\mix}					{\textit{mix} }
-\newcommand{\shellBased}				{\textit{Shell-Based} }
-\newcommand{\shell}						{\textit{shell} }
-\newcommand{\mapReduce}					{\textit{map-reduce} }
-\newcommand{\zipCode}					{\textit{zip code} }
-\newcommand{\adding}					{\textit{adding} }
-\newcommand{\removing}					{\textit{removing} }
+\newcommand{\objects}				{\bWrapper{objects}}
+\newcommand{\mapping}				{\bWrapper{mapping}}
+\newcommand{\luhmanntheory}			{\bothWrapper{luhmann_theory}}
+\newcommand{\secureintcom}			{\bWrapper{Secure Internet Comunnication}}
+\newcommand{\keyelements}			{\bWrapper{Key Elements}}
+\newcommand{\trust}					{\bWrapper{Trust}}
+\newcommand{\familiarity}			{\bWrapper{Familiarity}}
+\newcommand{\testimonials}			{\bWrapper{Testimonials}}
+\newcommand{\thirdParty}			{\bWrapper{third party}}
+\newcommand{\free}					{\bWrapper{free}}
+\newcommand{\premium}				{\bWrapper{premium}}
+\newcommand{\store}					{\bWrapper{store}}
+\newcommand{\stores}				{\bWrapper{stores}}
+\newcommand{\theme}					{\bWrapper{theme}}
+\newcommand{\themes}				{\bWrapper{themes}}
+\newcommand{\post}					{\bWrapper{post}}
+\newcommand{\posts}					{\bWrapper{posts}}
+\newcommand{\fork}					{\bWrapper{fork}}
+\newcommand{\forks}					{\bWrapper{forks}}
+\newcommand{\bootstrap}				{\bWrapper{bootstrap}}
+\newcommand{\bootstraps}			{\bWrapper{bootstraps}}
+\newcommand{\sysadmin}				{\bWrapper{sysadmin}}
+\newcommand{\sysadmins}				{\bWrapper{sysadmins}}
+\newcommand{\dataintensive}			{\bWrapper{data-intensive}}
+\newcommand{\standard}				{\bWrapper{standard}}
+\newcommand{\fullyfeatured}			{\bWrapper{fully-featured}}
+\newcommand{\caching}				{\bWrapper{caching}}
+\newcommand{\facebookwall}			{\bWrapper{Wall}}
+\newcommand{\stress}				{\bWrapper{stress}}
+\newcommand{\idle}					{\bWrapper{idle}}
+\newcommand{\smartphone}			{\bWrapper{smartphone}}
+\newcommand{\clientcentric}			{\bWrapper{clientcentric}}
+\newcommand{\clientserver}			{\bWrapper{client-server}}
+\newcommand{\statelessconnections}	{\bWrapper{stateless-connections}}
+\newcommand{\graphTheory}			{\bWrapper{\nameref{ap:apendice_graph_theory}}}
+\newcommand{\graphCustom}			{\bWrapper{graph}}
+\newcommand{\connectCustom}			{\bWrapper{Connect}}
+\newcommand{\stateful}				{\bWrapper{Stateful}}
+\newcommand{\stateless}				{\bWrapper{Stateless}}
+\newcommand{\spas}					{\bWrapper{SPAs}}
+\newcommand{\minifier}				{\bWrapper{minifier}}
+\newcommand{\minified}				{\bWrapper{minified}}
+
+\newcommand{\anwerYes}				{\bWrapper{Yes}}
+\newcommand{\anwerNo}				{\bWrapper{No}}
+\newcommand{\answerunknown}			{\bWrapper{??}}
+\newcommand{\thirdPartyModule}		{\bWrapper{Third Party Module}}
+
+\newcommand{\raiting}				{\bWrapper{raiting}}
+\newcommand{\review}				{\bWrapper{review}}
+\newcommand{\wysiwyg}				{\bWrapper{WYSIWYG}}
+\newcommand{\prototyping}			{\bWrapper{prototyping}}
+\newcommand{\crossPlatform}			{\bWrapper{cross-platform}}
+\newcommand{\Community}				{\bWrapper{Community}}
+\newcommand{\Edition}				{\bWrapper{Edition}}
+\newcommand{\hosted}				{\bWrapper{hosted}}
+\newcommand{\solution}				{\bWrapper{solution}}
+\newcommand{\go}					{\bWrapper{Go}}
+\newcommand{\branched}				{\bWrapper{branched}}
+\newcommand{\templateBased}			{\bWrapper{template-based}}
+\newcommand{\addOns}				{\bWrapper{add-ons}}
+\newcommand{\addOn}					{\bWrapper{add-on}}
+\newcommand{\chat}					{\bWrapper{Chat}}
+\newcommand{\room}					{\bWrapper{Room}}
+\newcommand{\multiTierPricing}		{\bWrapper{Multi-Tier Pricing}}
+\newcommand{\inputOutput}			{\bWrapper{I/O}}
+\newcommand{\vmsSIGLA}				{\bWrapper{VMs}}
+\newcommand{\packaging}				{\bWrapper{Packaging}}
+\newcommand{\lightweight}			{\bWrapper{lightweight}}
+\newcommand{\engine}				{\bWrapper{engine}}
+\newcommand{\hub}					{\bWrapper{hub}}
+\newcommand{\workflow}				{\bWrapper{workflow}}
+\newcommand{\workflows}				{\bWrapper{workflows}}
+\newcommand{\taskBased}				{\bWrapper{task-based}}
+\newcommand{\analyticProcessing}	{\bothWrapper{analytic_processing}}
+\newcommand{\tarnsactionalProcessing}{\bothWrapper{tarnsactional_processing}}
+\newcommand{\analytical}			{\bWrapper{analytical}}
+\newcommand{\onTheFly}				{\bWrapper{on the fly}}
+\newcommand{\custom}				{\bWrapper{custom}}
+\newcommand{\dateCustom}					{\bWrapper{date}}
+\newcommand{\worldCPT}				{\bWrapper{World}}
+\newcommand{\realWorld}				{\bWrapper{Real World}}
+\newcommand{\scan}					{\bWrapper{scan}}
+\newcommand{\service}					{\bWrapper{Service}}
+\newcommand{\spreedsheet}				{\bWrapper{spreedsheet}}
+\newcommand{\mix}					{\bWrapper{mix}}
+\newcommand{\shellBased}				{\bWrapper{Shell-Based}}
+\newcommand{\shell}						{\bWrapper{shell}}
+\newcommand{\mapReduce}					{\bWrapper{map-reduce}}
+\newcommand{\zipCode}					{\bWrapper{zip code}}
+\newcommand{\adding}					{\bWrapper{adding}}
+\newcommand{\removing}					{\bWrapper{removing}}
+\newcommand{\highProfileCPT}			{\bWrapper{High-Profile}}
+\newcommand{\panaceaCPT}				{\bWrapper{Panacea}}
+\newcommand{\underTheHoodCPT}			{\bWrapper{under-the-hood}}
+\newcommand{\maxingOutCPT}				{\bWrapper{maxing-out}}
+\newcommand{\proofConceptCPT}			{\bWrapper{proof-of-concept}}
+\newcommand{\jsonLikeCPT}				{\bWrapper{Json-Like}}
+\newcommand{\hackathonCPT}				{\bWrapper{hackathon}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%	 	OTROS		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newcommand{\task}					{\textit{task} }
-\newcommand{\tasks}					{\textit{tasks} }
-\newcommand{\inline}				{\textit{inline} }
-\newcommand{\lovers}				{\textit{lovers} }
-\newcommand{\adhoc}					{\textit{ad-hoc} }
-\newcommand{\ship}					{\textit{Ship} }
-\newcommand{\run}					{\textit{Run} }
-\newcommand{\analytics}				{\textit{analytics} }
-\newcommand{\analytic}				{\textit{analytic} }
-\newcommand{\onepage}				{\textit{onepage} }
-\newcommand{\hackathon}				{\textit{hackathon} }
-\newcommand{\resources}				{\textit{resources} }
-\newcommand{\cloud}					{\textit{cloud} }
-\newcommand{\apiendpoints}			{\textit{endpoints} }
-\newcommand{\deploy}				{\textit{deploy} }
-\newcommand{\dataBase}				{\textit{Data Base} }
-\newcommand{\dataBases}				{\textit{Data Bases} }
-\newcommand{\dbmangesystem}			{\textit{Data Base Management System} }
-\newcommand{\backandforth}			{\textit{back and forth} }
-\newcommand{\feedback}				{\textit{feedback} }
-\newcommand{\selfcontained}			{\textit{self-contained} }
-\newcommand{\prewritten}			{\textit{pre-written} }
-\newcommand{\fast}					{\textit{fast} }
-%\newcommand{\apps}					{\textit{apps} }
-%\newcommand{\app}					{\textit{app} }
+\newcommand{\task}					{\bWrapper{task}}
+\newcommand{\tasks}					{\bWrapper{tasks}}
+\newcommand{\inline}				{\bWrapper{inline}}
+\newcommand{\lovers}				{\bWrapper{lovers}}
+\newcommand{\adhoc}					{\bWrapper{ad-hoc}}
+\newcommand{\ship}					{\bWrapper{Ship}}
+\newcommand{\run}					{\bWrapper{Run}}
+\newcommand{\analytics}				{\bWrapper{analytics}}
+\newcommand{\analytic}				{\bWrapper{analytic}}
+\newcommand{\onepage}				{\bWrapper{onepage}}
+
+\newcommand{\resources}				{\bWrapper{resources}}
+\newcommand{\cloud}					{\bWrapper{cloud}}
+\newcommand{\apiendpoints}			{\bWrapper{endpoints}}
+\newcommand{\deploy}				{\bWrapper{deploy}}
+\newcommand{\dataBase}				{\bWrapper{Data Base}}
+\newcommand{\dataBases}				{\bWrapper{Data Bases}}
+\newcommand{\dbmangesystem}			{\bWrapper{Data Base Management System}}
+\newcommand{\backandforth}			{\bWrapper{back and forth}}
+\newcommand{\feedback}				{\bWrapper{feedback}}
+\newcommand{\selfcontained}			{\bWrapper{self-contained}}
+\newcommand{\prewritten}			{\bWrapper{pre-written}}
+\newcommand{\fast}					{\bWrapper{fast} }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %										%
