@@ -1,7 +1,7 @@
 
 \chapter{Justificación del proyecto}\label{cap:justificacion_proyecto}
 
-A continuación se discutirán las razones para considerar el desarrollo de una plataforma \ecommerce, como un aporte en relación a las opciones \openSource actualmente vigentes. Para esto se explicara por que los cambios de tecnología propuestos son un beneficio con respecto actual estado del arte del tema, así como un aporte para potenciales funcionalidades que serán agregadas en el futuro.
+A continuación se discutirán las razones para considerar el desarrollo de una plataforma \ecommerce, como un aporte en relación a las opciones \openSourcePC actualmente vigentes. Para esto se explicara por que los cambios de tecnología propuestos son un beneficio con respecto actual estado del arte del tema, así como un aporte para potenciales funcionalidades que serán agregadas en el futuro.
 
 %TODO Hablar de arquitectura de proyecto para luego diferenciar las diferentes tecnologias y explicar cual es la mas adecuada en cada caso.
 
@@ -29,7 +29,7 @@ Pero las compañías están cada vez más considerando la opción de alternativa
 
 
 %TODO revizar este parrafo
-Estas opciones se aplican tanto para aplicaciones \analyticProcessing como \tarnsactionalProcessing. Las compañías están cambiando \workloads a \hadoop para sus \offline, \analytical \workloads, y están construyendo \online, aplicaciones operacionales con una nueva clase de tecnología de manejo de datos llamada \nosql, como por ejemplo \mongodbNAME.
+Estas opciones se aplican tanto para aplicaciones \analyticProcessing como \tarnsactionalProcessing. Las compañías están cambiando \workloads a \hadoopNAME para sus \offline, \analytical \workloads, y están construyendo \online, aplicaciones operacionales con una nueva clase de tecnología de manejo de datos llamada \nosql, como por ejemplo \mongodbNAME.
 %These drivers apply both to analytical and transactional applications. Companies are shifting workloads to Hadoop for their offline, analytical workloads, and they are building online, operational applications with a new class of data management technologies called "NoSQL", or "Not Only SQL", such as MongoDB
 
 \subsection{\sql y el Modelo Relacional}
@@ -58,7 +58,7 @@ Un modelo de datos relacional define entidades altamente estructuradas con relac
 \complexity guía a \unpredictability. La expresividad en \sql implica un desafío en relación al costo de cada consulta, y así el costo de \workload. Mientras lenguajes de consultas simples pueden complicar la lógica, al mismo tiempo hacen que sea sencillo proveer de almacenamiento de datos, cuando solo responde a consultas simples.
 %Complexity leads to unpredictability. SQL's expressiveness makes it challenging to reason about the cost of each query, and thus the cost of a workload. While simpler query languages might complicate application logic, they make it easier to provision data storage systems, which only respond to simple requests.
 
-Hay muchas maneras de modelar un problema. El modelo de datos relacional es estricto: El esquema asignado para cada tabla especifica los datos en cada fila. Si se están almacenando menos datos estructurados, o filas con mas diferencia en las columnas que se guardan,el modelo relacional puede ser innecesariamente restrictivo. Similarmente, aplicaciones desarrolladas podrían no encontrar el modelo relacional idóneo para modelar cada tipo de dato. Por ejemplo, una gran cantidad de aplicaciones lógicas son escritas en lenguaje \objectOriented e incluye conceptos \highLevel tales como \lists, \queues, y \sets, y algunos programadores desearan \persistenceLayer para modelar esto.
+Hay muchas maneras de modelar un problema. El modelo de datos relacional es estricto: El esquema asignado para cada tabla especifica los datos en cada fila. Si se están almacenando menos datos estructurados, o filas con mas diferencia en las columnas que se guardan,el modelo relacional puede ser innecesariamente restrictivo. Similarmente, aplicaciones desarrolladas podrían no encontrar el modelo relacional idóneo para modelar cada tipo de dato. Por ejemplo, una gran cantidad de aplicaciones lógicas son escritas en lenguaje \objectOriented e incluye conceptos \highLevelCPT tales como \lists, \queues, y \sets, y algunos programadores desearan \persistenceLayer para modelar esto.
 %There are many ways to model a problem. The relational data model is strict: the schema assigned to each table specifies the data in each row. If we are storing less structured data, or rows with more variance in the columns they store, the relational model may be needlessly restrictive. Similarly, application developers might not find the relational model perfect for modeling every kind of data. For example, a lot of application logic is written in object-oriented languages and includ-es high-level concepts such as lists, queues, and sets, and some programmers would like their persistence layer to model this.
 
 Si los datos crecen mas allá de la capacidad de un servidor, entonces las tablas en la base de datos tendrán que ser particionadas a través de varios computadores. Para evitar \joins a través de la red para obtener todas las tablas requeridas, será necesario desnormalizarla. Desnormalizar consiste en guardar todos los datos de diferentes tablas que se desean consultar en el mismo lugar. Esto hace que la base de datos simule una \keyLookup \store \system, dejando abierta preguntas sobre la posibilidad de adaptarse mejor a los datos.
@@ -168,9 +168,9 @@ Aplicación: \keyDB \valueDB \stores y \wideColumn \stores son útiles para un r
 	Modelo \development&
 	%Development Model&
 	
-	\mix de \openSource (ej., \postgresql, \mysql) y \closedSource (ej., \oracle \dataBase)&
+	\mix de \openSourcePC (ej., \postgresql, \mysql) y \closedSource (ej., \oracle \dataBase)&
 	%Mix of open-source (e.g., Postgres, MySQL) and closed source (e.g., Oracle Database)&
-	\openSource
+	\openSourcePC
 	%Open-source
 	
 \\ \hline
@@ -219,7 +219,7 @@ Demostraciones de almacenamientos de datos de la siguiente generación giran tí
 
 \subsubsection{\catalogManagement}
 
-Si es necesaria información sobre como el \catalogManagement se maneja con \dataBases relacionales, es necesario dar una mirada rápida a los esquemas del popular \nameMagento \ecommerce \framework \ref{ap:figure:catalog_magento} ó \ofBiz de \apacheNAME \ref{ap:figure:catalog_ofbiz}. En la \refFigura{cap:figure:catalog_magento}  se observa es un conjunto de \tablesDB trabajando a la par para proveer un esquema flexible sobre un fundamentalmente inflexible estilo de sistema de \dataBase.
+Si es necesaria información sobre como el \catalogManagement se maneja con \dataBases relacionales, es necesario dar una mirada rápida a los esquemas del popular \nameMagento \ecommerce \framework \ref{ap:figure:catalog_magento} ó \ofBizNAME de \apacheNAME \ref{ap:figure:catalog_ofbiz}. En la \refFigura{cap:figure:catalog_magento}  se observa es un conjunto de \tablesDB trabajando a la par para proveer un esquema flexible sobre un fundamentalmente inflexible estilo de sistema de \dataBase.
 
 Esto significa que los datos de cualquier producto se extienden a través de una docena de \tablesDB. Esto incremente la complejidad del código requerido para la persistencia de consultas de \itemsCommerce individuales y hacer una consulta \shellBased es casi imposible. Simplemente considere escribir un \sql \join para para reunir el modelo de un producto como el de la \refFigura{cap:figure:catalog_magento}.
 
@@ -630,7 +630,7 @@ Una vez que la aplicación con \nodejsNAME logro las mismas funcionalidades que 
 
 Por si solo, esta evidencia mostraba a los equipos desarrollar más rápido utilizando \javaScriptNAME.
 
-\performanceQA fue un tópico interesante. Se pudo analizar 2 aplicaciones con exactamente las mismas funcionalidades: una con \framework \javaNAME interno basado en \javaSpringNAME y la otra construida en \krakenjsNAME usando \expressjsNAME, \dustjsNAME y otros códigos \openSource.
+\performanceQA fue un tópico interesante. Se pudo analizar 2 aplicaciones con exactamente las mismas funcionalidades: una con \framework \javaNAME interno basado en \javaSpringNAME y la otra construida en \krakenjsNAME usando \expressjsNAME, \dustjsNAME y otros códigos \openSourcePC.
 %Performance is a fun and debatable topic. In our case, we had two applications with the exact same functionality and built by roughly the same teams: one on our internal Java framework based on Spring and the other built on kraken.js using express, dust.js and other open source code.
 
 Se ejecutaron los test adecuados utilizando \hardwarePC de producción que probaran las rutas y recolectaran datos de rendimiento y tiempo de respuesta. Los resultados se aprecian en \refFigura{figure:java_benchmark_paypal}.

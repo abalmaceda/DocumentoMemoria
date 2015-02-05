@@ -31,51 +31,51 @@ Final de mi grafo
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.8\textwidth]{figuras/apendice/magento_sample_database_diagram.png}
-	\caption{schemas of Magento e-commerce framework.}
+	\caption{\schemasDB de \nameMagento \ecommerce \framework.}
 	\label{ap:figure:catalog_magento}
 \end{figure}
 
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.5\textwidth]{figuras/apendice/openCartWebsite.jpg}
-	\caption{schemas of the Apache's OfBiz.}
+	\caption{\schemasDB de \ofBizNAME.}
 	\label{ap:figure:catalog_ofbiz}
 \end{figure}
 
 \chapter{¿Qué es Hadoop? \cite{online_hadoop_description}}\label{ap:apendice_hadoop_description}
-Apache™ Hadoop® es un proyecto software \textit{open source} que permite el procesamiento distribuido de gran cantidad de datos a través de \textit{clusters} de servidores. Esta diseñado para \textit{scale up} desde un único servidor a miles de machinas, con un muy alto grado de tolerancia al fallo. En lugar de confiar en \textit{high-end hardware}, la flexibilidad de estos \textit{clusters} proviene de la habilidad del software en detectar y manejar fallos en la \textit{application layer}.
+\apacheNAME \hadoopNAME es un proyecto software \openSourcePC que permite el procesamiento distribuido de gran cantidad de datos a través de \clustersAS de \serversAS. Esta diseñado para \scaleUpQA desde un único \serverAS a miles de máquinas, con un muy alto grado de tolerancia al fallo. En lugar de confiar en \highEndCPT \hardwarePC, la flexibilidad de estos \clustersAS proviene de la habilidad del \softwarePC en detectar y manejar fallos en la \applayer.
 
-\subsubsection*{High-level architecture} 
-Apache Hadoop tiene dos pilares:
+\subsubsection*{Arquitectura \highLevelCPT} 
+\apacheNAME \hadoopNAME tiene dos pilares:
 
 \begin{itemize}
-	\item \gloss{hadoop_yarn} asigna CPU, memoria y almacenamiento para las aplicaciones corriendo en Hadoop clústers. La primera generación de Hadoop podia solo correr aplicaciones \gloss{hadoop_mapreduce}. \gloss{hadoop_yarn} permite que otros entornos de aplicaciones (como SPARK) para ejecutarse en Hadoop, lo que abre un mundo de posibilidades.
+	\item \hadoopYarnNAME asigna \cpuPC, memoria y almacenamiento para las aplicaciones corriendo en \clustersAS \hadoopNAME. La primera generación de \hadoopNAME podía correr solo aplicaciones \hadoopMapReduceNAME. \hadoopYarnNAME permite que otros entornos de aplicaciones (como \sparkNAME) para ejecutarse en \hadoopNAME, lo que abre un mundo de posibilidades.
 	
-	\item \gloss{hadoop_hdfs} es un sistema de archivos que se extiende por todos los nodos en su clúster Hadoop para almacenamiento de datos. Se conecta entre si a los sistemas de archivos en muchos nodos locales para convertirlos en un sistema de archivos grandes.
+	\item \gloss{hadoop_hdfs} es un sistema de archivos que se extiende por todos los nodos en su \clusterAS \hadoopNAME para almacenamiento de datos. Se conecta entre si a los sistemas de archivos en muchos nodos locales para convertirlos en un sistema de archivos grandes.
 \end{itemize}
 
-Hadoop se complementa con un ecosistema de proyectos de Apache, como Pig\cite{online_ibm_meaning_pig}, Hive\cite{online_ibm_meaning_hive} y Zookeeper\cite{online_ibm_meaning_zookeeper}, para extender el valor de Hadoop y mejorar su usabilidad.
+\hadoopNAME se complementa con un ecosistema de proyectos de \apacheNAME, como Pig\cite{online_ibm_meaning_pig}, Hive\cite{online_ibm_meaning_hive} y Zookeeper\cite{online_ibm_meaning_zookeeper}, para extender el valor de \hadoopNAME y mejorar su \usabilityQA.
 
 
 \subsubsection*{Entonces, ¿Cuál es el problema?}
 
-Hadoop cambia la economía y la dinámica de la computación a gran escala. Su impacto puede reducirse a cuatro características sobresalientes.
+\hadoopNAME cambia la economía y la dinámica de la computación a gran escala. Su impacto puede reducirse a cuatro características sobresalientes.
 
-Hadoop permite una solución de computación que es:
+\hadoopNAME permite una solución de computación que es:
 
 \begin{itemize}
-	\item \textbf{\textit{Scalable}}- Nuevos nodos pueden ser agregados según sean necesarios, y agregados sin la necesidad de cambiar el formato de los datos, como los datos son cargados, como los \textit{jobs} son escritos, o las aplicaciones en la parte superior.
+	\item \textbf{\scalableQA}- Nuevos nodos pueden ser agregados según sean necesarios, y agregados sin la necesidad de cambiar el formato de los datos, como los datos son cargados, como los \textit{jobs} son escritos, o las aplicaciones en la parte superior.
 	
-	\item \textbf{\textit{Cost effective}}- Hadoop trae computación paralela masiva a las maquinas de los servidores. El resultado es una considerable disminución en los costos por \textit{terabyte} de almacenamiento. lo cual hace asequible para modelar todos sus datos.
+	\item \textbf{\costEffectiveCPT}- \hadoopNAME trae computación paralela masiva a las maquinas de los servidores. El resultado es una considerable disminución en los costos por \terabytePC de almacenamiento. lo cual hace asequible para modelar todos sus datos.
 	
-	\item \textbf{\textit{Flexible}}- Hadoop no tiene esquema, y puede absorber cualquier tipo de datos, estructurados o no, desde cualquier numero de fuentes. Los datos de múltiples fuentes pueden ser unidos y se agregan arbitrariamente para permitir análisis que ningún otro sistema puede proporcionar.
+	\item \textbf{\flexibleQA}- \hadoopNAME no tiene esquema, y puede absorber cualquier tipo de datos, estructurados o no, desde cualquier numero de fuentes. Los datos de múltiples fuentes pueden ser unidos y se agregan arbitrariamente para permitir análisis que ningún otro sistema puede proporcionar.
 	
-	\item \textbf{\textit{Fault tolerant}}- Cuando se pierde un nodo, el sistema redirige el trabajo a otra ubicación de los datos y seguir con el procesamiento sin perder el ritmo.
+	\item \textbf{\faultTolerantQA}- Cuando se pierde un nodo, el sistema redirige el trabajo a otra ubicación de los datos para seguir con el procesamiento sin perder el ritmo.
 \end{itemize}
 
 \chapter{Conexiones \stateful y \stateless }\label{ap:apendice_connection_statful_stateless}
 
-Mantener el estado o ser \stateful significa que algunos dispositivos mantienen \trackCPT de otro dispositivo o una conexión, ya sea temporal o largo periodo de tiempo. Cuando se agrega el nombre de una persona en una libreta de direcciones y se observa su cumpleaños y teléfono, se podría decir que se esta manteniendo el estado de esa persona. En la \web una \cookieINT es un mecanismo \stateful que permite a los \web \serversAS mantener \trackCPT de información de las personas, tal como se describe en un momento \cite{online_connection_stateful_stateless}.
+Mantener el estado o ser \stateful significa que algunos dispositivos mantienen \trackCPT de otro dispositivo o una conexión, ya sea temporal o largo periodo de tiempo. Cuando se agrega el nombre de una persona en una libreta de direcciones y se observa su cumpleaños y teléfono, se podría decir que se esta manteniendo el estado de esa persona. En la \web una \cookieINT es un mecanismo \stateful que permite a los \webserver mantener \trackCPT de información de las personas, tal como se describe en un momento \cite{online_connection_stateful_stateless}.
 %Keeping state or being stateful means that some device is keeping track of another device or a connection, either temporarily or over a long period of time. When I put someone's name in my address book and note their birthday and phone number, one could say that I am maintaining state for that person. On the Web, a cookie is a stateful mechanism that allows Web servers to keep track of information about people, as described in a moment.
 
 
