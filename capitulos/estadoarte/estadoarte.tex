@@ -221,7 +221,7 @@ Aquí hay una lista de 11 soluciones \ecommerce \openSourcePC. El \coreAS de tod
 %TODO agregar algo decente en este lugar.
 A continuación se describen un conjunto de tecnologías que son agrupadas lógicamente de acuerdo a su función en el desarrollo de aplicaciones \web.
 
-Estas tecnologías tienen en común que son herramientas que se ocupan en la actualidad ademas de tener la característica de ser \openSourcePC. 
+Estas tecnologías tienen en común que son herramientas que se ocupan en la actualidad además de tener la característica de ser \openSourcePC. 
 
 \subsection{Bases de datos}
 \begin{itemize}
@@ -229,11 +229,20 @@ Estas tecnologías tienen en común que son herramientas que se ocupan en la act
 	
 	\item \textbf{\mysql} es una \rdbms \openSourcePC que se posiciona como la  segundo mas utilizado a nivel mundial \cite{online_db_engines_ranking}\cite{online_dispelling_myths}.
 	
-	\item \textbf{\postgresql} es una \ordbms con énfasis en extensibilidad y normas de cumplimiento. Como \serverAS de base de datos, su primera función es \store datos, de forma segura y apoyar las mejores prácticas, y recuperarlo más tarde, a petición de otras aplicaciones de \software, ya sea que estén \running en el mismo computador o \running en otro computador a través  de una \network (incluido \internet). Puede manejar las cargas de trabajo que van desde pequeñas aplicaciones de una sola máquina a grandes aplicaciones orientados a \internet con muchos usuarios concurrentes.
+	\item \textbf{\postgresql} es una \ordbms con énfasis en extensibilidad y normas de cumplimiento. Como \serverAS de \dataBase, su primera función es \store datos, de forma segura y apoyar las mejores prácticas, y recuperarlo más tarde, a petición de otras aplicaciones de \softwarePC, ya sea que estén \running en el mismo computador o \running en otro computador a través  de una \network (incluido \internet). Puede manejar las cargas de trabajo que van desde pequeñas aplicaciones de una sola máquina a grandes aplicaciones orientados a \internet con muchos usuarios concurrentes.
 	% (ORDBMS) with an emphasis on extensibility and standards-compliance. As a database server, its primary function is to store data, securely and supporting best practices, and retrieve it later, as requested by other software applications, be it those on the same computer or those running on another computer across a network (including the Internet). It can handle workloads ranging from small single-machine applications to large Internet-facing applications with many concurrent users. Recent versions also provide replication of the database itself for availability and scalability.
 	
 	\item \textbf{\sqlite} es una \rdbms contenida en una librería \cprogramming. A diferencia de otras \dbmangesystem, \sqlite no esta implementado como un proceso independiente del \clientAS. En contraste, es parte del programa en uso \cite{online_video_introduction_sqlite}.
 	%is a relational database management system contained in a C programming library. In contrast to other database management systems, SQLite is not implemented as a separate process that a client program running in another process accesses. Rather, it is part of the using program.
+	
+	\item \textbf{\cassandraNAME} es un \nosql \wideColumnDB \store \openSourcePC diseñado para manejar gran cantidad de \data sobre muchos \commodityServerPC, proporcionando \highAvailabilityDB sin \singlePointFailurePC. \cassandraNAME ofrece soporte robusto para \clustersAS que abarcan múltiples \dataCentersPC \cite{online_cassandra_multi_def}, con \masterlessDB \asynRepDB permitiendo \lowLatencyOperationsINT para todos los \clientsAS.
+	\cassandraNAME es la \wideColumnDB \store más popular, y el segundo \nosql mas utilizado\cite{online_db_engines_ranking}.
+	%Apache Cassandra is an open source distributed database management system designed to handle large amounts of data across many commodity servers, providing high availability with no single point of failure. Cassandra offers robust support for clusters spanning multiple datacenters,[1] with asynchronous masterless replication allowing low latency operations for all clients.
+	\item \textbf{\redisNAME} es un \nosql \openSourcePC, \keyValueDB \cachePC y \store. Usualmente referido como \serverAS con \data estructurada dado que \keysDB pueden contener \stringsPL, \hashesPL, \listsPL, \setsPL, \sortedPL, \bitmapsPL y \hyperloglogsPL \cite{online_redis_website}.
+	%Redis is an open source, BSD licensed, advanced key-value cache and store. It is often referred to as a data structure server since keys can contain strings, hashes, lists, sets, sorted sets, bitmaps and hyperloglogs.
+	
+	\item \textbf{\redisNAME}
+	
 \end{itemize}
 
 \subsection{\serverSide}
@@ -243,7 +252,7 @@ Estas tecnologías tienen en común que son herramientas que se ocupan en la act
 	
 	\item \textbf{\meteor}.
 	
-	\item \textbf{\apacheNAME} \httpNAME \serverAS, coloquialmente llamado \apacheNAME, es el \software del \serverAS \web mas utilizado en el mundo \cite{online_technology_apache}.
+	\item \textbf{\apacheNAME} \httpNAME \serverAS, coloquialmente llamado \apacheNAME, es el \softwarePC del \serverAS \web mas utilizado en el mundo \cite{online_technology_apache}.
 	 %The Apache HTTP Server, colloquially called Apache, is the world's most widely-used web server software \cite{online_technology_apache}.
 	
 	\item \textbf{\phpNAME} es un lenguaje \scripting \serverSide diseñado para desarrollo \web pero también utilizado como un lenguaje de programación de uso general\cite{online_technology_php}.

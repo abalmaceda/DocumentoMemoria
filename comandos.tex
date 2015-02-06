@@ -47,8 +47,8 @@
 \newcommand{\amazon}				{Amazon }
 \newcommand{\AuthorizeNet}			{Authorize.Net }
 \newcommand{\foursquare}			{Foursquare }
-\newcommand{\mongodbNAME}				{\gWrapper{mongodb}}
-\newcommand{\cassandra}				{Cassandra }
+\newcommand{\mongodbNAME}			{\gWrapper{mongodb}}
+\newcommand{\cassandraNAME}			{Cassandra }
 \newcommand{\dslNAME}				{DSL }
 \newcommand{\youtubeNAME}			{\nWrapper{Youtube}}
 
@@ -114,6 +114,7 @@
 \newcommand{\httpNAME}				{HTTP }
 \newcommand{\https}					{HTTPS }
 
+\newcommand{\redisNAME}				{\nWrapper{Redis}}
 \newcommand{\flashNAME}				{Flash }
 \newcommand{\lamp}					{\gWrapper{lamp_stack}}
 \newcommand{\rails}					{Rails }
@@ -192,8 +193,8 @@
 \newcommand{\closedSource}				{\bWrapper{Closed Source}}
 \newcommand{\hardwarePC}				{\bWrapper{hardware}}
 \newcommand{\physHardwarePC}			{\bWrapper{physical Hardware}}
-\newcommand{\software}					{\bWrapper{software}}
-\newcommand{\softwares}					{\bWrapper{softwares}}
+\newcommand{\softwarePC}				{\bWrapper{software}}
+\newcommand{\softwaresPC}				{\bWrapper{softwares}}
 \newcommand{\feature}					{\bWrapper{feature}}
 \newcommand{\functionality}				{\bWrapper{functionality}}
 \newcommand{\clicking}					{\bWrapper{clicking}}
@@ -226,6 +227,7 @@
 \newcommand{\upgradingPC}				{\bWrapper{upgrading}}
 \newcommand{\iopsPC}					{\bothWrapper{iops}}
 \newcommand{\commodityHardwarePC}		{\bothWrapper{commodity_hardware}}
+\newcommand{\commodityServerPC}			{\bWrapper{commodity server}}
 \newcommand{\computationPC}				{\bWrapper{computation}}
 \newcommand{\heavyComputationPC}		{\bWrapper{heavy computation}}
 \newcommand{\memoryRamPC}				{\bothWrapper{memory_ram}}
@@ -233,6 +235,10 @@
 \newcommand{\processPC}					{\bWrapper{process}}
 \newcommand{\childProcessPC}			{\bWrapper{child} \processPC}
 \newcommand{\terabytePC}				{\bWrapper{terabyte}}
+\newcommand{\singlePointFailurePC}		{\gWrapper{single_point_failure}}
+\newcommand{\dataCenterPC}				{\bWrapper{Data Center}}
+\newcommand{\dataCentersPC}				{\bWrapper{Data Centers}}
+\newcommand{\cachePC}					{\bWrapper{cache}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%      LICENCIAS	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -314,6 +320,8 @@
 \newcommand{\appINT}					{\bWrapper{app}}
 \newcommand{\accountOverviewPageINT}	{\bWrapper{account overview page}}
 \newcommand{\workerClientINT}			{\bWrapper{worker/client}}
+\newcommand{\lowLatencyOperationsINT}	{\bWrapper{Low Latency Operations}}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%  E-COMMERCE(COM)	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -469,13 +477,25 @@
 \newcommand{\build}					{\bWrapper{build}}
 \newcommand{\orm}					{\bWrapper{ORM}}
 \newcommand{\typesystem}			{\bWrapper{type system }}
+
 \newcommand{\listhighlevel}			{\bWrapper{list}}
-\newcommand{\lists}					{\bWrapper{lists}}
-\newcommand{\queue}					{\bWrapper{queue}}
-\newcommand{\queues}				{\bWrapper{queues}}
-\newcommand{\set}					{\bWrapper{set}}
-\newcommand{\sets}					{\bWrapper{sets}}
+\newcommand{\listsPL}				{\bWrapper{lists}}
+\newcommand{\queuePL}					{\bWrapper{queue}}
+\newcommand{\queuesPL}				{\bWrapper{queues}}
+\newcommand{\setPL}					{\bWrapper{set}}
+\newcommand{\setsPL}				{\bWrapper{sets}}
 \newcommand{\keyValue}				{\bWrapper{key/value}}
+\newcommand{\stringPL}				{\bWrapper{string}}
+\newcommand{\stringsPL}				{\bWrapper{string}}
+\newcommand{\binaryPL}				{\bWrapper{binary}}
+\newcommand{\arrayPL}				{\bWrapper{array}}
+\newcommand{\bitmapPL}				{\bWrapper{bitmap}}
+\newcommand{\bitmapsPL}				{\bWrapper{bitmaps}}
+\newcommand{\hashesPL}				{\bWrapper{hashes}}
+\newcommand{\hyperloglogsPL}		{\bWrapper{hyperloglogs}}
+\newcommand{\sortedPL}				{\bWrapper{sorted}}
+\newcommand{\datePL}				{\bWrapper{date}}
+
 \newcommand{\eventdrivenPL}			{\bWrapper{event-driven}}
 \newcommand{\nonbloking}			{\bWrapper{non-blocking}}
 \newcommand{\scripting}				{\bWrapper{scripting}}
@@ -483,9 +503,7 @@
 \newcommand{\backgroundPL}			{\bWrapper{background}}
 \newcommand{\cprogramming}			{\bWrapper{C programming}}
 \newcommand{\handling}				{\bWrapper{handling}}
-\newcommand{\stringCustom}			{\bWrapper{string}}
-\newcommand{\binaryCustom}			{\bWrapper{binary}}
-\newcommand{\arrayCustom}			{\bWrapper{array}}
+
 \newcommand{\polymorphic}			{\bWrapper{Polymorphic}}
 \newcommand{\threadsPL}				{\bWrapper{threads}}
 \newcommand{\threadPL}				{\bWrapper{thread}}
@@ -496,6 +514,7 @@
 \newcommand{\callbacksPL}			{\bWrapper{callbacks}}
 \newcommand{\crashedInstancePL}		{\bWrapper{crashed instance}}
 \newcommand{\debuggingPL}			{\bWrapper{Debugging}}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%  	    BASE DE DATOS (DB)	%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -517,7 +536,8 @@
 \newcommand{\docDataBases}				{\bWrapper{Document Data Bases}}
 \newcommand{\tableArow}					{\bWrapper{table-and-row}}
 \newcommand{\dataItem}					{\bWrapper{data item}}
-\newcommand{\wideColumn}				{\bWrapper{Wide-Column}}
+\newcommand{\wideColumnDB}				{\bWrapper{Wide-Column}}
+\newcommand{\keyValueDB}				{\bWrapper{Key-Value}}
 \newcommand{\fields}					{\bWrapper{fields}}
 \newcommand{\verticallyScale}			{\bWrapper{Vertically}}
 \newcommand{\verticalScalingDB}			{\bWrapper{Vertical Scaling}}
@@ -548,6 +568,7 @@
 \newcommand{\transactionsDB}			{\bWrapper{Transactions}}
 \newcommand{\nameDB}					{\bWrapper{name}}
 \newcommand{\keyDB}						{\bWrapper{key}}
+\newcommand{\keysDB}					{\bWrapper{keys}}
 \newcommand{\valueDB}					{\bWrapper{value}}
 \newcommand{\schemasDB}					{\bWrapper{Schemas}}
 \newcommand{\schemaDB}					{\bWrapper{Schema}}
@@ -579,7 +600,8 @@
 \newcommand{\documentDB}			{\bWrapper{document}}
 \newcommand{\documentOriented}		{\bWrapper{Document Oriented}}
 \newcommand{\maxClientsDB}				{\bWrapper{MaxClients}}
-
+\newcommand{\asynRepDB}					{\gWrapper{asyn_rep_db}}
+\newcommand{\masterlessDB}				{\bWrapper{masterless}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%  ATRIBUTOS DE CALIDAD (QA)%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -607,6 +629,7 @@
 \newcommand{\consistencyDB}			{\bWrapper{consistency}}
 \newcommand{\durabilityDB}			{\bWrapper{Durability}}
 \newcommand{\highScalabilityDB}		{\bWrapper{High Scalability}}
+\newcommand{\highAvailabilityDB}	{\bWrapper{High Availability}}
 \newcommand{\faultTolerantQA}		{\bWrapper{Fault tolerant}}
 \newcommand{\flexibleQA}			{\bWrapper{Flexible}}
 
@@ -746,7 +769,6 @@
 \newcommand{\analytical}			{\bWrapper{analytical}}
 \newcommand{\onTheFly}				{\bWrapper{on the fly}}
 \newcommand{\custom}				{\bWrapper{custom}}
-\newcommand{\dateCustom}					{\bWrapper{date}}
 \newcommand{\worldCPT}				{\bWrapper{World}}
 \newcommand{\realWorld}				{\bWrapper{Real World}}
 \newcommand{\scan}					{\bWrapper{scan}}
