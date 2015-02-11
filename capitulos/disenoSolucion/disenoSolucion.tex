@@ -1,9 +1,9 @@
 
 \chapter{Diseño Solución}\label{cap:diseño_solucion}
 
-Una aplicación \web es aquella que corre sobre un \web \browser, el cual obtiene los datos que procesa a través de un protocolo estándar de comunicación llamado \httpNAME que opera en la \applayer, la cual es parte de \osimodel.
+Una aplicación \webINT es aquella que corre sobre un \webINT \browser, el cual obtiene los datos que procesa a través de un protocolo estándar de comunicación llamado \httpNAME que opera en la \applayer, la cual es parte de \osimodel.
 
-\osimodel es un modelo estándar de arquitectura que constituye el \framework para el desarrollo de protocolos estándar para la interconexión de sistemas. Dicho \framework esta compuesto por 7 \layers que separan las diferentes funcionalidades necesarias(\refFigura{figure:framework_layers_definition})\cite{inbook_osi_reference_model}, de esta forma se divide el problema en partes mas pequeñas.
+\osimodel es un modelo estándar de arquitectura que constituye el \frameworkPC para el desarrollo de protocolos estándar para la interconexión de sistemas. Dicho \frameworkPC esta compuesto por 7 \layers que separan las diferentes funcionalidades necesarias(\refFigura{figure:framework_layers_definition})\cite{inbook_osi_reference_model}, de esta forma se divide el problema en partes mas pequeñas.
 
 \begin{figure}[h!]
 	\begin{tikzpicture}[node distance=3pt,
@@ -38,7 +38,7 @@ Una aplicación \web es aquella que corre sobre un \web \browser, el cual obtien
 	\label{figure:framework_layers_definition}
 \end{figure}
 
-La idea básica de separar en \layers, es que cada una de estas agrega valor a los servicios provistos por el conjunto inferior de \layers de tal manera que las \layer que esta en la cúspide del \stack ofrece el conjunto de servicios necesarios para ejecutar aplicaciones distribuidas. Cada una de estas 7 \layers representa a su vez un \framework que define sus funcionalidades propias.
+La idea básica de separar en \layers, es que cada una de estas agrega valor a los servicios provistos por el conjunto inferior de \layers de tal manera que las \layer que esta en la cúspide del \stackAS ofrece el conjunto de servicios necesarios para ejecutar aplicaciones distribuidas. Cada una de estas 7 \layers representa a su vez un \frameworkPC que define sus funcionalidades propias.
 
 \begin{figure}[h!]
 	\begin{tikzpicture}[node distance=10pt,
@@ -95,7 +95,7 @@ La idea básica de separar en \layers, es que cada una de estas agrega valor a l
 	\label{figure:framework_layers_interaction}
 \end{figure}
 
-Lo que se plantea es desarrollar un \framework que se encontrará inmediatamente por sobre el \osimodel (\refFigura{figure:framework_above_osimodel}) para facilitar el desarrollo de aplicaciones, productos y soluciones específicas \ecommerce utilizando un ambiente de \softwarePC reusable y universal a través de funcionalidades particulares que son parte de una gran plataforma.
+Lo que se plantea es desarrollar un \frameworkPC que se encontrará inmediatamente por sobre el \osimodel (\refFigura{figure:framework_above_osimodel}) para facilitar el desarrollo de aplicaciones, productos y soluciones específicas \ecommerce utilizando un ambiente de \softwarePC reusable y universal a través de funcionalidades particulares que son parte de una gran plataforma.
 
 \begin{figure}[h!]
 	\begin{tikzpicture}[node distance=3pt,

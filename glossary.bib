@@ -5,7 +5,7 @@
 
 @GLOSSDEF{ nosql,
 	word="NoSQL",
-	definition="Not Only \gloss{sql}"
+	definition="Not Only \sqlNAME"
 }
 
 @GLOSSDEF{ rdbms,
@@ -36,11 +36,6 @@
 @GLOSSDEF{ json,
 	word="JSON",
 	definition="\javaScriptNAME Object Notation"
-}
-
-@GLOSSDEF{ javascript,
-	word="JavaScript",
-	definition="JavaScript es el lenguaje de programación de la \web."
 }
 
 @GLOSSDEF{ waf,
@@ -130,7 +125,7 @@
 
 @GLOSSDEF{ b2c,
 	word="B2C",
-	definition="\business to \customer"
+	definition="\business to \customerCOM"
 }
 
 @GLOSSDEF{ b2g,
@@ -145,7 +140,7 @@
 
 @GLOSSDEF{ c2c,
 	word="C2C",
-	definition="\customer to \customer"
+	definition="\customerCOM to \customerCOM"
 }
 
 @GLOSSDEF{ out_of_the_box_feature,
@@ -165,7 +160,7 @@
 
 @GLOSSDEF{ object_relational_mapping,
 	word="Object-relational mapping",
-	definition="En ciencias de la computación es una técnica de programación para convertir datos entre \typesystem incompatibles en lenguajes de programación \objectOriented."
+	definition="En ciencias de la computación es una técnica de programación para convertir datos entre \typesystem incompatibles en lenguajes de programación \objectOrientedPL."
 }
 
 @GLOSSDEF{ minifying,
@@ -180,12 +175,19 @@
 
 @GLOSSDEF{ lamp_stack,
 	word="LAMP",
-	definition="\linux, \apacheNAME, \mysql, \phpNAME"
+	definition="\linux, \apacheNAME, \mysqlNAME, \phpNAME"
 }
+
+******************** TODO ********************
+@GLOSSDEF{ amp_stack,
+	word="AMP",
+	definition="\apacheNAME, \mysqlNAME, \phpNAME"
+}
+This is a list of AMP (Apache, MySQL, Perl/PHP/Python) solution stacks for all computer platforms; these software bundles are used to run dynamic Web sites or servers. There are LAMPs (for Linux); WAMPs (for Windows); MAMPs (for Macintosh); SAMPs (for Solaris); and FAMPs (for FreeBSD).
 
 @GLOSSDEF{ mean_stack,
 	word="MEAN",
-	definition="(\mongodbNAME, \expressjsNAME, \angularjs, \nodejsNAME) Es un \fullstack \javaScriptNAME \framework que simplifica y acelera el desarrollo de aplicaciones \web \cite{online_mean_io}. Existen varias variantes al \stack \meanstack, tales como \meenstack. En ocasiones el términos es utilizado simplemente para indicar infraestructura corriendo en \nodejsNAME en combinación con una \dataBase \nosql"
+	definition="(\mongodbNAME, \expressjsNAME, \angularjs, \nodejsNAME) Es un \fullstack \javaScriptNAME \frameworkPC que simplifica y acelera el desarrollo de aplicaciones \webINT \cite{online_mean_io}. Existen varias variantes al \stackAS \meanstack, tales como \meenstack. En ocasiones el términos es utilizado simplemente para indicar infraestructura corriendo en \nodejsNAME en combinación con una \dataBaseDB \nosqlNAME."
 }
 
 @GLOSSDEF{ meen_stack,
@@ -210,7 +212,7 @@
 
 @GLOSSDEF{ easy_ecommerce,
 	word="Easy e-Commerce",
-	definition=" Easy \gloss{ecommerce}, es un \framework \gloss{ecommerce} para el desarrollo flexible y ágil de soluciones \gloss{ecommerce} a fin de disminuir la complejidad en el desarrollo, así como los costos recursos humanos y duración del proyecto."
+	definition=" Easy \gloss{ecommerce}, es un \frameworkPC \gloss{ecommerce} para el desarrollo flexible y ágil de soluciones \gloss{ecommerce} a fin de disminuir la complejidad en el desarrollo, así como los costos recursos humanos y duración del proyecto."
 }
 
 @GLOSSDEF{ luhmann_theory,
@@ -303,7 +305,7 @@
 
 @GLOSSDEF{ representational_state_transfer,
 	word="Representational State Transfer",
-	definition=" Corresponde a un estilo de arquitectura de \softwarePC que explota la tecnología y los protocoles \web existentes \cite{fielding2002principled}"
+	definition=" Corresponde a un estilo de arquitectura de \softwarePC que explota la tecnología y los protocoles \webINT existentes \cite{fielding2002principled}"
 }
 
 
@@ -314,7 +316,7 @@
 
 @GLOSSDEF{ restful,
 	word="RESTful",
-	definition=" Termino utilizado para referirse a un \web \service que implementa la arquitectura \gloss{rest}"
+	definition=" Termino utilizado para referirse a un \webINT \service que implementa la arquitectura \gloss{rest}"
 }
 
 @GLOSSDEF{ commodity_hardware,
@@ -329,3 +331,32 @@
 	
 Unlike synchronous replication, asynchronous replication is designed to work over long distances. It does not require as much bandwidth as synchronous replication and can tolerate some degradation in connectivity\cite{online_cassandra_multi_def}."
 }
+
+******************** TODO ********************
+
+@GLOSSDEF{ single_point_failure,
+	word="Single Point of Failure",
+	definition=" Es una componente de un sistema crítico con la habilidad de cesar las operaciones durante un fallo. \gloss{spof_siglas} no son deseables para un sistema que requiere \reliabilityQA y \availabilityQA, tales como aplicaciones de \softwarePC, \networksINT ó \supplyChainsCPT \cite{online_single_point_failure_def}."
+}
+A single point of failure (SPOF) is a critical system component with the ability to cease system operations during failover. SPOFs are undesirable to systems requiring reliability and availability, such as software applications, networks or supply chains.
+
+@GLOSSDEF{ spof_siglas,
+	word="SPOF",
+	definition=" \gloss{single_point_failure}"
+}
+
+******************** TODO ********************
+
+@GLOSSDEF{ supply_chain_def,
+	word="Supply Chain",
+	definition=" Es un sistema de organizaciones, personas, actividades, información, y recuersos envueltos en el movimiento de un \itemCOM o \serviceCOM desde un \supplierCOM a un \customerCOM."
+}
+A supply chain is a system of organizations, people, activities, information, and resources involved in moving a product or service from supplier to customer. Supply chain activities transform natural resources, raw materials, and components into a finished product that is delivered to the end customer. In sophisticated supply chain systems, used products may re-enter the supply chain at any point where residual value is recyclable. Supply chains link value chains [Wikipedia]
+
+
+******************** TODO ********************
+@GLOSSDEF{ stemming_def,
+	word="Stemming",
+	definition=" Es un problema lingüístico que describe el proceso de reducir las palabras a su raíz base. En análisis morfológicos automatizados, la raíz de una palabra puede ser de un menor interés inmediato que sus sufijos, que pueden utilizados como pistas de la estructura gramática \cite{lovins1968development}."
+}
+A stemming algorithm is a computational procedure which reduces all words with the same root (or, if prefixes are left untouched, the same stem) to a common form, usually by stripping each word of its derivational and inflectional suffixes. Researchers in many areas of computational linguistics and information retrieval find this a desirable step, but for varying reasons. In automated morphological analysis, the root of a word may be of less immediate interest than its suffixes, which can be used as clues to grammatical structure.

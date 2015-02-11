@@ -28,10 +28,10 @@
 
 \newcommand{\rootfolder}		{../../}
 
-\newcommand{\bWrapper}[1]			{\textit{#1} }
-\newcommand{\gWrapper}[1]			{\gloss{#1} }
-\newcommand{\bothWrapper}[1]		{\textit{\gloss{#1}} }
-\newcommand{\nWrapper}[1]			{\textit{#1} }
+\newcommand{\bWrapper}[1]			{\textit{#1}\xspace}
+\newcommand{\gWrapper}[1]			{\gloss{#1}\xspace}
+\newcommand{\bothWrapper}[1]		{\textit{\gloss{#1}}\xspace}
+\newcommand{\nWrapper}[1]			{\textit{#1}\xspace}
 
 %%%%%%%%%%%%%%%%%%% region constants %%%%%%%%%%%%%%%%%%%
 
@@ -40,143 +40,156 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newcommand{\frameworkname}			{\gWrapper{e_ecommerce}}
-\newcommand{\chrome}				{Chrome }
-\newcommand{\twitter}				{Twitter }
-\newcommand{\facebook}				{Facebook }
-\newcommand{\ebay}					{Ebay }
-\newcommand{\amazon}				{Amazon }
-\newcommand{\AuthorizeNet}			{Authorize.Net }
-\newcommand{\foursquare}			{Foursquare }
+\newcommand{\chrome}				{\nWrapper{Chrome}}
+\newcommand{\twitter}				{\nWrapper{Twitter}}
+\newcommand{\facebook}				{\nWrapper{Facebook}}
+\newcommand{\ebay}					{\nWrapper{Ebay}}
+\newcommand{\amazon}				{\nWrapper{Amazon}}
+\newcommand{\AuthorizeNet}			{\nWrapper{Authorize.Net}}
+\newcommand{\foursquare}			{\nWrapper{Foursquare}}
 \newcommand{\mongodbNAME}			{\gWrapper{mongodb}}
-\newcommand{\cassandraNAME}			{Cassandra }
-\newcommand{\dslNAME}				{DSL }
+\newcommand{\cassandraNAME}			{\nWrapper{Cassandra}}
+\newcommand{\dslNAME}				{\nWrapper{DSL}}
 \newcommand{\youtubeNAME}			{\nWrapper{Youtube}}
 
 
 %%%%%%%%%%%%%%%%	JavaScript	%%%%%%%%%%%%%%%%
-\newcommand{\javaScriptNAME}		{\gWrapper{javascript}}
-\newcommand{\nodejsNAME}			{Node.js }
-\newcommand{\krakenjsNAME}			{Kraken.js }
-\newcommand{\grunttool}				{Grunt }
-\newcommand{\expressjsNAME}			{Express.js }
-\newcommand{\dockerio}				{Docker.io }
-\newcommand{\docker}				{Docker }
-\newcommand{\coffeescript}			{CoffeeScript }
-\newcommand{\dustjsNAME}			{Dust.js }
-\newcommand{\angularjs}				{Angular.js }
+\newcommand{\javaScriptNAME}		{\nWrapper{JavaScript}}
+\newcommand{\nodejsNAME}			{\nWrapper{Node.js}}
+\newcommand{\krakenjsNAME}			{\nWrapper{Kraken.js}}
+\newcommand{\grunttool}				{\nWrapper{Grunt}}
+\newcommand{\expressjsNAME}			{\nWrapper{Express.js}}
+\newcommand{\dockerio}				{\nWrapper{Docker.io}}
+\newcommand{\docker}				{\nWrapper{Docker}}
+\newcommand{\coffeescript}			{\nWrapper{CoffeeScript}}
+\newcommand{\dustjsNAME}			{\nWrapper{Dust.js}}
+\newcommand{\angularjs}				{\nWrapper{Angular.js}}
+\newcommand{\bsonNAME}				{\nWrapper{BSON}}
+\newcommand{\ajax}					{\nWrapper{Ajax}}
 
 \newcommand{\uri}					{\gWrapper{uri}}
-\newcommand{\npm}					{NPM }
-\newcommand{\apttool}				{APT }
-\newcommand{\clitool}				{CLI }
-\newcommand{\maketool}				{make }
+\newcommand{\npm}					{\nWrapper{NPM}}
+\newcommand{\apttool}				{\nWrapper{APT}}
+\newcommand{\clitool}				{\nWrapper{CLI}}
+\newcommand{\maketool}				{\nWrapper{make}}
 
 
-\newcommand{\linux}					{Linux }
+\newcommand{\linux}					{\nWrapper{Linux}}
 
-\newcommand{\apacheNAME}			{Apache™ }
-\newcommand{\apacheDosNAME}			{Apache2 }
-\newcommand{\hadoopNAME}			{Hadoop® \ref{ap:apendice_hadoop_description}}
+\newcommand{\apacheNAME}			{\nWrapper{Apache™}}
+\newcommand{\tomcatNAME}			{\nWrapper{Tomcat}}
+\newcommand{\couchdbNAME}			{\nWrapper{couchDB}}
+\newcommand{\apacheDosNAME}			{\nWrapper{Apache2}}
+\newcommand{\hadoopNAME}			{\nWrapper{Hadoop® \ref{ap:apendice_hadoop_description}}}
 \newcommand{\hadoopYarnNAME}		{\gWrapper{hadoop_yarn}}
 \newcommand{\hadoopMapReduceNAME}	{\gWrapper{hadoop_mapreduce}}
+\newcommand{\hadoophdfsNAME}		{\gWrapper{hadoop_hdfs}}
 
 \newcommand{\sparkNAME}				{\nWrapper{SPARK}}
 
 \newcommand{\modPhpNAME}			{\bWrapper{mod\_php}}
-\newcommand{\phpApacheNAME}			{\phpNAME / \apacheNAME }
+\newcommand{\phpApacheNAME}			{\phpNAME/\apacheNAME}
 
-\newcommand{\ofBizNAME}				{OfBiz }
-\newcommand{\mysql}					{MySql }
-\newcommand{\postgresql}			{PostgreSQL }
-\newcommand{\oracle}				{Oracle }
-\newcommand{\sqlite}				{SQLite }
-\newcommand{\sqlitethree}			{SQLite3 }
-\newcommand{\emberjs}				{Ember.js }
-\newcommand{\backbonejs}			{Backbone.js }
+\newcommand{\ofBizNAME}				{\nWrapper{OfBiz}}
+\newcommand{\mysqlNAME}				{\nWrapper{MySql}}
+\newcommand{\postgresql}			{\nWrapper{PostgreSQL}}
+\newcommand{\oracle}				{\nWrapper{Oracle}}
+\newcommand{\sqlite}				{\nWrapper{SQLite}}
+\newcommand{\sqlitethree}			{\nWrapper{SQLite3}}
+\newcommand{\solrNAME}				{\nWrapper{Solr™}}
 
-\newcommand{\javaNAME}				{Java }
-\newcommand{\javaSpringNAME}		{Spring }
-\newcommand{\cPlusPlus}				{C++ }
-\newcommand{\google}				{Google }
-\newcommand{\googleanalytics}		{Google Analytics }
-\newcommand{\googleCheckout}		{Google Checkout }
-\newcommand{\paypalNAME}			{PayPal }
-\newcommand{\paypalCheckout}		{PayPal Express }
-\newcommand{\amazonCheckout}		{Amazon Checkout }
-\newcommand{\amazonPayments}		{Amazon Payments }
-\newcommand{\amazonEcdosNAME}		{Amazon's EC2 }
-\newcommand{\xml}					{XML }
-\newcommand{\cssNAME}				{CSS }
-\newcommand{\htmlNAME}				{HTML }
-\newcommand{\htmlfive}				{HTML5 }
-\newcommand{\htmldom}				{DOM }
-\newcommand{\phpNAME}				{PHP }
-\newcommand{\httpNAME}				{HTTP }
-\newcommand{\https}					{HTTPS }
+\newcommand{\emberjs}				{\nWrapper{Ember.js}}
+\newcommand{\backbonejs}			{\nWrapper{Backbone.js}}
+
+\newcommand{\javaNAME}				{\nWrapper{Java}}
+\newcommand{\javaeeNAME}			{\nWrapper{Java EE}}
+\newcommand{\javaspNAME}			{\nWrapper{JavaServer Pages}}
+\newcommand{\javaelNAME}			{\nWrapper{Java EL}}
+\newcommand{\servletNAME}			{\nWrapper{Servlet}}
+\newcommand{\javaSpringNAME}		{\nWrapper{Spring}}
+\newcommand{\cPlusPlus}				{\nWrapper{C++}}
+\newcommand{\google}				{\nWrapper{Google}}
+\newcommand{\googleanalytics}		{\nWrapper{Google Analytics}}
+\newcommand{\googleCheckout}		{\nWrapper{Google Checkout}}
+\newcommand{\paypalNAME}			{\nWrapper{PayPal}}
+\newcommand{\paypalCheckout}		{\nWrapper{PayPal Express}}
+\newcommand{\amazonCheckout}		{\nWrapper{Amazon Checkout}}
+\newcommand{\amazonPayments}		{\nWrapper{Amazon Payments}}
+\newcommand{\amazonEcdosNAME}		{\nWrapper{Amazon's EC2}}
+\newcommand{\xml}					{\nWrapper{XML}}
+\newcommand{\cssNAME}				{\nWrapper{CSS}}
+\newcommand{\htmlNAME}				{\nWrapper{HTML}}
+\newcommand{\htmlfive}				{\nWrapper{HTML5}}
+\newcommand{\htmldom}				{\nWrapper{DOM}}
+\newcommand{\phpNAME}				{\nWrapper{PHP}}
+\newcommand{\httpNAME}				{\nWrapper{HTTP}}
+\newcommand{\https}					{\nWrapper{HTTPS}}
 
 \newcommand{\redisNAME}				{\nWrapper{Redis}}
-\newcommand{\flashNAME}				{Flash }
-\newcommand{\lamp}					{\gWrapper{lamp_stack}}
-\newcommand{\rails}					{Rails }
-\newcommand{\django}				{Django }
-\newcommand{\meteor}				{Meteor }
+\newcommand{\flashNAME}				{\nWrapper{Flash}}
+\newcommand{\lampNAME}				{\gWrapper{lamp_stack}}
+\newcommand{\ampNAME}				{\gWrapper{amp_stack}}
+\newcommand{\rails}					{\nWrapper{Rails}}
+\newcommand{\djangoNAME}			{\nWrapper{Django}}
+\newcommand{\meteor}				{\nWrapper{Meteor}}
 \newcommand{\commandLinemeteor}		{\bWrapper{meteor}}
-\newcommand{\ruby}					{Ruby }
-\newcommand{\rubyonrails}			{Ruby on Rails }
+\newcommand{\rubyNAME}				{\nWrapper{Ruby}}
+\newcommand{\rubyonrailsNAME}		{\nWrapper{Ruby on Rails}}
 \newcommand{\json}					{\gWrapper{json}}
-\newcommand{\sql}					{\gWrapper{sql}}
-\newcommand{\nosql}					{\gWrapper{nosql}}
-\newcommand{\visualstudio}			{Visual Studio }
+\newcommand{\sqlNAME}				{\gWrapper{sql}}
+\newcommand{\nosqlNAME}				{\gWrapper{nosql}}
+\newcommand{\visualstudio}			{\nWrapper{Visual Studio}}
 \newcommand{\meanstack}				{\gWrapper{mean_stack}}
 \newcommand{\meenstack}				{\gWrapper{meen_stack}}
-\newcommand{\blazemeteor}			{Blaze }
+\newcommand{\blazemeteor}			{\nWrapper{Blaze}}
 \newcommand{\accountsmeteor}		{\bWrapper{accounts}}
-\newcommand{\trackermeteor}			{Tracker }
+\newcommand{\trackermeteor}			{\nWrapper{Tracker}}
 \newcommand{\minimongo}				{\gWrapper{minimongo}}
-\newcommand{\fibers}				{Fibers }
+\newcommand{\fibers}				{\nWrapper{Fibers}}
 \newcommand{\collectionsname}		{\bWrapper{Collections}}
+\newcommand{\sega}					{\nWrapper{Sega}}
+\newcommand{\kodak}					{\nWrapper{Kodak}}
+\newcommand{\daewoo}				{\nWrapper{Daewoo}}
+\newcommand{\nokia}					{\nWrapper{Nokia}}
+\newcommand{\blockbuster}			{\nWrapper{Blockbuster}}
 
-\newcommand{\sega}					{Sega }
-\newcommand{\kodak}					{Kodak }
-\newcommand{\daewoo}				{Daewoo }
-\newcommand{\nokia}					{Nokia }
-\newcommand{\blockbuster}			{Blockbuster }
-
-\newcommand{\nameOpenCart}			{OpenCart }
-\newcommand{\namePrestaShop}		{PrestaShop}
+\newcommand{\nameOpenCart}			{\nWrapper{OpenCart}}
+\newcommand{\namePrestaShop}		{\nWrapper{PrestaShop}}
 \newcommand{\smartyTemplateEngine}	{\bWrapper{Smarty Template Engine}}
-\newcommand{\nameMagento}			{Magento }
-\newcommand{\nameZenCart}			{Zen Cart }
-\newcommand{\chipotle}				{Chipotle}
-\newcommand{\nameZendFramework}		{Zend Framework }
-\newcommand{\nameSpreeCommerce}		{Spree Commerce }
-\newcommand{\nameDrupalCommerce}	{Drupal Commerce }
-\newcommand{\drupalContManSys}		{Drupal Content Manager System }
-\newcommand{\nameOsCommerce}		{osCommerce }
-\newcommand{\nameSimpleCart}		{simpleCart }
-\newcommand{\nameWooCommerce}		{WooCommerce }
-\newcommand{\nameWPECommerce}		{WP \ecommerce }
-\newcommand{\nameJigoshop}			{Jigoshop }
-\newcommand{\wordPress}				{WordPress }
-\newcommand{\wordPressOrg}			{WordPress.org }
-\newcommand{\wooThemes}				{WooThemes }
-\newcommand{\themeForest}			{ThemeForest }
-\newcommand{\codeCanyon}			{CodeCanyon }
+\newcommand{\nameMagento}			{\nWrapper{Magento}}
+\newcommand{\nameZenCart}			{\nWrapper{Zen Cart}}
+\newcommand{\chipotle}				{\nWrapper{Chipotle}}
+\newcommand{\nameZendFramework}		{\nWrapper{Zend Framework}}
+\newcommand{\nameSpreeCommerce}		{\nWrapper{Spree Commerce}}
+\newcommand{\nameDrupalCommerce}	{\nWrapper{Drupal Commerce}}
+\newcommand{\drupalContManSys}		{\nWrapper{Drupal Content Manager System}}
+\newcommand{\nameOsCommerce}		{\nWrapper{osCommerce}}
+\newcommand{\nameSimpleCart}		{\nWrapper{simpleCart}}
+\newcommand{\nameWooCommerce}		{\nWrapper{WooCommerce}}
+\newcommand{\nameWPECommerce}		{\nWrapper{WP} \ecommerce}
+\newcommand{\nameJigoshop}			{\nWrapper{Jigoshop}}
+\newcommand{\wordPress}				{\nWrapper{WordPress}}
+\newcommand{\wordPressOrg}			{\nWrapper{WordPress.org}}
+\newcommand{\wooThemes}				{\nWrapper{WooThemes}}
+\newcommand{\themeForest}			{\nWrapper{ThemeForest}}
+\newcommand{\codeCanyon}			{\nWrapper{CodeCanyon}}
 
-\newcommand{\iphone}				{iPhone }
-\newcommand{\android}				{Android }
-\newcommand{\ios}					{iOS }
+\newcommand{\iphone}				{\nWrapper{iPhone}}
+\newcommand{\android}				{\nWrapper{Android}}
+\newcommand{\ios}					{\nWrapper{iOS}}
 
-\newcommand{\dhlName}				{DHL }
-\newcommand{\fedExName}				{fedEx }
-\newcommand{\upsName}				{UPS }
+\newcommand{\dhlName}				{\nWrapper{DHL}}
+\newcommand{\fedExName}				{\nWrapper{fedEx}}
+\newcommand{\upsName}				{\nWrapper{UPS}}
 
-\newcommand{\commerceGuys}			{Commerce Guys }
-\newcommand{\neofourj}				{Neo4j }
-\newcommand{\hyperGraphDB}			{HyperGraph }
-\newcommand{\hbase}					{Hbase }
-\newcommand{\moduleForeverNAME}		{Forever }
+\newcommand{\commerceGuys}			{\nWrapper{Commerce Guys}}
+\newcommand{\neofourj}				{\nWrapper{Neo4j}}
+\newcommand{\hyperGraphDB}			{\nWrapper{HyperGraph}}
+\newcommand{\hbase}					{\nWrapper{Hbase}}
+\newcommand{\moduleForeverNAME}		{\nWrapper{Forever}}
 
+\newcommand{\perlNAME}				{\nWrapper{Perl}}
+\newcommand{\pythonNAME}			{\nWrapper{Python}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%  COMPUTACION (PC)	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -186,8 +199,8 @@
 \newcommand{\workloads}					{\bWrapper{workloads}}
 \newcommand{\rdbms}						{\gWrapper{rdbms}}
 \newcommand{\ordbms}					{\gWrapper{ordbms}}
-\newcommand{\framework}					{\bWrapper{Framework}}
-\newcommand{\frameworks}				{\bWrapper{Frameworks}}
+\newcommand{\frameworkPC}				{\bWrapper{Framework}}
+\newcommand{\frameworksPC}				{\bWrapper{Frameworks}}
 \newcommand{\match}						{\bWrapper{match}}
 \newcommand{\openSourcePC}				{\bWrapper{Open Source}}
 \newcommand{\closedSource}				{\bWrapper{Closed Source}}
@@ -215,10 +228,10 @@
 \newcommand{\development}				{\bWrapper{Development}}
 \newcommand{\qaSIGLA}					{\bWrapper{QA}}
 \newcommand{\production}				{\bWrapper{Production}}
-\newcommand{\data}						{\bWrapper{Data}}
+\newcommand{\dataPC}					{\bWrapper{Data}}
 \newcommand{\centerCustom}				{\bWrapper{Center}}
 \newcommand{\memoryPC}					{\bWrapper{memory}}
-\newcommand{\cpuPC}						{CPU }
+\newcommand{\cpuPC}						{\nWrapper{CPU}}
 \newcommand{\cpuBoundPC}				{\bWrapper{CPU Bound}}
 \newcommand{\memoryBoundPC}				{\bWrapper{Memory Bound}}
 \newcommand{\ioBoundPC}					{\bWrapper{I/O Bound}}
@@ -239,6 +252,8 @@
 \newcommand{\dataCenterPC}				{\bWrapper{Data Center}}
 \newcommand{\dataCentersPC}				{\bWrapper{Data Centers}}
 \newcommand{\cachePC}					{\bWrapper{cache}}
+\newcommand{\failoverPC}				{\bWrapper{Failover}}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%      LICENCIAS	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -257,24 +272,27 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%      INTERNET		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newcommand{\web}						{\bWrapper{web}}
+\newcommand{\webINT}					{\bWrapper{web}}
 \newcommand{\site}						{\bWrapper{site}}
 \newcommand{\sites}						{\bWrapper{sites}}
 \newcommand{\websites}					{\bWrapper{websites}}
 \newcommand{\websiteINT}				{\bWrapper{website}}
 \newcommand{\webapp}					{\bWrapper{webapp}}
-\newcommand{\webserver}					{\bWrapper{webserver}}
-\newcommand{\websocketsINT}				{\bWrapper{websockets}}
+\newcommand{\webserverINT}				{\bWrapper{webserver}}
+\newcommand{\websocketINT}				{\bWrapper{Websockets}}
+\newcommand{\websocketsINT}				{\bWrapper{Websockets}}
 \newcommand{\internet}					{\bWrapper{Internet}}
 \newcommand{\www}						{\bWrapper{World Wide Web}}
 \newcommand{\dotcom}					{\bWrapper{dot-com}}
 \newcommand{\online}					{\bWrapper{online}}
 \newcommand{\offline}					{\bWrapper{offline}}
-\newcommand{\realTimeINT}					{\bWrapper{real-time}}
+\newcommand{\realTimeINT}				{\bWrapper{real-time}}
 \newcommand{\broadcast}					{\bWrapper{broadcast}}
 \newcommand{\browser}					{\bWrapper{browser}}
+\newcommand{\nonBrowserINT}				{\bWrapper{non-browser}}
 \newcommand{\browsers}					{\bWrapper{browsers}}
 \newcommand{\network}					{\bWrapper{network}}
+\newcommand{\networksINT}				{\bWrapper{Networks}}
 \newcommand{\reload}					{\bWrapper{reload}}
 \newcommand{\page}						{\bWrapper{page}}
 \newcommand{\pages}						{\bWrapper{pages}}
@@ -290,16 +308,15 @@
 \newcommand{\socialnetwork}				{\bWrapper{social network}}
 
 \newcommand{\ria}						{\gWrapper{ria}}
-\newcommand{\rias}						{{\ria}s }
+\newcommand{\rias}						{\gWrapper{rias}}
 
-\newcommand{\requestINT}					{\bWrapper{request}}
+\newcommand{\requestINT}				{\bWrapper{request}}
 \newcommand{\requests}					{\bWrapper{requests}}
 \newcommand{\response}					{\bWrapper{response}}
 \newcommand{\responses}					{\bWrapper{responses}}
 
 \newcommand{\singlePageApp}				{\gWrapper{single_page_app}}
 \newcommand{\spa}						{\gWrapper{spa}}
-\newcommand{\ajax}						{Ajax }
 \newcommand{\storage}					{\bWrapper{storage}}
 \newcommand{\cookieINT}					{\bWrapper{cookie}}
 \newcommand{\senderINT}					{\bWrapper{sender}}
@@ -375,7 +392,7 @@
 \newcommand{\estores}					{\bWrapper{e-stores}}
 \newcommand{\purchase}					{\bWrapper{purchase}}
 \newcommand{\inquiry}					{\bWrapper{inquiry}}
-\newcommand{\customer}					{\bWrapper{customer}}
+\newcommand{\customerCOM}					{\bWrapper{customer}}
 \newcommand{\customers}					{\bWrapper{customers}}
 \newcommand{\multichannel}				{\bothWrapper{multi_channel}}
 \newcommand{\channel}					{\bWrapper{channel}}
@@ -404,8 +421,8 @@
 \newcommand{\ordersCommerce}			{\bWrapper{orders}}
 \newcommand{\catalogCommerce}			{\bWrapper{Catalog}}
 \newcommand{\management}				{\bWrapper{Management}}
-\newcommand{\catalogManagement}			{\catalogCommerce \management }
-\newcommand{\contentManagement}			{\bWrapper{Content} \management }
+\newcommand{\catalogManagement}			{\catalogCommerce \management}
+\newcommand{\contentManagement}			{\bWrapper{Content} \management}
 \newcommand{\sku}						{\bothWrapper{sku}}
 \newcommand{\inventoryCommerce}			{\bWrapper{Inventory}}
 \newcommand{\physItem}					{\bWrapper{physical item}}
@@ -413,6 +430,8 @@
 \newcommand{\debitOneAccount}			{\bWrapper{debit one account}}
 \newcommand{\creditAnother}				{\bWrapper{credit another}}
 \newcommand{\purchasedCOM}				{\bWrapper{purchased}}
+\newcommand{\serviceCOM}				{\bWrapper{Service}}
+\newcommand{\supplierCOM}				{\bWrapper{Supplier}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%  CONCEPTOS DE ARQUITECTURA (AS) %%%%%%%%%%%%%%%%%%%%%%
@@ -420,7 +439,7 @@
 
 \newcommand{\layer}					{\bWrapper{layer}}
 \newcommand{\layers}				{\bWrapper{layers}}
-\newcommand{\persistenceLayer}		{\bWrapper{persistence} \layer }
+\newcommand{\persistenceLayer}		{\bWrapper{persistence} \layer}
 \newcommand{\serverAS}				{\bWrapper{server}}
 \newcommand{\serversAS}				{\bWrapper{servers}}
 \newcommand{\serverSide}			{\bWrapper{server-side}}
@@ -431,12 +450,14 @@
 \newcommand{\frontEndAS}			{\bWrapper{Front-End}}
 \newcommand{\frontEndsAS}			{\bWrapper{Front-Ends}}
 \newcommand{\backend}				{\bWrapper{Back-End}}
-\newcommand{\mainframe}				{\bWrapper{Mainframe}}
-\newcommand{\mainframes}			{\bWrapper{Mainframes}}
+\newcommand{\portablesAS}			{\bWrapper{Portables}}
+\newcommand{\mainframeAS}			{\bWrapper{Mainframe}}
+\newcommand{\mainframesAS}			{\bWrapper{Mainframes}}
 \newcommand{\api}					{\bWrapper{API}}
 \newcommand{\apis}					{\bWrapper{APIs}}
 \newcommand{\fullstack}				{\bWrapper{full stack}}
-\newcommand{\stack}					{\bWrapper{stack}}
+\newcommand{\stackAS}				{\bWrapper{Stack}}
+\newcommand{\stacksAS}				{\bWrapper{Stacks}}
 \newcommand{\prefetches}			{\bWrapper{\gWrapper{instruction_prefetch}es}}
 \newcommand{\prefetch}				{\bothWrapper{instruction_prefetch}}
 \newcommand{\modules}				{\bWrapper{modules}}
@@ -464,23 +485,33 @@
 \newcommand{\callerAS}				{\bWrapper{caller}}
 \newcommand{\clusterAS}				{\bWrapper{cluster}}
 \newcommand{\clustersAS}			{\bWrapper{clusters}}
+\newcommand{\couplingAS}			{\bWrapper{Coupling}}
+\newcommand{\wafAS}					{\gWrapper{waf}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%   LENGUAJES DE PROGRAMACIÓN(PL) %%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newcommand{\objectOriented}		{\bWrapper{object-oriented}}
+%%%%%%%%%%%%%%%%	Paradigmas	%%%%%%%%%%%%%%%%
+\newcommand{\objectOrientedPL}		{\bWrapper{object-oriented}}
+\newcommand{\imperativePL}			{\bWrapper{imperative}}
+\newcommand{\functionalPL}			{\bWrapper{functional}}
+\newcommand{\concurrentPL}			{\bWrapper{concurrent}}
+\newcommand{\classBasedPL}			{\bWrapper{class-based}}
+\newcommand{\proceduralPL}			{\bWrapper{procedural}}
+\newcommand{\reflectivePL}			{\bWrapper{reflective}}
+
 \newcommand{\environment}			{\bWrapper{environment}}
 \newcommand{\environments}			{\bWrapper{environments}}
 \newcommand{\sandboxedEnvPL}		{\bWrapper{Sandboxed Environment}}
 \newcommand{\building}				{\bWrapper{building}}
 \newcommand{\build}					{\bWrapper{build}}
 \newcommand{\orm}					{\bWrapper{ORM}}
-\newcommand{\typesystem}			{\bWrapper{type system }}
+\newcommand{\typesystem}			{\bWrapper{type system}}
 
 \newcommand{\listhighlevel}			{\bWrapper{list}}
 \newcommand{\listsPL}				{\bWrapper{lists}}
-\newcommand{\queuePL}					{\bWrapper{queue}}
+\newcommand{\queuePL}				{\bWrapper{queue}}
 \newcommand{\queuesPL}				{\bWrapper{queues}}
 \newcommand{\setPL}					{\bWrapper{set}}
 \newcommand{\setsPL}				{\bWrapper{sets}}
@@ -499,6 +530,7 @@
 \newcommand{\eventdrivenPL}			{\bWrapper{event-driven}}
 \newcommand{\nonbloking}			{\bWrapper{non-blocking}}
 \newcommand{\scripting}				{\bWrapper{scripting}}
+\newcommand{\scriptingLanguagePL}	{\bWrapper{scripting}}
 \newcommand{\scriptPL}				{\bWrapper{script}}
 \newcommand{\backgroundPL}			{\bWrapper{background}}
 \newcommand{\cprogramming}			{\bWrapper{C programming}}
@@ -514,6 +546,11 @@
 \newcommand{\callbacksPL}			{\bWrapper{callbacks}}
 \newcommand{\crashedInstancePL}		{\bWrapper{crashed instance}}
 \newcommand{\debuggingPL}			{\bWrapper{Debugging}}
+\newcommand{\lightweightPL}			{\bWrapper{Lightweight}}
+\newcommand{\firstClassFuncPL}		{\bWrapper{first-class functions}}
+\newcommand{\prototypeBasedPL}		{\bWrapper{prototype-based}}
+\newcommand{\multiParadigmPL}		{\bWrapper{multi-paradigm}}
+\newcommand{\writeOnceRunAnyPL}		{\bWrapper{write once, run anywhere}}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -578,7 +615,7 @@
 \newcommand{\indexingDB}				{\bWrapper{indexing}}
 \newcommand{\indexesDB}					{\bWrapper{indexes}}
 \newcommand{\secIndexingDB}				{\bWrapper{Secundary} \indexingDB}
-\newcommand{\secIndexesDB}				{\bWrapper{Secundary }\indexesDB }
+\newcommand{\secIndexesDB}				{\bWrapper{Secundary} \indexesDB}
 \newcommand{\positionOperatorDB}		{\bWrapper{position operator}}
 \newcommand{\atomicOperationsDB}		{\bWrapper{atomic operations}}
 \newcommand{\atomicOperatorDB}			{\bWrapper{atomic operator}}
@@ -589,7 +626,7 @@
 \newcommand{\rollbackDB}				{\bWrapper{rollback}}
 \newcommand{\transactionalityDB}		{\bWrapper{transactionality}}
 \newcommand{\transactionalDB}			{\bWrapper{transactional}}
-\newcommand{\fullFledgedTransDB}		{\bWrapper{full-fledged} \transactionsDB }
+\newcommand{\fullFledgedTransDB}		{\bWrapper{full-fledged} \transactionsDB}
 \newcommand{\multiObjectDB}				{\bWrapper{multi-object}}
 \newcommand{\findAndModifyOperatorDB}	{\bWrapper{findAndModify}}
 \newcommand{\nearRealTimeReplicationDB}	{\bWrapper{near-real-time replications}}
@@ -602,6 +639,14 @@
 \newcommand{\maxClientsDB}				{\bWrapper{MaxClients}}
 \newcommand{\asynRepDB}					{\gWrapper{asyn_rep_db}}
 \newcommand{\masterlessDB}				{\bWrapper{masterless}}
+\newcommand{\tableBasedDB}			{\bWrapper{table-based}}
+
+\newcommand{\replicationDB}			{\bWrapper{replication}}
+\newcommand{\recoveryDB}			{\bWrapper{Recovery}}
+
+\newcommand{\queryingDB}			{\bWrapper{querying}}
+\newcommand{\loadBalancedDB}		{\bWrapper{Load-Balanced}}
+\newcommand{\stemmingDB}			{\gWrapper{stemming_def}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%  ATRIBUTOS DE CALIDAD (QA)%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -616,7 +661,7 @@
 \newcommand{\simplicity}			{\bWrapper{simplicity}}
 \newcommand{\productivity}			{\bWrapper{productivity}}
 \newcommand{\reusability}			{\bWrapper{re-usability}}
-\newcommand{\usabilityQA}				{\bWrapper{usability}}
+\newcommand{\usabilityQA}			{\bWrapper{usability}}
 \newcommand{\scale}					{\bWrapper{scale}}
 \newcommand{\scaleUpQA}				{\bWrapper{scale up}}
 \newcommand{\scalableQA}			{\bWrapper{Scalable}}
@@ -632,6 +677,12 @@
 \newcommand{\highAvailabilityDB}	{\bWrapper{High Availability}}
 \newcommand{\faultTolerantQA}		{\bWrapper{Fault tolerant}}
 \newcommand{\flexibleQA}			{\bWrapper{Flexible}}
+\newcommand{\reliabilityQA}			{\bWrapper{Reliability}}
+\newcommand{\availabilityQA}		{\bWrapper{Availability}}
+\newcommand{\extensibilityQA}		{\bWrapper{Extensibility}}
+
+\newcommand{\reliableQA}			{\bWrapper{Reliable}}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%	CONCEPTOS (CPT)	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -674,6 +725,7 @@
 \newcommand{\runtime}				{\bWrapper{runtime}}
 \newcommand{\runtimes}				{\bWrapper{runtimes}}
 \newcommand{\running}				{\bWrapper{running}}
+\newcommand{\runInCPT}					{\bWrapper{run in}}
 \newcommand{\outofthebox}			{\bWrapper{out of the box}}
 \newcommand{\incomming}				{\bWrapper{incomming}}
 \newcommand{\accouts}				{\bWrapper{accouts}}
@@ -741,7 +793,7 @@
 \newcommand{\raiting}				{\bWrapper{raiting}}
 \newcommand{\review}				{\bWrapper{review}}
 \newcommand{\wysiwyg}				{\bWrapper{WYSIWYG}}
-\newcommand{\prototyping}			{\bWrapper{prototyping}}
+\newcommand{\prototypingCPT}		{\bWrapper{prototyping}}
 \newcommand{\crossPlatform}			{\bWrapper{cross-platform}}
 \newcommand{\Community}				{\bWrapper{Community}}
 \newcommand{\Edition}				{\bWrapper{Edition}}
@@ -758,7 +810,6 @@
 \newcommand{\inputOutput}			{\bWrapper{I/O}}
 \newcommand{\vmsSIGLA}				{\bWrapper{VMs}}
 \newcommand{\packaging}				{\bWrapper{Packaging}}
-\newcommand{\lightweight}			{\bWrapper{lightweight}}
 \newcommand{\engine}				{\bWrapper{engine}}
 \newcommand{\hub}					{\bWrapper{hub}}
 \newcommand{\workflow}				{\bWrapper{workflow}}
@@ -789,6 +840,10 @@
 \newcommand{\jsonLikeCPT}				{\bWrapper{Json-Like}}
 \newcommand{\hackathonCPT}				{\bWrapper{hackathon}}
 \newcommand{\costEffectiveCPT}			{\bWrapper{Cost effective}}
+\newcommand{\supplyChainsCPT}			{\bWrapper{Supply Chains}}
+\newcommand{\rankingCPT}				{\bWrapper{Ranking}}
+\newcommand{\geoSpatialCPT}				{\bWrapper{Geospatial}}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%	 	OTROS		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -809,29 +864,29 @@
 \newcommand{\cloud}					{\bWrapper{cloud}}
 \newcommand{\apiendpoints}			{\bWrapper{endpoints}}
 \newcommand{\deploy}				{\bWrapper{deploy}}
-\newcommand{\dataBase}				{\bWrapper{Data Base}}
-\newcommand{\dataBases}				{\bWrapper{Data Bases}}
+\newcommand{\dataBaseDB}			{\bWrapper{Data Base}}
+\newcommand{\dataBasesDB}			{\bWrapper{Data Bases}}
 \newcommand{\dbmangesystem}			{\bWrapper{Data Base Management System}}
 \newcommand{\backandforth}			{\bWrapper{back and forth}}
 \newcommand{\feedback}				{\bWrapper{feedback}}
 \newcommand{\selfcontained}			{\bWrapper{self-contained}}
 \newcommand{\prewritten}			{\bWrapper{pre-written}}
-\newcommand{\fast}					{\bWrapper{fast} }
+\newcommand{\fast}					{\bWrapper{fast}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %										%
 %			  Base de datos 				%
 %										%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newcommand{\userscollection}		{users }
-\newcommand{\rolCollection}			{roles }
-\newcommand{\transcollection}		{Translations }
-\newcommand{\ordescollection}		{Orders }
-\newcommand{\packagescollection}	{Packages }
-\newcommand{\itemcollection}		{Products }
-\newcommand{\shopscollection}		{Shops }
-\newcommand{\tagscollection}		{Tags }
-\newcommand{\cartcollection}		{Cart }
+\newcommand{\userscollection}		{\nWrapper{users}}
+\newcommand{\rolCollection}			{\nWrapper{roles}}
+\newcommand{\transcollection}		{\nWrapper{Translations}}
+\newcommand{\ordescollection}		{\nWrapper{Orders}}
+\newcommand{\packagescollection}	{\nWrapper{Packages}}
+\newcommand{\itemcollection}		{\nWrapper{Products}}
+\newcommand{\shopscollection}		{\nWrapper{Shops}}
+\newcommand{\tagscollection}		{\nWrapper{Tags}}
+\newcommand{\cartcollection}		{\nWrapper{Cart}}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

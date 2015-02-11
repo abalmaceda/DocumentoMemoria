@@ -26,12 +26,12 @@ test
 
 Final de mi grafo
 
-\chapter{Catalog management handled with relational databases}\label{ap:apendice_ecommerce_catalog_relational}
+\chapter{Catalog management handled with relational \dataBasesDB}\label{ap:apendice_ecommerce_catalog_relational}
 
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.8\textwidth]{figuras/apendice/magento_sample_database_diagram.png}
-	\caption{\schemasDB de \nameMagento \ecommerce \framework.}
+	\caption{\schemasDB de \nameMagento \ecommerce \frameworkPC.}
 	\label{ap:figure:catalog_magento}
 \end{figure}
 
@@ -51,7 +51,7 @@ Final de mi grafo
 \begin{itemize}
 	\item \hadoopYarnNAME asigna \cpuPC, memoria y almacenamiento para las aplicaciones corriendo en \clustersAS \hadoopNAME. La primera generación de \hadoopNAME podía correr solo aplicaciones \hadoopMapReduceNAME. \hadoopYarnNAME permite que otros entornos de aplicaciones (como \sparkNAME) para ejecutarse en \hadoopNAME, lo que abre un mundo de posibilidades.
 	
-	\item \gloss{hadoop_hdfs} es un sistema de archivos que se extiende por todos los nodos en su \clusterAS \hadoopNAME para almacenamiento de datos. Se conecta entre si a los sistemas de archivos en muchos nodos locales para convertirlos en un sistema de archivos grandes.
+	\item \hadoophdfsNAME es un sistema de archivos que se extiende por todos los nodos en su \clusterAS \hadoopNAME para almacenamiento de datos. Se conecta entre si a los sistemas de archivos en muchos nodos locales para convertirlos en un sistema de archivos grandes.
 \end{itemize}
 
 \hadoopNAME se complementa con un ecosistema de proyectos de \apacheNAME, como Pig\cite{online_ibm_meaning_pig}, Hive\cite{online_ibm_meaning_hive} y Zookeeper\cite{online_ibm_meaning_zookeeper}, para extender el valor de \hadoopNAME y mejorar su \usabilityQA.
@@ -75,7 +75,7 @@ Final de mi grafo
 
 \chapter{Conexiones \stateful y \stateless }\label{ap:apendice_connection_statful_stateless}
 
-Mantener el estado o ser \stateful significa que algunos dispositivos mantienen \trackCPT de otro dispositivo o una conexión, ya sea temporal o largo periodo de tiempo. Cuando se agrega el nombre de una persona en una libreta de direcciones y se observa su cumpleaños y teléfono, se podría decir que se esta manteniendo el estado de esa persona. En la \web una \cookieINT es un mecanismo \stateful que permite a los \webserver mantener \trackCPT de información de las personas, tal como se describe en un momento \cite{online_connection_stateful_stateless}.
+Mantener el estado o ser \stateful significa que algunos dispositivos mantienen \trackCPT de otro dispositivo o una conexión, ya sea temporal o largo periodo de tiempo. Cuando se agrega el nombre de una persona en una libreta de direcciones y se observa su cumpleaños y teléfono, se podría decir que se esta manteniendo el estado de esa persona. En la \webINT una \cookieINT es un mecanismo \stateful que permite a los \webserverINT mantener \trackCPT de información de las personas, tal como se describe en un momento \cite{online_connection_stateful_stateless}.
 %Keeping state or being stateful means that some device is keeping track of another device or a connection, either temporarily or over a long period of time. When I put someone's name in my address book and note their birthday and phone number, one could say that I am maintaining state for that person. On the Web, a cookie is a stateful mechanism that allows Web servers to keep track of information about people, as described in a moment.
 
 
