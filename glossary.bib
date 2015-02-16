@@ -60,7 +60,7 @@
 
 @GLOSSDEF{ tarnsactional_processing,
 	word="transactional",
-	definition= "\textit{Transactional processing} es caracterizado por un largo numero de de pequeñas, discretas, transacciones atómicas. El énfasis de los sistemas \gloss{oltp} es (a) \textit{high throughput (transactions per second)}, y (b) manterner integridad de datos en ambientes multiusuarios."
+	definition= "\textit{Transactional processing} es caracterizado por un largo número de de pequeñas, discretas, transacciones atómicas. El énfasis de los sistemas \gloss{oltp} es (a) \textit{high throughput (transactions per second)}, y (b) manterner integridad de datos en ambientes multiusuarios."
 }
 
 @GLOSSDEF{ oltp,
@@ -187,17 +187,17 @@ This is a list of AMP (Apache, MySQL, Perl/PHP/Python) solution stacks for all c
 
 @GLOSSDEF{ mean_stack,
 	word="MEAN",
-	definition="(\mongodbNAME, \expressjsNAME, \angularjs, \nodejsNAME) Es un \fullstack \javaScriptNAME \frameworkPC que simplifica y acelera el desarrollo de aplicaciones \webINT \cite{online_mean_io}. Existen varias variantes al \stackAS \meanstack, tales como \meenstack. En ocasiones el términos es utilizado simplemente para indicar infraestructura corriendo en \nodejsNAME en combinación con una \dataBaseDB \nosqlNAME."
+	definition="(\mongodbNAME, \expressjsNAME, \angularjsNAME, \nodejsNAME) Es un \fullstackAS \javaScriptNAME \frameworkPC que simplifica y acelera el desarrollo de aplicaciones \webINT \cite{online_mean_io}. Existen varias variantes al \stackAS \meanstack, tales como \meenstack. En ocasiones el términos es utilizado simplemente para indicar infraestructura corriendo en \nodejsNAME en combinación con una \dataBaseDB \nosqlNAME."
 }
 
 @GLOSSDEF{ meen_stack,
 	word="MEEN",
-	definition="(\mongodbNAME, \emberjs, \expressjsNAME, \nodejsNAME)"
+	definition="(\mongodbNAME, \emberjsName, \expressjsNAME, \nodejsNAME)"
 }
 
 @GLOSSDEF{ minimongo,
 	word="Minimongo",
-	definition="Una implementación \clientSide de \mongodbNAME que soporta consultas básicas, incluyendo algunas geo-espaciales."
+	definition="Una implementación \clientSideAS de \mongodbNAME que soporta consultas básicas, incluyendo algunas geo-espaciales."
 }
 
 @GLOSSDEF{ osi_model,
@@ -300,13 +300,25 @@ This is a list of AMP (Apache, MySQL, Perl/PHP/Python) solution stacks for all c
 
 @GLOSSDEF{ tiered_pricing,
 	word="Tiered Pricing",
-	definition=" Differential ó Tiered Pricing es la práctica de establecer diferentes precios para diferentes \markets, típicamente precios mas altos en \markets mas ricos,  y precios mas bajos en \markets mas pobres \cite{rights2002integrating}."
+	definition=" Differential ó Tiered Pricing es la práctica de establecer diferentes precios para diferentes \markets, típicamente precios más altos en \markets más ricos,  y precios más bajos en \markets más pobres \cite{rights2002integrating}."
 }
 
+*********************************** TODO ************************************************
 @GLOSSDEF{ representational_state_transfer,
 	word="Representational State Transfer",
-	definition=" Corresponde a un estilo de arquitectura de \softwarePC que explota la tecnología y los protocoles \webINT existentes \cite{fielding2002principled}"
+	definition="Es un conjunto de restricciones arquitectónicas que intenta minimizar la \latency y la comunicación \networkINT mientras al mismo tiempo maximiza la independencia y la \scalabilityQA de las componentes de la implementación. Esto es logrado agregando restricciones en \connectorSemanticsAS donde otros estilos se han focalizado en \componentSemanticsAS. Rest permite \caching y la reutilización de las interacciones, sustitución dinámica de \hypermediaINT \cite{fielding2002principled}."
 }
+
+REST is a coordinated set of architectural constraints that
+attempts to minimize latency and network communication
+while at the same time maximizing the independence and
+scalability of component implementations. This is achieved
+by placing constraints on connector semantics where other
+styles have focused on component semantics. REST enables
+the caching and reuse of interactions, dynamic
+substitutability of components, and processing of actions by
+intermediaries, thereby meeting the needs of an Internetscale
+distributed hypermedia system.
 
 
 @GLOSSDEF{ rest,
@@ -316,21 +328,29 @@ This is a list of AMP (Apache, MySQL, Perl/PHP/Python) solution stacks for all c
 
 @GLOSSDEF{ restful,
 	word="RESTful",
-	definition=" Termino utilizado para referirse a un \webINT \service que implementa la arquitectura \gloss{rest}"
+	definition=" Termino utilizado para referirse a un \webINT \serviceCPT que implementa la arquitectura \gloss{rest}"
 }
 
 @GLOSSDEF{ commodity_hardware,
 	word="Commodity Hardware",
-	definition="Dispositivo o componente de dispositivo que es relativamente barato, altamente disponible y más o menos intercambiables con otro \hardwarePC de su tipo \cite{online_commodity_hardware_def}"
+	definition="Dispositivo o componente de dispositivo que es relativamente barato, altamente disponible y más o menos intercambiable con otro \hardwarePC de su tipo \cite{online_commodity_hardware_def}"
 }
 
 ******************** TODO ********************
 @GLOSSDEF{ asyn_rep_db,
-	word="asynchronous replication",
-	definition=" Asynchronous replication writes data to the primary storage array first and then, depending on the implementation approach, commits data to be replicated to memory or a disk-based journal. It then copies the data in real-time or at scheduled intervals to replication targets\cite{online_cassandra_multi_def}.
+	word="AsynchronousCPT ReplicationDB",
+	definition="\asynchronousCPT \replicationDB es un enfoque \storeForewardAS para \dataBackupDB.
+
+	\asynchronousCPT \replicationDB \writesCPT \dataPC primero para el  \primaryStorageArrayDB y luego, dependiendo del enfoque de la implementación, \commitsDB \dataPC para ser \replicatedDB a \memoryPC ó en \journalDB  \diskBasedPC. Entonces esto copia la \dataPC en \realTimeINT ó \scheduledCPT intervalos para la \replicationDB de los objetivos \cite{online_asynchronous_replication_def}.
 	
-Unlike synchronous replication, asynchronous replication is designed to work over long distances. It does not require as much bandwidth as synchronous replication and can tolerate some degradation in connectivity\cite{online_cassandra_multi_def}."
+En contraste a  \synchronousCPT \replicationDB, \asynchronousCPT \replicationDB esta diseñado para trabajar sobre grandes distancias. esto no requiere tanta  \bandwidthINT como en el caso de \synchronousCPT \replicationDB y puede tolerar bajas en la \connectivityINT \cite{online_asynchronous_replication_def}."
 }
+
+\asynchronousCPT \replicationDB is un enfoque \storeForewardAS para \dataBackupDB.
+
+	Asynchronous replication writes data to the primary storage array first and then, depending on the implementation approach, commits data to be replicated to memory or a disk-based journal. It then copies the data in real-time or at scheduled intervals to replication targets \cite{online_asynchronous_replication_def
+	
+Unlike synchronous replication, asynchronous replication is designed to work over long distances. It does not require as much bandwidth as synchronous replication and can tolerate some degradation in connectivity\cite{online_asynchronous_replication_def}.
 
 ******************** TODO ********************
 
@@ -360,3 +380,51 @@ A supply chain is a system of organizations, people, activities, information, an
 	definition=" Es un problema lingüístico que describe el proceso de reducir las palabras a su raíz base. En análisis morfológicos automatizados, la raíz de una palabra puede ser de un menor interés inmediato que sus sufijos, que pueden utilizados como pistas de la estructura gramática \cite{lovins1968development}."
 }
 A stemming algorithm is a computational procedure which reduces all words with the same root (or, if prefixes are left untouched, the same stem) to a common form, usually by stripping each word of its derivational and inflectional suffixes. Researchers in many areas of computational linguistics and information retrieval find this a desirable step, but for varying reasons. In automated morphological analysis, the root of a word may be of less immediate interest than its suffixes, which can be used as clues to grammatical structure.
+
+@GLOSSDEF{ api_siglas,
+	word="API",
+	definition=" \gloss{app_pro_int}"
+}
+
+@GLOSSDEF{ app_pro_int,
+	word="Application Programming Interfaces",
+	definition="TODO"
+}
+
+@GLOSSDEF{ orm_siglas,
+	word="ORM",
+	definition=" \gloss{obj_rel_mapp}"
+}
+
+@GLOSSDEF{ obj_rel_mapp,
+	word="Object-Relational Mapper",
+	definition="TODO"
+}
+
+@GLOSSDEF{ rack_middleware_ruby,
+	word="Rack Middleware",
+	definition="TODO"
+}
+
+@GLOSSDEF{ ruby_gems,
+	word="Gems",
+	definition="Son \packages que contienen tanto su información, como dependencias necesarias a instalar \cite{online_technology_ruby_gems}."
+}
+Gems are packages similar to Ebuilds. They contain package information along with files to install.
+
+@GLOSSDEF{ http_verbs,
+	word="HTTP verbs",
+	definition="TODO"
+}
+
+
+@GLOSSDEF{ computed_properties_emberjs_def,
+	word="Computed Properties",
+	definition="En \emberjsName, computed properties permiten declarar funciones y propiedades. Es posible crear uno definiendo una computed property como una funcion, la cual \emberjsName llamará automaticamente cuando se solicite la propiedad. Es posible usar entonces de la misma manera que se usaria, \staticPropertyAS \cite{online_technology_ember_computed_properties_def}.
+
+	Es super útil para tomar una ó más propiedades y transformando ó manipulando su \dataPC para crear un nuevo valor \cite{online_technology_ember_computed_properties_def}."
+}
+
+In a nutshell, computed properties let you declare functions as properties. You create one by defining a computed property as a function, which Ember will automatically call when you ask for the property. You can then use it the same way you would any normal, static property.
+
+It's super handy for taking one or more normal properties and transforming or manipulating their data to create a new value.

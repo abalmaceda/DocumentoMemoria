@@ -165,7 +165,7 @@ Aplicación: \keyDB \valueDB \stores y \wideColumnDB \stores son útiles para un
 	%Horizontally, meaning that to add capacity, a database administrator can simply add more commodity servers or cloud instances. The database automatically spreads data across servers as necessary.
 	
 \\ \hline
-	Modelo \development&
+	Modelo \developmentPC &
 	%Development Model&
 	
 	\mix de \openSourcePC (ej., \postgresql, \mysqlNAME) y \closedSource (ej., \oracle \dataBaseDB)&
@@ -190,7 +190,7 @@ Aplicación: \keyDB \valueDB \stores y \wideColumnDB \stores son útiles para un
 	Lenguaje especial usando declaraciones \selectDB, \insertDB, y \updateDB, ej., \selectDBUpper \fields \fromDBUpper \tableDB \whereDBUpper ... &	
 	%Specific language using Select, Insert, and Update statements, e.g. SELECT fields FROM table WHERE…&
 	
-	A través de \apis \objectOrientedPL
+	A través de \apisAS \objectOrientedPL
 	%Through object-oriented APIs
 
 \\ \hline
@@ -265,7 +265,7 @@ db.products.find({'_id': ObjectID("4bd87bd8277d094c458d2fa5")});
 
 Claramente en \refsource{source:javascript:example_search_mongodb} no hay  representación completa de un \itemCOM, pero esto demuestra cuantas de estas \tablesDB triviales que existen en una representación relacional pueden prescindir en una representación \documentDB.
 
-Para datos \objectOrientedPL, los \documentsDB tienen mayor sentido, tanto en concepto como rendimiento. Una representación \documentOriented de un dato de un \itemCOM se traduce a unas pocas entidades (un puñado de \collectionsDB vs. una docena de \tablesDB), mejor \performanceQA en consultas (sin \serverSide \joins), y estructuras que corresponden precisamente al \itemCOM. Ya no existe la necesidad de diseñar un \masterSchema que pueda considerar a cada tipo de \itemCOM concebible.
+Para datos \objectOrientedPL, los \documentsDB tienen mayor sentido, tanto en concepto como rendimiento. Una representación \documentOriented de un dato de un \itemCOM se traduce a unas pocas entidades (un puñado de \collectionsDB vs. una docena de \tablesDB), mejor \performanceQA en consultas (sin \serverSideAS \joins), y estructuras que corresponden precisamente al \itemCOM. Ya no existe la necesidad de diseñar un \masterSchema que pueda considerar a cada tipo de \itemCOM concebible.
 
 \catalogManagement es esencialmente \contentManagement, un campo en donde \mongodbNAME sobresale.
 
@@ -505,7 +505,7 @@ La principal idea de\nodejsNAME : usar \nonbloking, \eventdrivenPL \inputOutput 
 
 %That’s a mouthful.
 
-Lo que esto realmente significa es que \nodejsNAME no es una plataforma \panaceaCPT que dominara el mundo \webINT \development. \textbf{En lugar de eso, es una plataforma que llena una necesidad particular}. Esto es absolutamente esencial. Definitivamente no se deseara utilizar \nodejsNAME para operaciones \cpuIntensivePC; de hecho, utilizando esto para \heavyComputationPC anulará prácticamente todas sus ventajas. Donde \nodejsNAME realmente brilla es construyendo aplicaciones \scalableQA  \network rápidamente, ya que es capaz de manejar un gran número de conexiones simultaneas con un alto rendimiento, lo que equivale a una \highScalabilityDB.
+Lo que esto realmente significa es que \nodejsNAME no es una plataforma \panaceaCPT que dominara el mundo \webINT \developmentPC. \textbf{En lugar de eso, es una plataforma que llena una necesidad particular}. Esto es absolutamente esencial. Definitivamente no se deseara utilizar \nodejsNAME para operaciones \cpuIntensivePC; de hecho, utilizando esto para \heavyComputationPC anulará prácticamente todas sus ventajas. Donde \nodejsNAME realmente brilla es construyendo aplicaciones \scalableQA  \networkINT rápidamente, ya que es capaz de manejar un gran número de conexiones simultaneas con un alto rendimiento, lo que equivale a una \highScalabilityDB.
 %What it really means is that Node.js is not a silver-bullet new platform that will dominate the web development world. Instead, it’s a platform that fills a particular need. And understanding this is absolutely essential. You definitely don’t want to use Node.js for CPU-intensive operations; in fact, using it for heavy computation will annul nearly all of its advantages. Where Node really shines is in building fast, scalable network applications, as it’s capable of handling a huge number of simultaneous connections with high throughput, which equates to high scalability.
 
 Como trabaja \underTheHoodCPT es muy interesante. Comparado con la técnica tradicional \webServingINT donde cada conexión (\requestINT) engendra un nuevo \threadPL, ocupando memoria \memoryRamPC del sistema y, eventualmente \maxingOutCPT la cantidad de \memoryRamPC disponible, \nodejsNAME opera en un \singleThreadPL, usando llamadas \nonbloking \inputOutput, permitiendo el apoyo de decenas de miles de conexiones concurrentes (retenidas en el \eventloopCPT). \refFigura{figure:diagram_traditional_vs_nodejs_server_thread}.
@@ -745,12 +745,12 @@ And sure, in real life, there are numerous of tricks available to reduce the eff
 \ecommerce es un excelente ejemplo de sistema que se puede ver totalmente beneficiado con el uso de \nodejsNAME en el lado del \serverAS. 
 
 \begin{itemize}
-	\item \textbf{\frontEndAS se movió desde el \serverSide al \clientSide( al menos en \mobile )}. Una de las grandes consecuencias es que el \serverSide ya no es más \cpuBoundPC ahora es \memoryBoundPC e \ioBoundPC. \nodejsNAME es \eventdrivenPL, lo cual implica eficiencia en \ioBoundPC y es extremadamente eficiente en el uso de memoria.
+	\item \textbf{\frontEndAS se movió desde el \serverSideAS al \clientSideAS ( al menos en \mobileINT )}. Una de las grandes consecuencias es que el \serverSideAS ya no es más \cpuBoundPC ahora es \memoryBoundPC e \ioBoundPC. \nodejsNAME es \eventdrivenPL, lo cual implica eficiencia en \ioBoundPC y es extremadamente eficiente en el uso de memoria.
 	\item Permite velocidad de desarrollo y ejecución. En otras palabras iteraciones rápidas.
 	%Ease of Development-Some problem, somewhere has a solution best written in Brainf*ck. But implementing that solution (in Brainfuck) will be nearly impossible to write, let alone read. It will cost you time and a tremendous amount of effort. In general, you should use languages and platform that make development easier, not harder for you (or anyone that might work on it later).
 	\item \textbf{Comunidad}: Existe una activa comunidad la cual esta constantemente solucionando dudas, además de proporcionar módulos para resolver problemas conocidos.
-	\item \textbf{Reutilizar código}: \serverSide y \clientSide usan el mismo lenguaje, permitiendo reutilización de componentes.
-	\item \textbf{Optimiza el uso de recursos}: Los desarolladores de \clientSide pueden desarrollar en \serverSide, ya que son el mismo lenguaje.
+	\item \textbf{Reutilizar código}: \serverSideAS y \clientSideAS usan el mismo lenguaje, permitiendo reutilización de componentes.
+	\item \textbf{Optimiza el uso de recursos}: Los desarolladores de \clientSideAS pueden desarrollar en \serverSideAS, ya que son el mismo lenguaje.
 	\item \textbf{\scalabilityQA}: Los sitios \webINT se encuentran en constante crecimiento. \scalabilityQA es una consecuencia de la eficiencia que tiene \nodejsNAME para \memoryBoundPC e \ioBoundPC
 \end{itemize}
 
@@ -800,7 +800,7 @@ And sure, in real life, there are numerous of tricks available to reduce the eff
 %***************************************************************************
 Billy Scott, PayPal
 
-\section{\clientSide}
+\section{\clientSideAS}
 
 Elegir el \frameworkPC correcto para un proyecto puede tener un impacto tremendo en la habilidad de entregar a tiempo y la habilidad para mantener el código en el futuro. ES ciertamente deseable un \frameworkPC sólido, estable y probado, pero sin estar limitado por la opción. La \webINT está evolucionando rápidamente; nuevas tecnologías surgen, y metodologías antiguas rápidamente se vuelven irrelevantes. Bajo este escenario, se compararan 3 \frameworksPC.
 %In this article we are going to compare three popular MV* frameworks for the web: AngularJS vs. Backbone vs. Ember. Choosing the right framework for your project can have a huge impact on your ability to deliver on time, and your ability to maintain your code in the future. You probably want a solid, stable and proven framework to build upon, but don't want to be limited by your choice. The web is evolving fast — new technologies arise, and old methodologies quickly become irrelevant. Under this light, we are going to go through an in-depth comparison of the three frameworks.
@@ -817,7 +817,7 @@ Elegir el \frameworkPC correcto para un proyecto puede tener un impacto tremendo
 
 \subsection{Comunidad}
 
-Una comunidad es uno de los factores mas importantes para considerar cuando se elije un \frameworkPC. Una extensa comunidad significa mas preguntas contestadas, mas módulos \thirdParty, más tutoriales en \youtubeNAME, etc. \angularjs es sin dudas la plataforma con mas apoyo como se puede observar en \reftabla{tab:framework_community}.
+Una comunidad es uno de los factores mas importantes para considerar cuando se elije un \frameworkPC. Una extensa comunidad significa mas preguntas contestadas, mas módulos \thirdParty, más tutoriales en \youtubeNAME, etc. \angularjsNAME es sin dudas la plataforma con mas apoyo como se puede observar en \reftabla{tab:framework_community}.
 %Community is one of the most important factors to consider when choosing a framework. A large community means more questions answered, more third-party modules, more YouTube tutorials…you get the point. I have put together a table with the numbers, as of August 16, 2014. Angular is definitely the winner here, being the 6th most-starred project on GitHub and having more questions on StackOverflow than Ember and Backbone combined, as you can see below:
 %
 %
@@ -828,7 +828,7 @@ Una comunidad es uno de los factores mas importantes para considerar cuando se e
 \begin{tabular}{ |L{0.1\paperwidth}|L{0.2\paperwidth}|L{0.2\paperwidth}|L{0.2\paperwidth}|}
 \hline
 	Metric&
-	\angularjs &
+	\angularjsNAME &
 	Backbone.js &
 	Ember.js
 	
@@ -933,7 +933,7 @@ Los \textit{assets} de JavaScript son usualmente served \textit{minified} y \tex
 Programando 
 %Before digging into Node.js, you might want to read up on the benefits of using JavaScript across the stack which unifies the language and data format (JSON), allowing you to optimally reuse developer resources. As this is more a benefit of JavaScript than Node.js specifically, we won’t discuss it much here. But it’s a key advantage to incorporating Node in your stack.
 
-Hay una gran cantidad de ventajas al utilizar un único lenguaje a lo largo del \stackAS. Al programas con \javaScriptNAME existe la posibilidad de realizar mejoras de rendimiento tanto en el propio \softwarePC y en la productividad de los desarrolladores. Con \mongodbNAME, se puede guardar los \documentsDB en un formato \jsonLikeCPT, escribir consultas \json en los servidores basados en \expressjsNAME y \nodejsNAME, y similarmente pasar documentos \json al \frontEndAS \angularjs. \debuggingPL y la administración de la base de datos se vuelve una tarea muchísimo mas sencilla cuando los objetos guardados en la base de datos son esencialmente idénticos a los objetos que el cliente \javaScriptNAME ve. Incluso mejor, alguien trabajando en \clientSide puede fácilmente entender el código del \serverSide y las consultas a la \dataBaseDB; usando la misma sintaxis y objetos todo el proceso libera a los desarrolladores la consideración de varios conjuntos de buenas prácticas de lenguajes y reduce la barrera de entrada para la comprensión de su código base. Esto es especialmente importante en una \hackathonCPT: el equipo puede no tener mucha experiencia trabajando juntos, y con tan poco tiempo para integrar todas las piezas de su proyecto, cualquier detalle que haga el proceso de desarrollo mas sencillo es oro.
+Hay una gran cantidad de ventajas al utilizar un único lenguaje a lo largo del \stackAS. Al programas con \javaScriptNAME existe la posibilidad de realizar mejoras de rendimiento tanto en el propio \softwarePC y en la productividad de los desarrolladores. Con \mongodbNAME, se puede guardar los \documentsDB en un formato \jsonLikeCPT, escribir consultas \json en los servidores basados en \expressjsNAME y \nodejsNAME, y similarmente pasar documentos \json al \frontEndAS \angularjsNAME. \debuggingPL y la administración de la base de datos se vuelve una tarea muchísimo mas sencilla cuando los objetos guardados en la base de datos son esencialmente idénticos a los objetos que el cliente \javaScriptNAME ve. Incluso mejor, alguien trabajando en \clientSideAS puede fácilmente entender el código del \serverSideAS y las consultas a la \dataBaseDB; usando la misma sintaxis y objetos todo el proceso libera a los desarrolladores la consideración de varios conjuntos de buenas prácticas de lenguajes y reduce la barrera de entrada para la comprensión de su código base. Esto es especialmente importante en una \hackathonCPT: el equipo puede no tener mucha experiencia trabajando juntos, y con tan poco tiempo para integrar todas las piezas de su proyecto, cualquier detalle que haga el proceso de desarrollo mas sencillo es oro.
 %First of all, there are huge advantages to using a uniform language throughout your stack. My team uses a set of tools that we affectionately call the MEAN stack:­ MongoDB, ExpressJS, AngularJS, and Node.js. By coding with Javascript throughout, we are able to realize performance gains in both the software itself and in the productivity of our developers. With MongoDB, we can store our documents in a JSON-­like format, write JSON queries on our ExpressJS and NodeJS based server, and seamlessly pass JSON documents to our AngularJS frontend. Debugging and database administration become a lot easier when the objects stored in your database are essentially identical to the objects your client Javascript sees. Even better, somebody working on the client side can easily understand the server side code and database queries; using the same syntax and objects the whole way through frees you from having to consider multiple sets of language best practices and reduces the barrier to entry for understanding your codebase. This is especially important in a hackathon setting: the team may not have much experience working together, and with such little time to integrate all the pieces of your project, anything that makes the development process easier is gold.
 
 
