@@ -1,5 +1,5 @@
 
-\chapter{\meteorNAME}\label{cap:chapter_meteor}
+\section{\meteorNAME}
 
 
 \meteorNAME es un \environmentPL ultra-simple para construir \websitesINT modernos. Lo que antes demoraba semanas, incluso con las mejoras herramientas, ahora toma horas con \meteorNAME.
@@ -25,7 +25,7 @@ La aplicación fue construida de la manera difícil. \meteorNAME hace esto con l
 \meteorNAME es un trabajo en desarrollo, pero se espera que muestra la dirección del equipo desarrollador. Ellos están deseosos de recibir \feedback. 
 %Meteor is a work in progress, but we hope it shows the direction of our thinking. We'd love to hear your feedback.
 
-\section{Principios de \meteorNAME}
+\subsection{Principios de \meteorNAME}
 %Principles of Meteor
 \begin{itemize}
 	\item \textbf{Datos \onthewire}. \meteorNAME no envía \htmlNAME a través de la \networkINT. El \serverAS envía datos y permite al \clientAS \render la información.
@@ -50,62 +50,62 @@ La aplicación fue construida de la manera difícil. \meteorNAME hace esto con l
 
 \end{itemize}
 
-\section{¿Qué es \meteorNAME?}
+\subsection{¿Qué es \meteorNAME?}
 %What is Meteor?
 
 \meteorNAME son dos cosas:
 %Meteor is two things:
 \begin{itemize}
-	\item  Una librería de \packages: \modules \prewritten y \selfcontained que probablemente serán necesarios en las aplicaciones.
+	\item  Una librería de \packagesAS: \modulesAS \prewritten y \selfcontained que probablemente serán necesarios en las aplicaciones.
 %A library of packages: pre-written, self-contained modules that you might need in your app.
 
-Hay cerca de una docena de \packages \coreAS \meteorNAME que prácticamente cualquier aplicación usará.  Dos ejemplos: \webapp, la cual \handleAS conexiones \incomming \httpNAME, y \templatingAS, lo que permite hacer \templatesAS \htmlNAME que automáticamente \update en vivo cuando los datos cambien. Entonces hay \packages opcionales como \email, que permite a una aplicación enviar \emails, o la serie de cuentas de \meteorNAME las cuales proporcionan un sistema de cuentas de usuarios \fullFeatured que puede ser \droprightinto la aplicación. Adicionalmente a estos \packages "\coreAS", hay miles de \packages escritos por la comunidad, los cuales pueden ser necesarios para alguna aplicación propia.
+Hay cerca de una docena de \packagesAS \coreAS \meteorNAME que prácticamente cualquier aplicación usará.  Dos ejemplos: \webapp, la cual \handleAS conexiones \incomming \httpNAME, y \templatingAS, lo que permite hacer \templatesAS \htmlNAME que automáticamente \update en vivo cuando los datos cambien. Entonces hay \packagesAS opcionales como \email, que permite a una aplicación enviar \emails, o la serie de cuentas de \meteorNAME las cuales proporcionan un sistema de cuentas de usuarios \fullFeatured que puede ser \droprightinto la aplicación. Adicionalmente a estos \packagesAS "\coreAS", hay miles de \packagesAS escritos por la comunidad, los cuales pueden ser necesarios para alguna aplicación propia.
 %There are about a dozen core Meteor packages that most any app will use. Two examples: webapp, which handles incoming HTTP connections, and templating, which lets you make HTML templates that automatically update live as data changes. Then there are optional packages like email, which lets your app send emails, or the Meteor Accounts series (accounts-password, accounts-facebook, accounts-ui, and others) which provide a full-featured user account system that you can drop right into your app. In addition to these "core" packages, there are thousands of community-written packages in Atmosphere, one of which might do just what you need.
 
 \item Una herramienta \commandLine llamada \commandLinemeteor.
 %A command-line tool called meteor.
 
-\commandLinemeteor es una herramienta de construcción análoga para hacer, examinar, o las partes no visuales de \visualstudio. Reúne todos los archivos y \assets en la aplicación, lleva a cabo cualquier paso de construcción necesario (tal como compilar \coffeescript, \minifying \cssNAME, construir \modules \npm, o generar \sourcemaps), trae los \packages usados por la aplicación, y entrega un paquete independiente de aplicaciones \readytorun. En modo desarrollador puede hacer todo esto de manera interactiva, así que siempre que se cambie un archivo, inmediatamente se reflejaran los cambios en el \browserINT. Esto es muy sencillo utilizar \outofthebox, pero también es extensible: es posible agregar soporte para nuevos lenguajes y compiladores incluyendo \build \plugin \packages a la aplicación.
+\commandLinemeteor es una herramienta de construcción análoga para hacer, examinar, o las partes no visuales de \visualstudio. Reúne todos los archivos y \assets en la aplicación, lleva a cabo cualquier paso de construcción necesario (tal como compilar \coffeescript, \minifying \cssNAME, construir \modulesAS \npm, o generar \sourcemaps), trae los \packagesAS usados por la aplicación, y entrega un paquete independiente de aplicaciones \readytorun. En modo desarrollador puede hacer todo esto de manera interactiva, así que siempre que se cambie un archivo, inmediatamente se reflejaran los cambios en el \browserINT. Esto es muy sencillo utilizar \outofthebox, pero también es extensible: es posible agregar soporte para nuevos lenguajes y compiladores incluyendo \build \plugin \packagesAS a la aplicación.
 %meteor is a build tool analogous to make, rake, or the non-visual parts of Visual Studio. It gathers up all of the source files and assets in your application, carries out any necessary build steps (such as compiling CoffeeScript, minifying CSS, building npm modules, or generating source maps), fetches the packages used by your app, and outputs a standalone, ready-to-run application bundle. In development mode it can do all of this interactively, so that whenever you change a file you immediately see the changes in your browser. It's super easy to use out of the box, but it's also extensible: you can add support for new languages and compilers by adding build plugin packages to your app.
 
 \end{itemize}
 
-La idea clave de \meteorNAME \package \system es que todo debería funcionar exactamente igual en el \browserINT y en el \serverAS (siempre que esto tenga sentido, claramente \browsersINT no pueden enviar \emails y \serversAS no pueden capturar eventos del \mouse). El ecosistema completo ha sido construido desde cero para soportar esto.
+La idea clave de \meteorNAME \packageAS \system es que todo debería funcionar exactamente igual en el \browserINT y en el \serverAS (siempre que esto tenga sentido, claramente \browsersINT no pueden enviar \emails y \serversAS no pueden capturar eventos del \mouse). El ecosistema completo ha sido construido desde cero para soportar esto.
 %The key idea in the Meteor package system is that everything should work identically in the browser and on the server (wherever it makes sense, of course: browsers can't send email and servers can't capture mouse events). Our whole ecosystem has been built from the ground up to support this.
 
-\section{El \stackAS \meteorNAME}
+\subsection{El \stackAS \meteorNAME}
 
 
-El \stackAS \meteorNAME(\refFigura{figure:meteor_stack}) es un miembro de la familia \meanstack, esto significa que esta impulsado por \nodejsNAME en el \serverSideAS. Es el mismo propósito que tiene el \webserverINT \apacheNAME en el \stackAS \lampNAME.
+El \stackAS \meteorNAME(\refFigura{figure:meteor_stack}) es un miembro de la familia \meanstackNAME, esto significa que esta impulsado por \nodejsNAME en el \serverSideAS. Es el mismo propósito que tiene el \webserverINT \apacheNAME en el \stackAS \lampNAME.
 
 
 
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=1.0\textwidth]{figuras/meteor_stack.png}
-	\caption{El \stackAS \meteorNAME corre aplicaciones potenciadas por \packages inteligentes sobre \nodejsNAME y \mongodbNAME}
+	\caption{El \stackAS \meteorNAME corre aplicaciones potenciadas por \packagesAS inteligentes sobre \nodejsNAME y \mongodbNAME}
 	\label{figure:meteor_stack}
 \end{figure}
 
 Toda la información es típicamente guardada dentro de \mongodbNAME. Provee una \api \javaScriptNAME que da acceso a todo el contenido almacenado en forma de \documentsDB ó \objectsPL. El mismo lenguaje dentro del \browserINT puede ser usado para acceder a los datos, el cual \meteorNAME toma ventaja para implementar un verdadero desarrollo \fullstackAS.
 %All data is typically stored inside a MongoDB, a document-oriented NoSQL database. There are plans for Meteor to support other (SQL-based) database systems, but currently the only suggested DB is Mongo. It provides a JavaScript-API that gives access to all stored content in form of documents or objects. The same language used inside the browser can be used to access data, which Meteor takes advantage to implement true fullstack development.
 
-Todo el \softwarePC y librerías requeridas para crear aplicaciones \webINT desde cero son agrupados en forma de \packages inteligentes, así los desarrolladores pueden empezar de inmediato. Estos \packages incluyen una librería de interfaz de usuario (\blazemeteor), un manejados de cuentas de usuarios (\accountsmeteor), y mantener a todos los \clientsAS \reactively \updated en \realTimeINT (\trackermeteor).
+Todo el \softwarePC y librerías requeridas para crear aplicaciones \webINT desde cero son agrupados en forma de \packagesAS inteligentes, así los desarrolladores pueden empezar de inmediato. Estos \packagesAS incluyen una librería de interfaz de usuario (\blazemeteor), un manejados de cuentas de usuarios (\accountsmeteor), y mantener a todos los \clientsAS \reactively \updated en \realTimeINT (\trackermeteor).
 %All required software and libraries required to create web applications from scratch are bundled in the shape of Smart Packages, so developers can get started right away. These packages include a user interface library (Blaze), managing user accounts (accounts), and keeping all clients reactively updated in realtime (Tracker).
 
-La herramienta \clitool de \meteorNAME permite a los desarrolladores rápidamente \setup un \environmentPL completo de desarrollo. No es necesario saber como instalar o configurar algún \softwarePC de \serverAS. \meteorNAME cuida literalmente los aspectos de la infraestructura. Esto es también una herramienta para construir, comparable a \maketool ó \grunttool, y un manejador de \package, tal como \apttool ó \npm. Finalmente la herramienta \clitool agrupa una aplicación para correr en diferentes plataformas de \clientsAS, dentro de un \browserINT \webINT ó como una aplicación \mobileINT nativa.
+La herramienta \clitool de \meteorNAME permite a los desarrolladores rápidamente \setup un \environmentPL completo de desarrollo. No es necesario saber como instalar o configurar algún \softwarePC de \serverAS. \meteorNAME cuida literalmente los aspectos de la infraestructura. Esto es también una herramienta para construir, comparable a \maketool ó \grunttool, y un manejador de \packageAS, tal como \apttool ó \npm. Finalmente la herramienta \clitool agrupa una aplicación para correr en diferentes plataformas de \clientsAS, dentro de un \browserINT \webINT ó como una aplicación \mobileINT nativa.
 %The Meteor CLI tool allows developers to quickly set up an entire development environment. There is no need to know how to install or configure any server software, Meteor takes care of the infrastructure aspect entirely. It is also both a build tool, comparable to make or grunt, and a package manager, such as apt or npm. For example it can compile LESS or CoffeeScript on the fly, without first setting up workflow or add authentication via Facebook oAuth with a single command. Finally the CLI tool bundles an application to run on different client platforms, inside a web browser or as native mobile apps.
 
-Todas las partes del \stackAS se integran sin problemas, todos los \packages \coreAS son diseñados y probados para trabajar bien en conjunto. Por otro lado, es perfectamente posible cambiar partes del \stackAS a otros, en caso de ser necesario. En lugar de utilizar \meteorNAME en su totalidad podría decidir utilizarse sólo los componentes de \serverAS y utilizar por ejemplo \angularjsNAME para el \clientSideAS, o utilizar un \javabackend que utilice \meteorNAME en el \frontEndAS para proveer \updates \realTimeINT para todos los \clientsAS.
+Todas las partes del \stackAS se integran sin problemas, todos los \packagesAS \coreAS son diseñados y probados para trabajar bien en conjunto. Por otro lado, es perfectamente posible cambiar partes del \stackAS a otros, en caso de ser necesario. En lugar de utilizar \meteorNAME en su totalidad podría decidir utilizarse sólo los componentes de \serverAS y utilizar por ejemplo \angularjsNAME para el \clientSideAS, o utilizar un \javabackend que utilice \meteorNAME en el \frontEndAS para proveer \updates \realTimeINT para todos los \clientsAS.
 %All parts of the stack integrate seamlessly, all core packages are designed and tested to work well together. On the other hand, it is entirely possible to switch out parts of the stack for others, should the need arise. Instead of using Meteor in full you could decide to only use the server components and use e.g. Angular.js on the client side, or use a Java-backend that uses Meteor on the front-end to provide realtime updates to all clients. 
 
-\section{\frameworkPC Isomorfo – \fullstackAS \javaScriptNAME}
+\subsection{\frameworkPC \isomorphicAS – \fullstackAS \javaScriptNAME}
 %Isomorphic Frameworks – Fullstack JavaScript
 
-\meteorNAME corre sobre \nodejsNAME y mueve la lógica de la aplicación hacia el \browserINT, lo que es usualmente referido a \singlePageAppINT. El mismo lenguaje es usado sobre todo el \stackAS, lo que transforma a \meteorNAME en una plataforma Isomorfa. Como resultado el mismo código \javaScriptNAME puede ser usado en el \serverAS, en el \clientAS, e incluso en la \dataBaseDB.
+\meteorNAME corre sobre \nodejsNAME y mueve la lógica de la aplicación hacia el \browserINT, lo que es usualmente referido a \singlePageAppINT. El mismo lenguaje es usado sobre todo el \stackAS, lo que transforma a \meteorNAME en una plataforma \isomorphicAS. Como resultado el mismo código \javaScriptNAME puede ser usado en el \serverAS, en el \clientAS, e incluso en la \dataBaseDB.
 %Meteor runs on top of Node.js and moves the application logic to the browser, which is often referred to as Single Page Applications. The same language is used across the entire stack, which makes Meteor an isomorphic platform. As a result the same JavaScript code can be used on the server, the client, and even in the database. 
 
-Mientras muchos \frameworksPC usan el mismo lenguaje en tanto en \clientAS como en \serverAS, la mayoría del tiempo estos no pueden compartir código porque los \frameworksPC no son íntimamente integrados, por ejemplo el uso de \angularjsNAME en el \frontEndAS y \expressjsNAME en el \backend. \meteorNAME es un \fullstackAS verdadero porque usa una simple y unificada \api expuesta para todas las funcionalidades \coreAS y pueden ser utilizadas en el \serverAS, en el \browserINT, e incluso para acceder a la \dataBaseDB. Para comenzar, no es necesario aprender múltiples \frameworksPC y da como resultado una mejor \reusability del código solo utilizando el mismo lenguaje.
+Mientras muchos \frameworksPC usan el mismo lenguaje en tanto en \clientAS como en \serverAS, la mayoría del tiempo estos no pueden compartir código porque los \frameworksPC no son íntimamente integrados, por ejemplo el uso de \angularjsNAME en el \frontEndAS y \expressjsNAME en el \backendAS. \meteorNAME es un \fullstackAS verdadero porque usa una simple y unificada \api expuesta para todas las funcionalidades \coreAS y pueden ser utilizadas en el \serverAS, en el \browserINT, e incluso para acceder a la \dataBaseDB. Para comenzar, no es necesario aprender múltiples \frameworksPC y da como resultado una mejor \reusability del código solo utilizando el mismo lenguaje.
 %While many frameworks use the same language on both client and server, most of the times they cannot share code between the two instances because the frameworks are not tightly integrated, for example they use Angular on the frontend and Express.js on the backend. Meteor is truly fullstack because it uses a simple and unified API that exposes all core functionality and can be used on the server, in the browser, and even to access the database. To get started you do not have to learn multiple frameworks and results in much better re-usability of the code than only using the same language.
 
 Para acceder a la \dataBaseDB desde el \browserINT, \meteorNAME incluye una mini \dataBaseDB. Esta simula exactamente la misma \api de una \dataBaseDB. Dentro del \browserINT \minimongo permite a los desarrolladores utilizar los mismos comandos como si estuvieran en una consola de \mongodbNAME.
@@ -117,3 +117,6 @@ Típicamente los desarrolladores necesitan saber como escribir código que tome 
 Afortunadamente, \meteorNAME aprovecha toda la potencia de \eventloopCPT, pero facilita el proceso evitando cierta preocupación sobre escribir código \asynchronousCPT. Utiliza el concepto llamado \fibers \behindthescenes. \fibers proveen una capa de abstracción para el \eventloopCPT que ejecuta funciones \asynchronousCPT(\tasks) en secuencia. Esto elimina la necesidad de \callbacksPL explícitos de manera que se puedan utilizar un estilo \synchronousCPT familiar.
 %Fortunately, Meteor leverages the full power of the event loop, but it makes it easy by not having to worry so much about writing asynchronous code. It uses a concept called Fibers behind the scenes. Fibers provide an abstraction layer for the Event Loop that executes asynchronous functions (tasks) in sequence.It removes the need for explicit callbacks so that a familiar synchronous style may be used.
 
+\subsection{¿Por qué \meteorNAME?}
+
+Se ha demostrado que la opción de \

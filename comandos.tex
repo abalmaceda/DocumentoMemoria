@@ -61,6 +61,8 @@
 \newcommand{\nodejsNAME}			{\nWrapper{Node.js}}
 \newcommand{\krakenjsNAME}			{\nWrapper{Kraken.js}}
 \newcommand{\grunttool}				{\nWrapper{Grunt}}
+\newcommand{\browserifyNAME}		{\nWrapper{browserify}}
+
 \newcommand{\expressjsNAME}			{\nWrapper{Express.js}}
 \newcommand{\dockerio}				{\nWrapper{Docker.io}}
 \newcommand{\docker}				{\nWrapper{Docker}}
@@ -71,12 +73,14 @@
 \newcommand{\ajaxNAME}				{\nWrapper{Ajax}}
 \newcommand{\phonegapNAME}			{\nWrapper{PhoneGap}}
 \newcommand{\emberjsName}			{\nWrapper{Ember.js}}
+\newcommand{\sailsNAME}				{\nWrapper{Sails}}
 \newcommand{\backbonejsNAME}		{\nWrapper{Backbone.js}}
 \newcommand{\extjsNAME}				{\nWrapper{Ext JS}}
 \newcommand{\jqueryNAME}			{\nWrapper{jQuery}}
 \newcommand{\koaNAME}				{\nWrapper{Koa}}
-\newcommand{\HandlebarsNAME}		{\nWrapper{Handlebars.js}}
+\newcommand{\handlebarsNAME}		{\nWrapper{Handlebars.js}}
 \newcommand{\yuiThreeNAME}			{\nWrapper{YUI 3}}
+\newcommand{\mongooseNAME}			{\nWrapper{mongoose}}
 
 \newcommand{\uri}					{\gWrapper{uri}}
 \newcommand{\npm}					{\nWrapper{NPM}}
@@ -164,17 +168,35 @@
 
 
 \newcommand{\meteorNAME}			{\nWrapper{Meteor}}
+\newcommand{\meteorNAMEref}			{\nWrapper{Meteor}}
 \newcommand{\derbyNAME}				{\nWrapper{Derby}}
-\newcommand{\mojitoNAME}			{\nWrapper{Mojito}}
-\newcommand{\rendrNAME}				{\nWrapper{Rendr}}
+\newcommand{\derbyNAMEref}			{\nWrapper{Derby}}
+\newcommand{\sleekjsNAME}			{\nWrapper{Sleekjs}}
+\newcommand{\sleekjsNAMEref}		{\nWrapper{Sleekjs}}
+\newcommand{\socketStreamNAME}		{\nWrapper{SocketStream}}
+\newcommand{\socketStreamNAMEref}	{\nWrapper{SocketStream}}
+\newcommand{\saneNAME}				{\nWrapper{SANE}}
+\newcommand{\saneNAMEref}			{\nWrapper{SANE}}
+\newcommand{\cokeNAME}				{\nWrapper{COKE}}
+\newcommand{\cokeNAMEref}			{\nWrapper{COKE}}
 \newcommand{\flatironNAME}			{\nWrapper{Flatiron}}
+\newcommand{\flatironNAMEref}		{\nWrapper{Flatiron}}
+\newcommand{\meanstackNAME}			{\gWrapper{mean_stack}}
+\newcommand{\meanstackNAMEref}		{\gWrapper{mean_stack}}
+\newcommand{\mojitoNAME}			{\nWrapper{Mojito}}
+\newcommand{\mojitoNAMEref}			{\nWrapper{Mojito}}
+\newcommand{\danfNAME}				{\nWrapper{Danf}}
+\newcommand{\danfNAMEref}			{\nWrapper{Danf}}
+\newcommand{\rendrNAME}				{\nWrapper{Rendr}}
+\newcommand{\rendrNAMEref}			{\nWrapper{Rendr}}
+\newcommand{\meenstackNAME}			{\gWrapper{meen_stack}}
+\newcommand{\meenstackNAMEref}		{\gWrapper{meen_stack}}
+
 
 \newcommand{\json}					{\gWrapper{json}}
 \newcommand{\sqlNAME}				{\gWrapper{sql}}
 \newcommand{\nosqlNAME}				{\gWrapper{nosql}}
 \newcommand{\visualstudio}			{\nWrapper{Visual Studio}}
-\newcommand{\meanstack}				{\gWrapper{mean_stack}}
-\newcommand{\meenstack}				{\gWrapper{meen_stack}}
 \newcommand{\blazemeteor}			{\nWrapper{Blaze}}
 \newcommand{\accountsmeteor}		{\bWrapper{accounts}}
 \newcommand{\trackermeteor}			{\nWrapper{Tracker}}
@@ -236,6 +258,7 @@
 \newcommand{\ordbms}					{\gWrapper{ordbms}}
 \newcommand{\frameworkPC}				{\bWrapper{Framework}}
 \newcommand{\frameworksPC}				{\bWrapper{Frameworks}}
+\newcommand{\libraryPC}					{\bWrapper{library}}
 \newcommand{\match}						{\bWrapper{match}}
 \newcommand{\openSourcePC}				{\bWrapper{Open Source}}
 \newcommand{\freePC}					{\bWrapper{free}}
@@ -387,7 +410,9 @@
 \newcommand{\connectivityINT}			{\bWrapper{Connectivity}}
 \newcommand{\linkINT}					{\bWrapper{Link}}
 \newcommand{\linksINT}					{\bWrapper{Links}}
-
+\newcommand{\requireINT}				{\bWrapper{require}}
+\newcommand{\seoINT}					{\gWrapper{seo_sigla}}
+\newcommand{\searchEngOptINT}			{\gWrapper{sear_eng_opt}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%  E-COMMERCE(COM)	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -491,14 +516,14 @@
 \newcommand{\persistenceLayer}		{\bWrapper{persistence} \layer}
 \newcommand{\serverAS}				{\bWrapper{server}}
 \newcommand{\serversAS}				{\bWrapper{servers}}
-\newcommand{\serverSideAS}			{\bWrapper{server-side}}
-\newcommand{\clientSideAS}			{\bWrapper{client-side}}
+\newcommand{\serverSideAS}			{\bWrapper{Server-side}}
+\newcommand{\clientSideAS}			{\bWrapper{Client-side}}
 \newcommand{\clientAS}				{\bWrapper{client}}
 \newcommand{\clientsAS}				{\bWrapper{clients}}
 
 \newcommand{\frontEndAS}			{\bWrapper{Front-End}}
 \newcommand{\frontEndsAS}			{\bWrapper{Front-Ends}}
-\newcommand{\backend}				{\bWrapper{Back-End}}
+\newcommand{\backendAS}				{\bWrapper{Back-End}}
 \newcommand{\portablesAS}			{\bWrapper{Portables}}
 \newcommand{\mainframeAS}			{\bWrapper{Mainframe}}
 \newcommand{\mainframesAS}			{\bWrapper{Mainframes}}
@@ -507,11 +532,13 @@
 \newcommand{\fullstackAS}			{\bWrapper{Full-Stack}}
 \newcommand{\stackAS}				{\bWrapper{Stack}}
 \newcommand{\stacksAS}				{\bWrapper{Stacks}}
+\newcommand{\plugAS}				{\bWrapper{plug}}
 \newcommand{\prefetches}			{\bWrapper{\gWrapper{instruction_prefetch}es}}
 \newcommand{\prefetch}				{\bothWrapper{instruction_prefetch}}
-\newcommand{\modules}				{\bWrapper{modules}}
-\newcommand{\packages}				{\bWrapper{packages}}
-\newcommand{\package}				{\bWrapper{package}}
+\newcommand{\modulesAS}				{\bWrapper{modules}}
+\newcommand{\packagesAS}				{\bWrapper{packages}}
+\newcommand{\packageAS}				{\bWrapper{package}}
+\newcommand{\repackagingAS}			{\bWrapper{repackaging}}
 \newcommand{\plugin}				{\bWrapper{plugin}}
 \newcommand{\plugins}				{\bWrapper{plugins}}
 \newcommand{\coreAS}				{\bWrapper{core}}
@@ -538,6 +565,7 @@
 \newcommand{\wafAS}					{\gWrapper{waf}}
 \newcommand{\modelViewConAS}		{\bWrapper{model-view-controller}}
 \newcommand{\apiendpointsAS}		{\bWrapper{endpoints}}
+\newcommand{\interfaceAS}			{\bWrapper{interface}}
 \newcommand{\ormAS}					{\gWrapper{orm_siglas}}
 \newcommand{\rubyGemsAS}			{\bothWrapper{ruby_gems}}
 \newcommand{\rackMiddleRubyAS}		{\bothWrapper{rack_middleware_ruby}}
@@ -550,13 +578,15 @@
 \newcommand{\wrapperAS}				{\bWrapper{wrapper}}
 \newcommand{\isomorphicAS}			{\bWrapper{Isomorphic}}
 \newcommand{\connectorSemanticsAS}	{\bWrapper{connector semantics}}
+\newcommand{\componentsAS}			{\bWrapper{components}}
 \newcommand{\componentSemanticsAS}	{\bWrapper{component semantics}}
 \newcommand{\middlewareAS}			{\bWrapper{Middleware}}
-\newcommand{\mvcAS}					{\nWrapper{MVC}}
+\newcommand{\mvcAS}					{\gWrapper{mvc_sigla}}
+\newcommand{\mvvmAS}				{\gWrapper{mvvm_sigla}}
 \newcommand{\autoUpdatedAS}			{\bWrapper{automatically-updating}}
 \newcommand{\staticPropertyAS}		{\bWrapper{static property}}
 \newcommand{\storeForewardAS}		{\bWrapper{store and foreward}}
-
+\newcommand{\dynamSharedLibAS}		{\bWrapper{dynamic shared library}}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -772,6 +802,7 @@
 \newcommand{\faultTolerantQA}		{\bWrapper{Fault tolerant}}
 \newcommand{\flexibleQA}			{\bWrapper{Flexible}}
 \newcommand{\reliabilityQA}			{\bWrapper{Reliability}}
+\newcommand{\flexibilityQA}			{\bWrapper{Flexibility}}
 \newcommand{\availabilityQA}		{\bWrapper{Availability}}
 \newcommand{\extensibilityQA}		{\bWrapper{Extensibility}}
 \newcommand{\structuredQA}			{\bWrapper{Structured}}
@@ -786,6 +817,7 @@
 \newcommand{\featureRichQA}			{\bWrapper{feature-rich}}
 \newcommand{\versatilityQA}			{\bWrapper{Versatility}}
 \newcommand{\collaborativeQA}		{\bWrapper{Collaborative}}
+\newcommand{\speedQA}				{\bWrapper{Speed}}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -875,7 +907,7 @@
 \newcommand{\stress}				{\bWrapper{stress}}
 \newcommand{\idle}					{\bWrapper{idle}}
 \newcommand{\smartphone}			{\bWrapper{smartphone}}
-\newcommand{\clientcentric}			{\bWrapper{clientcentric}}
+\newcommand{\clientcentric}			{\bWrapper{client-centric}}
 \newcommand{\clientserver}			{\bWrapper{client-server}}
 \newcommand{\statelessconnections}	{\bWrapper{stateless-connections}}
 \newcommand{\graphTheory}			{\bWrapper{\nameref{ap:apendice_graph_theory}}}
@@ -953,10 +985,14 @@
 \newcommand{\resourcesCPT}				{\bWrapper{resources}}
 \newcommand{\ultraSimpleCPT}			{\bWrapper{ultra-simple}}
 \newcommand{\runCPT}					{\bWrapper{Run}}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	 	OTROS		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\bundlingUpCPT}				{\bWrapper{bundling up}}
+\newcommand{\searchEnginesCPT}			{\bWrapper{search engines}}
+\newcommand{\freeCPT}					{\bWrapper{free}}
+\newcommand{\organicCPT}				{\bWrapper{organic}}
+\newcommand{\naturalCPT}				{\bWrapper{natural}}
+\newcommand{\editorialCPT}				{\bWrapper{editorial}}
+\newcommand{\architectureCPT}			{\bWrapper{architecture}}
+\newcommand{\methodologyCPT}			{\bWrapper{methodology}}
 
 \newcommand{\task}					{\bWrapper{task}}
 \newcommand{\tasks}					{\bWrapper{tasks}}
@@ -978,6 +1014,13 @@
 \newcommand{\selfcontained}			{\bWrapper{self-contained}}
 \newcommand{\prewritten}			{\bWrapper{pre-written}}
 \newcommand{\fast}					{\bWrapper{fast}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%	  	 REFERENCIAS      %%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\fullStackJSFwASref}		{\nameref{cap:estadoArte:section:fullstack_javaScript_framework}}
+\newcommand{\isomorphicJSFwASref}		{\nameref{cap:estadoArte:subsubsection:isomorphic_javaScript_framework}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %										%

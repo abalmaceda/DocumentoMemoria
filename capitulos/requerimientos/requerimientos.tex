@@ -322,7 +322,7 @@ Con \mongodbNAME, es posible realizar consultas en atributos arbitrarios, de esa
 
 Claramente, \aggregationDB también es necesario. Se desea reportar \ordersCommerce de diferentes maneras, y para ese propósito, \mapReduce esta disponible. A modo de ejemplo, \refsource{source:javascript:example_aggregation_mongodb} tiene comando \mapReduce que \aggregatesDB el total de \ordersCommerce por \zipCode.
 
-\begin{lstlisting}[caption= Ejemplo de commando \mapReduce., label=source:javascript:example_aggregation_mongodb]
+\begin{lstlisting}[caption= Ejemplo de comando \mapReduce., label=source:javascript:example_aggregation_mongodb]
 
 map = "
 	function(){
@@ -699,7 +699,7 @@ Pero para \nodejsNAME, es sencillo. Después de todo, cada solicitud es cerca de
 
 %Also note that in both these tests, CPU load was never a problem. Even if CPU loads varies with concurrent users in both tests it stays below 5% (and yes, I did not just rely on the graph, I checked it on the server as well). (I’ll write a follow up on this article at some point when I can include server memory usage as well). So we haven’t loaded this server into oblivion in any way, we’ve just loaded it hard enough for the PHP/Aapache architecture to start showing some of it’s problems.
 
-Más ejemplos de \benchmarkQA pueden ser encontrados en\cite{online_nodejs_java_appdynamics}.
+Más ejemplos de \benchmarkQA pueden ser encontrados en \cite{online_nodejs_java_appdynamics}.
 
 
 %\subsubsection*{¿ Qué hace a Node.js mejor?}
@@ -730,14 +730,14 @@ Más ejemplos de \benchmarkQA pueden ser encontrados en\cite{online_nodejs_java_
 %
 %La cualidad que hace diferente a Node.js, es que no es necesario utilizar un servidor http(s) separado. Es completamente común poner Node.js detrás de un Nginx, pero eso no es estrictamente necesario. Así que el corazón de las aplicaciones \textit{web} típicas de Node.js  es la implementación de su servidor real.
 %It’s quite easy to end up with very deep nesting that in my opinion sometimes affects code readability in a negative way. But compared to what gets said about PHP, that’s very mild critique. And.. oh! The third thing that is quite different is that in Node.js, you don’t have to use a separate http(s) server. It’s quite common to put Node.js behind a Nginx, but that’s not strictly needed. So the heart of a typical Node.js web application is the implementation of the actual web server.
-
-
-*****************************************************************************
-
-
-Hopefully, this shows the inherit differences in two different server technologies. One old trusted and one young and trending. Hopefully it’s apparent that your core technical choices will affect your server performance and in the end, how much load you can take. Designing for high load and high scalability begins early in the process, before the first line of code is ever written.
-
-And sure, in real life, there are numerous of tricks available to reduce the effects seen here. In real life, lots of Facebook still runs on PHP.
+%
+%
+%*****************************************************************************
+%
+%
+%Hopefully, this shows the inherit differences in two different server technologies. One old trusted and one young and trending. Hopefully it’s apparent that your core technical choices will affect your server performance and in the end, how much load you can take. Designing for high load and high scalability begins early in the process, before the first line of code is ever written.
+%
+%And sure, in real life, there are numerous of tricks available to reduce the effects seen here. In real life, lots of Facebook still runs on PHP.
 
 
 \subsubsection{\nodejsNAME y \ecommerce}
@@ -798,151 +798,75 @@ And sure, in real life, there are numerous of tricks available to reduce the eff
 %
 %
 %***************************************************************************
-Billy Scott, PayPal
-
-\section{\clientSideAS}
-
-Elegir el \frameworkPC correcto para un proyecto puede tener un impacto tremendo en la habilidad de entregar a tiempo y la habilidad para mantener el código en el futuro. ES ciertamente deseable un \frameworkPC sólido, estable y probado, pero sin estar limitado por la opción. La \webINT está evolucionando rápidamente; nuevas tecnologías surgen, y metodologías antiguas rápidamente se vuelven irrelevantes. Bajo este escenario, se compararan 3 \frameworksPC.
-%In this article we are going to compare three popular MV* frameworks for the web: AngularJS vs. Backbone vs. Ember. Choosing the right framework for your project can have a huge impact on your ability to deliver on time, and your ability to maintain your code in the future. You probably want a solid, stable and proven framework to build upon, but don't want to be limited by your choice. The web is evolving fast — new technologies arise, and old methodologies quickly become irrelevant. Under this light, we are going to go through an in-depth comparison of the three frameworks.
-
-\subsection{Meet The \frameworksPC}
-
-%All the frameworks we are going to meet today have a lot in common: they are open-sourced, released under the permissive MIT license, and try to solve the problem of creating Single Page Web Applications using the MV* design pattern. They all have the concept of views, events, data models and routing. We are going to start with some quick background and history, and then dive in to compare the three frameworks.
-%
-%AngularJS was born in 2009 as a part of a larger commercial product, called GetAngular. Shortly after, Misko Hevery, one of the engineers who founded GetAngular, managed to recreate a web application that consisted of 17 thousand lines of code and took 6 months to develop in a mere 3 weeks using just GetAngular. Reducing the size of the application to just about 1,000 lines of code convinced Google to start sponsoring the project, turning it into the open-source AngularJS we know today. Amongst Angular's unique and innovative features are two-way data bindings, dependency injection, easy-to-test code and extending the HTML dialect by using directives.
-%
-%Backbone.js is a lightweight MVC framework. Born in 2010, it quickly grew popular as a lean alternative to heavy, full-featured MVC frameworks such as ExtJS. This resulted in many services adopting it, including Pinterest, Flixster, AirBNB and others.
-%
-%Ember's roots go way back to 2007. Starting its life as the SproutCore MVC framework, originally developed by SproutIt and later by Apple, it was forked in 2011 by Yehuda Katz, a core contributor to the popular jQuery and Ruby on Rails projects. Notable Ember users include Yahoo!, Groupon, and ZenDesk.
-
-\subsection{Comunidad}
-
-Una comunidad es uno de los factores mas importantes para considerar cuando se elije un \frameworkPC. Una extensa comunidad significa mas preguntas contestadas, mas módulos \thirdParty, más tutoriales en \youtubeNAME, etc. \angularjsNAME es sin dudas la plataforma con mas apoyo como se puede observar en \reftabla{tab:framework_community}.
-%Community is one of the most important factors to consider when choosing a framework. A large community means more questions answered, more third-party modules, more YouTube tutorials…you get the point. I have put together a table with the numbers, as of August 16, 2014. Angular is definitely the winner here, being the 6th most-starred project on GitHub and having more questions on StackOverflow than Ember and Backbone combined, as you can see below:
-%
-%
-\begin{table}[h!]
-    \tiny
-   
-%\begin{tabular}{ |C{0.3\paperwidth}|C{0.3\paperwidth}| }
-\begin{tabular}{ |L{0.1\paperwidth}|L{0.2\paperwidth}|L{0.2\paperwidth}|L{0.2\paperwidth}|}
-\hline
-	Metric&
-	\angularjsNAME &
-	Backbone.js &
-	Ember.js
-	
-\\ \hline
-	Stars on Github&
-	27.2k&
-	18.8k&
-	11k
-	
-\\ \hline
-	Third-Party Modules&
-	800 ngmodules&
-	236 backplugs&
-	21 emberaddons
-	
-\\ \hline
-	StackOverflow Questions&
-	49.5k&
-	15.9k&
-	11.2k
-	
-\\ \hline
-	YouTube Results&
-	~75k&
-	~16k&
-	~6k
-	
-\\ \hline
-	GitHub Contributors&
-	928&
-	230&
-	393
-	
-\\ \hline
-	Chrome Extension Users&
-	150k&
-	7k&
-	38.3k
-				
-\\ \hline
-\end{tabular}
-    \caption{ Tamaño de la comunidad}
-    \label{tab:framework_community}
-\end{table}
-%Metric	AngularJS	Backbone.js	Ember.js
-%Stars on Github	27.2k	18.8k	11k
-%Third-Party Modules	800 ngmodules	236 backplugs	21 emberaddons
-%StackOverflow Questions	49.5k	15.9k	11.2k
-%YouTube Results	~75k	~16k	~6k
-%GitHub Contributors	928	230	393
-%Chrome Extension Users	150k	7k	38.3k
-
-%TODO
-%Todas las medidas, sin embargo, muestran simplemente el estado actual de cada \textit{framework}. También es interesante de observar cual \textit{framework} tienen el mayor crecimiento de popularidad. 
-%All those metrics, however, merely show the current state of each framework. It is also interesting to see which framework has a faster-growing popularity. Fortunately, using Google Trends we can get an answer for that too:
+%Billy Scott, PayPal
 
 
-\subsection{Framework Size}
+\subsubsection{\fullstackAS \javaScriptNAME}
 
-El tiempo de carga para las paginas es crucial para el éxito de un sitio \textit{web}. Los usuarios no muestran mucha paciencia cuando se trata de la velocidad de explorar; así que en muchos casos es deseado hacer todo lo posible para carga la aplicación tan rápido como sea posible. Hay 2 factores para observar que deben considerarse para el impacto del \textit{framework} en el tiempo de carga de la aplicación: el tamaño del \textit{framework} y el tiempo que le toma al \textit{framework} \textit{bootstrap}.
-%Page load times are crucial for the success of your web site. Users do not exhibit much patience when it comes to the speed of browsing — so in many cases it is desired to do everything possible to make your application load as fast as possible. There are two factors to look at when considering the impact of the framework on the loading time of your application: framework size and the time it takes the framework to bootstrap.
-
-Los \textit{assets} de JavaScript son usualmente served \textit{minified} y \textit{gzipped}, asi que se comparará el tamaño de las versiones \textit{minified-gzipped}. Sin embargo, simplemente mirando el \textit{framework} no es suficiente. En \reftabla{tab:framework_size} se aprecia el tamaño de cada \textit{framework}.
-%Javascript assets are usually served minified and gzipped, so we are going to compare the size of the minified-gzipped versions. However, merely looking at the framework is not enough. Backbone.js, despite being the smallest (only 6.5kb), requires both Underscore.js (5kb) and jQuery (32kb) or Zepto (9.1kb), and you will probably need to add some third party plug-ins to the mix.
-
-\begin{table}[h!]
-    \tiny
-\begin{tabular}{ |L{0.1\paperwidth}|L{0.2\paperwidth}|L{0.2\paperwidth}|L{0.2\paperwidth}|}
-\hline
-	\textit{Framework}&
-	Versión &
-	Net Size &
-	Size with required dependencies
-	
-\\ \hline
-	AngularJS&
-	1.2.22&
-	39.5kb&
-	39.5kb
-\\ \hline
-	Backbone.js&
-	1.1.2&
-	6.5kb&
-	43.5kb (jQuery + Underscore) 20.6kb (Zepto + Underscore)
-	
-\\ \hline
-	Ember.js&
-	1.6.1&
-	90kb&
-	136.2kb (jQuery + Handlebars)
-	
-\\ \hline
-\end{tabular}
-    \caption{ Tamaño del \textit{framework}}
-    \label{tab:framework_size}
-\end{table}
-
-\section{Full-Stack \javaScriptNAME}
-%TODO
-%Es importante destacar los beneficios de utilizar \gloss{javascript} a través del \textit{stack} que unifica el lenguaje y el formato de la información (\gloss{json}), permitiendo optimamente reutilizar recursos de desarrollador. 
-
-Programando 
-%Before digging into Node.js, you might want to read up on the benefits of using JavaScript across the stack which unifies the language and data format (JSON), allowing you to optimally reuse developer resources. As this is more a benefit of JavaScript than Node.js specifically, we won’t discuss it much here. But it’s a key advantage to incorporating Node in your stack.
-
-Hay una gran cantidad de ventajas al utilizar un único lenguaje a lo largo del \stackAS. Al programas con \javaScriptNAME existe la posibilidad de realizar mejoras de rendimiento tanto en el propio \softwarePC y en la productividad de los desarrolladores. Con \mongodbNAME, se puede guardar los \documentsDB en un formato \jsonLikeCPT, escribir consultas \json en los servidores basados en \expressjsNAME y \nodejsNAME, y similarmente pasar documentos \json al \frontEndAS \angularjsNAME. \debuggingPL y la administración de la base de datos se vuelve una tarea muchísimo mas sencilla cuando los objetos guardados en la base de datos son esencialmente idénticos a los objetos que el cliente \javaScriptNAME ve. Incluso mejor, alguien trabajando en \clientSideAS puede fácilmente entender el código del \serverSideAS y las consultas a la \dataBaseDB; usando la misma sintaxis y objetos todo el proceso libera a los desarrolladores la consideración de varios conjuntos de buenas prácticas de lenguajes y reduce la barrera de entrada para la comprensión de su código base. Esto es especialmente importante en una \hackathonCPT: el equipo puede no tener mucha experiencia trabajando juntos, y con tan poco tiempo para integrar todas las piezas de su proyecto, cualquier detalle que haga el proceso de desarrollo mas sencillo es oro.
+La elección del uso de \nodejsNAME trae como consecuencia inmediata el uso de \javaScriptNAME en \serverSideAS. Hay una gran cantidad de ventajas al utilizar un único lenguaje a lo largo del \stackAS. Al programas con \javaScriptNAME existe la posibilidad de realizar mejoras de rendimiento tanto en el propio \softwarePC y en la productividad de los desarrolladores. Con \mongodbNAME, se puede guardar los \documentsDB en un formato \jsonLikeCPT, escribir consultas \json en los servidores basados en \nodejsNAME, y similarmente pasar documentos \json al \frontEndAS. \debuggingPL y la administración de la base de datos se vuelve una tarea muchísimo mas sencilla cuando los objetos guardados en la base de datos son esencialmente idénticos a los objetos que el cliente \javaScriptNAME ve. Incluso mejor, alguien trabajando en \clientSideAS puede fácilmente entender el código del \serverSideAS y las consultas a la \dataBaseDB; usando la misma sintaxis y objetos todo el proceso libera a los desarrolladores la consideración de varios conjuntos de buenas prácticas de lenguajes y reduce la barrera de entrada para la comprensión de su código base. Esto es especialmente importante en una \hackathonCPT: el equipo puede no tener mucha experiencia trabajando juntos, y con tan poco tiempo para integrar todas las piezas de su proyecto, cualquier detalle que haga el proceso de desarrollo más sencillo es oro.
 %First of all, there are huge advantages to using a uniform language throughout your stack. My team uses a set of tools that we affectionately call the MEAN stack:­ MongoDB, ExpressJS, AngularJS, and Node.js. By coding with Javascript throughout, we are able to realize performance gains in both the software itself and in the productivity of our developers. With MongoDB, we can store our documents in a JSON-­like format, write JSON queries on our ExpressJS and NodeJS based server, and seamlessly pass JSON documents to our AngularJS frontend. Debugging and database administration become a lot easier when the objects stored in your database are essentially identical to the objects your client Javascript sees. Even better, somebody working on the client side can easily understand the server side code and database queries; using the same syntax and objects the whole way through frees you from having to consider multiple sets of language best practices and reduces the barrier to entry for understanding your codebase. This is especially important in a hackathon setting: the team may not have much experience working together, and with such little time to integrate all the pieces of your project, anything that makes the development process easier is gold.
 
 
-\section{Resumen}
-%TODO
-Recapitulando, he demostrado que las soluciones actuales de \ecommerce pueden ser considerablemente mejoradas utilizando la tecnología actualmente presente. 
-Importante notar que solo estoy ofreciendo una mejor solución a lo que ya existe, en ningún caso indico la solución que presento es la mejor posible. No se ha realizado un estudio sobre todas las opciones disponibles del mercado. Sin embargo esta solución ofrece
+\input{capitulos/requerimientos/meteor_framework.tex}
 
-speed
-scalability
-flexibility
-performance
+
+\subsubsection{ ¿Por qué son necesarios los \frameworksPC?}
+% [http://www.codeproject.com/Articles/5381/What-Is-A-Framework]
+
+Un \frameworkPC es un conjunto de bloques de \softwarePC comunes y prefabricados que los programadores pueden utilizar, extender o customizar para soluciones específicas. Con  \frameworksPC los desarrolladores no necesitan comenzar a escribir una aplicación en cada oportunidad desde el principio. \frameworksPC son construidos desde una colección de objetos tal que tanto el diseño como el código del \frameworkPC pueden ser reutilizados \cite{online_frontier_what_is_framework}.
+%A framework is a set of common and prefabricated software building blocks that programmers can use, extend or customize for specific computing solutions. With frameworks developers do not have to start from scratch each time they write an application. Frameworks are built from collection of objects so both the design and code of the framework may be reused. - JavaFramework.
+
+Un esqueleto de una aplicación en la cual los desarrolladores \plugAS en sus códigos y proveen la mayoría de las funcionalidades comunes \cite{book_addisonwesley_what_is_framework}.
+%A skeleton of an application into which developers plug in their code and provides most of the common functionality.  -- E. Gamma, et al., "Design Patterns", Addison-Wesley, 1995
+
+%***************************************************************************
+%Well, now that's a radically different definition, and in my thinking certainly incorporates the idea of a methodology, if for no other reason than because the "skeleton" has to define how developers plug in their code and how they interface with the common functionality provided by the "skeleton".  Implied here (but not necessarily) may also be how the code intercommunicates.
+%
+%A set of classes which defines a model of interaction among objects… -- Moduleco (of course, they totally blow it in the additional definitions)
+%
+%OK, this falls into the category of a methodology because it clearly enforces the interaction style between objects, but it leaves out the wrapper and architectural aspects.
+%
+%A comprehensive, integrated class library
+%An entire architecture is the unit of reuse
+%Defines the control logic and class interactions of the application's architecture
+%Reduces "dog work" at the cost of some flexibility
+%-- Software Engineering Associates, Inc
+%***************************************************************************
+
+
+Un \frameworkPC es un directorio con jerarquía que encapsula recursos compartidos, tales como, \dynamSharedLibAS, documentación de referencia, imágenes, en un solo \packageAS. Múltiples aplicaciones pueden utilizar todos los recursos de manera simultanea. El sistema los carga en \memoryPC según necesidad y comparte una copia de los recursos entre todas las aplicaciones posibles \cite{online_apple_what_is_framework}.
+%A framework is a hierarchical directory that encapsulates shared resources, such as a dynamic shared library, nib files, image files, localized strings, header files, and reference documentation in a single package. Multiple applications can use all of these resources simultaneously. The system loads them into memory as needed and shares the one copy of the resource among all applications whenever possible.
+
+De acá se difiere que no existe una definición única para lo que significa el concepto \frameworkPC. Sin embargo, todo \frameworkPC debería ser simultáneamente: 
+
+\begin{itemize}
+	\item \textbf{Un \wrapperAS} es una manera de \repackagingAS una función ó un conjunto de funciones(no necesariamente relacionadas) para lograr al menos uno de los siguientes objetivos: Simplificar uso; Consistencia en Interfaz; Mejora de las funcionalidades \coreAS; Recolectar procesos discretos dentro de una asociación lógica(un \objectPL) \cite{online_codeProject_what_is_framework}.
+
+		\begin{figure}[h!]
+			\centering
+			\includegraphics[width=0.3\textwidth]{figuras/framework_component_wrapper.jpg}
+			\caption{Un \wrapperAS provee valor agregado.}
+			\label{figure:framework_component_wrapper}
+		\end{figure}
+
+	\item \textbf{Una \architectureCPT} es un estilo que incorpora elementos de diseño específicos \cite{online_codeProject_what_is_framework}.
+
+		\begin{figure}[h!]
+			\centering
+			\includegraphics[width=0.3\textwidth]{figuras/framework_component_architecture.jpg}
+			\caption{Una \architectureCPT Asocia/Contiene \objectsPL. (La \interfaceAS es un \wrapperAS de la \architectureCPT.)}
+			\label{figure:framework_component_architecture}
+		\end{figure}
+
+	\item \textbf{\methodologyCPT} Es la manera para realizar algo. En este caso, define las interacciones entre \architectureCPT, \componentsAS y \objectsPL \cite{online_codeProject_what_is_framework}.
+
+		\begin{figure}[h!]
+			\centering
+			\includegraphics[width=0.3\textwidth]{figuras/framework_component_methodology.jpg}
+			\caption{Una \methodologyCPT define las interacciónes entre \architectureCPT, \componentsAS y \objectsPL.}
+			\label{figure:framework_component_methodology}
+		\end{figure}
+
+\end{itemize}
+
+Elegir el \frameworkPC correcto para un proyecto puede tener un impacto tremendo en la habilidad de entregar a tiempo y la habilidad para mantener el código en el futuro. ES ciertamente deseable un \frameworkPC sólido, estable y probado, pero sin estar limitado por la opción.
