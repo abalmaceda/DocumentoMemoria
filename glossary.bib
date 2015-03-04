@@ -172,7 +172,7 @@ SEO stands for “search engine optimization.” It is the process of getting tr
 
 @GLOSSDEF{ instruction_prefetch,
 	word="prefetch",
-	definition="En \textit{computer architecture}, \textit{instruction prefetch} es una técnica usada en \microprocessors para \speedup la ejecución de un programa reduciendo los estados de espera."
+	definition="En \textit{computer architecture}, \textit{instruction prefetch} es una técnica usada en \microprocessors para \speedupCPT la ejecución de un programa reduciendo los estados de espera."
 }
 
 @GLOSSDEF{ orm,
@@ -350,7 +350,7 @@ distributed hypermedia system.
 
 ******************** TODO ********************
 @GLOSSDEF{ asyn_rep_db,
-	word="AsynchronousCPT ReplicationDB",
+	word="Asynchronous Replication",
 	definition="\asynchronousCPT \replicationDB es un enfoque \storeForewardAS para \dataBackupDB.
 
 	\asynchronousCPT \replicationDB \writesCPT \dataPC primero para el  \primaryStorageArrayDB y luego, dependiendo del enfoque de la implementación, \commitsDB \dataPC para ser \replicatedDB a \memoryPC ó en \journalDB  \diskBasedPC. Entonces esto copia la \dataPC en \realTimeINT ó \scheduledCPT intervalos para la \replicationDB de los objetivos \cite{online_asynchronous_replication_def}.
@@ -432,7 +432,7 @@ Gems are packages similar to Ebuilds. They contain package information along wit
 
 @GLOSSDEF{ computed_properties_emberjs_def,
 	word="Computed Properties",
-	definition="En \emberjsName, computed properties permiten declarar funciones y propiedades. Es posible crear uno definiendo una computed property como una funcion, la cual \emberjsName llamará automaticamente cuando se solicite la propiedad. Es posible usar entonces de la misma manera que se usaria, \staticPropertyAS \cite{online_technology_ember_computed_properties_def}.
+	definition="En \emberjsNAME, computed properties permiten declarar funciones y propiedades. Es posible crear uno definiendo una computed property como una funcion, la cual \emberjsNAME llamará automaticamente cuando se solicite la propiedad. Es posible usar entonces de la misma manera que se usaria, \staticPropertyAS \cite{online_technology_ember_computed_properties_def}.
 
 	Es super útil para tomar una ó más propiedades y transformando ó manipulando su \dataPC para crear un nuevo valor \cite{online_technology_ember_computed_properties_def}."
 }
@@ -440,3 +440,53 @@ Gems are packages similar to Ebuilds. They contain package information along wit
 In a nutshell, computed properties let you declare functions as properties. You create one by defining a computed property as a function, which Ember will automatically call when you ask for the property. You can then use it the same way you would any normal, static property.
 
 It's super handy for taking one or more normal properties and transforming or manipulating their data to create a new value.
+
+@GLOSSDEF{ web_crawlers,
+	word="Crawlers",
+	definition="ver \crawlerINT"
+}
+
+@GLOSSDEF{ web_spider,
+	word="Spider",
+	definition="ver \crawlerINT"
+}
+
+@GLOSSDEF{ web_bot,
+	word="Bot",
+	definition="ver \crawlerINT"
+}
+
+@GLOSSDEF{ web_crawler,
+	word="Crawler",
+	definition="Es un programa que visita \websitesINT y lee sus páginas y otras informaciones con la intención de crear entradas para un \searchEngIndxINT. Los principales \searchEnginesCPT en la \webINT tienen este tipo de programa, el cual tambien es conocido como \spiderINT o un \botINT. Crawlers son típicamente programados para visitar \sitesINT que han sido publicados por sus dueños como contenido nuevo o actualizado. \sitesINT o páginas específicas pueden ser visitadas e \indexedDB. Crawlers aparentemente reciben su nombre porque ellos \textit{crawl} a través de un \sitesINT de una página en algún momento, siguiendo los \linksINT a otras páginas en el \sitesINT hasta que todas las páginas sean revisadas \cite{online_meaning_crawler}."
+}
+A crawler is a program that visits Web sites and reads their pages and other information in order to create entries for a search engine index. The major search engines on the Web all have such a program, which is also known as a "spider" or a "bot." Crawlers are typically programmed to visit sites that have been submitted by their owners as new or updated. Entire sites or specific pages can be selectively visited and indexed. Crawlers apparently gained the name because they crawl through a site a page at a time, following the links to other pages on the site until all pages have been read.
+
+@GLOSSDEF{ sear_eng_indx,
+	word="search engine index",
+	definition="Es el lugar donde toda la \dataDB que el \searchEngineCPT a recolectado es \storedCPT. Es este el que proporciona los resultados para las busquedas de \queriesDB, y páginas que son \storedCPT dentro del search engine index que aparece en la página de los resultados del \searchEnginesCPT \cite{online_brickMarketing_what_is_sear_eng_index}."
+}
+Search engine indexing is the process of a search engine collecting, parses and stores data for use by the search engine. The actual search engine index is the place where all the data the search engine has collected is stored. It is the search engine index that provides the results for search queries, and pages that are stored within the search engine index that appear on the search engine results page. 
+
+@GLOSSDEF{ resource_descriptor,
+	word="Resource Descriptor",
+	definition=" Son documentos (\seriaLanPL usualmente bien conocidos tales como \xmlNAME, \rdfNAME y \jsonNAME) que proporcionan información \machineReadablePC sobre \resourcesCPT (\resourceCPT \metadataPL) para el propósito de promover \interoperabilityQA y asistir en la interacción con \resourcesCPT \unknownCPT para apoyar \interfacesAS conocidas \cite{online_memo_resource_descriptor}."
+}
+Resource descriptors are documents (usually
+   based on well known serialization languages such as XML, RDF, and
+   JSON) which provide machine-readable information about resources
+   (resource metadata) for the purpose of promoting interoperability and
+   assist in interacting with unknown resources that support known
+   interfaces.
+
+@GLOSSDEF{ serialization_languages,
+	word="Serialization Languages",
+	definition="Serialization Languages."
+}
+
+@GLOSSDEF{boilerplate_code,
+	word="boilerplate code",
+	definition=" En tecnología de la información, boilerplate es una unidad de escritura que puede ser reutilizada una y otra vez sin cambios. Por extensión, la idea es en ocasiones aplicada a programación \reusableQA como 'boilerplate code' \cite{online_meaning_boilerplate_code}"
+}
+In information technology, a boilerplate is a unit of writing that can be reused over and over without change. By extension, the idea is sometimes applied to reusable programming as in "boilerplate code." The term derives from steel manufacturing, where boilerplate is steel rolled into large plates for use in steam boilers. The implication is either that boilerplate writing has been time-tested and strong as "steel," or possibly that it has been rolled out into something strong enough for repeated reuse. Legal agreements, including software and hardware terms and conditions, make abundant use of boilerplates. The term is also used as an adjective as in "a boilerplate paragraph" and also as in "The entire document was boilerplate."
+  

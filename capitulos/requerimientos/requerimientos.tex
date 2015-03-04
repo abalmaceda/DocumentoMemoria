@@ -76,7 +76,7 @@ Generalmente no es inteligente descartar años de consideraciones de diseño arb
 
  Mientras las bases de datos relacionales guardan la información en filas y columnas, \documentDB \dataBasesDB guardan los datos en documentos.  
 
-Estos documentos típicamente usan una estructura equivalente a \json, un formato muy popular entre desarrolladores. Los documentos proveen una manera intuitiva y natural para modelar datos que esta cercanamente alineada con la programación \objectOrientedPL, en el cual cada documento es efectivamente un objeto. Los documentos contienen en uno o mas campos, donde cada campo contiene un tipo de valor, tales como \stringPL, \datePL, \binaryPL, ó \arrayPL. En lugar de extenderse un registro entre múltiples tablas y columnas, cada registro y su dato asociado son típicamente almacenados juntos en un solo documento. Esto simplifica el acceso a la información y reduce e incluso elimina la necesidad de \joins y \transactionsDB complejas.
+Estos documentos típicamente usan una estructura equivalente a \jsonNAME, un formato muy popular entre desarrolladores. Los documentos proveen una manera intuitiva y natural para modelar datos que esta cercanamente alineada con la programación \objectOrientedPL, en el cual cada documento es efectivamente un objeto. Los documentos contienen en uno o mas campos, donde cada campo contiene un tipo de valor, tales como \stringPL, \datePL, \binaryPL, ó \arrayPL. En lugar de extenderse un registro entre múltiples tablas y columnas, cada registro y su dato asociado son típicamente almacenados juntos en un solo documento. Esto simplifica el acceso a la información y reduce e incluso elimina la necesidad de \joins y \transactionsDB complejas.
 
 En un \documentDB \dataBaseDB, la noción de esquema es dinámica: cada documento puede contener diferentes campos. Esta flexibilidad puede ser particularmente útil para modelar datos sin estructura y \polymorphic. Esto también hace posible la evolución de una aplicación durante su desarrollo, simplemente agregando nuevos campos. Adicionalmente, \documentDB \dataBasesDB generalmente proveen consultas robustas que los desarrolladores esperan en las bases de datos relacionales.
 
@@ -141,7 +141,7 @@ Aplicación: \keyDB \valueDB \stores y \wideColumnDB \stores son útiles para un
 	Registros individuales ( ej., \textit{empleados}) son guardados como filas en la tabla, con cada columna guardando un dato específico sobre el registro (ej., \textit{jefe}, \textit{perfil}, etc), similar a un \spreedsheet. Tipos de datos separados son guardados en tablas separadas, y entonces uniéndose cuando consultas mas complejas son ejecutadas. Por ejemplo,\textit{oficinas} podrían estar guardadas en una tabla, y \textit{empleados} en otra. Cuando un usuario quiere buscar la dirección de trabajo de un \textit{empleado}, el \engine de la \dataBaseDB \joins las tablas \textit{EMPLEADOS} Y \textit{OFICINAS} juntas para obtener toda la información necesaria.&
 	%Individual records (e.g., "employees") are stored as rows in tables, with each column storing a specific piece of data about that record (e.g., "manager," "date hired," etc.), much like a spreadsheet. Separate data types are stored in separate tables, and then joined together when more complex queries are executed. For example, "offices" might be stored in one table, and "employees" in another. When a user wants to find the work address of an employee, the database engine joins the "employee" and "office" tables together to get all the information necessary.&
 	
-	Varia de acuerdo al tipo de base de datos. Por ejemplo, \keyValue \store funciona de manera similar a la base de datos \sqlNAME, pero tiene solo dos \columns (\keyDB y \valueDB), con información mas compleja en algunas ocasiones guardada dentro de \columns \valueDB. \docDataBase acabó con el modelo \tableArow completamente, guardando todos los datos relevantes junto en un solo \documentDB en \json, \xml, u otro formato, el cual puede anidar valores jerárquicamente.
+	Varia de acuerdo al tipo de base de datos. Por ejemplo, \keyValue \store funciona de manera similar a la base de datos \sqlNAME, pero tiene solo dos \columns (\keyDB y \valueDB), con información mas compleja en algunas ocasiones guardada dentro de \columns \valueDB. \docDataBase acabó con el modelo \tableArow completamente, guardando todos los datos relevantes junto en un solo \documentDB en \jsonNAME, \xmlNAME, u otro formato, el cual puede anidar valores jerárquicamente.
 	%Varies based on database type. For example, key-value stores function similarly to SQL databases, but have only two columns ("key" and "value"), with more complex information sometimes stored within the "value" columns. Document databases do away with the table-and-row model altogether, storing all relevant data together in single "document" in JSON, XML, or another format, which can nest values hierarchically.
 	
 
@@ -213,7 +213,7 @@ Aplicación: \keyDB \valueDB \stores y \wideColumnDB \stores son útiles para un
 \subsection{\mongodbNAME y \ecommerce \cite{online_mongodb_ecommerce}}
 \label{cap:justificacion_proyecto:MongoDB_ECommerce}
 
-Demostraciones de almacenamientos de datos de la siguiente generación giran típicamente en torno a las redes sociales: \twitter, \facebook, \foursquare, etc. Desafortunadamente, tales aplicaciones generalmente tienen modelos de datos complejos. \ecommerce por ejemplo, tiene la ventaja de incluir un largo número de patrones familiares para modelar datos. Ademas no es complicado imaginar como \itemCOM, \categoriesCommerce, \itemReviewsCommerce y \ordersCommerce son típicamente modeladas en \rdbms.
+Demostraciones de almacenamientos de datos de la siguiente generación giran típicamente en torno a las redes sociales: \twitterNAME, \facebook, \foursquare, etc. Desafortunadamente, tales aplicaciones generalmente tienen modelos de datos complejos. \ecommerce por ejemplo, tiene la ventaja de incluir un largo número de patrones familiares para modelar datos. Ademas no es complicado imaginar como \itemCOM, \categoriesCommerce, \itemReviewsCommerce y \ordersCommerce son típicamente modeladas en \rdbms.
 
 \ecommerce ha sido usualmente un dominio exclusivo de \rdbms, y esto es así por un par de razones. La primera, es que los sitios \ecommerce generalmente requieren \transactionsDB, y \transactionsDB son una operación básica en \rdbms. Lo segundo es que, hasta hace poco, dominios que requieren de un modelo de dato enriquecido y consultas sofisticadas han sido presupuestos que se ajustan mejor en \rdbms. En las siguientes secciones se cuestionara la segunda afirmación. 
 
@@ -221,7 +221,7 @@ Demostraciones de almacenamientos de datos de la siguiente generación giran tí
 
 Si es necesaria información sobre como el \catalogManagement se maneja con \dataBasesDB relacionales, es necesario dar una mirada rápida a los esquemas del popular \nameMagento \ecommerce \frameworkPC \ref{ap:figure:catalog_magento} ó \ofBizNAME de \apacheNAME \ref{ap:figure:catalog_ofbiz}. En la \refFigura{cap:figure:catalog_magento}  se observa es un conjunto de \tablesDB trabajando a la par para proveer un esquema flexible sobre un fundamentalmente inflexible estilo de sistema de \dataBaseDB.
 
-Esto significa que los datos de cualquier producto se extienden a través de una docena de \tablesDB. Esto incremente la complejidad del código requerido para la persistencia de consultas de \itemsCommerce individuales y hacer una consulta \shellBased es casi imposible. Simplemente considere escribir un \sqlNAME \join para para reunir el modelo de un producto como el de la \refFigura{cap:figure:catalog_magento}.
+Esto significa que los datos de cualquier producto se extienden a través de una docena de \tablesDB. Esto incremente la complejidad del código requerido para la persistencia de consultas de \itemsCOM individuales y hacer una consulta \shellBased es casi imposible. Simplemente considere escribir un \sqlNAME \join para para reunir el modelo de un producto como el de la \refFigura{cap:figure:catalog_magento}.
 
 \begin{figure}[h!]
 	\centering
@@ -230,7 +230,7 @@ Esto significa que los datos de cualquier producto se extienden a través de una
 	\label{cap:figure:catalog_magento}
 \end{figure}
 
-O realizar una sencilla búsqueda desde la \shell \mongodbNAME \javaScriptNAME  para obtener un objecto \json como el \refsource{source:javascript:example_search_mongodb}.
+O realizar una sencilla búsqueda desde la \shell \mongodbNAME \javaScriptNAME  para obtener un objecto \jsonNAME como el \refsource{source:javascript:example_search_mongodb}.
 
 \medskip
 \begin{lstlisting}[caption= Busqueda en MongoDB, label=source:javascript:example_search_mongodb]
@@ -302,7 +302,7 @@ Permitir que un \shoppingCarts sea simplemente una orden en un estado  \cartCOM,
 }
 \end{lstlisting}
 
-Notar que es posible presentar los pedidos como un \arrayPL de \itemsCommerce. Como es usual con \documentsDB, esto hace el despliegue del \shoppingCart mas sencillo, dado que no hay \joins envueltos. Pero esto también resuelve el problema del versionamiento de \itemsCommerce. Usualmente es necesario tener el estado de un \itemCOM cuando este es comprado. Esto puede ser logrado en una \rdbms estableciendo un vínculo a versiones particulares de un \itemCOM. Aquí, sin embargo, simplemente se almacenó el estado de un \itemCOM dentro de la misma \orderCommerce.
+Notar que es posible presentar los pedidos como un \arrayPL de \itemsCOM. Como es usual con \documentsDB, esto hace el despliegue del \shoppingCart mas sencillo, dado que no hay \joins envueltos. Pero esto también resuelve el problema del versionamiento de \itemsCOM. Usualmente es necesario tener el estado de un \itemCOM cuando este es comprado. Esto puede ser logrado en una \rdbms estableciendo un vínculo a versiones particulares de un \itemCOM. Aquí, sin embargo, simplemente se almacenó el estado de un \itemCOM dentro de la misma \orderCommerce.
 
 \subsubsection{Consultando \ordersCommerce}
 
@@ -366,7 +366,7 @@ Una manera de ajustar la cantidad es usando un \positionOperatorDB, el cual perm
 \end{lstlisting}
 
  
-\subsubsection*{\adding y \removing \itemsCommerce}
+\subsubsection*{\adding y \removing \itemsCOM}
 
 Igualmente, \atomicOperationsDB resuelven el problema de agregar y remover \itemCOM desde el \cartCOM. \refsource{source:javascript:example_push_operator_mongodb} ejemplifica el uso de \pushOperatorDB \atomicOperatorDB para agregar un \itemCOM al \cartCOM.
 
@@ -386,7 +386,7 @@ db.orders.update(
 );
 \end{lstlisting}
 
-Al ajustar la cantidad y el cambio de los mismos \itemsCommerce en el \cartCOM, es necesario actualizar el total de la orden. Notar el uso del operador \incOperatorDB para manejar esto.
+Al ajustar la cantidad y el cambio de los mismos \itemsCOM en el \cartCOM, es necesario actualizar el total de la orden. Notar el uso del operador \incOperatorDB para manejar esto.
 
 \subsubsection{\inventoryCommerce}
 
@@ -803,7 +803,7 @@ Más ejemplos de \benchmarkQA pueden ser encontrados en \cite{online_nodejs_java
 
 \subsubsection{\fullstackAS \javaScriptNAME}
 
-La elección del uso de \nodejsNAME trae como consecuencia inmediata el uso de \javaScriptNAME en \serverSideAS. Hay una gran cantidad de ventajas al utilizar un único lenguaje a lo largo del \stackAS. Al programas con \javaScriptNAME existe la posibilidad de realizar mejoras de rendimiento tanto en el propio \softwarePC y en la productividad de los desarrolladores. Con \mongodbNAME, se puede guardar los \documentsDB en un formato \jsonLikeCPT, escribir consultas \json en los servidores basados en \nodejsNAME, y similarmente pasar documentos \json al \frontEndAS. \debuggingPL y la administración de la base de datos se vuelve una tarea muchísimo mas sencilla cuando los objetos guardados en la base de datos son esencialmente idénticos a los objetos que el cliente \javaScriptNAME ve. Incluso mejor, alguien trabajando en \clientSideAS puede fácilmente entender el código del \serverSideAS y las consultas a la \dataBaseDB; usando la misma sintaxis y objetos todo el proceso libera a los desarrolladores la consideración de varios conjuntos de buenas prácticas de lenguajes y reduce la barrera de entrada para la comprensión de su código base. Esto es especialmente importante en una \hackathonCPT: el equipo puede no tener mucha experiencia trabajando juntos, y con tan poco tiempo para integrar todas las piezas de su proyecto, cualquier detalle que haga el proceso de desarrollo más sencillo es oro.
+La elección del uso de \nodejsNAME trae como consecuencia inmediata el uso de \javaScriptNAME en \serverSideAS. Hay una gran cantidad de ventajas al utilizar un único lenguaje a lo largo del \stackAS. Al programas con \javaScriptNAME existe la posibilidad de realizar mejoras de rendimiento tanto en el propio \softwarePC y en la productividad de los desarrolladores. Con \mongodbNAME, se puede guardar los \documentsDB en un formato \jsonLikeCPT, escribir consultas \jsonNAME en los servidores basados en \nodejsNAME, y similarmente pasar documentos \jsonNAME al \frontEndAS. \debuggingPL y la administración de la base de datos se vuelve una tarea muchísimo mas sencilla cuando los objetos guardados en la base de datos son esencialmente idénticos a los objetos que el cliente \javaScriptNAME ve. Incluso mejor, alguien trabajando en \clientSideAS puede fácilmente entender el código del \serverSideAS y las consultas a la \dataBaseDB; usando la misma sintaxis y objetos todo el proceso libera a los desarrolladores la consideración de varios conjuntos de buenas prácticas de lenguajes y reduce la barrera de entrada para la comprensión de su código base. Esto es especialmente importante en una \hackathonCPT: el equipo puede no tener mucha experiencia trabajando juntos, y con tan poco tiempo para integrar todas las piezas de su proyecto, cualquier detalle que haga el proceso de desarrollo más sencillo es oro.
 %First of all, there are huge advantages to using a uniform language throughout your stack. My team uses a set of tools that we affectionately call the MEAN stack:­ MongoDB, ExpressJS, AngularJS, and Node.js. By coding with Javascript throughout, we are able to realize performance gains in both the software itself and in the productivity of our developers. With MongoDB, we can store our documents in a JSON-­like format, write JSON queries on our ExpressJS and NodeJS based server, and seamlessly pass JSON documents to our AngularJS frontend. Debugging and database administration become a lot easier when the objects stored in your database are essentially identical to the objects your client Javascript sees. Even better, somebody working on the client side can easily understand the server side code and database queries; using the same syntax and objects the whole way through frees you from having to consider multiple sets of language best practices and reduces the barrier to entry for understanding your codebase. This is especially important in a hackathon setting: the team may not have much experience working together, and with such little time to integrate all the pieces of your project, anything that makes the development process easier is gold.
 
 
