@@ -121,4 +121,79 @@ Afortunadamente, \meteorNAME aprovecha toda la potencia de \eventloopCPT, pero f
 
 \subsection{¿Por qué \meteorNAME?}
 
-Se ha demostrado que la opción de \
+No importa lo bueno que una aplicación sea, la cantidad de prestaciones, en fin....  Incluso puede ser superior a las que los competidores presentan; todo esto significa nada si finalmente la aplicación no es utilizada por los usuarios objetivos. \googleNAME es completamente consiente de esta situación en donde por ejemplo tenemos 
+
+Esta misma afirmación se aplica para el caso de los \frameworksPC; no importa cuan interesante pueda ser, cuantas \toolsCPT provee, etc; si no existe una comunidad activa creando nuevo contenido, solucionando infinidad de problemas, incluso encontrando \bugsPL para lograr una versión más estable. O lo que es lo mismo, si existe una gran comunidad activa, entonces tienes un \frameworkPC con un gran respaldo.
+
+\hotframeworksNAME es un \websiteINT que se dedica a posicionar los \frameworksPC en un \rankingCPT de acuerdo a lo popular que estos sean, o lo que es lo mismo, de acuerdo a cuan activa es su comunidad. Dicho estudio, que se aprecia en \reftabla{tab:position_meteor_global_ranking_framework}, posiciona a \meteorNAME en la sexta posición.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%  	   TABLE RANKING FRAMEWORKS  	  %%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{capitulos/requerimientos/table_ranking_frameworks_meteor.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Importante recordar que este \rankingCPT incluye todos los \frameworksPC sin discriminar. Entonces, no solo es el sexto \frameworkPC con la mayor comunidad activa, si no que es el primer solo considerando los \frameworkPC \javaScriptNAME \isomorphicAS.
+
+\subsection{ ¿Por qué son necesarios los \frameworksPC?}
+% [http://www.codeproject.com/Articles/5381/What-Is-A-Framework]
+
+Un \frameworkPC es un conjunto de bloques de \softwarePC comunes y prefabricados que los programadores pueden utilizar, extender o customizar para soluciones específicas. Con  \frameworksPC los desarrolladores no necesitan comenzar a escribir una aplicación en cada oportunidad desde el principio. \frameworksPC son construidos desde una colección de objetos tal que tanto el diseño como el código del \frameworkPC pueden ser reutilizados \cite{online_frontier_what_is_framework}.
+%A framework is a set of common and prefabricated software building blocks that programmers can use, extend or customize for specific computing solutions. With frameworks developers do not have to start from scratch each time they write an application. Frameworks are built from collection of objects so both the design and code of the framework may be reused. - JavaFramework.
+
+Un esqueleto de una aplicación en la cual los desarrolladores \plugAS en sus códigos y proveen la mayoría de las funcionalidades comunes \cite{book_addisonwesley_what_is_framework}.
+%A skeleton of an application into which developers plug in their code and provides most of the common functionality.  -- E. Gamma, et al., "Design Patterns", Addison-Wesley, 1995
+
+%***************************************************************************
+%Well, now that's a radically different definition, and in my thinking certainly incorporates the idea of a methodology, if for no other reason than because the "skeleton" has to define how developers plug in their code and how they interface with the common functionality provided by the "skeleton".  Implied here (but not necessarily) may also be how the code intercommunicates.
+%
+%A set of classes which defines a model of interaction among objects… -- Moduleco (of course, they totally blow it in the additional definitions)
+%
+%OK, this falls into the category of a methodology because it clearly enforces the interaction style between objects, but it leaves out the wrapper and architectural aspects.
+%
+%A comprehensive, integrated class library
+%An entire architecture is the unit of reuse
+%Defines the control logic and class interactions of the application's architecture
+%Reduces "dog work" at the cost of some flexibility
+%-- Software Engineering Associates, Inc
+%***************************************************************************
+
+
+Un \frameworkPC es un directorio con jerarquía que encapsula recursos compartidos, tales como, \dynamSharedLibAS, documentación de referencia, imágenes, en un solo \packageAS. Múltiples aplicaciones pueden utilizar todos los recursos de manera simultanea. El sistema los carga en \memoryPC según necesidad y comparte una copia de los recursos entre todas las aplicaciones posibles \cite{online_apple_what_is_framework}.
+%A framework is a hierarchical directory that encapsulates shared resources, such as a dynamic shared library, nib files, image files, localized strings, header files, and reference documentation in a single package. Multiple applications can use all of these resources simultaneously. The system loads them into memory as needed and shares the one copy of the resource among all applications whenever possible.
+
+De acá se difiere que no existe una definición única para lo que significa el concepto \frameworkPC. Sin embargo, todo \frameworkPC debería ser simultáneamente: 
+
+\begin{itemize}
+	\item \textbf{Un \wrapperAS} es una manera de \repackagingAS una función ó un conjunto de funciones(no necesariamente relacionadas) para lograr al menos uno de los siguientes objetivos: Simplificar uso; Consistencia en Interfaz; Mejora de las funcionalidades \coreAS; Recolectar procesos discretos dentro de una asociación lógica(un \objectPL) \cite{online_codeProject_what_is_framework}.
+
+		\begin{figure}[h!]
+			\centering
+			\includegraphics[width=0.3\textwidth]{figuras/framework_component_wrapper.jpg}
+			\caption{Un \wrapperAS provee valor agregado.}
+			\label{figure:framework_component_wrapper}
+		\end{figure}
+
+	\item \textbf{Una \architectureCPT} es un estilo que incorpora elementos de diseño específicos \cite{online_codeProject_what_is_framework}.
+
+		\begin{figure}[h!]
+			\centering
+			\includegraphics[width=0.3\textwidth]{figuras/framework_component_architecture.jpg}
+			\caption{Una \architectureCPT Asocia/Contiene \objectsPL. (La \interfaceAS es un \wrapperAS de la \architectureCPT.)}
+			\label{figure:framework_component_architecture}
+		\end{figure}
+
+	\item \textbf{\methodologyCPT} Es la manera para realizar algo. En este caso, define las interacciones entre \architectureCPT, \componentsAS y \objectsPL \cite{online_codeProject_what_is_framework}.
+
+		\begin{figure}[h!]
+			\centering
+			\includegraphics[width=0.3\textwidth]{figuras/framework_component_methodology.jpg}
+			\caption{Una \methodologyCPT define las interacciónes entre \architectureCPT, \componentsAS y \objectsPL.}
+			\label{figure:framework_component_methodology}
+		\end{figure}
+
+\end{itemize}
+
+Elegir el \frameworkPC correcto para un proyecto puede tener un impacto tremendo en la habilidad de entregar a tiempo y la habilidad para mantener el código en el futuro. ES ciertamente deseable un \frameworkPC sólido, estable y probado, pero sin estar limitado por la opción.

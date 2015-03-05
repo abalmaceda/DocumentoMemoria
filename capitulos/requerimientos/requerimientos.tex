@@ -112,103 +112,15 @@ Aplicación: \keyDB \valueDB \stores y \wideColumnDB \stores son útiles para un
 %Examples: Riak and Redis (Key-Value); HBase and Cassandra (Wide Column).
 
 
-\begin{table}[h!]
-    \tiny
-   
-%\begin{tabular}{ |C{0.3\paperwidth}|C{0.3\paperwidth}| }
-\begin{tabular}{ |L{0.1\paperwidth}|L{0.3\paperwidth}|L{0.3\paperwidth}|}
-\hline
-	&
-	\sqlNAME \dataBasesDB &
-	\nosqlNAME \dataBasesDB
- 
-\\ \hline
-	Tipos&%Types
-	Un tipo (\sqlNAME \dataBaseDB) con variaciones menores.& %One type (SQL database) with minor variations&
-	Muchos tipos distintos incluyendo \nameref{cap:justificacion_proyecto:base_datos:nosql:key_value}, \nameref{cap:justificacion_proyecto:base_datos:nosql:document_model}, \nameref{cap:justificacion_proyecto:base_datos:nosql:wide_column_model}, y \nameref{cap:justificacion_proyecto:base_datos:nosql:graph_model}. %Many different types including key-value stores, document databases, wide-column stores, and graph databases
-	
-\\ \hline
-	Historia de desarrollo&%Development History&
-	Desarrollado en 1970s para tratar con la primera ola de aplicaciones de almacenamiento de \dataPC.&%Developed in 1970s to deal with first wave of data storage applications&
-	Desarrollado en 2000s para tratar con las limitaciones de las bases de datos \sqlNAME, en particular en relación a \scale, \replication y guardar datos sin estructura.%Developed in 2000s to deal with limitations of SQL databases, particularly concerning scale, replication and unstructured data storage
-	
-\\ \hline
-	Ejemplos&%Examples&
-	\mysqlNAME, \postgresql, \oracle \dataBaseDB&
-	\mongodbNAME, \cassandraNAME, \hbase, \neofourj
-\\ \hline
-	Modelo \dataPC \storage&
-	Registros individuales ( ej., \textit{empleados}) son guardados como filas en la tabla, con cada columna guardando un dato específico sobre el registro (ej., \textit{jefe}, \textit{perfil}, etc), similar a un \spreedsheet. Tipos de datos separados son guardados en tablas separadas, y entonces uniéndose cuando consultas mas complejas son ejecutadas. Por ejemplo,\textit{oficinas} podrían estar guardadas en una tabla, y \textit{empleados} en otra. Cuando un usuario quiere buscar la dirección de trabajo de un \textit{empleado}, el \engine de la \dataBaseDB \joins las tablas \textit{EMPLEADOS} Y \textit{OFICINAS} juntas para obtener toda la información necesaria.&
-	%Individual records (e.g., "employees") are stored as rows in tables, with each column storing a specific piece of data about that record (e.g., "manager," "date hired," etc.), much like a spreadsheet. Separate data types are stored in separate tables, and then joined together when more complex queries are executed. For example, "offices" might be stored in one table, and "employees" in another. When a user wants to find the work address of an employee, the database engine joins the "employee" and "office" tables together to get all the information necessary.&
-	
-	Varia de acuerdo al tipo de base de datos. Por ejemplo, \keyValue \store funciona de manera similar a la base de datos \sqlNAME, pero tiene solo dos \columns (\keyDB y \valueDB), con información mas compleja en algunas ocasiones guardada dentro de \columns \valueDB. \docDataBase acabó con el modelo \tableArow completamente, guardando todos los datos relevantes junto en un solo \documentDB en \jsonNAME, \xmlNAME, u otro formato, el cual puede anidar valores jerárquicamente.
-	%Varies based on database type. For example, key-value stores function similarly to SQL databases, but have only two columns ("key" and "value"), with more complex information sometimes stored within the "value" columns. Document databases do away with the table-and-row model altogether, storing all relevant data together in single "document" in JSON, XML, or another format, which can nest values hierarchically.
-	
 
-\\ \hline
-	\schemasDB&
-	%Schemas&
-	
-	Estructura y tipo de datos son fijos por adelantado. Para guardar información sobre un nuevo \dataItem, la \dataBaseDB entera debe ser alterada, tiempo durante el cual la base de datos debe ser tomada \offline.&
-%	Structure and data types are fixed in advance. To store information about a new data item, the entire database must be altered, during which time the database must be taken offline.&
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%  	   TABLE SQL VS NOSQL SUMMARY  	  %%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-	Típicamente dinámica. Registros pueden agregar nueva información \onTheFly, y diferente a las \rowsDB de las tablas \sqlNAME, datos distintos pueden estar guardados juntos como sea necesario. Para algunas \dataBasesDB (ej., \wideColumnDB \stores), es algo mas desafiante para agregar nuevos \fields dinámicamente.
-	%Typically dynamic. Records can add new information on the fly, and unlike SQL table rows, dissimilar data can be stored together as necessary. For some databases (e.g., wide-column stores), it is somewhat more challenging to add new fields dynamically.
+\input{capitulos/requerimientos/table_SQL_vs_noSQL_summary.tex}
 
-\\ \hline
-	\scaling&%Scaling&
-	
-	\verticallyScale, significa que un solo servidor debe incrementar \powerful con el fin de hacer frente al incremento de demanda. Es posible propagar la \dataBaseDB \sqlNAME sobre muchos servidores, pero ingeniería adicional significativa será generalmente requerida.&
-	%Vertically, meaning a single server must be made increasingly powerful in order to deal with increased demand. It is possible to spread SQL databases over many servers, but significant additional engineering is generally required.&
-	
-	\horizontallyScale, significa que para agregar capacidad, un administrador de base de datos puede simplemente agregar mas servidores o \cloudInstances.
-	%Horizontally, meaning that to add capacity, a database administrator can simply add more commodity servers or cloud instances. The database automatically spreads data across servers as necessary.
-	
-\\ \hline
-	Modelo \developmentPC &
-	%Development Model&
-	
-	\mix de \openSourcePC (ej., \postgresql, \mysqlNAME) y \closedSource (ej., \oracle \dataBaseDB)&
-	%Mix of open-source (e.g., Postgres, MySQL) and closed source (e.g., Oracle Database)&
-	\openSourcePC
-	%Open-source
-	
-\\ \hline
-	Soporta \transactionsDB&
-	%Supports Transactions&
-	
-	Si, actualizaciones pueden ser configuradas para completar enteramente o no del todo&	
-	%Yes, updates can be configured to complete entirely or not at all&
-	
-	En ciertas circunstancias y en ciertos niveles (ej., \documentLevel vs. \dataBaseLevel)
-	%In certain circumstances and at certain levels (e.g., document level vs. database level)
-	
-\\ \hline
-	Manipulación de datos&
-	%Data Manipulation&
-	
-	Lenguaje especial usando declaraciones \selectDB, \insertDB, y \updateDB, ej., \selectDBUpper \fields \fromDBUpper \tableDB \whereDBUpper ... &	
-	%Specific language using Select, Insert, and Update statements, e.g. SELECT fields FROM table WHERE…&
-	
-	A través de \apisAS \objectOrientedPL
-	%Through object-oriented APIs
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\\ \hline
-
-	\consistencyDB&
-	%Consistency&
-	
-	Puede ser configurada para \strongConsistency&
-	%Can be configured for strong consistency&
-	
-	Depende del producto. Algunos proveen \strongConsistency (ej., \mongodbNAME) mientras otros ofrecen \eventualConsistency (ej., \cassandraNAME)
-	%Depends on product. Some provide strong consistency (e.g., MongoDB) whereas others offer eventual consistency (e.g., Cassandra)
-
-\\ \hline
-\end{tabular}
-    \caption{ Resumen \nosqlNAME vs. \sqlNAME}
-    \label{tab:SQL_vs_noSQL_summary}
-\end{table}
 
 \subsection{\mongodbNAME y \ecommerce \cite{online_mongodb_ecommerce}}
 \label{cap:justificacion_proyecto:MongoDB_ECommerce}
@@ -739,8 +651,14 @@ Más ejemplos de \benchmarkQA pueden ser encontrados en \cite{online_nodejs_java
 %
 %And sure, in real life, there are numerous of tricks available to reduce the effects seen here. In real life, lots of Facebook still runs on PHP.
 
+\subsection{\fullstackAS \javaScriptNAME}
 
-\subsubsection{\nodejsNAME y \ecommerce}
+La elección del uso de \nodejsNAME trae como consecuencia inmediata el uso de \javaScriptNAME en \serverSideAS. Hay una gran cantidad de ventajas al utilizar un único lenguaje a lo largo del \stackAS. Al programas con \javaScriptNAME existe la posibilidad de realizar mejoras de rendimiento tanto en el propio \softwarePC y en la productividad de los desarrolladores. Con \mongodbNAME, se puede guardar los \documentsDB en un formato \jsonLikeCPT, escribir consultas \jsonNAME en los servidores basados en \nodejsNAME, y similarmente pasar documentos \jsonNAME al \frontEndAS. \debuggingPL y la administración de la base de datos se vuelve una tarea muchísimo mas sencilla cuando los objetos guardados en la base de datos son esencialmente idénticos a los objetos que el cliente \javaScriptNAME ve. Incluso mejor, alguien trabajando en \clientSideAS puede fácilmente entender el código del \serverSideAS y las consultas a la \dataBaseDB; usando la misma sintaxis y objetos todo el proceso libera a los desarrolladores la consideración de varios conjuntos de buenas prácticas de lenguajes y reduce la barrera de entrada para la comprensión de su código base. Esto es especialmente importante en una \hackathonCPT: el equipo puede no tener mucha experiencia trabajando juntos, y con tan poco tiempo para integrar todas las piezas de su proyecto, cualquier detalle que haga el proceso de desarrollo más sencillo es oro.
+%First of all, there are huge advantages to using a uniform language throughout your stack. My team uses a set of tools that we affectionately call the MEAN stack:­ MongoDB, ExpressJS, AngularJS, and Node.js. By coding with Javascript throughout, we are able to realize performance gains in both the software itself and in the productivity of our developers. With MongoDB, we can store our documents in a JSON-­like format, write JSON queries on our ExpressJS and NodeJS based server, and seamlessly pass JSON documents to our AngularJS frontend. Debugging and database administration become a lot easier when the objects stored in your database are essentially identical to the objects your client Javascript sees. Even better, somebody working on the client side can easily understand the server side code and database queries; using the same syntax and objects the whole way through frees you from having to consider multiple sets of language best practices and reduces the barrier to entry for understanding your codebase. This is especially important in a hackathon setting: the team may not have much experience working together, and with such little time to integrate all the pieces of your project, anything that makes the development process easier is gold.
+
+
+
+\subsection{\nodejsNAME y \ecommerce}
 
 \ecommerce es un excelente ejemplo de sistema que se puede ver totalmente beneficiado con el uso de \nodejsNAME en el lado del \serverAS. 
 
@@ -801,72 +719,10 @@ Más ejemplos de \benchmarkQA pueden ser encontrados en \cite{online_nodejs_java
 %Billy Scott, PayPal
 
 
-\subsubsection{\fullstackAS \javaScriptNAME}
-
-La elección del uso de \nodejsNAME trae como consecuencia inmediata el uso de \javaScriptNAME en \serverSideAS. Hay una gran cantidad de ventajas al utilizar un único lenguaje a lo largo del \stackAS. Al programas con \javaScriptNAME existe la posibilidad de realizar mejoras de rendimiento tanto en el propio \softwarePC y en la productividad de los desarrolladores. Con \mongodbNAME, se puede guardar los \documentsDB en un formato \jsonLikeCPT, escribir consultas \jsonNAME en los servidores basados en \nodejsNAME, y similarmente pasar documentos \jsonNAME al \frontEndAS. \debuggingPL y la administración de la base de datos se vuelve una tarea muchísimo mas sencilla cuando los objetos guardados en la base de datos son esencialmente idénticos a los objetos que el cliente \javaScriptNAME ve. Incluso mejor, alguien trabajando en \clientSideAS puede fácilmente entender el código del \serverSideAS y las consultas a la \dataBaseDB; usando la misma sintaxis y objetos todo el proceso libera a los desarrolladores la consideración de varios conjuntos de buenas prácticas de lenguajes y reduce la barrera de entrada para la comprensión de su código base. Esto es especialmente importante en una \hackathonCPT: el equipo puede no tener mucha experiencia trabajando juntos, y con tan poco tiempo para integrar todas las piezas de su proyecto, cualquier detalle que haga el proceso de desarrollo más sencillo es oro.
-%First of all, there are huge advantages to using a uniform language throughout your stack. My team uses a set of tools that we affectionately call the MEAN stack:­ MongoDB, ExpressJS, AngularJS, and Node.js. By coding with Javascript throughout, we are able to realize performance gains in both the software itself and in the productivity of our developers. With MongoDB, we can store our documents in a JSON-­like format, write JSON queries on our ExpressJS and NodeJS based server, and seamlessly pass JSON documents to our AngularJS frontend. Debugging and database administration become a lot easier when the objects stored in your database are essentially identical to the objects your client Javascript sees. Even better, somebody working on the client side can easily understand the server side code and database queries; using the same syntax and objects the whole way through frees you from having to consider multiple sets of language best practices and reduces the barrier to entry for understanding your codebase. This is especially important in a hackathon setting: the team may not have much experience working together, and with such little time to integrate all the pieces of your project, anything that makes the development process easier is gold.
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%  	   TABLE RANKING FRAMEWORKS  	  %%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \input{capitulos/requerimientos/meteor_framework.tex}
 
-
-\subsubsection{ ¿Por qué son necesarios los \frameworksPC?}
-% [http://www.codeproject.com/Articles/5381/What-Is-A-Framework]
-
-Un \frameworkPC es un conjunto de bloques de \softwarePC comunes y prefabricados que los programadores pueden utilizar, extender o customizar para soluciones específicas. Con  \frameworksPC los desarrolladores no necesitan comenzar a escribir una aplicación en cada oportunidad desde el principio. \frameworksPC son construidos desde una colección de objetos tal que tanto el diseño como el código del \frameworkPC pueden ser reutilizados \cite{online_frontier_what_is_framework}.
-%A framework is a set of common and prefabricated software building blocks that programmers can use, extend or customize for specific computing solutions. With frameworks developers do not have to start from scratch each time they write an application. Frameworks are built from collection of objects so both the design and code of the framework may be reused. - JavaFramework.
-
-Un esqueleto de una aplicación en la cual los desarrolladores \plugAS en sus códigos y proveen la mayoría de las funcionalidades comunes \cite{book_addisonwesley_what_is_framework}.
-%A skeleton of an application into which developers plug in their code and provides most of the common functionality.  -- E. Gamma, et al., "Design Patterns", Addison-Wesley, 1995
-
-%***************************************************************************
-%Well, now that's a radically different definition, and in my thinking certainly incorporates the idea of a methodology, if for no other reason than because the "skeleton" has to define how developers plug in their code and how they interface with the common functionality provided by the "skeleton".  Implied here (but not necessarily) may also be how the code intercommunicates.
-%
-%A set of classes which defines a model of interaction among objects… -- Moduleco (of course, they totally blow it in the additional definitions)
-%
-%OK, this falls into the category of a methodology because it clearly enforces the interaction style between objects, but it leaves out the wrapper and architectural aspects.
-%
-%A comprehensive, integrated class library
-%An entire architecture is the unit of reuse
-%Defines the control logic and class interactions of the application's architecture
-%Reduces "dog work" at the cost of some flexibility
-%-- Software Engineering Associates, Inc
-%***************************************************************************
-
-
-Un \frameworkPC es un directorio con jerarquía que encapsula recursos compartidos, tales como, \dynamSharedLibAS, documentación de referencia, imágenes, en un solo \packageAS. Múltiples aplicaciones pueden utilizar todos los recursos de manera simultanea. El sistema los carga en \memoryPC según necesidad y comparte una copia de los recursos entre todas las aplicaciones posibles \cite{online_apple_what_is_framework}.
-%A framework is a hierarchical directory that encapsulates shared resources, such as a dynamic shared library, nib files, image files, localized strings, header files, and reference documentation in a single package. Multiple applications can use all of these resources simultaneously. The system loads them into memory as needed and shares the one copy of the resource among all applications whenever possible.
-
-De acá se difiere que no existe una definición única para lo que significa el concepto \frameworkPC. Sin embargo, todo \frameworkPC debería ser simultáneamente: 
-
-\begin{itemize}
-	\item \textbf{Un \wrapperAS} es una manera de \repackagingAS una función ó un conjunto de funciones(no necesariamente relacionadas) para lograr al menos uno de los siguientes objetivos: Simplificar uso; Consistencia en Interfaz; Mejora de las funcionalidades \coreAS; Recolectar procesos discretos dentro de una asociación lógica(un \objectPL) \cite{online_codeProject_what_is_framework}.
-
-		\begin{figure}[h!]
-			\centering
-			\includegraphics[width=0.3\textwidth]{figuras/framework_component_wrapper.jpg}
-			\caption{Un \wrapperAS provee valor agregado.}
-			\label{figure:framework_component_wrapper}
-		\end{figure}
-
-	\item \textbf{Una \architectureCPT} es un estilo que incorpora elementos de diseño específicos \cite{online_codeProject_what_is_framework}.
-
-		\begin{figure}[h!]
-			\centering
-			\includegraphics[width=0.3\textwidth]{figuras/framework_component_architecture.jpg}
-			\caption{Una \architectureCPT Asocia/Contiene \objectsPL. (La \interfaceAS es un \wrapperAS de la \architectureCPT.)}
-			\label{figure:framework_component_architecture}
-		\end{figure}
-
-	\item \textbf{\methodologyCPT} Es la manera para realizar algo. En este caso, define las interacciones entre \architectureCPT, \componentsAS y \objectsPL \cite{online_codeProject_what_is_framework}.
-
-		\begin{figure}[h!]
-			\centering
-			\includegraphics[width=0.3\textwidth]{figuras/framework_component_methodology.jpg}
-			\caption{Una \methodologyCPT define las interacciónes entre \architectureCPT, \componentsAS y \objectsPL.}
-			\label{figure:framework_component_methodology}
-		\end{figure}
-
-\end{itemize}
-
-Elegir el \frameworkPC correcto para un proyecto puede tener un impacto tremendo en la habilidad de entregar a tiempo y la habilidad para mantener el código en el futuro. ES ciertamente deseable un \frameworkPC sólido, estable y probado, pero sin estar limitado por la opción.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

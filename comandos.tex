@@ -17,11 +17,12 @@
 
 %%%%%%%%%%%%%%%%%%% 		region References per caption		%%%%%%%%%%%%%%%%%%% 
 % 
-\newcommand{\reftabla}[1]		{\tablename \ref{#1}}
 
 %Modificar el caption
 \renewcommand{\lstlistingname}	{Código}
 \newcommand{\refsource}[1]		{\lstlistingname\xspace\ref{#1}}
+
+\newcommand{\reftabla}[1]		{\tablename\xspace\ref{#1}}
 
 \newcommand{\refFigura}[1]		{\figurename\xspace\ref{#1}}
 %%%%%%%%%%%%%%%%%%% 		endregion References per caption 	%%%%%%%%%%%%%%%%
@@ -96,6 +97,10 @@
 
 \newcommand{\linux}					{\nWrapper{Linux}}
 \newcommand{\yahooNAME}				{\nWrapper{YAHOO!}}
+\newcommand{\aspNetNAME}			{\nWrapper{ASP.NET}}
+\newcommand{\aspNetMvcNAME}			{\nWrapper{ASP.NET MVC}}
+
+
 
 \newcommand{\apacheNAME}			{\nWrapper{Apache™}}
 \newcommand{\tomcatNAME}			{\nWrapper{Tomcat}}
@@ -252,6 +257,8 @@
 \newcommand{\perlNAME}				{\nWrapper{Perl}}
 \newcommand{\pythonNAME}			{\nWrapper{Python}}
 \newcommand{\gitHubNAME}			{\nWrapper{GitHub}}
+\newcommand{\stackOverflowNAME}		{\nWrapper{Stack Overflow}}
+
 \newcommand{\airbnbNAME}			{\nWrapper{Airbnb}}
 
 \newcommand{\hotframeworksNAME}		{\nWrapper{HotFrameworks}}
@@ -724,6 +731,8 @@
 \newcommand{\callbacksPL}			{\bWrapper{callbacks}}
 \newcommand{\crashedInstancePL}		{\bWrapper{crashed instance}}
 \newcommand{\debuggingPL}			{\bWrapper{Debugging}}
+\newcommand{\bugPL}					{\bWrapper{bug}}
+\newcommand{\bugsPL}				{\bWrapper{bugs}}
 \newcommand{\lightweightPL}			{\bWrapper{Lightweight}}
 \newcommand{\firstClassFuncPL}		{\bWrapper{first-class functions}}
 \newcommand{\prototypeBasedPL}		{\bWrapper{prototype-based}}
@@ -1122,7 +1131,8 @@
 
 
 
-\newcommand{\overallScoreCPT}		{\bWrapper{Overall Score} \cite{online_hotframeworks_official_site}}
+\newcommand{\scoreCPT}				{\bWrapper{Score}}
+\newcommand{\overallScoreCPT}		{\bWrapper{Overall Score}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%	  	 REFERENCIAS      %%%%%%%%%%%%%%%%%%%%%%%%%%%

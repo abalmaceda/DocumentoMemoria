@@ -1,0 +1,97 @@
+\begin{table}[h!]
+    \tiny
+   
+%\begin{tabular}{ |C{0.3\paperwidth}|C{0.3\paperwidth}| }
+\begin{tabular}{ |L{0.1\paperwidth}|L{0.3\paperwidth}|L{0.3\paperwidth}|}
+\hline
+	&
+	\sqlNAME \dataBasesDB &
+	\nosqlNAME \dataBasesDB
+ 
+\\ \hline
+	Tipos&%Types
+	Un tipo (\sqlNAME \dataBaseDB) con variaciones menores.& %One type (SQL database) with minor variations&
+	Muchos tipos distintos incluyendo \nameref{cap:justificacion_proyecto:base_datos:nosql:key_value}, \nameref{cap:justificacion_proyecto:base_datos:nosql:document_model}, \nameref{cap:justificacion_proyecto:base_datos:nosql:wide_column_model}, y \nameref{cap:justificacion_proyecto:base_datos:nosql:graph_model}. %Many different types including key-value stores, document databases, wide-column stores, and graph databases
+	
+\\ \hline
+	Historia de desarrollo&%Development History&
+	Desarrollado en 1970s para tratar con la primera ola de aplicaciones de almacenamiento de \dataPC.&%Developed in 1970s to deal with first wave of data storage applications&
+	Desarrollado en 2000s para tratar con las limitaciones de las bases de datos \sqlNAME, en particular en relación a \scale, \replication y guardar datos sin estructura.%Developed in 2000s to deal with limitations of SQL databases, particularly concerning scale, replication and unstructured data storage
+	
+\\ \hline
+	Ejemplos&%Examples&
+	\mysqlNAME, \postgresql, \oracle \dataBaseDB&
+	\mongodbNAME, \cassandraNAME, \hbase, \neofourj
+\\ \hline
+	Modelo \dataPC \storage&
+	Registros individuales ( ej., \textit{empleados}) son guardados como filas en la tabla, con cada columna guardando un dato específico sobre el registro (ej., \textit{jefe}, \textit{perfil}, etc), similar a un \spreedsheet. Tipos de datos separados son guardados en tablas separadas, y entonces uniéndose cuando consultas mas complejas son ejecutadas. Por ejemplo,\textit{oficinas} podrían estar guardadas en una tabla, y \textit{empleados} en otra. Cuando un usuario quiere buscar la dirección de trabajo de un \textit{empleado}, el \engine de la \dataBaseDB \joins las tablas \textit{EMPLEADOS} Y \textit{OFICINAS} juntas para obtener toda la información necesaria.&
+	%Individual records (e.g., "employees") are stored as rows in tables, with each column storing a specific piece of data about that record (e.g., "manager," "date hired," etc.), much like a spreadsheet. Separate data types are stored in separate tables, and then joined together when more complex queries are executed. For example, "offices" might be stored in one table, and "employees" in another. When a user wants to find the work address of an employee, the database engine joins the "employee" and "office" tables together to get all the information necessary.&
+	
+	Varia de acuerdo al tipo de base de datos. Por ejemplo, \keyValue \store funciona de manera similar a la base de datos \sqlNAME, pero tiene solo dos \columns (\keyDB y \valueDB), con información mas compleja en algunas ocasiones guardada dentro de \columns \valueDB. \docDataBase acabó con el modelo \tableArow completamente, guardando todos los datos relevantes junto en un solo \documentDB en \jsonNAME, \xmlNAME, u otro formato, el cual puede anidar valores jerárquicamente.
+	%Varies based on database type. For example, key-value stores function similarly to SQL databases, but have only two columns ("key" and "value"), with more complex information sometimes stored within the "value" columns. Document databases do away with the table-and-row model altogether, storing all relevant data together in single "document" in JSON, XML, or another format, which can nest values hierarchically.
+	
+
+\\ \hline
+	\schemasDB&
+	%Schemas&
+	
+	Estructura y tipo de datos son fijos por adelantado. Para guardar información sobre un nuevo \dataItem, la \dataBaseDB entera debe ser alterada, tiempo durante el cual la base de datos debe ser tomada \offline.&
+%	Structure and data types are fixed in advance. To store information about a new data item, the entire database must be altered, during which time the database must be taken offline.&
+
+	Típicamente dinámica. Registros pueden agregar nueva información \onTheFly, y diferente a las \rowsDB de las tablas \sqlNAME, datos distintos pueden estar guardados juntos como sea necesario. Para algunas \dataBasesDB (ej., \wideColumnDB \stores), es algo mas desafiante para agregar nuevos \fields dinámicamente.
+	%Typically dynamic. Records can add new information on the fly, and unlike SQL table rows, dissimilar data can be stored together as necessary. For some databases (e.g., wide-column stores), it is somewhat more challenging to add new fields dynamically.
+
+\\ \hline
+	\scaling&%Scaling&
+	
+	\verticallyScale, significa que un solo servidor debe incrementar \powerful con el fin de hacer frente al incremento de demanda. Es posible propagar la \dataBaseDB \sqlNAME sobre muchos servidores, pero ingeniería adicional significativa será generalmente requerida.&
+	%Vertically, meaning a single server must be made increasingly powerful in order to deal with increased demand. It is possible to spread SQL databases over many servers, but significant additional engineering is generally required.&
+	
+	\horizontallyScale, significa que para agregar capacidad, un administrador de base de datos puede simplemente agregar mas servidores o \cloudInstances.
+	%Horizontally, meaning that to add capacity, a database administrator can simply add more commodity servers or cloud instances. The database automatically spreads data across servers as necessary.
+	
+\\ \hline
+	Modelo \developmentPC &
+	%Development Model&
+	
+	\mix de \openSourcePC (ej., \postgresql, \mysqlNAME) y \closedSource (ej., \oracle \dataBaseDB)&
+	%Mix of open-source (e.g., Postgres, MySQL) and closed source (e.g., Oracle Database)&
+	\openSourcePC
+	%Open-source
+	
+\\ \hline
+	Soporta \transactionsDB&
+	%Supports Transactions&
+	
+	Si, actualizaciones pueden ser configuradas para completar enteramente o no del todo&	
+	%Yes, updates can be configured to complete entirely or not at all&
+	
+	En ciertas circunstancias y en ciertos niveles (ej., \documentLevel vs. \dataBaseLevel)
+	%In certain circumstances and at certain levels (e.g., document level vs. database level)
+	
+\\ \hline
+	Manipulación de datos&
+	%Data Manipulation&
+	
+	Lenguaje especial usando declaraciones \selectDB, \insertDB, y \updateDB, ej., \selectDBUpper \fields \fromDBUpper \tableDB \whereDBUpper ... &	
+	%Specific language using Select, Insert, and Update statements, e.g. SELECT fields FROM table WHERE…&
+	
+	A través de \apisAS \objectOrientedPL
+	%Through object-oriented APIs
+
+\\ \hline
+
+	\consistencyDB&
+	%Consistency&
+	
+	Puede ser configurada para \strongConsistency&
+	%Can be configured for strong consistency&
+	
+	Depende del producto. Algunos proveen \strongConsistency (ej., \mongodbNAME) mientras otros ofrecen \eventualConsistency (ej., \cassandraNAME)
+	%Depends on product. Some provide strong consistency (e.g., MongoDB) whereas others offer eventual consistency (e.g., Cassandra)
+
+\\ \hline
+\end{tabular}
+    \caption{ Resumen \nosqlNAME vs. \sqlNAME}
+    \label{tab:SQL_vs_noSQL_summary}
+\end{table}
