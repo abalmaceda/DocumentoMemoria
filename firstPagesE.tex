@@ -1,0 +1,54 @@
+\makeatletter
+\def\@roman#1{\romannumeral #1}
+\makeatother
+
+\setcounter{page}{1}
+\pagenumbering{roman}
+
+\newcommand*{\SignatureAndDate}[1]{%
+    \par\noindent\makebox[2.5in]{\hrulefill} 		\hfill\makebox[2.5in]{\hrulefill}%
+    \vspace{0cm}
+    \par\noindent\makebox[2.5in][l]{PROFESOR GUÍA:} \hfill\makebox[2.5in][l]{ALUMNO:}
+    \vspace{0cm}
+    \par\noindent\makebox[2.5in][l]{#1}      		\hfill\makebox[2.5in][l]{\Author}%
+}%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   PORTADA   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\thispagestyle{empty}
+\begin{center}
+
+\begin{tabular}{rl}
+\multirow{5}{*}{\includegraphics[scale=0.1]{figuras/escudoU.png}} &\\
+& \\
+& UNIVERSIDAD DE CHILE\\
+& FACULTAD DE CIENCIAS FÍSICAS Y MATEMÁTICAS\\
+& \Dpto\\
+& \\
+\end{tabular}
+
+\vspace{4cm}
+
+\Memtitle
+
+\vspace{2cm}
+
+MEMORIA PARA OPTAR AL TÍTULO DE\\
+\tipomemoria
+
+\vspace{2cm}
+
+\Author
+
+%\SignatureAndDate{Program Manager}
+%\vspace{1cm}
+PROFESOR GUÍA:\\
+\Profesor \\
+\vspace{1cm}
+
+\vfill
+SANTIAGO DE CHILE\\
+\Fecha
+\SignatureAndDate{\Profesor}
+\vspace{1cm}\\
+\end{center}

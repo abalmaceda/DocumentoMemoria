@@ -67,7 +67,7 @@ La aplicación fue construida de la manera difícil. \meteorNAME hace esto con l
 		Una herramienta \commandLine llamada \commandLinemeteor.
 		%A command-line tool called meteor.
 
-		\commandLinemeteor es una herramienta de construcción análoga para hacer, examinar, o las partes no visuales de \visualstudio. Reúne todos los archivos y \assetsAS en la aplicación, lleva a cabo cualquier paso de construcción necesario (tal como compilar \coffeescript, \minifying \cssNAME, construir \modulesAS \npm, o generar \sourcemaps), trae los \packagesAS usados por la aplicación, y entrega un paquete independiente de aplicaciones \readytorun. En modo desarrollador puede hacer todo esto de manera interactiva, así que siempre que se cambie un archivo, inmediatamente se reflejaran los cambios en el \browserINT. Esto es muy sencillo utilizar \outofthebox, pero también es extensible: es posible agregar soporte para nuevos lenguajes y compiladores incluyendo \buildPL \plugin \packagesAS a la aplicación.
+		\commandLinemeteor es una herramienta de construcción análoga para hacer, examinar, o las partes no visuales de \visualstudio. Reúne todos los archivos y \assetsAS en la aplicación, lleva a cabo cualquier paso de construcción necesario (tal como compilar \coffeescript, \minifying \cssNAME, construir \modulesAS \npm, o generar \sourcemaps), trae los \packagesAS usados por la aplicación, y entrega un paquete independiente de aplicaciones \readytorun. En modo desarrollador puede hacer todo esto de manera interactiva, así que siempre que se cambie un archivo, inmediatamente se reflejaran los cambios en el \browserINT. Esto es muy sencillo utilizar \outofthebox, pero también es extensible: es posible agregar soporte para nuevos lenguajes y compiladores incluyendo \buildPL \pluginAS \packagesAS a la aplicación.
 		%meteor is a build tool analogous to make, rake, or the non-visual parts of Visual Studio. It gathers up all of the source files and assets in your application, carries out any necessary build steps (such as compiling CoffeeScript, minifying CSS, building npm modules, or generating source maps), fetches the packages used by your app, and outputs a standalone, ready-to-run application bundle. In development mode it can do all of this interactively, so that whenever you change a file you immediately see the changes in your browser. It's super easy to use out of the box, but it's also extensible: you can add support for new languages and compilers by adding build plugin packages to your app.
 
 \end{itemize}
@@ -169,7 +169,7 @@ De acá se difiere que no existe una definición única para lo que significa el
 \begin{itemize}
 	\item \textbf{Un \wrapperAS} es una manera de \repackagingAS una función ó un conjunto de funciones(no necesariamente relacionadas) para lograr al menos uno de los siguientes objetivos: Simplificar uso; Consistencia en Interfaz; Mejora de las funcionalidades \coreAS; Recolectar procesos discretos dentro de una asociación lógica(un \objectPL) \cite{online_codeProject_what_is_framework}.
 
-		\begin{figure}[h!]
+		\begin{figure}[H]
 			\centering
 			\includegraphics[width=0.4\textwidth]{figuras/framework_component_wrapper.jpg}
 			\caption{Un \wrapperAS provee valor agregado.}
@@ -178,7 +178,7 @@ De acá se difiere que no existe una definición única para lo que significa el
 
 	\item \textbf{Una \architectureCPT} es un estilo que incorpora elementos de diseño específicos \cite{online_codeProject_what_is_framework}.
 
-		\begin{figure}[h!]
+		\begin{figure}[H]
 			\centering
 			\includegraphics[width=0.4\textwidth]{figuras/framework_component_architecture.jpg}
 			\caption{Una \architectureCPT Asocia/Contiene \objectsPL. (La \interfaceAS es un \wrapperAS de la \architectureCPT.)}
@@ -187,7 +187,7 @@ De acá se difiere que no existe una definición única para lo que significa el
 
 	\item \textbf{\methodologyCPT} Es la manera para realizar algo. En este caso, define las interacciones entre \architectureCPT, \componentsAS y \objectsPL \cite{online_codeProject_what_is_framework}.
 
-		\begin{figure}[h!]
+		\begin{figure}[H]
 			\centering
 			\includegraphics[width=0.4\textwidth]{figuras/framework_component_methodology.jpg}
 			\caption{Una \methodologyCPT define las interacciónes entre \architectureCPT, \componentsAS y \objectsPL.}

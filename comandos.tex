@@ -360,7 +360,7 @@
 \newcommand{\gpllicense}				{\gWrapper{gnu_gpl_license}}
 \newcommand{\gplthreelicense}			{\gWrapper{gnu_gpl_three_license}}
 \newcommand{\bsdthreelicense}			{\gWrapper{bsd_three_license}}
-\newcommand{\opslicense}				{\gWrapper{ops_license}}
+\newcommand{\opslicense}				{\gWrapper{op_soft_license}}
 \newcommand{\permissive}				{\bWrapper{permissive}}
 \newcommand{\copyleft}					{\bWrapper{copyleft}}
 \newcommand{\license}					{\bWrapper{license}}
@@ -383,6 +383,7 @@
 \newcommand{\websocketINT}				{\bWrapper{Websockets}}
 \newcommand{\websocketsINT}				{\bWrapper{Websockets}}
 \newcommand{\internet}					{\bWrapper{Internet}}
+\newcommand{\blogINT}					{\bWrapper{Blog}}
 \newcommand{\www}						{\bWrapper{World Wide Web}}
 \newcommand{\dotcom}					{\bWrapper{dot-com}}
 \newcommand{\online}					{\bWrapper{online}}
@@ -521,7 +522,7 @@
 \newcommand{\estores}					{\bWrapper{e-stores}}
 \newcommand{\purchase}					{\bWrapper{purchase}}
 \newcommand{\inquiry}					{\bWrapper{inquiry}}
-\newcommand{\customerCOM}					{\bWrapper{customer}}
+\newcommand{\customerCOM}				{\bWrapper{customer}}
 \newcommand{\customers}					{\bWrapper{customers}}
 \newcommand{\multichannel}				{\bothWrapper{multi_channel}}
 \newcommand{\channel}					{\bWrapper{channel}}
@@ -550,8 +551,8 @@
 \newcommand{\ordersCommerce}			{\bWrapper{orders}}
 \newcommand{\catalogCommerce}			{\bWrapper{Catalog}}
 \newcommand{\management}				{\bWrapper{Management}}
-\newcommand{\catalogManagement}			{\catalogCommerce \management}
-\newcommand{\contentManagement}			{\bWrapper{Content} \management}
+\newcommand{\catalogManagementCOM}			{\catalogCommerce \management}
+\newcommand{\contentManagementCOM}		{\bWrapper{Content} \management}
 \newcommand{\sku}						{\bothWrapper{sku}}
 \newcommand{\inventoryCommerce}			{\bWrapper{Inventory}}
 \newcommand{\physItem}					{\bWrapper{physical item}}
@@ -595,8 +596,8 @@
 \newcommand{\packagesAS}			{\bWrapper{packages}}
 \newcommand{\packageAS}				{\bWrapper{package}}
 \newcommand{\repackagingAS}			{\bWrapper{repackaging}}
-\newcommand{\plugin}				{\bWrapper{plugin}}
-\newcommand{\plugins}				{\bWrapper{plugins}}
+\newcommand{\pluginAS}				{\bWrapper{plugin}}
+\newcommand{\pluginsAS}				{\bWrapper{plugins}}
 \newcommand{\coreAS}				{\bWrapper{core}}
 \newcommand{\handleAS}				{\bWrapper{handle}}
 \newcommand{\handledAS}				{\bWrapper{handled}}
@@ -665,8 +666,8 @@
 \newcommand{\logicAS}				{\bWrapper{logic}}
 \newcommand{\businessLogicAS}		{\bWrapper{business logic}}
 \newcommand{\uiSiglaAS}				{\bWrapper{UI}}
-
-
+\newcommand{\softEnginAS}			{\bWrapper{software engineering}}
+\newcommand{\multiTierAS}			{\bWrapper{Multi-Tier}}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -761,6 +762,13 @@
 
 \newcommand{\computedPropEmberAS}	{\bothWrapper{computed_properties_emberjs_def}}
 \newcommand{\boilerplateCodeAS}		{\bothWrapper{boilerplate_code}}
+
+\newcommand{\namespacesPL}			{\bWrapper{namespaces}}
+\newcommand{\namelyNamespacesPL}	{\bWrapper{namely namespaces}}
+\newcommand{\closuresPL}			{\bWrapper{closures}}
+\newcommand{\lambdaFuncPL}			{\bWrapper{lambda functions}}
+\newcommand{\lateStaticBindPL}		{\bWrapper{late static binding}}
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -874,7 +882,7 @@
 \newcommand{\complexity}			{\bWrapper{complexity}}
 \newcommand{\unpredictability}		{\bWrapper{unpredictability}}
 \newcommand{\userfriendliness}		{\bWrapper{user friendliness}}
-\newcommand{\design}				{\bWrapper{design}}
+\newcommand{\designQA}				{\bWrapper{design}}
 \newcommand{\wellDesignQA}			{\bWrapper{well-design}}
 \newcommand{\performanceQA}			{\bWrapper{Performance}}
 \newcommand{\highPerformanceQA}		{\bWrapper{high-performance}}
@@ -903,10 +911,12 @@
 \newcommand{\flexibilityQA}			{\bWrapper{Flexibility}}
 \newcommand{\availabilityQA}		{\bWrapper{Availability}}
 \newcommand{\extensibilityQA}		{\bWrapper{Extensibility}}
+\newcommand{\extensibleQA}			{\bWrapper{Extensible}}
 \newcommand{\structuredQA}			{\bWrapper{Structured}}
 \newcommand{\maintainableQA}		{\bWrapper{Maintainable}}
 \newcommand{\maintainabilityQA}		{\bWrapper{Maintainability}}
-
+\newcommand{\dryDesignQA}			{\bothWrapper{dry_design}}
+\newcommand{\dontRptYourQA}			{\bothWrapper{dont_rpt_your}}
 \newcommand{\testeableQA}			{\bWrapper{Testeable}}
 
 \newcommand{\reliableQA}			{\bWrapper{Reliable}}
@@ -929,6 +939,7 @@
 \newcommand{\optimizationsQA}		{\bWrapper{optimizations}}
 \newcommand{\interoperabilityQA}	{\bWrapper{interoperability}}
 \newcommand{\reusableQA}			{\bWrapper{reusable}}
+\newcommand{\efficientQA}			{\bWrapper{efficient}}
 
 
 
@@ -1004,7 +1015,7 @@
 \newcommand{\store}					{\bWrapper{store}}
 \newcommand{\stores}				{\bWrapper{stores}}
 \newcommand{\theme}					{\bWrapper{theme}}
-\newcommand{\themes}				{\bWrapper{themes}}
+\newcommand{\themesCPT}				{\bWrapper{themes}}
 \newcommand{\post}					{\bWrapper{post}}
 \newcommand{\posts}					{\bWrapper{posts}}
 \newcommand{\fork}					{\bWrapper{fork}}
@@ -1186,12 +1197,12 @@
 %										%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newcommand{\memtitle}				{TITLE UNKNOW}
+\newcommand{\memtitle}				{FRAMEWORK E-COMMERCE}
 \newcommand{\autor}					{Álvaro Balmaceda Celedón}
 \newcommand{\profesor}				{Nelson Baloian}
 \newcommand{\coguia}				{UNKNOW COGUIA}
 \newcommand{\integrante}			{UNKNOW INTEGRANTE}
-\newcommand{\fecha}					{Diciembre 2014}
+\newcommand{\fecha}					{Marzo 2015}
 \newcommand{\tipomemoria}			{INGENIERO CIVIL COMPUTACIÓN}
 \newcommand{\dpto}					{DEPARTAMENTO DE CIENCIAS DE LA COMPUTACIÓN}
 

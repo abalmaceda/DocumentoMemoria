@@ -129,9 +129,9 @@ Demostraciones de almacenamientos de datos de la siguiente generación giran tí
 
 \ecommerce ha sido usualmente un dominio exclusivo de \rdbms, y esto es así por un par de razones. La primera, es que los sitios \ecommerce generalmente requieren \transactionsDB, y \transactionsDB son una operación básica en \rdbms. Lo segundo es que, hasta hace poco, dominios que requieren de un modelo de dato enriquecido y consultas sofisticadas han sido presupuestos que se ajustan mejor en \rdbms. \textbf{En las siguientes secciones se cuestionara la segunda afirmación.}
 
-\subsubsection{\catalogManagement}
+\subsubsection{\catalogManagementCOM}
 
-Si es necesaria información sobre como el \catalogManagement se maneja con \dataBasesDB relacionales, es necesario dar una mirada rápida a los esquemas del popular \nameMagento \ecommerce \frameworkPC [\ref{ap:figure:catalog_magento}]. En la \refFigura{cap:figure:catalog_magento}  se observa es un conjunto de \tablesDB trabajando a la par para proveer un esquema flexible sobre un fundamentalmente inflexible estilo de sistema de \dataBaseDB.
+Si es necesaria información sobre como el \catalogManagementCOM se maneja con \dataBasesDB relacionales, es necesario dar una mirada rápida a los esquemas del popular \nameMagento \ecommerce \frameworkPC [\ref{ap:figure:catalog_magento}]. En la \refFigura{cap:figure:catalog_magento}  se observa es un conjunto de \tablesDB trabajando a la par para proveer un esquema flexible sobre un fundamentalmente inflexible estilo de sistema de \dataBaseDB.
 
 Esto significa que los datos de cualquier producto se extienden a través de una docena de \tablesDB. Esto incremente la complejidad del código requerido para la persistencia de consultas de \itemsCOM individuales y hacer una consulta \shellBased es casi imposible. Simplemente considere escribir un \sqlNAME \join para para reunir el modelo de un producto como el de la \refFigura{cap:figure:catalog_magento}.
 
@@ -179,7 +179,7 @@ Claramente en \refsource{source:javascript:example_search_mongodb} no hay  repre
 
 Para datos \objectOrientedPL, \textbf{los \documentsDB tienen mayor sentido}, tanto en concepto como rendimiento. Una representación \documentOriented de un dato de un \itemCOM se traduce a unas pocas entidades (un puñado de \collectionsDB vs. una docena de \tablesDB), mejor \performanceQA en consultas (sin \serverSideAS \joins), y estructuras que corresponden precisamente al \itemCOM. \textbf{Ya no existe la necesidad} de diseñar un \masterSchema que pueda considerar a cada tipo de \itemCOM concebible.
 
-\catalogManagement es esencialmente \contentManagement, \textbf{un campo en donde \mongodbNAME sobresale}.
+\catalogManagementCOM es esencialmente \contentManagementCOM, \textbf{un campo en donde \mongodbNAME sobresale}.
 
 \subsubsection{\shoppingCarts y \ordersCommerce}
 
