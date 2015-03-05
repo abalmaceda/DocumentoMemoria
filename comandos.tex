@@ -50,6 +50,7 @@
 \newcommand{\facebook}				{\nWrapper{Facebook}}
 \newcommand{\ebay}					{\nWrapper{Ebay}}
 \newcommand{\amazonNAME}			{\nWrapper{Amazon}}
+\newcommand{\linkedInNAME}			{\nWrapper{LinkedIn}}
 \newcommand{\AuthorizeNet}			{\nWrapper{Authorize.Net}}
 \newcommand{\foursquare}			{\nWrapper{Foursquare}}
 \newcommand{\mongodbNAME}			{\gWrapper{mongodb}}
@@ -166,7 +167,7 @@
 \newcommand{\flashNAME}				{\nWrapper{Flash}}
 \newcommand{\lampNAME}				{\gWrapper{lamp_stack}}
 \newcommand{\ampNAME}				{\gWrapper{amp_stack}}
-\newcommand{\rails}					{\nWrapper{Rails}}
+\newcommand{\railsNAME}				{\nWrapper{Rails}}
 \newcommand{\djangoNAME}			{\nWrapper{Django}}
 
 \newcommand{\commandLinemeteor}		{\bWrapper{meteor}}
@@ -344,6 +345,10 @@
 \newcommand{\persistingPC}				{\bWrapper{Persisting}}
 \newcommand{\machineReadablePC}			{\bWrapper{machine-readable}}
 \newcommand{\metaprogrammingPC}			{\bWrapper{metaprogramming}}
+\newcommand{\wirelessPC}				{\bWrapper{wireless}}
+\newcommand{\wirelinePC}				{\bWrapper{wireline}}
+\newcommand{\handheldPC}				{\bWrapper{handheld}}
+
 
 
 
@@ -396,10 +401,11 @@
 \newcommand{\emails}					{\bWrapper{emails}}
 
 \newcommand{\mobileINT}					{\bWrapper{mobile}}
-\newcommand{\tablet}					{\bWrapper{tablet}}
+\newcommand{\tabletINT}					{\bWrapper{tablet}}
+\newcommand{\tabletsINT}				{\bWrapper{tablets}}
 \newcommand{\desktop}					{\bWrapper{desktop}}
 \newcommand{\device}					{\bWrapper{device}}
-\newcommand{\devices}					{\bWrapper{devices}}
+\newcommand{\devicesINT}				{\bWrapper{devices}}
 
 \newcommand{\socialnetwork}				{\bWrapper{social network}}
 
@@ -503,6 +509,8 @@
 \newcommand{\consumers}					{\bWrapper{consumers}}
 \newcommand{\seller}					{\bWrapper{seller}}
 \newcommand{\sellers}					{\bWrapper{sellers}}
+\newcommand{\sellingCOM}				{\bWrapper{selling}}
+\newcommand{\buyingCOM}					{\bWrapper{buying}}
 
 \newcommand{\rating}					{\bWrapper{rating}}
 \newcommand{\ratings}					{\bWrapper{ratings}}
@@ -552,15 +560,16 @@
 \newcommand{\creditAnother}				{\bWrapper{credit another}}
 \newcommand{\purchasedCOM}				{\bWrapper{purchased}}
 \newcommand{\serviceCOM}				{\bWrapper{Service}}
+\newcommand{\servicesCOM}				{\bWrapper{Services}}
 \newcommand{\supplierCOM}				{\bWrapper{Supplier}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%  CONCEPTOS DE ARQUITECTURA (AS) %%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newcommand{\layer}					{\bWrapper{layer}}
+\newcommand{\layerAS}				{\bWrapper{layer}}
 \newcommand{\layers}				{\bWrapper{layers}}
-\newcommand{\persistenceLayer}		{\bWrapper{persistence} \layer}
+\newcommand{\persistenceLayer}		{\bWrapper{persistence} \layerAS}
 \newcommand{\serverAS}				{\bWrapper{server}}
 \newcommand{\serversAS}				{\bWrapper{servers}}
 \newcommand{\serverSideAS}			{\bWrapper{Server-side}}
@@ -590,6 +599,7 @@
 \newcommand{\plugins}				{\bWrapper{plugins}}
 \newcommand{\coreAS}				{\bWrapper{core}}
 \newcommand{\handleAS}				{\bWrapper{handle}}
+\newcommand{\handledAS}				{\bWrapper{handled}}
 \newcommand{\handlerAS}				{\bWrapper{handler}}
 \newcommand{\handlersAS}			{\bWrapper{handlers}}
 \newcommand{\assetAS}				{\bWrapper{asset}}
@@ -601,14 +611,18 @@
 \newcommand{\sessionlayer}			{\bWrapper{Session Layer}}
 \newcommand{\translayer}			{\bWrapper{Transport Layer}}
 \newcommand{\networklayer}			{\bWrapper{Network Layer}}
+\newcommand{\networkTransportAS}	{\bWrapper{Network Transport}}
 \newcommand{\datalinklayer}			{\bWrapper{Data Link Layer}}
 \newcommand{\physilayer}			{\bWrapper{Physical Layer}}
 \newcommand{\osimodel}				{\gWrapper{osi_model} \bWrapper{Model}}
 \newcommand{\restful}				{\gWrapper{restful}}
 \newcommand{\modelsCustom}			{\bWrapper{Models}}
+\newcommand{\modelAS}				{\bWrapper{model}}
 \newcommand{\modelsAS}				{\bWrapper{models}}
 \newcommand{\viewAS}				{\bWrapper{View}}
 \newcommand{\viewsAS}				{\bWrapper{Views}}
+\newcommand{\viewsLayerAS}			{\bWrapper{Views Layer}}
+\newcommand{\modelLayerAS}			{\bWrapper{Model Layer}}
 \newcommand{\callerAS}				{\bWrapper{caller}}
 \newcommand{\clusterAS}				{\bWrapper{cluster}}
 \newcommand{\clustersAS}			{\bWrapper{clusters}}
@@ -649,6 +663,7 @@
 \newcommand{\viewLogicAS}			{\bWrapper{view logic}}
 \newcommand{\viewRenderingAS}		{\bWrapper{View rendering}}
 \newcommand{\logicAS}				{\bWrapper{logic}}
+\newcommand{\businessLogicAS}		{\bWrapper{business logic}}
 \newcommand{\uiSiglaAS}				{\bWrapper{UI}}
 
 
@@ -671,7 +686,7 @@
 \newcommand{\environmentPL}			{\bWrapper{environment}}
 \newcommand{\environmentsPL}		{\bWrapper{environments}}
 \newcommand{\sandboxedEnvPL}		{\bWrapper{Sandboxed Environment}}
-\newcommand{\buildingPL}			{\bWrapper{building}}
+\newcommand{\buildingPL}			{\bWrapper{Building}}
 \newcommand{\rebuildingPL}			{\bWrapper{rebuilding}}
 \newcommand{\buildPL}				{\bWrapper{build}}
 \newcommand{\buildStepPL}			{\bWrapper{build step}}
@@ -861,10 +876,10 @@
 \newcommand{\userfriendliness}		{\bWrapper{user friendliness}}
 \newcommand{\design}				{\bWrapper{design}}
 \newcommand{\wellDesignQA}			{\bWrapper{well-design}}
-\newcommand{\performanceQA}			{\bWrapper{performance}}
+\newcommand{\performanceQA}			{\bWrapper{Performance}}
 \newcommand{\highPerformanceQA}		{\bWrapper{high-performance}}
 \newcommand{\benchmarkQA}			{\bWrapper{benchmark}}
-\newcommand{\simplicity}			{\bWrapper{simplicity}}
+\newcommand{\simplicity}			{\bWrapper{Simplicity}}
 \newcommand{\productivity}			{\bWrapper{productivity}}
 \newcommand{\reusability}			{\bWrapper{re-usability}}
 \newcommand{\usabilityQA}			{\bWrapper{usability}}
@@ -899,6 +914,8 @@
 \newcommand{\robustQA}				{\bWrapper{Robust}}
 \newcommand{\expressiveQA}			{\bWrapper{Expressive}}
 \newcommand{\fastQA}				{\bWrapper{Fast}}
+\newcommand{\fasterQA}				{\bWrapper{Faster}}
+\newcommand{\secureQA}				{\bWrapper{Secure}}
 \newcommand{\stableQA}				{\bWrapper{Stable}}
 \newcommand{\smallQA}				{\bWrapper{Small}}
 \newcommand{\enjoyableQA}			{\bWrapper{Enjoyable}}
@@ -1004,12 +1021,14 @@
 \newcommand{\facebookwall}			{\bWrapper{Wall}}
 \newcommand{\stress}				{\bWrapper{stress}}
 \newcommand{\idle}					{\bWrapper{idle}}
-\newcommand{\smartphone}			{\bWrapper{smartphone}}
+\newcommand{\smartphoneCPT}			{\bWrapper{smartphone}}
+\newcommand{\smartphonesCPT}		{\bWrapper{smartphones}}
+\newcommand{\pdasCPT}				{\bWrapper{PDAs}}
 \newcommand{\clientcentric}			{\bWrapper{client-centric}}
 \newcommand{\clientserver}			{\bWrapper{client-server}}
 
 
-\newcommand{\graphTheory}			{\bWrapper{\nameref{ap:apendice_graph_theory}}}
+\newcommand{\graphTheory}			{\bWrapper{Graph Theory}\cite{book_introduction_graph_theory}}
 \newcommand{\graphCustom}			{\bWrapper{graph}}
 \newcommand{\connectCustom}			{\bWrapper{Connect}}
 
@@ -1065,7 +1084,7 @@
 \newcommand{\shell}						{\bWrapper{shell}}
 \newcommand{\mapReduce}					{\bWrapper{map-reduce}}
 \newcommand{\zipCode}					{\bWrapper{zip code}}
-\newcommand{\adding}					{\bWrapper{adding}}
+\newcommand{\adding}					{\bWrapper{Adding}}
 \newcommand{\removing}					{\bWrapper{removing}}
 \newcommand{\highProfileCPT}			{\bWrapper{High-Profile}}
 \newcommand{\panaceaCPT}				{\bWrapper{Panacea}}
@@ -1106,7 +1125,8 @@
 \newcommand{\lovers}				{\bWrapper{lovers}}
 \newcommand{\adhoc}					{\bWrapper{ad-hoc}}
 \newcommand{\ship}					{\bWrapper{Ship}}
-\newcommand{\currencyCPT}				{\bWrapper{currency}}
+\newcommand{\currencyCPT}			{\bWrapper{currency}}
+\newcommand{\sketchCPT}				{\bWrapper{sketch}}
 
 
 
@@ -1129,10 +1149,13 @@
 \newcommand{\loadingTimeCPT}		{\bWrapper{loading time}}
 \newcommand{\resDescriptorCPT}		{\bothWrapper{resource_descriptor}}
 
-
-
+\newcommand{\redrawCPT}				{\bWrapper{redraw}}
 \newcommand{\scoreCPT}				{\bWrapper{Score}}
 \newcommand{\overallScoreCPT}		{\bWrapper{Overall Score}}
+\newcommand{\ieCPT}					{\bWrapper{i.e.}}
+
+\newcommand{\eventMachineCPT}		{\bWrapper{Event Machine}}
+\newcommand{\twistedCPT}			{\bWrapper{Twisted}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%	  	 REFERENCIAS      %%%%%%%%%%%%%%%%%%%%%%%%%%%

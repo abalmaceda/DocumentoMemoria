@@ -127,11 +127,11 @@ Aplicación: \keyDB \valueDB \stores y \wideColumnDB \stores son útiles para un
 
 Demostraciones de almacenamientos de datos de la siguiente generación giran típicamente en torno a las redes sociales: \twitterNAME, \facebook, \foursquare, etc. Desafortunadamente, tales aplicaciones generalmente tienen modelos de datos complejos. \ecommerce por ejemplo, tiene la ventaja de incluir un largo número de patrones familiares para modelar datos. Ademas no es complicado imaginar como \itemCOM, \categoriesCommerce, \itemReviewsCommerce y \ordersCommerce son típicamente modeladas en \rdbms.
 
-\ecommerce ha sido usualmente un dominio exclusivo de \rdbms, y esto es así por un par de razones. La primera, es que los sitios \ecommerce generalmente requieren \transactionsDB, y \transactionsDB son una operación básica en \rdbms. Lo segundo es que, hasta hace poco, dominios que requieren de un modelo de dato enriquecido y consultas sofisticadas han sido presupuestos que se ajustan mejor en \rdbms. En las siguientes secciones se cuestionara la segunda afirmación. 
+\ecommerce ha sido usualmente un dominio exclusivo de \rdbms, y esto es así por un par de razones. La primera, es que los sitios \ecommerce generalmente requieren \transactionsDB, y \transactionsDB son una operación básica en \rdbms. Lo segundo es que, hasta hace poco, dominios que requieren de un modelo de dato enriquecido y consultas sofisticadas han sido presupuestos que se ajustan mejor en \rdbms. \textbf{En las siguientes secciones se cuestionara la segunda afirmación.}
 
 \subsubsection{\catalogManagement}
 
-Si es necesaria información sobre como el \catalogManagement se maneja con \dataBasesDB relacionales, es necesario dar una mirada rápida a los esquemas del popular \nameMagento \ecommerce \frameworkPC \ref{ap:figure:catalog_magento} ó \ofBizNAME de \apacheNAME \ref{ap:figure:catalog_ofbiz}. En la \refFigura{cap:figure:catalog_magento}  se observa es un conjunto de \tablesDB trabajando a la par para proveer un esquema flexible sobre un fundamentalmente inflexible estilo de sistema de \dataBaseDB.
+Si es necesaria información sobre como el \catalogManagement se maneja con \dataBasesDB relacionales, es necesario dar una mirada rápida a los esquemas del popular \nameMagento \ecommerce \frameworkPC [\ref{ap:figure:catalog_magento}]. En la \refFigura{cap:figure:catalog_magento}  se observa es un conjunto de \tablesDB trabajando a la par para proveer un esquema flexible sobre un fundamentalmente inflexible estilo de sistema de \dataBaseDB.
 
 Esto significa que los datos de cualquier producto se extienden a través de una docena de \tablesDB. Esto incremente la complejidad del código requerido para la persistencia de consultas de \itemsCOM individuales y hacer una consulta \shellBased es casi imposible. Simplemente considere escribir un \sqlNAME \join para para reunir el modelo de un producto como el de la \refFigura{cap:figure:catalog_magento}.
 
@@ -177,9 +177,9 @@ db.products.find({'_id': ObjectID("4bd87bd8277d094c458d2fa5")});
 
 Claramente en \refsource{source:javascript:example_search_mongodb} no hay  representación completa de un \itemCOM, pero esto demuestra cuantas de estas \tablesDB triviales que existen en una representación relacional pueden prescindir en una representación \documentDB.
 
-Para datos \objectOrientedPL, los \documentsDB tienen mayor sentido, tanto en concepto como rendimiento. Una representación \documentOriented de un dato de un \itemCOM se traduce a unas pocas entidades (un puñado de \collectionsDB vs. una docena de \tablesDB), mejor \performanceQA en consultas (sin \serverSideAS \joins), y estructuras que corresponden precisamente al \itemCOM. Ya no existe la necesidad de diseñar un \masterSchema que pueda considerar a cada tipo de \itemCOM concebible.
+Para datos \objectOrientedPL, \textbf{los \documentsDB tienen mayor sentido}, tanto en concepto como rendimiento. Una representación \documentOriented de un dato de un \itemCOM se traduce a unas pocas entidades (un puñado de \collectionsDB vs. una docena de \tablesDB), mejor \performanceQA en consultas (sin \serverSideAS \joins), y estructuras que corresponden precisamente al \itemCOM. \textbf{Ya no existe la necesidad} de diseñar un \masterSchema que pueda considerar a cada tipo de \itemCOM concebible.
 
-\catalogManagement es esencialmente \contentManagement, un campo en donde \mongodbNAME sobresale.
+\catalogManagement es esencialmente \contentManagement, \textbf{un campo en donde \mongodbNAME sobresale}.
 
 \subsubsection{\shoppingCarts y \ordersCommerce}
 
@@ -385,7 +385,7 @@ Entonces tiene sentido  considerar \horizontalScalingDB o \scalingOutDB(\refFigu
 
 Es cierto que la mayoría de las bases de datos \nosqlNAME no fueron construidas considerando \ecommerce. Las bases de datos que carecen modelos de datos enriquecidos, consultas dinámicas, y la noción de \transactionalityDB no puede esperarse que compitan en el espacio de \ecommerce, entonces no es comprensible que no se considere \mongodbNAME tampoco.
 
-Pero para las partes en donde el sitio \ecommerce comprende el manejo de contenido, \mongodbNAME es claro vencedor. E incluso para más componentes \transactionalDB del sistema, \mongodbNAME tiene características que hacen de la posibilidad de correr un sistema completo de \ecommerce una realidad.
+Pero para las partes en donde el sitio \ecommerce comprende el manejo de contenido, \mongodbNAME es claro vencedor. E incluso para más componentes \transactionalDB del sistema, \mongodbNAME tiene características que hacen de la posibilidad de correr un sistema completo de \ecommerce una realidad. Si bien es cierto que esto solo corresponde a un \sketchCPT, este permite obtener una noción de que \textbf{\documentsDB \dataBaseDB lo hace bien}.
 
 
 \section{\nodejsNAME}\label{cap:section:nodejs}
@@ -548,7 +548,7 @@ Por si solo, esta evidencia mostraba a los equipos desarrollar más rápido util
 Se ejecutaron los test adecuados utilizando \hardwarePC de producción que probaran las rutas y recolectaran datos de rendimiento y tiempo de respuesta. Los resultados se aprecian en \refFigura{figure:java_benchmark_paypal}.
 %We ran our test suite using production hardware that tested the routes and collected data on throughput and response time.
 
-\begin{figure}[h!]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=0.6\textwidth]{figuras/cap2/java_nodejs_benchmark_paypal.png}
 	\caption{\performanceQA de la aplicación en \javaNAME y \nodejsNAME}
@@ -570,12 +570,31 @@ Se observa que la aplicación utilizando \nodejsNAME tiene:
 Mas ejemplos de \benchmarkQA pueden ser encontrados en\cite{online_nodejs_java_dzone}.
 
 
+\subsubsection{\nodejsNAME vs \railsNAME \cite{online_nodejs_ruby_linkid}}
+
+De acuerdo a un estudio que realizó \linkedInNAME en el cual evaluó tres posibles soluciones: \railsNAME/\eventMachineCPT; \pythonNAME/\twistedCPT y \nodejsNAME. Se determinaron los siguientes beneficios de parte de \nodejsNAME:
+%LinkedIn evaluated three possible solutions: Rails/Event Machine, Python/Twisted, and Node.js. According to Prasad, Node.js was eventually chosen providing a number of benefits:
+
+\begin{itemize}
+	\item
+		Mejor \performanceQA, \nodejsNAME alcanzando hasta 20 veces más rápido que \railsNAME en ciertos escenarios.
+		%Better performance, Node.js being up to 20x faster than Rails for certain scenarios
+	\item
+		Usando solo 3 \serverAS en lugar de 30, dejando espacio para un crecimientos de 10 veces el tráfico.
+		%Using only 3 servers instead of 30, leaving room for a 10x traffic growth
+	\item
+		Ingenieros \javaScriptNAME \frontEndAS pudieron ser utilizados para código \backendAS, y los dos equipos se transformaron en uno.
+		%Front-end JavaScript engineers could be used for back-end code, and the two teams were actually merged into one
+
+\end{itemize}
+
+
 \subsubsection{\nodejsNAME vs \phpNAME \cite{online_nodejs_php_loadimpact}}
 
 No es justo comparar \nodejsNAME con \phpNAME. Lo que realmente se compara es \nodejsNAME y \phpNAME + \apacheDosNAME ( u otro servidor \httpNAME ). Es este caso particular, las pruebas fueron realizadas usando \apacheDosNAME y \modPhpNAME, dado que es por lejos la configuración mas común. 
 %So no, it’s not fair to say that we compare Node.js and PHP. What we really compare is Node.js and PHP+Apache2 (or any other http server). For this article, I’ve used Apache2 and mod_php since it’s by far the most common configuration. Some might say that I’d get much better results if I had used Nginx or Lighthttpd as the http server for PHP. That’s most likely very true, but at the end of the day, server side PHP depends on running in multiple separate processes. Regardless if we create those processes with mod_php or fastcgi or any other mechanism. So, I’m sticking with the standard server setup for PHP and I think that makes good sense.
 
-\begin{figure}[h!]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=0.6\textwidth]{figuras/cap2/node_benchmak_loadimpact.png}
 	\caption{\performanceQA de la aplicación \nodejsNAME}
@@ -587,7 +606,7 @@ El gráfico de \refFigura{figure:node_benchmark_nodephp} muestra lo que sucede c
 %The first graph here shows what happens when we load test the Node.js server. The response time (blue) is pretty much constant all through the test. My back of a napkin analysis of the initial outliers is that they have to do with a cold MySQL cache. Now, have a look at the results from the PHP test:
 
 
-\begin{figure}[h!]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=0.6\textwidth]{figuras/cap2/phpapache_benchmak_loadimpact.png}
 	\caption{\performanceQA de la aplicación en \phpApacheNAME}
@@ -718,9 +737,18 @@ La elección del uso de \nodejsNAME trae como consecuencia inmediata el uso de \
 %***************************************************************************
 %Billy Scott, PayPal
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%% 	    FUTURO APLICACIONES WEB  	 %%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{capitulos/requerimientos/aplicacionWeb_estadoArte.tex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%  	   TABLE RANKING FRAMEWORKS  	  %%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%  	   METEOR FRAMEWORKS  	  %%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \input{capitulos/requerimientos/meteor_framework.tex}

@@ -5,7 +5,7 @@
 \meteorNAME es un \environmentPL ultra-simple para construir \websitesINT modernos. Lo que antes demoraba semanas, incluso con las mejoras herramientas, ahora toma horas con \meteorNAME.
 %Meteor is an ultra-simple environment for building modern websites. What once took weeks, even with the best tools, now takes hours with Meteor.
 
-La \webINT fue diseñada originalmente para trabajar de la misma manera que los \mainframesAS funcionaban en los 70s. La aplicación del \serverAS \rendered una \screen y la envía a través de la \networkINT a un \dumbterminal (\refFigura{figure:mainframeServer_dumbterminal}). Si el usuario realizó alguna acción, el \serverAS \rendered una \screen completamente nueva. Este modelo funcionó bien para la \webINT por una década. Esto permitió la existencia de \lampNAME, \rails, \djangoNAME, \phpNAME.
+La \webINT fue diseñada originalmente para trabajar de la misma manera que los \mainframesAS funcionaban en los 70s. La aplicación del \serverAS \rendered una \screen y la envía a través de la \networkINT a un \dumbterminal (\refFigura{figure:mainframeServer_dumbterminal}). Si el usuario realizó alguna acción, el \serverAS \rendered una \screen completamente nueva. Este modelo funcionó bien para la \webINT por una década. Esto permitió la existencia de \lampNAME, \railsNAME, \djangoNAME, \phpNAME.
 %The web was originally designed to work in the same way that mainframes worked in the 70s. The application server rendered a screen and sent it over the network to a dumb terminal. Whenever the user did anything, that server rerendered a whole new screen. This model served the Web well for over a decade. It gave rise to LAMP, Rails, Django, PHP.
 
 \begin{figure}[h!]
@@ -16,10 +16,10 @@ La \webINT fue diseñada originalmente para trabajar de la misma manera que los 
 \end{figure}
 
 
-Pero los mejores equipos, con los mas grandes presupuestos y mas largos \schedules, ahora construyen aplicaciones en \javaScriptNAME que correr en el \clientAS. Estas aplicaciones tienen interfaces estelares. Estas aplicaciones no \reload \pages, son \reactive: cambios de cualquier \clientAS aparecen inmediatamente en las \screen de todos.
+Pero los mejores equipos, con los mas grandes presupuestos y mas largos \schedules, ahora construyen aplicaciones en \javaScriptNAME que corren en el \clientAS. Estas aplicaciones tienen interfaces estelares. Estas aplicaciones no \reload \pages, son \reactive: cambios de cualquier \clientAS aparecen inmediatamente en las \screen de todos.
 %But the best teams, with the biggest budgets and the longest schedules, now build applications in JavaScript that run on the client. These apps have stellar interfaces. They don't reload pages. They are reactive: changes from any client immediately appear on everyone's screen.
 
-La aplicación fue construida de la manera difícil. \meteorNAME hace esto con la intención de ofrecer simpleza, y muchísima más entretención. Es posible construir una aplicación completa en un fin de semana, o en una \hackathonCPT con la suficiente cafeína. Ya no es necesario los \resourcesCPT del \serverAS, o \deploy \api \apiendpointsAS en la \cloud, o manejar una \dataBaseDB, o desgastarse con una \orm \layer, o intercambiar \backandforth entre \javaScriptNAME y \rubyNAME, o \broadcast datos de invalidación a los \clientsAS.
+La aplicación fue construida de la manera difícil. \meteorNAME hace esto con la intención de ofrecer simpleza, y muchísima más entretención. Es posible construir una aplicación completa en un fin de semana, o en una \hackathonCPT con la suficiente cafeína. Ya no es necesario los \resourcesCPT del \serverAS, o \deploy \api \apiendpointsAS en la \cloud, o manejar una \dataBaseDB, o desgastarse con una \orm \layerAS, o intercambiar \backandforth entre \javaScriptNAME y \rubyNAME, o \broadcast datos de invalidación a los \clientsAS.
 %They've built them the hard way. Meteor makes it an order of magnitude simpler, and a lot more fun. You can build a complete application in a weekend, or a sufficiently caffeinated hackathon. No longer do you need to provision server resources, or deploy API endpoints in the cloud, or manage a database, or wrangle an ORM layer, or swap back and forth between JavaScript and Ruby, or broadcast data invalidations to clients.
 
 \meteorNAME es un trabajo en desarrollo, pero se espera que muestra la dirección del equipo desarrollador. Ellos están deseosos de recibir \feedback. 
@@ -92,7 +92,7 @@ El \stackAS \meteorNAME(\refFigura{figure:meteor_stack}) es un miembro de la fam
 Toda la información es típicamente guardada dentro de \mongodbNAME. Provee una \api \javaScriptNAME que da acceso a todo el contenido almacenado en forma de \documentsDB ó \objectsPL. El mismo lenguaje dentro del \browserINT puede ser usado para acceder a los datos, el cual \meteorNAME toma ventaja para implementar un verdadero desarrollo \fullstackAS.
 %All data is typically stored inside a MongoDB, a document-oriented NoSQL database. There are plans for Meteor to support other (SQL-based) database systems, but currently the only suggested DB is Mongo. It provides a JavaScript-API that gives access to all stored content in form of documents or objects. The same language used inside the browser can be used to access data, which Meteor takes advantage to implement true fullstack development.
 
-Todo el \softwarePC y librerías requeridas para crear aplicaciones \webINT desde cero son agrupados en forma de \packagesAS inteligentes, así los desarrolladores pueden empezar de inmediato. Estos \packagesAS incluyen una librería de interfaz de usuario (\blazemeteor), un manejados de cuentas de usuarios (\accountsmeteor), y mantener a todos los \clientsAS \reactively \updated en \realTimeINT (\trackermeteor).
+Todo el \softwarePC y librerías requeridas para crear aplicaciones \webINT desde cero son agrupados en forma de \packagesAS inteligentes, así los desarrolladores pueden empezar de inmediato. Estos \packagesAS incluyen una librería de interfaz de usuario (\blazemeteor), un manejador de cuentas de usuarios (\accountsmeteor), y mantener a todos los \clientsAS \reactively \updated en \realTimeINT (\trackermeteor).
 %All required software and libraries required to create web applications from scratch are bundled in the shape of Smart Packages, so developers can get started right away. These packages include a user interface library (Blaze), managing user accounts (accounts), and keeping all clients reactively updated in realtime (Tracker).
 
 La herramienta \clitool de \meteorNAME permite a los desarrolladores rápidamente \setup un \environmentPL completo de desarrollo. No es necesario saber como instalar o configurar algún \softwarePC de \serverAS. \meteorNAME cuida literalmente los aspectos de la infraestructura. Esto es también una herramienta para construir, comparable a \maketool ó \grunttoolNAME, y un manejador de \packageAS, tal como \apttool ó \npm. Finalmente la herramienta \clitool agrupa una aplicación para correr en diferentes plataformas de \clientsAS, dentro de un \browserINT \webINT ó como una aplicación \mobileINT nativa.
@@ -121,7 +121,7 @@ Afortunadamente, \meteorNAME aprovecha toda la potencia de \eventloopCPT, pero f
 
 \subsection{¿Por qué \meteorNAME?}
 
-No importa lo bueno que una aplicación sea, la cantidad de prestaciones, en fin....  Incluso puede ser superior a las que los competidores presentan; todo esto significa nada si finalmente la aplicación no es utilizada por los usuarios objetivos. \googleNAME es completamente consiente de esta situación en donde por ejemplo tenemos 
+No importa lo bueno que una aplicación sea, la cantidad de prestaciones, en fin....  Incluso puede ser superior a las que los competidores presentan; todo esto significa nada si finalmente la aplicación no es utilizada por los usuarios objetivos.
 
 Esta misma afirmación se aplica para el caso de los \frameworksPC; no importa cuan interesante pueda ser, cuantas \toolsCPT provee, etc; si no existe una comunidad activa creando nuevo contenido, solucionando infinidad de problemas, incluso encontrando \bugsPL para lograr una versión más estable. O lo que es lo mismo, si existe una gran comunidad activa, entonces tienes un \frameworkPC con un gran respaldo.
 
@@ -171,7 +171,7 @@ De acá se difiere que no existe una definición única para lo que significa el
 
 		\begin{figure}[h!]
 			\centering
-			\includegraphics[width=0.3\textwidth]{figuras/framework_component_wrapper.jpg}
+			\includegraphics[width=0.4\textwidth]{figuras/framework_component_wrapper.jpg}
 			\caption{Un \wrapperAS provee valor agregado.}
 			\label{figure:framework_component_wrapper}
 		\end{figure}
@@ -180,7 +180,7 @@ De acá se difiere que no existe una definición única para lo que significa el
 
 		\begin{figure}[h!]
 			\centering
-			\includegraphics[width=0.3\textwidth]{figuras/framework_component_architecture.jpg}
+			\includegraphics[width=0.4\textwidth]{figuras/framework_component_architecture.jpg}
 			\caption{Una \architectureCPT Asocia/Contiene \objectsPL. (La \interfaceAS es un \wrapperAS de la \architectureCPT.)}
 			\label{figure:framework_component_architecture}
 		\end{figure}
@@ -189,7 +189,7 @@ De acá se difiere que no existe una definición única para lo que significa el
 
 		\begin{figure}[h!]
 			\centering
-			\includegraphics[width=0.3\textwidth]{figuras/framework_component_methodology.jpg}
+			\includegraphics[width=0.4\textwidth]{figuras/framework_component_methodology.jpg}
 			\caption{Una \methodologyCPT define las interacciónes entre \architectureCPT, \componentsAS y \objectsPL.}
 			\label{figure:framework_component_methodology}
 		\end{figure}
