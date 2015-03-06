@@ -1,0 +1,204 @@
+
+\chapter{Avances}
+
+\section{Arquitectura}
+
+\packagesAS es lo ultimo en \codeSeparationQA, \modularityAS, y \reusabilityQA. Al estructurar el código de cada \featureCPT en un \packagesAS separado, el código de una \featureCPT no tendra acceso al código de otra \featureCPT excepto utilizando \exportCPT, haciendo cada ependencia explícita. Además esto permite la manera mas sencilla para realizar \testingCPT independientes a cada \featureCPT. Incluso es posible \publishINT los \packagesAS y utilizarlos en otros proyectos.
+
+Es esta forma de estructurar el código la parte principal del desarrollo del \frameworkPC \ecommerce. Cada vez que se requiera desarrollar una nueva solución específica utilizandó el \frameworkPC, simplemente se incluiran todos aquellos \modulesAS necesarios para el desarrollo de la aplicación, y con un poco de desarrollo, obtener las \featuresCPT específicas buscadas.
+
+Como este \frameworkPC será completamente \openSourcePC, la comunidad podra creár nuevos \modulesAS con el fin de crear aquellas \featuresCPT que serán requeridos en el fúturo.
+
+
+
+\subsection{\packagesAS}
+
+A continuación se describe las funcionalidades de cada uno de los \packagesAS que actualmente existen. La estructura se encuentra en \refFigura{cap:avances:current_architecture}.
+
+\tikzset{
+  basic/.style  = {draw, text width=2cm, drop shadow, font=\sffamily, rectangle},
+  root/.style   = {basic, rounded corners=2pt, thin, align=center,
+                   fill=green!30},
+  level 2/.style = {basic, rounded corners=6pt, thin,align=center, fill=green!60,
+                   text width=8em},
+  level 3/.style = {basic, thin, align=left, fill=pink!60, text width=6.5em}
+}
+\begin{figure}[H]
+	\centering
+	
+	
+	\begin{tikzpicture}[
+	  level 1/.style={sibling distance=40mm},
+	  edge from parent/.style={->,draw},
+	  >=latex]
+
+	% root of the the initial tree, level 1
+	\node[root] {\rtcom}
+	% The first level, as children of the initial tree
+	  child {node[level 2] (c1) {\rtcomCorePCKG}}
+	  child {node[level 2] (c2) {\helloworldPCKG}}
+	  child {node[level 2] (c3) {\rtcomSearchPCKG}}
+	  %child {node[level 2] (c4) {rtcom-shipping}}
+	 % child {node[level 2] (c5) {rtcom-paypal}}
+	  child {node[level 2] (c6) {\rtcomGoogleanalPCKG}};
+
+	\end{tikzpicture}
+	\caption{Arquitectura actual de la solución.}
+	\label{cap:avances:current_architecture}
+\end{figure}
+	\begin{itemize}
+		\item
+			\textbf{\rtcom} es un \frameworkPC \ecommerce desarrollado con \meteorNAME, \nodejsNAME, \mongodbNAME, \coffeescript con un enfoque \reactive y \realTimeINT.
+		\item
+			\textbf{\rtcomCorePCKG} corresponde al \coreAS de la solución. Contiene todas aquellas \featuresCPT básicas y templates a una plataforma \ecommerce tales como manejo de \itemsCOM, \sessionsINT, etc. De momento he trabajado solo con esas dos \featuresCPT.
+		\item
+			\textbf{\rtcomGoogleanalPCKG} es el \moduleAS para \googleanalytics. Auque no se encuentra completamente integrado, si genera datos.
+		\item
+			\textbf{\helloworldPCKG} es un \moduleAS para prueba de conceptos.
+	\end{itemize}
+
+\section{\dataModelAS}
+
+Existen \dataModelsAS que se encuentran en una fase avanzada de desarrollo. Recordar que la \dataBaseDB (\mongodbNAME), no tiene \schemasDB estaticos. Esto ha sido particularmente valioso en el proceso de desarrollo de la solución, dado que variados cambios han surgido en el proceso.
+
+\subsection{\itemcollection}
+
+La estructura de \itemcollection se encuentra en \refsource{source:javascript:data_model_item}.
+
+\medskip
+\begin{lstlisting}[caption= \dataModelAS de \itemcollection, label=source:javascript:data_model_item]
+	{
+	    "_id" : "BCTMZ6HTxFSppJESk",
+	    "createdAt" : ISODate("2014-04-03T20:46:52.411Z"),
+	    "description" : "This is an example product.",
+	    "hashtags" : [ 
+	        "rpjCvTBGjhBi2xdro", 
+	        "cseCBSSrJ3t8HQSNP"
+	    ],
+	    "isVisible" : true,
+	    "metafields" : [ 
+	        {
+	            "key" : "Material",
+	            "value" : "Cotton"
+	        }, 
+	        {
+	            "key" : "Quality",
+	            "value" : "Excellent"
+	        }
+	    ],
+	    "pageTitle" : "Basic Example Product",
+	    "productType" : "Simple",
+	    "shopId" : "WvrKDomkYth3THbDD",
+	    "title" : "Example Product",
+	    "updatedAt" : ISODate("2015-06-01T19:17:13.949Z"),
+	    "variants" : [],
+	    "vendor" : "Example Manufacturer"
+	}
+\end{lstlisting}
+
+El atributo \textit{'variants'} corresponde a un \arrayPL que contiene cada una de las modificaciónes que el \itemCOM tiene duranto su vida. Como ejemplo en \refsource{source:javascript:data_model_item_variant} se observa que el atributo \textit{'inventoryQuantity'} disminuye de 49 a 45 \itemsCOM.
+
+\medskip
+\begin{lstlisting}[caption= El \arrayPL "variants", label=source:javascript:data_model_item_variant]
+	 "variants" : [ 
+        {
+            "_id" : "6qiqPwBkeJdtdQc4G",
+            "title" : "Basic Example Variant",
+            "price" : 19.99,
+            "inventoryManagement" : true,
+            "updatedAt" : ISODate("2015-04-03T20:46:52.411Z"),
+            "createdAt" : ISODate("2015-04-03T20:46:52.411Z"),
+            "inventoryQuantity" : 49,
+            "metafields" : [ 
+                {
+                    "key" : null,
+                    "value" : null
+                }
+            ]
+        }, 
+        {
+            "_id" : "SMr4rhDFnYvFMtDTX",
+            "title" : "Basic Example Variant",
+            "price" : 19.99,
+            "inventoryManagement" : true,
+            "updatedAt" : ISODate("2014-05-03T20:46:52.411Z"),
+            "createdAt" : ISODate("2014-05-03T20:46:52.411Z"),
+            "inventoryQuantity" : 45,
+            "metafields" : [ 
+                {
+                    "key" : null,
+                    "value" : null
+                }
+            ]
+        }
+    ]
+\end{lstlisting}
+
+
+
+\subsection{\rolCollection}
+
+\medskip
+\begin{lstlisting}[caption= \dataModelAS de \rolCollection, label=source:javascript:data_model_roll]
+	{
+	    "name" : "admin",
+	    "_id" : "vM2kbt4qCsZw7MbzK"
+	}
+\end{lstlisting}
+
+
+
+\subsection{\userscollection}
+
+\medskip
+\begin{lstlisting}[caption= \dataModelAS de \userscollection, label=source:javascript:data_model_user]
+
+{
+    "_id" : "me8jP3idwNTecEkiD",
+    "createdAt" : ISODate("2015-03-06T07:30:39.755Z"),
+    "emails" : [ 
+        {
+            "address" : "yatkthjj@localhost",
+            "verified" : false
+        }
+    ],
+    "profile" : {},
+    "roles" : [ 
+        "manage-users", 
+        "owner", 
+        "admin"
+    ],
+   "username" : "Administrator"
+}
+\end{lstlisting}
+
+\subsection{\tagscollection}
+
+\medskip
+\begin{lstlisting}[caption= \dataModelAS de \tagscollection, label=source:javascript:data_model_tag]
+
+{
+    "name" : "example-product",
+    "updatedAt" : ISODate("2015-04-12T15:17:20.576Z"),
+    "createdAt" : ISODate("2015-04-12T15:17:20.576Z"),
+    "_id" : "cseCBSSrJ3t8HQSNP"
+}
+
+\end{lstlisting}
+
+
+\subsection{\analyEventcollection}
+
+\medskip
+\begin{lstlisting}[caption= \dataModelAS de \analyEventcollection, label=source:javascript:data_model_analy_event]
+
+
+{
+    "category" : "grid",
+    "action" : "generic-click",
+    "label" : "product grid click",
+    "shopId" : "WvrKDomkYth3THbDD",
+    "_id" : "euGGJ2KQHvapX6rhk"
+}
+
+\end{lstlisting}
