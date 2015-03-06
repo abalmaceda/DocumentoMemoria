@@ -53,7 +53,7 @@
 \newcommand{\linkedInNAME}			{\nWrapper{LinkedIn}}
 \newcommand{\AuthorizeNet}			{\nWrapper{Authorize.Net}}
 \newcommand{\foursquare}			{\nWrapper{Foursquare}}
-\newcommand{\mongodbNAME}			{\gWrapper{mongodb}}
+\newcommand{\mongodbNAME}			{\gWrapper{MongoDB}}
 \newcommand{\cassandraNAME}			{\nWrapper{Cassandra}}
 \newcommand{\dslNAME}				{\nWrapper{DSL}}
 \newcommand{\youtubeNAME}			{\nWrapper{Youtube}}
@@ -88,6 +88,7 @@
 \newcommand{\handlebarsNAMEref}		{\nWrapper{Handlebars.js}}
 \newcommand{\yuiThreeNAME}			{\nWrapper{YUI 3}}
 \newcommand{\mongooseNAME}			{\nWrapper{mongoose}}
+\newcommand{\sanestackNAME}			{\nWrapper{SANE STACK}}
 
 \newcommand{\uriNAME}				{\gWrapper{uri}}
 \newcommand{\npm}					{\nWrapper{NPM}}
@@ -286,7 +287,6 @@
 \newcommand{\physHardwarePC}			{\bWrapper{physical Hardware}}
 \newcommand{\softwarePC}				{\bWrapper{software}}
 \newcommand{\softwaresPC}				{\bWrapper{softwares}}
-\newcommand{\feature}					{\bWrapper{feature}}
 \newcommand{\functionality}				{\bWrapper{functionality}}
 \newcommand{\clicking}					{\bWrapper{clicking}}
 \newcommand{\click}						{\bWrapper{click}}
@@ -384,6 +384,7 @@
 \newcommand{\websocketsINT}				{\bWrapper{Websockets}}
 \newcommand{\internet}					{\bWrapper{Internet}}
 \newcommand{\blogINT}					{\bWrapper{Blog}}
+\newcommand{\publishINT}				{\bWrapper{publish}}
 \newcommand{\www}						{\bWrapper{World Wide Web}}
 \newcommand{\dotcom}					{\bWrapper{dot-com}}
 \newcommand{\online}					{\bWrapper{online}}
@@ -466,7 +467,7 @@
 \newcommand{\windowLocationINT}			{\bWrapper{window.location}}
 \newcommand{\reqNodeINT}				{\bWrapper{req}}
 \newcommand{\resNodeINT}				{\bWrapper{res}}
-
+\newcommand{\sessionsINT}				{\bWrapper{sessions}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%  E-COMMERCE(COM)	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -592,8 +593,9 @@
 \newcommand{\plugAS}				{\bWrapper{plug}}
 \newcommand{\prefetches}			{\bWrapper{\gWrapper{instruction_prefetch}es}}
 \newcommand{\prefetch}				{\bothWrapper{instruction_prefetch}}
+\newcommand{\moduleAS}				{\bWrapper{module}}
 \newcommand{\modulesAS}				{\bWrapper{modules}}
-\newcommand{\packagesAS}			{\bWrapper{packages}}
+\newcommand{\packagesAS}			{\bWrapper{Packages}}
 \newcommand{\packageAS}				{\bWrapper{package}}
 \newcommand{\repackagingAS}			{\bWrapper{repackaging}}
 \newcommand{\pluginAS}				{\bWrapper{plugin}}
@@ -659,6 +661,7 @@
 \newcommand{\dynamSharedLibAS}		{\bWrapper{dynamic shared library}}
 \newcommand{\generatorsAS}			{\bWrapper{generators}}
 \newcommand{\modularizedAS}			{\bWrapper{modularized}}
+\newcommand{\modularityAS}			{\bWrapper{modularity}}
 \newcommand{\routingAS}				{\bWrapper{Routing}}
 \newcommand{\routingLogicAS}		{\bWrapper{routing logic}}
 \newcommand{\viewLogicAS}			{\bWrapper{view logic}}
@@ -668,6 +671,9 @@
 \newcommand{\uiSiglaAS}				{\bWrapper{UI}}
 \newcommand{\softEnginAS}			{\bWrapper{software engineering}}
 \newcommand{\multiTierAS}			{\bWrapper{Multi-Tier}}
+\newcommand{\dataModelAS}			{\bWrapper{Data Model}}
+\newcommand{\dataModelsAS}			{\bWrapper{Data Models}}
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -694,7 +700,6 @@
 \newcommand{\buildStepsPL}			{\bWrapper{build steps}}
 \newcommand{\compilingPL}			{\bWrapper{compiling}}
 \newcommand{\minificationPL}		{\bWrapper{minification}}
-
 
 \newcommand{\builtINPL}				{\bWrapper{built-in}}
 
@@ -889,7 +894,7 @@
 \newcommand{\benchmarkQA}			{\bWrapper{benchmark}}
 \newcommand{\simplicity}			{\bWrapper{Simplicity}}
 \newcommand{\productivity}			{\bWrapper{productivity}}
-\newcommand{\reusability}			{\bWrapper{re-usability}}
+\newcommand{\reusabilityQA}			{\bWrapper{re-usability}}
 \newcommand{\usabilityQA}			{\bWrapper{usability}}
 \newcommand{\scale}					{\bWrapper{scale}}
 \newcommand{\scaleUpQA}				{\bWrapper{scale up}}
@@ -940,6 +945,7 @@
 \newcommand{\interoperabilityQA}	{\bWrapper{interoperability}}
 \newcommand{\reusableQA}			{\bWrapper{reusable}}
 \newcommand{\efficientQA}			{\bWrapper{efficient}}
+\newcommand{\codeSeparationQA}		{\bWrapper{code separation}}
 
 
 
@@ -974,7 +980,6 @@
 \newcommand{\updates}				{\bWrapper{updates}}
 \newcommand{\downloadCPT}			{\bWrapper{download}}
 \newcommand{\droprightinto}			{\bWrapper{drop right into}}
-\newcommand{\fullFeatured}			{\bWrapper{full-featured}}
 \newcommand{\commandLine}			{\bWrapper{command-line}}
 \newcommand{\minifying}				{\bothWrapper{minifying}}
 \newcommand{\sourcecode}			{\bWrapper{source code}}
@@ -1026,6 +1031,11 @@
 \newcommand{\sysadmins}				{\bWrapper{sysadmins}}
 \newcommand{\dataintensive}			{\bWrapper{data-intensive}}
 \newcommand{\standard}				{\bWrapper{standard}}
+\newcommand{\exportCPT}				{\bWrapper{export}}
+\newcommand{\testingCPT}			{\bWrapper{testing}}
+\newcommand{\featureCPT}			{\bWrapper{feature}}
+\newcommand{\featuresCPT}			{\bWrapper{features}}
+\newcommand{\fullFeatured}			{\bWrapper{full-featured}}
 \newcommand{\fullyfeatured}			{\bWrapper{fully-featured}}
 \newcommand{\fullyFormedCPT}		{\bWrapper{fully-formed}}
 \newcommand{\caching}				{\bWrapper{caching}}
@@ -1175,6 +1185,19 @@
 \newcommand{\fullStackJSFwASref}		{\nameref{cap:estadoArte:section:fullstack_javaScript_framework}}
 \newcommand{\isomorphicJSFwASref}		{\nameref{cap:justificacion:subsection:isomorphic_javaScript_framework}}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   PROYECTO  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\rtcom}							{\bWrapper{rtcom}}
+\newcommand{\rtcomCorePCKG}					{\bWrapper{rtcom-core}}
+\newcommand{\helloworldPCKG}				{\bWrapper{rtcom-helloworld}}
+\newcommand{\rtcomSearchPCKG}				{\bWrapper{rtcom-search-shop}}
+\newcommand{\rtcomShippingPCKG}				{\bWrapper{rtcom-shipping}}
+\newcommand{\rtcomPaypalPCKG}				{\bWrapper{rtcom-paypal}}
+\newcommand{\rtcomGooglewalletPCKG}			{\bWrapper{rtcom-google-wallet}}
+\newcommand{\rtcomGoogleanalPCKG}			{\bWrapper{rtcom-google-analytics}}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %										%
 %			  Base de datos 				%
@@ -1189,6 +1212,7 @@
 \newcommand{\shopscollection}		{\nWrapper{Shops}}
 \newcommand{\tagscollection}		{\nWrapper{Tags}}
 \newcommand{\cartcollection}		{\nWrapper{Cart}}
+\newcommand{\analyEventcollection}	{\nWrapper{AnalyticsEvent}}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
