@@ -125,57 +125,26 @@ Aplicación: \keyDB \valueDB \stores y \wideColumnDB \stores son útiles para un
 \subsection{\mongodbNAME y \ecommerce \cite{online_mongodb_ecommerce}}
 \label{cap:justificacion_proyecto:MongoDB_ECommerce}
 
-Demostraciones de almacenamientos de datos de la siguiente generación giran típicamente en torno a las redes sociales: \twitterNAME, \facebook, \foursquare, etc. Desafortunadamente, tales aplicaciones generalmente tienen modelos de datos complejos. \ecommerce por ejemplo, tiene la ventaja de incluir un largo número de patrones familiares para modelar datos. Ademas no es complicado imaginar como \itemCOM, \categoriesCommerce, \itemReviewsCommerce y \ordersCommerce son típicamente modeladas en \rdbms.
+Demostraciones de almacenamientos de datos de la siguiente generación giran típicamente en torno a las redes sociales: \twitterNAME, \facebook, \foursquare, etc. Desafortunadamente, tales aplicaciones generalmente tienen modelos de datos complejos. \ecommerce por ejemplo, tiene la ventaja de incluir un largo número de patrones familiares para modelar datos. Además no es complicado imaginar como \itemCOM, \categoriesCommerce, \itemReviewsCommerce y \ordersCommerce son típicamente modeladas en \rdbms.
 
 \ecommerce ha sido usualmente un dominio exclusivo de \rdbms, y esto es así por un par de razones. La primera, es que los sitios \ecommerce generalmente requieren \transactionsDB, y \transactionsDB son una operación básica en \rdbms. Lo segundo es que, hasta hace poco, dominios que requieren de un modelo de dato enriquecido y consultas sofisticadas han sido presupuestos que se ajustan mejor en \rdbms. \textbf{En las siguientes secciones se cuestionara la segunda afirmación.}
 
 \subsubsection{\catalogManagementCOM}
 
-Si es necesaria información sobre como el \catalogManagementCOM se maneja con \dataBasesDB relacionales, es necesario dar una mirada rápida a los esquemas del popular \nameMagento \ecommerce \frameworkPC [\ref{ap:figure:catalog_magento}]. En la \refFigura{cap:figure:catalog_magento}  se observa es un conjunto de \tablesDB trabajando a la par para proveer un esquema flexible sobre un fundamentalmente inflexible estilo de sistema de \dataBaseDB.
+Si es necesaria información sobre como el \catalogManagementCOM se maneja con \dataBasesDB relacionales, es necesario dar una mirada rápida a los esquemas del popular \nameMagento \ecommerce \frameworkPC \refFigura{ap:figure:catalog_magento}. En la \refFigura{cap:figure:catalog_magento} se observa un conjunto de \tablesDB trabajando a la par para proveer un esquema flexible sobre un fundamentalmente inflexible estilo de sistema de \dataBaseDB.
 
-Esto significa que los datos de cualquier producto se extienden a través de una docena de \tablesDB. Esto incremente la complejidad del código requerido para la persistencia de consultas de \itemsCOM individuales y hacer una consulta \shellBased es casi imposible. Simplemente considere escribir un \sqlNAME \join para para reunir el modelo de un producto como el de la \refFigura{cap:figure:catalog_magento}.
+Esto significa que los datos de cualquier \itemCOM se extienden a través de una docena de \tablesDB. Esto incremente la complejidad del código requerido para la persistencia de consultas de \itemsCOM individuales y hacer una consulta \shellBased es casi imposible. Simplemente considere escribir un \sqlNAME \join para para reunir el modelo de un \itemCOM como el de la \refFigura{cap:figure:catalog_magento}.
 
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.3\textwidth]{figuras/cap2/magento_product_schema.png}
-	\caption{Esquemas de un producto.}
+	\caption{Esquemas de un \itemCOM.}
 	\label{cap:figure:catalog_magento}
 \end{figure}
 
 O realizar una sencilla búsqueda desde la \shell \mongodbNAME \javaScriptNAME  para obtener un objecto \jsonNAME como el \refsource{source:javascript:example_search_mongodb}.
 
-\medskip
-\begin{lstlisting}[caption= Busqueda en MongoDB, label=source:javascript:example_search_mongodb]
-
-db.products.find({'_id': ObjectID("4bd87bd8277d094c458d2fa5")});
-
-{
-	_id			: ObjectID("4bd87bd8277d094c458d2a43"),
-	title		: "A Love Supreme [Original Recording Reissued]"
-	author		: "John Coltrane",
-	author_id	: ObjectID("4bd87bd8277d094c458d2fa5"),
-	details		: {
-					number_of_discs: 1,
-					label: "Impulse Records",
-   					issue_date: "December 9, 1964",
-   					average_customer_review: 4.95,
-   					asin: "B0000A118M"
-   				},
-   	pricing		: {
-   					list: 1198,
-   					retail: 1099,
-   					savings: 99,
-   					pct_savings: 8
-   				},
-   categories	: [
-   					ObjectID("4bd87bd8277d094c458d2a43"),
-   					ObjectID("4bd87bd8277d094c458d2b44"), 
-   					ObjectID("4bd87bd8277d094c458d29a1")
-   				]
-}
-\end{lstlisting}
-
-Claramente en \refsource{source:javascript:example_search_mongodb} no hay  representación completa de un \itemCOM, pero esto demuestra cuantas de estas \tablesDB triviales que existen en una representación relacional pueden prescindir en una representación \documentDB.
+Claramente en \refsource{source:javascript:example_search_mongodb} no hay representación completa de un \itemCOM, pero esto demuestra cuantas de estas \tablesDB triviales que existen en una representación relacional pueden prescindir en una representación \documentDB.
 
 Para datos \objectOrientedPL, \textbf{los \documentsDB tienen mayor sentido}, tanto en concepto como rendimiento. Una representación \documentOriented de un dato de un \itemCOM se traduce a unas pocas entidades (un puñado de \collectionsDB vs. una docena de \tablesDB), mejor \performanceQA en consultas (sin \serverSideAS \joins), y estructuras que corresponden precisamente al \itemCOM. \textbf{Ya no existe la necesidad} de diseñar un \masterSchema que pueda considerar a cada tipo de \itemCOM concebible.
 
@@ -185,48 +154,11 @@ Para datos \objectOrientedPL, \textbf{los \documentsDB tienen mayor sentido}, ta
 
 Permitir que un \shoppingCarts sea simplemente una orden en un estado  \cartCOM, el modelo de \shoppingCarts y las ordenes en \mongodbNAME se tornan muy sencillas. Un ejemplo de esto se puede observar en  \refsource{source:javascript:example_schema_order}.
 
-\medskip
-\begin{lstlisting}[caption= Estructura de una \orderCommerce., label=source:javascript:example_schema_order]
-
-{
-	'_id': objectid('4b980a6dea2c3f4579da141e'),
-	'user_id': objectid('4b980a6dea2c3f4579a4f54'),
-	'state': 'cart',
-	'line_items': [
-		{
-			'sku': 'jc-432',
-			'name': 'John Coltrane: A Love Supreme',
-			'retail_price': 1099
-		},
-		{
-			'sku': 'ly-211',
-			'name': 'Larry Young: Unity',
-			'retail_price': 1199
-		}
-	],
-	'shipping_address': {
-		'street': '3333 Greene Ave.',
-		'city': 'Brooklyn',
-		'state': 'NY',
-		'zip': '11216'
-	},
-	'subtotal': 2199
-}
-\end{lstlisting}
-
 Notar que es posible presentar los pedidos como un \arrayPL de \itemsCOM. Como es usual con \documentsDB, esto hace el despliegue del \shoppingCart mas sencillo, dado que no hay \joins envueltos. Pero esto también resuelve el problema del versionamiento de \itemsCOM. Usualmente es necesario tener el estado de un \itemCOM cuando este es comprado. Esto puede ser logrado en una \rdbms estableciendo un vínculo a versiones particulares de un \itemCOM. Aquí, sin embargo, simplemente se almacenó el estado de un \itemCOM dentro de la misma \orderCommerce.
 
 \subsubsection{Consultando \ordersCommerce}
 
 Dado que \mongodbNAME soporta consultas dinámicas y \secIndexingDB , las consultas para las \ordersCommerce son automáticas. Es posible, por ejemplo, definir un \indexDB en un \itemCOM \sku, lo que permite consultas eficientes en todas las ordenes para un \itemCOM dado. En  \refsource{source:javascript:example_querying_orders_mongodb} se observa un ejemplo.
-
-\medskip
-\begin{lstlisting}[caption= Consulta eficiente con \secIndexesDB., label=source:javascript:example_querying_orders_mongodb]
-
-	db.orders.ensureIndex({'line_items.sku': 1});
-	db.orders.find({'line_items.sku' => 'jc-431'});
-	
-\end{lstlisting}
 
 Con \mongodbNAME, es posible realizar consultas en atributos arbitrarios, de esa manera, cualquier consulta en la \collectionDB \ordersCommerce es posible. Y para consultas comunes, es posible definir \indexesDB para una mejor eficiencia.
 
@@ -234,69 +166,17 @@ Con \mongodbNAME, es posible realizar consultas en atributos arbitrarios, de esa
 
 Claramente, \aggregationDB también es necesario. Se desea reportar \ordersCommerce de diferentes maneras, y para ese propósito, \mapReduce esta disponible. A modo de ejemplo, \refsource{source:javascript:example_aggregation_mongodb} tiene comando \mapReduce que \aggregatesDB el total de \ordersCommerce por \zipCode.
 
-\begin{lstlisting}[caption= Ejemplo de comando \mapReduce., label=source:javascript:example_aggregation_mongodb]
-
-map = "
-	function(){
-		emit(this['shipping_address']['zip'], {total: this.total})
-	}
-"
-
-reduce = "
-	function(key, values) {
-		var sum = 0;
-		values.forEach(function(doc) {
-      sum += doc.total;
-    }
-
-    return {total: sum};
-  }"
-
-
-db.orders.mapReduce(map, reduce, {out: 'order_totals_by_zip'});
-
-\end{lstlisting}
-
 \subsubsection{\updating \ordersCommerce}
 
 \subsubsection*{Incrementando Calidad}
 
 Una manera de ajustar la cantidad es usando un \positionOperatorDB, el cual permite aplicar \atomicOperationsDB, a un único objeto dentro de un \arrayPL. \refsource{source:javascript:example_incrementing_quality_mongodb} muestra como cambiar el número de álbumes que se están ordenando.
 
-\begin{lstlisting}[caption= Ejemplo de uso de \positionOperatorDB., label=source:javascript:example_incrementing_quality_mongodb]
-
-	db.orders.update(
-		{
-			'_id': order_id,
-			'line_items.sku':'jc-431'
-		},
-		{
-			'$set': {'line_items.$.quantity': 2}
-		}
-	);
-		
-\end{lstlisting}
-
  
 \subsubsection*{\adding y \removing \itemsCOM}
 
 Igualmente, \atomicOperationsDB resuelven el problema de agregar y remover \itemCOM desde el \cartCOM. \refsource{source:javascript:example_push_operator_mongodb} ejemplifica el uso de \pushOperatorDB \atomicOperatorDB para agregar un \itemCOM al \cartCOM.
 
-\begin{lstlisting}[caption= Ejemplo del operador \pushOperatorDB., label=source:javascript:example_push_operator_mongodb]
-db.orders.update(
-	{'_id': order_id},
-    {
-    	'$push': {
-    		'line_items':{
-    			'sku': 'md-12',
-    			'price': 2500,
-    			'title': 'Basketball'
-    		}
-    	},
-    	'$inc': {'subtotal': 2500}
-    }
-);
-\end{lstlisting}
 
 Al ajustar la cantidad y el cambio de los mismos \itemsCOM en el \cartCOM, es necesario actualizar el total de la orden. Notar el uso del operador \incOperatorDB para manejar esto.
 
@@ -306,53 +186,15 @@ No todos los sitios \ecommerce necesitan manejar el inventario. Pero para aquell
 
 Una manera para manejar el inventario, es guardar un \documentDB separado por cada \physItem en la bodega. Así, por ejemplo, si la bodega tiene veinte copias del álbum Coltrane, se traduce en veinte \documentsDB distintos en \inventoryCommerce \collectionDB. Cada \documentDB tiene una estructura como lo muestra \refsource{source:javascript:example_document_inventory_mongodb}.
 
-\begin{lstlisting}[caption= Ejemplo de \documentDB para un \itemCOM., label=source:javascript:example_document_inventory_mongodb]
-{
-	'_id': objectid('4b980a6dea2c3f4579da432a'),
-	'sku': 'jc-431',
-	'state': 'available',
-	'expires': null,
-	'order_id': null
-}
-\end{lstlisting}
+
+Cuando un usuario intenta agregar un \itemCOM al \cartCOM, un comando \findAndModifyOperatorDB puede ser facilitado para automáticamente marcar el \itemCOM en \inCart, asociando el \itemCOM con una \orderCommerce dada, y estableciendo un tiempo de espiración. \refsource{source:javascript:example_add_inventory_expiartion_mongodb}.
 
 
-Cuando un usuario intenta agregar un\itemCOM al \cartCOM, un comando \findAndModifyOperatorDB puede ser facilitado para automáticamente marcar el \itemCOM en \inCart, asociando el \itemCOM con una \orderCommerce dada, y estableciendo un tiempo de espiración. \refsource{source:javascript:example_add_inventory_expiartion_mongodb}.
-
-\begin{lstlisting}[caption= Marcando un \itemCOM con tiempo de espiración., label=source:javascript:example_add_inventory_expiartion_mongodb]
-query = {'sku': 'jc-431', 'state': 'available'};
-
-update = {
-	'$set':{
-		'state': 'cart',
-		'order_id': order_id,
-		'expires':  Date.now() + 15 * 60
-	}
-};
-
-item = db.inventory.findAndModify(query: query, update: update);
-\end{lstlisting}
 
 Si se obtiene un \itemBackDB desde la operación \findAndModifyOperatorDB, se sabe que tenemos un único \lockDB en el \itemCOM, y es posible guardarlo en el \cartCOM. Cuando el usuario desea realizar el \checkoutCOM, el estado del \itemCOM puede cambiar a \purchasedCOM, o cualquiera sea el caso de la llamada.
 
 Mientras, se pueda ejecutar un \scriptPL en \backgroundPL que libere el inventario del \cartCOM que no ha sido \purchasedCOM en la ventana de quince minutos. La actualización es trivial y se observa en \refsource{source:javascript:example_add_script_background_mongodb}.
 
-
-\begin{lstlisting}[caption= Ejemplo de \scriptPL corriendo \backgroundPL., label=source:javascript:example_add_script_background_mongodb]
-db.inventory.update(
-	{
-		'state': 'cart',
-		'expires': {'$lt': Date.now()}},
-		{
-			'$set': {
-				'state': 'available',
-				'expires': null,
-				'order_id': null
-		}
-	},
-	{multi: true}
-);
-\end{lstlisting} 
 
 \subsubsection{\transactionsDB, \consistencyDB y \durabilityDB}
 

@@ -1,0 +1,177 @@
+\chapter{\pseudoSchemaCPT \ecommerce }\label{ap:pseudo_schema_ecommerce}
+
+\medskip
+\begin{lstlisting}[caption= Busqueda en MongoDB, label=source:javascript:example_search_mongodb]
+
+db.products.find({'_id': ObjectID("4bd87bd8277d094c458d2fa5")});
+
+{
+    _id         : ObjectID("4bd87bd8277d094c458d2a43"),
+    title       : "A Love Supreme [Original Recording Reissued]"
+    author      : "John Coltrane",
+    author_id   : ObjectID("4bd87bd8277d094c458d2fa5"),
+    details     : {
+                    number_of_discs: 1,
+                    label: "Impulse Records",
+                    issue_date: "December 9, 1964",
+                    average_customer_review: 4.95,
+                    asin: "B0000A118M"
+                },
+    pricing     : {
+                    list: 1198,
+                    retail: 1099,
+                    savings: 99,
+                    pct_savings: 8
+                },
+   categories   : [
+                    ObjectID("4bd87bd8277d094c458d2a43"),
+                    ObjectID("4bd87bd8277d094c458d2b44"), 
+                    ObjectID("4bd87bd8277d094c458d29a1")
+                ]
+}
+\end{lstlisting}
+
+
+\medskip
+\begin{lstlisting}[caption= Estructura de una \orderCommerce., label=source:javascript:example_schema_order]
+
+{
+    '_id': objectid('4b980a6dea2c3f4579da141e'),
+    'user_id': objectid('4b980a6dea2c3f4579a4f54'),
+    'state': 'cart',
+    'line_items': [
+        {
+            'sku': 'jc-432',
+            'name': 'John Coltrane: A Love Supreme',
+            'retail_price': 1099
+        },
+        {
+            'sku': 'ly-211',
+            'name': 'Larry Young: Unity',
+            'retail_price': 1199
+        }
+    ],
+    'shipping_address': {
+        'street': '3333 Greene Ave.',
+        'city': 'Brooklyn',
+        'state': 'NY',
+        'zip': '11216'
+    },
+    'subtotal': 2199
+}
+\end{lstlisting}
+
+\medskip
+\begin{lstlisting}[caption= Consulta eficiente con \secIndexesDB., label=source:javascript:example_querying_orders_mongodb]
+
+    db.orders.ensureIndex({'line_items.sku': 1});
+    db.orders.find({'line_items.sku' => 'jc-431'});
+    
+\end{lstlisting}
+
+
+
+\medskip
+\begin{lstlisting}[caption= Ejemplo de comando \mapReduce., label=source:javascript:example_aggregation_mongodb]
+
+map = "
+    function(){
+        emit(this['shipping_address']['zip'], {total: this.total})
+    }
+"
+
+reduce = "
+    function(key, values) {
+        var sum = 0;
+        values.forEach(function(doc) {
+      sum += doc.total;
+    }
+
+    return {total: sum};
+  }"
+
+
+db.orders.mapReduce(map, reduce, {out: 'order_totals_by_zip'});
+
+\end{lstlisting}
+
+
+
+\medskip
+\begin{lstlisting}[caption= Ejemplo de uso de \positionOperatorDB., label=source:javascript:example_incrementing_quality_mongodb]
+
+    db.orders.update(
+        {
+            '_id': order_id,
+            'line_items.sku':'jc-431'
+        },
+        {
+            '$set': {'line_items.$.quantity': 2}
+        }
+    );
+        
+\end{lstlisting}
+
+
+\medskip
+\begin{lstlisting}[caption= Ejemplo del operador \pushOperatorDB., label=source:javascript:example_push_operator_mongodb]
+db.orders.update(
+    {'_id': order_id},
+    {
+        '$push': {
+            'line_items':{
+                'sku': 'md-12',
+                'price': 2500,
+                'title': 'Basketball'
+            }
+        },
+        '$inc': {'subtotal': 2500}
+    }
+);
+\end{lstlisting}
+
+
+\medskip
+\begin{lstlisting}[caption= Ejemplo de \documentDB para un \itemCOM., label=source:javascript:example_document_inventory_mongodb]
+{
+    '_id': objectid('4b980a6dea2c3f4579da432a'),
+    'sku': 'jc-431',
+    'state': 'available',
+    'expires': null,
+    'order_id': null
+}
+\end{lstlisting}
+
+
+\medskip
+\begin{lstlisting}[caption= Marcando un \itemCOM con tiempo de espiración., label=source:javascript:example_add_inventory_expiartion_mongodb]
+query = {'sku': 'jc-431', 'state': 'available'};
+
+update = {
+    '$set':{
+        'state': 'cart',
+        'order_id': order_id,
+        'expires':  Date.now() + 15 * 60
+    }
+};
+
+item = db.inventory.findAndModify(query: query, update: update);
+\end{lstlisting}
+
+
+\medskip
+\begin{lstlisting}[caption= Ejemplo de \scriptPL corriendo \backgroundPL., label=source:javascript:example_add_script_background_mongodb]
+db.inventory.update(
+    {
+        'state': 'cart',
+        'expires': {'$lt': Date.now()}},
+        {
+            '$set': {
+                'state': 'available',
+                'expires': null,
+                'order_id': null
+        }
+    },
+    {multi: true}
+);
+\end{lstlisting} 

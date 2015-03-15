@@ -25,6 +25,7 @@
 \newcommand{\reftabla}[1]		{\tablename\xspace\ref{#1}}
 
 \newcommand{\refFigura}[1]		{\figurename\xspace\ref{#1}}
+\newcommand{\refApendice}[1]	{Apéndice [\ref{#1}]}
 %%%%%%%%%%%%%%%%%%% 		endregion References per caption 	%%%%%%%%%%%%%%%%
 
 \newcommand{\rootfolder}		{../../}
@@ -48,14 +49,15 @@
 \newcommand{\chrome}				{\nWrapper{Chrome}}
 \newcommand{\twitterNAME}			{\nWrapper{Twitter}}
 \newcommand{\facebook}				{\nWrapper{Facebook}}
-\newcommand{\ebay}					{\nWrapper{Ebay}}
+\newcommand{\ebayNAME}				{\nWrapper{Ebay}}
+\newcommand{\bestBuyNAME}			{\nWrapper{BEST BUY}}
 \newcommand{\amazonNAME}			{\nWrapper{Amazon}}
 \newcommand{\linkedInNAME}			{\nWrapper{LinkedIn}}
 \newcommand{\AuthorizeNet}			{\nWrapper{Authorize.Net}}
 \newcommand{\foursquare}			{\nWrapper{Foursquare}}
 \newcommand{\mongodbNAME}			{\gWrapper{MongoDB}}
 \newcommand{\cassandraNAME}			{\nWrapper{Cassandra}}
-\newcommand{\dslNAME}				{\nWrapper{DSL}}
+\newcommand{\dslNAME}				{\bothWrapper{dsl_siglas}}
 \newcommand{\youtubeNAME}			{\nWrapper{Youtube}}
 
 %%%%%%%%%%%%%%%%	JavaScript	%%%%%%%%%%%%%%%%
@@ -468,6 +470,7 @@
 \newcommand{\reqNodeINT}				{\bWrapper{req}}
 \newcommand{\resNodeINT}				{\bWrapper{res}}
 \newcommand{\sessionsINT}				{\bWrapper{sessions}}
+\newcommand{\authenticationINT}			{\bWrapper{authentication}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%  E-COMMERCE(COM)	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -486,7 +489,7 @@
 \newcommand{\cartCOM}					{\bWrapper{Cart}}
 \newcommand{\shoppingCart}				{\bWrapper{Shopping Cart}}
 \newcommand{\shoppingCarts}				{\bWrapper{Shopping Carts}}
-\newcommand{\checkoutCOM}					{\bWrapper{checkout}}
+\newcommand{\checkoutCOM}				{\bWrapper{checkout}}
 \newcommand{\merchandising}				{\bWrapper{Merchandising}}
 \newcommand{\itemCOM}					{\bWrapper{item}}
 \newcommand{\itemsCOM}					{\bWrapper{items}}
@@ -673,6 +676,8 @@
 \newcommand{\multiTierAS}			{\bWrapper{Multi-Tier}}
 \newcommand{\dataModelAS}			{\bWrapper{Data Model}}
 \newcommand{\dataModelsAS}			{\bWrapper{Data Models}}
+\newcommand{\asociatesAS}			{\bWrapper{associates}}
+\newcommand{\containsAS}			{\bWrapper{contains}}
 
 
 
@@ -858,26 +863,26 @@
 \newcommand{\replicatedDB}				{\bWrapper{replicated}}
 \newcommand{\hostingDB}					{\bWrapper{Hosting}}
 \newcommand{\replicatedSlaveDB}			{\bWrapper{replicated slave}}
-\newcommand{\documentsDB}			{\bWrapper{documents}}
-\newcommand{\documentDB}			{\bWrapper{document}}
-\newcommand{\documentOriented}		{\bWrapper{Document Oriented}}
+\newcommand{\documentsDB}				{\bWrapper{documents}}
+\newcommand{\documentDB}				{\bWrapper{document}}
+\newcommand{\documentOriented}			{\bWrapper{Document Oriented}}
 \newcommand{\maxClientsDB}				{\bWrapper{MaxClients}}
 \newcommand{\asynRepDB}					{\bothWrapper{asyn_rep_db}}
 \newcommand{\masterlessDB}				{\bWrapper{masterless}}
-\newcommand{\tableBasedDB}			{\bWrapper{table-based}}
+\newcommand{\tableBasedDB}				{\bWrapper{table-based}}
 
-\newcommand{\replicationDB}			{\bWrapper{replication}}
-\newcommand{\recoveryDB}			{\bWrapper{Recovery}}
+\newcommand{\replicationDB}				{\bWrapper{replication}}
+\newcommand{\recoveryDB}				{\bWrapper{Recovery}}
 
-\newcommand{\queryingDB}			{\bWrapper{querying}}
-\newcommand{\queriesDB}				{\bWrapper{queries}}
-\newcommand{\loadBalancedDB}		{\bWrapper{Load-Balanced}}
-\newcommand{\stemmingDB}			{\gWrapper{stemming_def}}
-\newcommand{\primaryStorageArrayDB}	{\bWrapper{primary storage array}}
+\newcommand{\queryingDB}				{\bWrapper{querying}}
+\newcommand{\queriesDB}					{\bWrapper{queries}}
+\newcommand{\loadBalancedDB}			{\bWrapper{Load-Balanced}}
+\newcommand{\stemmingDB}				{\gWrapper{stemming_def}}
+\newcommand{\primaryStorageArrayDB}		{\bWrapper{primary storage array}}
 
-\newcommand{\commitDB}				{\bWrapper{Commit}}
-\newcommand{\commitsDB}				{\bWrapper{Commits}}
-\newcommand{\journalDB}				{\bWrapper{Journal}}
+\newcommand{\commitDB}					{\bWrapper{Commit}}
+\newcommand{\commitsDB}					{\bWrapper{Commits}}
+\newcommand{\journalDB}					{\bWrapper{Journal}}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -900,13 +905,13 @@
 \newcommand{\scaleUpQA}				{\bWrapper{scale up}}
 \newcommand{\scalableQA}			{\bWrapper{Scalable}}
 \newcommand{\scalablesQA}			{\bWrapper{Scalables}}
-\newcommand{\scalabilityQA}			{\bWrapper{scalability}}
+\newcommand{\scalabilityQA}			{\bWrapper{Scalability}}
 \newcommand{\scaling}				{\bWrapper{scaling}}
 \newcommand{\security}				{\bWrapper{security}}
 \newcommand{\highly}				{\bWrapper{highly}}
 \newcommand{\optimized}				{\bWrapper{optimized}}
 \newcommand{\replication}			{\bWrapper{replication}}
-\newcommand{\consistencyDB}			{\bWrapper{consistency}}
+\newcommand{\consistencyDB}			{\bWrapper{Consistency}}
 \newcommand{\durabilityDB}			{\bWrapper{Durability}}
 \newcommand{\highScalabilityDB}		{\bWrapper{High Scalability}}
 \newcommand{\highAvailabilityDB}	{\bWrapper{High Availability}}
@@ -1177,6 +1182,12 @@
 
 \newcommand{\eventMachineCPT}		{\bWrapper{Event Machine}}
 \newcommand{\twistedCPT}			{\bWrapper{Twisted}}
+\newcommand{\renderingCPT}			{\bWrapper{rendering}}
+\newcommand{\pseudoCPT}				{\bWrapper{pseudo}}
+\newcommand{\pseudoSchemaCPT}		{\bWrapper{Pseudo-schemas}}
+
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%	  	 REFERENCIAS      %%%%%%%%%%%%%%%%%%%%%%%%%%%

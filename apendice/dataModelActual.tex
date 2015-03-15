@@ -1,0 +1,143 @@
+\chapter{ Avances \dataModelAS }\label{ap:avance_data_model}
+
+\section{\itemcollection}
+
+La estructura de \itemcollection se encuentra en \refsource{source:javascript:data_model_item}.
+
+\medskip
+\begin{lstlisting}[caption= \dataModelAS de \itemcollection, label=source:javascript:data_model_item]
+	{
+	    "_id" : "BCTMZ6HTxFSppJESk",
+	    "createdAt" : ISODate("2014-04-03T20:46:52.411Z"),
+	    "description" : "This is an example product.",
+	    "hashtags" : [ 
+	        "rpjCvTBGjhBi2xdro", 
+	        "cseCBSSrJ3t8HQSNP"
+	    ],
+	    "isVisible" : true,
+	    "metafields" : [ 
+	        {
+	            "key" : "Material",
+	            "value" : "Cotton"
+	        }, 
+	        {
+	            "key" : "Quality",
+	            "value" : "Excellent"
+	        }
+	    ],
+	    "pageTitle" : "Basic Example Product",
+	    "productType" : "Simple",
+	    "shopId" : "WvrKDomkYth3THbDD",
+	    "title" : "Example Product",
+	    "updatedAt" : ISODate("2015-06-01T19:17:13.949Z"),
+	    "variants" : [],
+	    "vendor" : "Example Manufacturer"
+	}
+\end{lstlisting}
+
+El atributo \textit{'variants'} corresponde a un \arrayPL que contiene cada una de las modificaciónes que el \itemCOM tiene duranto su vida. Como ejemplo en \refsource{source:javascript:data_model_item_variant} se observa que el atributo \textit{'inventoryQuantity'} disminuye de 49 a 45 \itemsCOM.
+
+\medskip
+\begin{lstlisting}[caption= El \arrayPL "variants", label=source:javascript:data_model_item_variant]
+	 "variants" : [ 
+        {
+            "_id" : "6qiqPwBkeJdtdQc4G",
+            "title" : "Basic Example Variant",
+            "price" : 19.99,
+            "inventoryManagement" : true,
+            "updatedAt" : ISODate("2015-04-03T20:46:52.411Z"),
+            "createdAt" : ISODate("2015-04-03T20:46:52.411Z"),
+            "inventoryQuantity" : 49,
+            "metafields" : [ 
+                {
+                    "key" : null,
+                    "value" : null
+                }
+            ]
+        }, 
+        {
+            "_id" : "SMr4rhDFnYvFMtDTX",
+            "title" : "Basic Example Variant",
+            "price" : 19.99,
+            "inventoryManagement" : true,
+            "updatedAt" : ISODate("2014-05-03T20:46:52.411Z"),
+            "createdAt" : ISODate("2014-05-03T20:46:52.411Z"),
+            "inventoryQuantity" : 45,
+            "metafields" : [ 
+                {
+                    "key" : null,
+                    "value" : null
+                }
+            ]
+        }
+    ]
+\end{lstlisting}
+
+
+
+\section{\rolCollection}
+
+\medskip
+\begin{lstlisting}[caption= \dataModelAS de \rolCollection, label=source:javascript:data_model_roll]
+	{
+	    "name" : "admin",
+	    "_id" : "vM2kbt4qCsZw7MbzK"
+	}
+\end{lstlisting}
+
+
+
+\section{\userscollection}
+
+\medskip
+\begin{lstlisting}[caption= \dataModelAS de \userscollection, label=source:javascript:data_model_user]
+
+{
+    "_id" : "me8jP3idwNTecEkiD",
+    "createdAt" : ISODate("2015-03-06T07:30:39.755Z"),
+    "emails" : [ 
+        {
+            "address" : "yatkthjj@localhost",
+            "verified" : false
+        }
+    ],
+    "profile" : {},
+    "roles" : [ 
+        "manage-users", 
+        "owner", 
+        "admin"
+    ],
+   "username" : "Administrator"
+}
+\end{lstlisting}
+
+\section{\tagscollection}
+
+\medskip
+\begin{lstlisting}[caption= \dataModelAS de \tagscollection, label=source:javascript:data_model_tag]
+
+{
+    "name" : "example-product",
+    "updatedAt" : ISODate("2015-04-12T15:17:20.576Z"),
+    "createdAt" : ISODate("2015-04-12T15:17:20.576Z"),
+    "_id" : "cseCBSSrJ3t8HQSNP"
+}
+
+\end{lstlisting}
+
+
+\section{\analyEventcollection}
+
+\medskip
+\begin{lstlisting}[caption= \dataModelAS de \analyEventcollection, label=source:javascript:data_model_analy_event]
+
+
+{
+    "category" : "grid",
+    "action" : "generic-click",
+    "label" : "product grid click",
+    "shopId" : "WvrKDomkYth3THbDD",
+    "_id" : "euGGJ2KQHvapX6rhk"
+}
+
+\end{lstlisting}

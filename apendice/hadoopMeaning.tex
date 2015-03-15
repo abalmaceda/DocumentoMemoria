@@ -1,0 +1,30 @@
+\chapter{¿Qué es \hadoopNAME? \cite{online_hadoop_description}}\label{ap:apendice_hadoop_description}
+\apacheNAME \hadoopNAME es un proyecto software \openSourcePC que permite el procesamiento distribuido de gran cantidad de datos a través de \clustersAS de \serversAS. Esta diseñado para \scaleUpQA desde un único \serverAS a miles de máquinas, con un muy alto grado de tolerancia al fallo. En lugar de confiar en \highEndCPT \hardwarePC, la flexibilidad de estos \clustersAS proviene de la habilidad del \softwarePC en detectar y manejar fallos en la \applayer.
+
+\subsubsection*{Arquitectura \highLevelCPT} 
+\apacheNAME \hadoopNAME tiene dos pilares:
+
+\begin{itemize}
+	\item \hadoopYarnNAME asigna \cpuPC, memoria y almacenamiento para las aplicaciones corriendo en \clustersAS \hadoopNAME. La primera generación de \hadoopNAME podía correr solo aplicaciones \hadoopMapReduceNAME. \hadoopYarnNAME permite que otros entornos de aplicaciones (como \sparkNAME) para ejecutarse en \hadoopNAME, lo que abre un mundo de posibilidades.
+	
+	\item \hadoophdfsNAME es un sistema de archivos que se extiende por todos los nodos en su \clusterAS \hadoopNAME para almacenamiento de datos. Se conecta entre si a los sistemas de archivos en muchos nodos locales para convertirlos en un sistema de archivos grandes.
+\end{itemize}
+
+\hadoopNAME se complementa con un ecosistema de proyectos de \apacheNAME, como Pig\cite{online_ibm_meaning_pig}, Hive\cite{online_ibm_meaning_hive} y Zookeeper\cite{online_ibm_meaning_zookeeper}, para extender el valor de \hadoopNAME y mejorar su \usabilityQA.
+
+
+\subsubsection*{Entonces, ¿Cuál es el problema?}
+
+\hadoopNAME cambia la economía y la dinámica de la computación a gran escala. Su impacto puede reducirse a cuatro características sobresalientes.
+
+\hadoopNAME permite una solución de computación que es:
+
+\begin{itemize}
+	\item \textbf{\scalableQA}- Nuevos nodos pueden ser agregados según sean necesarios, y agregados sin la necesidad de cambiar el formato de los datos, como los datos son cargados, como los \textit{jobs} son escritos, o las aplicaciones en la parte superior.
+	
+	\item \textbf{\costEffectiveCPT}- \hadoopNAME trae computación paralela masiva a las maquinas de los servidores. El resultado es una considerable disminución en los costos por \terabytePC de almacenamiento. lo cual hace asequible para modelar todos sus datos.
+	
+	\item \textbf{\flexibleQA}- \hadoopNAME no tiene esquema, y puede absorber cualquier tipo de datos, estructurados o no, desde cualquier numero de fuentes. Los datos de múltiples fuentes pueden ser unidos y se agregan arbitrariamente para permitir análisis que ningún otro sistema puede proporcionar.
+	
+	\item \textbf{\faultTolerantQA}- Cuando se pierde un nodo, el sistema redirige el trabajo a otra ubicación de los datos para seguir con el procesamiento sin perder el ritmo.
+\end{itemize}
