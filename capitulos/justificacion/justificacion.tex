@@ -1,13 +1,13 @@
 
 \chapter{Justificación del proyecto}\label{cap:justificacion_proyecto}
 
-A continuación se discutirán las razones para considerar el desarrollo de una plataforma \ecommerce, como un aporte en relación a las opciones \openSourcePC actualmente vigentes. Para esto se explicara por que los cambios de tecnología propuestos son un beneficio con respecto actual estado del arte del tema, así como un aporte para potenciales funcionalidades que serán agregadas en el futuro.
+A continuación se discutirán las razones para considerar el desarrollo de una plataforma \ecommerceCOM, como un aporte en relación con las opciones \openSourcePC actualmente vigentes. Para esto se explicará por qué los cambios de tecnología propuestos son un beneficio con respecto al actual estado del arte del tema, así como un aporte para potenciales funcionalidades que serán agregadas en el futuro.
 
 %TODO Hablar de arquitectura de proyecto para luego diferenciar las diferentes tecnologias y explicar cual es la mas adecuada en cada caso.
 
 \section{\dataBaseDB}
 
-Bases de datos relacionales se encuentran en la mayoría de las organización desde hace muchísimo tiempo, y por buenas razones. Las bases de datos relacionales soportan las aplicaciones del pasado que cumplen con las necesidades de negocio actuales; Estas son apoyadas por un extenso ecosistema de herramientas; y hay una gran cantidad de mano de obra calificada para implementar y mantener estos sistemas.
+Bases de datos relacionales se encuentran en la mayoría de las organizaciones desde hace muchísimo tiempo, y por buenas razones. Las bases de datos relacionales soportan las aplicaciones del pasado que cumplen con las necesidades de negocio actuales. Estas son apoyadas por un extenso ecosistema de herramientas; y hay una gran cantidad de mano de obra calificada para implementar y mantener estos sistemas.
 %Relational databases have a long-standing position in most
 %organizations, and for good reason. Relational databases
 %underpin legacy applications that meet current business
@@ -15,7 +15,7 @@ Bases de datos relacionales se encuentran en la mayoría de las organización de
 %tools; and there is a large pool of labor qualified to
 %implement and maintain these systems.
 
-Pero las compañías están cada vez más considerando la opción de alternativas para la infraestructura relacional heredada. En algunos casos la motivación es técnica, tal como la necesidad de escalar o actuar mas allá de las capacidades de sus sistemas actuales. Mientras que en otros casos, las compañías están motivadas por el deseo de identificar alternativas viables a \softwaresPC propietario de alto costo. Una tercera motivación es la agilidad y velocidad del desarrollo, dado que las compañías ansían adaptarse al mercado mas rápido y adoptar metodologías de desarrollo ágil.
+Pero las compañías están cada vez más considerando la opción de alternativas para la infraestructura relacional heredada. En algunos casos la motivación es técnica, tal como la necesidad de escalar o actuar más allá de las capacidades de sus sistemas actuales. Mientras que en otros casos las compañías están motivadas por el deseo de identificar alternativas viables a \softwaresPC propietario de alto costo. Una tercera motivación es la agilidad y velocidad del desarrollo, dado que las compañías ansían adaptarse al mercado mas rápido y adoptar metodologías de desarrollo ágil.
 %But companies are increasingly considering alternatives to
 %legacy relational infrastructure. In some cases the
 %motivation is technical — such as a need to scale or
@@ -122,16 +122,16 @@ Aplicación: \keyDB \valueDB \stores y \wideColumnDB \stores son útiles para un
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\subsection{\mongodbNAME y \ecommerce \cite{online_mongodb_ecommerce}}
+\subsection{\mongodbNAME y \ecommerceCOM \cite{online_mongodb_ecommerce}}
 \label{cap:justificacion_proyecto:MongoDB_ECommerce}
 
-Demostraciones de almacenamientos de datos de la siguiente generación giran típicamente en torno a las redes sociales: \twitterNAME, \facebook, \foursquare, etc. Desafortunadamente, tales aplicaciones generalmente tienen modelos de datos complejos. \ecommerce por ejemplo, tiene la ventaja de incluir un largo número de patrones familiares para modelar datos. Además no es complicado imaginar como \itemCOM, \categoriesCommerce, \itemReviewsCommerce y \ordersCommerce son típicamente modeladas en \rdbms.
+Demostraciones de almacenamientos de datos de la siguiente generación giran típicamente en torno a las redes sociales: \twitterNAME, \facebook, \foursquare, etc. Desafortunadamente, tales aplicaciones generalmente tienen modelos de datos complejos. \ecommerceCOM por ejemplo, tiene la ventaja de incluir un largo número de patrones familiares para modelar datos. Además no es complicado imaginar como \itemCOM, \categoriesCommerce, \itemReviewsCommerce y \ordersCommerce son típicamente modeladas en \rdbms.
 
-\ecommerce ha sido usualmente un dominio exclusivo de \rdbms, y esto es así por un par de razones. La primera, es que los sitios \ecommerce generalmente requieren \transactionsDB, y \transactionsDB son una operación básica en \rdbms. Lo segundo es que, hasta hace poco, dominios que requieren de un modelo de dato enriquecido y consultas sofisticadas han sido presupuestos que se ajustan mejor en \rdbms. \textbf{En las siguientes secciones se cuestionara la segunda afirmación.}
+\ecommerceCOM ha sido usualmente un dominio exclusivo de \rdbms, y esto es así por un par de razones. La primera, es que los sitios \ecommerceCOM generalmente requieren \transactionsDB, y \transactionsDB son una operación básica en \rdbms. Lo segundo es que, hasta hace poco, dominios que requieren de un modelo de dato enriquecido y consultas sofisticadas han sido presupuestos que se ajustan mejor en \rdbms. \textbf{En las siguientes secciones se cuestionara la segunda afirmación.}
 
 \subsubsection{\catalogManagementCOM}
 
-Si es necesaria información sobre como el \catalogManagementCOM se maneja con \dataBasesDB relacionales, es necesario dar una mirada rápida a los esquemas del popular \nameMagento \ecommerce \frameworkPC \refFigura{ap:figure:catalog_magento}. En la \refFigura{cap:figure:catalog_magento} se observa un conjunto de \tablesDB trabajando a la par para proveer un esquema flexible sobre un fundamentalmente inflexible estilo de sistema de \dataBaseDB.
+Si es necesaria información sobre como el \catalogManagementCOM se maneja con \dataBasesDB relacionales, es necesario dar una mirada rápida a los esquemas del popular \nameMagento \ecommerceCOM \frameworkPC \refFigura{ap:figure:catalog_magento}. En la \refFigura{cap:figure:catalog_magento} se observa un conjunto de \tablesDB trabajando a la par para proveer un esquema flexible sobre un fundamentalmente inflexible estilo de sistema de \dataBaseDB.
 
 Esto significa que los datos de cualquier \itemCOM se extienden a través de una docena de \tablesDB. Esto incremente la complejidad del código requerido para la persistencia de consultas de \itemsCOM individuales y hacer una consulta \shellBased es casi imposible. Simplemente considere escribir un \sqlNAME \join para para reunir el modelo de un \itemCOM como el de la \refFigura{cap:figure:catalog_magento}.
 
@@ -182,7 +182,7 @@ Al ajustar la cantidad y el cambio de los mismos \itemsCOM en el \cartCOM, es ne
 
 \subsubsection{\inventoryCommerce}
 
-No todos los sitios \ecommerce necesitan manejar el inventario. Pero para aquellos que si lo hacen, \mongodbNAME funciona a la altura de las circunstancias.
+No todos los sitios \ecommerceCOM necesitan manejar el inventario. Pero para aquellos que si lo hacen, \mongodbNAME funciona a la altura de las circunstancias.
 
 Una manera para manejar el inventario, es guardar un \documentDB separado por cada \physItem en la bodega. Así, por ejemplo, si la bodega tiene veinte copias del álbum Coltrane, se traduce en veinte \documentsDB distintos en \inventoryCommerce \collectionDB. Cada \documentDB tiene una estructura como lo muestra \refsource{source:javascript:example_document_inventory_mongodb}.
 
@@ -198,9 +198,9 @@ Mientras, se pueda ejecutar un \scriptPL en \backgroundPL que libere el inventar
 
 \subsubsection{\transactionsDB, \consistencyDB y \durabilityDB}
 
-Muchos argumentos impuestos contra \nosqlNAME en \ecommerce se centran en \transactionsDB, \consistencyDB, y \durabilityDB. En relación a esto se mencionan algunos puntos.
+Muchos argumentos impuestos contra \nosqlNAME en \ecommerceCOM se centran en \transactionsDB, \consistencyDB, y \durabilityDB. En relación a esto se mencionan algunos puntos.
 
-En relación a \transactionsDB, ciertamente \mongodbNAME no soporta el tipo \multiObjectDB; sin embargo, soporta \atomicOperationsDB sobre \documentsDB individuales. y esto combinado con el modelo \documentOriented recién descrito, y creatividad, es suficiente para muchos problemas \ecommerce. Ciertamente, si se necesita \debitOneAccount y \creditAnother en la misma operación, ó si se desea \rollbackDB, sera necesario \fullFledgedTransDB. No obstante, \transactionalityDB provista por \mongodbNAME debería ser suficiente en la mayoría de los casos, si no en todos, para operaciones \ecommerce.
+En relación a \transactionsDB, ciertamente \mongodbNAME no soporta el tipo \multiObjectDB; sin embargo, soporta \atomicOperationsDB sobre \documentsDB individuales. y esto combinado con el modelo \documentOriented recién descrito, y creatividad, es suficiente para muchos problemas \ecommerceCOM. Ciertamente, si se necesita \debitOneAccount y \creditAnother en la misma operación, ó si se desea \rollbackDB, sera necesario \fullFledgedTransDB. No obstante, \transactionalityDB provista por \mongodbNAME debería ser suficiente en la mayoría de los casos, si no en todos, para operaciones \ecommerceCOM.
 
 Si la preocupación esta sobre \consistencyDB y \durabilityDB, operaciones escritas en \mongodbNAME pueden ser realizadas \consistencyDB sobre conexiones. Además, \mongodbNAME 1.5 soporta \nearRealTimeReplicationDB, así que es posible asegurarse que una operación ha sido \replicatedDB antes de retornar.
 
@@ -225,9 +225,9 @@ Entonces tiene sentido  considerar \horizontalScalingDB o \scalingOutDB(\refFigu
 
 \subsubsection{Conclusión}
 
-Es cierto que la mayoría de las bases de datos \nosqlNAME no fueron construidas considerando \ecommerce. Las bases de datos que carecen modelos de datos enriquecidos, consultas dinámicas, y la noción de \transactionalityDB no puede esperarse que compitan en el espacio de \ecommerce, entonces no es comprensible que no se considere \mongodbNAME tampoco.
+Es cierto que la mayoría de las bases de datos \nosqlNAME no fueron construidas considerando \ecommerceCOM. Las bases de datos que carecen modelos de datos enriquecidos, consultas dinámicas, y la noción de \transactionalityDB no puede esperarse que compitan en el espacio de \ecommerceCOM, entonces no es comprensible que no se considere \mongodbNAME tampoco.
 
-Pero para las partes en donde el sitio \ecommerce comprende el manejo de contenido, \mongodbNAME es claro vencedor. E incluso para más componentes \transactionalDB del sistema, \mongodbNAME tiene características que hacen de la posibilidad de correr un sistema completo de \ecommerce una realidad. Si bien es cierto que esto solo corresponde a un \sketchCPT, este permite obtener una noción de que \textbf{\documentsDB \dataBaseDB lo hace bien}.
+Pero para las partes en donde el sitio \ecommerceCOM comprende el manejo de contenido, \mongodbNAME es claro vencedor. E incluso para más componentes \transactionalDB del sistema, \mongodbNAME tiene características que hacen de la posibilidad de correr un sistema completo de \ecommerceCOM una realidad. Si bien es cierto que esto solo corresponde a un \sketchCPT, este permite obtener una noción de que \textbf{\documentsDB \dataBaseDB lo hace bien}.
 
 
 \section{\nodejsNAME}\label{cap:section:nodejs}
@@ -519,9 +519,9 @@ La elección del uso de \nodejsNAME trae como consecuencia inmediata el uso de \
 
 
 
-\subsection{\nodejsNAME y \ecommerce}
+\subsection{\nodejsNAME y \ecommerceCOM}
 
-\ecommerce es un excelente ejemplo de sistema que se puede ver totalmente beneficiado con el uso de \nodejsNAME en el lado del \serverAS. 
+\ecommerceCOM es un excelente ejemplo de sistema que se puede ver totalmente beneficiado con el uso de \nodejsNAME en el lado del \serverAS. 
 
 \begin{itemize}
 	\item \textbf{\frontEndAS se movió desde el \serverSideAS al \clientSideAS ( al menos en \mobileINT )}. Una de las grandes consecuencias es que el \serverSideAS ya no es más \cpuBoundPC ahora es \memoryBoundPC e \ioBoundPC. \nodejsNAME es \eventdrivenPL, lo cual implica eficiencia en \ioBoundPC y es extremadamente eficiente en el uso de memoria.

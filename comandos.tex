@@ -57,7 +57,8 @@
 \newcommand{\foursquare}			{\nWrapper{Foursquare}}
 \newcommand{\mongodbNAME}			{\gWrapper{MongoDB}}
 \newcommand{\cassandraNAME}			{\nWrapper{Cassandra}}
-\newcommand{\dslNAME}				{\bothWrapper{dsl_siglas}}
+\newcommand{\dslModemNAME}			{\bothWrapper{dsl_modem_siglas}}
+\newcommand{\diSubsLineNAME}		{\bothWrapper{digital_subscriber_line}}
 \newcommand{\youtubeNAME}			{\nWrapper{Youtube}}
 
 %%%%%%%%%%%%%%%%	JavaScript	%%%%%%%%%%%%%%%%
@@ -66,7 +67,7 @@
 \newcommand{\krakenjsNAME}			{\nWrapper{Kraken.js}}
 \newcommand{\grunttoolNAME}			{\nWrapper{Grunt}}
 \newcommand{\browserifyNAME}		{\nWrapper{Browserify}}
-\newcommand{\esprimaNAME}		{\nWrapper{Esprima}}
+\newcommand{\esprimaNAME}			{\nWrapper{Esprima}}
 
 
 
@@ -136,6 +137,7 @@
 \newcommand{\servletNAME}			{\nWrapper{Servlet}}
 \newcommand{\javaSpringNAME}		{\nWrapper{Spring}}
 \newcommand{\cPlusPlus}				{\nWrapper{C++}}
+\newcommand{\csharpNAME}			{\nWrapper{C\#}}
 \newcommand{\cNAME}					{\nWrapper{C}}
 \newcommand{\googleNAME}			{\nWrapper{Google}}
 \newcommand{\googleanalytics}		{\nWrapper{Google Analytics}}
@@ -237,7 +239,7 @@
 \newcommand{\nameOsCommerce}		{\nWrapper{osCommerce}}
 \newcommand{\nameSimpleCart}		{\nWrapper{simpleCart}}
 \newcommand{\nameWooCommerce}		{\nWrapper{WooCommerce}}
-\newcommand{\nameWPECommerce}		{\nWrapper{WP} \ecommerce}
+\newcommand{\nameWPECommerce}		{\nWrapper{WP} \ecommerceCOM}
 \newcommand{\nameJigoshop}			{\nWrapper{Jigoshop}}
 \newcommand{\wooThemes}				{\nWrapper{WooThemes}}
 \newcommand{\themeForest}			{\nWrapper{ThemeForest}}
@@ -266,8 +268,9 @@
 \newcommand{\airbnbNAME}			{\nWrapper{Airbnb}}
 
 \newcommand{\hotframeworksNAME}		{\nWrapper{HotFrameworks}}
-
-
+\newcommand{\usaNAME}				{\nWrapper{Estados Unidos}}
+\newcommand{\newYorkNAME}			{\nWrapper{New York}}
+\newcommand{\londresNAME}			{\nWrapper{Londres}} 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -302,7 +305,7 @@
 \newcommand{\terminal}					{\bWrapper{terminal}}
 \newcommand{\dumbterminal}				{\bWrapper{dumb terminal}}
 \newcommand{\microprocessors}			{\bWrapper{microprocessors}}
-\newcommand{\modem}						{\bWrapper{modem}}
+\newcommand{\modemPC}						{\bWrapper{modem}}
 \newcommand{\modems}					{\bWrapper{modems}}
 \newcommand{\Multimedia}				{\bWrapper{Multimedia}}
 \newcommand{\developmentPC}				{\bWrapper{Development}}
@@ -382,9 +385,14 @@
 \newcommand{\webServicesINT}			{\bWrapper{web services}}
 \newcommand{\webapp}					{\bWrapper{webapp}}
 \newcommand{\webserverINT}				{\bWrapper{Webserver}}
+\newcommand{\webserversINT}				{\bWrapper{Webservers}}
 \newcommand{\websocketINT}				{\bWrapper{Websockets}}
 \newcommand{\websocketsINT}				{\bWrapper{Websockets}}
-\newcommand{\internet}					{\bWrapper{Internet}}
+\newcommand{\internetINT}				{\bWrapper{Internet}}
+\newcommand{\intranetINT}				{\bWrapper{Intranet}}
+\newcommand{\intranetsINT}				{\bWrapper{Intranets}}
+\newcommand{\extranetsINT}				{\bWrapper{Extranets}}
+
 \newcommand{\blogINT}					{\bWrapper{Blog}}
 \newcommand{\publishINT}				{\bWrapper{publish}}
 \newcommand{\www}						{\bWrapper{World Wide Web}}
@@ -405,6 +413,7 @@
 \newcommand{\emails}					{\bWrapper{emails}}
 
 \newcommand{\mobileINT}					{\bWrapper{mobile}}
+\newcommand{\mobilesINT}				{\bWrapper{mobiles}}
 \newcommand{\tabletINT}					{\bWrapper{tablet}}
 \newcommand{\tabletsINT}				{\bWrapper{tablets}}
 \newcommand{\desktop}					{\bWrapper{desktop}}
@@ -471,17 +480,22 @@
 \newcommand{\resNodeINT}				{\bWrapper{res}}
 \newcommand{\sessionsINT}				{\bWrapper{sessions}}
 \newcommand{\authenticationINT}			{\bWrapper{authentication}}
+\newcommand{\comToComINT}				{\bWrapper{computer-to-computer}}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%  E-COMMERCE(COM)	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newcommand{\ecommerce}					{\bothWrapper{ecommerce}}
-\newcommand{\commerce}					{\bWrapper{Commerce}}
+\newcommand{\ecommerceCOM}				{\bothWrapper{ecommerce}}
+\newcommand{\ebusinessCOM}				{\bWrapper{e-business}}
+\newcommand{\commerceCOM}				{\bWrapper{Commerce}}
+\newcommand{\paymentsCOM}				{\bWrapper{Payments}}
+\newcommand{\electronicpayCOM}			{\bWrapper{Electronic Payments}}
 \newcommand{\emarket}					{\bWrapper{e-Market}}
 \newcommand{\emarketing}				{\bWrapper{e-Marketing}}
 \newcommand{\eshopping}					{\bWrapper{e-Shopping}}
-\newcommand{\egoverment}				{\bWrapper{e-Goverment}}
+\newcommand{\egoverment}				{\bWrapper{e-Government}}
 \newcommand{\mcommerce}					{\bWrapper{m-Commerce}}
 \newcommand{\wishlist}					{\bWrapper{wish list}}
 \newcommand{\shop}						{\bWrapper{shop}}
@@ -508,7 +522,7 @@
 \newcommand{\gtog}						{\bothWrapper{g2g}}
 \newcommand{\ctoc}						{\bothWrapper{c2c}}
 
-\newcommand{\business}					{\bWrapper{Business}}
+\newcommand{\businessCOM}				{\bWrapper{Business}}
 \newcommand{\government}				{\bWrapper{Government}}
 \newcommand{\consumer}					{\bWrapper{consumer}}
 \newcommand{\consumers}					{\bWrapper{consumers}}
@@ -520,16 +534,17 @@
 \newcommand{\rating}					{\bWrapper{rating}}
 \newcommand{\ratings}					{\bWrapper{ratings}}
 
-\newcommand{\edimeaning}				{\bWrapper{Electronic Data Interchange}}
-\newcommand{\eftmeaning}				{\bWrapper{Electronic Funds Transfer}}
+\newcommand{\electDataInterCOM}			{\bothWrapper{electronic_data_interchange}}
+\newcommand{\electFundsTransCOM}		{\bothWrapper{electronic_funds_transfer}}
+
 \newcommand{\estore}					{\bWrapper{e-store}}
 \newcommand{\estores}					{\bWrapper{e-stores}}
 \newcommand{\purchase}					{\bWrapper{purchase}}
 \newcommand{\inquiry}					{\bWrapper{inquiry}}
 \newcommand{\customerCOM}				{\bWrapper{customer}}
-\newcommand{\customers}					{\bWrapper{customers}}
+\newcommand{\customersCOM}				{\bWrapper{customers}}
 \newcommand{\multichannel}				{\bothWrapper{multi_channel}}
-\newcommand{\channel}					{\bWrapper{channel}}
+\newcommand{\channelCOM}				{\bWrapper{channel}}
 \newcommand{\channels}					{\bWrapper{channels}}
 \newcommand{\Multi}						{\bWrapper{Multi}}
 
@@ -554,9 +569,9 @@
 \newcommand{\orderCommerce}				{\bWrapper{order}}
 \newcommand{\ordersCommerce}			{\bWrapper{orders}}
 \newcommand{\catalogCommerce}			{\bWrapper{Catalog}}
-\newcommand{\management}				{\bWrapper{Management}}
-\newcommand{\catalogManagementCOM}			{\catalogCommerce \management}
-\newcommand{\contentManagementCOM}		{\bWrapper{Content} \management}
+\newcommand{\managementCOM}				{\bWrapper{Management}}
+\newcommand{\catalogManagementCOM}		{\catalogCommerce \managementCOM}
+\newcommand{\contentManagementCOM}		{\bWrapper{Content} \managementCOM}
 \newcommand{\sku}						{\bothWrapper{sku}}
 \newcommand{\inventoryCommerce}			{\bWrapper{Inventory}}
 \newcommand{\physItem}					{\bWrapper{physical item}}
@@ -567,6 +582,8 @@
 \newcommand{\serviceCOM}				{\bWrapper{Service}}
 \newcommand{\servicesCOM}				{\bWrapper{Services}}
 \newcommand{\supplierCOM}				{\bWrapper{Supplier}}
+\newcommand{\mvpSiglasCOM}				{\bothWrapper{mvp_siglas}}
+\newcommand{\minViableProductCOM}		{\bothWrapper{min_viable_product}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%  CONCEPTOS DE ARQUITECTURA (AS) %%%%%%%%%%%%%%%%%%%%%%
@@ -588,7 +605,7 @@
 \newcommand{\portablesAS}			{\bWrapper{Portables}}
 \newcommand{\mainframeAS}			{\bWrapper{Mainframe}}
 \newcommand{\mainframesAS}			{\bWrapper{Mainframes}}
-\newcommand{\api}					{\bothWrapper{api_siglas}}
+\newcommand{\apiAS}					{\bothWrapper{api_siglas}}
 \newcommand{\apisAS}				{\bWrapper{APIs}}
 \newcommand{\fullstackAS}			{\bWrapper{Full-Stack}}
 \newcommand{\stackAS}				{\bWrapper{Stack}}
@@ -667,6 +684,7 @@
 \newcommand{\modularityAS}			{\bWrapper{modularity}}
 \newcommand{\routingAS}				{\bWrapper{Routing}}
 \newcommand{\routingLogicAS}		{\bWrapper{routing logic}}
+\newcommand{\routinesgAS}			{\bWrapper{routines}}
 \newcommand{\viewLogicAS}			{\bWrapper{view logic}}
 \newcommand{\viewRenderingAS}		{\bWrapper{View rendering}}
 \newcommand{\logicAS}				{\bWrapper{logic}}
@@ -678,6 +696,7 @@
 \newcommand{\dataModelsAS}			{\bWrapper{Data Models}}
 \newcommand{\asociatesAS}			{\bWrapper{associates}}
 \newcommand{\containsAS}			{\bWrapper{contains}}
+\newcommand{\protocolsAS}			{\bWrapper{protocols}}
 
 
 
@@ -687,6 +706,7 @@
 
 %%%%%%%%%%%%%%%%	Paradigmas	%%%%%%%%%%%%%%%%
 \newcommand{\objectOrientedPL}		{\bWrapper{object-oriented}}
+\newcommand{\objectCodePL}			{\bWrapper{object code}}
 \newcommand{\oopPL}					{\nWrapper{OOP}}
 \newcommand{\imperativePL}			{\bWrapper{imperative}}
 \newcommand{\functionalPL}			{\bWrapper{functional}}
@@ -764,7 +784,7 @@
 \newcommand{\prototypeBasedPL}		{\bWrapper{prototype-based}}
 \newcommand{\multiParadigmPL}		{\bWrapper{multi-paradigm}}
 \newcommand{\writeOnceRunAnyPL}		{\bWrapper{write once, run anywhere}}
-\newcommand{\domainSpecificLangPL}	{\bWrapper{domain-specific Languaje}}
+\newcommand{\domainSpecificLangPL}	{\bothWrapper{domain_specific_languaje}}
 \newcommand{\seriaLanPL}			{\bothWrapper{serialization_languages}}
 
 \newcommand{\declarativePL}			{\bWrapper{Declarative}}
@@ -971,8 +991,9 @@
 \newcommand{\speedupCPT}			{\bWrapper{speed up}}
 \newcommand{\highLevelCPT}			{\bWrapper{high-level}}
 \newcommand{\highEndCPT}			{\bWrapper{high-end}}
+\newcommand{\highBandwithCPT}		{\bWrapper{high-bandwidth}}
 \newcommand{\dragdrop}				{\bWrapper{drag \& drop}}
-\newcommand{\tracking}				{\bWrapper{tracking}}
+\newcommand{\trackingCPT}			{\bWrapper{tracking}}
 \newcommand{\trackCPT}				{\bWrapper{track}}
 \newcommand{\defaultCPT}			{\bWrapper{default}}
 \newcommand{\tool}					{\bWrapper{tool}}
@@ -997,7 +1018,7 @@
 \newcommand{\outofthebox}			{\bWrapper{out of the box}}
 \newcommand{\incomming}				{\bWrapper{incomming}}
 \newcommand{\accouts}				{\bWrapper{accouts}}
-\newcommand{\setup}					{\bWrapper{set up}}
+\newcommand{\setupCPT}				{\bWrapper{setup}}
 \newcommand{\single}				{\bWrapper{single}}
 \newcommand{\multipage}				{\bWrapper{multi-page}}
 \newcommand{\eventloopCPT}			{\bWrapper{event loop}}
@@ -1052,6 +1073,7 @@
 \newcommand{\pdasCPT}				{\bWrapper{PDAs}}
 \newcommand{\clientcentric}			{\bWrapper{client-centric}}
 \newcommand{\clientserver}			{\bWrapper{client-server}}
+\newcommand{\partnerCPT}			{\bWrapper{partner}}
 
 
 \newcommand{\graphTheory}			{\bWrapper{Graph Theory}\cite{book_introduction_graph_theory}}
@@ -1073,6 +1095,7 @@
 \newcommand{\review}					{\bWrapper{review}}
 \newcommand{\wysiwyg}					{\bWrapper{WYSIWYG}}
 \newcommand{\prototypingCPT}			{\bWrapper{prototyping}}
+\newcommand{\prototypesCPT}				{\bWrapper{prototypes}}
 \newcommand{\crossPlatform}				{\bWrapper{cross-platform}}
 \newcommand{\platformSpecificCPT}		{\bWrapper{platform-specific}}
 \newcommand{\Community}					{\bWrapper{Community}}
@@ -1082,6 +1105,7 @@
 \newcommand{\go}						{\bWrapper{Go}}
 \newcommand{\branched}					{\bWrapper{branched}}
 \newcommand{\templateBased}				{\bWrapper{template-based}}
+\newcommand{\webBasedCPT}				{\bWrapper{web-based}}
 \newcommand{\addOns}					{\bWrapper{add-ons}}
 \newcommand{\addOn}						{\bWrapper{add-on}}
 \newcommand{\chat}						{\bWrapper{Chat}}
@@ -1161,12 +1185,14 @@
 \newcommand{\onepage}				{\bWrapper{onepage}}
 \newcommand{\cloud}					{\bWrapper{cloud}}
 \newcommand{\deploy}				{\bWrapper{deploy}}
+\newcommand{\deploymentCPT}			{\bWrapper{deployment}}
 \newcommand{\dataBaseDB}			{\bWrapper{Data Base}}
 \newcommand{\dataBasesDB}			{\bWrapper{Data Bases}}
 \newcommand{\dbmangesystem}			{\bWrapper{Data Base Management System}}
 \newcommand{\backandforth}			{\bWrapper{back and forth}}
 \newcommand{\feedback}				{\bWrapper{feedback}}
 \newcommand{\selfcontained}			{\bWrapper{self-contained}}
+\newcommand{\selfServiceCPT}		{\bWrapper{self-service}}
 \newcommand{\prewritten}			{\bWrapper{pre-written}}
 \newcommand{\fast}					{\bWrapper{fast}}
 \newcommand{\loadingSpinnerCPT}		{\bWrapper{loading spinner}}

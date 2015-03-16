@@ -3,9 +3,9 @@
 
 \section{Arquitectura}
 
-\packagesAS es lo ultimo en \codeSeparationQA, \modularityAS, y \reusabilityQA. Al estructurar el código de cada \featureCPT en un \packagesAS separado, el código de una \featureCPT no tendrá acceso al código de otra \featureCPT excepto utilizando \exportCPT, haciendo cada dependencia explícita. Además esto permite la manera mas sencilla para realizar \testingCPT independientes a cada \featureCPT. Incluso es posible \publishINT los \packagesAS y utilizarlos en otros proyectos.
+\packagesAS es una estrategia de programación para \codeSeparationQA, \modularityAS, y \reusabilityQA. Al estructurar el código de cada \featureCPT en un \packagesAS separado, el código de una \featureCPT no tendrá acceso al código de otra \featureCPT excepto utilizando \exportCPT, haciendo cada dependencia explícita. Además esto permite la manera mas sencilla para realizar \testingCPT independientes a cada \featureCPT. Incluso es posible \publishINT los \packagesAS y utilizarlos en otros proyectos.
 
-Es esta forma de estructurar el código la parte principal del desarrollo del \frameworkPC \ecommerce. Cada vez que se requiera desarrollar una nueva solución específica utilizando el \frameworkPC, simplemente se incluirán todos aquellos \modulesAS necesarios para el desarrollo de la aplicación, y con un poco de desarrollo, obtener las \featuresCPT específicas buscadas.
+Es esta forma de estructurar el código la parte principal del desarrollo del \frameworkPC \ecommerceCOM. Cada vez que se requiera desarrollar una nueva solución específica utilizando el \frameworkPC, simplemente se incluirán todos aquellos \modulesAS necesarios para el desarrollo de la aplicación, y con un poco de desarrollo, obtener las \featuresCPT específicas buscadas.
 
 Como este \frameworkPC será completamente \openSourcePC, la comunidad podrá crear nuevos \modulesAS con el fin de crear aquellas \featuresCPT que serán requeridos en el futuro.
 
@@ -48,9 +48,9 @@ A continuación se describe las funcionalidades de cada uno de los \packagesAS q
 \end{figure}
 	\begin{itemize}
 		\item
-			\textbf{\rtcom} es un \frameworkPC \ecommerce desarrollado con \meteorNAME, \nodejsNAME, \mongodbNAME, \coffeescript con un enfoque \reactive y \realTimeINT.
+			\textbf{\rtcom} es un \frameworkPC \ecommerceCOM desarrollado con \meteorNAME, \nodejsNAME, \mongodbNAME, \coffeescript con un enfoque \reactive y \realTimeINT.
 		\item
-			\textbf{\rtcomCorePCKG} corresponde al \coreAS de la solución. Contiene todas aquellas \featuresCPT básicas y \templatesAS a una plataforma \ecommerce tales como manejo de \itemsCOM, \sessionsINT, etc. De momento he trabajado solo con esas dos \featuresCPT.
+			\textbf{\rtcomCorePCKG} corresponde al \coreAS de la solución. Contiene todas aquellas \featuresCPT básicas y \templatesAS a una plataforma \ecommerceCOM tales como manejo de \itemsCOM, \sessionsINT, etc. De momento he trabajado solo con esas dos \featuresCPT.
 		\item
 			\textbf{\rtcomGoogleanalPCKG} es el \moduleAS para \googleanalytics. Aunque no se encuentra completamente integrado, si genera datos.
 		\item

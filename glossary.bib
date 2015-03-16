@@ -132,7 +132,7 @@ SEO stands for “search engine optimization.” It is the process of getting tr
 
 @GLOSSDEF{ brick_and_mortar,
 	word="Brick-and-Mortar",
-	definition="(También conocido como bricks-and-mortar o B\&M) es simplemente utilizado para describir presencia física de edificios o otras estructuras. El termino \textit{brick-and-mortar \business} es también utilizado para referirse a empresas que poseen edificios, instalaciones de producción, o el almacén para las operaciones."
+	definition="(También conocido como bricks-and-mortar o B\&M) es simplemente utilizado para describir presencia física de edificios o otras estructuras. El termino \textit{brick-and-mortar \businessCOM} es también utilizado para referirse a empresas que poseen edificios, instalaciones de producción, o el almacén para las operaciones."
 }
 
 @GLOSSDEF{ business_to_business,
@@ -147,12 +147,12 @@ SEO stands for “search engine optimization.” It is the process of getting tr
 
 @GLOSSDEF{ b2c,
 	word="B2C",
-	definition="\business to \customerCOM"
+	definition="\businessCOM to \customerCOM"
 }
 
 @GLOSSDEF{ b2g,
 	word="B2G",
-	definition="\business to \government"
+	definition="\businessCOM to \government"
 }
 
 @GLOSSDEF{ g2g,
@@ -234,7 +234,7 @@ This is a list of AMP (Apache, MySQL, Perl/PHP/Python) solution stacks for all c
 
 @GLOSSDEF{ multi_channel,
 	word="Multi Channel",
-	definition=" \Multi \channel \retailing es el conjunto de actividades involucradas en la venta de mercancías o servicios a los consumidores a través de mpas de un canal. Esta definición distingue \Multi \channel \retailing de\Multimedia \Marketing en que típicamente involucra el use de de múltiples \channels para simplificar la comunicación con \customers \cite{zhang2010crafting}."
+	definition=" \Multi \channelCOM \retailing es el conjunto de actividades involucradas en la venta de mercancías o servicios a los consumidores a través de mapas de un canal. Esta definición distingue \Multi \channelCOM \retailing de\Multimedia \Marketing en que típicamente involucra el use de de múltiples \channels para simplificar la comunicación con \customersCOM \cite{zhang2010crafting}."
 }
 
 @GLOSSDEF{ spa,
@@ -315,7 +315,6 @@ This is a list of AMP (Apache, MySQL, Perl/PHP/Python) solution stacks for all c
 	definition=" Differential ó Tiered Pricing es la práctica de establecer diferentes precios para diferentes \markets, típicamente precios más altos en \markets más ricos,  y precios más bajos en \markets más pobres \cite{rights2002integrating}."
 }
 
-*********************************** TODO ************************************************
 @GLOSSDEF{ representational_state_transfer,
 	word="Representational State Transfer",
 	definition="Es un conjunto de restricciones arquitectónicas que intenta minimizar la \latency y la comunicación \networkINT mientras al mismo tiempo maximiza la independencia y la \scalabilityQA de las componentes de la implementación. Esto es logrado agregando restricciones en \connectorSemanticsAS donde otros estilos se han focalizado en \componentSemanticsAS. Rest permite \caching y la reutilización de las interacciones, sustitución dinámica de \hypermediaINT \cite{fielding2002principled}."
@@ -348,7 +347,6 @@ distributed hypermedia system.
 	definition="Dispositivo o componente de dispositivo que es relativamente barato, altamente disponible y más o menos intercambiable con otro \hardwarePC de su tipo \cite{online_commodity_hardware_def}"
 }
 
-******************** TODO ********************
 @GLOSSDEF{ asyn_rep_db,
 	word="Asynchronous Replication",
 	definition="\asynchronousCPT \replicationDB es un enfoque \storeForewardAS para \dataBackupDB.
@@ -364,8 +362,6 @@ En contraste a  \synchronousCPT \replicationDB, \asynchronousCPT \replicationDB 
 	
 Unlike synchronous replication, asynchronous replication is designed to work over long distances. It does not require as much bandwidth as synchronous replication and can tolerate some degradation in connectivity\cite{online_asynchronous_replication_def}.
 
-******************** TODO ********************
-
 @GLOSSDEF{ single_point_failure,
 	word="Single Point of Failure",
 	definition=" Es una componente de un sistema crítico con la habilidad de cesar las operaciones durante un fallo. \gloss{spof_siglas} no son deseables para un sistema que requiere \reliabilityQA y \availabilityQA, tales como aplicaciones de \softwarePC, \networksINT ó \supplyChainsCPT \cite{online_single_point_failure_def}."
@@ -377,16 +373,13 @@ A single point of failure (SPOF) is a critical system component with the ability
 	definition=" \gloss{single_point_failure}"
 }
 
-******************** TODO ********************
-
 @GLOSSDEF{ supply_chain_def,
 	word="Supply Chain",
-	definition=" Es un sistema de organizaciones, personas, actividades, información, y recuersos envueltos en el movimiento de un \itemCOM o \serviceCOM desde un \supplierCOM a un \customerCOM."
+	definition=" Es un sistema de organizaciones, personas, actividades, información, y recursos envueltos en el movimiento de un \itemCOM o \serviceCOM desde un \supplierCOM a un \customerCOM."
 }
 A supply chain is a system of organizations, people, activities, information, and resources involved in moving a product or service from supplier to customer. Supply chain activities transform natural resources, raw materials, and components into a finished product that is delivered to the end customer. In sophisticated supply chain systems, used products may re-enter the supply chain at any point where residual value is recyclable. Supply chains link value chains [Wikipedia]
 
 
-******************** TODO ********************
 @GLOSSDEF{ stemming_def,
 	word="Stemming",
 	definition=" Es un problema lingüístico que describe el proceso de reducir las palabras a su raíz base. En análisis morfológicos automatizados, la raíz de una palabra puede ser de un menor interés inmediato que sus sufijos, que pueden utilizados como pistas de la estructura gramática \cite{lovins1968development}."
@@ -400,8 +393,9 @@ A stemming algorithm is a computational procedure which reduces all words with t
 
 @GLOSSDEF{ app_pro_int,
 	word="Application Programming Interfaces",
-	definition="TODO"
+	definition="Es un conjunto de \routinesgAS, \protocolsAS, y herramientas para el desarrollo de aplicaciones. La \apiAS especifica como la componente de  \softwarePC debería interactuar y son utilizados en la programación de las componentes GUI. Una buena \apiAS facilita el desarrollo de un programa proporcionando todos los bloques \buildPL. Un programador luego pone los bloques juntos \cite{online_api_def}."
 }
+%API, an abbreviation of application program interface, is a set of routines, protocols, and tools for building software applications. The API specifies how software components should interact and are used when programming graphical user interface (GUI) components.  A good API makes it easier to develop a program by providing all the building blocks. A programmer then puts the blocks together.
 
 @GLOSSDEF{ orm_siglas,
 	word="ORM",
@@ -410,13 +404,15 @@ A stemming algorithm is a computational procedure which reduces all words with t
 
 @GLOSSDEF{ obj_rel_mapp,
 	word="Object-Relational Mapper",
-	definition="TODO"
+	definition=" Es una técnica de programación en la cual un descriptor de \metadataPL es utilizado para conectar \objectCodePL a una \dataBaseDB relacional. \objectCodePL es escrito en programación \objectOrientedPL; lenguajes como \javaNAME o \csharpNAME. \ormAS convierte \dataPC tipos de sistemas que no pueden coexistir dentro de la \dataBaseDB relacional y lenguajes \oopPL \cite{online_object_relational_mapping_def}."
 }
+Object-relational mapping (ORM) is a programming technique in which a metadata descriptor is used to connect object code to a relational database. Object code is written in object-oriented programming (OOP) languages such as Java or C#. ORM converts data between type systems that are unable to coexist within relational databases and OOP languages.
 
 @GLOSSDEF{ rack_middleware_ruby,
 	word="Rack Middleware",
-	definition="TODO"
+	definition="Rack proporciona una interfaz mínima entre \webserversINT soportando \rubyNAME y \rubyNAME \frameworksPC \cite{online_introduction_rack_middleware}."
 }
+Rack provides an minimal interface between webservers supporting Ruby and Ruby frameworks.
 
 @GLOSSDEF{ ruby_gems,
 	word="Gems",
@@ -434,7 +430,7 @@ Gems are packages similar to Ebuilds. They contain package information along wit
 	word="Computed Properties",
 	definition="En \emberjsNAME, computed properties permiten declarar funciones y propiedades. Es posible crear uno definiendo una computed property como una funcion, la cual \emberjsNAME llamará automaticamente cuando se solicite la propiedad. Es posible usar entonces de la misma manera que se usaria, \staticPropertyAS \cite{online_technology_ember_computed_properties_def}.
 
-	Es super útil para tomar una ó más propiedades y transformando ó manipulando su \dataPC para crear un nuevo valor \cite{online_technology_ember_computed_properties_def}."
+	Es súper útil para tomar una ó más propiedades y transformando ó manipulando su \dataPC para crear un nuevo valor \cite{online_technology_ember_computed_properties_def}."
 }
 
 In a nutshell, computed properties let you declare functions as properties. You create one by defining a computed property as a function, which Ember will automatically call when you ask for the property. You can then use it the same way you would any normal, static property.
@@ -504,7 +500,52 @@ In information technology, a boilerplate is a unit of writing that can be reused
 %In software engineering, don’t repeat yourself (DRY) is a principle of software development, aimed at reducing repetition of information of all kinds, especially useful in multi-tier architectures. The DRY principle is stated as “Every piece of knowledge must have a single, unambiguous, authoritative representation within a system.” The principle has been formulated by Andy Hunt and Dave Thomas in their book The Pragmatic Programmer. They apply it quite broadly to include “database schemas, test plans, the build system, even documentation.”[1] When the DRY principle is applied successfully, a modification of any single element of a system does not require a change in other logically unrelated elements. Additionally, elements that are logically related all change predictably and uniformly, and are thus kept in sync. Besides using methods and subroutines in their code, Thomas and Hunt rely on code generators, automatic build systems, and scripting languages to observe the DRY principle across layers.
 
 
-@GLOSSDEF{ dsl_siglas,
-	word="DSL",
-	definition=" TODO"
+@GLOSSDEF{ dsl_modem_siglas,
+	word="DSL(\modemPC)",
+	definition=" ver \diSubsLineNAME"
 }
+
+@GLOSSDEF{ digital_subscriber_line,
+	word="Digital Subscriber Line",
+	definition="Es una tecnología para permitir información \highBandwithCPT hacia hogares y pequeños \businessCOM sobre lineas telefónicas ordinarias \cite{online_digital_subscriber_line_def}."
+}
+DSL (Digital Subscriber Line) is a technology for bringing high- bandwidth information to homes and small businesses over ordinary copper telephone lines.
+
+@GLOSSDEF{ domain_specific_languaje,
+	word="domain-specific Languaje",
+	definition="Son lenguajes pequeños, focalizados en un aspecto particular de un sistema de \softwarePC. Es posible construir una programa completo con DSL"
+}
+DSLs are small languages, focused on a particular aspect of a software system. You can't build a whole program with a DSL, but you often use multiple DSLs in a system mainly written in a general purpose language.
+
+@GLOSSDEF{ dsl_lenguaje_siglas,
+	word="DSL",
+	definition="Siglas de \domainSpecificLangPL."
+}
+
+@GLOSSDEF{ electronic_data_interchange,
+	word="Electronic Data Interchange",
+	definition=" Es el intercambio de documentación de \businessCOM \comToComINT en un formato electrónico \standard entre \partnerCPT \businessCOM \cite{online_electronic_data_interchange_def}"
+}
+is the computer-to-computer exchange of business documents in a standard electronic format between business partners.
+
+@GLOSSDEF{ electronic_funds_transfer,
+	word="Electronic Funds Transfer",
+	definition=" Es un sistema de transferencia de dinero desde una cuenta bancaria a otra directamente sin ningún tipo de papel moneda que intercambie de manos \cite{online_electronic_funds_transfer_def}."
+}
+ is a system of transferring money from one bank account directly to another without any paper money changing hands.
+
+@GLOSSDEF{ mvp_siglas,
+	word="MVP",
+	definition=" Siglas de \minViableProductCOM."
+}
+
+@GLOSSDEF{ min_viable_product,
+	word="Minimum vialbe product",
+	definition=" Es aquel producto que tiene solo aquellas \featuresCPT necesarias, y no más que permitan un producto entregable para que los usuarios lo vean, al menos aquellos que tienen un interés monetario, y empiecen a entregar \feedback \cite{online_minimum_viable_products_def}.
+
+	¿Pero por que mínimo? Porque el tiempo y dinero son severamente limitados. Se desea el mejor resultado de inversión. Aprendizaje máximo con el mínimo esfuerzo \cite{online_minimum_viable_products_def}. "
+}
+
+A minimum viable product is “that product which has just those features and no more that allows you to ship a product that early adopters see and, at least some of whom resonate with, pay you money for, and start to give you feedback on”.
+
+But why minimal? Because your time and money are severely limited. You want the biggest “bang for your buck”: maximum learning with minimal effort.
