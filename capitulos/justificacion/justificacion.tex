@@ -74,7 +74,7 @@ Generalmente no es inteligente descartar años de consideraciones de diseño arb
 
 \subsubsection{\documentModel}\label{cap:justificacion_proyecto:base_datos:nosql:document_model}
 
- Mientras las bases de datos relacionales guardan la información en filas y columnas, \documentDB \dataBasesDB guardan los datos en documentos.  
+Mientras las bases de datos relacionales guardan la información en filas y columnas, \documentDB \dataBasesDB guardan los datos en documentos.  
 
 Estos documentos típicamente usan una estructura equivalente a \jsonNAME, un formato muy popular entre desarrolladores. Los documentos proveen una manera intuitiva y natural para modelar datos que esta cercanamente alineada con la programación \objectOrientedPL, en el cual cada documento es efectivamente un objeto. Los documentos contienen en uno o mas campos, donde cada campo contiene un tipo de valor, tales como \stringPL, \datePL, \binaryPL, ó \arrayPL. En lugar de extenderse un registro entre múltiples tablas y columnas, cada registro y su dato asociado son típicamente almacenados juntos en un solo documento. Esto simplifica el acceso a la información y reduce e incluso elimina la necesidad de \joins y \transactionsDB complejas.
 

@@ -1,3 +1,4 @@
+%!TEX root = memoria.tex
 %%%%%%%%%%%%%%%%%%% region Figura %%%%%%%%%%%%%%%%%%%
 %%%%%%%%%% Figura  %%%%%%%%%%
 %   1: ruta imagen
@@ -31,15 +32,21 @@
 \newcommand{\rootfolder}		{../../}
 
 \newcommand{\bWrapper}[1]			{\textit{#1}\xspace}
-\newcommand{\bWrapperWS}[1]			{\textit{#1}}
+\newcommand{\bWrapperWS}[1]			{\textit{#1}\xspace}
 \newcommand{\gWrapper}[1]			{\gloss{#1}\xspace}
-\newcommand{\gWrapperWS}[1]			{\gloss{#1}}
+\newcommand{\gWrapperWS}[1]			{\gloss{#1}\xspace}
 \newcommand{\bothWrapper}[1]		{\textit{\gloss{#1}}\xspace}
 \newcommand{\bothWrapperWS}[1]		{\textit{\gloss{#1}}}
 \newcommand{\nWrapper}[1]			{\textit{#1}\xspace}
-\newcommand{\nWrapperWS}[1]			{\textit{#1}}
+\newcommand{\nWrapperWS}[1]			{\textit{#1}\xspace}
 
 %%%%%%%%%%%%%%%%%%% region constants %%%%%%%%%%%%%%%%%%%
+
+\newcommand{\scaleValueTreeFolder}				{0.7}
+\newcommand{\scaleCommandTreeFolder}			{\footnotesize}
+
+
+%%%%%%%%%%%%%%%%%%% endregion constants %%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%  	  Multi Bibliografia	 %%%%%%%%%%%%%%%%%%%%%%%%
@@ -220,9 +227,6 @@
 \newcommand{\sqlNAME}				{\gWrapper{sql}}
 \newcommand{\nosqlNAME}				{\gWrapper{nosql}}
 \newcommand{\visualstudio}			{\nWrapper{Visual Studio}}
-\newcommand{\blazemeteor}			{\nWrapper{Blaze}}
-\newcommand{\accountsmeteor}		{\bWrapper{accounts}}
-\newcommand{\trackermeteor}			{\nWrapper{Tracker}}
 \newcommand{\minimongo}				{\gWrapper{minimongo}}
 \newcommand{\fibers}				{\nWrapper{Fibers}}
 \newcommand{\collectionsname}		{\bWrapper{Collections}}
@@ -276,6 +280,57 @@
 \newcommand{\usaNAME}				{\nWrapper{Estados Unidos}}
 \newcommand{\newYorkNAME}			{\nWrapper{New York}}
 \newcommand{\londresNAME}			{\nWrapper{Londres}} 
+\newcommand{\bowerIONAME}			{\nWrapper{Bower.io}\cite{online_official_bowerio}} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  METEOR Packages	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\nameCollectionTwo}			{\nWrapper{Collection2}\cite{online_atmospherejs_aldeed_collection2}}
+\newcommand{\nameRouter}				{\nWrapper{Router}\cite{online_atmospherejs_iron_router}}
+\newcommand{\nameCollectionHooks}		{\nWrapper{Collection Hooks}\cite{online_atmospherejs_matb33_collectionHooks}}
+\newcommand{\nameBower}					{\nWrapper{Bower}\cite{online_atmospherejs_mquandalle_bower}}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  METEOR Concepts	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\mongoCollection}			{\nWrapper{Mongo.Collection}}
+\newcommand{\clientFolder}				{\bWrapper{\textbf{client}}}
+\newcommand{\serverFolder}				{\bWrapper{\textbf{server}}}
+\newcommand{\publicFolder}				{\bWrapper{\textbf{public}}}
+\newcommand{\privateFolder}				{\bWrapper{\textbf{private}}}
+\newcommand{\folderCommon}				{\bWrapper{\textbf{common}}}
+\newcommand{\folderTests}				{\bWrapper{\textbf{tests}}}
+\newcommand{\folderDocs}				{\bWrapper{\textbf{docs}}}
+\newcommand{\folderLib}					{\bWrapper{\textbf{lib}}}
+\newcommand{\folderBin}					{\bWrapper{\textbf{bin}}}
+\newcommand{\folderTemplate}			{\bWrapper{\textbf{template}}}
+\newcommand{\folderLayout}				{\bWrapper{\textbf{layout}}}
+\newcommand{\folderAccount}				{\bWrapper{\textbf{account}}}
+\newcommand{\folderDashboard}			{\bWrapper{\textbf{dashboard}}}
+\newcommand{\folderCollections}			{\bWrapper{\textbf{collections}}}
+\newcommand{\folderBower}				{\bWrapper{\textbf{bower}}}
+\newcommand{\folderHooks}				{\bWrapper{\textbf{hooks}}}
+\newcommand{\folderSchemas}				{\bWrapper{\textbf{schemas}}}
+
+
+
+\newcommand{\helperMETEOR}				{\bWrapper{helper}}
+\newcommand{\helpersMETEOR}				{\bWrapper{helpers}}
+\newcommand{\templateMETEOR}			{\bWrapper{template}}
+\newcommand{\templatesMETEOR}			{\bWrapper{templates}}
+\newcommand{\sessionsMETEOR}			{\bWrapper{Sessions}}
+\newcommand{\sessionMETEOR}				{\bWrapper{Session}}
+\newcommand{\trackerMETEOR}				{\bWrapper{Tracker}}
+\newcommand{\trackingMETEOR}			{\bWrapper{tracking}}
+\newcommand{\blazemeteor}				{\nWrapper{Blaze}}
+\newcommand{\accountsmeteor}			{\bWrapper{accounts}}
+\newcommand{\collectionsMETEOR}			{\bWrapper{Collections}}
+\newcommand{\publishsubscribeMETEOR}	{\bWrapper{Publish and subscribe}}
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -289,6 +344,7 @@
 \newcommand{\frameworkPC}				{\bWrapper{Framework}}
 \newcommand{\frameworksPC}				{\bWrapper{Frameworks}}
 \newcommand{\libraryPC}					{\bWrapper{librería}}
+\newcommand{\librariesPC}				{\bWrapper{librerías}}
 \newcommand{\match}						{\bWrapper{match}}
 \newcommand{\openSourcePC}				{\bWrapper{Open Source}}
 \newcommand{\freePC}					{\bWrapper{free}}
@@ -300,6 +356,7 @@
 \newcommand{\functionality}				{\bWrapper{functionality}}
 \newcommand{\clicking}					{\bWrapper{clicking}}
 \newcommand{\click}						{\bWrapper{click}}
+\newcommand{\clicks}					{\bWrapper{clicks}}
 \newcommand{\mouse}						{\bWrapper{mouse}}
 \newcommand{\laptop}					{\bWrapper{laptop}}
 \newcommand{\laptops}					{\bWrapper{laptops}}
@@ -611,6 +668,7 @@
 \newcommand{\mainframeAS}			{\bWrapper{Mainframe}}
 \newcommand{\mainframesAS}			{\bWrapper{Mainframes}}
 \newcommand{\apiAS}					{\bothWrapper{api_siglas}}
+\newcommand{\apikeyAS}				{\bothWrapper{api_key}}
 \newcommand{\apisAS}				{\bWrapper{APIs}}
 \newcommand{\fullstackAS}			{\bWrapper{Full-Stack}}
 \newcommand{\stackAS}				{\bWrapper{Stack}}
@@ -844,8 +902,11 @@
 \newcommand{\tableDB}					{\bWrapper{table}}
 \newcommand{\tablesDB}					{\bWrapper{tables}}
 \newcommand{\selectDB}					{\bWrapper{Select}}
-\newcommand{\insertDB}					{\bWrapper{Insert}}
-\newcommand{\updateDB}					{\bWrapper{Update}}
+\newcommand{\insertDB}					{\bWrapper{insert}}
+\newcommand{\updateDB}					{\bWrapper{update}}
+\newcommand{\removeDB}					{\bWrapper{remove}}
+\newcommand{\findDB}					{\bWrapper{find}}
+\newcommand{\findOneDB}					{\bWrapper{findOne}}
 \newcommand{\selectDBUpper}				{\MakeUppercase{\selectDB}}
 \newcommand{\fromDBUpper}				{\MakeUppercase{\bWrapper{from}}}
 \newcommand{\whereDBUpper}				{\MakeUppercase{\bWrapper{where}}}
@@ -908,6 +969,8 @@
 \newcommand{\commitDB}					{\bWrapper{Commit}}
 \newcommand{\commitsDB}					{\bWrapper{Commits}}
 \newcommand{\journalDB}					{\bWrapper{Journal}}
+
+\newcommand{\beforeAfterDB}				{\bWrapper{before/after}}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -983,6 +1046,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%	CONCEPTOS (CPT)	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\newcommand{\rerunCPT}				{\bWrapper{re-run}}
 \newcommand{\powerful}				{\bWrapper{powerful}}
 \newcommand{\poweredCPT}			{\bWrapper{powered}}
 \newcommand{\preFabCPT}				{\bWrapper{pre-fab}}
@@ -1003,6 +1067,7 @@
 \newcommand{\defaultCPT}			{\bWrapper{default}}
 \newcommand{\tool}					{\bWrapper{tool}}
 \newcommand{\toolsCPT}				{\bWrapper{Tools}}
+\newcommand{\checkCPT}				{\bWrapper{check}}
 \newcommand{\embraceecosystem}		{\bWrapper{Embrace the Ecosystem}}
 \newcommand{\latency}				{\bWrapper{latency}}
 \newcommand{\update}				{\bWrapper{update}}
@@ -1062,6 +1127,7 @@
 \newcommand{\sysadmins}				{\bWrapper{sysadmins}}
 \newcommand{\dataintensive}			{\bWrapper{data-intensive}}
 \newcommand{\standard}				{\bWrapper{standard}}
+\newcommand{\standards}				{\bWrapper{standards}}
 \newcommand{\exportCPT}				{\bWrapper{export}}
 \newcommand{\testingCPT}			{\bWrapper{testing}}
 \newcommand{\featureCPT}			{\bWrapper{característica}}
@@ -1079,6 +1145,8 @@
 \newcommand{\clientcentric}			{\bWrapper{client-centric}}
 \newcommand{\clientserver}			{\bWrapper{client-server}}
 \newcommand{\partnerCPT}			{\bWrapper{partner}}
+\newcommand{\hookCPT}				{\bWrapper{hook}}
+\newcommand{\hooksCPT}				{\bWrapper{hooks}}
 
 
 \newcommand{\graphTheory}			{\bWrapper{Graph Theory}\cite{book_introduction_graph_theory}}
@@ -1100,7 +1168,7 @@
 \newcommand{\review}					{\bWrapper{review}}
 \newcommand{\wysiwyg}					{\bWrapper{WYSIWYG}}
 \newcommand{\prototypingCPT}			{\bWrapper{prototyping}}
-%\newcommand{\prototypesCPT}				{\bWrapper{prototypes}}
+\newcommand{\prototypesCPT}				{\bWrapper{prototypes}}
 \newcommand{\crossPlatform}				{\bWrapper{cross-platform}}
 \newcommand{\platformSpecificCPT}		{\bWrapper{platform-specific}}
 \newcommand{\Community}					{\bWrapper{Community}}
@@ -1204,6 +1272,7 @@
 \newcommand{\lazyLoadingCPT}		{\bWrapper{lazy loading}}
 \newcommand{\loadTimeCPT}			{\bWrapper{load time}}
 \newcommand{\loadingTimeCPT}		{\bWrapper{loading time}}
+\newcommand{\loadingCPT}			{\bWrapper{loading}}
 \newcommand{\resDescriptorCPT}		{\bothWrapper{resource_descriptor}}
 
 \newcommand{\redrawCPT}				{\bWrapper{redraw}}

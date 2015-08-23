@@ -1,0 +1,29 @@
+%!TEX root = ../../memoria.tex
+\begin{figure}[h!]
+	\centering
+	\scaleCommandTreeFolder
+		\tikzstyle{every node}=[draw=black,thick,anchor=west,inner sep=2pt,minimum size=1pt]
+		\tikzstyle{selected}=[draw=cyan,fill=cyan!30]
+		\begin{tikzpicture}[scale=(\scaleValueTreeFolder),
+			grow via three points={one child at (0.5,-0.7) and
+			two children at (0.5,-0.7) and (0.5,-1.4)},   
+			edge from parent path={(\tikzparentnode.south) |- (\tikzchildnode.west)}]
+			\node {bin/}
+				child { node {helpers/}}
+				child { node {templates/}}
+				child { node [draw=none] {...}}
+				child { node [draw=none] {collection-dump}}
+				child { node [draw=none] {debug}}
+				child { node [draw=none] {deploy}}
+				child { node [draw=none] {dump}}
+				child { node [draw=none] {install}}
+				child { node [draw=none] {reset}}
+				child { node [draw=none] {run}}
+				child { node [draw=none] {test}}
+				child { node [draw=none] {...}};
+		\end{tikzpicture}
+		\tikzstyle{every node}=[] % resets borders of tables
+		\tikzstyle{selected}=[] % resets selected
+	\caption{Estructra de la carpeta \folderBin para una aplicación en \meteorNAME.}
+	\label{esquema:bin_structure_meteor_app}
+\end{figure}
