@@ -1,0 +1,202 @@
+%!TEX root = ../../../memoria.tex
+\section{Arquitectura}\label{cap:arquitectura:section:generic_arquitectura}
+
+\packagesAS es una estrategia de programación para \codeSeparationQA, \modularityAS, y \reusabilityQA. Al estructurar el código de cada \featureCPT en un \packagesAS separado, el código de una \featureCPT no tendrá acceso al código de otra \featureCPT excepto utilizando \exportCPT, haciendo cada dependencia explícita. Además esto permite la manera mas sencilla para realizar \testingCPT independientes a cada \featureCPT. Incluso es posible \publishINT los \packagesAS y utilizarlos en otros proyectos.
+
+Es esta forma de estructurar el código la parte principal del desarrollo del \frameworkPC \ecommerceCOM. Cada vez que se requiera desarrollar una nueva solución específica utilizando el \frameworkPC, simplemente se incluirán todos aquellos \modulesAS necesarios para el desarrollo de la aplicación, y con un poco de desarrollo, obtener las \featuresCPT específicas buscadas.
+
+Como este \frameworkPC será completamente \openSourcePC, la comunidad podrá crear nuevos \modulesAS con el fin de crear aquellas \featuresCPT que serán requeridos en el futuro.
+
+
+% Nueva entrega
+%  Meteor takes several existing tools and libraries; combines them with new
+% thoughts and new libraries, standards, and services; and bundles them to provide
+% an entire ecosystem for developing web and mobile applications that are a delight
+% to use. 
+
+% FEW CONVENTIONS ON STRUCTURE
+% There are only few suggestions for structuring applications and code in Meteor. This
+% freedom is great for single developers who can quickly hack on code, but it requires
+% good coordination between team members when applications grow in size. It’s up to
+% developers’ preference whether they use a single file or hundreds of folders and files.
+% Some may embrace this freedom; others will find it necessary to define clear structures
+% before being able to start coding.
+Como se ha mencionado, \meteorNAME utiliza \librariesPC y \toolsCPT; las combina con nuevas consideraciones y nuevas \librariesPC, servicios y \standards; y las agrupa para proveer un ecosistema completo de desarrollo de aplicaciones \webINT y \mobileINT que da gusto utilizar. Sin embargo una de las devilidades que tiene 	\meteorNAME esta relacionado con las pocas convenciones para la estructura de aplicaciones y el código. Esta libertad o flexibilidad es aceptable para desarrolladores únicos quienes pueden rápidamente escribir código, pero esto requiere una muy buena coordinacion entre miembros de un equipo cuando la aplicación crece en tamaño. Todo depende de la preferencia de los desarrolladores si utilizar un solo archivo o cientos de carpetas y archivos. Para resolver este problema se propondra una estructura, apoyada por una variedad de \packagesAS para el desarrollo de grandes aplicaciones en las que usualmente serán desarrolladas por equipos de trabajo.
+
+\subsection{\packagesAS desarrollados por la comunidad}
+Una gran cantidad de soluciones han sido desarrolladas por la comunidad para solucionar problemas altamente comunes a la hora de desarrollar aplicaciones. A continuación dichos \packagesAS serán nombrados y descritos.
+
+	\begin{itemize}
+		\item
+			\textbf{\nameCollectionTwo}. Permite asociar un \schemaDB a un \mongoCollection. Autáticamente se valida la la estructura cuando se inserta o actualiza desde el \clientAS o el \serverAS. Esto es altamente deseable principalmente por que asegura que solo propiedas y valores aceptables puedan ser insertados desde el \clientAS. De esta manera, inserciones y actualizaciones \clientSideAS pueden ser permitidas sin comprometer seguridad o integridad de la información.
+		\item
+			\textbf{\nameRouter}. Un enrutador que funciona en el \serverAS y en el \browserINT, diseñado especificamente para \meteorNAME.
+		\item
+			\textbf{\nameCollectionHooks}. Extiende \mongoCollection con \hooksCPT \beforeAfterDB para \insertDB, \updateDB, \removeDB, \findDB y \findOneDB.
+		\item
+			\textbf{\nameBower}. \bowerIONAME es un repositorio popular de librerias \javaScriptNAME \clientSideAS.
+		\item
+			\textbf{\securityPackage}. Es un \packageAS de \meteorNAME que proporciona un lenguage \apiAS simple y lógico para definir seguridad para las \collectionsMETEOR de \mongodbNAME. Agrega funcionalidades al \coreAS de  seguridad \allowdenyCPT.
+			% A Meteor package that provides a simple, logical, plain language API for defining write security on your MongoDB collections. Wraps the core allow/deny security.
+		\item
+			\textbf{\velocityCorePackage}. El \testRunnerCPT \reactive para \meteorNAME.
+			% The reactive test-runner for Meteor.
+		\item
+			\textbf{\sanjoJasminePackage}. Corresponde a la integración de \meteorNAME \velocityNAME para el \frameworkPC de \testingCPT \jasmineNAME 2.3. Facilita el proceso de \testingCPT en la aplicación y los \packageAS de \meteorNAME con \testsCPT unitarios e integrados.
+			% The Meteor Velocity integration for the Jasmine 2.3 testing framework. Makes it easy to test your Meteor app and packages with unit and integration tests.
+		\item
+			\textbf{\bunyanPackage}. Exporta y agrega el \moduleAS de \loggingCPT \bunyanNAME. También agrega el \clientAS \browserifyNAME y \bunyanprettyStreamMETEOR.
+			% Add and export the Bunyan logging module, also add the browserify client and bunyan-prettystream.
+		\item
+			\textbf{\dThreePackage}. \dddNAME es una \libraryPC	\javaScriptNAME para la manipulación de  \documentsDB basados en datos. \dThreePackage facilita el proceso de publicación de datos utilizando \htmlNAME, \svgNAME Y \cssNAME. \dThreePackage enfatiza el uso de \webStandardINT permite el uso de todas las opciones disponibles en los \browsersINT modernos, sin la necesidad de utilizar un \frameworkPC propietario, combinando componentes visuales y un acercamiento a \dataDrivenCPT para la manipulación de \htmldomNAME.
+			% D3.js is a JavaScript library for manipulating documents based on data. D3 helps you bring data to life using HTML, SVG and CSS. D3’s emphasis on web standards gives you the full capabilities of modern browsers without tying yourself to a proprietary framework, combining powerful visualization components and a data-driven approach to DOM manipulation.
+		\item
+			\textbf{\undStringLatestPackage}. \undStringLatestMETEOR \packageAS para \meteorNAME. Es una librería para la manipulación de \stringsPL.
+			%underscore.string repackaged for Meteor
+			% The underscore.string string manipulation library repackaged for Meteor.
+		\item
+			\textbf{\lessPackage}. \lessNAME extiende \cssNAME con comportamientos dinámicos tales como variables, \mixinsNAME, operaciones y funciones. Esto permite  \stylesheetsNAME mas compactos y ayuda a la reducción de duplicación en los archivos \cssNAME. 
+
+			%LESS extends CSS with dynamic behavior such as variables, mixins, operations and functions. It allows for more compact stylesheets and helps reduce code duplication in CSS files.
+
+			%With the less package installed, .less files in your application are automatically compiled to CSS and the results are included in the client CSS bundle.
+
+			%If you want to @import a file, give it the extension .import.less to prevent Meteor from processing it independently.
+		\item
+			\textbf{\bootstrapPackage}. Este \packageAS integra \bootstrapNAME en \meteorNAME permitiendo configurar lo que realmente se necesita.
+			%This package integrates bootstrap into meteor and lets you configure what parts you need.
+	\end{itemize}
+
+
+\section{Estructura propuesta para el desarrollo de grandes aplicaciones}\label{cap:arquitectura:section:generic_architecture_structure}
+
+Cuando se comienza a trabajar en \meteorNAME es importante entender que código es ejecutado en que ambiente al momento de escribir aplicaciones. En teoría, todo el código puede correr en cualquier parte en el \stackAS, pero existen algunas limitaciones. \apikeyAS no deberian enviarse al \clientAS; los \events que manejan los \clicks del \mouse no son útiles en el \serverAS. Para indicar a \meteorNAME donde ejecutar código específico, es posible organizar código en carpetas dedicadas o utilizar un \checkCPT para verificar en que contexto estan corriendo.
+
+En \meteorNAME existen directorios especiales que separan logicamente el alcance de su contenido. Estos directorios se pueden apreciar en la \refFigura{esquema:simple_structure_meteor}.
+
+
+	\begin{itemize}
+		\item
+			\textbf{\clientFolder}. Todo el código que se encuentre dentro de la carpeta  \clientFolder solo será visible desde el \clientSideAS.
+		\item
+			\textbf{\serverFolder}.  Todo el contenido de la carpeta \serverFolder estará disponible solo para el \serverSideAS.
+		\item
+			\textbf{\publicFolder}. Los archivos dentro de esta carpeta son visibles desde el \clientSideAS y \serverSideAS.
+		\item
+			\textbf{\privateFolder}. Los archivos dentro de esta carperta se pueden acceder solo desde el código del \serverAS a traves de un \apiAS de \assetsAS.
+			%These files can only be accessed by server code through Assets API and are not accessible to the client.
+	\end{itemize}
+
+% Estructura bàsica de Meteor
+\input{capitulos/avances/generic_architecture/estructura_simple.tex}
+
+El código compartido es especialmente útil para el desarrollo de aplicaciones. A modo de ejemplo, en el caso de las validaciones, el mismo método es utilizado tanto en el \clientSideAS como en el \serverSideAS. En el \clientSideAS utilizado para mostrar un mensaje de error en el \browserINT (un rut mal escrito), y en el \serverSideAS para no persistir información incorrecta en la \dataBaseDB.
+
+Para definir una estructura de desarrollo, se debe considerar, entre otras cosas,  que paradigma de programación se esta utilizando, cuales son sus principios, y el \apiAS que este proporciona. Se procede entonces a definir ciertos conceptos relevantes:
+
+	\begin{itemize}
+		\item
+			% In Meteor, views are defined in templates. A template is a snippet of HTML that can include dynamic data. You can also interact with your templates from JavaScript code to insert data and listen to events.
+			\textbf{\templatesMETEOR}. En \meteorNAME, las \viewsAS son definidas en \templatesMETEOR. Un \templateMETEOR es una pequeña porcion de \htmlNAME que puede incluir datos dinámicos. Incluso es posible interactuar con el \templateMETEOR desde código \javaScriptNAME para insertar información y escuchar \events \cite{online_meteor_documentation}.
+		\item
+			\textbf{\sessionMETEOR}. Provee un objeto global en el \clientAS que puede utilizarse para guardar un arbitrario par \keyValueDB. \cite{online_meteor_documentation}.
+		\item
+			\textbf{\trackerMETEOR}. \meteorNAME tiene sistema simple de dependencia para hacer \trackingMETEOR, permitiendo así automáticamente \rerunCPT \templatesMETEOR y otras funciones siempre que variables \sessionMETEOR, consultas a la \dataBaseDB, y otros recursos de datos cambien \cite{online_meteor_documentation}.
+		\item
+			\textbf{\collectionsMETEOR}. \meteorNAME guarda la información en \collectionsMETEOR. Objetos \javaScriptNAME almacenados en \collectionsMETEOR son denominados \documentsDB \cite{online_meteor_documentation}.
+
+		\item
+			\textbf{\publishsubscribeMETEOR}. El \serverAS de \meteorNAME puede publicar un conjunto de \documentsDB , y los \clientsAS pueden subscribirse a esas publicaciones. \cite{online_meteor_documentation}.
+	\end{itemize}
+
+Teniendo estas consideraciones en mente, se define la siguiente estructura global para el desarrollo de una aplicación cualquiera.
+
+% Estructura global de una aplicación en Meteor
+\input{capitulos/avances/generic_architecture/global_structure_meteor_app.tex}
+
+% Estructura de la carpeta bin de una aplicación en Meteor
+\input{capitulos/avances/generic_architecture/bin_folder_meteor_app.tex}
+
+Como se mecionó, \clientFolder es la carpeta que es solo visible desde el \clientSideAS, lo que significa que contiene solo código útil para el \clientAS. Su estructura básica se puede observar en \refFigura{esquema:client_structure_meteor_app}; y cada una de sus partes corresponden a:
+
+	\begin{itemize}
+		\item
+			\textbf{\helpersMETEOR/}. Carpeta donde se encuentran todos los \helpersMETEOR globales del sistema.
+		\item
+			\textbf{\templatesMETEOR/} Contiene los \templatesMETEOR y sus respectivos \helpersMETEOR. Se utiliza el mismo nombre en ambos archivos, con el fin de identificarlos. En \refFigura{esquema:template_structure_meteor_app} se muestra con detalle esta carpeta.
+		\item
+			\textbf{app.coffee}. Lugar donde estan todas aquellas funciones y variables globales del sistema.
+		\item
+			\textbf{subscriptions.coffee}. Lugar donde se especifican todas subscripciones a las diferentes publicaciones que proporciona el \serverAS.
+	\end{itemize}
+
+% Estructura de la carpeta client de una aplicación en Meteor
+\input{capitulos/avances/generic_architecture/client_folder_meteor_app.tex}
+
+La carpeta 	\templateMETEOR tiene el suficiente detalle y relevancia como para indicar sus partes.
+
+\begin{itemize}
+	\item
+		\textbf{\folderAccount/}. Contiene los \templatesMETEOR y \helpersMETEOR necesarios para manegar las cuentas de usuarios. 
+	\item
+		\textbf{\folderDashboard/}. Aca estan todos los archivos necesrios(\templatesMETEOR y \helpersMETEOR) para el manejo de la interfaz de administrador. Dada su naturaleza, es esperable que se agreguen una gran cantidad de carpetas dentro.
+	\item
+		\textbf{\folderLayout/}. Contiene todos aquellos \templatesMETEOR con sus respectivos \helpersMETEOR que son globales en el sistema. Como por ejemplo las alertas, el encabezado, el pie de página, \loadingCPT, e interfaces estáticas tales como: acceso no autorizado, página no encontrada, recurso no encontrado, etc. Es importante agregar que estas interfaces estáticas, no cuentan con \helpersMETEOR; la razón tras esto es que el encargado de manejar esos \templatesMETEOR es el \packagesAS \nameRouter.
+	\item
+		\textbf{Carpetas exclusivas del proyecto}. Aca deberian ir las carpetas que separen lógicamente las diferentes funcionalidades de la aplicación que se desea realizar. A modo de ejemplo, en el proyecto que se esta realizando en este memoria, se han creado carpetas para el carro de compras y los productos respectivamente.
+\end{itemize}
+
+% Estructura de la carpeta client de una aplicación en Meteor
+\input{capitulos/avances/generic_architecture/template_folder_meteor_app.tex}
+
+\begin{itemize}
+	\item
+		\textbf{\folderCollections/}. Aca se crean las variables de todas las \collectionsMETEOR definidas en la aplicación. Aunque es totalmente posible crear variables propias para el \clientAS como para el \serverAS; se considera una buena práctica hacerlo de esta manera.
+	\item
+	 	\textbf{\folderHooks/}. Contiene los \hooksCPT relacionados con los \collectionsMETEOR. Código escrito en base al \packagesAS \nameCollectionHooks.
+	\item
+		\textbf{\folderSchemas/}. Contiene todos los \schemasDB que se han creado utilizando el \packagesAS \collectionsMETEOR.
+	\item
+		\textbf{packageGlobals.js}. Contiene todas las variables globales del sistema. En este caso, tambien son variables que se encuentran en el \environmentPL del \clientAS y del \serverAS.
+	\item
+		\textbf{routing.coffee}. Contiene todo el código relacionado con el enrutamiento. El código es desarrollado utilizando el \packagesAS \nameRouter.
+\end{itemize}
+
+% Estructura de la carpeta common de una aplicación en Meteor
+\input{capitulos/avances/generic_architecture/common_folder_meteor_app.tex}
+
+La carpeta \folderDocs (\refFigura{esquema:docs_structure_meteor_app}) contiene toda la documentación de la aplicación, lo que incluye información sobre \deploymentCPT, \packagesAS, \routingAS, \templatesMETEOR, agradecimientos, convenciones, etc.
+
+% Estructura de la carpeta docs de una aplicación en Meteor
+\input{capitulos/avances/generic_architecture/docs_folder_meteor_app.tex}
+
+La carpeta \folderLib contiene todas las librerias. Como se observa en \refFigura{esquema:lib_structure_meteor_app}, existe una carpeta y un archivo \jsonNAME llamados \folderBower. A traves del \packagesAS \nameBower se manejan las diferentes librerias necesarias.
+% Estructura de la carpeta lib de una aplicación en Meteor
+\input{capitulos/avances/generic_architecture/lib_folder_meteor_app.tex}
+
+
+La carpeta \privateFolder se utiliza principalmente para mantener archivos \jsonNAME que contienen \collectionsMETEOR con la información suficiente para realizar la \localisationPC, además de guardar los archivos necesarios para \fixturesPC.
+
+% Estructura de la carpeta private de una aplicación en Meteor
+\input{capitulos/avances/generic_architecture/private_folder_meteor_app.tex}
+
+La carpeta \folderTests (representada en la \refFigura{esquema:tests_structure_meteor_app}) contiene los archivos para realizar \testingCPT a la aplicación. Las pruebas se realizan apoyados en el \packageAS \sanjoJasminePackage.
+
+% Estructura de la carpeta tests de una aplicación en Meteor
+\input{capitulos/avances/generic_architecture/tests_folder_meteor_app.tex}
+
+La carpeta \serverFolder, como su nombre lo indica, contiene la implementación de la aplicación solo visible por el \serverSideAS. De los archivos existentes, podemos destacar:
+
+\begin{itemize}
+	\item
+		\textbf{publications.coffee}. Archivo que contiene todas las publicaciones de \documentsDB. Cada una de estas publicaciones pueden incluir definiciones de seguridad relacionadas con roles para limitar la entrega.
+	\item
+	 	\textbf{security.coffee}. Archivo que contiene todas las reglas de seguridad para \insertsDB, \updatesDB y \removesDB iniciadas desde código inesguro (\clientsAS). De todas maneras, existen otras acciones para ciertos roles que tienen permitido realizar. Dichas acciones no necesariamente aparecen aquí si la operación de \dataBaseDB es ejecutada desde un método del \serverAS. Las definiciones de seguridad aqui descritas utilizan el \packageAS \securityPackage.
+ 	\item
+	 	\textbf{fixture.coffee}. Su principal función es ejecutar el código de inicio de \fixturesPC. Este código es ejecutado solo la primera vez, para poblar la \dataBaseDB con las \collectionsMETEOR requeridas como mínimo, para realizar \testingCPT y/o poder ejecutar la aplicación. Algo muy relevante que se crea, es el usuario \textbf{Administrador}.  Esta ejecución se inicia con el evento de inicio de \meteorNAME.
+	\item
+	 	\textbf{app.coffee}. Contiene información relacionada con los niveles de \bunyanNAME (\packageAS \bunyanPackage) que se utilizan para hacer \loggingCPT; junto con algunas funciones principales del servidor.
+\end{itemize}
+
+% Estructura de la carpeta server de una aplicación en Meteor
+\input{capitulos/avances/generic_architecture/server_folder_meteor_app.tex}

@@ -27,6 +27,12 @@
 
 \newcommand{\refFigura}[1]		{\figurename\xspace\ref{#1}}
 \newcommand{\refApendice}[1]	{Apéndice [\ref{#1}]}
+
+%\newcommand{\refGenerico}[1][2]	{\ref{#1}\xspace\ref{#2}}
+\newcommand{\refChapter}[1]		{Capítulo \ref{#1}}
+\newcommand{\refSection}[1]		{Sección \ref{#1}}
+
+
 %%%%%%%%%%%%%%%%%%% 		endregion References per caption 	%%%%%%%%%%%%%%%%
 
 \newcommand{\rootfolder}		{../../}
@@ -72,6 +78,7 @@
 \newcommand{\dslModemNAME}			{\bothWrapper{dsl_modem_siglas}}
 \newcommand{\diSubsLineNAME}		{\bothWrapper{digital_subscriber_line}}
 \newcommand{\youtubeNAME}			{\nWrapper{Youtube}}
+
 
 %%%%%%%%%%%%%%%%	JavaScript	%%%%%%%%%%%%%%%%
 \newcommand{\javaScriptNAME}		{\nWrapper{JavaScript}}
@@ -163,6 +170,7 @@
 \newcommand{\rdfNAME}				{\nWrapper{RDF}}
 \newcommand{\cssNAME}				{\nWrapper{CSS}}
 \newcommand{\htmlNAME}				{\nWrapper{HTML}}
+\newcommand{\svgNAME}				{\nWrapper{SVG}}
 \newcommand{\htmlfive}				{\nWrapper{HTML5}}
 \newcommand{\htmldomNAME}			{\nWrapper{DOM}}
 
@@ -221,9 +229,13 @@
 \newcommand{\rendrNAMEref}			{\nWrapper{Rendr}}
 \newcommand{\meenstackNAME}			{\nWrapper{MEEN}}
 \newcommand{\meenstackNAMEref}		{\nWrapper{MEEN}}
+\newcommand{\bootstrap}				{\bWrapper{bootstrap}}
+\newcommand{\bootstrapNAME}			{\bWrapper{bootstrap}}
+\newcommand{\bootstraps}			{\bWrapper{bootstraps}}
 
 
 \newcommand{\jsonNAME}				{\gWrapper{json}}
+\newcommand{\dddNAME}				{\gWrapper{Data-Driven Documents}}
 \newcommand{\sqlNAME}				{\gWrapper{sql}}
 \newcommand{\nosqlNAME}				{\gWrapper{nosql}}
 \newcommand{\visualstudio}			{\nWrapper{Visual Studio}}
@@ -235,6 +247,7 @@
 \newcommand{\daewoo}				{\nWrapper{Daewoo}}
 \newcommand{\nokia}					{\nWrapper{Nokia}}
 \newcommand{\blockbuster}			{\nWrapper{Blockbuster}}
+
 
 \newcommand{\nameOpenCart}			{\nWrapper{OpenCart}}
 \newcommand{\namePrestaShop}		{\nWrapper{PrestaShop}}
@@ -281,6 +294,18 @@
 \newcommand{\newYorkNAME}			{\nWrapper{New York}}
 \newcommand{\londresNAME}			{\nWrapper{Londres}} 
 \newcommand{\bowerIONAME}			{\nWrapper{Bower.io}\cite{online_official_bowerio}} 
+\newcommand{\jasmineNAME}			{\nWrapper{Jasmine}\cite{online_official_jasmine}}
+\newcommand{\velocityNAME}			{\nWrapper{Velocity}\cite{online_official_velocity}}
+\newcommand{\bunyanNAME}			{\nWrapper{Bunyan}\cite{online_official_bunyan}}
+
+\newcommand{\lessNAME}				{\nWrapper{LESS}}
+\newcommand{\mixinsNAME}			{\nWrapper{mixins}}
+\newcommand{\stylesheetsNAME}		{\nWrapper{stylesheets}}
+\newcommand{\stylesheetNAME}		{\nWrapper{stylesheet}}
+
+\newcommand{\commonSenseAdvisoryNAME}	{\nWrapper{Common Sense Advisory}}
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%  METEOR Packages	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -290,7 +315,27 @@
 \newcommand{\nameRouter}				{\nWrapper{Router}\cite{online_atmospherejs_iron_router}}
 \newcommand{\nameCollectionHooks}		{\nWrapper{Collection Hooks}\cite{online_atmospherejs_matb33_collectionHooks}}
 \newcommand{\nameBower}					{\nWrapper{Bower}\cite{online_atmospherejs_mquandalle_bower}}
+\newcommand{\securityPackage}			{\nWrapper{Security}\cite{online_atmospherejs_ongoworks_secutiry}}
+\newcommand{\sanjoJasminePackage}		{\nWrapper{Jasmine}\cite{online_atmospherejs_sanjo_jasmine}}
+\newcommand{\bunyanPackage}				{\nWrapper{Bunyan}\cite{online_atmospherejs_ongoworks_bunyan}}
+\newcommand{\velocityCorePackage}		{\nWrapper{Velocity}\cite{online_atmospherejs_velocity_core}}
+\newcommand{\dThreePackage}				{\nWrapper{D3.js}\cite{online_atmospherejs_d3js_d3}}
+\newcommand{\undStringLatestPackage}	{\nWrapper{undersore-string-latest}\cite{online_atmospherejs_mrt_underscoreStringLatest}}
 
+\newcommand{\lessPackage}				{\nWrapper{LESS}\cite{online_atmospherejs_meteor_less}}
+\newcommand{\bootstrapPackage}			{\nWrapper{bootstrap}\cite{online_atmospherejs_nemo64_bootstrap}}
+
+\newcommand{\accountFacebook}			{\nWrapper{accounts-facebook}\cite{online_atmospherejs_meteor_accounts_facebook}}
+\newcommand{\accountGoogle}				{\nWrapper{accounts-google}\cite{online_atmospherejs_meteor_accounts_google}}
+\newcommand{\accountTwitter}			{\nWrapper{accounts-twitter}\cite{online_atmospherejs_meteor_accounts_twitter}}
+\newcommand{\accountGithub}				{\nWrapper{accounts-github}\cite{online_atmospherejs_meteor_accounts_github}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% JavaScript Packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\finiteStateMachine}		{\nWrapper{javascript-state-machine}\cite{online_bower_jakesgordon_javascript-state-machine}}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -330,12 +375,26 @@
 \newcommand{\accountsmeteor}			{\bWrapper{accounts}}
 \newcommand{\collectionsMETEOR}			{\bWrapper{Collections}}
 \newcommand{\publishsubscribeMETEOR}	{\bWrapper{Publish and subscribe}}
+\newcommand{\bunyanprettyStreamMETEOR}	{\bWrapper{bunyan-prettystream}}
+\newcommand{\undStringLatestMETEOR}		{\bWrapper{underscore.string}}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%  Bootstrap Concepts  %%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\bootswatchNAME}		{\nWrapper{Bootswatch}\cite{online_official_cite_bootswatch}}
+\newcommand{\themePaper}			{\bWrapper{paper}}
+\newcommand{\themeCyborg}			{\bWrapper{cyborg}}
+\newcommand{\themeSuperHero}		{\bWrapper{superhero}}
+\newcommand{\themeJournal}			{\bWrapper{journal}}
+\newcommand{\themeSandstone}		{\bWrapper{sandstone}}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%  COMPUTACION (PC)	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%      INGLES 		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newcommand{\workload}					{\bothWrapper{workload}}
 \newcommand{\workloads}					{\bWrapper{workloads}}
@@ -415,6 +474,13 @@
 \newcommand{\wirelessPC}				{\bWrapper{wireless}}
 \newcommand{\wirelinePC}				{\bWrapper{wireline}}
 \newcommand{\handheldPC}				{\bWrapper{handheld}}
+\newcommand{\fixturesPC}				{\bothWrapper{test_fixtures}}
+\newcommand{\testFixturePC}				{\bWrapper{test fixture}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%      ESPAÑOL 		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\localisationPC}			{\bWrapper{localización}}
 
 
 
@@ -506,6 +572,7 @@
 \newcommand{\webResponseINT}			{\bWrapper{web response}}
 \newcommand{\openWebStackINT}			{\bWrapper{open web stack}}
 \newcommand{\standarPortINT}			{\bWrapper{standar port}}
+\newcommand{\webStandardINT}			{\bWrapper{web standard}}
 \newcommand{\javaAppletsINT}			{\bWrapper{Java Applets}}
 \newcommand{\nonStandardPortsINT}		{\bWrapper{non-standard ports}}
 \newcommand{\webServingINT}				{\bWrapper{web-serving}}
@@ -646,6 +713,7 @@
 \newcommand{\supplierCOM}				{\bWrapper{Supplier}}
 \newcommand{\mvpSiglasCOM}				{\bothWrapper{mvp_siglas}}
 \newcommand{\minViableProductCOM}		{\bothWrapper{min_viable_product}}
+\newcommand{\revenueCOM}				{\bothWrapper{revenue_commerce}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%  CONCEPTOS DE ARQUITECTURA (AS) %%%%%%%%%%%%%%%%%%%%%%
@@ -903,8 +971,11 @@
 \newcommand{\tablesDB}					{\bWrapper{tables}}
 \newcommand{\selectDB}					{\bWrapper{Select}}
 \newcommand{\insertDB}					{\bWrapper{insert}}
+\newcommand{\insertsDB}					{\bWrapper{inserts}}
 \newcommand{\updateDB}					{\bWrapper{update}}
+\newcommand{\updatesDB}					{\bWrapper{updates}}
 \newcommand{\removeDB}					{\bWrapper{remove}}
+\newcommand{\removesDB}					{\bWrapper{removes}}
 \newcommand{\findDB}					{\bWrapper{find}}
 \newcommand{\findOneDB}					{\bWrapper{findOne}}
 \newcommand{\selectDBUpper}				{\MakeUppercase{\selectDB}}
@@ -971,6 +1042,11 @@
 \newcommand{\journalDB}					{\bWrapper{Journal}}
 
 \newcommand{\beforeAfterDB}				{\bWrapper{before/after}}
+
+
+
+\newcommand{\dataBaseDB}			{\bWrapper{Base de dato}}
+\newcommand{\dataBasesDB}			{\bWrapper{Base de datos}}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1110,26 +1186,27 @@
 \newcommand{\trust}					{\bWrapper{Trust}}
 \newcommand{\familiarity}			{\bWrapper{Familiarity}}
 \newcommand{\testimonials}			{\bWrapper{Testimonials}}
-\newcommand{\thirdParty}			{\bWrapper{third party}}
+\newcommand{\thirdParty}			{\bWrapper{thirdparty}}
 \newcommand{\premium}				{\bWrapper{premium}}
 \newcommand{\storedCPT}				{\bWrapper{stored}}
 \newcommand{\store}					{\bWrapper{store}}
 \newcommand{\stores}				{\bWrapper{stores}}
-\newcommand{\theme}					{\bWrapper{theme}}
+\newcommand{\themeCPT}				{\bWrapper{theme}}
 \newcommand{\themesCPT}				{\bWrapper{themes}}
 \newcommand{\post}					{\bWrapper{post}}
 \newcommand{\posts}					{\bWrapper{posts}}
 \newcommand{\fork}					{\bWrapper{fork}}
 \newcommand{\forks}					{\bWrapper{forks}}
-\newcommand{\bootstrap}				{\bWrapper{bootstrap}}
-\newcommand{\bootstraps}			{\bWrapper{bootstraps}}
 \newcommand{\sysadmin}				{\bWrapper{sysadmin}}
 \newcommand{\sysadmins}				{\bWrapper{sysadmins}}
 \newcommand{\dataintensive}			{\bWrapper{data-intensive}}
+\newcommand{\dataDrivenCPT}			{\bWrapper{data-driven}}
 \newcommand{\standard}				{\bWrapper{standard}}
 \newcommand{\standards}				{\bWrapper{standards}}
 \newcommand{\exportCPT}				{\bWrapper{export}}
 \newcommand{\testingCPT}			{\bWrapper{testing}}
+\newcommand{\testsCPT}				{\bWrapper{tests}}
+\newcommand{\testRunnerCPT}			{\bWrapper{test-runner}}
 \newcommand{\featureCPT}			{\bWrapper{característica}}
 \newcommand{\featuresCPT}			{\bWrapper{características}}
 \newcommand{\fullFeatured}			{\bWrapper{full-featured}}
@@ -1147,6 +1224,9 @@
 \newcommand{\partnerCPT}			{\bWrapper{partner}}
 \newcommand{\hookCPT}				{\bWrapper{hook}}
 \newcommand{\hooksCPT}				{\bWrapper{hooks}}
+\newcommand{\loggingCPT}			{\bWrapper{logging}}
+\newcommand{\loginCPT}				{\bWrapper{login}}
+\newcommand{\logoutCPT}				{\bWrapper{logout}}
 
 
 \newcommand{\graphTheory}			{\bWrapper{Graph Theory}\cite{book_introduction_graph_theory}}
@@ -1190,7 +1270,7 @@
 \newcommand{\engine}					{\bWrapper{engine}}
 \newcommand{\hub}						{\bWrapper{hub}}
 \newcommand{\workflowCPT}				{\bWrapper{workflow}}
-\newcommand{\workflowsCPT}				{\bWrapper{workflows}}
+\newcommand{\workflowsCPT}				{\bWrapper{Workflows}}
 \newcommand{\taskBased}					{\bWrapper{task-based}}
 \newcommand{\analyticProcessing}		{\bothWrapper{analytic_processing}}
 \newcommand{\tarnsactionalProcessing}	{\bothWrapper{tarnsactional_processing}}
@@ -1239,7 +1319,7 @@
 \newcommand{\organicCPT}				{\bWrapper{organic}}
 \newcommand{\naturalCPT}				{\bWrapper{natural}}
 \newcommand{\editorialCPT}				{\bWrapper{editorial}}
-\newcommand{\architectureCPT}			{\bWrapper{architecture}}
+\newcommand{\architectureCPT}			{\bWrapper{Arquitectura}}
 \newcommand{\methodologyCPT}			{\bWrapper{methodology}}
 
 \newcommand{\task}					{\bWrapper{task}}
@@ -1259,8 +1339,7 @@
 \newcommand{\cloud}					{\bWrapper{cloud}}
 \newcommand{\deploy}				{\bWrapper{deploy}}
 \newcommand{\deploymentCPT}			{\bWrapper{deployment}}
-\newcommand{\dataBaseDB}			{\bWrapper{Base de dato}}
-\newcommand{\dataBasesDB}			{\bWrapper{Base de datos}}
+
 \newcommand{\dbmangesystem}			{\bWrapper{Data Base Management System}}
 \newcommand{\backandforth}			{\bWrapper{back and forth}}
 \newcommand{\feedback}				{\bWrapper{feedback}}
@@ -1285,8 +1364,14 @@
 \newcommand{\renderingCPT}			{\bWrapper{rendering}}
 \newcommand{\pseudoCPT}				{\bWrapper{pseudo}}
 \newcommand{\pseudoSchemaCPT}		{\bWrapper{Pseudo-schemas}}
+\newcommand{\mockObjectCPT}			{\bWrapper{mock object}}
+\newcommand{\mockObjectsCPT}		{\bWrapper{mock objects}}
+\newcommand{\allowdenyCPT}			{\bWrapper{allow/deny}}
 
 
+
+
+\newcommand{\filesCPT}				{\bWrapper{archivos}}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1302,6 +1387,7 @@
 
 \newcommand{\rtcom}							{\bWrapper{rtcom}}
 \newcommand{\rtcomCorePCKG}					{\bWrapper{rtcom-core}}
+\newcommand{\rtcomCoreThemePCKG}			{\bWrapper{rtcom-core-theme}}
 \newcommand{\helloworldPCKG}				{\bWrapper{rtcom-helloworld}}
 \newcommand{\rtcomSearchPCKG}				{\bWrapper{rtcom-search-shop}}
 \newcommand{\rtcomShippingPCKG}				{\bWrapper{rtcom-shipping}}

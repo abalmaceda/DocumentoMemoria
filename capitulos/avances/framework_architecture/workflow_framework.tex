@@ -1,0 +1,53 @@
+%!TEX root = ../../../memoria.tex
+
+\subsection{\workflowsCPT}
+
+%TODO
+% Introduccion de workflows
+
+Existen una serie de pasos que se pueden experimentar al visitar un sitio \ecommerceCOM, entre los cuales podemos destacar:
+
+	\begin{itemize}
+		\item
+			\textbf{Shopping Experience}.
+		\item
+			\textbf{Order Capture} 
+		\item
+			\textbf{Order Fullfillment} 
+		\item
+			\textbf{Order processing}
+		\item
+			\textbf{Shipping} 
+		\item
+			\textbf{Customer Files} 
+		\item
+			\textbf{Paymanat Sistems} 
+		\item
+			\textbf{Customer Service} 
+		\item
+			\textbf{Accounting} 
+		\item
+			\textbf{Returning} 
+	\end{itemize}
+
+
+Cada uno de los pasos dentro de un \workflowsCPT puede ser considerado como un estado el cual cambiará dependiendo de los eventos que esten involucrados. Por lo tanto cada uno de estos \workflowsCPT puede ser modelado utilizando una máquina de estados finitos.
+Para el caso particular del \frameworkPC para \ecommerceCOM, 4 han sido los \workflowsCPT que han sido implementados utilizando la librería \javaScriptNAME \finiteStateMachine.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1.1\textwidth]{figuras/cart_state_machine.jpg}
+
+	\caption{Máquina de estado de carro de compras.}
+	\label{figure:cart_state_machine}
+\end{figure}
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{figuras/order_state_machine.jpg}
+
+	\caption{Máquina de estado del estado de una orden.}
+	\label{figure:order_state_machine}
+\end{figure}
+

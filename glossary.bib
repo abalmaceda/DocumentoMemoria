@@ -549,3 +549,31 @@ is the computer-to-computer exchange of business documents in a standard electro
 A minimum viable product is “that product which has just those features and no more that allows you to ship a product that early adopters see and, at least some of whom resonate with, pay you money for, and start to give you feedback on”.
 
 But why minimal? Because your time and money are severely limited. You want the biggest “bang for your buck”: maximum learning with minimal effort.
+
+@GLOSSDEF{ test_fixtures,
+	word="fixtures",
+	definition="Vease \gloss{test_fixture}"
+}
+
+@GLOSSDEF{ test_fixture,
+	word="\testFixturePC",
+	definition=" Un \testFixturePC es un estado definido utilizado como base para correr \testsCPT. El proposito de un \testFixturePC es asegurar que existe un \environmentPL fijo y conocido en el cual \testsCPT se ejecutan de tal forma que los resultados son repetibles \cite{online_test_fixtures}. Ejemplos de \testFixturePC son:
+	\begin{itemize}
+		\item
+			Cargar una \dataBasesDB con un conjunto específico y conocido de \dataDB.
+		\item
+			Copiar un conjunto específico de \filesCPT.
+		\item
+			Preparación de datos de entrada creación/\setupCPT de objectos simulados ó \mockObjectsCPT.
+	\end{itemize}"
+}
+A test fixture is a fixed state of a set of objects used as a baseline for running tests. The purpose of a test fixture is to ensure that there is a well known and fixed environment in which tests are run so that results are repeatable. Examples of fixtures:
+Loading a database with a specific, known set of data
+Copying a specific known set of files
+Preparation of input data and setup/creation of fake or mock objects
+In other word, creating a test fixture is to create a set of objects initialized to certain states.
+
+@GLOSSDEF{ revenue_commerce,
+	word="Revenue",
+	definition="Corresponde al ingreso total que una firma recive \cite{online_revenue_definition}"
+}

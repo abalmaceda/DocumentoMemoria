@@ -7,13 +7,14 @@
 			grow via three points={one child at (0.5,-0.7) and
 			two children at (0.5,-0.7) and (0.5,-1.4)},   
 			edge from parent path={(\tikzparentnode.south) |- (\tikzchildnode.west)}]
-			\node {client/}
+			\node {server/}
 				child { node {buildtools/}}
 				child { node {methods/}}
 				child { node [draw=none] {...}}
 				child { node [draw=none] {app.coffee}}
 				child { node [draw=none] {factories.coffee}}
 				child { node [draw=none] {publications.coffee}}
+				child { node [draw=none] {fixtures.coffee}}
 				child { node [draw=none] {register.coffee}}
 		    ;
 		\end{tikzpicture}
