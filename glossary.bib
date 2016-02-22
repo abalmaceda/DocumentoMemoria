@@ -80,7 +80,7 @@ SEO stands for “search engine optimization.” It is the process of getting tr
 	definition= "\textit{Analytics processing} es caracterizado por pocos usuarios ( analisis de negocio en lugar de operaciones de clientes y POS) \textit{submitting} pocas \textit{request}, pero \textit{queries} pueden ser muy complejas y con intenso uso de recursos. EL tiempo de respuesta es generalmente medido en decenas a cientos de segundos."
 }
 
-@GLOSSDEF{ tarnsactional_processing,
+@GLOSSDEF{ transactional_processing,
 	word="transactional",
 	definition= "\textit{Transactional processing} es caracterizado por un largo número de de pequeñas, discretas, transacciones atómicas. El énfasis de los sistemas \gloss{oltp} es (a) \textit{high throughput (transactions per second)}, y (b) manterner integridad de datos en ambientes multiusuarios."
 }
@@ -307,8 +307,9 @@ This is a list of AMP (Apache, MySQL, Perl/PHP/Python) solution stacks for all c
 
 @GLOSSDEF{ multi_tier_pricing,
 	word="Multi-Tier Pricing",
-	definition="Ver \gloss{tiered_pricing}"
+	definition=" Differential ó Tiered Pricing es la práctica de establecer diferentes precios para diferentes \markets, típicamente precios más altos en \markets más ricos,  y precios más bajos en \markets más pobres \cite{rights2002integrating}."
 }
+definition="Ver \gloss{tiered_pricing}"
 
 @GLOSSDEF{ tiered_pricing,
 	word="Tiered Pricing",
@@ -552,7 +553,15 @@ But why minimal? Because your time and money are severely limited. You want the 
 
 @GLOSSDEF{ test_fixtures,
 	word="fixtures",
-	definition="Vease \gloss{test_fixture}"
+	definition=" Un \testFixturePC es un estado definido utilizado como base para correr \testsCPT. El proposito de un \testFixturePC es asegurar que existe un \environmentPL fijo y conocido en el cual \testsCPT se ejecutan de tal forma que los resultados son repetibles \cite{online_test_fixtures}. Ejemplos de \testFixturePC son:
+	\begin{itemize}
+		\item
+			Cargar una \dataBasesDB con un conjunto específico y conocido de \dataDB.
+		\item
+			Copiar un conjunto específico de \filesCPT.
+		\item
+			Preparación de datos de entrada creación/\setupCPT de objectos simulados ó \mockObjectsCPT.
+	\end{itemize}"
 }
 
 @GLOSSDEF{ test_fixture,
@@ -573,7 +582,24 @@ Copying a specific known set of files
 Preparation of input data and setup/creation of fake or mock objects
 In other word, creating a test fixture is to create a set of objects initialized to certain states.
 
-@GLOSSDEF{ revenue_commerce,
-	word="Revenue",
+@GLOSSDEF{ hijacking,
+	word="hijacking",
 	definition="Corresponde al ingreso total que una firma recive \cite{online_revenue_definition}"
 }
+
+@GLOSSDEF{ cross_site,
+	word="cross-site",
+	definition="Corresponde al ingreso total que una firma recive \cite{online_revenue_definition}"
+}
+
+@GLOSSDEF{ clickjacking,
+	word="clickjacking",
+	definition=" Es un término primeramente introducido por Jeremiah Grossman y Robert Hansen el año 2008 para describir la técnica para la cual ataques cross-domain son realizados \gloss{hijacking} \cite{clicksPC} del  para realizar acciones que el usuario  \cite{huang2012clickjacking}"
+}
+Clickjacking is a term first introduced by Jeremiah Grossman and Robert Hansen in 2008 to describe a technique whereby cross-domain attacks are performed by ‘hijacking’ user-initiated mouse clicks to perform actions that the user did not intend1. In this paper, I will explore other ways a user can be tricked into interacting with a framed web page, that could allow an attacker to inject arbitrary text into forms and extract content from a web page. I will also show a new technique that allows information leaked from an iframe to be used for login detection and many other purposes. 
+
+@GLOSSDEF{conversion_rate,
+	word="Conversion Rate",
+	definition=" \textit{Conversion Rate} de un sitio web es la medida de éxito de una campaña pagada de inclusión. Una \textit{Conversion Rate} es medida por el numero de visitantes potenciales realizando la acción deseada, sea la acción de comprar un producto, completar un formulario, o algún otro objetivo del sitio web. For ejemplo , si hay 100 viistantee para una página web particular a través de publicidad de pago por \click, y solo uno de esos 100 compra el producto que vende el sitio web, entonces la \textit{Conversion Rate} para esta publicidad en particular es del 1\% \cite{online_conversion_rate_meaning}"
+}
+One of the most important parts of paid inclusion campaigns, the conversion rate of a website is the measurement of the success of a paid inclusion campaign. A conversion rate is measured by the number of potential visitors performing the desired action, whether the action is buying a product, filling out a form, or some other goal of the web page. For example, if there are 100 visitors to a particular web page via a pay per click ad, and one of those 100 buys the product the website sells, then the conversion rate for that particular ad is one percent. The larger the conversion rate of a web page means the more successful the website will be as well as how successful the paid inclusion campaign is.

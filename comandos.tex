@@ -91,10 +91,10 @@
 
 
 \newcommand{\expressjsNAME}			{\nWrapper{Express.js}}
-\newcommand{\expressjsNAMEref}			{\nWrapper{Express.js}}
+\newcommand{\expressjsNAMEref}		{\nWrapper{Express.js}}
 \newcommand{\dockerio}				{\nWrapper{Docker.io}}
 \newcommand{\dockerNAME}			{\nWrapper{Docker}}
-\newcommand{\coffeescript}			{\nWrapper{CoffeeScript}}
+%\newcommand{\coffeescript}			{\nWrapper{CoffeeScript}}
 \newcommand{\dustjsNAME}			{\nWrapper{Dust.js}}
 \newcommand{\angularjsNAME}			{\nWrapper{Angular.js}}
 \newcommand{\bsonNAME}				{\nWrapper{BSON}}
@@ -112,7 +112,8 @@
 \newcommand{\mongooseNAME}			{\nWrapper{mongoose}}
 \newcommand{\sanestackNAME}			{\nWrapper{SANE STACK}}
 
-\newcommand{\uriNAME}				{\gWrapper{uri}}
+%\newcommand{\uriNAME}				{\gWrapper{uri}}
+\newcommand{\uriNAME}				{\bWrapper{uri}}
 \newcommand{\npm}					{\nWrapper{NPM}}
 \newcommand{\apttool}				{\nWrapper{APT}}
 \newcommand{\clitool}				{\nWrapper{CLI}}
@@ -235,7 +236,7 @@
 
 
 \newcommand{\jsonNAME}				{\gWrapper{json}}
-\newcommand{\dddNAME}				{\gWrapper{Data-Driven Documents}}
+\newcommand{\dddNAME}				{\nWrapper{Data-Driven Documents}}
 \newcommand{\sqlNAME}				{\gWrapper{sql}}
 \newcommand{\nosqlNAME}				{\gWrapper{nosql}}
 \newcommand{\visualstudio}			{\nWrapper{Visual Studio}}
@@ -324,6 +325,7 @@
 
 \newcommand{\lessPackage}				{\nWrapper{LESS}\cite{online_atmospherejs_meteor_less}}
 \newcommand{\bootstrapPackage}			{\nWrapper{bootstrap}\cite{online_atmospherejs_nemo64_bootstrap}}
+\newcommand{\browserPolicyPackage}		{\nWrapper{Browser-Policy}\cite{online_atmospherejs_browser_policy}}
 
 \newcommand{\accountFacebook}			{\nWrapper{accounts-facebook}\cite{online_atmospherejs_meteor_accounts_facebook}}
 \newcommand{\accountGoogle}				{\nWrapper{accounts-google}\cite{online_atmospherejs_meteor_accounts_google}}
@@ -361,8 +363,6 @@
 \newcommand{\folderHooks}				{\bWrapper{\textbf{hooks}}}
 \newcommand{\folderSchemas}				{\bWrapper{\textbf{schemas}}}
 
-
-
 \newcommand{\helperMETEOR}				{\bWrapper{helper}}
 \newcommand{\helpersMETEOR}				{\bWrapper{helpers}}
 \newcommand{\templateMETEOR}			{\bWrapper{template}}
@@ -376,7 +376,9 @@
 \newcommand{\collectionsMETEOR}			{\bWrapper{Collections}}
 \newcommand{\publishsubscribeMETEOR}	{\bWrapper{Publish and subscribe}}
 \newcommand{\bunyanprettyStreamMETEOR}	{\bWrapper{bunyan-prettystream}}
+\newcommand{\methodsMETEOR}				{\bWrapper{Methods}}
 \newcommand{\undStringLatestMETEOR}		{\bWrapper{underscore.string}}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%  Bootstrap Concepts  %%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -396,7 +398,8 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%      INGLES 		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newcommand{\workload}					{\bothWrapper{workload}}
+%\newcommand{\workload}					{\bothWrapper{workload}}
+\newcommand{\workload}					{\bWrapper{workload}}
 \newcommand{\workloads}					{\bWrapper{workloads}}
 \newcommand{\rdbms}						{\gWrapper{rdbms}}
 \newcommand{\ordbms}					{\gWrapper{ordbms}}
@@ -415,8 +418,8 @@
 \newcommand{\functionality}				{\bWrapper{functionality}}
 \newcommand{\clicking}					{\bWrapper{clicking}}
 \newcommand{\click}						{\bWrapper{click}}
-\newcommand{\clicks}					{\bWrapper{clicks}}
-\newcommand{\mouse}						{\bWrapper{mouse}}
+\newcommand{\clicksPC}					{\bWrapper{clicks}}
+\newcommand{\mousePC}					{\bWrapper{mouse}}
 \newcommand{\laptop}					{\bWrapper{laptop}}
 \newcommand{\laptops}					{\bWrapper{laptops}}
 \newcommand{\event}						{\bWrapper{event}}
@@ -474,7 +477,8 @@
 \newcommand{\wirelessPC}				{\bWrapper{wireless}}
 \newcommand{\wirelinePC}				{\bWrapper{wireline}}
 \newcommand{\handheldPC}				{\bWrapper{handheld}}
-\newcommand{\fixturesPC}				{\bothWrapper{test_fixtures}}
+%TODO: Agregar definicion
+\newcommand{\fixturesPC}				{\bWrapper{test fixtures}}
 \newcommand{\testFixturePC}				{\bWrapper{test fixture}}
 
 
@@ -610,6 +614,13 @@
 \newcommand{\sessionsINT}				{\bWrapper{sessions}}
 \newcommand{\authenticationINT}			{\bWrapper{authentication}}
 \newcommand{\comToComINT}				{\bWrapper{computer-to-computer}}
+\newcommand{\clickjackingINT}			{\bothWrapperWS{clickjacking}}
+\newcommand{\crossSiteINT}				{\bothWrapperWS{cross_site}}
+\newcommand{\oauthLoginINT}				{\bWrapper{OAuth}}
+\newcommand{\autoFocoINT}				{\bWrapper{auto-foco}}
+\newcommand{\placeholderINT}			{\bWrapper{place-holder}}
+\newcommand{\placeholdersINT}			{\bWrapper{place-holders}}
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -713,7 +724,9 @@
 \newcommand{\supplierCOM}				{\bWrapper{Supplier}}
 \newcommand{\mvpSiglasCOM}				{\bothWrapper{mvp_siglas}}
 \newcommand{\minViableProductCOM}		{\bothWrapper{min_viable_product}}
-\newcommand{\revenueCOM}				{\bothWrapper{revenue_commerce}}
+%TODO: agregar descripcion
+\newcommand{\revenueCOM}				{\bWrapper{revenue commerce}}
+\newcommand{\conversionRateCOM}			{\bothWrapper{conversion_rate}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%  CONCEPTOS DE ARQUITECTURA (AS) %%%%%%%%%%%%%%%%%%%%%%
@@ -736,7 +749,9 @@
 \newcommand{\mainframeAS}			{\bWrapper{Mainframe}}
 \newcommand{\mainframesAS}			{\bWrapper{Mainframes}}
 \newcommand{\apiAS}					{\bothWrapper{api_siglas}}
-\newcommand{\apikeyAS}				{\bothWrapper{api_key}}
+%TODO
+%\newcommand{\apikeyAS}				{\bothWrapper{api_key}}
+\newcommand{\apikeyAS}				{\bWrapper{APIs}}
 \newcommand{\apisAS}				{\bWrapper{APIs}}
 \newcommand{\fullstackAS}			{\bWrapper{Full-Stack}}
 \newcommand{\stackAS}				{\bWrapper{Stack}}
@@ -1123,6 +1138,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newcommand{\rerunCPT}				{\bWrapper{re-run}}
+\newcommand{\refreshCPT}			{\bWrapper{refresh}}
 \newcommand{\powerful}				{\bWrapper{powerful}}
 \newcommand{\poweredCPT}			{\bWrapper{powered}}
 \newcommand{\preFabCPT}				{\bWrapper{pre-fab}}
@@ -1186,13 +1202,13 @@
 \newcommand{\trust}					{\bWrapper{Trust}}
 \newcommand{\familiarity}			{\bWrapper{Familiarity}}
 \newcommand{\testimonials}			{\bWrapper{Testimonials}}
-\newcommand{\thirdParty}			{\bWrapper{thirdparty}}
+\newcommand{\thirdParty}			{\bWrapper{third-party}}
 \newcommand{\premium}				{\bWrapper{premium}}
 \newcommand{\storedCPT}				{\bWrapper{stored}}
 \newcommand{\store}					{\bWrapper{store}}
 \newcommand{\stores}				{\bWrapper{stores}}
-\newcommand{\themeCPT}				{\bWrapper{theme}}
-\newcommand{\themesCPT}				{\bWrapper{themes}}
+\newcommand{\themeCPT}				{\bWrapper{Theme}}
+\newcommand{\themesCPT}				{\bWrapper{Themes}}
 \newcommand{\post}					{\bWrapper{post}}
 \newcommand{\posts}					{\bWrapper{posts}}
 \newcommand{\fork}					{\bWrapper{fork}}
@@ -1226,6 +1242,7 @@
 \newcommand{\hooksCPT}				{\bWrapper{hooks}}
 \newcommand{\loggingCPT}			{\bWrapper{logging}}
 \newcommand{\loginCPT}				{\bWrapper{login}}
+\newcommand{\loginUpperCPT}			{\bWrapper{Log in}}
 \newcommand{\logoutCPT}				{\bWrapper{logout}}
 
 
@@ -1273,7 +1290,9 @@
 \newcommand{\workflowsCPT}				{\bWrapper{Workflows}}
 \newcommand{\taskBased}					{\bWrapper{task-based}}
 \newcommand{\analyticProcessing}		{\bothWrapper{analytic_processing}}
-\newcommand{\tarnsactionalProcessing}	{\bothWrapper{tarnsactional_processing}}
+%TODO
+%\newcommand{\tarnsactionalProcessing}	{\bothWrapper{transactional_processing}}
+\newcommand{\tarnsactionalProcessing}	{\nWrapper{procesamiento transanccional}}
 \newcommand{\analytical}				{\bWrapper{analytical}}
 \newcommand{\onTheFly}					{\bWrapper{on the fly}}
 \newcommand{\custom}					{\bWrapper{custom}}
@@ -1375,6 +1394,17 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%    E-FRAMEWORK    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\dashboardEF}					{\bWrapper{Dashboard}}
+\newcommand{\ecomFrameworkCoreEF}			{\bWrapper{E-Commerce Framework Core}}
+\newcommand{\shippingEF}					{\bWrapper{Shipping}}
+\newcommand{\ordersEF}						{\bWrapper{Orders}}
+\newcommand{\accountsEF}					{\bWrapper{Accounts}}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%	  	 REFERENCIAS      %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -1385,19 +1415,58 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   PROYECTO  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newcommand{\rtcom}							{\bWrapper{rtcom}}
-\newcommand{\rtcomCorePCKG}					{\bWrapper{rtcom-core}}
-\newcommand{\rtcomCoreThemePCKG}			{\bWrapper{rtcom-core-theme}}
-\newcommand{\helloworldPCKG}				{\bWrapper{rtcom-helloworld}}
-\newcommand{\rtcomSearchPCKG}				{\bWrapper{rtcom-search-shop}}
-\newcommand{\rtcomShippingPCKG}				{\bWrapper{rtcom-shipping}}
-\newcommand{\rtcomPaypalPCKG}				{\bWrapper{rtcom-paypal}}
-\newcommand{\rtcomGooglewalletPCKG}			{\bWrapper{rtcom-google-wallet}}
-\newcommand{\rtcomGoogleanalPCKG}			{\bWrapper{rtcom-google-analytics}}
+\newcommand{\eframeworkAF}					{\bWrapper{eframework}}
+\newcommand{\eframeworkCorePCKG}			{\bWrapper{eframework-core}}
+\newcommand{\eframeworkCoreThemePCKG}		{\bWrapper{eframework-core-theme}}
+\newcommand{\eframeworkHelloWorldPCKG}		{\bWrapper{eframework-helloworld}}
+\newcommand{\eframeworkBootstrapThemePCKG}	{\bWrapper{eframework-bootstrap-theme}}
+\newcommand{\eframeworkAccountsPCKG}		{\bWrapper{eframework-accounts}}
+\newcommand{\eframeworkShippingPCKG}		{\bWrapper{eframework-shipping}}
+\newcommand{\eframeworkPaypalPCKG}			{\bWrapper{eframework-paypal}}
+\newcommand{\eframeworkGooglewalletPCKG}	{\bWrapper{eframework-google-wallet}}
+\newcommand{\eframeworkGoogleanalPCKG}		{\bWrapper{eframework-google-analytics}}
+
+\newcommand{\packageDescriptionFILE}		{\bWrapper{packageDescription.js}}
+
+\newcommand{\userAdminAccount}				{\bWrapper{Admin}}
+\newcommand{\userGuestAccount}				{\bWrapper{Guest}}
+
+\newcommand{\generalPanel}					{\bWrapper{General}}
+\newcommand{\addressPanel}					{\bWrapper{Address}}
+\newcommand{\mailPanel}						{\bWrapper{Mail}}
+\newcommand{\localizationPanel}				{\bWrapper{Localization}}
+\newcommand{\optionsPanel}					{\bWrapper{Options}}
+%TODO : agregar desfinición en glosarry
+\newcommand{\msrpSIGLAS}					{\bWrapper{MSRP}}
+
+\newcommand{\titleForm}						{\bWrapper{Title}}
+\newcommand{\pageTitleForm}					{\bWrapper{Page title}}
+\newcommand{\descriptionForm}				{\bWrapper{Description}}
+\newcommand{\multimediaForm}				{\bWrapper{Multimedia}}
+\newcommand{\tagsForm}						{\bWrapper{Tags}}
+\newcommand{\detailsForm}					{\bWrapper{Details}}
+\newcommand{\detailForm}					{\bWrapper{Detail}}
+\newcommand{\vendorForm}					{\bWrapper{Vendor}}
+\newcommand{\optionsForm}					{\bWrapper{Options}}
+\newcommand{\priceForm}						{\bWrapper{Price}}
+\newcommand{\quantityForm}					{\bWrapper{Quantity}}
+\newcommand{\denyForm}						{\bWrapper{Deny}}
+\newcommand{\warnForm}						{\bWrapper{Warn}}
+\newcommand{\taxableForm}					{\bWrapper{Taxable}}
+\newcommand{\trackingForm}					{\bWrapper{Tracking}}
+
+\newcommand{\youCanMakeItVisibleLABEL}		{\bWrapper{you can make it visible}}
+\newcommand{\makeInvisibleLABEL}			{\bWrapper{make invisible}}
+%TODO: definir
+\newcommand{\feedbackReactivoDEF}			{\bWrapper{Feedback Reactivo}}
+\newcommand{\addtocartLABEL}				{\bWrapper{add to cart}}
+\newcommand{\checkoutNowLABEL}				{\bWrapper{Checkout Now}}
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %										%
-%			  Base de datos 				%
+%			  Base de datos 			%
 %										%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\userscollection}		{\nWrapper{users}}
@@ -1423,7 +1492,7 @@
 \newcommand{\profesor}				{Nelson Baloian}
 \newcommand{\coguia}				{UNKNOW COGUIA}
 \newcommand{\integrante}			{UNKNOW INTEGRANTE}
-\newcommand{\fecha}					{Marzo 2015}
+\newcommand{\fecha}					{Diciembre 2015}
 \newcommand{\tipomemoria}			{INGENIERO CIVIL COMPUTACIÓN}
 \newcommand{\dpto}					{DEPARTAMENTO DE CIENCIAS DE LA COMPUTACIÓN}
 

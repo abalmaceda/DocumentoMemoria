@@ -5,34 +5,28 @@
 %TODO
 % Introduccion de workflows
 
-Existen una serie de pasos que se pueden experimentar al visitar un sitio \ecommerceCOM, entre los cuales podemos destacar:
+Existen una serie de flujos que se pueden experimentar al visitar un sitio \ecommerceCOM, entre los cuales podemos destacar:
 
 	\begin{itemize}
 		\item
-			\textbf{Shopping Experience}.
+			Shopping Experience.
 		\item
-			\textbf{Order Capture} 
+			Proceso de una orden
 		\item
-			\textbf{Order Fullfillment} 
+			\shipping.
 		\item
-			\textbf{Order processing}
+			Sistema de pago.
 		\item
-			\textbf{Shipping} 
+			Servicio al Cliente
 		\item
-			\textbf{Customer Files} 
+			Retorno de artículos.
 		\item
-			\textbf{Paymanat Sistems} 
-		\item
-			\textbf{Customer Service} 
-		\item
-			\textbf{Accounting} 
-		\item
-			\textbf{Returning} 
+			Entre otros. 
 	\end{itemize}
 
 
 Cada uno de los pasos dentro de un \workflowsCPT puede ser considerado como un estado el cual cambiará dependiendo de los eventos que esten involucrados. Por lo tanto cada uno de estos \workflowsCPT puede ser modelado utilizando una máquina de estados finitos.
-Para el caso particular del \frameworkPC para \ecommerceCOM, 4 han sido los \workflowsCPT que han sido implementados utilizando la librería \javaScriptNAME \finiteStateMachine.
+Para el caso particular del \frameworkPC para \ecommerceCOM, se han modelado 2 \workflowsCPT que se implementan utilizando la librería \javaScriptNAME \finiteStateMachine.
 
 \begin{figure}[H]
 	\centering
@@ -51,3 +45,4 @@ Para el caso particular del \frameworkPC para \ecommerceCOM, 4 han sido los \wor
 	\label{figure:order_state_machine}
 \end{figure}
 
+Notar que en estricto rigor, estos diagramas no corresponden a una máquina de estados finitos, sin embargo, es una excelente estrategia abordar estos procesos como máquinas de estados.
