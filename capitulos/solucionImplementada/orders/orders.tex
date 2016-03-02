@@ -1,0 +1,26 @@
+%!TEX root = ../../../memoria.tex
+\section{\shippingEF}\label{chapter:solucionimplementada:section:orders}
+
+Muestra información relevante relacioanda con la compra.
+
+
+
+\begin{table}[H]
+    \centering
+	\begin{tabular}{ |l|c||l| }
+		\hline Campo & Requerido & Restricción \\ \hline
+		\multirow{1}{*}{\textit{Country}} 			&  \checkmark 	&  Debe ser uno de las alternativas\\ \hline
+		\multirow{1}{*}{\textit{Full Name}} 		&  \checkmark	& \\ \hline
+		\multirow{1}{*}{\textit{Address 1}} 		&  \checkmark	& \\ \hline
+		\multirow{1}{*}{\textit{Address 2}} 		&  				& \\ \hline
+		\multirow{1}{*}{\textit{Postal}} 			&  \checkmark	& \\ \hline
+		\multirow{1}{*}{\textit{City}} 				&  \checkmark	& \\ \hline
+		\multirow{1}{*}{\textit{Region}} 			&  \checkmark	& Para ciertos paises, existen alternativas definidas.\\ \hline
+		\multirow{1}{*}{\textit{Phone}} 			&  \checkmark	& \\ \hline
+		\multirow{1}{*}{\textit{Shipping address}} 	&  \checkmark	& Boolean \\ \hline
+		\multirow{1}{*}{\textit{billing address}} 	&  \checkmark	& Boolean \\ \hline
+		\multirow{1}{*}{\textit{comercial address}} &  \checkmark	& Boolean \\ \hline
+	\end{tabular}
+ 	\caption{Resumen restrincciones información para libreta de direcciones.}
+    \label{tab:order:view:status}
+\end{table}

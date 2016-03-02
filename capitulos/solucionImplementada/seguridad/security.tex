@@ -1,0 +1,152 @@
+%!TEX root = ../../../memoria.tex
+
+\section{Seguridad en un sitio \ecommerceCOM}\label{cap:seguridad}
+
+
+	Seguridad en una aplicación \webINT es sobre todo entender seguridad de los dominios (\securityDomainCPT) y entender la superficie de ataque (\attackSurfaceCPT) entre esos dominios. En una aplicación de \meteorNAME, las cosas son muy simples:
+	%Securing a web application is all about understanding security domains and understanding the attack surface between these domains. In a Meteor app, things are pretty simple:
+
+	\begin{itemize}
+			\item
+				El código que se ejecuta en el servidor es confiable.
+			\item
+				Todo lo demás: código que se ejecuta en el cliente, la información enviada a traves métodos y publicación de argumentos, etc, no puede ser confiable.
+	\end{itemize}
+	%Code that runs on the server can be trusted.
+	%Everything else: code that runs on the client, data sent through Method and publication arguments, etc, can’t be trusted.
+	En la prática, esto significa que la mayoría de la seguridad y las validaciones se encuentran en la interacción entre estos dominios. En términos simples:
+	%In practice, this means that you should do most of your security and validation on the boundary between these two domains. In simple terms:
+	\begin{itemize}
+			\item
+				Validar y revizar todos los \inputCPT que provienen desde el cliente.
+			\item
+				No liberar ninguna información secreta al cliente \cite{online_meteor_security}.
+	\end{itemize}
+	%Validate and check all inputs that come from the client.
+	%Don’t leak any secret information to the client.
+
+
+
+	La seguridad en \internetINT se ha tornado un problema constante y creciente al mismo tiempo que nuevas tecnologias basadas en \internetINT y aplicaciones son desarrolladas. 
+	%Internet security has become a consistent and growing problem as new Internet-based technologies and applications are developed. The number of security violation related incidents continues to increase [6]. A reported incident can be as simple as a single computer being compromised or as severe as a complete network compromise involving hundreds of client computers. All Internet content you read, send, and receive carries a risk. The amount of security risks increases at the same time that dependence on information technology grows. This demands the need for a comprehensive security program and makes the job of those persons tasked with network security even harder.
+
+
+
+
+
+
+
+\section{Seguridad en \eframeworkAF}
+
+
+
+
+
+%Note: This entire API and all rule methods are available only in server code. As a security best practice, you should not define your security rules in client code or in server code that is sent to clients. Meteor allow/deny functions are documented as server-only functions, although they are currently available in client code, too.
+
+
+\subsection{Autorización}
+
+%api.use("alanning:roles@1.2.13");
+% https://atmospherejs.com/alanning/roles
+
+Se integra la asignación de permisos a los usuarios, para posteriormente verificar si cuenta o no con accesos a ciertos métodos de \meteorNAME o publicar información.
+%This package lets you attach permissions to a user which you can then check against later when deciding whether to grant access to Meteor methods or publish data. The core concept is very simple, essentially you are attaching strings to a user object and then checking for the existance of those strings later. In some sense, it is very similar to tags on blog posts. This package provides helper methods to make the process of adding, removing, and verifying those permissions easier.
+
+La aplicación permite la flexibilidad de asignar permisos de la manera que parezca más útil. Se pueden utilizar roles tradicionales como \textit{admin} ó \textit{webmaster}, o incluso asignar permisos con una mayor granularidad tal como \textit{ver-mensajes-secretos}, \textit{vista-usuarios}, \textit{lectura-planillas}, etc. En general, una mayor granularidad es mejor, por que permite el manejo de aquellos casos particulares que existen en la \textit{vida-real} de forma sencilla, sin la necesidad de incluir una gran cantidad de \textit{roles}.
+
+% Permissions vs roles (or What's in a name...)
+% Although the name of this package is 'roles', you can define your permissions however you like. They are essentially just tags that you assign on a user and which you can check for later.
+
+% You can have traditional roles like, "admin" or "webmaster", or you can assign more granular permissions such as, "view-secrets", "users.view", or "users.manage". Often times more granular is actually better because you are able to handle all those pesky edge cases that come up in real-life usage without creating a ton of higher-level 'roles'. To the roles package, it's all strings.
+
+
+En ocasioes en útil permitir la asignación de conjuntos independientes de permisos. La aplicación utiliza grupos de \textit{roles} que se denominan \textit{sets}.
+% What are "groups"?
+% Sometimes it's useful to let a user have independent sets of permissions. The roles package calls these independent sets, "groups" for lack of a better term. You can think of them as "partitions" if that is more clear. Users can have one set of permissions in group A and another set of permissions in group B. Let's go through an example of this using soccer/football teams as groups.
+
+Para conocer en detalle las opciones permitidas, consulte la documentación del \packageAS  de \meteorNAME \alanningRolesPackage.
+
+
+\subsection{Autenticación}
+% Accounts
+
+\meteorNAME cuenta con un sistema completo de cuentas de usuarios, el cual puede ser integrado en las aplicaciones. Con una simple linea de código, se puede obtener \
+%Meteor Accounts is a complete user account system that you can drop into your application. With one line of code, you can have login, logout, account creation, email validation, password recovery, and login with OAuth providers like Facebook or Twitter.
+
+
+\meteorNAME cuenta con un sistema modular del cual todos pueden escribir un \packageAS para proveer un nuevo
+%Meteor Accounts is a modular system, and anyone can write a package that provides a new login method. Some, but not all of these packages are officially maintained by the Meteor Project. For example, accounts-password has a complete password-based login system, including password recovery. Packages such as accounts-google, accounts-facebook, and accounts-twitter provide the ability to log in with common third-party authentication services.
+
+Password son condificados de forma segura utilizando \bcriptCPT, el cuál es considerado como buena práctica de acuerdo a la industria \cite{online_meteor_accounts}.
+
+%The accounts database
+
+%The account database is stored in a users database collection that is automatically created on the server. Currently this can only be stored in MongoDB, but other databases will likely be supported in the future, depending on demand. The schema of this database is shown in the main Meteor docs.
+
+
+
+
+
+% https://www.meteor.com/accounts
+% The accounts database
+
+% The account database is stored in a users database collection that is automatically created on the server. Currently this can only be stored in MongoDB, but other databases will likely be supported in the future, depending on demand. The schema of this database is shown in the main Meteor docs.
+
+% Passwords are safely encoded with  _____ bcrypt ________ according to industry best practices.
+
+
+
+
+
+\subsection{Políticas de navegación}
+%browser-policy : Configure security policies enforced by the browser
+% https://atmospherejs.com/meteor/browser-policy
+
+Nuevos \browsersINT permiten imponer políticas relacionadas con la seguridad. Estas políticas ayudan a prevenir y mitigar ataques comunes como  \crossSiteScriptingINT y  \clickjackingINT.
+%The browser-policy family of packages, part of Webapp, lets you set security-related policies that will be enforced by newer browsers. These policies help you prevent and mitigate common attacks like cross-site scripting and clickjacking.
+
+Básicamente, lo que se hace es entregar instrucciones de configuración al encabezado \httpNAME \httpHeaderXFMINT y \httpHeaderCSPINT.
+
+\httpHeaderXFMINT le indica al \browserINT cuales \websitesINT tienen permitido \renderCPT la aplicación. Solo se debe permitir a sitios de confianza \frameCPT la aplicación, por que sitios maliciosos podrián dañar a los usuarios con \clickjackingINT \cite{online_javascript_info_clickjacking_frame_options}.
+%The X-Frame-Options HTTP response header can be used to indicate whether or not a browser should be allowed to render a page in a <frame>, <iframe> or <object> . Sites can use this to avoid clickjacking attacks, by ensuring that their content is not embedded into other sites.
+
+%Details
+
+% When you add browser-policy to your app, you get default configurations for
+% the HTTP headers X-Frame-Options and Content-Security-Policy. X-Frame-Options
+% tells the browser which websites are allowed to frame your app. You should only
+% let trusted websites frame your app, because malicious sites could harm your
+% users with clickjacking
+% attacks.
+
+
+\httpHeaderCSPINT  indica al \browserINT desde donde la aplicación puede cargar contenido, lo que promueve prácticas seguras y mitiga el daño de \crossSiteScriptingINT \cite{online_html5rocks_CSP_introduction}. Las políticas de navegación pueden ser configuradas en el caso de que la opción por defecto no sea adecuada.
+
+Para obtener detalles de como configurar las diferentes opciones de políticas disponibles, consulte la documentación del \packageAS  de \meteorNAME \browserPolicyPackage.
+% Content-Security-Policy
+% tells the browser where your app can load content from, which encourages safe
+% practices and mitigates the damage of a cross-site-scripting attack.
+% browser-policy also provides functions for you to configure these policies if
+% the defaults are not suitable.
+
+
+
+\subsection{Encriptación de información sensible}
+
+% https://atmospherejs.com/meteor/oauth-encryption
+
+
+
+\subsection{Seguridad de escritura para las \collectionsname de \mongodbNAME}
+
+
+
+% ongoworks:security
+%https://atmospherejs.com/ongoworks/security
+
+
+
+%Sitio de kentucky
+%http://www.uky.edu/~dsianita/390/390wk4.html
+

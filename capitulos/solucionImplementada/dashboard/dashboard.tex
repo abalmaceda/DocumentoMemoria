@@ -91,7 +91,7 @@ Este formulario solo tienen un campo obligatorio, y corresponde a \textit{Name}.
 
 
 
-\subsubsection*{Panel \addressPanel}
+\subsubsection*{Panel \addressPanel}\label{capitulo:solucionImplementada:dashboard:subsubsection:addressPanel}
 
 Este formulario se utiliza para agragar información física de la tienda, como algún teléfono de contacto.
 
@@ -102,7 +102,7 @@ Este formulario se utiliza para agragar información física de la tienda, como 
 	\label{figure:dashboard:ecommerce:address:menu}
 \end{figure}
 
-En relación a los campos del formulario, se tienen las siguientes restricciones (\refFigura{figure:apendice:dashboard:ecommerce:address:updated_error}):
+En relación a los campos del formulario, se tienen las siguientes restricciones (\reftabla{tab:dashboard:ecommerce:form:address}):
 
 \begin{table}[H]
     \centering
@@ -172,7 +172,29 @@ Corresponde a la información básica necesaria para configurar un servicio de \
 
 \subsection{\ordersEF}
 
-	De momento solo se ha creado el package con su descripción. Además de las interfaces, pero solo es visible la interfaz que indica que no hay ninguna orden disponible.
+	Por definición, una orden corresponde a una solicitud confirmada, en esta caso particular, desde un cliente para comprar un \itemCOM o servicio bajo unos términos y condiciones específicas. Es importante mencionar que el flujo de compra no ha terminado cuando el cliente a realizado el pago. Es en este escenario en donde surge el concepto de \orderFulfillmentCOM.
+	Esta sección permite al encargado administrar las ordenes generadas por los clientes para posteriormente gestionarlas, conteniendo por lo tanto, toda la información necesaria para llevar a cabo dicho proceso.
+	Dada la complejidad de operaciones que puede alcanzar \orderFulfillmentCOM, en la aplicación, está sección se ha simplificado a lo más fundamental.
+
+	Al selección las Ordenes desde el panel de \dashboardEF, lo primero que se vera es la lista de todas las Ordenes ingresadas por los clientes que se encuentran actualmente en el sistema. En la \refFigura{figure:dashboard:orders:grid} se ve la pantalla de Ordenes.
+
+
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.6\textwidth]{figuras/dashboard/orders/grid.png}
+		\caption{Vista general de todas las ordenes ingresadas por clientes.}
+		\label{figure:dashboard:orders:grid}
+	\end{figure}
+
+	Cada una de estas ordenes estan disponibles para realiar acciones sobre ellas. Estas acciones radican principalmete en cambiar el estado actual de la orden. El detalle de la orden se ve en la \refFigura{figure:dashboard:orders:orderInfo}
+%TODO agregar mas información sobre la orden.
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.6\textwidth]{figuras/dashboard/orders/orderInfo.png}
+		\caption{Detalle de orden ingresada por un cliente.}
+		\label{figure:dashboard:orders:orderInfo}
+	\end{figure}
+
 
 \subsection{\accountsEF}
 
@@ -210,7 +232,20 @@ Corresponde a la información básica necesaria para configurar un servicio de \
 \end{table}
 
 
-\subsection{\shippingEF}
+\subsection{\shippingEF}\label{cap:solucionImplementada:section:}
+
+\shippingEF es parte del proceso realmente grande y complejo perteneciente al \workflowCPT \orderFulfillmentCOM. 
+
+Como primer paso, hay que agregar una dirección de origen, la cual es agreagada en \nameref{capitulo:solucionImplementada:dashboard:subsubsection:addressPanel}.
+
+Segundo, se deben agregar \shippingZonesCOM los cuales tendran su correspondiente \shippingRatesCOM. Existen servicios que permiten calcular en tiempo real el \shippingRatesCOM, evitando así que la tienda asuma un costo extra por un error en la estimación de la tarifa de envío. El sitio además debería ser capaz de determinar, si la dirección de destino se encuentra dentro de alguna de las \shippingZonesCOM definidas.
+
+% TODO falta agregar descripcion del proceso
+%https://docs.shopify.com/manual/shipping/initial-shipping-setup#add-a-shipping-zone
+
+Por temás de tiempo, se decidío simplificar la solución, permitiendo agregar diferentes opciones de \shippingEF que eventualmente representarían diferentes criterios de envío.
+
+%TODO Agregar mas informaciñon 
 
 \begin{figure}[H]
 	\centering
@@ -251,3 +286,16 @@ Corresponde a la información básica necesaria para configurar un servicio de \
 	\label{figure:dashboard:shipping:form_shipping_update}
 \end{figure}
 
+
+\subsubsection{Tarifas de \shippingEF y carros abadonados}
+
+Aunque no es un tema que involucre a la finalidad de esta memoeria, es importante mencionar la importancia que tiene el factor \shippingEF dentro del abandono del carro de compra.
+El desafio real que aparece cuando se desea abordar la estrategía de \shippingEF, es determinar la solución que lo mínimo posible los margenes, pero que aún asi siga siendo atractivo para el cliente.
+Y esto es algo en lo que se va querer esta en lo correcto. Estudios demuestran que  tanto \shippingEF como manejar son la principal razón del abandano de carros de compra (\refFigura{figure:dashboard:shipping:key_factor_shopping_cart_abandonment})\cite{online_forrester_consulting_smarter_stratefie_free_shipping}.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{figuras/dashboard/shipping/key_factor_shopping_cart_abandonment.png}
+	\caption{\shippingEF es un factor clave hacia el abandono de carros de compra \cite{online_forrester_consulting_smarter_stratefie_free_shipping}.}
+	\label{figure:dashboard:shipping:key_factor_shopping_cart_abandonment}
+\end{figure}

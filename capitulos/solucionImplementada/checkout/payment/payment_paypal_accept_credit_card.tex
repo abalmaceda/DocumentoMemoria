@@ -1,0 +1,33 @@
+%!TEX root = ../../../../memoria.tex
+
+\medskip
+\begin{lstlisting}[caption= Estructura de un \itemcollection, label=source:javascript:checkout:payment:paypal_accept_payments]
+{	
+	"intent": "sale",
+	"payer":{
+		"payment_method": "credit_card",
+		"funding_instruments": [
+			{
+				"credit_card": {
+					"number": "5500005555555559",
+					"type": "mastercard",
+					"expire_month": 12,
+					"expire_year": 2018,
+					"cvv2": 111,
+					"first_name": "Betsy",
+					"last_name": "Buyer"
+				}
+			}
+		]
+	},
+	"transactions": [
+		{
+			"amount": {
+				"total": "7.47",
+				"currency": "USD"
+			},
+			"description": "This is the payment transaction description."
+		}
+	]
+}
+\end{lstlisting}

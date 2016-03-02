@@ -61,7 +61,7 @@ Las restricciones del formulario de autenticación pueden observarse en la \reft
 			& 	& - El \email debe estar en la base de datos. \\ \hline
 		\multirow{1}{*}{\textit{Password}} 		&  \multirow{1}{*}{\checkmark} & - Debo corresponder al \email. \\ \hline
 	\end{tabular}
- 	\caption{Resumen restrincciones para formulario creación de cuentas de usuario.}
+ 	\caption{Resumen restricciones para formulario de autenticación de usuarios.}
     \label{tab:architecture:accounts:signin:form}
 \end{table}
 
@@ -87,7 +87,7 @@ El procedimiento es muy sencillo; se envía el \email usando el formulario de re
 	\label{figure:architecture:accounts:reset:form}
 \end{figure}
 
-Las restricciones del formulario de recuperación de contraseña se ven en la \reftabla{tab:architecture:accounts:signin:form}.
+Las restricciones del formulario de recuperación de contraseña se ven en la \reftabla{tab:architecture:accounts:recovery:form}.
 
 \begin{table}[H]
     \centering
@@ -98,7 +98,7 @@ Las restricciones del formulario de recuperación de contraseña se ven en la \r
 			& 	& - El \email debe estar en la base de datos. \\ \hline
 	\end{tabular}
  	\caption{Resumen restrincciones para recuperación de contraseña.}
-    \label{tab:architecture:accounts:signin:form}
+    \label{tab:architecture:accounts:recovery:form}
 \end{table}
 
 \subsection{\loginUpperCPT  con servicio de autenticación \thirdParty}

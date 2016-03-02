@@ -22,6 +22,7 @@
 %Modificar el caption
 \renewcommand{\lstlistingname}	{Código}
 \newcommand{\refsource}[1]		{\lstlistingname\xspace\ref{#1}}
+\newcommand{\refCodigo}[1]		{\refsource{#1}}
 
 \newcommand{\reftabla}[1]		{\tablename\xspace\ref{#1}}
 
@@ -164,6 +165,10 @@
 \newcommand{\googleCheckout}		{\nWrapper{Google Checkout}}
 \newcommand{\paypalNAME}			{\nWrapper{PayPal}}
 \newcommand{\paypalCheckout}		{\nWrapper{PayPal Express}}
+\newcommand{\paypalPayFlowNAME}		{\nWrapper{PayPal PayFlow}}
+\newcommand{\PPPaymentProNAME}		{\nWrapper{PayPal Payment Pro}}
+\newcommand{\paypalCreditNAME}		{\nWrapper{PayPal Credit}}
+\newcommand{\shopifyNAME}			{\nWrapper{shopify}}
 \newcommand{\amazonCheckout}		{\nWrapper{Amazon Checkout}}
 \newcommand{\amazonPayments}		{\nWrapper{Amazon Payments}}
 \newcommand{\amazonEcdosNAME}		{\nWrapper{Amazon's EC2}}
@@ -321,6 +326,7 @@
 \newcommand{\bunyanPackage}				{\nWrapper{Bunyan}\cite{online_atmospherejs_ongoworks_bunyan}}
 \newcommand{\velocityCorePackage}		{\nWrapper{Velocity}\cite{online_atmospherejs_velocity_core}}
 \newcommand{\dThreePackage}				{\nWrapper{D3.js}\cite{online_atmospherejs_d3js_d3}}
+\newcommand{\alanningRolesPackage}		{\nWrapper{Roles}\cite{online_atmospherejs_alanning_role}}
 \newcommand{\undStringLatestPackage}	{\nWrapper{undersore-string-latest}\cite{online_atmospherejs_mrt_underscoreStringLatest}}
 
 \newcommand{\lessPackage}				{\nWrapper{LESS}\cite{online_atmospherejs_meteor_less}}
@@ -478,8 +484,8 @@
 \newcommand{\wirelinePC}				{\bWrapper{wireline}}
 \newcommand{\handheldPC}				{\bWrapper{handheld}}
 %TODO: Agregar definicion
-\newcommand{\fixturesPC}				{\bWrapper{test fixtures}}
-\newcommand{\testFixturePC}				{\bWrapper{test fixture}}
+\newcommand{\fixturesPC}				{\gWrapper{test_fixtures}}
+\newcommand{\testFixturePC}				{\gWrapper{test_fixture}}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%      ESPAÑOL 		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -615,11 +621,15 @@
 \newcommand{\authenticationINT}			{\bWrapper{authentication}}
 \newcommand{\comToComINT}				{\bWrapper{computer-to-computer}}
 \newcommand{\clickjackingINT}			{\bothWrapperWS{clickjacking}}
-\newcommand{\crossSiteINT}				{\bothWrapperWS{cross_site}}
+\newcommand{\crossSiteScriptingINT}		{\bothWrapperWS{cross_site_scripting}}
 \newcommand{\oauthLoginINT}				{\bWrapper{OAuth}}
 \newcommand{\autoFocoINT}				{\bWrapper{auto-foco}}
 \newcommand{\placeholderINT}			{\bWrapper{place-holder}}
 \newcommand{\placeholdersINT}			{\bWrapper{place-holders}}
+
+\newcommand{\httpHeaderXFMINT}			{\nWrapper{X-Frame-Options}}
+\newcommand{\httpHeaderCSPINT}			{\nWrapper{Content-Security-Policy}}
+
 
 
 
@@ -692,6 +702,7 @@
 \newcommand{\marketing}					{\bWrapper{marketing}}
 \newcommand{\marketplace}				{\bWrapper{Marketplace}}
 
+\newcommand{\ShippingCOM}				{\bWrapper{Shipping}}
 \newcommand{\shipping}					{\bWrapper{shipping}}
 \newcommand{\stock}						{\bWrapper{stock}}
 \newcommand{\membership}				{\bWrapper{membership}}
@@ -727,6 +738,15 @@
 %TODO: agregar descripcion
 \newcommand{\revenueCOM}				{\bWrapper{revenue commerce}}
 \newcommand{\conversionRateCOM}			{\bothWrapper{conversion_rate}}
+\newcommand{\orderFulfillmentCOM}		{\bothWrapper{order_fulfillment}}
+\newcommand{\shippingZonesCOM}			{\bothWrapper{shipping_zones}}
+\newcommand{\shippingRatesCOM}			{\bothWrapper{shipping_rates}}
+\newcommand{\merchantAccountCOM}		{\bothWrapper{merchant_account}}
+\newcommand{\paymentGatewayCOM}			{\bothWrapper{payment_gateway}}
+\newcommand{\thirdPartyPaymentCOM}		{\bothWrapper{third_party_payment}}
+\newcommand{\epsSiglasCOM}				{\bothWrapper{eps_siglas}}
+\newcommand{\cvvTWOCOM}					{\bothWrapper{siglas_cvv2}}
+\newcommand{\cvvCOM}					{\bothWrapper{siglas_cvv}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%  CONCEPTOS DE ARQUITECTURA (AS) %%%%%%%%%%%%%%%%%%%%%%
@@ -1034,6 +1054,7 @@
 \newcommand{\nearRealTimeReplicationDB}	{\bWrapper{near-real-time replications}}
 \newcommand{\replicatedDB}				{\bWrapper{replicated}}
 \newcommand{\hostingDB}					{\bWrapper{Hosting}}
+\newcommand{\hostDB}					{\bWrapper{host}}
 \newcommand{\replicatedSlaveDB}			{\bWrapper{replicated slave}}
 \newcommand{\documentsDB}				{\bWrapper{documents}}
 \newcommand{\documentDB}				{\bWrapper{document}}
@@ -1144,6 +1165,7 @@
 \newcommand{\preFabCPT}				{\bWrapper{pre-fab}}
 \newcommand{\rendered}				{\bWrapper{rendered}}
 \newcommand{\renderCPT}				{\bWrapper{render}}
+\newcommand{\frameCPT}				{\bWrapper{frame}}
 \newcommand{\schedules}				{\bWrapper{schedules}}
 \newcommand{\reactive}				{\bWrapper{reactive}}
 \newcommand{\reactivity}			{\bWrapper{reactivity}}
@@ -1244,6 +1266,8 @@
 \newcommand{\loginCPT}				{\bWrapper{login}}
 \newcommand{\loginUpperCPT}			{\bWrapper{Log in}}
 \newcommand{\logoutCPT}				{\bWrapper{logout}}
+\newcommand{\inputCPT}				{\bWrapper{input}}
+\newcommand{\outputCPT}				{\bWrapper{output}}
 
 
 \newcommand{\graphTheory}			{\bWrapper{Graph Theory}\cite{book_introduction_graph_theory}}
@@ -1271,6 +1295,7 @@
 \newcommand{\Community}					{\bWrapper{Community}}
 \newcommand{\Edition}					{\bWrapper{Edition}}
 \newcommand{\hosted}					{\bWrapper{hosted}}
+\newcommand{\hostCPT}					{\bWrapper{host}}
 \newcommand{\solution}					{\bWrapper{solution}}
 \newcommand{\go}						{\bWrapper{Go}}
 \newcommand{\branched}					{\bWrapper{branched}}
@@ -1317,7 +1342,8 @@
 \newcommand{\hackathonCPT}				{\bWrapper{hackathon}}
 \newcommand{\costEffectiveCPT}			{\bWrapper{Cost effective}}
 \newcommand{\supplyChainsCPT}			{\bWrapper{Supply Chains}}
-\newcommand{\rankingCPT}				{\bWrapper{Ranking}}
+\newcommand{\rankingCPT}				{\bWrapper{ranking}}
+\newcommand{\RankingCPT}				{\bWrapper{Ranking}}
 \newcommand{\geoSpatialCPT}				{\bWrapper{Geospatial}}
 \newcommand{\geoPositionCPT}			{\bWrapper{geo-position}}
 \newcommand{\teamCPT}					{\bWrapper{Team}}
@@ -1352,6 +1378,7 @@
 
 
 
+\newcommand{\AnalyticsCPT}				{\bWrapper{analytics}}
 \newcommand{\analytics}				{\bWrapper{analytics}}
 \newcommand{\analytic}				{\bWrapper{analytic}}
 \newcommand{\onepage}				{\bWrapper{onepage}}
@@ -1361,6 +1388,7 @@
 
 \newcommand{\dbmangesystem}			{\bWrapper{Data Base Management System}}
 \newcommand{\backandforth}			{\bWrapper{back and forth}}
+\newcommand{\FeedbackCPT}				{\bWrapper{Feedback}}
 \newcommand{\feedback}				{\bWrapper{feedback}}
 \newcommand{\selfcontained}			{\bWrapper{self-contained}}
 \newcommand{\selfServiceCPT}		{\bWrapper{self-service}}
@@ -1386,6 +1414,11 @@
 \newcommand{\mockObjectCPT}			{\bWrapper{mock object}}
 \newcommand{\mockObjectsCPT}		{\bWrapper{mock objects}}
 \newcommand{\allowdenyCPT}			{\bWrapper{allow/deny}}
+\newcommand{\securityDomainCPT}		{\bWrapper{security domain}}
+\newcommand{\attackSurfaceCPT}		{\bWrapper{attack surface}}
+\newcommand{\bcriptCPT}				{\bWrapper{bcript}}
+
+
 
 
 
@@ -1399,6 +1432,7 @@
 \newcommand{\dashboardEF}					{\bWrapper{Dashboard}}
 \newcommand{\ecomFrameworkCoreEF}			{\bWrapper{E-Commerce Framework Core}}
 \newcommand{\shippingEF}					{\bWrapper{Shipping}}
+\newcommand{\checkoutEF}					{\bWrapper{Checkout}}
 \newcommand{\ordersEF}						{\bWrapper{Orders}}
 \newcommand{\accountsEF}					{\bWrapper{Accounts}}
 
