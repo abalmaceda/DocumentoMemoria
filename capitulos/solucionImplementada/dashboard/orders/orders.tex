@@ -1,0 +1,25 @@
+%!TEX root = ../../../../memoria.tex
+\subsection{\ordersEF}
+
+	Por definición, una orden corresponde a una solicitud confirmada, en esta caso particular, desde un cliente para comprar un \itemCOM o servicio bajo unos términos y condiciones específicas. Es importante mencionar que el flujo de compra no ha terminado cuando el cliente a realizado el pago. Es en este escenario en donde surge el concepto de \orderFulfillmentCOM.
+	Esta sección permite al encargado administrar las ordenes generadas por los clientes para posteriormente gestionarlas, conteniendo por lo tanto, toda la información necesaria para llevar a cabo dicho proceso.
+	Dada la complejidad de operaciones que puede alcanzar \orderFulfillmentCOM, en la aplicación, está sección se ha simplificado a lo más fundamental.
+
+	Al selección las Ordenes desde el panel de \dashboardEF, lo primero que se vera es la lista de todas las Ordenes ingresadas por los clientes que se encuentran actualmente en el sistema. En la \refFigura{figure:dashboard:orders:grid} se ve la pantalla de Ordenes.
+
+
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.6\textwidth]{figuras/dashboard/orders/grid.png}
+		\caption{Vista general de todas las ordenes ingresadas por clientes.}
+		\label{figure:dashboard:orders:grid}
+	\end{figure}
+
+	Cada una de estas ordenes estan disponibles para realiar acciones sobre ellas. Estas acciones radican principalmete en cambiar el estado actual de la orden. El detalle de la orden se ve en la \refFigura{figure:dashboard:orders:orderInfo}
+%TODO agregar mas información sobre la orden.
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.6\textwidth]{figuras/dashboard/orders/orderInfo.png}
+		\caption{Detalle de orden ingresada por un cliente.}
+		\label{figure:dashboard:orders:orderInfo}
+	\end{figure}
