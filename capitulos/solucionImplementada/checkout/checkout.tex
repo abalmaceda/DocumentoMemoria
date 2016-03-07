@@ -1,15 +1,41 @@
 %!TEX root = ../../../memoria.tex
 \section{\checkoutEF}\label{chapter:solucionimplementada:section:checkout}
 
-	Mientras sea posible, hay que limitar el proceso de \checkoutEF a una sola página. En el caso de separar el proceso en algunas páginas, se debe incluir una barra de proceso para mostrar cuanto falta para terminar \cite{online_official_imediaconnection_best_practices_shopping_cart}
+	Una de las peores violaciones de usabilidad para un \websiteINT \ecommerceCOM corresponde a un proceso de \checkoutEF que no sea lineal. \websiteINT que no tengan un proceso de \checkoutEF lineal dejan a muchos de los usuarios confusos e intimidados. Al momento de realizar este estudio, tanto \walmartNAME como \zapposNAME tenian un proceso \checkoutEF no lieal \cite{online_official_smashingmagazine_fundamental_guidelines_checkout_design}.
+	% One of the worst usability violations that we discovered in our testing was non-linear checkout processes. Websites with a non-linear checkout process left several of our test subjects confused and intimidated. At the time of testing, both Walmart and Zappos had a non-linear checkout process.
+
+	% The typical way to “accidentally” end up with a non-linear checkout process is to create steps within steps. This happens, for example, when the customer has to set a “Preferred shipping address” (Walmart’s violation) or “Create an account” (Zappos’ violation) on a separate page, and is then redirected to a previous checkout step upon completion.
+	% Below, you can see Walmart’s checkout flow in thumbnails (click image for larger view). Notice that it’s non-linear because the “Preferred shipping address” sub-step directs the user to a previous step:
+
+	Afortunadamente, hacer el proceso completamente lineal no es dificil. En el caso de necesitar por ejemplo, un sub-paso tal como \textit{creación de una cuenta}, esta nunca debe redirigir a un paso previo en el proceso de \checkoutEF, en lugar de eso, debe dirigir al cliente al siguiente paso del proceso de \checkoutEF\cite{online_official_smashingmagazine_fundamental_guidelines_checkout_design}. 
+	%Luckily, making the process completely linear is easy. In this case, a sub-step such as “Account creation” should never redirect to a previous step in the checkout process, but instead direct the customer to the next step in the checkout process.
+
+	Esto es crítico por que el modelo mental de la mayoria de los compradores dicta que el proceso de \checkoutEF debería ser lineal. Al ver la misma página dos veces, la mayoria de los clientes concluye que el sitio tienen un error, porque esto ocurre cuando hay errores de validación. \cite{online_official_smashingmagazine_fundamental_guidelines_checkout_design}. 
+	%This is critical because the mental model of most customers dictates that a checkout process should be linear. Upon seeing the same page twice, most customers would conclude that the website has an error, because this is what happens with validation errors.
+	%As one test subject said, “This looks suspiciously like the page I was on before. Is there something I didn’t do correctly?”
+
+	Para este \frameworkPC se ha implementado un proceso de \checkoutEF lineal el cual tiene los pasos que se aprecian en la \refFigura{figure:checkout:steps}.
+
+	% \begin{figure}[H]
+	% 	\centering
+	% 	\includegraphics[width=0.7\textwidth]{figuras/shipping/global_status.png}
+	% 	\caption{Estado actual del \workflowCPT del \shippingEF. En este caso se encuentra en la selección de la dirección.}
+	% 	\label{figure:checkout:global_status}
+	% \end{figure}
+
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[width=0.8\textwidth]{figuras/shipping/steps.png}
+		\caption{Detalle de todos los pasos del \workflowCPT \shippingEF.}
+		\label{figure:checkout:steps}
+	\end{figure}
+
+	Otro detalle importante a considerar es que mientras sea posible, hay que limitar el proceso de \checkoutEF a una sola página. En el caso de separar el proceso en algunas páginas, se debe incluir una barra de proceso para mostrar cuanto falta para terminar \cite{online_official_imediaconnection_best_practices_shopping_cart}.
 	% Try to keep it to one page
 	% If at all possible, limit the checkout process to a single page. If you must spread it out across a few pages, include a progress bar to show people how far they have left to go.
 	% Read more at http://www.imediaconnection.com/content/36794.asp#6qlTEqOcCeTePmFQ.99
 
-% TODO obserar esto para conectar bien 
-	El proceso consiste en 6 pasos que deben cumplirse para que se cree la orden.
-
-	En la parte superior de esta vista( \refFigura{figure:checkout:global_status}), se puede ver en todo momento el estado actual del \workflowCPT del proceso \checkoutEF.
+	Afortunadamente, ambas restricciones son una manera para lograr la otra. Por lo tanto se desarrollo el proceso incluyendo a ambas. Esto se observa en la \refFigura{figure:checkout:global_status}.
 
 	\begin{figure}[H]
 		\centering
@@ -18,58 +44,19 @@
 		\label{figure:checkout:global_status}
 	\end{figure}
 
-	Adicionalmente a eso, la vista de \shippingEF muestra en detalle todos los pasos (\refFigura{figure:checkout:steps}). Cada uno de estos pasos se define como:
+	Cada uno de los pasos que aparecen en la \refFigura{figure:checkout:steps} son descritos a continuación.
 
-	\begin{description}
-		\item[Account] \hfill \\
-			Corresponde al proceso de autenticarse en la plataforma.
-		\item[Address Details] \hfill \\
-			Paso para la selección de una de las direcciones configuradas. Si no se tiene ningúna dirección agregada, el sistema muestra inmediatamente el formulario para la creación de una nueva dirección (\refFigura{figure:checkout:form_address}).
-		\item[Shipping Options] \hfill \\
-			Permite seleccionar uno de los métodos de envío disponibles. Estos son configurados por el administrador 
-		\item[Review] \hfill \\
-			Muestra un resumen de la información agregada al carro de compra. 
-		\item[Complete] \hfill \\
-			Paso de selección de método de pago.
-	\end{description}
+	% Paso Cuenta de usuario
+	\input{capitulos/solucionImplementada/checkout/account/account.tex}
 
+	% Paso selección shipping & billing address
+	\input{capitulos/solucionImplementada/checkout/address/address.tex}
 
-	\begin{figure}[H]
-		\centering
-		\includegraphics[width=0.8\textwidth]{figuras/shipping/steps.png}
-		\caption{Detalle de todos los pasos del \workflowCPT \shippingEF.}
-		\label{figure:checkout:steps}
-	\end{figure}
+	% Paso opciones de envío
+	\input{capitulos/solucionImplementada/checkout/shipping/shipping.tex}
 
-	%TODO: modificar este texto despues
-	En la \refFigura{figure:checkout:steps} se observa que los pasos 3 y 5 tienen un mensaje advirtiendo que no hay métodos de \shippingEF y métodos de pago configurados. Esta configuración debe ser realizada por el o los administradores de la tienda. Pero actualmente no están disponibles las interfaces para realizar estas acciones.
+	% Paso resumen de la compra
+	\input{capitulos/solucionImplementada/checkout/review/review.tex}
 
-	\begin{figure}[H]
-		\centering
-		\includegraphics[width=0.8\textwidth]{figuras/shipping/step_address.png}
-		\caption{Seleccionar dirección en proceso de \shippingEF.}
-		\label{figure:checkout:step_address}
-	\end{figure}
-
-	\begin{figure}[H]
-		\centering
-		\includegraphics[width=0.6\textwidth]{figuras/shipping/form_address.png}
-		\caption{Despliegue automático del formulario de direcciones cuando no se tienen ninguna dirección agregada.}
-		\label{figure:checkout:form_address}
-	\end{figure}
-
-
-	En el caso de tener direcciones configuradas, pero se desee hacer el envío a una nuseva dirección, es posible crearla apretando el botón \textit{Add Address} y un formulario se desplegará (\refFigura{figure:checkout:form_add_address}). Este formulario es equivalente al de la \refFigura{figure:checkout:form_address}, pero este incluye la opción de cancelar la creación de la dirección.
-
-	\begin{figure}[H]
-		\centering
-		\includegraphics[width=0.6\textwidth]{figuras/shipping/form_add_address.png}
-		\caption{Formulario de creación de una nueva dirección. Se diferencia del formulario de la \refFigura{figure:checkout:form_address} en que este incluye el botón Cancel.}
-		\label{figure:checkout:form_add_address}
-	\end{figure}
-
-
-
-
-	% caracteristicas actuales en cuentas de usuarios
+	% Paso add paymant to complete order
 	\input{capitulos/solucionImplementada/checkout/payment/payment.tex}
