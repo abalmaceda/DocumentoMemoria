@@ -1,61 +1,39 @@
 %!TEX root = ../../../../memoria.tex
-\section{\paymentsCOM}\label{chapter:solucionimplementada:section:payment}
-
-En establecimientos tradicionales \brickandmortar , un cliente ve un producto, lo examina, y entonces paga utlizando dinero, cheques, o tarjetas de crédito.
-% In traditional brick-and-mortar establishments, a customer sees a product, examines
-% it, and then pays for it by cash, check, or credit card (see Figure 6-1).
-
-En el mundo \ecommerceCOM, en la mayoría de los casos un cliente no ve fiscamente el producto al momento de realizar la transacción, y el método de pao es realizado electrónicamente. Por lo tanto, temas de confianza y aceptación juegan un rol más importante en el mundo \ecommerceCOM, que en el mundo de negocios tradicionales en lo que a sistemas de pago se refiere \cite{bidgoli2002electronic}.
-% In the e-commerce world, in most cases the customer does not physically see
-% the actual product at the time of transaction, and the method of payment is performed
-% electronically. Therefore, issues of trust and acceptance play a more important
-% role in the e-commerce world than in traditional businesses as far as payment
-% systems are concerned.
-
-Los sistemas de pago electrónico (\epsSiglasCOM, siglas en ingles) utilizan \hardwarePC y \softwarePC que permiten a los clientes pagar por productos y servicios en linea. Aunque estos sistemas podrían ser considerados inmaduros por los más críticos, no puede negarse el constante avance que viven periodicamente. El principal objetivo de un \epsSiglasCOM son incrementar eficiencia, mejorar seguridad, y lograr una mayor comodidad y facilidad de uso para los clientes \cite{bidgoli2002electronic}.
-% EPSs utilize integrated hardware and software systems that enable a customer
-% to pay for the goods and services online. Although these systems are in their infancy,
-% some significant progress has been made. The main objectives of EPS are
-% to increase efficiency, improve security, and enhance customer convenience and
-% ease of use. As shown throughout this chapter, there are several methods and
-% instruments that can be used to enable EPS implementation (see Figure
-% 6-2.)
+\subsection{\paymentsCOM}\label{chapter:solucionimplementada:section:payment}
+	
+	Como se mencionó en la sección \ref{cap:solucionImplementada:section:dashboard:subsection:payment} \nameref{cap:solucionImplementada:section:dashboard:subsection:payment}, es relevante considerar varios métodos de pagos, sin embargo en el contexto de esta memoria solo se ha integrado a \PPPaymentProNAME
 
 
+	\subsubsection{\PPPaymentProNAME}
+		Anteriormente se habia indicado que este método permite mantener a los clientes dentro del \websiteINT durante el proceso completo de \paymentsCOM y \checkoutCOM. Básicamente se a implementado la aceptación de pago de tarjetas de crédito a través de un formlurio dentro del \websiteINT. La información necesaria para la transacción se ve en \refCodigo{source:javascript:checkout:payment:paypal_accept_payments}
 
-\subsection{\paypalNAME}
+		% JSON con la información necesaria para aceptar el pago con tarjetas de crédito
+		\input{capitulos/solucionImplementada/checkout/payment/payment_paypal_accept_credit_card.tex}
 
-\paypalNAME es un servicio global que mueve los montos de pago desde una tarjeta de crédito hacia el vendedor sin compartir la información financiera. \paypalNAME ofrece una variadad de productos y soluciones para aceptar pagos. De estos, se han elegido dos los cuales han sido considerados adecuados para los requerimientos.
-%PayPal is a global service that moves the payment amount from your credit card to the merchant without sharing your financial information. %PayPal offers a variety of products and solutions for accepting payments. You can choose the solution that is best for your requirements, whether your goal is to get up and running as quickly as possible or to develop a fully customized payment experience.
+		De acá se desprende la información de la tarjeta
 
-\subsubsection{\PPPaymentProNAME}
-\PPPaymentProNAME es una solución customizable que permite a los vendedores mantener a los compradores dentro de su sitio web durante el proceso completo de \paymentsCOM y \checkoutCOM. Los vendedores pueden mantener sus propios sitios de \checkoutCOM personalizados y enviar transacciones a \paypalNAME, o es posible también tener un \hostCPT de \paypalNAME que tenga páginas de \checkoutCOM e incluso manejar la seguridad para las ventas y autorización. \PPPaymentProNAME puede aceptar pagos de \paypalNAME y  \paypalCreditNAME, al igual que con tarjetas de crédito de pago \cite{online_paypal_developer_acceptpayments}.
-% PayPal Payments Pro is a customizable solution that enables merchants to keep buyers on their website during the entire checkout and payment process. Merchants can host their own customized checkout pages and send transactions to PayPal, or they can have PayPal host the checkout pages and also manage security for sales and authorizations. PayPal Payments Pro can accept Paypal and PayPal credit payments, as well as credit and debit card payments. PayPal Payments Pro also includes an optimized mobile checkout experience. For details, see PayPal Payments Pro.
+		\begin{itemize}
+			\item Número.
+			\item Tipo de Tarjeta.
+			\item Mes en que expira la tarjeta.
+			\item Año en que expira la tarjeta.
+			\item \cvvTWOCOM.
+			\item Nombre.
+			\item Apellido.
+		\end{itemize} 
 
-Para esta situación particular, se a implementado la aceptación de pago de tarjetas de crédito. La información necesaria para la transacción se ve en \refCodigo{source:javascript:checkout:payment:paypal_accept_payments}
+		Toda esta información debe ser entregada por el cliente, con el fin de gestionar el pago. Sin embargo, se sabe que el tipo de tajeta puede ser determinado a partir de los 6 primeros dígitos del número de tarjeta \cite{online_investopedia_meaning_IIN}. 
 
-% JSON con la información necesaria para aceptar el pago con tarjetas de crédito
-\input{capitulos/solucionImplementada/checkout/payment/payment_paypal_accept_credit_card.tex}
+		Los campos de expiración de tarjeta de crédito pueden ser confusos para decifrar si no son excritos exactamente como estan en las tarjetas de crédito. Algunos \websitesINT usan nombres de meses, mientras otros usan una combinación de \textit{nombre-número}, mientras otros usan solo números. La manera correcta de dar los campos de formato es simplemente poner los campos de la misma manera en que aparecen en la tarjeta de crédito (solamente números). Esto minimiza la confusión y mala interpretación por que el usuarios puede fácilmente verificar  los campos contra los de la tarjeta de crédito \cite{online_official_smashingmagazine_fundamental_guidelines_checkout_design}.
 
-De acá se desprende la información de la tarjeta
+		Finalmente, se desarrolla el formulario de la \refFigura{figure:checkout:payment:paypal_payflow:form}, para que el cliente pueda efectuar el pago del producto y/o servicio.
 
-\begin{itemize}
-	\item Número.
-	\item Tipo de Tarjeta.
-	\item Mes en que expira la tarjeta.
-	\item Año en que expira la tarjeta.
-	\item \cvvTWOCOM.
-	\item Nombre.
-	\item Apellido.
-\end{itemize} 
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.6\textwidth]{figuras/checkout/payment/paypal_payflow/form.png}
+			\caption{Formulario de la tarjeta de crédito para realizar el pago utilizando \PPPaymentProNAME.}
+			\label{figure:checkout:payment:paypal_payflow:form}
+		\end{figure}
 
-Toda esta información debe ser entregada por el cliente, con el fin de gestionar el pago. Sin embargo, se sabe que el tipo de tajeta puede ser determinado a partir de los 6 primeros dígitos del número de tarjeta \cite{online_investopedia_meaning_IIN}. 
-
-Los campos de expiración de tarjeta de crédito pueden ser confusos para decifrar si no son excritos exactamente como estan en las tarjetas de crédito. Algunos \websitesINT usan nombres de meses, mientras otros usan una combinación de \textit{nombre-número}, mientras otros usan solo números. La manera correcta de dar los campos de formato es simplemente poner los campos de la misma manera en que aparecen en la tarjeta de crédito (solamente números). Esto minimiza la confusión y mala interpretación por que el usuarios puede fácilmente verificar  los campos contra los de la tarjeta de crédito \cite{online_official_smashingmagazine_fundamental_guidelines_checkout_design}.
-
-
-
-Para le uso de esta \apiAS se agregó un formulario 
-
-
-El sistema de pago ha sido pensado para permiter el uso de nuevos métodos de pago en el futuro.
+		%TODO: agregar referencia a la interfaz de orde de compra.
+		Una vez finalizado este proceso, se creara una orden de compra la cual podra ser consultado en la interfaz de ordenes.

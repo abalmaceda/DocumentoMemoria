@@ -25,13 +25,12 @@ A continuación se describen las funcionalidades de cada uno de los \packagesAS 
 	% root of the the initial tree, level 1
 	\node[root] {\eframeworkAF}
 	% The first level, as children of the initial tree
-	  child {node[level 2] (c1) {\eframeworkCorePCKG}}
-	  child {node[level 2] (c2) {\eframeworkHelloWorldPCKG}}
-	  %child {node[level 2] (c3) {\rtcomSearchPCKG}}
-	  %child {node[level 2] (c4) {rtcom-shipping}}
-	 % child {node[level 2] (c5) {rtcom-paypal}}
-	  child {node[level 2] (c6) {\eframeworkGoogleanalPCKG}};
-
+		child {node[level 2] (c1) {\eframeworkCorePCKG}}
+		%child {node[level 2] (c2) {\eframeworkHelloWorldPCKG}}
+		child {node[level 2] (c3) {\eframeworkAccountsPCKG}}
+		%child {node[level 2] (c4) {rtcom-shipping}}
+		child {node[level 2] (c5) {\eframeworkPaypalPCKG}};
+		%child {node[level 2] (c6) {\eframeworkGoogleanalPCKG}};
 	\end{tikzpicture}
 	\caption{\architectureCPT actual de la solución.}
 	\label{cap:avances:current_architecture}
@@ -44,7 +43,16 @@ A continuación se describen las funcionalidades de cada uno de los \packagesAS 
 		\item
 			\textbf{\eframeworkAccountsPCKG} es el \moduleAS para el manejo de cuentas.
 		\item
-			\textbf{\eframeworkHelloWorldPCKG} es un \moduleAS para prueba de conceptos.
+			\textbf{\eframeworkCoreThemePCKG}
+		\item
+			\textbf{\eframeworkBootstrapThemePCKG}
+		\item
+			\textbf{\eframeworkShippingPCKG}
+		\item
+			\textbf{\eframeworkPaypalPCKG}
+		
+		% \item
+		% 	\textbf{\eframeworkHelloWorldPCKG} es un \moduleAS para prueba de conceptos.
 	\end{itemize}
 
 
