@@ -1,26 +1,14 @@
 %!TEX root = ../../../memoria.tex
-\section{\shippingEF}\label{chapter:solucionimplementada:section:orders}
+\section{\ordersEF}\label{chapter:solucionimplementada:section:orders}
+%  FIXME : Nueva información agregada despues de revision de mi papa
+Muestra información relevante relacionada con cada una de las compras realizadas en el sitio por el cliente autenticado (ver \refFigura{figure:orders:client:list_orders}). Los detalles de esta interfaz fueron inspirados en la página de \ordersEF del \websiteINT \dealextremeNAME ( ver \refFigura{figure:apendice:orders:example:dx_list_orders}).  
 
-Muestra información relevante relacioanda con la compra.
 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.1\textwidth]{figuras/orders/client/list_orders.jpg}
+	\caption{Lista de las \ordersEF que tiene un cliente.}
+	\label{figure:orders:client:list_orders}
+\end{figure}
 
-
-\begin{table}[H]
-    \centering
-	\begin{tabular}{ |l|c||l| }
-		\hline Campo & Requerido & Restricción \\ \hline
-		\multirow{1}{*}{\textit{Country}} 			&  \checkmark 	&  Debe ser uno de las alternativas\\ \hline
-		\multirow{1}{*}{\textit{Full Name}} 		&  \checkmark	& \\ \hline
-		\multirow{1}{*}{\textit{Address 1}} 		&  \checkmark	& \\ \hline
-		\multirow{1}{*}{\textit{Address 2}} 		&  				& \\ \hline
-		\multirow{1}{*}{\textit{Postal}} 			&  \checkmark	& \\ \hline
-		\multirow{1}{*}{\textit{City}} 				&  \checkmark	& \\ \hline
-		\multirow{1}{*}{\textit{Region}} 			&  \checkmark	& Para ciertos paises, existen alternativas definidas.\\ \hline
-		\multirow{1}{*}{\textit{Phone}} 			&  \checkmark	& \\ \hline
-		\multirow{1}{*}{\textit{Shipping address}} 	&  \checkmark	& Boolean \\ \hline
-		\multirow{1}{*}{\textit{billing address}} 	&  \checkmark	& Boolean \\ \hline
-		\multirow{1}{*}{\textit{comercial address}} &  \checkmark	& Boolean \\ \hline
-	\end{tabular}
- 	\caption{Resumen restrincciones información para libreta de direcciones.}
-    \label{tab:order:view:status}
-\end{table}
+Es importante recordar que las \ordersEF desplegadas corresponden a las del usuario autenticado.
