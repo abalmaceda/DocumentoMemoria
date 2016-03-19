@@ -5,7 +5,7 @@ A continuación se discutirán las razones para considerar el desarrollo de una 
 
 %TODO Hablar de arquitectura de proyecto para luego diferenciar las diferentes tecnologias y explicar cual es la mas adecuada en cada caso.
 
-\section{\dataBaseDB}
+\section{\dataBasesDB}
 
 Bases de datos relacionales se encuentran en la mayoría de las organizaciones desde hace muchísimo tiempo, y por buenas razones. Las bases de datos relacionales soportan las aplicaciones del pasado que cumplen con las necesidades de negocio actuales. Estas son apoyadas por un extenso ecosistema de herramientas; y hay una gran cantidad de mano de obra calificada para implementar y mantener estos sistemas.
 %Relational databases have a long-standing position in most
@@ -15,7 +15,7 @@ Bases de datos relacionales se encuentran en la mayoría de las organizaciones d
 %tools; and there is a large pool of labor qualified to
 %implement and maintain these systems.
 
-Pero las compañías están cada vez más considerando la opción de alternativas para la infraestructura relacional heredada. En algunos casos la motivación es técnica, tal como la necesidad de escalar o actuar más allá de las capacidades de sus sistemas actuales. Mientras que en otros casos las compañías están motivadas por el deseo de identificar alternativas viables a \softwaresPC propietario de alto costo. Una tercera motivación es la agilidad y velocidad del desarrollo, dado que las compañías ansían adaptarse al mercado mas rápido y adoptar metodologías de desarrollo ágil.
+Pero las compañías están cada vez más considerando la opción de alternativas para la infraestructura relacional heredada. En algunos casos la motivación es técnica, tal como la necesidad de escalar o actuar más allá de las capacidades de sus sistemas actuales. Mientras que en otros casos las compañías están motivadas por el deseo de identificar alternativas viables a \softwaresPC propietarios de alto costo. Una tercera motivación es la agilidad y velocidad del desarrollo, dado que las compañías ansían adaptarse más rápido al mercado y adoptar metodologías de desarrollo ágil.
 %But companies are increasingly considering alternatives to
 %legacy relational infrastructure. In some cases the
 %motivation is technical — such as a need to scale or
@@ -34,34 +34,33 @@ Estas opciones se aplican tanto para aplicaciones \analyticProcessing como \tarn
 
 \subsection{\sqlNAME y el Modelo Relacional}
 
-\sqlNAME es un lenguaje declarativo de consulta de datos. Un lenguaje declarativo es uno en el cual un programador especifica lo que desea y el sistema lo ejecuta, en lugar de definir proceduralmente como el sistema debería hacerlo. Unos pocos ejemplos incluyen: encontrar el registro del \textit{estudiante} 39, mostrar solo el \textit{nombre} y el \textit{número de teléfono} del estudiante de la totalidad de su registro, filtrar los registros de los \textit{estudiantes} a aquellos que cursan contabilidad, contar la cantidad de \textit{estudiantes} en cada curso, unir la información de la tabla de los \textit{estudiantes} con la tabla de \textit{profesores}.
+\sqlNAME es un lenguaje declarativo de consulta de datos. Un lenguaje declarativo es uno en el cual un programador especifica lo que desea y el sistema lo ejecuta, en lugar de definir proceduralmente cómo el sistema debería hacerlo. Unos pocos ejemplos incluyen: encontrar el registro del \textit{estudiante} 39, mostrar solo el \textit{nombre} y el \textit{número de teléfono} del estudiante de la totalidad de su registro, filtrar los registros de los \textit{estudiantes} a aquellos que cursan contabilidad, contar la cantidad de \textit{estudiantes} en cada curso, unir la información de la tabla de los \textit{estudiantes} con la tabla de \textit{profesores}.
 %SQL is a declarative language for querying data. A declarative language is one in which a programmer specifies what they want the system to do, rather than procedurally defining how the system should do it. A few examples include: find the record for employee 39, project out only the employee name and phone number from their entire record, filter employee records to those that work in accounting, count the employees in each department, or join the data from the employees table with the managers table.
 
 
-En una primera aproximación, \sqlNAME permite consultar sobre aquellas preguntas sin pensar sobre como la información es expuesta en el disco, cuales indices utilizar para acceder a la información o que algoritmo utilizar para procesar la información. Un componente arquitectural significativo para la mayoría de las bases de datos relacionales es un optimizador de consultas, el cual decide cual de las muchos equivalentes lógicos planea ejecutar para obtener la respuesta mas rápida a una consulta. Estos optimizadores son usualmente mejores que los promedios de los usuarios de la base de datos, pero en algunas ocasiones estos no tienen la suficiente información o tienen un modelo muy simple del sistema con el fin de generar la ejecución mas eficiente.
+En una primera aproximación, \sqlNAME permite consultar sobre aquellas preguntas sin pensar sobre cómo la información es expuesta en el disco, cuáles índices utilizar para acceder a la información o qué algoritmo utilizar para procesar la información. Un componente arquitectural significativo para la mayoría de las bases de datos relacionales es un optimizador de consultas, que decide cuál de los muchos equivalentes lógicos planea ejecutar para obtener la respuesta más rápida a una consulta. Estos optimizadores son usualmente mejores que los promedios de los usuarios de la base de datos, pero en algunas ocasiones estos no tienen la suficiente información o tienen un modelo muy simple del sistema con el fin de generar la ejecución más eficiente.
 %To a first approximation, SQL allows you to ask these questions without thinking about how the data is laid out on disk, which indices to use to access the data, or what algorithms to use to process the data. A significant architectural component of most relational databases is a query optimizer, which decides which of the many logically equivalent query plans to execute to most quickly answer a query. These optimizers are often better than the average database user, but sometimes they do not have enough information or have too simple a model of the system in order to generate the most efficient execution.
 
-Bases de datos relacionales, las bases de datos mas utilizadas en la práctica, siguen el modelo de datos relacional. En este modelo, diferentes entidades del \realWorld son guardadas en diferentes tablas. Por ejemplo, todos los \textit{estudiantes} podrían ser guardados en una tabla \textit{Estudiantes}, y todos los \textit{cursos} podrían ser almacenados en la tabla \textit{Cursos}. Cada fila de una tabla tiene varias propiedades guardadas en columnas. Por ejemplo, \textit{estudiantes} podrían tener un \textit{estudiantes id}, \textit{dirección}, \textit{edad},  \textit{fecha nacimiento}, y \textit{nombres/apellidos}. Cada una de estas propiedades sera guardada en una columna de la tabla \textit{Estudiantes}.
+Bases de datos relacionales, las bases de datos más utilizadas en la práctica, siguen el modelo de datos relacional. En este modelo, diversas entidades del \textit{mundo real} son guardadas en diferentes tablas. Por ejemplo, todos los \textit{estudiantes} podrían ser guardados en una tabla \textit{Estudiante}, y todos los \textit{cursos} podrían ser almacenados en la tabla \textit{Cursos}. Cada fila de una tabla tiene varias propiedades guardadas en columnas. Por ejemplo, \textit{Estudiante} podría tener un \textit{estudiante id}, \textit{dirección}, \textit{edad},  \textit{fecha nacimiento}, y \textit{nombres/apellidos}. Cada una de estas propiedades sera guardada en una columna de la tabla \textit{Estudiante}.
 %Relational databases, which are the most common databases used in practice, follow the relational data model. In this model, different real-world entities are stored in different tables. For example, all employees might be stored in an Employees table, and all departments might be stored in a Departments table. Each row of a table has various properties stored in columns. For example, employees might have an employee id, salary, birth date, and first/last names. Each of these properties will be stored in a column of the Employees table.
 
 
-El modelo relacional, va mano a mano con \sqlNAME. Consultas simples de \sqlNAME, tales como filtrar, recuperar todos los registros el cual sus campos hagan \match en algunos test (ejemplo, \textit{estudiante id} = 3, o edad > 20 años). Construcciones mas complejos causan que la base de datos haga trabajo extra, tal como \joining información sobre múltiples tablas (ejemplo., ¿ Cuales son los nombres de los cursos que actualmente tiene inscritos el \textit{estudiante id} 3 ?). Otras estructuras complejas tal como \aggregatesDB (ejemplo, ¿ cuál es la cantidad promedio de ramos que tiene inscrito los estudiantes
-?) pueden conducir a realizar un \scan completo de la tabla.
+El modelo relacional va mano a mano con \sqlNAME. Consultas simples de \sqlNAME, tales como filtrar, recuperar todos los registros donde sus campos hagan \match en algunos tests (ejemplo, \textit{estudiante id} = 3, o edad > 20 años). Construcciones más complejos causan que la base de datos haga trabajo extra, tal como unir información sobre múltiples tablas (ejemplo, ¿ cuáles son los nombres de los cursos que actualmente tiene inscritos el \textit{estudiante id} 3 ?). Otras estructuras complejas tal como \textit{agregación} (ejemplo, ¿cuál es la cantidad promedio de ramos que tienen inscritos los estudiantes?) pueden conducir a realizar un \scan completo de la tabla.
 %The relational model goes hand-in-hand with SQL. Simple SQL queries, such as filters, retrieve all records whose field matches some test (e.g., employeeid
 % = 3, or salary \> \$ 20000). More complex constructs cause the database to do some extra work, such as joining data from multiple tables (e.g., what is the name of the department in which employee 3 works?). Other complex constructs such as aggregates (e.g., what is the average salary of my employees?) can lead to full-table scans.
 
 
-Un modelo de datos relacional define entidades altamente estructuradas con relaciones estrictas entre ellos. Consultar este modelo con \sqlNAME permite recorridos de datos complejos sin demasiado desarrollo personalizado. La complejidad del modelo y las consultas, tienen sus limites, aunque:
+Un modelo de datos relacional define entidades altamente estructuradas con relaciones estrictas entre ellos. Consultar este modelo con \sqlNAME permite recorridos de datos complejos sin demasiado desarrollo personalizado. La complejidad del modelo y las consultas tienen sus límites, aunque:
 %The relational data model defines highly structured entities with strict relationships between them. Querying this model with SQL allows complex data traversals without too much custom development. The complexity of such modeling and querying has its limits, though:
 
 
-\complexity guía a \unpredictability. La expresividad en \sqlNAME implica un desafío en relación al costo de cada consulta, y así el costo de \workload. Mientras lenguajes de consultas simples pueden complicar la lógica, al mismo tiempo hacen que sea sencillo proveer de almacenamiento de datos, cuando solo responde a consultas simples.
+\complexity guía a \unpredictability. La expresividad en \sqlNAME implica un desafío en relación con el costo de cada consulta, y así el costo de \workload. Mientras lenguajes de consultas simples pueden complicar la lógica, al mismo tiempo hacen que sea sencillo proveer de almacenamiento de datos, cuando solo responde a consultas simples.
 %Complexity leads to unpredictability. SQL's expressiveness makes it challenging to reason about the cost of each query, and thus the cost of a workload. While simpler query languages might complicate application logic, they make it easier to provision data storage systems, which only respond to simple requests.
 
-Hay muchas maneras de modelar un problema. El modelo de datos relacional es estricto: El esquema asignado para cada tabla especifica los datos en cada fila. Si se están almacenando menos datos estructurados, o filas con mas diferencia en las columnas que se guardan,el modelo relacional puede ser innecesariamente restrictivo. Similarmente, aplicaciones desarrolladas podrían no encontrar el modelo relacional idóneo para modelar cada tipo de dato. Por ejemplo, una gran cantidad de aplicaciones lógicas son escritas en lenguaje \objectOrientedPL e incluye conceptos \highLevelCPT tales como \listsPL, \queuesPL, y \setsPL, y algunos programadores desearan \persistenceLayer para modelar esto.
+Hay muchas maneras de modelar un problema. El modelo de datos relacional es estricto: El esquema asignado para cada tabla especifica los datos en cada fila. Si se están almacenando menos datos estructurados, o filas con más diferencia en las columnas que se guardan, el modelo relacional puede ser innecesariamente restrictivo. Similarmente, aplicaciones desarrolladas podrían no encontrar el modelo relacional idóneo para modelar cada tipo de dato. Por ejemplo, una gran cantidad de aplicaciones lógicas son escritas en lenguaje \objectOrientedPL e incluye conceptos \highLevelCPT, tales como \listsPL, \queuesPL, y \setsPL, y algunos programadores desearán \persistenceLayer para modelar esto.
 %There are many ways to model a problem. The relational data model is strict: the schema assigned to each table specifies the data in each row. If we are storing less structured data, or rows with more variance in the columns they store, the relational model may be needlessly restrictive. Similarly, application developers might not find the relational model perfect for modeling every kind of data. For example, a lot of application logic is written in object-oriented languages and includ-es high-level concepts such as lists, queues, and sets, and some programmers would like their persistence layer to model this.
 
-Si los datos crecen mas allá de la capacidad de un servidor, entonces las tablas en la base de datos tendrán que ser particionadas a través de varios computadores. Para evitar \joins a través de la red para obtener todas las tablas requeridas, será necesario desnormalizarla. Desnormalizar consiste en guardar todos los datos de diferentes tablas que se desean consultar en el mismo lugar. Esto hace que la base de datos simule una \keyLookup \store \system, dejando abierta preguntas sobre la posibilidad de adaptarse mejor a los datos.
+Si los datos crecen más allá de la capacidad de un servidor, entonces las tablas en la base de datos tendrán que ser particionadas a través de varios computadores. Para evitar \joins a través de la red para obtener todas las tablas requeridas, será necesario desnormalizarla. Desnormalizar consiste en guardar todos los datos de diferentes tablas que se desean consultar en el mismo lugar. Esto hace que la base de datos simule una \keyLookup \store \system, dejando abiertas preguntas sobre la posibilidad de adaptarse mejor a los datos.
 %If the data grows past the capacity of one server, then the tables in the database will have to be partitioned across computers. To avoid JOINs having to cross the network in order to get data in different tables, we will have to denormalize it. Denormalization stores all of the data from different tables that one might want to look up at once in a single place. This makes our database look like a key-lookup storage system, leaving us wondering what other data models might better suit the data.
 
 Generalmente no es inteligente descartar años de consideraciones de diseño arbitrariamente. Cuando se considera el almacenamiento de los datos en una base de datos, considera \sqlNAME y el modelo relacional, los cuales son respaldados por décadas  de investigación y desarrollo, ofreciendo enriquecidas capacidades de modelamiento, y proporcionan garantías \textit{fácil-de-entender} sobre operaciones complejas. \nosqlNAME es una buena opción cuando se tiene un problema específico, tal como gran cantidad de datos, un masivo \workload, o una difícil decisión de modelamiento para la cual \sqlNAME y bases de datos relacionales podrían no haber sido optimizadas.
@@ -74,36 +73,36 @@ Generalmente no es inteligente descartar años de consideraciones de diseño arb
 
 \subsubsection{\documentModel}\label{cap:justificacion_proyecto:base_datos:nosql:document_model}
 
-Mientras las bases de datos relacionales guardan la información en filas y columnas, \documentDB \dataBasesDB guardan los datos en documentos.  
+Mientras las bases de datos relacionales guardan la información en filas y columnas, \dataBasesDB orientada al documento se guardan los datos en documentos.  
 
-Estos documentos típicamente usan una estructura equivalente a \jsonNAME, un formato muy popular entre desarrolladores. Los documentos proveen una manera intuitiva y natural para modelar datos que esta cercanamente alineada con la programación \objectOrientedPL, en el cual cada documento es efectivamente un objeto. Los documentos contienen en uno o mas campos, donde cada campo contiene un tipo de valor, tales como \stringPL, \datePL, \binaryPL, ó \arrayPL. En lugar de extenderse un registro entre múltiples tablas y columnas, cada registro y su dato asociado son típicamente almacenados juntos en un solo documento. Esto simplifica el acceso a la información y reduce e incluso elimina la necesidad de \joins y \transactionsDB complejas.
+Estos documentos típicamente usan una estructura equivalente a \jsonNAME, un formato muy popular entre desarrolladores. Los documentos proveen una manera intuitiva y natural para modelar datos que está cercanamente alineada con la programación \objectOrientedPL, en la cual cada documento es efectivamente un objeto. Los documentos contienen en uno o mas campos, donde cada campo contiene un tipo de valor, tales como \stringPL, \datePL, \binaryPL, ó \arrayPL. En lugar de extenderse un registro entre múltiples tablas y columnas, cada registro y su dato asociado son típicamente almacenados juntos en un solo documento. Esto simplifica el acceso a la información y reduce e incluso elimina la necesidad de \joins y \transactionsDB complejas.
 
-En un \documentDB \dataBaseDB, la noción de esquema es dinámica: cada documento puede contener diferentes campos. Esta flexibilidad puede ser particularmente útil para modelar datos sin estructura y \polymorphic. Esto también hace posible la evolución de una aplicación durante su desarrollo, simplemente agregando nuevos campos. Adicionalmente, \documentDB \dataBasesDB generalmente proveen consultas robustas que los desarrolladores esperan en las bases de datos relacionales.
+En una \dataBasesDB orientada al documento, la noción de esquema es dinámica: cada documento puede contener diferentes campos. Esta flexibilidad puede ser particularmente útil para modelar datos sin estructura y \polymorphic. Esto también hace posible la evolución de una aplicación durante su desarrollo, simplemente agregando nuevos campos. Adicionalmente, \dataBasesDB orientada al documento generalmente proveen consultas robustas que los desarrolladores esperan en las bases de datos relacionales.
 
-Aplicaciones:\documentDB \dataBasesDB son de propósito general y útiles para una amplia variedad de aplicaciones, debido a su flexibilidad del modelo de datos, la habilidad para consultar sobre cualquier campo y el \mapping natural del \documentDB \dataModel a objetos en programación de lenguajes modernos.
+Aplicaciones : \dataBasesDB orientada al documento son de propósito general y útiles para una amplia variedad de aplicaciones, debido a su flexibilidad del modelo de datos, la habilidad para consultar sobre cualquier campo y el \mapping natural del \dataBasesDB orientada al documento a objetos en programación de lenguajes modernos.
 
 Ejemplos: MongoDB y CouchDB.
 
 \subsubsection{Modelo \graphCustom}
 \label{cap:justificacion_proyecto:base_datos:nosql:graph_model}
 
-Basado en \graphTheory, usa estructuras de grafos con nodos, bordes y propiedades para representar los datos. En esencia, los datos son modelados como una red de relaciones entre elementos específicos. Si bien es cierto, Modelo \graphCustom puede ser contra intuitivo y tomar tiempo para entenderlo, puede ser utilizado extensamente para numerosas aplicaciones. Su principal característica es que modela fácilmente las relaciones entre entidades en una aplicación.
+Basado en \graphTheory, usa estructuras de grafos con nodos, bordes y propiedades para representar los datos. En esencia, los datos son modelados como una red de relaciones entre elementos específicos. Si bien es cierto Modelo \graphCustom puede ser contra intuitivo y tomar tiempo para entenderlo, puede ser utilizado extensamente para numerosas aplicaciones. Su principal característica es que modela fácilmente las relaciones entre entidades en una aplicación.
 
-Aplicaciones:\dataBasesDB \graphCustom son útiles en escenarios donde las relaciones son el \coreAS de la aplicación, como redes sociales.
+Aplicaciones: \dataBasesDB \graphCustom son útiles en escenarios donde las relaciones son el \coreAS de la aplicación, como redes sociales.
 
 Ejemplos: \neofourj y \hyperGraphDB.
 
 \subsubsection{\keyValue}
 \label{cap:justificacion_proyecto:base_datos:nosql:key_value}
 
-Desde una perspectiva de modelo de datos, \keyValue \stores son el tipo mas básico de las \nosqlNAME \dataBasesDB. Cada \itemCOM en la base de datos es guardado como un atributo \nameDB, ó \keyDB, junto con su \valueDB. El \valueDB, sin embargo, es totalmente opaco al sistema; los datos solo pueden ser requeridos desde la \keyDB. Este modelo puede ser útil para representar datos \polymorphic y sin estructura, dado que la \dataBaseDB no define un esquema al conjunto \keyValue.
+Desde una perspectiva de modelo de datos, \keyValue \stores son el tipo más básico de las \nosqlNAME \dataBasesDB. Cada \itemCOM en la base de datos es guardado como un atributo \nameDB, o \keyDB, junto con su \valueDB. El \valueDB, sin embargo, es totalmente opaco al sistema; los datos solo pueden ser requeridos desde la \keyDB. Este modelo puede ser útil para representar datos \polymorphic y sin estructura, dado que la \dataBasesDB no define un esquema al conjunto \keyValue.
 %From a data model perspective, key-value stores are the most basic type of NoSQL database. Every item in the database is stored as an attribute name, or key, together with its value. The value, however, is entirely opaque to the system; data can only be queried by the key. This model can be useful for representing polymorphic and unstructured data, as the database does not enforce a set schema across key-value pairs.
 
 \subsubsection{Modelos \wideColumnDB}
 \label{cap:justificacion_proyecto:base_datos:nosql:wide_column_model}
 
 %TODO falta mejorar esta definición
-\wideColumnDB \stores, ó \columnFamily \stores, usa un mapa ordenado \textit{multi-dimensional} distribuido y \sparseFeature para guardar datos. Cada registro puede variar en el número de \columns que son guardadas, y las \columns pueden ser anidadas dentro de otras \columns llamadas \superColumns. \columns pueden ser agrupadas juntas por acceso en \columnFamilies, o \columns pueden ser propagadas a través de múltiples \columnFamilies. Los datos son recuperados utilizando una \primaryKey por cada \columnFamily.
+\wideColumnDB \stores, o \columnFamily \stores, usan un mapa ordenado \textit{multi-dimensional} distribuido y \sparseFeature para guardar datos. Cada registro puede variar en el número de \columns que son guardadas, y las \columns pueden ser anidadas dentro de otras \columns llamadas \superColumns. \columns pueden ser agrupadas juntas por acceso en \columnFamilies, o \columns pueden ser propagadas a través de múltiples \columnFamilies. Los datos son recuperados utilizando una \primaryKey por cada \columnFamily.
 %Wide column stores, or column family stores, use a sparse, distributed multi-dimensional sorted map to store data. Each record can vary in the number of columns that are stored, and columns can be nested inside other columns called super columns. Columns can be grouped together for access in column families, or columns can be spread across multiple column families. Data is retrieved by primary key per column family.
 
 Aplicación: \keyDB \valueDB \stores y \wideColumnDB \stores son útiles para un reducido conjunto de aplicaciones que solo consultan datos para un único \keyValue. Lo llamativo de estos sistemas es su \performanceQA y \scalabilityQA, los cuales pueden ser \highly \optimized debido a su simplicidad de los patrones de acceso de datos.
@@ -125,15 +124,15 @@ Aplicación: \keyDB \valueDB \stores y \wideColumnDB \stores son útiles para un
 \subsection{\mongodbNAME y \ecommerceCOM \cite{online_mongodb_ecommerce}}
 \label{cap:justificacion_proyecto:MongoDB_ECommerce}
 
-Demostraciones de almacenamientos de datos de la siguiente generación giran típicamente en torno a las redes sociales: \twitterNAME, \facebook, \foursquare, etc. Desafortunadamente, tales aplicaciones generalmente tienen modelos de datos complejos. \ecommerceCOM por ejemplo, tiene la ventaja de incluir un largo número de patrones familiares para modelar datos. Además no es complicado imaginar como \itemCOM, \categoriesCommerce, \itemReviewsCommerce y \ordersCommerce son típicamente modeladas en \rdbms.
+Demostraciones de almacenamientos de datos de la siguiente generación giran típicamente en torno a las redes sociales: \twitterNAME, \facebook, \foursquare, etc. Desafortunadamente, tales aplicaciones generalmente tienen modelos de datos complejos. \ecommerceCOM, por ejemplo, tiene la ventaja de incluir un largo número de patrones familiares para modelar datos. Además no es complicado imaginar cómo \itemCOM, \categoriesCommerce, \itemReviewsCommerce y órdenes son típicamente modelados en \rdbms.
 
-\ecommerceCOM ha sido usualmente un dominio exclusivo de \rdbms, y esto es así por un par de razones. La primera, es que los sitios \ecommerceCOM generalmente requieren \transactionsDB, y \transactionsDB son una operación básica en \rdbms. Lo segundo es que, hasta hace poco, dominios que requieren de un modelo de dato enriquecido y consultas sofisticadas han sido presupuestos que se ajustan mejor en \rdbms. \textbf{En las siguientes secciones se cuestionara la segunda afirmación.}
+\ecommerceCOM ha sido usualmente un dominio exclusivo de \rdbms, y esto es así por un par de razones. La primera es que los sitios \ecommerceCOM generalmente requieren \transactionsDB, y \transactionsDB son una operación básica en \rdbms. Lo segundo es que, hasta hace poco, dominios que requieren de un modelo de dato enriquecido y consultas sofisticadas han sido presupuestos que se ajustan mejor en \rdbms. \textbf{En las siguientes secciones se cuestionará la segunda afirmación}.
 
 \subsubsection{\catalogManagementCOM}
 
-Si es necesaria información sobre como el \catalogManagementCOM se maneja con \dataBasesDB relacionales, es necesario dar una mirada rápida a los esquemas del popular \nameMagento \ecommerceCOM \frameworkPC \refFigura{ap:figure:catalog_magento}. En la \refFigura{cap:figure:catalog_magento} se observa un conjunto de \tablesDB trabajando a la par para proveer un esquema flexible sobre un fundamentalmente inflexible estilo de sistema de \dataBaseDB.
+Si es necesaria información sobre cómo el \catalogManagementCOM se maneja con \dataBasesDB relacionales, es necesario dar una mirada rápida a los esquemas del popular \nameMagento \ecommerceCOM \frameworkPC [\refFigura{ap:figure:catalog_magento}]. En la \refFigura{cap:figure:catalog_magento} se observa un conjunto de \tablesDB trabajando a la par para proveer un esquema flexible sobre un fundamentalmente inflexible estilo de sistema de \dataBasesDB.
 
-Esto significa que los datos de cualquier \itemCOM se extienden a través de una docena de \tablesDB. Esto incremente la complejidad del código requerido para la persistencia de consultas de \itemsCOM individuales y hacer una consulta \shellBased es casi imposible. Simplemente considere escribir un \sqlNAME \join para para reunir el modelo de un \itemCOM como el de la \refFigura{cap:figure:catalog_magento}.
+Esto significa que los datos de cualquier \itemCOM se extienden a través de una docena de \tablesDB. Esto incrementa la complejidad del código requerido para la persistencia de consultas de \itemsCOM individuales y hacer una consulta \shellBased es casi imposible. Simplemente considere escribir un \sqlNAME \join para reunir el modelo de un \itemCOM como el de la \refFigura{cap:figure:catalog_magento}.
 
 \begin{figure}[h!]
 	\centering
@@ -144,90 +143,90 @@ Esto significa que los datos de cualquier \itemCOM se extienden a través de una
 
 O realizar una sencilla búsqueda desde la \shell \mongodbNAME \javaScriptNAME  para obtener un objecto \jsonNAME como el \refsource{source:javascript:example_search_mongodb}.
 
-Claramente en \refsource{source:javascript:example_search_mongodb} no hay representación completa de un \itemCOM, pero esto demuestra cuantas de estas \tablesDB triviales que existen en una representación relacional pueden prescindir en una representación \documentDB.
+Claramente en \refsource{source:javascript:example_search_mongodb} no hay representación completa de un \itemCOM, pero esto demuestra cuántas de estas \tablesDB triviales que existen en una representación relacional pueden prescindir en una representación \documentDB.
 
-Para datos \objectOrientedPL, \textbf{los \documentsDB tienen mayor sentido}, tanto en concepto como rendimiento. Una representación \documentOriented de un dato de un \itemCOM se traduce a unas pocas entidades (un puñado de \collectionsDB vs. una docena de \tablesDB), mejor \performanceQA en consultas (sin \serverSideAS \joins), y estructuras que corresponden precisamente al \itemCOM. \textbf{Ya no existe la necesidad} de diseñar un \masterSchema que pueda considerar a cada tipo de \itemCOM concebible.
+Para datos \objectOrientedPL, \textbf{los \documentsDB tienen mayor sentido}, tanto en concepto como rendimiento. Una representación \documentOriented de un dato de un \itemCOM se traduce a unas pocas entidades (un puñado de \collectionsDB \vsSIGLACPT una docena de \tablesDB), mejor \performanceQA en consultas (sin \serverSideAS \joins), y estructuras que corresponden precisamente al \itemCOM. \textbf{Ya no existe la necesidad} de diseñar un \masterSchema que pueda considerar a cada tipo de \itemCOM concebible.
 
 \catalogManagementCOM es esencialmente \contentManagementCOM, \textbf{un campo en donde \mongodbNAME sobresale}.
 
-\subsubsection{\shoppingCarts y \ordersCommerce}
+\subsubsection{\shoppingCarts y órdenes}
 
-Permitir que un \shoppingCarts sea simplemente una orden en un estado  \cartCOM, el modelo de \shoppingCarts y las ordenes en \mongodbNAME se tornan muy sencillas. Un ejemplo de esto se puede observar en  \refsource{source:javascript:example_schema_order}.
+Permitir que un \shoppingCarts sea simplemente una orden en un estado  \cartCOM, el modelo de \shoppingCarts y las órdenes en \mongodbNAME se tornan muy sencillas. Un ejemplo de esto se puede observar en  \refsource{source:javascript:example_schema_order}.
 
-Notar que es posible presentar los pedidos como un \arrayPL de \itemsCOM. Como es usual con \documentsDB, esto hace el despliegue del \shoppingCart mas sencillo, dado que no hay \joins envueltos. Pero esto también resuelve el problema del versionamiento de \itemsCOM. Usualmente es necesario tener el estado de un \itemCOM cuando este es comprado. Esto puede ser logrado en una \rdbms estableciendo un vínculo a versiones particulares de un \itemCOM. Aquí, sin embargo, simplemente se almacenó el estado de un \itemCOM dentro de la misma \orderCommerce.
+Notar que es posible presentar los pedidos como un \arrayPL de \itemsCOM. Como es usual con \documentsDB, esto hace el despliegue del \shoppingCart más sencillo, dado que no hay \joins envueltos. Pero esto también resuelve el problema del versionamiento de \itemsCOM. Usualmente es necesario tener el estado de un \itemCOM cuando este es comprado. Esto puede ser logrado en una \rdbms estableciendo un vínculo a versiones particulares de un \itemCOM. Aquí, sin embargo, simplemente se almacenó el estado de un \itemCOM dentro de la misma \orderCommerce.
 
-\subsubsection{Consultando \ordersCommerce}
+\subsubsection{Consultando órdenes}
 
-Dado que \mongodbNAME soporta consultas dinámicas y \secIndexingDB , las consultas para las \ordersCommerce son automáticas. Es posible, por ejemplo, definir un \indexDB en un \itemCOM \sku, lo que permite consultas eficientes en todas las ordenes para un \itemCOM dado. En  \refsource{source:javascript:example_querying_orders_mongodb} se observa un ejemplo.
+Dado que \mongodbNAME soporta consultas dinámicas y \secIndexingDB , las consultas para las órdenes son automáticas. Es posible, por ejemplo, definir un \indexDB en un \itemCOM \sku, lo que permite consultas eficientes en todas las órdenes para un \itemCOM dado. En  \refsource{source:javascript:example_querying_orders_mongodb} se observa un ejemplo.
 
-Con \mongodbNAME, es posible realizar consultas en atributos arbitrarios, de esa manera, cualquier consulta en la \collectionDB \ordersCommerce es posible. Y para consultas comunes, es posible definir \indexesDB para una mejor eficiencia.
+Con \mongodbNAME, es posible realizar consultas en atributos arbitrarios, de esa manera cualquier consulta en la \collectionDB órdenes es posible. Y para consultas comunes, es posible definir \indexesDB para una mejor eficiencia.
 
 \subsubsection{\aggregationDB}
 
-Claramente, \aggregationDB también es necesario. Se desea reportar \ordersCommerce de diferentes maneras, y para ese propósito, \mapReduce esta disponible. A modo de ejemplo, \refsource{source:javascript:example_aggregation_mongodb} tiene comando \mapReduce que \aggregatesDB el total de \ordersCommerce por \zipCode.
+Claramente, \aggregationDB también es necesario. Se desea reportar órdenes de diferentes maneras, y para ese propósito, \mapReduce está disponible. A modo de ejemplo, \refsource{source:javascript:example_aggregation_mongodb} tiene comando \mapReduce que \aggregatesDB el total de órdenes por \zipCode.
 
-\subsubsection{\updating \ordersCommerce}
+\subsubsection{Actualizando órdenes}
 
 \subsubsection*{Incrementando Calidad}
 
-Una manera de ajustar la cantidad es usando un \positionOperatorDB, el cual permite aplicar \atomicOperationsDB, a un único objeto dentro de un \arrayPL. \refsource{source:javascript:example_incrementing_quality_mongodb} muestra como cambiar el número de álbumes que se están ordenando.
+Una manera de ajustar la cantidad es usando un \positionOperatorDB, el cual permite aplicar \atomicOperationsDB, a un único objeto dentro de un \arrayPL. \refsource{source:javascript:example_incrementing_quality_mongodb} muestra cómo cambiar el número de álbumes que se están ordenando.
 
  
 \subsubsection*{\adding y \removing \itemsCOM}
 
-Igualmente, \atomicOperationsDB resuelven el problema de agregar y remover \itemCOM desde el \cartCOM. \refsource{source:javascript:example_push_operator_mongodb} ejemplifica el uso de \pushOperatorDB \atomicOperatorDB para agregar un \itemCOM al \cartCOM.
+Igualmente, \atomicOperationsDB resuelve el problema de agregar y remover \itemsCOM desde el \cartCOM. \refsource{source:javascript:example_push_operator_mongodb} ejemplifica el uso de \pushOperatorDB \atomicOperatorDB para agregar un \itemCOM al \cartCOM.
 
 
 Al ajustar la cantidad y el cambio de los mismos \itemsCOM en el \cartCOM, es necesario actualizar el total de la orden. Notar el uso del operador \incOperatorDB para manejar esto.
 
-\subsubsection{\inventoryCommerce}
+\subsubsection{Inventario}
 
-No todos los sitios \ecommerceCOM necesitan manejar el inventario. Pero para aquellos que si lo hacen, \mongodbNAME funciona a la altura de las circunstancias.
+No todos los sitios \ecommerceCOM necesitan manejar el inventario. Pero para aquellos que sí lo hacen, \mongodbNAME funciona a la altura de las circunstancias.
 
-Una manera para manejar el inventario, es guardar un \documentDB separado por cada \physItem en la bodega. Así, por ejemplo, si la bodega tiene veinte copias del álbum Coltrane, se traduce en veinte \documentsDB distintos en \inventoryCommerce \collectionDB. Cada \documentDB tiene una estructura como lo muestra \refsource{source:javascript:example_document_inventory_mongodb}.
+Una manera para manejar el inventario, es guardar un \documentDB separado por cada \physItem en la bodega. Así, por ejemplo, si la bodega tiene veinte copias del álbum Coltrane, se traduce en veinte \documentsDB distintos en la \collectionDB de \textit{Inventario}. Cada \documentDB tiene una estructura como lo muestra \refsource{source:javascript:example_document_inventory_mongodb}.
 
 
-Cuando un usuario intenta agregar un \itemCOM al \cartCOM, un comando \findAndModifyOperatorDB puede ser facilitado para automáticamente marcar el \itemCOM en \inCart, asociando el \itemCOM con una \orderCommerce dada, y estableciendo un tiempo de espiración. \refsource{source:javascript:example_add_inventory_expiartion_mongodb}.
+Cuando un usuario intenta agregar un \itemCOM al \cartCOM, un comando \findAndModifyOperatorDB puede ser facilitado para automáticamente marcar el \itemCOM en \inCart, asociando el \itemCOM con una \orderCommerce dada, y estableciendo un tiempo de espiración (\refsource{source:javascript:example_add_inventory_expiartion_mongodb}).
 
 
 
 Si se obtiene un \itemBackDB desde la operación \findAndModifyOperatorDB, se sabe que tenemos un único \lockDB en el \itemCOM, y es posible guardarlo en el \cartCOM. Cuando el usuario desea realizar el \checkoutCOM, el estado del \itemCOM puede cambiar a \purchasedCOM, o cualquiera sea el caso de la llamada.
 
-Mientras, se pueda ejecutar un \scriptPL en \backgroundPL que libere el inventario del \cartCOM que no ha sido \purchasedCOM en la ventana de quince minutos. La actualización es trivial y se observa en \refsource{source:javascript:example_add_script_background_mongodb}.
+Mientras, se puede ejecutar un \scriptPL en \backgroundPL que libere el inventario del \cartCOM que no ha sido \purchasedCOM en la ventana de quince minutos. La actualización es trivial y se observa en \refsource{source:javascript:example_add_script_background_mongodb}.
 
 
 \subsubsection{\transactionsDB, \consistencyDB y \durabilityDB}
 
-Muchos argumentos impuestos contra \nosqlNAME en \ecommerceCOM se centran en \transactionsDB, \consistencyDB, y \durabilityDB. En relación a esto se mencionan algunos puntos.
+Muchos argumentos impuestos contra \nosqlNAME en \ecommerceCOM se centran en \transactionsDB, \consistencyDB y \durabilityDB. En relación con esto se mencionan algunos puntos.
 
-En relación a \transactionsDB, ciertamente \mongodbNAME no soporta el tipo \multiObjectDB; sin embargo, soporta \atomicOperationsDB sobre \documentsDB individuales. y esto combinado con el modelo \documentOriented recién descrito, y creatividad, es suficiente para muchos problemas \ecommerceCOM. Ciertamente, si se necesita \debitOneAccount y \creditAnother en la misma operación, ó si se desea \rollbackDB, sera necesario \fullFledgedTransDB. No obstante, \transactionalityDB provista por \mongodbNAME debería ser suficiente en la mayoría de los casos, si no en todos, para operaciones \ecommerceCOM.
+Con relación a \transactionsDB, ciertamente \mongodbNAME no soporta el tipo \multiObjectDB; sin embargo, soporta \atomicOperationsDB sobre \documentsDB individuales, y esto combinado con el modelo \documentOriented recién descrito, y creatividad, es suficiente para muchos problemas \ecommerceCOM. Ciertamente, si se necesita \debitOneAccount y \creditAnother en la misma operación, o si se desea \rollbackDB, sera necesario \fullFledgedTransDB. No obstante, \transactionalityDB provista por \mongodbNAME debería ser suficiente en la mayoría de los casos, si no en todos, para operaciones \ecommerceCOM.
 
-Si la preocupación esta sobre \consistencyDB y \durabilityDB, operaciones escritas en \mongodbNAME pueden ser realizadas \consistencyDB sobre conexiones. Además, \mongodbNAME 1.5 soporta \nearRealTimeReplicationDB, así que es posible asegurarse que una operación ha sido \replicatedDB antes de retornar.
+Si la preocupación está sobre \consistencyDB y \durabilityDB, operaciones escritas en \mongodbNAME pueden ser realizadas \consistencyDB sobre conexiones. Además, \mongodbNAME 1.5 soporta \nearRealTimeReplicationDB, así que es posible asegurarse que una operación ha sido \replicatedDB antes de retornar.
 
 \subsubsection{\scalabilityQA}
-La manera mas sencilla para \scale la mayoría de las \dataBasesDB, es \upgradingPC el \hardwarePC. Si la aplicación esta corriendo en un único nodo, es usualmente posible agregar una combinación de \diskPC \iopsPC, \memoryPC, y \cpuPC para eliminar los cuello de botella de la \dataBaseDB. La técnica de mejorar el \hardwarePC de un solo node para escalar se conoce como \verticalScalingDB o \scalingUpDB(\refFigura{figure:figure_scale_up}). \verticalScalingDB tiene la ventaja de ser simple, seguro, y \textit{costo-efectividad} hasta un cierto punto. Si se esta ejecutando sobre un \hardwarePC virtualizado( tal como \amazonEcdosNAME), entonces puedes encontrar que una instancia lo suficientemente larga no esta disponible. Si estas ejecutando sobre \physHardwarePC, habrá un punto donde el costo de un \serverAS mas poderoso se vuelve prohibitivo.
+La manera más sencilla para escalar la mayoría de las Bases de Datos, es \upgradingPC el \hardwarePC. Si la aplicación está corriendo en un único nodo, es usualmente posible agregar una combinación de \diskPC \iopsPC, \memoryPC y \cpuPC para eliminar los cuellos de botella de la \dataBasesDB. La técnica de mejorar el \hardwarePC de un solo node para escalar se conoce como \verticalScalingDB o \scalingUpDB(\refFigura{figure:figure_scale_up}). \verticalScalingDB tiene la ventaja de ser simple, seguro, y \textit{costo-efectividad} hasta un cierto punto. Si se está ejecutando sobre un \hardwarePC virtualizado (tal como \amazonEcdosNAME), entonces puedes encontrar que una instancia lo suficientemente larga no está disponible. Si estás ejecutando sobre \physHardwarePC, habrá un punto donde el costo de un \serverAS más poderoso se vuelve prohibitivo.
 
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.5\textwidth]{figuras/cap2/scale_up.png}
-	\caption{\verticalScalingDB ó \scalingUpDB }
+	\caption{\verticalScalingDB o \scalingUpDB }
 	\label{figure:figure_scale_up}
 \end{figure}
 
-Entonces tiene sentido  considerar \horizontalScalingDB o \scalingOutDB(\refFigura{figure:figure_scale_out}). En lugar de reforzar un único nodo, \horizontalScalingDB significa distribuir la base de datos sobre múltiples máquinas. Dado que la arquitectura \horizontallyScaledDB puede utilizar \commodityHardwarePC, el costo de \hostingDB el total de los datos puede ser reducido significativamente. Incluso, la distribución  de los datos sobre máquinas mitiga las consecuencias de fallo. Las maquinas inevitablemente fallaran de algún momento a otro. En el caso de \verticalScalingDB , si la máquina falla, entonces es necesario tratar con una falla en un máquina de la cual la mayoría del sistema depende. Podría no considerarse un tema si una copia de los datos existe en un \replicatedSlaveDB, pero aun esta el caso en que solo un único \serverAS es necesario para bajar el sistema completo. En contraste con el fallo dentro de una arquitectura \horizontallyScaledDB. Esto podría ser menos catastrófico dado que una sola máquina representa un porcentaje menor del sistema completo.
+Entonces tiene sentido  considerar \horizontalScalingDB o \scalingOutDB(\refFigura{figure:figure_scale_out}). En lugar de reforzar un único nodo, \horizontalScalingDB significa distribuir la base de datos sobre múltiples máquinas. Dado que la arquitectura \horizontallyScaledDB puede utilizar \commodityHardwarePC, el costo de \hostingDB el total de los datos puede ser reducido significativamente. Incluso, la distribución  de los datos sobre máquinas mitiga las consecuencias de falla. Las máquinas inevitablemente fallarán de algún momento a otro. En el caso de \verticalScalingDB , si la máquina falla, entonces es necesario tratar con una falla en una máquina de la cual la mayoría del sistema depende. Podría no considerarse un tema si una copia de los datos existe en un \replicatedSlaveDB, pero aun está el caso en que solo un único \serverAS es necesario para bajar el sistema completo. En contraste con la falla dentro de una arquitectura \horizontallyScaledDB. Esto podría ser menos catastrófico dado que una sola máquina representa un porcentaje menor del sistema completo.
 
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.5\textwidth]{figuras/cap2/scale_out.png}
-	\caption{\horizontalScalingDB ó \scalingOutDB }
+	\caption{\horizontalScalingDB o \scalingOutDB.}
 	\label{figure:figure_scale_out}
 \end{figure}
 
 \subsubsection{Conclusión}
 
-Es cierto que la mayoría de las bases de datos \nosqlNAME no fueron construidas considerando \ecommerceCOM. Las bases de datos que carecen modelos de datos enriquecidos, consultas dinámicas, y la noción de \transactionalityDB no puede esperarse que compitan en el espacio de \ecommerceCOM, entonces no es comprensible que no se considere \mongodbNAME tampoco.
+Es cierto que la mayoría de las bases de datos \nosqlNAME no fueron construidas considerando \ecommerceCOM. Las bases de datos que carecen de modelos de datos enriquecidos, consultas dinámicas, y de la noción de \transactionalityDB no puede esperarse que compitan en el espacio de \ecommerceCOM, entonces tampoco es comprensible que no se considere \mongodbNAME.
 
-Pero para las partes en donde el sitio \ecommerceCOM comprende el manejo de contenido, \mongodbNAME es claro vencedor. E incluso para más componentes \transactionalDB del sistema, \mongodbNAME tiene características que hacen de la posibilidad de correr un sistema completo de \ecommerceCOM una realidad. Si bien es cierto que esto solo corresponde a un \sketchCPT, este permite obtener una noción de que \textbf{\documentsDB \dataBaseDB lo hace bien}.
+Pero para las partes en donde el sitio \ecommerceCOM comprende el manejo de contenido, \mongodbNAME es claro vencedor. E incluso para más componentes \transactionalDB del sistema, \mongodbNAME tiene características que hacen de la posibilidad de correr un sistema completo de \ecommerceCOM una realidad. Si bien es cierto que esto solo corresponde a un \sketchCPT, este permite obtener una noción de que \textbf{Bases de datos orientadas al documento lo hacen bien}.
 
 
 \section{\nodejsNAME}\label{cap:section:nodejs}
@@ -241,13 +240,13 @@ Pero para las partes en donde el sitio \ecommerceCOM comprende el manejo de cont
 
 %After over 20 years of stateless-web based on the stateless request-response paradigm, we finally have web applications with real-time, two-way connections.
 
-En una frase: \nodejsNAME brilla en aplicaciones \webINT \realTimeINT utilizando tecnología \pushINT sobre \websocketsINT. ¿Qué es tan revolucionario en relación a esto? Después de 20 años de \statelessWebINT en el paradigma \requestResponseINT finalmente existen aplicaciones \webINT \realTimeINT, conexiones \twoWayINT, donde \clientAS y \serverAS pueden iniciar la comunicación, permitiendo intercambiar datos libremente. Esto es un contraste enorme al paradigma típico de \webResponseINT, donde el \clientAS siempre iniciaba la comunicación. Adicionalmente, está todo basado en \openWebStackINT (\htmlNAME, \cssNAME y \javaScriptNAME )corriendo sobre el \standarPortINT 80.
+En una frase: \nodejsNAME brilla en aplicaciones \webINT \realTimeINT utilizando tecnología \pushINT sobre \websocketsINT. ¿Qué es tan revolucionario en relación a esto? Después de 20 años de \statelessWebINT en el paradigma \requestResponseINT finalmente existen aplicaciones \webINT \realTimeINT, conexiones \twoWayINT, donde \clientAS y \serverAS pueden iniciar la comunicación, permitiendo intercambiar datos libremente. Esto es un contraste enorme al paradigma típico de \webResponseINT, donde el \clientAS siempre iniciaba la comunicación. Adicionalmente, está todo basado en \openWebStackINT (\htmlNAME, \cssNAME y \javaScriptNAME) corriendo sobre el \standarPortINT 80.
 %In one sentence: Node.js shines in real-time web applications employing push technology over websockets. What is so revolutionary about that? Well, after over 20 years of stateless-web based on the stateless request-response paradigm, we finally have web applications with real-time, two-way connections, where both the client and server can initiate communication, allowing them to exchange data freely. This is in stark contrast to the typical web response paradigm, where the client always initiates communication. Additionally, it’s all based on the open web stack (HTML, CSS and JS) running over the standard port 80.
 
-Se puede discutir sobre que estas características existían hace años a través de \flashNAME y \javaAppletsINT, pero en realidad, esos fueron \sandboxedEnvPL utilizando la \webINT como un protocolo de transporte para entregar al \clientAS. Además, ellos corrían aislados y generalmente sobre \nonStandardPortsINT, los cuales podrían requerir permisos extras.
+Se puede discutir que estas características existían hace años a través de \flashNAME y \javaAppletsINT, pero en realidad esos fueron \sandboxedEnvPL utilizando la \webINT como un protocolo de transporte para entregar al \clientAS. Además, ellos corrían aislados y generalmente sobre \nonStandardPortsINT, los cuales podrían requerir permisos extras.
 %One might argue that we’ve had this for years in the form of Flash and Java Applets—but in reality, those were just sandboxed environments using the web as a transport protocol to be delivered to the client. Plus, they were run in isolation and often operated over non-standard ports, which may have required extra permissions and such.
 
-Con todas esta ventajas, \nodejsNAME ahora juega un role crítico en el \stackAS de tecnología de las principales compañías \highProfileCPT \cite{online_nodejs_highprofilecompanies} \textbf{las cuales dependen de sus beneficios únicos}.
+Con todas esta ventajas, \nodejsNAME ahora juega un rol crítico en el \stackAS de tecnología de las principales compañías \highProfileCPT \cite{online_nodejs_highprofilecompanies}, \textbf{las cuales dependen de sus beneficios únicos}.
 %With all of its advantages, Node.js now plays a critical role in the technology stack of many high-profile companies who depend on its unique benefits.
 
 %In this post, I’ll discuss not only how these advantages are accomplished, but also why you might want to use Node.js—and why not—using some of the classic web application models as examples.
@@ -259,29 +258,29 @@ La principal idea de \nodejsNAME : usar \nonbloking, \eventdrivenPL \inputOutput
 
 %That’s a mouthful.
 
-Lo que esto realmente significa es que \nodejsNAME no es una plataforma \panaceaCPT que dominara el mundo \webINT \developmentPC. \textbf{En lugar de eso, es una plataforma que llena una necesidad particular}. Esto es absolutamente esencial. Definitivamente no se deseara utilizar \nodejsNAME para operaciones \cpuIntensivePC; de hecho, utilizando esto para \heavyComputationPC anulará prácticamente todas sus ventajas. Donde \nodejsNAME realmente brilla es construyendo aplicaciones \scalableQA  \networkINT rápidamente, ya que es capaz de manejar un gran número de conexiones simultaneas con un alto rendimiento, lo que equivale a una \highScalabilityDB.
+Lo que esto realmente significa es que \nodejsNAME no es una plataforma \panaceaCPT que dominará el mundo \webINT \developmentPC. \textbf{En lugar de eso, es una plataforma que llena una necesidad particular}. Esto es absolutamente esencial. Definitivamente no se deseará utilizar \nodejsNAME para operaciones \cpuIntensivePC; de hecho, utilizando esto para \heavyComputationPC anulará prácticamente todas sus ventajas. Donde \nodejsNAME realmente brilla es construyendo aplicaciones \scalableQA  \networkINT rápidamente, ya que es capaz de manejar un gran número de conexiones simultáneas con un alto rendimiento, lo que equivale a una \highScalabilityDB.
 %What it really means is that Node.js is not a silver-bullet new platform that will dominate the web development world. Instead, it’s a platform that fills a particular need. And understanding this is absolutely essential. You definitely don’t want to use Node.js for CPU-intensive operations; in fact, using it for heavy computation will annul nearly all of its advantages. Where Node really shines is in building fast, scalable network applications, as it’s capable of handling a huge number of simultaneous connections with high throughput, which equates to high scalability.
 
-Como trabaja \underTheHoodCPT es muy interesante. Comparado con la técnica tradicional \webServingINT donde cada conexión (\requestINT) engendra un nuevo \threadPL, ocupando memoria \memoryRamPC del sistema y, eventualmente \maxingOutCPT la cantidad de \memoryRamPC disponible, \nodejsNAME opera en un \singleThreadPL, usando llamadas \nonbloking \inputOutput, permitiendo el apoyo de decenas de miles de conexiones concurrentes (retenidas en el \eventloopCPT). \refFigura{figure:diagram_traditional_vs_nodejs_server_thread}.
+Cómo trabaja \underTheHoodCPT es muy interesante. Comparado con la técnica tradicional \webServingINT donde cada conexión (\requestINT) engendra un nuevo \threadPL, ocupando memoria \memoryRamPC del sistema y eventualmente \maxingOutCPT la cantidad de \memoryRamPC disponible, \nodejsNAME opera en un \singleThreadPL, usando llamadas \nonbloking \inputOutput, permitiendo el apoyo de decenas de miles de conexiones concurrentes (retenidas en el \eventloopCPT). \refFigura{figure:diagram_traditional_vs_nodejs_server_thread}.
 %How it works under-the-hood is pretty interesting. Compared to traditional web-serving techniques where each connection (request) spawns a new thread, taking up system RAM and eventually maxing-out at the amount of RAM available, Node.js operates on a single-thread, using non-blocking I/O calls, allowing it to support tens of thousands of concurrent connections (held in the event loop).
 
 
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.5\textwidth]{figuras/cap2/diagram_traditional_vs_node_serverthread.png}
-	\caption{Diagrama de Técnica tradicional vs. \nodejsNAME \serverAS \threadPL}
+	\caption{Diagrama de Técnica tradicional \vsSIGLACPT \nodejsNAME \serverAS \threadPL.}
 	\label{figure:diagram_traditional_vs_nodejs_server_thread}
 \end{figure}
 
 
 
-Un cálculo rápido: asumiendo que cada \threadPL potencialmente tiene asignado 2 MB de memoria con ella, corriendo en un sistema con 8 GB de \memoryRamPC nos coloca en un teórico máximo de 4000 conexiones concurrentes, además del costo por cambio de contexto entre \threadsPL. Ese es el escenario el cual típicamente se encuentran técnicas tradicionales de \webServingINT. Evitando todo eso, \nodejsNAME logra niveles de \scalabilityQA sobre 1M de conexiones concurrentes (como \proofConceptCPT).
+Un cálculo rápido: asumiendo que cada \threadPL potencialmente tiene asignado 2 MB de memoria con ella, corriendo en un sistema con 8 GB de \memoryRamPC nos coloca en un teórico máximo de 4000 conexiones concurrentes, además del costo por cambio de contexto entre \threadsPL. Ese es el escenario en el cual típicamente se encuentran técnicas tradicionales de \webServingINT. Evitando todo eso, \nodejsNAME logra niveles de \scalabilityQA sobre 1M de conexiones concurrentes (como \proofConceptCPT).
 %A quick calculation: assuming that each thread potentially has an accompanying 2 MB of memory with it, running on a system with 8 GB of RAM puts us at a theoretical maximum of 4000 concurrent connections, plus the cost of context-switching between threads. That’s the scenario you typically deal with in traditional web-serving techniques. By avoiding all that, Node.js achieves scalability levels of over 1M concurrent connections (as a proof-of-concept).
 
-Hay, por supuesto, la cuestión de compartir un solo \threadPL entre todos los \requestINT de \clientsAS, y es una potencial trampa de escribir aplicaciones \nodejsNAME. Primeramente, \heavyComputationPC puede asfixiar el único \threadPL de \nodejsNAME y causar problemas en todos los clientes como \incommingRequestINT podrían ser bloqueados hasta que dicho \computationPC sea completado. En segundo lugar, desarrolladores necesitan ser realmente cuidadosos en no permitir que una excepción \bubblingUpPL al \coreAS del \eventloopCPT de \nodejsNAME, el cual puede causar que la instancia \nodejsNAME termine (efectivamente \crashingPC el programa).
+Hay, por supuesto, la cuestión de compartir un solo \threadPL entre todos los \requestINT de \clientsAS, y es una potencial trampa de escribir aplicaciones \nodejsNAME. Primeramente, \heavyComputationPC puede asfixiar el único \threadPL de \nodejsNAME y causar problemas en todos los clientes como \incommingRequestINT podrían ser bloqueados hasta que dicho \computationPC sea completado. En segundo lugar, desarrolladores necesitan ser realmente cuidadosos en no permitir una excepción \bubblingUpPL al \coreAS del \eventloopCPT de \nodejsNAME, el cual puede causar que la instancia \nodejsNAME termine (efectivamente \crashingPC el programa).
 %There is, of course, the question of sharing a single thread between all clients requests, and it is a potential pitfall of writing Node.js applications. Firstly, heavy computation could choke up Node’s single thread and cause problems for all clients (more on this later) as incoming requests would be blocked until said computation was completed. Secondly, developers need to be really careful not to allow an exception bubbling up to the core (topmost) Node.js event loop, which will cause the Node.js instance to terminate (effectively crashing the program).
 
-La técnica utilizada para evitar excepciones \bubblingUpSurfacePL es pasando el error de regreso al \callerAS como parámetro de \callbackPL (en lugar de lanzarlos, como en otros ambientes). Incluso si alguna excepción no controlada conduce a \bubblingUpPL, hay múltiples paradigmas y herramientas disponibles para monitorear el proceso \nodejsNAME y realizar lo necesario para recuperarse de una \crashedInstancePL (aunque no este disponible para recuperar sesiones de usuarios), siendo el más común el módulo \moduleForeverNAME \cite{online_github_nodejitsu_forever}.
+La técnica utilizada para evitar excepciones \bubblingUpSurfacePL es pasando el error de regreso al \callerAS como parámetro de \callbackPL (en lugar de lanzarlos, como en otros ambientes). Incluso si alguna excepción no controlada conduce a \bubblingUpPL, hay múltiples paradigmas y herramientas disponibles para monitorear el proceso \nodejsNAME y realizar lo necesario para recuperarse de una \crashedInstancePL (aunque no esté disponible para recuperar sesiones de usuarios), siendo el más común el módulo \moduleForeverNAME \cite{online_github_nodejitsu_forever}.
 %The technique used to avoid exceptions bubbling up to the surface is passing errors back to the caller as callback parameters (instead of throwing them, like in other environments). Even if some unhandled exception manages to bubble up, there are mutiple paradigms and tools available to monitor the Node process and perform the necessary recovery of a crashed instance (although you won’t be able to recover users’ sessions), the most common being the Forever module, or a different approach with external system tools upstart and monit.
 
 %NPM: The Node Package Manager
@@ -359,7 +358,7 @@ La técnica utilizada para evitar excepciones \bubblingUpSurfacePL es pasando el
 %Why use Node.js? If your use case does not contain CPU intensive operations nor access any blocking resources, you can exploit the benefits of Node.js and enjoy fast and scalable network applications. Welcome to the real-time web.
 
 \subsection{Desempeño de Node.js frente a sus competidores}
-	A continuación se realizan comparaciones en el desempeño de la plataforma  con algunos de sus símiles mas conocidos los cuales corresponden a:
+	A continuación se realizan comparaciones en el desempeño de la plataforma  con algunos de sus símiles más conocidos, los cuales corresponden a:
 	
 	\begin{itemize}
 		\item Java
@@ -367,33 +366,33 @@ La técnica utilizada para evitar excepciones \bubblingUpSurfacePL es pasando el
 		\item PHP
 	\end{itemize}
 
-\subsubsection{\nodejsNAME vs \javaNAME \cite{online_nodejs_paypal}}
+\subsubsection{\nodejsNAME \vsSIGLACPT \javaNAME \cite{online_nodejs_paypal}}
 
 
 
-La primera adopción que hizo \paypalNAME con \nodejsNAME no fue una aplicación menor; esto fue su \accountOverviewPageINT y una de las mas \traffickedINT \appsINT en el \websiteINT. Ellos tomaron un gran riesgo, pero lo hicieron con la finalidad de determinar si realmente la nueva plataforma representaba una mejora con respecto al sistema actual.
+La primera adopción que hizo \paypalNAME con \nodejsNAME no fue una aplicación menor; esto fue su \accountOverviewPageINT y una de las más \traffickedINT \appsINT en el \websiteINT. Ellos tomaron un gran riesgo, pero lo hicieron con la finalidad de determinar si realmente la nueva plataforma representaba una mejora con respecto al sistema actual.
 %Our first adopter of node.js in production wasn’t a minor application; it was our account overview page and one of the most trafficked apps on the website. We decided to go big, but we also mitigated that risk by building the equivalent Java application in parallel. We knew how to deploy and scale Java applications, so if anything went wrong with the node.js app, we could fall back to the Java one. This provided the setting for some interesting data.
 
-Una vez que la aplicación con \nodejsNAME logro las mismas funcionalidades que la aplicación actual, persivieron el siguiente resultado:
+Una vez que la aplicación con \nodejsNAME logró las mismas funcionalidades que la aplicación actual, percibieron el siguiente resultado:
 
 \begin{itemize}
 \item Fue construida casi \textbf{el doble de rápido con menos personal}.
-\item Escrito con un \textbf{33\% menos de lineas de código}.
+\item Escrito con un \textbf{33\% menos de líneas de código}.
 \item Construida con \textbf{40\% menos de archivos}.
 \end{itemize}
 
-Por si solo, esta evidencia mostraba a los equipos desarrollar más rápido utilizando \javaScriptNAME.
+Por sí solo, esta evidencia mostraba a los equipos desarrollar más rápido utilizando \javaScriptNAME.
 
 \performanceQA fue un tópico interesante. Se pudo analizar 2 aplicaciones con exactamente las mismas funcionalidades: una con \frameworkPC \javaNAME interno basado en \javaSpringNAME y la otra construida en \krakenjsNAME usando \expressjsNAME, \dustjsNAME y otros códigos \openSourcePC.
 %Performance is a fun and debatable topic. In our case, we had two applications with the exact same functionality and built by roughly the same teams: one on our internal Java framework based on Spring and the other built on kraken.js using express, dust.js and other open source code.
 
-Se ejecutaron los test adecuados utilizando \hardwarePC de producción que probaran las rutas y recolectaran datos de rendimiento y tiempo de respuesta. Los resultados se aprecian en \refFigura{figure:java_benchmark_paypal}.
+Se ejecutaron los tests adecuados utilizando \hardwarePC de producción que probaran las rutas y recolectaran datos de rendimiento y tiempo de respuesta. Los resultados se aprecian en \refFigura{figure:java_benchmark_paypal}.
 %We ran our test suite using production hardware that tested the routes and collected data on throughput and response time.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.6\textwidth]{figuras/cap2/java_nodejs_benchmark_paypal.png}
-	\caption{\performanceQA de la aplicación en \javaNAME y \nodejsNAME}
+	\caption{\performanceQA de la aplicación en \javaNAME y \nodejsNAME.}
 	\label{figure:java_benchmark_paypal}
 \end{figure}
 
@@ -401,20 +400,20 @@ Se observa que la aplicación utilizando \nodejsNAME tiene:
 %You can see that the node.js application had:
 
 \begin{itemize}
-\item El doble de solicitudes por segundo vs. la aplicación \javaNAME. Esto es incluso más interesante porque los resultados iniciales de rendimiento estaban utilizando un solo núcleo para la aplicación \nodejsNAME, en comparación con cinco núcleos en \javaNAME. Esperan aumentar aun más esta brecha en el futuro.
-%Double the requests per second vs. the Java application. This is even more interesting because our initial performance results were using a single core for the node.js application compared to five cores in Java. We expect to increase this divide further.
-\item \textbf{Disminución en un 35\% en el tiempo promedio de respuesta} para la misma página. Esto resulto ser \textbf{200ms mas rápido} en el \serverAS. Algo que los usuarios definitivamente notan.
+\item El doble de solicitudes por segundo \vsSIGLACPT la aplicación \javaNAME. Esto es incluso más interesante porque los resultados iniciales de rendimiento estaban utilizando un solo núcleo para la aplicación \nodejsNAME, en comparación con cinco núcleos en \javaNAME. Esperan aumentar aun más esta brecha en el futuro.
+%Double the requests per second \vsSIGLACPT the Java application. This is even more interesting because our initial performance results were using a single core for the node.js application compared to five cores in Java. We expect to increase this divide further.
+\item \textbf{Disminución en un 35\% en el tiempo promedio de respuesta} para la misma página. Esto resultó ser \textbf{200ms más rápido} en el \serverAS. Algo que los usuarios definitivamente notan.
 %35% decrease in the average response time for the same page. This resulted in the pages being served 200ms faster— something users will definitely notice.
 \end{itemize}
 
 %There’s a disclaimer attached to this data: this is with our frameworks and two of our applications. It’s just about as apples-to-apples a performance test as we could get between technologies, but your milage may vary. That said, we’re excited by what we’ve seen from node.js’ raw performance.
 
-Mas ejemplos de \benchmarkQA pueden ser encontrados en\cite{online_nodejs_java_dzone}.
+Más ejemplos de \benchmarkQA pueden ser encontrados en\cite{online_nodejs_java_dzone}.
 
 
-\subsubsection{\nodejsNAME vs \railsNAME \cite{online_nodejs_ruby_linkid}}
+\subsubsection{\nodejsNAME \vsSIGLACPT \railsNAME \cite{online_nodejs_ruby_linkid}}
 
-De acuerdo a un estudio que realizó \linkedInNAME en el cual evaluó tres posibles soluciones: \railsNAME/\eventMachineCPT; \pythonNAME/\twistedCPT y \nodejsNAME. Se determinaron los siguientes beneficios de parte de \nodejsNAME:
+De acuerdo a un estudio que realizó \linkedInNAME en el cual evaluó tres posibles soluciones: \railsNAME/\eventMachineCPT; \pythonNAME/\twistedCPT y \nodejsNAME, se determinaron los siguientes beneficios de parte de \nodejsNAME:
 %LinkedIn evaluated three possible solutions: Rails/Event Machine, Python/Twisted, and Node.js. According to Prasad, Node.js was eventually chosen providing a number of benefits:
 
 \begin{itemize}
@@ -422,7 +421,7 @@ De acuerdo a un estudio que realizó \linkedInNAME en el cual evaluó tres posib
 		Mejor \performanceQA, \nodejsNAME alcanzando hasta 20 veces más rápido que \railsNAME en ciertos escenarios.
 		%Better performance, Node.js being up to 20x faster than Rails for certain scenarios
 	\item
-		Usando solo 3 \serverAS en lugar de 30, dejando espacio para un crecimientos de 10 veces el tráfico.
+		Usando solo 3 \serversAS en lugar de 30, dejando espacio para un crecimientos de 10 veces el tráfico.
 		%Using only 3 servers instead of 30, leaving room for a 10x traffic growth
 	\item
 		Ingenieros \javaScriptNAME \frontEndAS pudieron ser utilizados para código \backendAS, y los dos equipos se transformaron en uno.
@@ -431,19 +430,19 @@ De acuerdo a un estudio que realizó \linkedInNAME en el cual evaluó tres posib
 \end{itemize}
 
 
-\subsubsection{\nodejsNAME vs \phpNAME \cite{online_nodejs_php_loadimpact}}
+\subsubsection{\nodejsNAME \vsSIGLACPT \phpNAME \cite{online_nodejs_php_loadimpact}}
 
-No es justo comparar \nodejsNAME con \phpNAME. Lo que realmente se compara es \nodejsNAME y \phpNAME + \apacheDosNAME ( u otro servidor \httpNAME ). Es este caso particular, las pruebas fueron realizadas usando \apacheDosNAME y \modPhpNAME, dado que es por lejos la configuración mas común. 
+No es justo comparar \nodejsNAME con \phpNAME. Lo que realmente se compara es \nodejsNAME y \phpNAME + \apacheDosNAME ( u otro servidor \httpNAME ). En este caso particular, las pruebas fueron realizadas usando \apacheDosNAME y \modPhpNAME, dado que es por lejos la configuración más común. 
 %So no, it’s not fair to say that we compare Node.js and PHP. What we really compare is Node.js and PHP+Apache2 (or any other http server). For this article, I’ve used Apache2 and mod_php since it’s by far the most common configuration. Some might say that I’d get much better results if I had used Nginx or Lighthttpd as the http server for PHP. That’s most likely very true, but at the end of the day, server side PHP depends on running in multiple separate processes. Regardless if we create those processes with mod_php or fastcgi or any other mechanism. So, I’m sticking with the standard server setup for PHP and I think that makes good sense.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.6\textwidth]{figuras/cap2/node_benchmak_loadimpact.png}
-	\caption{\performanceQA de la aplicación \nodejsNAME}
+	\caption{\performanceQA de la aplicación \nodejsNAME.}
 	\label{figure:node_benchmark_nodephp}
 \end{figure}
 
-El gráfico de \refFigura{figure:node_benchmark_nodephp} muestra lo que sucede cuando se carga el test en el \serverAS utilizando \nodejsNAME. La respuesta de tiempo (azul) es mucho mas constante durante todo el test. 
+El gráfico de \refFigura{figure:node_benchmark_nodephp} muestra lo que sucede cuando se carga el test en el \serverAS utilizando \nodejsNAME. La respuesta de tiempo (azul) es mucho más constante durante todo el test. 
 
 %The first graph here shows what happens when we load test the Node.js server. The response time (blue) is pretty much constant all through the test. My back of a napkin analysis of the initial outliers is that they have to do with a cold MySQL cache. Now, have a look at the results from the PHP test:
 
@@ -455,19 +454,19 @@ El gráfico de \refFigura{figure:node_benchmark_nodephp} muestra lo que sucede c
 	\label{figure:php_benchmark_nodephp}
 \end{figure}
 
-Muy diferente los resultados para el caso de \phpNAME(\refFigura{figure:php_benchmark_nodephp}). No es sencillo observar que sucede, pero las lineas azules están inicialmente estables a 320ms hasta cerca de 340 usuarios activos simultáneos. Después de eso, se observa un pequeño incremento en el tiempo de respuesta pero después de agregar mas usuarios activos simultáneos, el tiempo de respuesta se dispara por completo. 
+Muy diferentes los resultados para el caso de \phpNAME (\refFigura{figure:php_benchmark_nodephp}). No es sencillo observar qué sucede, pero las líneas azules están inicialmente estables a 320ms hasta cerca de 340 usuarios activos simultáneos. Después de eso, se observa un pequeño incremento en el tiempo de respuesta, pero después de agregar más usuarios activos simultáneos, el tiempo de respuesta se dispara por completo. 
 %Quite different results. It’s not easy to see on this screen shot, but the blue lines is initially stable at 320 ms response time up to about 340 active concurrent users. After that, we first see a small increase in response time but after additional active concurrent users are added, the response time eventually goes through the roof completely.
 
-¿ Qué problema tiene \phpApacheNAME?
+¿Qué problema tiene \phpApacheNAME?
 %So what’s wrong with PHP/Apache?
 
 La diferencia no es de sorprender. Esto es producto de la diferencia de arquitectura entre ambas soluciones.
 %Ok, so what we’re looking at is not very surprising, it’s the difference in architecture between the two solutions. Let’s think about what goes on in each case.
 
-Cuando \apacheDosNAME sirve a una pagina \phpNAME, este deja la ejecución \phpNAME a un \childProcessPC específico. Ese \childProcessPC puede solo manejar una solicitud \phpNAME al mismo tiempo, así que si hay más solicitudes, las otras deben esperar. En el \serverAS hay un máximo de 256 \clientsAS (\maxClientsDB) configurados vs 150 que vienen por defecto. Incluso si es posible aumentar el \maxClientsDB hasta mas allá de 256, habrá problemas con la memoria interna(\memoryRamPC), Al final, se necesita encontrar el balance correcto entre el máximo número de solicitudes simultaneas y los recursos disponibles del \serverAS.
+Cuando \apacheDosNAME sirve a una página \phpNAME, este deja la ejecución \phpNAME a un \childProcessPC específico. Ese \childProcessPC puede solo manejar una solicitud \phpNAME al mismo tiempo, así que si hay más solicitudes, las otras deben esperar. En el \serverAS hay un máximo de 256 \clientsAS (\maxClientsDB) configurados \vsSIGLACPT 150 que vienen por defecto. Incluso si es posible aumentar el \maxClientsDB hasta más allá de 256, habrá problemas con la memoria interna (\memoryRamPC). Al final, se necesita encontrar el balance correcto entre el máximo número de solicitudes simultáneas y los recursos disponibles del \serverAS.
 %When Apache2 serves up the PHP page it leaves the PHP execution to a specific child process. That child process can only handle one PHP request at a time so if there are more requests than than, the others have to wait. On this server, there’s a maximum of 256 clients (MaxClients) configured vs 150 that comes standard. Even if it’s possible to increase MaxClients to well beyond 256, that will in turn give you a problem with internal memory (RAM). At the end, you need to find the correct balance between max nr of concurrent requests and available server resources.
 
-Pero para \nodejsNAME, es sencillo. Después de todo, cada solicitud es cerca de 30\% más rápido que \phpNAME, así que en \performanceQA, el cual es una configuración extremadamente básica, \nodejsNAME es mas rápido. Además, en\nodejsNAME Todo esta en un solo proceso en el \serverAS. Un proceso manejando una solicitud activa. Así que no existe una comunicación interna de procesos entre diferentes instancias y el proceso madre. Incluso, pos solicitud, \nodejsNAME es mucho mas eficiente. \phpApacheNAME necesita muchísimo \phpNAME y sobrecarga de procesos por cada \workerClientINT concurrente mientras \nodejsNAME compartirá la mayoría de su memoria entre las solicitudes.
+Pero para \nodejsNAME, es sencillo. Después de todo, cada solicitud es cerca de 30\% más rápido que \phpNAME, así que en \performanceQA, el cual es una configuración extremadamente básica, \nodejsNAME es más rápido. Además, en \nodejsNAME todo está en un solo proceso en el \serverAS. Un proceso manejando una solicitud activa. Así que no existe una comunicación interna de procesos entre diferentes instancias y el proceso madre. Incluso, pos solicitud, \nodejsNAME es mucho más eficiente. \phpApacheNAME necesita muchísimo \phpNAME y sobrecarga de procesos por cada \workerClientINT concurrente mientras \nodejsNAME compartirá la mayoría de su memoria entre las solicitudes.
 %But for Node, it’s easier. First of all, in the calm territory, each request is about 30% faster than for PHP, so in pure performance in this extremely basic setup, Node is quicker. Also going for Node is the fact that everything is in one single process on the server. One process with one active request handling thread. So thre’s no inter process communication between different instances and the ‘mother’ process. Also, per request, Node is much more memory efficient. PHP/Apache needs to have a lot of php and process overhead per concurrent worker/client while Node will share most of it’s memory between the requests.
 
 %Also note that in both these tests, CPU load was never a problem. Even if CPU loads varies with concurrent users in both tests it stays below 5% (and yes, I did not just rely on the graph, I checked it on the server as well). (I’ll write a follow up on this article at some point when I can include server memory usage as well). So we haven’t loaded this server into oblivion in any way, we’ve just loaded it hard enough for the PHP/Aapache architecture to start showing some of it’s problems.
@@ -514,7 +513,7 @@ Más ejemplos de \benchmarkQA pueden ser encontrados en \cite{online_nodejs_java
 
 \subsection{\fullstackAS \javaScriptNAME}
 
-La elección del uso de \nodejsNAME trae como consecuencia inmediata el uso de \javaScriptNAME en \serverSideAS. Hay una gran cantidad de ventajas al utilizar un único lenguaje a lo largo del \stackAS. Al programas con \javaScriptNAME existe la posibilidad de realizar mejoras de rendimiento tanto en el propio \softwarePC y en la productividad de los desarrolladores. Con \mongodbNAME, se puede guardar los \documentsDB en un formato \jsonLikeCPT, escribir consultas \jsonNAME en los servidores basados en \nodejsNAME, y similarmente pasar documentos \jsonNAME al \frontEndAS. \debuggingPL y la administración de la base de datos se vuelve una tarea muchísimo mas sencilla cuando los objetos guardados en la base de datos son esencialmente idénticos a los objetos que el cliente \javaScriptNAME ve. Incluso mejor, alguien trabajando en \clientSideAS puede fácilmente entender el código del \serverSideAS y las consultas a la \dataBaseDB; usando la misma sintaxis y objetos todo el proceso libera a los desarrolladores la consideración de varios conjuntos de buenas prácticas de lenguajes y reduce la barrera de entrada para la comprensión de su código base. Esto es especialmente importante en una \hackathonCPT: el equipo puede no tener mucha experiencia trabajando juntos, y con tan poco tiempo para integrar todas las piezas de su proyecto, cualquier detalle que haga el proceso de desarrollo más sencillo es oro.
+La elección del uso de \nodejsNAME trae como consecuencia inmediata el uso de \javaScriptNAME en \serverSideAS. Hay una gran cantidad de ventajas al utilizar un único lenguaje a lo largo del \stackAS. Al programar con \javaScriptNAME existe la posibilidad de realizar mejoras de rendimiento tanto en el propio \softwarePC como en la productividad de los desarrolladores. Con \mongodbNAME, se pueden guardar los \documentsDB en un formato \jsonLikeCPT, escribir consultas \jsonNAME en los servidores basados en \nodejsNAME, y similarmente pasar documentos \jsonNAME al \frontEndAS. \debuggingPL y la administración de la base de datos se vuelve una tarea muchísimo más sencilla cuando los objetos guardados en la base de datos son esencialmente idénticos a los objetos que el cliente \javaScriptNAME ve. Incluso mejor, alguien trabajando en \clientSideAS puede fácilmente entender el código del \serverSideAS y las consultas a la \dataBasesDB; usando la misma sintaxis y objetos todo el proceso libera a los desarrolladores la consideración de varios conjuntos de buenas prácticas de lenguajes y reduce la barrera de entrada para la comprensión de su código base. Esto es especialmente importante en una \hackathonCPT: el equipo puede no tener mucha experiencia trabajando juntos, y con tan poco tiempo para integrar todas las piezas de su proyecto, cualquier detalle que haga el proceso de desarrollo más sencillo es oro.
 %First of all, there are huge advantages to using a uniform language throughout your stack. My team uses a set of tools that we affectionately call the MEAN stack:­ MongoDB, ExpressJS, AngularJS, and Node.js. By coding with Javascript throughout, we are able to realize performance gains in both the software itself and in the productivity of our developers. With MongoDB, we can store our documents in a JSON-­like format, write JSON queries on our ExpressJS and NodeJS based server, and seamlessly pass JSON documents to our AngularJS frontend. Debugging and database administration become a lot easier when the objects stored in your database are essentially identical to the objects your client Javascript sees. Even better, somebody working on the client side can easily understand the server side code and database queries; using the same syntax and objects the whole way through frees you from having to consider multiple sets of language best practices and reduces the barrier to entry for understanding your codebase. This is especially important in a hackathon setting: the team may not have much experience working together, and with such little time to integrate all the pieces of your project, anything that makes the development process easier is gold.
 
 

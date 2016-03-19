@@ -53,6 +53,7 @@
 \newcommand{\bothWrapperWS}[1]		{\textit{\gloss{#1}}}
 \newcommand{\nWrapper}[1]			{\textit{#1}\xspace}
 \newcommand{\nWrapperWS}[1]			{\textit{#1}\xspace}
+\newcommand{\dontSplit}[1]			{\mbox{#1}\xspace}
 
 %%%%%%%%%%%%%%%%%%% region constants %%%%%%%%%%%%%%%%%%%
 
@@ -562,7 +563,7 @@
 \newcommand{\email}						{\bWrapper{email}}
 \newcommand{\emails}					{\bWrapper{emails}}
 
-\newcommand{\mobileINT}					{\bWrapper{móvil]}}
+\newcommand{\mobileINT}					{\bWrapper{móvil}}
 \newcommand{\mobilesINT}				{\bWrapper{móviles}}
 \newcommand{\tabletINT}					{\bWrapper{tablet}}
 \newcommand{\tabletsINT}				{\bWrapper{tablets}}
@@ -649,16 +650,16 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%  E-COMMERCE(COM)	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newcommand{\ecommerceCOM}				{\bothWrapper{ecommerce}}
-\newcommand{\ebusinessCOM}				{\bWrapper{e-business}}
+\newcommand{\ecommerceCOM}				{\dontSplit{\bothWrapper{ecommerce}}}
+\newcommand{\ebusinessCOM}				{\dontSplit{\bWrapper{e-business}}}
 \newcommand{\commerceCOM}				{\bWrapper{Commerce}}
 \newcommand{\paymentsCOM}				{\bWrapper{Payments}}
 \newcommand{\electronicpayCOM}			{\bWrapper{Electronic Payments}}
-\newcommand{\emarket}					{\bWrapper{e-Market}}
-\newcommand{\emarketing}				{\bWrapper{e-Marketing}}
-\newcommand{\eshopping}					{\bWrapper{e-Shopping}}
-\newcommand{\egoverment}				{\bWrapper{e-Government}}
-\newcommand{\mcommerce}					{\bWrapper{m-Commerce}}
+\newcommand{\emarket}					{\dontSplit{\bWrapper{e-Market}}}
+\newcommand{\emarketing}				{\dontSplit{\bWrapper{e-Marketing}}}
+\newcommand{\eshopping}					{\dontSplit{\bWrapper{e-Shopping}}}
+\newcommand{\egoverment}				{\dontSplit{\bWrapper{e-Government}}}
+\newcommand{\mcommerce}					{\dontSplit{\bWrapper{m-Commerce}}}
 \newcommand{\wishlist}					{\bWrapper{wish list}}
 \newcommand{\shop}						{\bWrapper{shop}}
 \newcommand{\shopping}					{\bWrapper{shopping}}
@@ -730,20 +731,18 @@
 \newcommand{\categoriesCommerce}		{\bWrapper{categorías}}
 \newcommand{\itemReviewsCommerce}		{\bWrapper{itemReviews}}
 \newcommand{\orderCommerce}				{\bWrapper{orden}}
-\newcommand{\ordersCommerce}			{\bWrapper{ordenes}}
 \newcommand{\catalogCommerce}			{\bWrapper{Catálogo}}
 \newcommand{\managementCOM}				{\bWrapper{Management}}
 \newcommand{\catalogManagementCOM}		{\catalogCommerce \managementCOM}
 \newcommand{\contentManagementCOM}		{\bWrapper{Content} \managementCOM}
 \newcommand{\sku}						{\bothWrapper{sku}}
-\newcommand{\inventoryCommerce}			{\bWrapper{Inventory}}
 \newcommand{\physItem}					{\bWrapper{physical item}}
 \newcommand{\inCart}					{\bWrapper{in-Cart}}
 \newcommand{\debitOneAccount}			{\bWrapper{debit one account}}
 \newcommand{\creditAnother}				{\bWrapper{credit another}}
 \newcommand{\purchasedCOM}				{\bWrapper{purchased}}
 \newcommand{\serviceCOM}				{\bWrapper{Servicio}}
-\newcommand{\servicesCOM}				{\bWrapper{Servicios}}
+\newcommand{\servicesCOM}				{\bWrapper{servicios}}
 \newcommand{\supplierCOM}				{\bWrapper{Supplier}}
 \newcommand{\mvpSiglasCOM}				{\bothWrapper{mvp_siglas}}
 \newcommand{\minViableProductCOM}		{\bothWrapper{min_viable_product}}
@@ -990,7 +989,6 @@
 \newcommand{\join}						{\bWrapper{join}}
 \newcommand{\joins}						{\bWrapper{joins}}
 \newcommand{\dataBackupDB}				{\dataDB \bWrapper{Backup}}
-\newcommand{\joining}					{\bWrapper{joining}}
 \newcommand{\column}					{\bWrapper{column}}
 \newcommand{\columns}					{\bWrapper{columns}}
 \newcommand{\superColumns}				{\bWrapper{super columns}}
@@ -1115,7 +1113,6 @@
 \newcommand{\productivity}			{\bWrapper{productivity}}
 \newcommand{\reusabilityQA}			{\bWrapper{re-usability}}
 \newcommand{\usabilityQA}			{\bWrapper{usability}}
-\newcommand{\scale}					{\bWrapper{scale}}
 \newcommand{\scaleUpQA}				{\bWrapper{scale up}}
 \newcommand{\scalableQA}			{\bWrapper{Scalable}}
 \newcommand{\scalablesQA}			{\bWrapper{Scalables}}
@@ -1163,7 +1160,7 @@
 \newcommand{\optimizationsQA}		{\bWrapper{optimizations}}
 \newcommand{\interoperabilityQA}	{\bWrapper{interoperability}}
 \newcommand{\reusableQA}			{\bWrapper{reusable}}
-\newcommand{\efficientQA}			{\bWrapper{efficient}}
+\newcommand{\efficientQA}			{\bWrapper{Efficient}}
 \newcommand{\codeSeparationQA}		{\bWrapper{code separation}}
 
 
@@ -1199,7 +1196,6 @@
 \newcommand{\embraceecosystem}		{\bWrapper{Embrace the Ecosystem}}
 \newcommand{\latency}				{\bWrapper{latency}}
 \newcommand{\update}				{\bWrapper{update}}
-\newcommand{\updating}				{\bWrapper{Updating}}
 \newcommand{\updated}				{\bWrapper{updated}}
 \newcommand{\updates}				{\bWrapper{updates}}
 \newcommand{\downloadCPT}			{\bWrapper{download}}
@@ -1324,7 +1320,6 @@
 \newcommand{\inputOutput}				{\bWrapper{I/O}}
 \newcommand{\vmsSIGLA}					{\bWrapper{VMs}}
 \newcommand{\packagingCPT}				{\bWrapper{Packaging}}
-\newcommand{\engine}					{\bWrapper{engine}}
 \newcommand{\hub}						{\bWrapper{hub}}
 \newcommand{\workflowCPT}				{\bWrapper{workflow}}
 \newcommand{\workflowsCPT}				{\bWrapper{Workflows}}
@@ -1332,12 +1327,11 @@
 \newcommand{\analyticProcessing}		{\bothWrapper{analytic_processing}}
 %TODO
 %\newcommand{\tarnsactionalProcessing}	{\bothWrapper{transactional_processing}}
-\newcommand{\tarnsactionalProcessing}	{\nWrapper{procesamiento transanccional}}
+\newcommand{\tarnsactionalProcessing}	{\nWrapper{procesamiento transaccional}}
 \newcommand{\analytical}				{\bWrapper{analytical}}
 \newcommand{\onTheFly}					{\bWrapper{on the fly}}
 \newcommand{\custom}					{\bWrapper{custom}}
 \newcommand{\worldCPT}					{\bWrapper{World}}
-\newcommand{\realWorld}					{\bWrapper{Real World}}
 \newcommand{\scan}						{\bWrapper{scan}}
 \newcommand{\serviceCPT}				{\bWrapper{Service}}
 \newcommand{\spreedsheet}				{\bWrapper{spreedsheet}}
@@ -1432,6 +1426,7 @@
 \newcommand{\securityDomainCPT}		{\bWrapper{security domain}}
 \newcommand{\attackSurfaceCPT}		{\bWrapper{attack surface}}
 \newcommand{\bcriptCPT}				{\bWrapper{bcript}}
+\newcommand{\vsSIGLACPT}			{\bWrapper{vs.}}
 
 
 
