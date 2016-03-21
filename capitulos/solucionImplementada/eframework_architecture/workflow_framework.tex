@@ -7,9 +7,9 @@
 
 Existen una serie de flujos que se pueden experimentar al visitar un sitio \ecommerceCOM, entre los cuales podemos destacar:
 
-	\begin{itemize}
+	\begin{enumerate}
 		\item
-			Shopping Experience.
+			Experiencia de \shoppingCOM.
 		\item
 			Proceso de una orden
 		\item
@@ -22,17 +22,17 @@ Existen una serie de flujos que se pueden experimentar al visitar un sitio \ecom
 			Retorno de artículos.
 		\item
 			Entre otros. 
-	\end{itemize}
+	\end{enumerate}
 
 
-Cada uno de los pasos dentro de un \workflowsCPT puede ser considerado como un estado el cual cambiará dependiendo de los eventos que esten involucrados. Por lo tanto cada uno de estos \workflowsCPT puede ser modelado utilizando una máquina de estados finitos.
+Cada uno de los pasos dentro de un \workflowsCPT puede ser considerado como un estado, el cual cambiará dependiendo de los eventos que estén involucrados. Por lo tanto cada uno de estos \workflowsCPT puede ser modelado utilizando una máquina de estados finitos.
 Para el caso particular del \frameworkPC para \ecommerceCOM, se han modelado 2 \workflowsCPT que se implementan utilizando la librería \javaScriptNAME \finiteStateMachine.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=1.1\textwidth]{figuras/cart_state_machine.jpg}
 
-	\caption{Máquina de estado de carro de compras.}
+	\caption{Máquina de estados de carro de compras.}
 	\label{figure:cart_state_machine}
 \end{figure}
 
@@ -41,8 +41,8 @@ Para el caso particular del \frameworkPC para \ecommerceCOM, se han modelado 2 \
 	\centering
 	\includegraphics[width=0.8\textwidth]{figuras/order_state_machine.jpg}
 
-	\caption{Máquina de estado del estado de una orden.}
+	\caption{Máquina de estados del estado de una orden.}
 	\label{figure:order_state_machine}
 \end{figure}
 
-Notar que en estricto rigor, estos diagramas no corresponden a una máquina de estados finitos, sin embargo, es una excelente estrategia abordar estos procesos como máquinas de estados.
+Notar que en estricto rigor estos diagramas no corresponden a una máquina de estados finitos, sin embargo, es una excelente estrategia abordar estos procesos como máquinas de estados.

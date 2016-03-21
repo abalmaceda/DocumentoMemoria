@@ -3,14 +3,14 @@
 
 \shippingEF es parte del proceso realmente grande y complejo perteneciente al \workflowCPT \orderFulfillmentCOM. 
 
-Como primer paso, hay que agregar una dirección de origen, la cual es agreagada en \nameref{capitulo:solucionImplementada:dashboard:subsubsection:addressPanel}.
+Como primer paso, hay que agregar una dirección de origen, la cual es agregada en \nameref{capitulo:solucionImplementada:dashboard:subsubsection:addressPanel}.
 
-Segundo, se deben agregar \shippingZonesCOM los cuales tendran su correspondiente \shippingRatesCOM. Existen servicios que permiten calcular en tiempo real el \shippingRatesCOM, evitando así que la tienda asuma un costo extra por un error en la estimación de la tarifa de envío. El sitio además debería ser capaz de determinar, si la dirección de destino se encuentra dentro de alguna de las \shippingZonesCOM definidas.
+Segundo, se deben agregar \shippingZonesCOM, los cuales tendrán su correspondiente \shippingRatesCOM. Existen servicios que permiten calcular en tiempo real el \shippingRatesCOM, evitando así que la tienda asuma un costo extra por un error en la estimación de la tarifa de envío. El sitio además debería ser capaz de determinar si la dirección de destino se encuentra dentro de alguna de las \shippingZonesCOM definidas.
 
 % TODO falta agregar descripcion del proceso
 %https://docs.shopify.com/manual/shipping/initial-shipping-setup#add-a-shipping-zone
 
-Por temás de tiempo, se decidío simplificar la solución, permitiendo agregar diferentes opciones de \shippingEF que eventualmente representarían diferentes criterios de envío.
+Por temas de tiempo, se decidió simplificar la solución, permitiendo agregar diferentes opciones de \shippingEF que eventualmente representarían diferentes criterios de envío.
 
 %TODO Agregar mas informaciñon 
 
@@ -31,10 +31,10 @@ Por temás de tiempo, se decidío simplificar la solución, permitiendo agregar 
 		\multirow{1}{*}{\textit{Cost}} 			&  				& \\ \hline
 		\multirow{1}{*}{\textit{Handling}} 		&  				& \\ \hline
 		\multirow{1}{*}{\textit{Rate}} 			&  \checkmark	& Número mayor que 0. \\ \hline
-		\multirow{1}{*}{\textit{Enabled}} 		&  \checkmark	& Boolean \\ \hline
+		\multirow{1}{*}{\textit{Enabled}} 		&  \checkmark	& Boolean. \\ \hline
 		\hline
 	\end{tabular}
- 	\caption{Resumen restrincciones formulario para \shippingEF.}
+ 	\caption{Resumen restricciones formulario para \shippingEF.}
     \label{tab:dashboard:shipping:form:restrictions:shipping}
 \end{table}
 
@@ -55,15 +55,13 @@ Por temás de tiempo, se decidío simplificar la solución, permitiendo agregar 
 \end{figure}
 
 
-\subsubsection{Tarifas de \shippingEF y carros abadonados}
+\subsubsection{Tarifas de \shippingEF y carros abandonados}
 
-Aunque no es un tema que involucre a la finalidad de esta memoeria, es importante mencionar la importancia que tiene el factor \shippingEF dentro del abandono del carro de compra.
-El desafio real que aparece cuando se desea abordar la estrategía de \shippingEF, es determinar la solución que impacte lo mínimo posible los margenes, pero que aún asi siga siendo atractivo para el cliente.
-Y esto es algo en lo que se va querer estar en lo correcto. Estudios demuestran que el costo de \shippingEF es la principal razón del abandano de carros de compra (\refFigura{figure:dashboard:shipping:key_factor_shopping_cart_abandonment})\cite{online_forrester_consulting_smarter_stratefie_free_shipping}.
+Aunque no es un tema que involucre a la finalidad de esta memoria, es importante mencionar la importancia que tiene el factor \shippingEF dentro del abandono del carro de compra.El desafío real que aparece cuando se desea abordar la estrategía de \shippingEF, es determinar la solución que impacte lo mínimo posible los márgenes, pero que aún así siga siendo atractivo para el cliente. Y esto es algo en lo que se desea estar en lo correcto. Estudios demuestran que el costo de \shippingEF es la principal razón del abandono de carros de compra (\refFigura{figure:dashboard:shipping:key_factor_shopping_cart_abandonment})\cite{online_forrester_consulting_smarter_stratefie_free_shipping}.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=1\textwidth]{figuras/dashboard/shipping/key_factor_shopping_cart_abandonment.png}
-	\caption{\shippingEF es un factor clave hacia el abandono de carros de compra \cite{online_forrester_consulting_smarter_stratefie_free_shipping}.}
+	\caption{\shippingEF es un factor clave en el abandono de carros de compra \cite{online_forrester_consulting_smarter_stratefie_free_shipping}.}
 	\label{figure:dashboard:shipping:key_factor_shopping_cart_abandonment}
 \end{figure}

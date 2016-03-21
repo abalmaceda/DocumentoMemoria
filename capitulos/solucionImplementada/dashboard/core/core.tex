@@ -1,7 +1,7 @@
 %!TEX root = ../../../../memoria.tex
 \subsection{\ecomFrameworkCoreEF}
 
-Corresponde a la customización de los elementos relacionados directamente con la tienda. La información se ha jerarquizado en diferentes paneles de contenido plegable (conocidos como menú acordeón) los cuales se observan en la \refFigura{figure:dashboard:ecommerce:main_menu}.
+Corresponde a la customización de los elementos relacionados directamente con la tienda. La información se ha jerarquizado en diferentes paneles de contenido plegable (conocidos como menú acordeón), los cuales se observan en la \refFigura{figure:dashboard:ecommerce:main_menu}.
 %Displays collapsible content panels for presenting information in a limited amount of space.
 \begin{figure}[H]
 	\centering
@@ -10,8 +10,8 @@ Corresponde a la customización de los elementos relacionados directamente con l
 	\label{figure:dashboard:ecommerce:main_menu}
 \end{figure}
 
-Cada uno de estos elementos tiene información configurable, además del \feedback habitual correspondiente a la información entregada de validación de cada campo, tiene una ventana emergente para indicar si la actualización del formulario fue o no exitosa.
-La rázon de esta información extra es muy sencilla, si no existieran estos mensajes emergentes, estaría la ambigüedad de si el resultado fue exitoso o no dado que no hay ningún otro elemento gráfico con el cual se podría inferir el resultado. Por ejemplo, el formulario no se \'limpia\', el formulario no se cierra, no se agrega un nuevo elemento a una lista, etc.
+Cada uno de estos elementos tiene información configurable; además del \feedback habitual correspondiente a la información entregada de validación de cada campo, tiene una ventana emergente para indicar si la actualización del formulario fue o no exitosa.
+La rázon de esta información extra es muy sencilla, si no existieran estos mensajes emergentes, estaría la ambigüedad de si el resultado fue exitoso o no dado que no hay ningún otro elemento gráfico con el cual se podría inferir el resultado. Por ejemplo, el formulario no se \textit{límpia}, el formulario no se cierra, no se agrega un nuevo elemento a una lista, etc.
 
 \begin{figure}[H]
 	\centering
@@ -27,27 +27,27 @@ La rázon de esta información extra es muy sencilla, si no existieran estos men
 	\label{figure:dashboard:ecommerce:error_message}
 \end{figure}
 
-En el caso de ser exitoso, aparece un mensaje el cual eventualmente desaparecerá de un breve intervalo de tiempo(\refFigura{figure:dashboard:ecommerce:success_message}). Los mensajes de error persisten en el tiempo. Por lo tanto se deben cerrar para que desaparezcan (\refFigura{figure:dashboard:ecommerce:error_message}).
+En el caso de ser exitoso, aparece un mensaje, el cual eventualmente desaparecerá después de un breve intervalo de tiempo (\refFigura{figure:dashboard:ecommerce:success_message}). Los mensajes de error persisten en el tiempo. Por lo tanto se deben cerrar para que desaparezcan (\refFigura{figure:dashboard:ecommerce:error_message}).
 
 
 \subsubsection*{Panel \generalPanel}
 
-El panel general está formado por dos formularios; el primero solo contiene un campo y es un checkbox para permitir que un usuario \userGuestAccount pueda realizar un \checkoutCOM (\refFigura{figure:dashboard:ecommerce:general_menu:allow_checkout}). Un usuario es considerado \textit{invitado}, cuando no tiene su cuanta confirmada.
+El panel general está formado por dos formularios; el primero solo contiene un campo y es un checkbox para permitir que un usuario \userGuestAccount pueda realizar un \checkoutCOM (\refFigura{figure:dashboard:ecommerce:general_menu:allow_checkout}). Un usuario es considerado \textit{invitado}, cuando no tiene su cuenta confirmada.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.6\textwidth]{figuras/dashboard/ecommerce/general_menu/allow_checkout.png}
-	\caption{Formulario de información general de la tienda}
+	\caption{Formulario de información general de la tienda.}
 	\label{figure:dashboard:ecommerce:general_menu:allow_checkout}
 \end{figure}
 
-Este formulario tiene la particuladidad que se envía automáticamente al cambiar su estado.
-El otro formulario está relacionado con la información más general de la empresa ( \refFigura{figure:dashboard:ecommerce:general_menu:menu})
+Este formulario tiene la particularidad que se envía automáticamente al cambiar su estado.
+El otro formulario está relacionado con la información más general de la empresa (\refFigura{figure:dashboard:ecommerce:general_menu:menu}).
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.6\textwidth]{figuras/dashboard/ecommerce/general_menu/menu.png}
-	\caption{Formulario de información general de la tienda}
+	\caption{Formulario de información general de la tienda.}
 	\label{figure:dashboard:ecommerce:general_menu:menu}
 \end{figure}
 
@@ -61,18 +61,18 @@ El otro formulario está relacionado con la información más general de la empr
 		\multirow{1}{*}{\textit{Keywords}} 		&  				&  \\ \hline
 		\hline
 	\end{tabular}
- 	\caption{Restrincciones formulario \generalPanel}
+ 	\caption{Restricciones formulario \generalPanel.}
     \label{tab:dashboard:ecommerce:form:general}
 \end{table}
 
 
-Este formulario solo tienen un campo obligatorio, y corresponde a \textit{Name}. Al igual que otros formularios, dicho campo se destaca de color rojo, además de entregar un mensaje a modo de identificar el error (\refFigura{figure:apendice:dashboard:ecommerce:general_menu:updated_error}).
+Este formulario solo tiene un campo obligatorio, y corresponde a \textit{Name}. Al igual que otros formularios, dicho campo se destaca de color rojo, además de entregar un mensaje a modo de identificar el error (\refFigura{figure:apendice:dashboard:ecommerce:general_menu:updated_error}).
 
 
 
 \subsubsection*{Panel \addressPanel}\label{capitulo:solucionImplementada:dashboard:subsubsection:addressPanel}
 
-Este formulario se utiliza para agragar información física de la tienda, como algún teléfono de contacto.
+Este formulario se utiliza para agregar información física de la tienda, como algún teléfono de contacto.
 
 \begin{figure}[H]
 	\centering
@@ -81,7 +81,7 @@ Este formulario se utiliza para agragar información física de la tienda, como 
 	\label{figure:dashboard:ecommerce:address:menu}
 \end{figure}
 
-En relación a los campos del formulario, se tienen las siguientes restricciones (\reftabla{tab:dashboard:ecommerce:form:address}):
+En relación con los campos del formulario, se tienen las siguientes restricciones (\reftabla{tab:dashboard:ecommerce:form:address}):
 
 \begin{table}[H]
     \centering
@@ -96,14 +96,14 @@ En relación a los campos del formulario, se tienen las siguientes restricciones
 		\multirow{1}{*}{\textit{Country}}	&  {\checkmark} &  \\ \hline
 		\multirow{1}{*}{\textit{Phone}} 	&  {\checkmark} &  \\ \hline
 	\end{tabular}
- 	\caption{Restrincciones formulario \addressPanel}
+ 	\caption{Restricciones formulario \addressPanel.}
     \label{tab:dashboard:ecommerce:form:address}
 \end{table}
 
 
 \subsubsection*{Panel \mailPanel}
 
-Corresponde a la información básica necesaria para configurar un servicio de \email. Agregar un \email no es requerido, pero si se configura el servicio deben agregarse tódos los campos(\reftabla{tab:dashboard:ecommerce:form:mail}).
+Corresponde a la información básica necesaria para configurar un servicio de \email. Agregar un \email no es requerido, pero si se configura el servicio deben agregarse todos los campos (\reftabla{tab:dashboard:ecommerce:form:mail}).
 
 \begin{figure}[H]
 	\centering
@@ -122,7 +122,7 @@ Corresponde a la información básica necesaria para configurar un servicio de \
 		\multirow{1}{*}{\textit{Port}} 		&  {\checkmark} & Número mayor que 0 \\ \hline
 		\hline
 	\end{tabular}
- 	\caption{Restrincciones formulario \mailPanel}
+ 	\caption{Restricciones formulario \mailPanel.}
     \label{tab:dashboard:ecommerce:form:mail}
 \end{table}
 
@@ -145,6 +145,6 @@ Corresponde a la información básica necesaria para configurar un servicio de \
 		\multirow{1}{*}{\textit{Google Api}} 		&  {\checkmark} &  \\ \hline
 		\hline
 	\end{tabular}
- 	\caption{Restrincciones formulario \optionsPanel}
+ 	\caption{Restricciones formulario \optionsPanel.}
     \label{tab:dashboard:ecommerce:form:options}
 \end{table}

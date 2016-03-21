@@ -1,8 +1,11 @@
 # Fdb version 3
-["pdflatex"] 1439759916 "iso_javascript_app.tex" "iso_javascript_app.pdf" "iso_javascript_app" 1439759917
+["pdflatex"] 1458424813 "iso_javascript_app.tex" "iso_javascript_app.pdf" "iso_javascript_app" 1458424813
+  "/usr/local/texlive/2015/texmf-dist/web2c/texmf.cnf" 1428852030 31983 18aeec08f48baa3cf3508d538dd5f459 ""
+  "/usr/local/texlive/2015/texmf-var/web2c/pdftex/pdflatex.fmt" 1441284286 3849952 b990d1db5225abb84cc62aa1e297bbc3 ""
+  "/usr/local/texlive/2015/texmf.cnf" 1432479636 577 0d611272082f3cdb8e80e09a3c69cf07 ""
   "capitulos/estadoarte/tecnologias_estadoArte/client_side_mvc_diagram.tex" 0 -1 0 ""
   "iso_javascript_app.aux" 1439759746 8 a94a2480d3289e625eea47cd1b285758 ""
-  "iso_javascript_app.tex" 1433022247 20173 c1a4895471cec84fb60e146ee180b583 ""
+  "iso_javascript_app.tex" 1458424254 20166 7e31f6eac10955d3ec6ee75a44ed8884 ""
   (generated)
   "iso_javascript_app.log"
   "iso_javascript_app.pdf"

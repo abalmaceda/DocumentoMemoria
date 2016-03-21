@@ -1,20 +1,20 @@
 %!TEX root = ../../../memoria.tex
 \section{\checkoutEF}\label{chapter:solucionimplementada:section:checkout}
 
-	Una de las peores violaciones de usabilidad para un \websiteINT \ecommerceCOM corresponde a un proceso de \checkoutEF que no sea lineal. \websiteINT que no tengan un proceso de \checkoutEF lineal dejan a muchos de los usuarios confusos e intimidados. Al momento de realizar este estudio, tanto \walmartNAME como \zapposNAME tenian un proceso \checkoutEF no lieal \cite{online_official_smashingmagazine_fundamental_guidelines_checkout_design}.
+	Una de las peores violaciones de usabilidad para un \websiteINT \ecommerceCOM corresponde a un proceso de \checkoutEF que no sea lineal. \websiteINT que no tengan un proceso de \checkoutEF lineal deja a muchos de los usuarios confusos e intimidados. Al momento de realizar este estudio, tanto \walmartNAME como \zapposNAME tenían un proceso \checkoutEF no lineal \cite{online_official_smashingmagazine_fundamental_guidelines_checkout_design}.
 	% One of the worst usability violations that we discovered in our testing was non-linear checkout processes. Websites with a non-linear checkout process left several of our test subjects confused and intimidated. At the time of testing, both Walmart and Zappos had a non-linear checkout process.
 
 	% The typical way to “accidentally” end up with a non-linear checkout process is to create steps within steps. This happens, for example, when the customer has to set a “Preferred shipping address” (Walmart’s violation) or “Create an account” (Zappos’ violation) on a separate page, and is then redirected to a previous checkout step upon completion.
 	% Below, you can see Walmart’s checkout flow in thumbnails (click image for larger view). Notice that it’s non-linear because the “Preferred shipping address” sub-step directs the user to a previous step:
 
-	Afortunadamente, hacer el proceso completamente lineal no es dificil. En el caso de necesitar por ejemplo, un sub-paso tal como \textit{creación de una cuenta}, esta nunca debe redirigir a un paso previo en el proceso de \checkoutEF, en lugar de eso, debe dirigir al cliente al siguiente paso del proceso de \checkoutEF\cite{online_official_smashingmagazine_fundamental_guidelines_checkout_design}. 
+	Afortunadamente, hacer el proceso completamente lineal no es difícil. En el caso de necesitar, por ejemplo, un \subPasoCPT tal como \textit{creación de una cuenta}, esta nunca debe redirigir a un paso previo en el proceso de \checkoutEF, en lugar de eso, debe dirigir al cliente al siguiente paso del proceso \cite{online_official_smashingmagazine_fundamental_guidelines_checkout_design}. 
 	%Luckily, making the process completely linear is easy. In this case, a sub-step such as “Account creation” should never redirect to a previous step in the checkout process, but instead direct the customer to the next step in the checkout process.
 
-	Esto es crítico por que el modelo mental de la mayoria de los compradores dicta que el proceso de \checkoutEF debería ser lineal. Al ver la misma página dos veces, la mayoria de los clientes concluye que el sitio tienen un error, porque esto ocurre cuando hay errores de validación. \cite{online_official_smashingmagazine_fundamental_guidelines_checkout_design}. 
+	Esto es crítico porque el modelo mental de la mayoría de los compradores dicta que el proceso de \checkoutEF debería ser lineal. Al ver la misma página dos veces, la mayoria de los clientes concluye que el sitio tiene un error, porque esto ocurre cuando hay errores de validación. \cite{online_official_smashingmagazine_fundamental_guidelines_checkout_design}. 
 	%This is critical because the mental model of most customers dictates that a checkout process should be linear. Upon seeing the same page twice, most customers would conclude that the website has an error, because this is what happens with validation errors.
 	%As one test subject said, “This looks suspiciously like the page I was on before. Is there something I didn’t do correctly?”
 
-	Para este \frameworkPC se ha implementado un proceso de \checkoutEF lineal el cual tiene los pasos que se aprecian en la \refFigura{figure:checkout:steps}.
+	Para este \frameworkPC se ha implementado un proceso de \checkoutEF lineal, el cual tiene los pasos que se aprecian en la \refFigura{figure:checkout:steps}.
 
 	% \begin{figure}[H]
 	% 	\centering
@@ -30,12 +30,12 @@
 		\label{figure:checkout:steps}
 	\end{figure}
 
-	Otro detalle importante a considerar es que mientras sea posible, hay que limitar el proceso de \checkoutEF a una sola página. En el caso de separar el proceso en algunas páginas, se debe incluir una barra de proceso para mostrar cuanto falta para terminar \cite{online_official_imediaconnection_best_practices_shopping_cart}.
+	Otro detalle importante a considerar es que mientras sea posible hay que limitar el proceso de \checkoutEF a una sola página. En el caso de separar el proceso en algunas páginas, se debe incluir una barra de proceso para mostrar cuanto falta para terminar \cite{online_official_imediaconnection_best_practices_shopping_cart}.
 	% Try to keep it to one page
 	% If at all possible, limit the checkout process to a single page. If you must spread it out across a few pages, include a progress bar to show people how far they have left to go.
 	% Read more at http://www.imediaconnection.com/content/36794.asp#6qlTEqOcCeTePmFQ.99
 
-	Afortunadamente, ambas restricciones son una manera para lograr la otra. Por lo tanto se desarrollo el proceso incluyendo a ambas. Esto se observa en la \refFigura{figure:checkout:global_status}.
+	Afortunadamente, ambas restricciones son una manera para lograr la otra. Por lo tanto se desarrollá el proceso incluyendo a ambas. Esto se observa en la \refFigura{figure:checkout:global_status}.
 
 	\begin{figure}[H]
 		\centering

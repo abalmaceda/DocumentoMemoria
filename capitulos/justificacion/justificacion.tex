@@ -201,7 +201,7 @@ Muchos argumentos impuestos contra \nosqlNAME en \ecommerceCOM se centran en \tr
 
 Con relación a \transactionsDB, ciertamente \mongodbNAME no soporta el tipo \multiObjectDB; sin embargo, soporta \atomicOperationsDB sobre \documentsDB individuales, y esto combinado con el modelo \documentOriented recién descrito, y creatividad, es suficiente para muchos problemas \ecommerceCOM. Ciertamente, si se necesita \debitOneAccount y \creditAnother en la misma operación, o si se desea \rollbackDB, sera necesario \fullFledgedTransDB. No obstante, \transactionalityDB provista por \mongodbNAME debería ser suficiente en la mayoría de los casos, si no en todos, para operaciones \ecommerceCOM.
 
-Si la preocupación está sobre \consistencyDB y \durabilityDB, operaciones escritas en \mongodbNAME pueden ser realizadas \consistencyDB sobre conexiones. Además, \mongodbNAME 1.5 soporta \nearRealTimeReplicationDB, así que es posible asegurarse que una operación ha sido \replicatedDB antes de retornar.
+Si la preocupación está sobre \consistencyDB y \durabilityDB, operaciones escritas en \mongodbNAME pueden ser realizadas \consistencyDB sobre conexiones. Además, \mongodbNAME 1.5 soporta \nearRealTimeReplicationDB, así que es posible asegurarse que una operación ha sido replicatada antes de retornar.
 
 \subsubsection{\scalabilityQA}
 La manera más sencilla para escalar la mayoría de las Bases de Datos, es \upgradingPC el \hardwarePC. Si la aplicación está corriendo en un único nodo, es usualmente posible agregar una combinación de \diskPC \iopsPC, \memoryPC y \cpuPC para eliminar los cuellos de botella de la \dataBasesDB. La técnica de mejorar el \hardwarePC de un solo node para escalar se conoce como \verticalScalingDB o \scalingUpDB(\refFigura{figure:figure_scale_up}). \verticalScalingDB tiene la ventaja de ser simple, seguro, y \textit{costo-efectividad} hasta un cierto punto. Si se está ejecutando sobre un \hardwarePC virtualizado (tal como \amazonEcdosNAME), entonces puedes encontrar que una instancia lo suficientemente larga no está disponible. Si estás ejecutando sobre \physHardwarePC, habrá un punto donde el costo de un \serverAS más poderoso se vuelve prohibitivo.
@@ -523,13 +523,13 @@ La elección del uso de \nodejsNAME trae como consecuencia inmediata el uso de \
 \ecommerceCOM es un excelente ejemplo de sistema que se puede ver totalmente beneficiado con el uso de \nodejsNAME en el lado del \serverAS. 
 
 \begin{itemize}
-	\item \textbf{\frontEndAS se movió desde el \serverSideAS al \clientSideAS ( al menos en \mobileINT )}. Una de las grandes consecuencias es que el \serverSideAS ya no es más \cpuBoundPC ahora es \memoryBoundPC e \ioBoundPC. \nodejsNAME es \eventdrivenPL, lo cual implica eficiencia en \ioBoundPC y es extremadamente eficiente en el uso de memoria.
+	\item \textbf{\frontEndAS se movió desde el \serverSideAS al \clientSideAS (al menos en \mobileINT)}. Una de las grandes consecuencias es que el \serverSideAS ya no es más \cpuBoundPC ahora es \memoryBoundPC e \ioBoundPC. \nodejsNAME es \eventdrivenPL, lo cual implica eficiencia en \ioBoundPC y es extremadamente eficiente en el uso de memoria.
 	\item Permite velocidad de desarrollo y ejecución. En otras palabras iteraciones rápidas.
 	%Ease of Development-Some problem, somewhere has a solution best written in Brainf*ck. But implementing that solution (in Brainfuck) will be nearly impossible to write, let alone read. It will cost you time and a tremendous amount of effort. In general, you should use languages and platform that make development easier, not harder for you (or anyone that might work on it later).
-	\item \textbf{Comunidad}: Existe una activa comunidad la cual esta constantemente solucionando dudas, además de proporcionar módulos para resolver problemas conocidos.
+	\item \textbf{Comunidad}: Existe una activa comunidad, la cual está constantemente solucionando dudas, además de proporcionar módulos para resolver problemas conocidos.
 	\item \textbf{Reutilizar código}: \serverSideAS y \clientSideAS usan el mismo lenguaje, permitiendo reutilización de componentes.
-	\item \textbf{Optimiza el uso de recursos}: Los desarolladores de \clientSideAS pueden desarrollar en \serverSideAS, ya que son el mismo lenguaje.
-	\item \textbf{\scalabilityQA}: Los sitios \webINT se encuentran en constante crecimiento. \scalabilityQA es una consecuencia de la eficiencia que tiene \nodejsNAME para \memoryBoundPC e \ioBoundPC
+	\item \textbf{Optimiza el uso de recursos}: Los desarrolladores de \clientSideAS pueden desarrollar en \serverSideAS, ya que son el mismo lenguaje.
+	\item \textbf{\scalabilityQA}: Los sitios \webINT se encuentran en constante crecimiento. \scalabilityQA es una consecuencia de la eficiencia que tiene \nodejsNAME para \memoryBoundPC e \ioBoundPC.
 \end{itemize}
 
 %+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

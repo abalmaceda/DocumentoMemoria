@@ -4,7 +4,7 @@
 
 	\subsection{Agregar elementos al carro}\label{chapter:section:carro_compra:subsection:add}
 
-		El proceso de agregar elementos es muy sencillo, simplemente hay que ir a la vista de un producto, ir donde esta el botón \addtocartLABEL, seleccionar la cantidad de productos que se desean agregar y finalmente apretar el botón. En la \refFigura{figure:solution:cart:button} se han seleccionado 4 productos para agregar al carro. Este diseño ha sido inspirado tambíen por el \websiteINT de \shopifyNAME (\refFigura{figure:apendice:productos:example:leifshop_product_section_add_to_cart}).
+		El proceso de agregar elementos es muy sencillo, simplemente hay que ir a la vista de un producto, ir donde esta el botón \addtocartLABEL, seleccionar la cantidad de productos que se desean agregar y finalmente apretar el botón. En la \refFigura{figure:solution:cart:button} se han seleccionado 4 productos para agregar al carro. Este diseño ha sido inspirado también por el \websiteINT de \shopifyNAME (\refFigura{figure:apendice:productos:example:leifshop_product_section_add_to_cart}).
 
 		\begin{figure}[H]
 			\centering
@@ -13,7 +13,7 @@
 			\label{figure:solution:cart:button}
 		\end{figure}
 
-		Mostrar la confirmación de objeto agregado y permanecer en la misma página es algo fundamental. Las personas no han pedido moverse a otra página, de esta manera no hay sorpresas y se mantiene la buena experiencia. Además es posible que consideren agregar más productos al carro antes de \checkoutCOM \cite{online_official_conversionxl_checkout_flow}. Consideranto esto, se muestra una notificación en la parte superior de la pantalla sobre el ingreso del nuevo producto al carro sin abandonar la página actual \refFigura{figure:solution:cart:add_motification}.
+		Mostrar la confirmación de objeto agregado y permanecer en la misma página es algo fundamental. Las personas no han pedido moverse a otra página, de esta manera no hay sorpresas y se mantiene la buena experiencia. Además es posible que consideren agregar más productos al carro antes de \checkoutCOM \cite{online_official_conversionxl_checkout_flow}. Consideranto esto, se muestra una notificación en la parte superior de la pantalla sobre el ingreso del nuevo producto al carro sin abandonar la página actual (\refFigura{figure:solution:cart:add_motification}).
 
 		\begin{figure}[H]
 			\centering
@@ -22,7 +22,7 @@
 			\label{figure:solution:cart:add_motification}
 		\end{figure}
 
-		Usualmente el \textit{agregar al carro}, botón con la acción final \websiteINT \ecommerceCOM cae en una de estas dos opciones: no esta bien diseñado o no esta ubicado estrategicamente para el uso del cliente \cite{online_official_usabilitygeek_guidelines_usability}.Por esta razón se creó un botón evidente, claro y prominente, en comparación a otras funcionalidades dentro de la misma página. Un ejemplo de lo que no se debe hacer se observa en la \refFigura{figure:apendice:productos:example:usabilitygeek_guidelines_wrong_ui_add_to_cart}.
+		Usualmente el \textit{agregar al carro}, el botón con la acción final \websiteINT \ecommerceCOM cae en una de estas dos opciones: no está bien diseñado o no está ubicado estratégicamente para el uso del cliente \cite{online_official_usabilitygeek_guidelines_usability}. Por esta razón se creó un botón evidente, claro y prominente, en comparación a otras funcionalidades dentro de la misma página. Un ejemplo de lo que no se debe hacer se observa en la \refFigura{figure:apendice:productos:example:usabilitygeek_guidelines_wrong_ui_add_to_cart}.
 		%Very often, the ‘Add to Cart’, the final action button in an e-Commerce website is either not well designed or strategically placed to grab prospective buyer’s action. The selection of shape, color, font typography, and button content all trigger the final action. Make sure the ‘Add to Cart’ button is obvious, bright, and prominent in comparison to other features on product page such as wishlists, view product, email to friend, or check out buttons. Less important functions should be lighter colored buttons or simple text links.
 
 		\begin{figure}[H]
@@ -41,7 +41,7 @@
 			\label{figure:solution:cart:header}
 		\end{figure}
 
-		El estado del carro de compra se guarda en la base de datos, esto quiere decir que aunque haga \logoutCPT, el estado seguira vigente para la próxima vez que haga \loginUpperCPT.
+		El estado del carro de compra se guarda en la base de datos, esto quiere decir que aunque haga \logoutCPT, el estado seguirá vigente para la próxima vez que haga \loginUpperCPT.
 
 
 	\subsection{Consultar los elementos del carro}\label{chapter:section:carro_compra:subsection:request}
@@ -55,12 +55,12 @@
 		Existen dos claves para un buen despliegue de contenido en un carro de compras \cite{online_official_conversionxl_checkout_flow}:
 		\begin{itemize}
 			\item
-				\textbf{Claridad}. Que sea sencillo y obvio entender que es lo que se tiene en el carro y su costo final, incluyendo \shipping e impuestos. Costos sorpresivos producen que los clientes abandonen los carros de compra \cite{online_official_conversionxl_checkout_flow}.
+				\textbf{Claridad}. Que sea sencillo y obvio entender qué es lo que se tiene en el carro y su costo final, incluyendo \shipping e impuestos. Costos sorpresivos producen que los clientes abandonen los carros de compra \cite{online_official_conversionxl_checkout_flow}.
 			\item
 				\textbf{Control}. Es sencillo realizar cambios \cite{online_official_conversionxl_checkout_flow}. Esto incluye actualización de cantidad y eliminar productos \cite{online_official_conversionxl_shopping_cart_abandonment}.
 		\end{itemize}
 
-		El icono del carro de compras que se aprecia en la \refFigura{figure:solution:cart:header} es a su vez un botón, el cual muestra todos los elementos agregados al carro en una lista horizontal. Además muestra un resumen de la compra, inspirado en el que utiliza el sitio de \shopifyNAME \refFigura{figure:apendice:cart:example:cart_summarize_shopify}, mostrando la siguiente información: 
+		El icono del carro de compras que se aprecia en la \refFigura{figure:solution:cart:header} es a su vez un botón, el cual muestra todos los elementos agregados al carro en una lista horizontal. Además muestra un resumen de la compra, inspirado en el que utiliza el sitio de \shopifyNAME (\refFigura{figure:apendice:cart:example:cart_summarize_shopify}), mostrando la siguiente información: 
 		\begin{itemize}
 			% \item
 			% 	Cantidad de elementos.
@@ -83,7 +83,7 @@
 			\label{figure:solution:cart:view}
 		\end{figure}
 
-		Cada uno de los diferentes elmentos agregados al carro pueden ser eliminados simplemente presionando sobre la [x] que tiene asociada cada producto (\refFigura{figure:solution:cart:product}). Esto permite tener \textbf{control} sobre el contenido del carro. Es importante recordar como concepto general de diseño de interfaces, que es inevitable que las personas cometan errores, o incluso cambien de parecer durante algún procedimiento. Es necesario entonces permitir correciones \cite{online_goodgui_org}. 
+		Cada uno de los diferentes elementos agregados al carro pueden ser eliminados simplemente presionando sobre la [x] que tiene asociada cada producto (\refFigura{figure:solution:cart:product}). Esto permite tener \textbf{control} sobre el contenido del carro. Es importante recordar como concepto general de diseño de interfaces, que es inevitable que las personas cometan errores, o incluso cambien de parecer durante algún procedimiento. Es necesario entonces permitir correcciones \cite{online_goodgui_org}. 
 
 		\begin{figure}[H]
 			\centering
@@ -94,6 +94,6 @@
 
 		El botón \checkoutNowLABEL que se ubica en la parte inferior de la vista \nameref{chapter:section:carro_compra:subsection:request} nos envía a la interfaz de \nameref{chapter:solucionimplementada:section:checkout}.
 
-		De momento no es posible actualizar la cantidad de un determinado producto dentro del carro. En el caso particular del producto de la \refFigura{figure:solution:cart:product}, solo se pueden eliminar los 4 productos simultaneamente.
+		De momento no es posible actualizar la cantidad de un determinado producto dentro del carro. En el caso particular del producto de la \refFigura{figure:solution:cart:product}, solo se pueden eliminar los 4 productos simultáneamente.
 
 
