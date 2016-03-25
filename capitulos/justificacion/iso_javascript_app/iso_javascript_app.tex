@@ -1,6 +1,7 @@
+%!TEX root = ../../../memoria.tex
 
-%\section{Aplicaciones \webINT}\label{cap:estadoArte:section:web_app}
-\section{\isomorphicAS \javaScriptNAME : el futuro de las aplicaciones \webINT}\label{cap:estadoArte:section:web_app}
+\section{\isomorphicAS \javaScriptNAME : el futuro de las aplicaciones \webINT}\label{cap:justificacion:section:web_app}
+
 Cuando se utiliza un \backendAS corriendo una aplicación \javaNAME, \phpNAME o \railsNAME, el proceso ocurre muy lejos del usuario. Los \clientsAS solicitan datos llamando una \uriNAME. En respuesta, la aplicación trae datos desde una \dataBaseDB, realiza algún procedimiento para crear \htmlNAME y envía los resultados al \clientAS. Mientras mayor sea el número de \clientsAS que realizan la misma solicitud, los mecanismos inteligentes de \caching pueden ser usados por el \serverAS. \sitesINT de noticias funcionan particularmente bien en este tipo de paradigma.
 %When using a backend running a Java, PHP, or Rails application, processing takes place far away from the user. Clients request data by calling a URI. In response the application fetches data from a database, performs some processing to create HTML and sends the results to a client. The more clients request the same information, the more clever caching mechanisms can be used by the server. News sites work particularly well with this paradigm.
 
@@ -34,7 +35,7 @@ Librerías como \backbonejsNAME \emberjsNAME, y \angularjsNAME usualmente son re
 %Libraries like Backbone.js, Ember.js, and Angular.js are often referred to as client-side MVC (Model-View-Controller) or MVVM (Model-View-ViewModel) libraries. The typical client-side MVC architecture looks something like this:
 
 % GRAFICO CLIENT SIDE MVC 
-\input{capitulos/estadoarte/tecnologias_estadoArte/client_side_mvc_diagram.tex}
+\input{capitulos/justificacion/iso_javascript_app/client_side_mvc_diagram.tex}
 
 %The bulk of the application logic (views, templates, controllers, models, internationalization, etc.) lives in the client, and it talks to an API for data. The server could be written in any language, such as Ruby, Python, or Java, and it mostly handles serving up an initial barebones page of HTML. Once the JavaScript files are downloaded by the browser, they are evaluated and the client-side app is initialized, fetching data from the API and rendering the rest of the HTML page.
 
