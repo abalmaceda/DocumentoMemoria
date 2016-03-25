@@ -1,0 +1,38 @@
+%!TEX root = ../../memoria.tex
+
+\section{Mejora en la arquitectura genérica}
+	%TODO Falta
+	Durante el desarrollo de la aplicación se comprendió el fuerte concepto que representa \packageAS para \meteorNAME. Esto sugirió mejoras la arquitectura las cuales básicamente corresponden en desarrollar un proyecto base que administre todos los módulos (\packageAS) que se agregan al sistema para incorporar caracteristicas a la aplicación en desarrollo. 
+
+	Cada uno de estos módulos, contendría un archivo descriptivo que expondría:
+	\begin{itemize}
+		\item
+			\textbf{Permisos}. Se describen los permisos necesarios que el usuario necesita para utilizar los recursos del módulo. Se utiliza el \packageAS \alanningRolesPackage para soportar esta funcionalidad.
+		\item
+			\textbf{Enrutamientos}. Los enrutamientos para acceder a los servicios del módulo.
+		\item
+			\textbf{Configuración}. El enrutamiento para acceder al Menú. Este debería ser accesible desde el \dashboardEF  de la arquitectura base.
+		\item
+			\textbf{Tipo de Módulo}. Agregar etiquetas que permitan distinguir y agrupar diferentes módulos.
+		\item
+			\textbf{Etiqueta descriptiva}. Básicamente un nombre con el cual podría distinquir el módulo. Por ejemplo podria utilizarse en la interfaz de \dashboardEF para acceder a su menú de configuración.
+		\item
+			\textbf{Icono}. Algún icono que podría utlizarse para distinguir el módulo de los otros. Se podría utilizar en el \dashboardEF al igual que lo hace \textbf{Etiqueta descriptiva}.
+		\item
+			\textbf{etc}.
+	\end{itemize}
+
+
+	Otro detalle importante, es que información de todos módulos registrados estaría accesible por cualquier módulo integrado a la arquitectura. Esto permitiría por ejemplo:
+
+	\begin{itemize}
+		\item
+			Crear una vista que agrupe los módulos por tipo.
+		\item
+			Crear un módulo de cuentas que consulte todos los permisos que existen para todos los módulos integrados y, a través de una interfaz, asociarlos a los distintos usuarios registrados en el sistema. Con estó tendría un módulo genérico de asociación de permisos para usuarios.
+		\item
+			etc.
+	\end{itemize}
+
+	Notar que esta nueva funcionalidad no debería excluir ningún tipo de aplicación que se pueda desarrollar con la anterior arquitectura. Es más, la otra arquitectura también debe utilizarse para todos los módulos que se integren a esta arquitectura.
+

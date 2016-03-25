@@ -1,0 +1,20 @@
+%!TEX root = ../../../../memoria.tex
+
+\section{Actualizar el \frameworkPC a la nueva arquitectura}
+
+Las ventajas:
+
+\begin{itemize}
+		\item
+			\textbf{Generalizar}. Permitiría la integración de una infinidad de módulos con nuevas características sin la necesidad de hacer reestructuraciones.
+		\item
+			\textbf{Desacoplar}.Disminuir la superficie de contacto entre el módulo y la arquitectura, el cual será solo a traves de una interface (archivo de registro).
+		\item
+			\textbf{Agrupar}. Se podrían agrupar tipos de módulos. Ejemplo: módulos de pago.
+		\item
+			\textbf{\dashboardEF}. Permite poblar el \dashboardEF. Cada uno de los elementos en el dashboard podría tener características unicos provistas por los módulos que representan, como su nombre, utilizar el icono que lo representa. Finalmente dicho elemento sería un acceso directo al menú de configuración de dicho módulo. Lo interesante de todo esto es que sería sin agregar ningúna linea de código.
+		\item
+			\textbf{Módulos compatibles}. Los módulos ya creados solo deberian agregar su archivo de descripción. Todo lo demás debería permanecer básicamente igual.
+		\item
+			\textbf{etc}.
+	\end{itemize}
