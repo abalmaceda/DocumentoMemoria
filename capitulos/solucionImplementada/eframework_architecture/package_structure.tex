@@ -1,0 +1,63 @@
+%!TEX root = ../../../memoria.tex
+
+\tikzset{
+  basic/.style  = {draw, text width=2cm, drop shadow, font=\sffamily, rectangle},
+  root/.style   = {basic, rounded corners=2pt, thin, align=center,
+                   fill=green!30},
+  level 2/.style = {basic, rounded corners=6pt, thin,align=center, fill=green!60,
+                   text width=8em},
+  level 3/.style = {basic, thin, align=left, fill=pink!60, text width=6.5em}
+}
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}[
+	  level 1/.style={sibling distance=40mm},
+	  edge from parent/.style={->,draw},
+	  >=latex]
+
+	% root of the the initial tree, level 1
+	\node[root] {\eframeworkAF}
+	% The first level, as children of the initial tree
+		child {node[level 2] (c1) {\eframeworkCorePCKG}}
+		%child {node[level 2] (c2) {\eframeworkHelloWorldPCKG}}
+		child {node[level 2] (c3) {\eframeworkAccountsPCKG}}
+		%child {node[level 2] (c4) {rtcom-shipping}}
+		child {node[level 2] (c5) {\eframeworkPaypalPCKG}};
+		%child {node[level 2] (c6) {\eframeworkGoogleanalPCKG}};
+	\end{tikzpicture}
+	\caption{\architectureCPT actual de la solución.}
+	\label{cap:avances:current_architecture}
+\end{figure}
+
+
+%!TEX root = ../../memoria.tex
+\begin{figure}[h!]
+	\centering
+	\scaleCommandTreeFolder
+		\tikzstyle{every node}=[draw=black,thick,anchor=west,inner sep=2pt,minimum size=1pt]
+		\tikzstyle{selected}=[draw=cyan,fill=cyan!30]
+		\begin{tikzpicture}[scale=(\scaleValueTreeFolder),
+			grow via three points={one child at (0.5,-0.7) and
+			two children at (0.5,-0.7) and (0.5,-1.4)},   
+			edge from parent path={(\tikzparentnode.south) |- (\tikzchildnode.west)}]
+			\node {\eframeworkAF}
+				child { node {\eframeworkCorePCKG}}
+				child { node {\eframeworkAccountsPCKG}}
+				child { node {server/}}
+				child { node {private/}}
+				child { node {public/}}
+				child { node {common/}}
+				child { node {lib/}}
+				child { node {docs/}}
+				child { node {settings/}}
+				child { node {packages/}}
+				child { node [draw=none] {package.js} }
+				child { node [draw=none] {README.md} }
+				child { node [draw=none] {LICENSE.md} }
+		    ;
+		\end{tikzpicture}
+		\tikzstyle{every node}=[] % resets borders of tables
+		\tikzstyle{selected}=[] % resets selected
+	\caption{Estructura global para una aplicación en \meteorNAME.}
+	\label{esquema:gloal_structure_meteor_app}
+\end{figure}

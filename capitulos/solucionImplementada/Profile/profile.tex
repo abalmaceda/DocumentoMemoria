@@ -18,7 +18,7 @@
 			\label{figure:profile:form:form_update_password}
 		\end{figure}
 
-		Existen diversas situaciones en donde el formulario notifica sobre errores que se cometen  al momento de llenar el formulario. Por ejemplo, al intentar enviar el formulario sin información ambos campos tienen errores y pueden observarse en la \refFigura{figure:profile:form:update_password:empty_form_send}.
+		Existen diversas situaciones en donde el formulario notifica sobre errores que se cometen  al momento de llenar el formulario. Por ejemplo, al intentar enviar el formulario sin información ambos campos tienen errores y pueden observarse en la \refFigura{figure:apendice:profile:form:update_password:empty_form_send}.
 
 
 
@@ -71,7 +71,7 @@
 
 		\begin{figure}[h!]
 			\centering
-			\includegraphics[width=1\textwidth]{figuras/address/form/add_new_address.png}
+			\includegraphics[width=0.7\textwidth]{figuras/address/form/add_new_address.png}
 			\caption{Formulario para agregar una nueva dirección.}
 			\label{figure:address:form:add_new_address}
 		\end{figure}
@@ -79,7 +79,7 @@
 		Este formulario cuenta con las restricciones descritas en la \reftabla{tab:profile:form:restrictions:address}, y por lo tanto muestra mensaje de error según corresponda.
 		%TODO : Agregar figuras del formulario con diferentes tipos de errores en el apendice y referenciarlos acá
 
-		\begin{table}[h!]
+		\begin{table}[H]
 		    \centering
 			\begin{tabular}{ |l|c||l| }
 				\hline Campo & Requerido & Restricción \\ \hline
@@ -93,7 +93,7 @@
 				\multirow{1}{*}{\textit{Phone}} 			&  \checkmark	& \\ \hline
 				\multirow{1}{*}{\textit{Shipping address}} 	&  \checkmark	& Boolean. \\ \hline
 				\multirow{1}{*}{\textit{billing address}} 	&  \checkmark	& Boolean. \\ \hline
-				\multirow{1}{*}{\textit{comercial address}} &  \checkmark	& Boolean. \\ \hline
+				%\multirow{1}{*}{\textit{comercial address}} &  \checkmark	& Boolean. \\ \hline
 			\end{tabular}
 		 	\caption{Resumen restricciones formulario para libreta de direcciones.}
 		    \label{tab:profile:form:restrictions:address}
@@ -101,18 +101,18 @@
 
 		Notar que en la parte superior de la \refFigura{figure:address:form:add_new_address} está el botón que permite ingresar nuevas direcciones. Cada una de estas nuevas direcciones es agregada a la lista que aparece en la \refFigura{figure:address:form:list_address}, lugar en donde pueden ser editadas y eliminadas de acuerdo a las necesidades del cliente. En caso de editar alguna dirección, esta debe cumplir las mismas restricciones impuestas para el caso de la creación de una dirección (\reftabla{tab:profile:form:restrictions:address}).
 
-		\begin{figure}[h!]
+		\begin{figure}[H]
 			\centering
-			\includegraphics[width=1\textwidth]{figuras/address/form/list_address.png}
+			\includegraphics[width=0.7\textwidth]{figuras/address/form/list_address.png}
 			\caption{Lista con todas las direcciones configuradas del usuario. Cada una de estas puede ser editada o eliminada con los botones que se encuentran en el costado derecho.}
 			\label{figure:address:form:list_address}
 		\end{figure}
 
 		Es importante agregar que en la situación en que el usuario no tenga configurada ninguna dirección, aparecerá por \defaultCPT el formulario de creación. Esto se observa en la \refFigura{figure:address:form:add_first_address}.
 
-		\begin{figure}[h!]
+		\begin{figure}[H]
 			\centering
-			\includegraphics[width=1\textwidth]{figuras/address/form/add_first_address.png}
+			\includegraphics[width=0.7\textwidth]{figuras/address/form/add_first_address.png}
 			\caption{Formulario para agregar una nueva dirección, aparece en caso de no existir configurada ninguna previa. Notar que no existe un botón para cancelar dado que en este contexto no tiene sentido.}
 			\label{figure:address:form:add_first_address}
 		\end{figure}

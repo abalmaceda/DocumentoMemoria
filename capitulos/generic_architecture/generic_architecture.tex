@@ -46,13 +46,13 @@ Una gran cantidad de soluciones han sido desarrolladas por la comunidad para sol
 			% The Meteor Velocity integration for the Jasmine 2.3 testing framework. Makes it easy to test your Meteor app and packages with unit and integration tests.
 		\item
 			\textbf{\bunyanPackage}. Exporta y agrega el \moduleAS de \loggingCPT \bunyanNAME. También agrega el \clientAS \browserifyNAME y \bunyanprettyStreamMETEOR.
-		\item
-			%TODO FIXME : Agregar package info
-			bunyan-prettystream
-		\item
-			%TODO FIXME : Agregar package info
-			Browserify
-			% Add and export the Bunyan logging module, also add the browserify client and bunyan-prettystream.
+		% \item
+		% 	%TODO FIXME : Agregar package info
+		% 	bunyan-prettystream
+		% \item
+		% 	%TODO FIXME : Agregar package info
+		% 	Browserify
+		% 	% Add and export the Bunyan logging module, also add the browserify client and bunyan-prettystream.
 		\item
 			\textbf{\dThreePackage}. \dddNAME es una \libraryPC	\javaScriptNAME para la manipulación de  \documentsDB basados en datos. \dThreePackage facilita el proceso de publicación de datos utilizando \htmlNAME, \svgNAME Y \cssNAME. \dThreePackage enfatiza el uso de \webStandardINT y permite el uso de todas las opciones disponibles en los \browsersINT modernos, sin la necesidad de utilizar un \frameworkPC propietario, combinando componentes visuales y un acercamiento a \dataDrivenCPT para la manipulación de \htmldomNAME.
 			% D3.js is a JavaScript library for manipulating documents based on data. D3 helps you bring data to life using HTML, SVG and CSS. D3’s emphasis on web standards gives you the full capabilities of modern browsers without tying yourself to a proprietary framework, combining powerful visualization components and a data-driven approach to DOM manipulation.
@@ -75,10 +75,11 @@ Una gran cantidad de soluciones han sido desarrolladas por la comunidad para sol
 			\textbf{\browserPolicyPackage}. Permite establecer políticas de seguridad que se promoverán en los nuevos \browsersINT. Estas políticas ayudan a prevenir y mitigar ataques comunes como \crossSiteScriptingINT y \clickjackingINT.
 			%The browser-policy family of packages, part of Webapp, lets you set security-related policies that will be enforced by newer browsers. These policies help you prevent and mitigate common attacks like cross-site scripting and clickjacking.
 		\item
+			\textbf{\alanningRolesPackage}. \packageAS de autorización para \meteorNAME. Es compatible con el \packageAS de cuentas oficial de \meteorNAME.
+			%Authorization package for Meteor - compatible with built-in accounts package.
+
 			%TODO FIXME : Agregar package info
-			https://atmospherejs.com/utilities/avatar
-		\item
-			\textbf{\alanningRolesPackage}. TODO
+			%https://atmospherejs.com/utilities/avatar
 			
 	\end{itemize}
 
@@ -92,9 +93,9 @@ En \meteorNAME existen directorios especiales que separan lógicamente el alcanc
 
 	\begin{itemize}
 		\item
-			\textbf{\clientFolder}. Todo el código que se encuentre dentro de la carpeta  \clientFolder solo será visible desde el \clientSideAS.
+			\textbf{\clientFolder}. Todo el código que se encuentre dentro de la carpeta \clientFolder solo será visible desde el \clientSideAS.
 		\item
-			\textbf{\serverFolder}.  Todo el contenido de la carpeta \serverFolder estará disponible solo para el \serverSideAS.
+			\textbf{\serverFolder}. Todo el contenido de la carpeta \serverFolder estará disponible solo para el \serverSideAS.
 		\item
 			\textbf{\publicFolder}. Los archivos dentro de esta carpeta son visibles desde el \clientSideAS y \serverSideAS.
 		\item
@@ -132,7 +133,8 @@ Teniendo estas consideraciones en mente, se define la siguiente estructura globa
 \input{capitulos/generic_architecture/global_structure_meteor_app.tex}
 
 % Estructura de la carpeta bin de una aplicación en Meteor
-\input{capitulos/generic_architecture/bin_folder_meteor_app.tex}
+%TODO: VEr si es necesaroi agregar este folder<
+%\input{capitulos/generic_architecture/bin_folder_meteor_app.tex}
 
 Como se mecionó, \clientFolder es la carpeta que es solo visible desde el \clientSideAS, lo que significa que contiene solo código útil para el \clientAS. Su estructura básica se puede observar en \refFigura{esquema:client_structure_meteor_app}; y cada una de sus partes corresponde a:
 
@@ -163,6 +165,7 @@ La carpeta \templateMETEOR tiene el suficiente detalle y relevancia como para in
 		\textbf{Carpetas exclusivas del proyecto}. Acá deberían ir las carpetas que separen lógicamente las diferentes funcionalidades de la aplicación que se desea realizar. A modo de ejemplo, en el proyecto que se está realizando en este memoria se han creado carpetas para el carro de compras y los productos, respectivamente.
 \end{itemize}
 
+%TODO: LA estructura básica de la que aca hablo es solo vlaida para el package principal
 % Estructura de la carpeta client de una aplicación en Meteor
 \input{capitulos/generic_architecture/template_folder_meteor_app.tex}
 

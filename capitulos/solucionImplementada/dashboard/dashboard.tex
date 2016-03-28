@@ -1,24 +1,32 @@
 %!TEX root = ../../../memoria.tex
 \section{\dashboardEF}
 	Corresponde al administrador de características de la aplicación. Básicamente muestra todas las funcionalidades customizables que existen en la plataforma.
-	Cada package agregado el proyecto contiene el archivo \packageDescriptionFILE, el cual proporciona al \dashboardEF la información necesaria para agregar una o más componentes a la \uiSiglaAS con información descriptiva y con el link hacia la pantalla de configuración.
+	%Cada package agregado el proyecto contiene el archivo \packageDescriptionFILE, el cual proporciona al \dashboardEF la información necesaria para agregar una o más componentes a la \uiSiglaAS con información descriptiva y con el link hacia la pantalla de configuración.
 	La información que se muestra de cada componente corresponde a:
 
 	\begin{itemize}
 		\item Nombre de la componente a agregar.
-		\item Descripción breve de la componente.
+		%\item Descripción breve de la componente.
 		\item Un icono.
 	\end{itemize} 
 
+	En la \refFigura{figure:dashboard:main_menu} se observa el \dashboardEF 5 elementos configurables de la aplicación. 
 
 	\begin{figure}[!h]
 		\centering
-		\includegraphics[width=0.8\textwidth]{figuras/dashboard/dashboard_menu.png}
+		\includegraphics[width=0.6\textwidth]{figuras/dashboard/main_menu.png}
 		\caption{\dashboardEF con elementos configurables de la aplicación.}
-		\label{figure:dashboard:dashboard_menu}
+		\label{figure:dashboard:main_menu}
 	\end{figure}
 
-	En la \refFigura{figure:dashboard:dashboard_menu} se observan 4 elementos configurables de la aplicación. 
+	Existen ciertos \packagesAS que tienen la opción de ser deshabilitados. Esta opción es especialmente útil para agregar o quitar ciertas funcionalidades al \websiteINT. A modo de ejemplo, en la \refFigura{figure:dashboard:paypal_disabled} se observa que el \packageAS de \paypalNAME está deshabilitado, en contraste con el \packageAS de \ShippingCOM. En el caso de que existieran más opciones de pago como \googleWalletNAME y \amazonPayments, se podrían ocultar los métodos sencillamente utilizando este método.
+
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[width=0.4\textwidth]{figuras/dashboard/paypal_disabled.png}
+		\caption{\dashboardEF con elementos configurables de la aplicación.}
+		\label{figure:dashboard:paypal_disabled}
+	\end{figure}
 
 	% Dashboar Core
 	\input{capitulos/solucionImplementada/dashboard/core/core.tex}

@@ -7,7 +7,7 @@
 
 		\begin{figure}[H]
 			\centering
-			\includegraphics[width=0.8\textwidth]{figuras/solution/product/global_view/view.png}
+			\includegraphics[width=0.8\textwidth]{figuras/productos/grid/global_view_toolbar.png}
 
 			\caption{Vista global de los productos. Productos con problemas de \stock dan información.}
 			\label{figure:solution:product:global_view:view}
@@ -20,7 +20,7 @@
 
 	\subsection{Descripción de un producto}\label{chapter:section:productos:subsection:descripcion}
 
-		La aplicación permite consultar la descripción de un producto. Dicha interfaz puede observarse en la \refFigura{figure:bootstrap:theme_cyborg}. Se puede apreciar algunas de las carecterísticas de las que ya dispone cada producto.
+		La aplicación permite consultar la descripción de un producto. Dicha interfaz puede observarse en la \refFigura{figure:bootstrap:theme_yeti}. Se puede apreciar algunas de las carecterísticas de las que ya dispone cada producto.
 
 		\begin{itemize}
 			\item
@@ -32,7 +32,9 @@
 			\item
 				Un lugar para la descripción del producto.
 			\item
-				Un precio o intervalo de precios.
+				Un precio.
+			\item
+				\tagsForm.
 		\end{itemize}
 
 	\subsection{Creación de un producto}
@@ -44,84 +46,84 @@
 
 		\begin{figure}[H]
 			\centering
-			\includegraphics[width=0.8\textwidth]{figuras/solution/product/create/form.png}
+			\includegraphics[width=0.8\textwidth]{figuras/productos/details/write/new.png}
 
 			\caption{Interfaz de creación de un producto.}
 			\label{figure:solution:product:create:form}
 		\end{figure}
 
-		Para determinar los campos utilizados en \refFigura{figure:solution:product:create:form}, de inspiración se utilizó principalmente la interfaz de creación de productos desarrollada para el \websiteINT de \shopifyNAME \refFigura{figure:apendice:productos:example:shopify_product_generic_view}. \shopifyNAME es un servicio que proporciona todas las herramientas necesarias para desarrollar una tienda \online, razón por la cual cuenta con una gran cantidad de herramientas, las cuales no pueden ser abordadas en su totalidad en un contexto de una memoria. A continuación se explica cada una de las componentes utilizadas en el \frameworkPC obtenidas desde  \websiteINT \shopifyNAME:
+		Para determinar los campos utilizados en \refFigura{figure:solution:product:create:form}, de inspiración se utilizó principalmente la interfaz de creación de productos desarrollada para el \websiteINT de \shopifyNAME \refFigura{figure:productos:example:shopify_product_generic_view}. \shopifyNAME es un servicio que proporciona todas las herramientas necesarias para desarrollar una tienda \online, razón por la cual cuenta con una gran cantidad de herramientas, las cuales no pueden ser abordadas en su totalidad en un contexto de una memoria. A continuación se explica cada una de las componentes utilizadas en el \frameworkPC obtenidas desde  \websiteINT \shopifyNAME:
 
 		\begin{description}
 			\item [\titleForm]
-				Título principal del producto (\refFigura{figure:product:description:main_tittle}). Idealmente debe ser conciso porque se utiliza tanto en la interfaz de descripción del producto como en la pantalla de búsqueda de productos. El título aparece claramente en la sección principal de la interfaz de creación \refFigura{figure:apendice:productos:example:shopify_product_main}.
+				Título principal del producto (\refFigura{figure:productos:details:write:main_tittle}). Idealmente debe ser conciso porque se utiliza tanto en la interfaz de descripción del producto como en la pantalla de búsqueda de productos. El título aparece claramente en la sección principal de la interfaz de creación \refFigura{figure:productos:example:shopify_product_main}.
 
 				\begin{figure}[H]
 					\centering
-					\includegraphics[width=0.6\textwidth]{figuras/product/description/main_tittle.png}
+					\includegraphics[width=0.6\textwidth]{figuras/productos/details/write/main_tittle.png}
 
 					\caption{Título principal del producto. Aparece también en la lista de búsqueda de productos.}
-					\label{figure:product:description:main_tittle}
+					\label{figure:productos:details:write:main_tittle}
 				\end{figure}
 
-			\item [\pageTitleForm]
-				Título exclusivo de la vista \nameref{chapter:section:productos:subsection:descripcion} (\refFigura{figure:product:description:secundary_tittle}). Permite ser más descriptivo que el título. 
+			% \item [\pageTitleForm]
+			% 	Título exclusivo de la vista \nameref{chapter:section:productos:subsection:descripcion} (\refFigura{figure:product:description:secundary_tittle}). Permite ser más descriptivo que el título. 
 
-				\begin{figure}[H]
-					\centering
-					\includegraphics[width=0.6\textwidth]{figuras/product/description/secundary_tittle.png}
+			% 	\begin{figure}[H]
+			% 		\centering
+			% 		\includegraphics[width=0.6\textwidth]{figuras/product/description/secundary_tittle.png}
 
-					\caption{Título secundario del producto. Aparece solo en la página de descripción del producto.}
-					\label{figure:product:description:secundary_tittle}
-				\end{figure}
+			% 		\caption{Título secundario del producto. Aparece solo en la página de descripción del producto.}
+			% 		\label{figure:product:description:secundary_tittle}
+			% 	\end{figure}
 
 			\item [\descriptionForm]
-				Permite agregar una descripción del producto (\refFigura{figure:product:description:component_description}). Se encuentra en la sección principal al igual que el \titleForm \refFigura{figure:apendice:productos:example:shopify_product_main}. Esta sección es particularmente importante (junto con \multimediaForm), porque ayudan en la decisión de compra del producto. Es importante agregar descripciones que expliquen el producto, que entreguen \textit{lindas} palabras que fomenten la compra, no una lista de términos técnicos \cite{online_cxpartners_official_people_see_to_buy}.
+				Permite agregar una descripción del producto (\refFigura{figure:productos:details:write:component_description}). Se encuentra en la sección principal al igual que el \titleForm \refFigura{figure:productos:example:shopify_product_main}. Esta sección es particularmente importante (junto con \multimediaForm), porque ayudan en la decisión de compra del producto. Es importante agregar descripciones que expliquen el producto, que entreguen \textit{lindas} palabras que fomenten la compra, no una lista de términos técnicos \cite{online_cxpartners_official_people_see_to_buy}.
 
 				\begin{figure}[H]
 					\centering
-					\includegraphics[width=0.6\textwidth]{figuras/product/description/component_description.png}
+					\includegraphics[width=0.6\textwidth]{figuras/productos/details/write/component_description.png}
 
 					\caption{Campo para la descripción del producto.}
-					\label{figure:product:description:component_description}
+					\label{figure:productos:details:write:component_description}
 				\end{figure}
 
 			\item [\vendorForm]
-				Permite agregar un \vendorForm a la descripción del producto. Aparece en la sección de organización de \shopifyNAME \refFigura{figure:apendice:productos:example:shopify_product_organization.}
+				Permite agregar un \vendorForm a la descripción del producto. Aparece en la sección de organización de \shopifyNAME \refFigura{figure:productos:example:shopify_product_organization}.
 
 				\begin{figure}[H]
 					\centering
-					\includegraphics[width=0.6\textwidth]{figuras/product/description/component_vendor.png}
+					\includegraphics[width=0.6\textwidth]{figuras/productos/details/write/component_vendor.png}
 
 					\caption{Campo para el \vendorForm del producto.}
-					\label{figure:product:description:component_vendor}
+					\label{figure:productos:details:write:component_vendor}
 				\end{figure}
 
 			\item [Options]
 				% TODDO : se supone que va aca el \optionsForm
 				
 			\item [\multimediaForm]
-				Al igual como en \shopifyNAME \refFigura{figure:apendice:productos:example:shopify_product_multimedia}, esta sección permite agregar imágenes a través de 2 métodos: \dragdrop y selección, utilizando el explorador de archivos (\refFigura{figure:product:description:component_multimedia}).
+				Al igual como en \shopifyNAME \refFigura{figure:productos:example:shopify_product_multimedia}, esta sección permite agregar imágenes a través de 2 métodos: \dragdrop y selección, utilizando el explorador de archivos (\refFigura{figure:productos:details:write:component_multimedia}).
 				Las imágenes siempre han sido lo primero que el cliente ve. La mayoría de los \websitesINT ubican las imágenes en la parte superior izquierda de la página \cite{online_cxpartners_official_people_see_to_buy}.
 				A diferencia de los compraderos en las tiendas, las imágenes de los productos son la única forma real de determinar si un producto se ajusta a sus necesidades y a sus preferencias. Es una manera poderosa de darles vitrina a los productos. Por lo tanto es muy importante proveer de imágenes de buena calidad entre otros detalles \cite{online_cxpartners_official_people_see_to_buy}. Esto explica el tamaño de imagen que se acepta en la plataforma.
 
 				\begin{figure}[H]
 					\centering
-					\includegraphics[width=0.6\textwidth]{figuras/product/description/component_multimedia.png}
+					\includegraphics[width=0.4\textwidth]{figuras/productos/details/write/component_multimedia.png}
 
 					\caption{Sección de las imágenes del producto.}
-					\label{figure:product:description:component_multimedia}
+					\label{figure:productos:details:write:component_multimedia}
 				\end{figure}
 				
 			\item [\tagsForm]
-				Provenientes de la sección organización \refFigura{figure:apendice:productos:example:shopify_product_organization}, permite la categorización utilizando palabras clave relevantes.
+				Provenientes de la sección organización \refFigura{figure:productos:example:shopify_product_organization}, permite la categorización utilizando palabras clave relevantes.
 
 				\begin{figure}[H]
 					\centering
-					\includegraphics[width=0.6\textwidth]{figuras/product/description/component_tags.png}
+					\includegraphics[width=0.4\textwidth]{figuras/productos/details/write/component_tags.png}
 
 					\caption{Campo para las \tagsForm del producto.}
-					\label{figure:product:description:component_tags}
+					\label{figure:productos:details:write:component_tags}
 				\end{figure}
 				
 		\end{description}
@@ -173,7 +175,7 @@
 		    \label{tab:solution:products:create:form:product:generic:details}
 		\end{table}
 
-		Si se enfoca la atención en los campos de la \refFigura{figure:product:description:product_options} se observa que ellos se encuentran repartidos entre las secciones \PricingForm(\refFigura{figure:apendice:productos:example:shopify_product_princing}), \InventoryForm(\refFigura{figure:apendice:productos:example:shopify_product_inventory}), \ShippingForm(\refFigura{figure:apendice:productos:example:shopify_product_shipping}) y \VariantsForm(\refFigura{figure:apendice:productos:example:shopify_product_variant_max}).
+		Si se enfoca la atención en los campos de la \refFigura{figure:productos:detail:product_variant} se observa que ellos se encuentran repartidos entre las secciones \PricingForm(\refFigura{figure:productos:example:shopify_product_princing}), \InventoryForm(\refFigura{figure:productos:example:shopify_product_inventory}), \ShippingForm(\refFigura{figure:productos:example:shopify_product_shipping}) y \VariantsForm(\refFigura{figure:productos:example:shopify_product_variant_max}).
 
 		\begin{description}
 			\item [\LabelForm]
@@ -183,13 +185,13 @@
 				Se utiliza para identificar cada una de las \VariantsForm al momento de agregarlas al carro.
 
 			\item [\WeightForm]
-				Corresponde al peso (masa), del producto que se está ofreciendo. Este valor se utiliza para \shipping, razón por la cual aparece esta componente en la sección \ShippingForm del formulario de \shopifyNAME \refFigura{figure:apendice:productos:example:shopify_product_shipping}.
+				Corresponde al peso (masa), del producto que se está ofreciendo. Este valor se utiliza para \shipping, razón por la cual aparece esta componente en la sección \ShippingForm del formulario de \shopifyNAME \refFigura{figure:productos:example:shopify_product_shipping}.
 
 			\item [\trackingForm]
-				Permite tomar acciones dependiendo del inventario que se tenga. Ver \refFigura{figure:apendice:productos:example:shopify_product_inventory}.
+				Permite tomar acciones dependiendo del inventario que se tenga. Ver \refFigura{figure:productos:example:shopify_product_inventory}.
 
 			\item [\denyForm]
-				Al igual que el la sección \InventoryForm de \shopifyNAME(\refFigura{figure:apendice:productos:example:shopify_product_inventory}), esta componente aparece cuando se ha seleccionado la opción de \trackingForm. Esta opción evita que los clientes sigan comprando el producto una vez que se ha terminado el inventario.
+				Al igual que el la sección \InventoryForm de \shopifyNAME(\refFigura{figure:productos:example:shopify_product_inventory}), esta componente aparece cuando se ha seleccionado la opción de \trackingForm. Esta opción evita que los clientes sigan comprando el producto una vez que se ha terminado el inventario.
 
 			\item [\taxableForm]
 				Aplica Cargos de impuesto al producto.
@@ -203,10 +205,10 @@
 
 		\begin{figure}[H]
 			\centering
-			\includegraphics[width=0.6\textwidth]{figuras/product/description/product_options.png}
+			\includegraphics[width=0.8\textwidth]{figuras/productos/details/write/product_variant.png}
 
 			\caption{Sección de las opciones del producto.}
-			\label{figure:product:description:product_options}
+			\label{figure:productos:detail:product_variant}
 		\end{figure}
 
 		\begin{table}[H] 
@@ -216,7 +218,7 @@
 				\multirow{1}{*}{\textit{Label}}		&  \multirow{1}{*}{\checkmark} 	& - Debe tener al menos un carácter. \\ \hline
 				\multirow{1}{*}{\textit{\WeightForm}}	&  \multirow{1}{*}{\checkmark} 	& - Número racional mayor o igual a 0. \\ \hline
 				\multirow{1}{*}{\quantityForm}	&  \multirow{1}{*}{\checkmark} 	& - Número entero. \\ \hline
-				\multirow{1}{*}{\msrpSIGLAS}		&  \multirow{1}{*}{} 			& - Número racional mayor o igual a 0. \\ \hline
+				%\multirow{1}{*}{\msrpSIGLAS}		&  \multirow{1}{*}{} 			& - Número racional mayor o igual a 0. \\ \hline
 				\multirow{1}{*}{\priceForm}		&  \multirow{1}{*}{\checkmark} 	& - Número racional mayor o igual a 0. \\ \hline
 				\multirow{1}{*}{\denyForm}		&  \multirow{1}{*}{\checkmark} 	& - Boolean. \\ \hline
 				\multirow{1}{*}{\warnForm}		&  \multirow{1}{*}{} 			& - Número racional mayor o igual a 0. \\ \hline
@@ -229,31 +231,31 @@
 
 	\subsection{Edición de un producto}\label{chapter:section:productos:subsection:edicion}
 
-		Al igual que para la creación de productos, la edición requiere de permisos especiales. Si se cuenta con dichos permisos especiales, la interfaz de la vista de un producto inmediatamente permite editar los campos. Para editarlos, simplemente es necesario seleccionar la componente con el \mousePC y hacer un \click. La componente cambiará su aspecto para dar \feedback al usuario de que está seleccionada dicha componente y que puede realizar sobre él ediciones. En las \refFiguras{figure:features:interfaz_edicion_editando_description}{figure:features:interfaz_edicion_editando_subtitulo} es posible apreciar la componente que se ha seleccionado para editar.
+		Al igual que para la creación de productos, la edición requiere de permisos especiales. Si se cuenta con dichos permisos especiales, la interfaz de la vista de un producto inmediatamente permite editar los campos. Para editarlos, simplemente es necesario seleccionar la componente con el \mousePC y hacer un \click. La componente cambiará su aspecto para dar \feedback al usuario de que está seleccionada dicha componente y que puede realizar sobre él ediciones. En las \refFiguras{figure:productos:details:write:main_menu_description_selected}{figure:productos:details:write:main_menu_title_selected} es posible apreciar la componente que se ha seleccionado para editar.
 
 		\begin{figure}[H]
 			\centering
-			\includegraphics[width=0.8\textwidth]{figuras/productos/interfaz_edicion_producto.png}
+			\includegraphics[width=0.8\textwidth]{figuras/productos/details/write/main_menu.png}
 
 			\caption{Interfaz de la edición de un producto.}
-			\label{figure:features:interfaz_edicion_producto}
+			\label{figure:productos:details:write:main_menu}
 		\end{figure}
 
 		\begin{figure}[H]
 			\centering
-			\includegraphics[width=0.8\textwidth]{figuras/productos/interfaz_edicion_editando_description.png}
+			\includegraphics[width=0.8\textwidth]{figuras/productos/details/write/main_menu_description_selected.png}
 
 			\caption{Campo descripción seleccionado para edición.}
-			\label{figure:features:interfaz_edicion_editando_description}
+			\label{figure:productos:details:write:main_menu_description_selected}
 		\end{figure}
 
 
 		\begin{figure}[H]
 			\centering
-			\includegraphics[width=0.8\textwidth]{figuras/productos/interfaz_edicion_editando_subtitulo.png}
+			\includegraphics[width=0.8\textwidth]{figuras/productos/details/write/main_menu_title_selected.png}
 
-			\caption{Campo subtítulo seleccionado para edición.}
-			\label{figure:features:interfaz_edicion_editando_subtitulo}
+			\caption{Campo título seleccionado para edición.}
+			\label{figure:productos:details:write:main_menu_title_selected}
 		\end{figure}
 
 		Es importante mencionar que la edición de producto es \reactive, por lo tanto todos los cambios que se realicen serán inmediatamente visibles por parte de todos los usuarios que esten mirando la descripción del producto incluso sin la necesidad de que el usuario haga un \refreshCPT del \websiteINT.
@@ -263,11 +265,11 @@
 
 	\subsection{Visibilidad de un producto}
 	
-		Todo producto válido puede ser visible para todos los usuarios (visibilidad global), o solo visible para aquellos que tienen permiso de edición sobre dicho producto. Esta importante característica se encuentra disponible en el servicio de \shopifyNAME(\refFigura{figure:apendice:productos:example:shopify_product_visibility}). En la \refFigura{figure:solution:product:visibility:new} se ve el caso particular de un producto que está en proceso de creación (no tiene título, el cual es requerido).
+		Todo producto válido puede ser visible para todos los usuarios (visibilidad global), o solo visible para aquellos que tienen permiso de edición sobre dicho producto. Esta importante característica se encuentra disponible en el servicio de \shopifyNAME(\refFigura{figure:productos:example:shopify_product_visibility}). En la \refFigura{figure:solution:product:visibility:new} se ve el caso particular de un producto que está en proceso de creación (no tiene título, el cual es requerido).
 
 		\begin{figure}[H]
 			\centering
-			\includegraphics[width=0.8\textwidth]{figuras/solution/product/visibility/new.png}
+			\includegraphics[width=0.8\textwidth]{figuras/productos/details/write/visibility_new_product.png}
 
 			\caption{Producto con visibilidad limitada. Notar que no tiene título, lo que implica que no es un producto válido aún.}
 			\label{figure:solution:product:visibility:new}
@@ -277,7 +279,7 @@
 
 		\begin{figure}[H]
 			\centering
-			\includegraphics[width=0.8\textwidth]{figuras/solution/product/visibility/autofocus.png}
+			\includegraphics[width=0.8\textwidth]{figuras/productos/details/write/visibility_new_product_autofocus.png}
 
 			\caption{Resultado tras dar visibilidad a un producto sin título. Se genera un \autoFocoINT en el campo título, dado que este es requerido y el estado de visibilidad del producto continúa igual.}
 			\label{figure:solution:product:visibility:autofocus}
@@ -287,9 +289,9 @@
 
 		\begin{figure}[H]
 			\centering
-			\includegraphics[width=0.8\textwidth]{figuras/solution/product/visibility/global_visibility.png}
+			\includegraphics[width=0.8\textwidth]{figuras/productos/details/write/global_visibility.png}
 
-			\caption{Producto con visibilidad global. Aparece un \linkINT \makeInvisibleLABEL para ocultar el producto.}
+			\caption{Producto con visibilidad global. Con el botón se oculta el producto.}
 			\label{figure:solution:product:visibility:global_visibility}
 		\end{figure}
 
