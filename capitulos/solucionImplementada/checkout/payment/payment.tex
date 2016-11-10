@@ -1,11 +1,11 @@
 %!TEX root = ../../../../memoria.tex
-\subsection{\paymentsCOM}\label{chapter:solucionimplementada:section:payment}
+\subsection{Pagos}\label{chapter:solucionimplementada:section:payment}
 	
 	Como se mencionó en la sección \ref{cap:solucionImplementada:section:dashboard:subsection:payment} \nameref{cap:solucionImplementada:section:dashboard:subsection:payment}, es relevante considerar varios métodos de pagos, sin embargo en el contexto de esta memoria solo se ha integrado a \PPPaymentProNAME.
 
 
 	\subsubsection{\PPPaymentProNAME}
-		Anteriormente se había indicado que este método permite mantener a los clientes dentro del \websiteINT durante el proceso completo de \paymentsCOM y \checkoutCOM. Básicamente se ha implementado la aceptación de pago de tarjetas de crédito a través de un formulario dentro del \websiteINT. La información necesaria para la transacción se ve en \refCodigo{source:javascript:checkout:payment:paypal_accept_payments}.
+		Anteriormente se había indicado que este método permite mantener a los clientes dentro del \websiteINT durante el proceso completo de pagos y \checkoutCOM. Básicamente se ha implementado la aceptación de pago de tarjetas de crédito a través de un formulario dentro del \websiteINT. La información necesaria para la transacción se ve en \refCodigo{source:javascript:checkout:payment:paypal_accept_payments}.
 
 		% JSON con la información necesaria para aceptar el pago con tarjetas de crédito
 		\input{capitulos/solucionImplementada/checkout/payment/payment_paypal_accept_credit_card.tex}

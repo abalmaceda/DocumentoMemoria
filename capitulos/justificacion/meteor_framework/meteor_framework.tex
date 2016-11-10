@@ -16,7 +16,7 @@ La \webINT fue diseñada originalmente para trabajar de la misma manera que los 
 \end{figure}
 
 
-Pero los mejores equipos, con los más grandes presupuestos y más largos \schedules, ahora construyen aplicaciones en \javaScriptNAME que corren en el \clientAS. Estas aplicaciones tienen interfaces estelares. Estas aplicaciones no \reload \pages, son \reactive: cambios de cualquier \clientAS aparecen inmediatamente en las \screen de todos.
+Pero los mejores equipos, con los más grandes presupuestos y más largos \schedules, ahora construyen aplicaciones en \javaScriptNAME que corren en el cliente. Estas aplicaciones tienen interfaces estelares. Estas aplicaciones no \reload \pages, son \reactive: cambios de cualquier cliente aparecen inmediatamente en las \screen de todos.
 %But the best teams, with the biggest budgets and the longest schedules, now build applications in JavaScript that run on the client. These apps have stellar interfaces. They don't reload pages. They are reactive: changes from any client immediately appear on everyone's screen.
 
 La aplicación fue construida de la manera difícil. \meteorNAME hace esto con la intención de ofrecer simpleza, y muchísima más entretención. Es posible construir una aplicación completa en un fin de semana, o en una \hackathonCPT con la suficiente cafeína. Ya no es necesario los \resourcesCPT del \serverAS, o \deploy \apiAS \apiendpointsAS en la \cloud, o manejar una \dataBasesDB, o desgastarse con una \orm \layerAS, o intercambiar \backandforth entre \javaScriptNAME y \rubyNAME, o \broadcast datos de invalidación a los \clientsAS.
@@ -28,15 +28,15 @@ La aplicación fue construida de la manera difícil. \meteorNAME hace esto con l
 \subsection{Principios de \meteorNAME}
 %Principles of Meteor
 \begin{itemize}
-	\item \textbf{Datos \onthewire}. \meteorNAME no envía \htmlNAME a través de la \networkINT. El \serverAS envía datos y permite al \clientAS \renderCPT la información.
+	\item \textbf{Datos \onthewire}. \meteorNAME no envía \htmlNAME a través de la \networkINT. El \serverAS envía datos y permite al cliente despliegue la información.
 %Data on the Wire. Meteor doesn't send HTML over the network. The server sends data and lets the client render it.
 
-	\item \textbf{Un lenguaje}. \meteorNAME permite escribir el código correspondiente al \clientAS y al \serverAS de la aplicación en \javaScriptNAME.
+	\item \textbf{Un lenguaje}. \meteorNAME permite escribir el código correspondiente al cliente y al \serverAS de la aplicación en \javaScriptNAME.
 %One Language. Meteor lets you write both the client and the server parts of your application in JavaScript.
-	\item \textbf{\dataBasesDB en todas partes}. Se pueden utilizar los mismos métodos para acceder a la \dataBasesDB desde el \clientAS o el \serverAS.
+	\item \textbf{\dataBasesDB en todas partes}. Se pueden utilizar los mismos métodos para acceder a la \dataBasesDB desde el cliente o el \serverAS.
 %Database Everywhere. You can use the same methods to access your database from the client or the server.
 
-	\item \textbf{Compensación de \latency}. En el \clientAS, \meteorNAME \prefetches datos y simula modelos para aparentar que los métodos del \serverAS retornan instantáneamente.
+	\item \textbf{Compensación de \latency}. En el cliente, \meteorNAME \prefetches datos y simula modelos para aparentar que los métodos del \serverAS retornan instantáneamente.
 %Latency Compensation. On the client, Meteor prefetches data and simulates models to make it look like server method calls return instantly.
 
 	\item \textbf{\fullstackAS \reactivity}. En \meteorNAME, \realTimeINT es el \defaultCPT. Todas las \layers, desde la \dataBasesDB hasta el \templateAS, \update por sí mismo automáticamente cuando es necesario.
@@ -104,10 +104,10 @@ Todas las partes del \stackAS se integran sin problemas, todos los \packagesAS \
 \subsection{\frameworkPC \isomorphicAS – \fullstackAS \javaScriptNAME}
 %Isomorphic Frameworks – Fullstack JavaScript
 
-\meteorNAME corre sobre \nodejsNAME y mueve la lógica de la aplicación hacia el \browserINT, lo que es usualmente referido a \singlePageAppINT. El mismo lenguaje es usado sobre todo el \stackAS, lo que transforma a \meteorNAME en una plataforma \isomorphicAS. Como resultado el mismo código \javaScriptNAME puede ser usado en el \serverAS, en el \clientAS, e incluso en la \dataBasesDB.
+\meteorNAME corre sobre \nodejsNAME y mueve la lógica de la aplicación hacia el \browserINT, lo que es usualmente referido a \singlePageAppINT. El mismo lenguaje es usado sobre todo el \stackAS, lo que transforma a \meteorNAME en una plataforma \isomorphicAS. Como resultado el mismo código \javaScriptNAME puede ser usado en el \serverAS, en el cliente, e incluso en la \dataBasesDB.
 %Meteor runs on top of Node.js and moves the application logic to the browser, which is often referred to as Single Page Applications. The same language is used across the entire stack, which makes Meteor an isomorphic platform. As a result the same JavaScript code can be used on the server, the client, and even in the database. 
 
-Mientras muchos \frameworksPC usan el mismo lenguaje tanto en \clientAS como en \serverAS, la mayoría del tiempo estos no pueden compartir código porque los \frameworksPC no son íntimamente integrados, por ejemplo el uso de \angularjsNAME en el \frontEndAS y \expressjsNAME en el \backendAS. \meteorNAME es un \fullstackAS verdadero porque usa una simple y unificada \apiAS expuesta para todas las funcionalidades \coreAS y pueden ser utilizadas en el \serverAS, en el \browserINT, e incluso para acceder a la \dataBasesDB. Para comenzar, no es necesario aprender múltiples \frameworksPC y da como resultado una mejor \reusabilityQA del código solo utilizando el mismo lenguaje.
+Mientras muchos \frameworksPC usan el mismo lenguaje tanto en cliente como en \serverAS, la mayoría del tiempo estos no pueden compartir código porque los \frameworksPC no son íntimamente integrados, por ejemplo el uso de \angularjsNAME en el \frontEndAS y \expressjsNAME en el \backendAS. \meteorNAME es un \fullstackAS verdadero porque usa una simple y unificada \apiAS expuesta para todas las funcionalidades \coreAS y pueden ser utilizadas en el \serverAS, en el \browserINT, e incluso para acceder a la \dataBasesDB. Para comenzar, no es necesario aprender múltiples \frameworksPC y da como resultado una mejor \reusabilityQA del código solo utilizando el mismo lenguaje.
 %While many frameworks use the same language on both client and server, most of the times they cannot share code between the two instances because the frameworks are not tightly integrated, for example they use Angular on the frontend and Express.js on the backend. Meteor is truly fullstack because it uses a simple and unified API that exposes all core functionality and can be used on the server, in the browser, and even to access the database. To get started you do not have to learn multiple frameworks and results in much better re-usability of the code than only using the same language.
 
 Para acceder a la \dataBasesDB desde el \browserINT, \meteorNAME incluye una mini \dataBasesDB. Esta simula exactamente la misma \apiAS de una \dataBasesDB. Dentro del \browserINT \minimongo permite a los desarrolladores utilizar los mismos comandos como si estuvieran en una consola de \mongodbNAME.

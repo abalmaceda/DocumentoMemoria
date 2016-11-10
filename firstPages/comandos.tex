@@ -92,6 +92,9 @@
 \newcommand{\youtubeNAME}			{\nWrapper{Youtube}}
 \newcommand{\walmartNAME}			{\nWrapper{Walmart}}
 \newcommand{\zapposNAME}			{\nWrapper{Zappos}}
+\newcommand{\dropboxNAME}			{\nWrapper{Dropbox}}
+\newcommand{\netflixNAME}			{\nWrapper{Netflix}}
+\newcommand{\instagramNAME}			{\nWrapper{Instagram}}
 
 
 %%%%%%%%%%%%%%%%	JavaScript	%%%%%%%%%%%%%%%%
@@ -228,6 +231,8 @@
 
 
 \newcommand{\meteorNAME}			{\nWrapper{Meteor}}
+\newcommand{\meteorProyectNAME}		{\nWrapper{Meteor Proyect}}
+\newcommand{\meteorAccountNAME}		{\nWrapper{Meteor Account}}
 \newcommand{\meteorNAMEref}			{\nWrapper{Meteor}}
 \newcommand{\derbyNAME}				{\nWrapper{Derby}}
 \newcommand{\derbyNAMEref}			{\nWrapper{Derby}}
@@ -660,7 +665,7 @@
 \newcommand{\ecommerceCOM}				{\dontSplit{\bothWrapper{ecommerce}}}
 \newcommand{\ebusinessCOM}				{\nWrapperDS{e-business}}
 \newcommand{\commerceCOM}				{\bWrapper{Commerce}}
-\newcommand{\paymentsCOM}				{\bWrapper{Payments}}
+%\newcommand{\paymentsCOM}				{\bWrapper{Payments}}
 \newcommand{\electronicpayCOM}			{\bWrapper{Electronic Payments}}
 \newcommand{\emarket}					{\dontSplit{\bWrapper{e-Market}}}
 \newcommand{\emarketing}				{\dontSplit{\bWrapper{e-Marketing}}}
@@ -670,15 +675,14 @@
 \newcommand{\wishlist}					{\bWrapper{wish list}}
 \newcommand{\shop}						{\bWrapper{shop}}
 \newcommand{\shoppingCOM}				{\bWrapper{shopping}}
-\newcommand{\cartCOM}					{\bWrapper{Cart}}
+
 \newcommand{\shoppingCart}				{\bWrapper{Shopping Cart}}
 \newcommand{\shoppingCarts}				{\bWrapper{Shopping Carts}}
 \newcommand{\checkoutCOM}				{\bWrapper{checkout}}
 \newcommand{\merchandising}				{\bWrapper{Merchandising}}
-\newcommand{\itemCOM}					{\bWrapper{producto}}
-\newcommand{\itemsCOM}					{\bWrapper{productos}}
+
 \newcommand{\itemupdates}				{\dontSplit{\bWrapper{item-updates}}}
-\newcommand{\advertising}				{\bWrapper{publicidad}}
+
 \newcommand{\brickandmortar}			{\bothWrapper{brick_and_mortar}}
 \newcommand{\retail}					{\bWrapper{retail}}
 \newcommand{\retailer}					{\bWrapper{retailer}}
@@ -732,8 +736,6 @@
 \newcommand{\reward}					{\bWrapper{reward}}
 \newcommand{\rewards}					{\bWrapper{rewards}}
 
-\newcommand{\gift}						{\bWrapper{gift}}
-\newcommand{\gifts}						{\bWrapper{gifts}}
 \newcommand{\markets}					{\bWrapper{markets}}
 \newcommand{\categoriesCommerce}		{\bWrapper{categorías}}
 \newcommand{\itemReviewsCommerce}		{\bWrapper{itemReviews}}
@@ -748,8 +750,7 @@
 \newcommand{\debitOneAccount}			{\bWrapper{debit one account}}
 \newcommand{\creditAnother}				{\bWrapper{credit another}}
 \newcommand{\purchasedCOM}				{\bWrapper{purchased}}
-\newcommand{\serviceCOM}				{\bWrapper{Servicio}}
-\newcommand{\servicesCOM}				{\bWrapper{servicios}}
+
 \newcommand{\supplierCOM}				{\bWrapper{Supplier}}
 \newcommand{\mvpSiglasCOM}				{\bothWrapper{mvp_siglas}}
 \newcommand{\minViableProductCOM}		{\bothWrapper{min_viable_product}}
@@ -777,7 +778,7 @@
 \newcommand{\serversAS}				{\bWrapper{servidores}}
 \newcommand{\serverSideAS}			{\dontSplit{\bWrapper{Server-side}}}
 \newcommand{\clientSideAS}			{\dontSplit{\bWrapper{Client-side}}}
-\newcommand{\clientAS}				{\bWrapper{cliente}}
+
 \newcommand{\clientsAS}				{\bWrapper{clientes}}
 
 \newcommand{\frontEndAS}			{\dontSplit{\bWrapper{Front-End}}}
@@ -1178,7 +1179,6 @@
 \newcommand{\poweredCPT}			{\bWrapper{powered}}
 \newcommand{\preFabCPT}				{\nWrapperDS{pre-fab}}
 \newcommand{\rendered}				{\bWrapper{rendered}}
-\newcommand{\renderCPT}				{\bWrapper{render}}
 \newcommand{\frameCPT}				{\bWrapper{frame}}
 \newcommand{\schedules}				{\bWrapper{schedules}}
 \newcommand{\reactive}				{\bWrapper{reactive}}
@@ -1438,6 +1438,8 @@
 
 
 \newcommand{\filesCPT}				{\bWrapper{archivos}}
+\newcommand{\tokensCPT}				{\bWrapper{tokens}}
+\newcommand{\keyCPT}				{\bWrapper{key}}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1447,9 +1449,9 @@
 \newcommand{\ecomFrameworkCoreEF}			{\nWrapperDS{E-Commerce Framework Core}}
 \newcommand{\shippingEF}					{\bWrapper{Shipping}}
 \newcommand{\checkoutEF}					{\bWrapper{Checkout}}
-\newcommand{\ordersEF}						{\bWrapper{Ordenes}}
+\newcommand{\ordersEF}						{\bWrapper{Órdenes}}
 \newcommand{\orderEF}						{\bWrapper{Orden}}
-\newcommand{\accountsEF}					{\bWrapper{Accounts}}
+\newcommand{\accountsEF}					{\bWrapper{Cuentas}}
 \newcommand{\soldoutEF}						{\bWrapper{Out of Stock}}
 \newcommand{\stockEF}						{\bWrapper{stock}}
 \newcommand{\limitedStockEF}				{\bWrapper{Limited Stock}}
@@ -1557,11 +1559,12 @@
 
 \newcommand{\memtitle}				{FRAMEWORK E-COMMERCE}
 \newcommand{\autor}					{Álvaro Balmaceda Celedón}
-\newcommand{\profesor}				{Nelson Baloian T.}
-\newcommand{\coguia}				{Jocelyn Simmonds W.}
-\newcommand{\integrante}			{Alejandro Hevia A.}
-\newcommand{\fecha}					{Marzo 2016}
-\newcommand{\tipomemoria}			{INGENIERO CIVIL COMPUTACIÓN}
+\newcommand{\autorPortada}			{Álvaro Mauricio Cristian Balmaceda Celedón}
+\newcommand{\profesor}				{Nelson Baloian Tataryan}
+\newcommand{\coguia}				{Jocelyn Simmonds Wagemann}
+\newcommand{\integrante}			{Alejandro Hevia Angulo}
+\newcommand{\fecha}					{2016}
+\newcommand{\tipomemoria}			{INGENIERO CIVIL EN COMPUTACIÓN}
 \newcommand{\dpto}					{DEPARTAMENTO DE CIENCIAS DE LA COMPUTACIÓN}
 
 
@@ -1573,6 +1576,7 @@
 
 \newcommand{\Memtitle}				{\MakeUppercase{\memtitle}}
 \newcommand{\Author}				{\MakeUppercase{\autor}}
+\newcommand{\AuthorFirst}			{\MakeUppercase{\autorPortada}}
 \newcommand{\Profesor}				{\MakeUppercase{\profesor}}
 \newcommand{\Coguia}				{\MakeUppercase{\coguia}}
 \newcommand{\Integrante}			{\MakeUppercase{\integrante}}

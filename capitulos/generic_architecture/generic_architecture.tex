@@ -28,7 +28,7 @@ Una gran cantidad de soluciones han sido desarrolladas por la comunidad para sol
 
 	\begin{itemize}
 		\item
-			\textbf{\nameCollectionTwo}. Permite asociar un \schemaDB a un \mongoCollection. Automáticamente se valida la estructura cuando se inserta o actualiza desde el \clientAS o el \serverAS. Esto es altamente deseable principalmente porque asegura que solo propiedades y valores aceptables puedan ser insertados desde el \clientAS. De esta manera, inserciones y actualizaciones \clientSideAS pueden ser permitidas sin comprometer seguridad o integridad de la información.
+			\textbf{\nameCollectionTwo}. Permite asociar un \schemaDB a un \mongoCollection. Automáticamente se valida la estructura cuando se inserta o actualiza desde el cliente o el \serverAS. Esto es altamente deseable principalmente porque asegura que solo propiedades y valores aceptables puedan ser insertados desde el cliente. De esta manera, inserciones y actualizaciones \clientSideAS pueden ser permitidas sin comprometer seguridad o integridad de la información.
 		\item
 			\textbf{\nameRouter}. Un enrutador que funciona en el \serverAS y en el \browserINT, diseñado específicamente para \meteorNAME.
 		\item
@@ -45,7 +45,7 @@ Una gran cantidad de soluciones han sido desarrolladas por la comunidad para sol
 			\textbf{\sanjoJasminePackage}. Corresponde a la integración de \meteorNAME \velocityNAME para el \frameworkPC de \testingCPT \jasmineNAME versión 2.3. Facilita el proceso de \testingCPT en la aplicación y los \packageAS de \meteorNAME con \testsCPT unitarios e integrados.
 			% The Meteor Velocity integration for the Jasmine 2.3 testing framework. Makes it easy to test your Meteor app and packages with unit and integration tests.
 		\item
-			\textbf{\bunyanPackage}. Exporta y agrega el \moduleAS de \loggingCPT \bunyanNAME. También agrega el \clientAS \browserifyNAME y \bunyanprettyStreamMETEOR.
+			\textbf{\bunyanPackage}. Exporta y agrega el \moduleAS de \loggingCPT \bunyanNAME. También agrega el cliente \browserifyNAME y \bunyanprettyStreamMETEOR.
 		% \item
 		% 	%TODO FIXME : Agregar package info
 		% 	bunyan-prettystream
@@ -86,7 +86,7 @@ Una gran cantidad de soluciones han sido desarrolladas por la comunidad para sol
 
 \section{Estructura propuesta para el desarrollo de grandes aplicaciones}\label{cap:arquitectura:section:generic_architecture_structure}
 
-Cuando se comienza a trabajar en \meteorNAME es importante entender qué código es ejecutado y en qué ambiente al momento de escribir aplicaciones. En teoría, todo el código puede correr en cualquier parte en el \stackAS, pero existen algunas limitaciones. Hay \apikeyAS que no deberían enviarse al \clientAS; los \events que manejan los \clicksPC del \mousePC no son útiles en el \serverAS. Para indicar a \meteorNAME dónde ejecutar código específico, es posible organizar código en carpetas dedicadas o utilizar un \checkCPT para verificar en qué contexto están corriendo.
+Cuando se comienza a trabajar en \meteorNAME es importante entender qué código es ejecutado y en qué ambiente al momento de escribir aplicaciones. En teoría, todo el código puede correr en cualquier parte en el \stackAS, pero existen algunas limitaciones. Hay \apikeyAS que no deberían enviarse al cliente; los \events que manejan los \clicksPC del \mousePC no son útiles en el \serverAS. Para indicar a \meteorNAME dónde ejecutar código específico, es posible organizar código en carpetas dedicadas o utilizar un \checkCPT para verificar en qué contexto están corriendo.
 
 En \meteorNAME existen directorios especiales que separan lógicamente el alcance de su contenido. Estos directorios se pueden apreciar en la \refFigura{esquema:architecture:simple_structure_meteor}.
 
@@ -115,14 +115,14 @@ Para definir una estructura de desarrollo, se debe considerar, entre otras cosas
 			% In Meteor, views are defined in templates. A template is a snippet of HTML that can include dynamic data. You can also interact with your templates from JavaScript code to insert data and listen to events.
 			\textbf{\templatesMETEOR}. En \meteorNAME, las \viewsAS son definidas en \templatesMETEOR. Un \templateMETEOR es una pequeña porción de \htmlNAME que puede incluir datos dinámicos. Incluso es posible interactuar con el \templateMETEOR desde código \javaScriptNAME para insertar información y escuchar \events \cite{online_meteor_documentation}.
 		\item
-			\textbf{\sessionMETEOR}. Provee un objeto global en el \clientAS que puede utilizarse para guardar un arbitrario par \keyValueDB. \cite{online_meteor_documentation}.
+			\textbf{\sessionMETEOR}. Provee un objeto global en el cliente que puede utilizarse para guardar un arbitrario par \keyValueDB. \cite{online_meteor_documentation}.
 		\item
 			\textbf{\trackerMETEOR}. \meteorNAME tiene sistema simple de dependencia para hacer \trackingMETEOR, permitiendo así automáticamente \rerunCPT \templatesMETEOR y otras funciones siempre que variables \sessionMETEOR, consultas a la \dataBasesDB, y otros recursos de datos cambien \cite{online_meteor_documentation}.
 		\item
 			\textbf{\collectionsMETEOR}. \meteorNAME guarda la información en \collectionsMETEOR. Objetos \javaScriptNAME almacenados en \collectionsMETEOR son denominados \documentsDB \cite{online_meteor_documentation}.
 
 		\item
-			\textbf{\publishsubscribeMETEOR}. El \serverAS de \meteorNAME puede publicar un conjunto de \documentsDB , y los \clientsAS pueden subscribirse a esas publicaciones \cite{online_meteor_documentation}.
+			\textbf{\publishsubscribeMETEOR}. El \serverAS de \meteorNAME puede publicar un conjunto de \documentsDB , y los clientes pueden subscribirse a esas publicaciones \cite{online_meteor_documentation}.
 		\item
 			\textbf{\methodsMETEOR}\label{cap:arquitectura:section:generic_architecture_structure:itemize:methods_meteor}. Son funciones del \serverSideAS que pueden ser llamadas desde el \clientSideAS. Son útiles en situaciones que se requiere realizar acciones más complicadas que \textit{insertar}, \textit{actualizar} y \textit{remover}; o cuando es necesario realizar ciertas validación de datos \cite{online_meteor_documentation}.
 	\end{itemize}
@@ -136,7 +136,7 @@ Teniendo estas consideraciones en mente, se define la siguiente estructura globa
 %TODO: VEr si es necesaroi agregar este folder<
 %\input{capitulos/generic_architecture/bin_folder_meteor_app.tex}
 
-Como se mecionó, \clientFolder es la carpeta que es solo visible desde el \clientSideAS, lo que significa que contiene solo código útil para el \clientAS. Su estructura básica se puede observar en \refFigura{esquema:client_structure_meteor_app}; y cada una de sus partes corresponde a:
+Como se mecionó, \clientFolder es la carpeta que es solo visible desde el \clientSideAS, lo que significa que contiene solo código útil para el cliente. Su estructura básica se puede observar en \refFigura{esquema:client_structure_meteor_app}; y cada una de sus partes corresponde a:
 
 	\begin{itemize}
 		\item
@@ -171,13 +171,13 @@ La carpeta \templateMETEOR tiene el suficiente detalle y relevancia como para in
 
 \begin{itemize}
 	\item
-		\textbf{\folderCollections/}. Acá se crean las variables de todas las \collectionsMETEOR definidas en la aplicación. Aunque es totalmente posible crear variables propias para el \clientAS como para el \serverAS; se considera una buena práctica hacerlo de esta manera.
+		\textbf{\folderCollections/}. Acá se crean las variables de todas las \collectionsMETEOR definidas en la aplicación. Aunque es totalmente posible crear variables propias para el cliente como para el \serverAS; se considera una buena práctica hacerlo de esta manera.
 	\item
 	 	\textbf{\folderHooks/}. Contiene los \hooksCPT relacionados con los \collectionsMETEOR. Código escrito en base al \packagesAS \nameCollectionHooks.
 	\item
 		\textbf{\folderSchemas/}. Contiene todos los \schemasDB que se han creado utilizando el \packagesAS \nameCollectionTwo.
 	\item
-		\textbf{packageGlobals.js}. Contiene todas las variables globales del sistema. En este caso, también son variables que se encuentran en el \environmentPL del \clientAS y del \serverAS.
+		\textbf{packageGlobals.js}. Contiene todas las variables globales del sistema. En este caso, también son variables que se encuentran en el \environmentPL del cliente y del \serverAS.
 	\item
 		\textbf{routing.js}. Contiene todo el código relacionado con el enrutamiento. El código es desarrollado utilizando el \packagesAS \nameRouter.
 \end{itemize}
@@ -209,7 +209,7 @@ La carpeta \serverFolder, como su nombre lo indica, contiene la implementación 
 
 \begin{itemize}
 	\item
-	 	\textbf{methods/}. Ver \refSection{cap:arquitectura:section:generic_architecture_structure:itemize:methods_meteor}.
+	 	\textbf{methods/}. Se tienen todos los \methodsMETEOR definidos.
 	\item
 	 	\textbf{app.js}. Contiene información relacionada con los niveles de \bunyanNAME (\packageAS \bunyanPackage) que se utilizan para hacer \loggingCPT; junto con algunas funciones principales del servidor.
 	\item
@@ -221,7 +221,7 @@ La carpeta \serverFolder, como su nombre lo indica, contiene la implementación 
 	\item
 		\textbf{publications.js}. Archivo que contiene todas las publicaciones de \documentsDB. Cada una de estas publicaciones puede incluir definiciones de seguridad relacionadas con roles para limitar la entrega.
 	\item
-	 	\textbf{security.js}. Archivo que contiene todas las reglas de seguridad para \insertsDB, \updatesDB y \removesDB iniciadas desde código inesguro (\clientsAS). De igual manera, existen otras acciones para roles específicos que tienen permitido realizar. Dichas acciones no necesariamente aparecen aquí si la operación de \dataBasesDB es ejecutada desde un método del \serverAS. Las definiciones de seguridad aquí descritas utilizan el \packageAS \securityPackage.
+	 	\textbf{security.js}. Archivo que contiene todas las reglas de seguridad para \insertsDB, \updatesDB y \removesDB iniciadas desde código inesguro (clientes). De igual manera, existen otras acciones para roles específicos que tienen permitido realizar. Dichas acciones no necesariamente aparecen aquí si la operación de \dataBasesDB es ejecutada desde un método del \serverAS. Las definiciones de seguridad aquí descritas utilizan el \packageAS \securityPackage.
 \end{itemize}
 
 % Estructura de la carpeta server de una aplicación en Meteor

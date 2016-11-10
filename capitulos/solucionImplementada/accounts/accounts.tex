@@ -1,7 +1,6 @@
 %!TEX root = ../../../memoria.tex
 \section{Control de Acceso}
 
-%TODO: Agregar comentarios iniciales
 Control de acceso limita las acciones directas de un usuario, así como qué programas pueden ejecutarse \cite{sandhu1994access}.
  
 %Meteor Accounts
@@ -11,8 +10,20 @@ Existe un sistema completo de cuentas de usuarios, el cual permite hacer \loginC
 
 \subsection{Creación de cuenta de un usuario}\label{chapter:solucionimplementada:accounts:subsection:create}
 
-La creación de una cuenta se ha pensado realizando la menor cantidad de acciones posibles (ver \refFigura{figure:account:create_account:form}). Agregar acciones innecesarias puede significar que los usuarios desistan y dejen el sitio\cite{online_goodgui_org}.
+La creación de una cuenta se ha pensado realizando la menor cantidad de acciones posibles. Agregar acciones innecesarias puede significar que los usuarios desistan y dejen el sitio\cite{online_goodgui_org}. Una de las acciones innecesarias más común es llenar dos campos de un formulario con la misma información: ejemplos de esto son escribir dos veces el \email y la contraseña (ver \refFigura{figure:account:create_account:form_compare}). Históricamente esto ha sido diseñado para prevenir errores de tipeo. Esta ultima situación no es el escenario más común, pero aunque efectivamente se haya ingresado un error, siempre se puede recuperar la contraseño usando el \email. El usuario podrá gastar tiempo extra recuperando su cuenta, pero este escenario es mejor en oposición al tiempo que se ahorrará a miles de usuarios que llenarán el formulario correctamente \cite{online_atmospherejs_designmodo_usable_registration}. 
 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\textwidth]{figuras/account/examples/form_compare.png}
+
+	\caption{Ejemplos de formularios de creación. El formulario de la izquierda pide confirmación de \email y contraseña, implicando en un mayor número de campos a llenar.}
+	\label{figure:account:create_account:form_compare}
+\end{figure}
+
+Este estilo de creación de cuenta está actualmente implementando en sitios populares como \twitterNAME, \dropboxNAME, \netflixNAME \instagramNAME y \linkedInNAME. Los formularios se pueden ver en las Figuras \ref{figure:apendice:account:example:twitter_create_form}, \ref{figure:apendice:account:example:dropbox_create_form}, \ref{figure:apendice:account:example:netflix_create_form}, \ref{figure:apendice:account:example:instagram_create_form} y \ref{figure:apendice:account:example:linkedin_create_form} respectivamente.
+
+
+Finalmente se presenta el formulario de creación de usuario en la \refFigura{figure:account:create_account:form}.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.4\textwidth]{figuras/architecture/accounts/new/form.png}
@@ -20,6 +31,7 @@ La creación de una cuenta se ha pensado realizando la menor cantidad de accione
 	\caption{Formulario de creación de una cuenta.}
 	\label{figure:account:create_account:form}
 \end{figure}
+
 
 
 El formulario de creación tiene ciertas restricciones, las cuales deben cumplirse para la creación exitosa de una cuenta. La \reftabla{tab:architecture:accounts:new:form} resume todas las restricciones del formulario. En la \refFigura{figure:architecture:accounts:new:send_error} pueden verse los errores que muestra el formulario para guiar al usuario.
@@ -32,7 +44,7 @@ El formulario de creación tiene ciertas restricciones, las cuales deben cumplir
 				& - Debe ser un \email válido. \\ 
 			& 	& - El \email no debe pertenecer a un usuario previamente ingresado.\\ \hline
 		\multirow{2}{*}{\textit{Password}} 		&  \multirow{2}{*}{\checkmark}	
-				& - Debe tener al menos 6 caracteres. \\ 
+				& - Debe tener al menos 8 caracteres. \\ 
 			& 	& - Debe contener al menos un número o símbolo. \\ \hline
 	\end{tabular}
  	\caption{Resumen de restricciones para formulario creación de cuentas de usuario.}
@@ -111,12 +123,14 @@ La aplicación permite hacer \loginCPT a través de servicios de autenticación 
 	\centering
 	\includegraphics[width=0.4\textwidth]{figuras/architecture/accounts/login/log_in_plus_facebook.png}
 
-	\caption{Autenticarse utilizando un servicio \thirdParty.}
+	\caption{La aplicación ofrece autenticarse utilizando un servicio \thirdParty (\facebook) o directamente en el sitio.}
 	\label{figure:account:login:log_in_plus_facebook}
 \end{figure}
 
+Si se hace click sobre el botón \facebook de la \refFigura{figure:account:login:log_in_plus_facebook}, la aplicación irá a una página de \facebook y mostrará el formulario para autenticarse.
+
 %Es importante agregar que el sistema automáticamente agrega en la interfaz la opción de autenticarse utilizando el servicio \thirdParty simplemente agregando el \packagesAS de \meteorNAME; y por consiguiente este desaparecerá si el \packagesAS es removido. En la \refFigura{figure:architecture:accounts:login:log_in_all_package} se aprecian varios servicios \thirdParty para la autenticación de la aplicación.
-Es importante destacar que el sistema permite agregar o esconder las opciones \thirdParty de la interfaz. En la \refFigura{figure:architecture:accounts:login:log_in_all_package} se ven los proveedores \oauthLoginINT \facebook, \gitHubNAME, \googleNAME, \twitterNAME, respectivamente.
+Es importante destacar que el sistema permite agregar o esconder las opciones \thirdParty de la interfaz. En la \refFigura{figure:architecture:accounts:login:log_in_all_package} se ven los proveedores \oauthLoginINT \facebook, \gitHubNAME, \googleNAME, \twitterNAME, respectivamente. Cada uno de estos botonos enviara la aplicación a autenticarse en su respectivo sitio oficial.
 
 \begin{figure}[H]
 	\centering

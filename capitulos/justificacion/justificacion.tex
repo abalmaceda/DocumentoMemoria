@@ -95,7 +95,7 @@ Ejemplos: \neofourj y \hyperGraphDB.
 \subsubsection{\keyValue}
 \label{cap:justificacion_proyecto:base_datos:nosql:key_value}
 
-Desde una perspectiva de modelo de datos, \keyValue \stores son el tipo más básico de las \nosqlNAME \dataBasesDB. Cada \itemCOM en la base de datos es guardado como un atributo \nameDB, o \keyDB, junto con su \valueDB. El \valueDB, sin embargo, es totalmente opaco al sistema; los datos solo pueden ser requeridos desde la \keyDB. Este modelo puede ser útil para representar datos \polymorphic y sin estructura, dado que la \dataBasesDB no define un esquema al conjunto \keyValue.
+Desde una perspectiva de modelo de datos, \keyValue \stores son el tipo más básico de las \nosqlNAME \dataBasesDB. Cada producto en la base de datos es guardado como un atributo \nameDB, o \keyDB, junto con su \valueDB. El \valueDB, sin embargo, es totalmente opaco al sistema; los datos solo pueden ser requeridos desde la \keyDB. Este modelo puede ser útil para representar datos \polymorphic y sin estructura, dado que la \dataBasesDB no define un esquema al conjunto \keyValue.
 %From a data model perspective, key-value stores are the most basic type of NoSQL database. Every item in the database is stored as an attribute name, or key, together with its value. The value, however, is entirely opaque to the system; data can only be queried by the key. This model can be useful for representing polymorphic and unstructured data, as the database does not enforce a set schema across key-value pairs.
 
 \subsubsection{Modelos \wideColumnDB}
@@ -124,7 +124,7 @@ Aplicación: \keyDB \valueDB \stores y \wideColumnDB \stores son útiles para un
 \subsection{\mongodbNAME y \ecommerceCOM \cite{online_mongodb_ecommerce}}
 \label{cap:justificacion_proyecto:MongoDB_ECommerce}
 
-Demostraciones de almacenamientos de datos de la siguiente generación giran típicamente en torno a las redes sociales: \twitterNAME, \facebook, \foursquare, etc. Desafortunadamente, tales aplicaciones generalmente tienen modelos de datos complejos. \ecommerceCOM, por ejemplo, tiene la ventaja de incluir un largo número de patrones familiares para modelar datos. Además no es complicado imaginar cómo \itemCOM, \categoriesCommerce, \itemReviewsCommerce y órdenes son típicamente modelados en \rdbms.
+Demostraciones de almacenamientos de datos de la siguiente generación giran típicamente en torno a las redes sociales: \twitterNAME, \facebook, \foursquare, etc. Desafortunadamente, tales aplicaciones generalmente tienen modelos de datos complejos. \ecommerceCOM, por ejemplo, tiene la ventaja de incluir un largo número de patrones familiares para modelar datos. Además no es complicado imaginar cómo productos, \categoriesCommerce, \itemReviewsCommerce y órdenes son típicamente modelados en \rdbms.
 
 \ecommerceCOM ha sido usualmente un dominio exclusivo de \rdbms, y esto es así por un par de razones. La primera es que los sitios \ecommerceCOM generalmente requieren \transactionsDB, y \transactionsDB son una operación básica en \rdbms. Lo segundo es que, hasta hace poco, dominios que requieren de un modelo de dato enriquecido y consultas sofisticadas han sido presupuestos que se ajustan mejor en \rdbms. \textbf{En las siguientes secciones se cuestionará la segunda afirmación}.
 
@@ -132,32 +132,32 @@ Demostraciones de almacenamientos de datos de la siguiente generación giran tí
 
 Si es necesaria información sobre cómo el \catalogManagementCOM se maneja con \dataBasesDB relacionales, es necesario dar una mirada rápida a los esquemas del popular \nameMagento \ecommerceCOM \frameworkPC [\refFigura{ap:figure:catalog_magento}]. En la \refFigura{cap:figure:catalog_magento} se observa un conjunto de \tablesDB trabajando a la par para proveer un esquema flexible sobre un fundamentalmente inflexible estilo de sistema de \dataBasesDB.
 
-Esto significa que los datos de cualquier \itemCOM se extienden a través de una docena de \tablesDB. Esto incrementa la complejidad del código requerido para la persistencia de consultas de \itemsCOM individuales y hacer una consulta \shellBased es casi imposible. Simplemente considere escribir un \sqlNAME \join para reunir el modelo de un \itemCOM como el de la \refFigura{cap:figure:catalog_magento}.
+Esto significa que los datos de cualquier producto se extienden a través de una docena de \tablesDB. Esto incrementa la complejidad del código requerido para la persistencia de consultas de productos individuales y hacer una consulta \shellBased es casi imposible. Simplemente considere escribir un \sqlNAME \join para reunir el modelo de un producto como el de la \refFigura{cap:figure:catalog_magento}.
 
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.3\textwidth]{figuras/cap2/magento_product_schema.png}
-	\caption{Esquemas de un \itemCOM.}
+	\caption{Esquemas de un producto.}
 	\label{cap:figure:catalog_magento}
 \end{figure}
 
 O realizar una sencilla búsqueda desde la \shell \mongodbNAME \javaScriptNAME  para obtener un objecto \jsonNAME como el \refsource{source:javascript:example_search_mongodb}.
 
-Claramente en \refsource{source:javascript:example_search_mongodb} no hay representación completa de un \itemCOM, pero esto demuestra cuántas de estas \tablesDB triviales que existen en una representación relacional pueden prescindir en una representación \documentDB.
+Claramente en \refsource{source:javascript:example_search_mongodb} no hay representación completa de un producto, pero esto demuestra cuántas de estas \tablesDB triviales que existen en una representación relacional pueden prescindir en una representación \documentDB.
 
-Para datos \objectOrientedPL, \textbf{los \documentsDB tienen mayor sentido}, tanto en concepto como rendimiento. Una representación \documentOriented de un dato de un \itemCOM se traduce a unas pocas entidades (un puñado de \collectionsDB \vsSIGLACPT una docena de \tablesDB), mejor \performanceQA en consultas (sin \serverSideAS \joins), y estructuras que corresponden precisamente al \itemCOM. \textbf{Ya no existe la necesidad} de diseñar un \masterSchema que pueda considerar a cada tipo de \itemCOM concebible.
+Para datos \objectOrientedPL, \textbf{los \documentsDB tienen mayor sentido}, tanto en concepto como rendimiento. Una representación \documentOriented de un dato de un producto se traduce a unas pocas entidades (un puñado de \collectionsDB \vsSIGLACPT una docena de \tablesDB), mejor \performanceQA en consultas (sin \serverSideAS \joins), y estructuras que corresponden precisamente al producto. \textbf{Ya no existe la necesidad} de diseñar un \masterSchema que pueda considerar a cada tipo de producto concebible.
 
 \catalogManagementCOM es esencialmente \contentManagementCOM, \textbf{un campo en donde \mongodbNAME sobresale}.
 
-\subsubsection{\shoppingCarts y órdenes}
+\subsubsection{Carros de compra y órdenes}
 
-Permitir que un \shoppingCarts sea simplemente una orden en un estado  \cartCOM, el modelo de \shoppingCarts y las órdenes en \mongodbNAME se tornan muy sencillas. Un ejemplo de esto se puede observar en  \refsource{source:javascript:example_schema_order}.
+Permitir que un carro de compra sea simplemente una orden en un estado de carro, el modelo de carro de compra y las órdenes en \mongodbNAME se tornan muy sencillas. Un ejemplo de esto se puede observar en  \refsource{source:javascript:example_schema_order}.
 
-Notar que es posible presentar los pedidos como un \arrayPL de \itemsCOM. Como es usual con \documentsDB, esto hace el despliegue del \shoppingCart más sencillo, dado que no hay \joins envueltos. Pero esto también resuelve el problema del versionamiento de \itemsCOM. Usualmente es necesario tener el estado de un \itemCOM cuando este es comprado. Esto puede ser logrado en una \rdbms estableciendo un vínculo a versiones particulares de un \itemCOM. Aquí, sin embargo, simplemente se almacenó el estado de un \itemCOM dentro de la misma \orderCommerce.
+Notar que es posible presentar los pedidos como un \arrayPL de productos. Como es usual con \documentsDB, esto hace el despliegue del carro de compra más sencillo, dado que no hay \joins envueltos. Pero esto también resuelve el problema del versionamiento de productos. Usualmente es necesario tener el estado de un producto cuando este es comprado. Esto puede ser logrado en una \rdbms estableciendo un vínculo a versiones particulares de un producto. Aquí, sin embargo, simplemente se almacenó el estado de un producto dentro de la misma \orderCommerce.
 
 \subsubsection{Consultando órdenes}
 
-Dado que \mongodbNAME soporta consultas dinámicas y \secIndexingDB , las consultas para las órdenes son automáticas. Es posible, por ejemplo, definir un \indexDB en un \itemCOM \sku, lo que permite consultas eficientes en todas las órdenes para un \itemCOM dado. En  \refsource{source:javascript:example_querying_orders_mongodb} se observa un ejemplo.
+Dado que \mongodbNAME soporta consultas dinámicas y \secIndexingDB , las consultas para las órdenes son automáticas. Es posible, por ejemplo, definir un \indexDB en un producto \sku, lo que permite consultas eficientes en todas las órdenes para un producto dado. En  \refsource{source:javascript:example_querying_orders_mongodb} se observa un ejemplo.
 
 Con \mongodbNAME, es posible realizar consultas en atributos arbitrarios, de esa manera cualquier consulta en la \collectionDB órdenes es posible. Y para consultas comunes, es posible definir \indexesDB para una mejor eficiencia.
 
@@ -172,12 +172,12 @@ Claramente, \aggregationDB también es necesario. Se desea reportar órdenes de 
 Una manera de ajustar la cantidad es usando un \positionOperatorDB, el cual permite aplicar \atomicOperationsDB, a un único objeto dentro de un \arrayPL. \refsource{source:javascript:example_incrementing_quality_mongodb} muestra cómo cambiar el número de álbumes que se están ordenando.
 
  
-\subsubsection*{\adding y \removing \itemsCOM}
+\subsubsection*{Agregar y remover productos}
 
-Igualmente, \atomicOperationsDB resuelve el problema de agregar y remover \itemsCOM desde el \cartCOM. \refsource{source:javascript:example_push_operator_mongodb} ejemplifica el uso de \pushOperatorDB \atomicOperatorDB para agregar un \itemCOM al \cartCOM.
+Igualmente, \atomicOperationsDB resuelve el problema de agregar y remover productos desde el carro. \refsource{source:javascript:example_push_operator_mongodb} ejemplifica el uso de \pushOperatorDB \atomicOperatorDB para agregar un producto al carro.
 
 
-Al ajustar la cantidad y el cambio de los mismos \itemsCOM en el \cartCOM, es necesario actualizar el total de la orden. Notar el uso del operador \incOperatorDB para manejar esto.
+Al ajustar la cantidad y el cambio de los mismos productos en el carro, es necesario actualizar el total de la orden. Notar el uso del operador \incOperatorDB para manejar esto.
 
 \subsubsection{Inventario}
 
@@ -186,13 +186,13 @@ No todos los sitios \ecommerceCOM necesitan manejar el inventario. Pero para aqu
 Una manera para manejar el inventario, es guardar un \documentDB separado por cada \physItem en la bodega. Así, por ejemplo, si la bodega tiene veinte copias del álbum Coltrane, se traduce en veinte \documentsDB distintos en la \collectionDB de \textit{Inventario}. Cada \documentDB tiene una estructura como lo muestra \refsource{source:javascript:example_document_inventory_mongodb}.
 
 
-Cuando un usuario intenta agregar un \itemCOM al \cartCOM, un comando \findAndModifyOperatorDB puede ser facilitado para automáticamente marcar el \itemCOM en \inCart, asociando el \itemCOM con una \orderCommerce dada, y estableciendo un tiempo de espiración (\refsource{source:javascript:example_add_inventory_expiartion_mongodb}).
+Cuando un usuario intenta agregar un producto al carro, un comando \findAndModifyOperatorDB puede ser facilitado para automáticamente marcar el producto en \inCart, asociando el producto con una \orderCommerce dada, y estableciendo un tiempo de espiración (\refsource{source:javascript:example_add_inventory_expiartion_mongodb}).
 
 
 
-Si se obtiene un \itemBackDB desde la operación \findAndModifyOperatorDB, se sabe que tenemos un único \lockDB en el \itemCOM, y es posible guardarlo en el \cartCOM. Cuando el usuario desea realizar el \checkoutCOM, el estado del \itemCOM puede cambiar a \purchasedCOM, o cualquiera sea el caso de la llamada.
+Si se obtiene un \itemBackDB desde la operación \findAndModifyOperatorDB, se sabe que tenemos un único \lockDB en el producto, y es posible guardarlo en el carro. Cuando el usuario desea realizar el \checkoutCOM, el estado del producto puede cambiar a \purchasedCOM, o cualquiera sea el caso de la llamada.
 
-Mientras, se puede ejecutar un \scriptPL en \backgroundPL que libere el inventario del \cartCOM que no ha sido \purchasedCOM en la ventana de quince minutos. La actualización es trivial y se observa en \refsource{source:javascript:example_add_script_background_mongodb}.
+Mientras, se puede ejecutar un \scriptPL en \backgroundPL que libere el inventario del carro que no ha sido \purchasedCOM en la ventana de quince minutos. La actualización es trivial y se observa en \refsource{source:javascript:example_add_script_background_mongodb}.
 
 
 \subsubsection{\transactionsDB, \consistencyDB y \durabilityDB}
@@ -240,10 +240,10 @@ Pero para las partes en donde el sitio \ecommerceCOM comprende el manejo de cont
 
 %After over 20 years of stateless-web based on the stateless request-response paradigm, we finally have web applications with real-time, two-way connections.
 
-En una frase: \nodejsNAME brilla en aplicaciones \webINT \realTimeINT utilizando tecnología \pushINT sobre \websocketsINT. ¿Qué es tan revolucionario en relación a esto? Después de 20 años de \statelessWebINT en el paradigma \requestResponseINT finalmente existen aplicaciones \webINT \realTimeINT, conexiones \twoWayINT, donde \clientAS y \serverAS pueden iniciar la comunicación, permitiendo intercambiar datos libremente. Esto es un contraste enorme al paradigma típico de \webResponseINT, donde el \clientAS siempre iniciaba la comunicación. Adicionalmente, está todo basado en \openWebStackINT (\htmlNAME, \cssNAME y \javaScriptNAME) corriendo sobre el \standarPortINT 80.
+En una frase: \nodejsNAME brilla en aplicaciones \webINT \realTimeINT utilizando tecnología \pushINT sobre \websocketsINT. ¿Qué es tan revolucionario en relación a esto? Después de 20 años de \statelessWebINT en el paradigma \requestResponseINT finalmente existen aplicaciones \webINT \realTimeINT, conexiones \twoWayINT, donde cliente y \serverAS pueden iniciar la comunicación, permitiendo intercambiar datos libremente. Esto es un contraste enorme al paradigma típico de \webResponseINT, donde el cliente siempre iniciaba la comunicación. Adicionalmente, está todo basado en \openWebStackINT (\htmlNAME, \cssNAME y \javaScriptNAME) corriendo sobre el \standarPortINT 80.
 %In one sentence: Node.js shines in real-time web applications employing push technology over websockets. What is so revolutionary about that? Well, after over 20 years of stateless-web based on the stateless request-response paradigm, we finally have web applications with real-time, two-way connections, where both the client and server can initiate communication, allowing them to exchange data freely. This is in stark contrast to the typical web response paradigm, where the client always initiates communication. Additionally, it’s all based on the open web stack (HTML, CSS and JS) running over the standard port 80.
 
-Se puede discutir que estas características existían hace años a través de \flashNAME y \javaAppletsINT, pero en realidad esos fueron \sandboxedEnvPL utilizando la \webINT como un protocolo de transporte para entregar al \clientAS. Además, ellos corrían aislados y generalmente sobre \nonStandardPortsINT, los cuales podrían requerir permisos extras.
+Se puede discutir que estas características existían hace años a través de \flashNAME y \javaAppletsINT, pero en realidad esos fueron \sandboxedEnvPL utilizando la \webINT como un protocolo de transporte para entregar al cliente. Además, ellos corrían aislados y generalmente sobre \nonStandardPortsINT, los cuales podrían requerir permisos extras.
 %One might argue that we’ve had this for years in the form of Flash and Java Applets—but in reality, those were just sandboxed environments using the web as a transport protocol to be delivered to the client. Plus, they were run in isolation and often operated over non-standard ports, which may have required extra permissions and such.
 
 Con todas esta ventajas, \nodejsNAME ahora juega un rol crítico en el \stackAS de tecnología de las principales compañías \highProfileCPT \cite{online_nodejs_highprofilecompanies}, \textbf{las cuales dependen de sus beneficios únicos}.
